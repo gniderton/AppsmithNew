@@ -1,0 +1,67 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 12,
+  "boxShadow": "none",
+  "closeOnSelection": true,
+  "dateFormat": "DD-MM-YYYY",
+  "datePickerType": "DATE_PICKER",
+  "defaultDate": "2026-03-07T15:16:37.892Z",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "isDisabled"
+    }
+  ],
+  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicPropertyPathList": [
+    {
+      "key": "isDisabled"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "firstDayOfWeek": 0,
+  "isDisabled": "{{ payMode.value !== 'Cheque' }}",
+  "isLoading": false,
+  "isRequired": false,
+  "isVisible": true,
+  "key": "20n4m7dlz9",
+  "label": "Cheque Date",
+  "labelAlignment": "left",
+  "labelPosition": "Left",
+  "labelTextSize": "0.875rem",
+  "labelWidth": "15",
+  "leftColumn": 0,
+  "maxDate": "2121-12-31T18:29:00.000Z",
+  "maxDynamicHeight": 9000,
+  "minDate": "1920-12-31T18:30:00.000Z",
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 32,
+  "mobileLeftColumn": 0,
+  "mobileRightColumn": 20,
+  "mobileTopRow": 25,
+  "needsErrorInfo": false,
+  "originalBottomRow": 24,
+  "originalTopRow": 20,
+  "parentColumnSpace": 5.716796875,
+  "parentId": "24en906378",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 63,
+  "shortcuts": false,
+  "shouldScrollContents": true,
+  "timePrecision": "minute",
+  "topRow": 8,
+  "type": "DATE_PICKER_WIDGET2",
+  "version": 2,
+  "widgetId": "rrqinclff9",
+  "widgetName": "payChqDate"
+}

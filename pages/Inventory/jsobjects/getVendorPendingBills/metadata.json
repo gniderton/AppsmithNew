@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "69a80abb79ac426a29eb8838_6c5768fe-77fb-450c-a141-6abf4d30a6ff",
+  "id": "Inventory_getVendorPendingBills",
+  "unpublishedCollection": {
+    "name": "getVendorPendingBills",
+    "pageId": "Inventory",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}

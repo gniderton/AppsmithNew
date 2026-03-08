@@ -1,0 +1,77 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 28,
+  "boxShadow": "none",
+  "defaultOptionValue": "GREEN",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "isDisabled"
+    },
+    {
+      "key": "sourceData"
+    },
+    {
+      "key": "optionLabel"
+    }
+  ],
+  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicPropertyPathList": [
+    {
+      "key": "isDisabled"
+    },
+    {
+      "key": "sourceData"
+    },
+    {
+      "key": "optionLabel"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "isDisabled": "{{ payMode.value !== 'Online' }}",
+  "isFilterable": true,
+  "isLoading": false,
+  "isRequired": false,
+  "isVisible": true,
+  "key": "2f14aduwdl",
+  "labelAlignment": "left",
+  "labelPosition": "Left",
+  "labelText": "Online Ref No",
+  "labelTextSize": "0.875rem",
+  "labelWidth": "15",
+  "leftColumn": 0,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 47,
+  "mobileLeftColumn": 0,
+  "mobileRightColumn": 20,
+  "mobileTopRow": 40,
+  "needsErrorInfo": false,
+  "optionLabel": "{{selBankRefVendor.sourceData.map((item) => (item.id + ' | ' + item.debit_amount + ' | ' + item.consumed_amount))}}",
+  "optionValue": "id",
+  "originalBottomRow": 28,
+  "originalTopRow": 24,
+  "parentColumnSpace": 5.716796875,
+  "parentId": "24en906378",
+  "parentRowSpace": 10,
+  "placeholderText": "Select option",
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 63,
+  "serverSideFiltering": false,
+  "shouldScrollContents": true,
+  "sourceData": "{{q_getUnconsumedDebits.data}}",
+  "topRow": 24,
+  "type": "SELECT_WIDGET",
+  "version": 1,
+  "widgetId": "gwtd8o7a6v",
+  "widgetName": "selBankRefVendor"
+}

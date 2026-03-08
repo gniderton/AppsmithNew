@@ -1,0 +1,57 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "alignment": "left",
+  "animateLoading": true,
+  "bottomRow": 24,
+  "boxShadow": "none",
+  "defaultOptionValue": "Item Return",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    }
+  ],
+  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicTriggerPathList": [],
+  "flexVerticalAlignment": "start",
+  "isDisabled": false,
+  "isInline": true,
+  "isLoading": false,
+  "isRequired": false,
+  "isVisible": true,
+  "key": "azhd0esgs7",
+  "label": "",
+  "labelAlignment": "left",
+  "labelPosition": "Top",
+  "labelTextSize": "0.875rem",
+  "labelWidth": 5,
+  "leftColumn": 0,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "mobileBottomRow": 38,
+  "mobileLeftColumn": 0,
+  "mobileRightColumn": 18,
+  "mobileTopRow": 32,
+  "needsErrorInfo": false,
+  "options": [
+    {
+      "label": "Flat Amount",
+      "value": "Flat Amount"
+    },
+    {
+      "label": "Item Return",
+      "value": "Item Return"
+    }
+  ],
+  "originalBottomRow": 24,
+  "originalTopRow": 20,
+  "parentColumnSpace": 6.9375,
+  "parentId": "ye1b8rm96d",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "rightColumn": 17,
+  "topRow": 20,
+  "type": "RADIO_GROUP_WIDGET",
+  "version": 1,
+  "widgetId": "fpe8j0uveu",
+  "widgetName": "selDNMode"
+}

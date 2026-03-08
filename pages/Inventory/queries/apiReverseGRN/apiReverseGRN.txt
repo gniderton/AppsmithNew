@@ -1,0 +1,3 @@
+{
+  "reversed_by_id": {{ getMe.data.id }}
+}

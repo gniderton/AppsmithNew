@@ -1,0 +1,141 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 29,
+  "boxShadow": "none",
+  "buttonVariant": "PRIMARY",
+  "childStylesheet": {
+    "button": {
+      "buttonColor": "{{appsmith.theme.colors.primaryColor}}"
+    }
+  },
+  "dynamicBindingPathList": [
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "groupButtons.groupButton1.buttonColor"
+    },
+    {
+      "key": "groupButtons.groupButton2.buttonColor"
+    },
+    {
+      "key": "groupButtons.groupButtonmfidy92i7n.buttonColor"
+    },
+    {
+      "key": "groupButtons.groupButtonmfidy92i7n.isDisabled"
+    },
+    {
+      "key": "groupButtons.groupButton0rgl2tisyb.buttonColor"
+    },
+    {
+      "key": "groupButtons.groupButton0rgl2tisyb.isDisabled"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "groupButtons.groupButtonmfidy92i7n.isDisabled"
+    },
+    {
+      "key": "groupButtons.groupButton0rgl2tisyb.isDisabled"
+    },
+    {
+      "key": "groupButtons.groupButton0rgl2tisyb.onClick"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "groupButtons.groupButtonmfidy92i7n.onClick"
+    },
+    {
+      "key": "groupButtons.groupButton0rgl2tisyb.onClick"
+    }
+  ],
+  "groupButtons": {
+    "groupButton0rgl2tisyb": {
+      "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+      "buttonType": "SIMPLE",
+      "iconName": "add",
+      "id": "groupButton0rgl2tisyb",
+      "index": 3,
+      "isDisabled": "{{ tblGrn.triggeredRow.status !== \"Reversed\" }}",
+      "isSeparator": false,
+      "isVisible": true,
+      "itemType": "BUTTON",
+      "label": "Re-enter Reversed GRN",
+      "menuItems": {},
+      "onClick": "{{ \n  storeValue('preSelectedVendor', tblGrn.triggeredRow.vendor_name)\n    .then(() => storeValue('preSelectedPO', tblGrn.triggeredRow.po_number))\n    .then(() => showModal(modalFrameGRN.name)) \n}}",
+      "placement": "START",
+      "variant": "filled",
+      "widgetId": "4dm7w2upxp"
+    },
+    "groupButton1": {
+      "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+      "buttonType": "SIMPLE",
+      "disabledWhenInvalid": false,
+      "iconName": "send-to",
+      "id": "groupButton1",
+      "index": 0,
+      "isDisabled": false,
+      "isVisible": true,
+      "label": "Whatsapp",
+      "menuItems": {},
+      "placement": "START",
+      "widgetId": ""
+    },
+    "groupButton2": {
+      "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+      "buttonType": "SIMPLE",
+      "disabledWhenInvalid": false,
+      "iconName": "print",
+      "id": "groupButton2",
+      "index": 1,
+      "isDisabled": false,
+      "isVisible": true,
+      "label": "Print",
+      "menuItems": {},
+      "placement": "START",
+      "widgetId": ""
+    },
+    "groupButtonmfidy92i7n": {
+      "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+      "buttonType": "SIMPLE",
+      "iconName": "remove",
+      "id": "groupButtonmfidy92i7n",
+      "index": 2,
+      "isDisabled": "{{ moment().diff(moment(tblGrn.triggeredRow.received_date), 'days') > 7 }}",
+      "isSeparator": false,
+      "isVisible": true,
+      "itemType": "BUTTON",
+      "label": "Reverse GRN",
+      "menuItems": {},
+      "onClick": "{{showModal(modalConfirmReverse.name);}}",
+      "placement": "START",
+      "variant": "filled",
+      "widgetId": "1uhcb5c9ei"
+    }
+  },
+  "isCanvas": false,
+  "isLoading": false,
+  "isVisible": true,
+  "key": "mgbar9pbv9",
+  "leftColumn": 51,
+  "minWidth": 450,
+  "mobileBottomRow": 4,
+  "mobileLeftColumn": 25,
+  "mobileRightColumn": 49,
+  "mobileTopRow": 0,
+  "needsErrorInfo": false,
+  "orientation": "vertical",
+  "parentColumnSpace": 19.228125,
+  "parentId": "97ormrffdp",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 62,
+  "topRow": 16,
+  "type": "BUTTON_GROUP_WIDGET",
+  "version": 1,
+  "widgetId": "ff87ojowxh",
+  "widgetName": "ButtonGroup2"
+}

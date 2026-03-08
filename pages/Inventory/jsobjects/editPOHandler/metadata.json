@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "69a80abb79ac426a29eb8838_b77bdcb6-1436-4aff-94ab-fd17e98eb835",
+  "id": "Inventory_editPOHandler",
+  "unpublishedCollection": {
+    "name": "editPOHandler",
+    "pageId": "Inventory",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}

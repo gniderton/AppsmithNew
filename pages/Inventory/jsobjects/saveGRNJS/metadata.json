@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "69a80abb79ac426a29eb8838_7c193232-8f8e-4779-bddb-d7c7da1a8ad9",
+  "id": "Inventory_saveGRNJS",
+  "unpublishedCollection": {
+    "name": "saveGRNJS",
+    "pageId": "Inventory",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}

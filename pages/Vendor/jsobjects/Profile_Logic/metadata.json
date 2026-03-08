@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "69a80abb79ac426a29eb8838_4e9d30cc-bfbd-47bb-896b-b0369081759c",
+  "id": "Vendor_Profile_Logic",
+  "unpublishedCollection": {
+    "name": "Profile_Logic",
+    "pageId": "Vendor",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}

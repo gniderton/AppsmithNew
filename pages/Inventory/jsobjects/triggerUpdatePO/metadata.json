@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "69a80abb79ac426a29eb8838_48902c44-feea-46ce-bd26-95a731e33814",
+  "id": "Inventory_triggerUpdatePO",
+  "unpublishedCollection": {
+    "name": "triggerUpdatePO",
+    "pageId": "Inventory",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}

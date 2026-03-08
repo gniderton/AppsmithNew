@@ -1,0 +1,11 @@
+{
+  "vendor_name": {{txtVendorName.value}},
+  "contact_person": {{txtContactPerson.value}},
+  "contact_no": {{txtContactNo.value}},
+  "email": {{txtEmail.value}},
+  "gst": {{txtGST.value}},
+  "pan": {{txtPAN.value}},
+  "bank_name": {{txtBankName.value}},
+  "bank_account_no": {{txtAccountNo.value}},
+  "bank_ifsc": {{txtIFSC.value}}
+}

@@ -1,0 +1,73 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 12,
+  "boxShadow": "none",
+  "defaultOptionValue": "{{ ((options, serverSideFiltering) => (  appsmith.store.preSelectedPO ))(ChoosePo.options, ChoosePo.serverSideFiltering) }}",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "defaultOptionValue"
+    },
+    {
+      "key": "sourceData"
+    }
+  ],
+  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicPropertyPathList": [
+    {
+      "key": "sourceData"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onOptionChange"
+    }
+  ],
+  "isDisabled": false,
+  "isFilterable": true,
+  "isLoading": false,
+  "isRequired": false,
+  "isVisible": true,
+  "key": "jkuot8aukz",
+  "labelAlignment": "left",
+  "labelPosition": "Left",
+  "labelText": "Select PO",
+  "labelTextSize": "0.875rem",
+  "labelWidth": "6",
+  "leftColumn": 0,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 7,
+  "mobileLeftColumn": 0,
+  "mobileRightColumn": 19,
+  "mobileTopRow": 0,
+  "needsErrorInfo": false,
+  "onOptionChange": "{{JSPoOptionChange.onPOSelected();}}",
+  "optionLabel": "label",
+  "optionValue": "value",
+  "originalBottomRow": 5,
+  "originalTopRow": 0,
+  "parentColumnSpace": 6.9375,
+  "parentId": "lciin5swc5",
+  "parentRowSpace": 10,
+  "placeholderText": "Select option",
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 21,
+  "serverSideFiltering": false,
+  "shouldScrollContents": true,
+  "sourceData": "{{ \n  getPOs.data.data\n    .filter(x => Number(x.vendor_id) === Number(vendorDropdownGRN.selectedOptionValue) && x.status === \"Draft\")\n    .map(x => ({ label: x.po_number, value: x.id })) \n}}",
+  "topRow": 8,
+  "type": "SELECT_WIDGET",
+  "version": 1,
+  "widgetId": "uws2myq8tn",
+  "widgetName": "ChoosePo"
+}

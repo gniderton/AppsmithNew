@@ -1,0 +1,73 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 12,
+  "boxShadow": "none",
+  "closeOnSelection": true,
+  "dateFormat": "DD-MM-YYYY",
+  "datePickerType": "DATE_PICKER",
+  "defaultDate": "{{ appsmith.store.poMode === 'CREATE' ? moment() : appsmith.store.selectedPODate }}",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "isDisabled"
+    },
+    {
+      "key": "defaultDate"
+    }
+  ],
+  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicPropertyPathList": [
+    {
+      "key": "defaultDate"
+    },
+    {
+      "key": "isDisabled"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "firstDayOfWeek": 0,
+  "isDisabled": "{{ appsmith.store.poMode !== 'CREATE' }}",
+  "isLoading": false,
+  "isRequired": false,
+  "isVisible": true,
+  "key": "1835dg351c",
+  "label": "Date",
+  "labelAlignment": "left",
+  "labelPosition": "Left",
+  "labelTextSize": "0.875rem",
+  "labelWidth": "6",
+  "leftColumn": 0,
+  "maxDate": "2121-12-31T18:29:00.000Z",
+  "maxDynamicHeight": 9000,
+  "minDate": "1920-12-31T18:30:00.000Z",
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 12,
+  "mobileLeftColumn": 0,
+  "mobileRightColumn": 16,
+  "mobileTopRow": 5,
+  "needsErrorInfo": false,
+  "originalBottomRow": 12,
+  "originalTopRow": 8,
+  "parentColumnSpace": 14.75,
+  "parentId": "yh62fj0hnq",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 21,
+  "shortcuts": false,
+  "shouldScrollContents": true,
+  "timePrecision": "minute",
+  "topRow": 8,
+  "type": "DATE_PICKER_WIDGET2",
+  "version": 2,
+  "widgetId": "knlenxur1t",
+  "widgetName": "DatePicker1"
+}

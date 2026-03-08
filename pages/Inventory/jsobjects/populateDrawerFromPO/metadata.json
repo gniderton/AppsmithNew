@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "69a80abb79ac426a29eb8838_41436378-9ed7-48b7-bf5c-6a2b698ce89d",
+  "id": "Inventory_populateDrawerFromPO",
+  "unpublishedCollection": {
+    "name": "populateDrawerFromPO",
+    "pageId": "Inventory",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}

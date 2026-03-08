@@ -1,0 +1,53 @@
+{
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 6,
+  "bottomRowBeforeCollapse": 10,
+  "counterClosewise": false,
+  "dynamicBindingPathList": [
+    {
+      "key": "fillColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "isVisible"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "isVisible"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "fillColor": "{{appsmith.theme.colors.primaryColor}}",
+  "isCanvas": false,
+  "isIndeterminate": true,
+  "isLoading": false,
+  "isVisible": "{{getDebitNoteLines.isLoading}}",
+  "key": "xs7npha53n",
+  "leftColumn": 0,
+  "mobileBottomRow": 10,
+  "mobileLeftColumn": 1,
+  "mobileRightColumn": 29,
+  "mobileTopRow": 6,
+  "needsErrorInfo": false,
+  "originalBottomRow": 10,
+  "originalTopRow": 6,
+  "parentColumnSpace": 6.9375,
+  "parentId": "upikdaspx7",
+  "parentRowSpace": 10,
+  "progress": 50,
+  "progressType": "linear",
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 63,
+  "showResult": false,
+  "steps": 1,
+  "topRow": 6,
+  "topRowBeforeCollapse": 6,
+  "type": "PROGRESS_WIDGET",
+  "version": 1,
+  "widgetId": "zku67b1i1u",
+  "widgetName": "Progress2"
+}

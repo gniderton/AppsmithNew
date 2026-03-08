@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "69a80abb79ac426a29eb8838_3394279b-94ef-49b0-98b1-d7402caac85d",
+  "id": "Vendor_savePaymentJS",
+  "unpublishedCollection": {
+    "name": "savePaymentJS",
+    "pageId": "Vendor",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}

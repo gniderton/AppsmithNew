@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "69a80abb79ac426a29eb8838_9887e7a4-750b-4e7e-97e1-74416f1eadf9",
+  "id": "Debit Notes_DebitNote_Logic",
+  "unpublishedCollection": {
+    "name": "DebitNote_Logic",
+    "pageId": "Debit Notes",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}

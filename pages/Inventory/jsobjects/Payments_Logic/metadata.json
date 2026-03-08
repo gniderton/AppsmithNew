@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "69a80abb79ac426a29eb8838_7b1e5989-558c-4890-8d72-8205e2ed1f9b",
+  "id": "Inventory_Payments_Logic",
+  "unpublishedCollection": {
+    "name": "Payments_Logic",
+    "pageId": "Inventory",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}

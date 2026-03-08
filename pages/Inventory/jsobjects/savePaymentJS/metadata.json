@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "69a80abb79ac426a29eb8838_a4a93be8-397f-4a61-8b7d-fe74529ca5d9",
+  "id": "Inventory_savePaymentJS",
+  "unpublishedCollection": {
+    "name": "savePaymentJS",
+    "pageId": "Inventory",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}

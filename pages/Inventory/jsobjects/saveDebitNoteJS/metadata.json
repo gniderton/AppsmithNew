@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "69a80abb79ac426a29eb8838_bf0f0437-508a-4dc1-b2db-2fdf2515e598",
+  "id": "Inventory_saveDebitNoteJS",
+  "unpublishedCollection": {
+    "name": "saveDebitNoteJS",
+    "pageId": "Inventory",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}

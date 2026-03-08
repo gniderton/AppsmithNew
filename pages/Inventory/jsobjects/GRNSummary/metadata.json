@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "69a80abb79ac426a29eb8838_8780ff42-8405-41ba-825e-3c8af48aefc3",
+  "id": "Inventory_GRNSummary",
+  "unpublishedCollection": {
+    "name": "GRNSummary",
+    "pageId": "Inventory",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}

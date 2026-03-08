@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "69a80abb79ac426a29eb8838_1c8982df-a4f4-45c6-ba3f-348620dc6bc8",
+  "id": "Vendor_Ledger_Logic",
+  "unpublishedCollection": {
+    "name": "Ledger_Logic",
+    "pageId": "Vendor",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}

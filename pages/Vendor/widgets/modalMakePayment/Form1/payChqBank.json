@@ -1,0 +1,71 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 16,
+  "boxShadow": "none",
+  "defaultOptionValue": "GREEN",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "isDisabled"
+    },
+    {
+      "key": "sourceData"
+    }
+  ],
+  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicPropertyPathList": [
+    {
+      "key": "isDisabled"
+    },
+    {
+      "key": "sourceData"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "isDisabled": "{{ payMode.value !== 'Cheque' }}",
+  "isFilterable": true,
+  "isLoading": false,
+  "isRequired": false,
+  "isVisible": true,
+  "key": "2f14aduwdl",
+  "labelAlignment": "left",
+  "labelPosition": "Left",
+  "labelText": "Source Bank",
+  "labelTextSize": "0.875rem",
+  "labelWidth": "15",
+  "leftColumn": 0,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 12,
+  "mobileLeftColumn": 0,
+  "mobileRightColumn": 20,
+  "mobileTopRow": 5,
+  "needsErrorInfo": false,
+  "optionLabel": "name",
+  "optionValue": "id",
+  "originalBottomRow": 16,
+  "originalTopRow": 12,
+  "parentColumnSpace": 6.5166015625,
+  "parentId": "24en906378",
+  "parentRowSpace": 10,
+  "placeholderText": "Select option",
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 63,
+  "serverSideFiltering": false,
+  "shouldScrollContents": true,
+  "sourceData": "{{getBankAccounts.data}}",
+  "topRow": 12,
+  "type": "SELECT_WIDGET",
+  "version": 1,
+  "widgetId": "8z1ihwxyon",
+  "widgetName": "payChqBank"
+}

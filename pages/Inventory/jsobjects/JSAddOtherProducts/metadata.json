@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "69a80abb79ac426a29eb8838_42bc0f87-3622-40d2-8e55-2bb229bd10d1",
+  "id": "Inventory_JSAddOtherProducts",
+  "unpublishedCollection": {
+    "name": "JSAddOtherProducts",
+    "pageId": "Inventory",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}

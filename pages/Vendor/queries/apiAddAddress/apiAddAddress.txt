@@ -1,0 +1,8 @@
+{
+  "address_line": {{txtNewAddress.value}},
+  "city": {{txtNewCity.value}},
+  "state_code": {{selNewState.value}},
+  "district": {{selNewDistrict.value}},
+  "pin_code": {{txtNewPin.value}},
+  "is_default": {{chkNewDefault.value}}
+}

@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "69a80abb79ac426a29eb8838_8026f8b5-9fba-4670-88fb-02682a7cb2a1",
+  "id": "Inventory_PopulateProductsTableByVendors",
+  "unpublishedCollection": {
+    "name": "PopulateProductsTableByVendors",
+    "pageId": "Inventory",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}

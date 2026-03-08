@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "69a80abb79ac426a29eb8838_bf767ef7-aa80-4162-9a4b-a31cee550b05",
+  "id": "Inventory_Vendor_Logic",
+  "unpublishedCollection": {
+    "name": "Vendor_Logic",
+    "pageId": "Inventory",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}

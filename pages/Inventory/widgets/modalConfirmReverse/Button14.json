@@ -1,0 +1,59 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 25,
+  "boxShadow": "none",
+  "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "buttonStyle": "PRIMARY_BUTTON",
+  "buttonVariant": "PRIMARY",
+  "disabledWhenInvalid": false,
+  "dynamicBindingPathList": [
+    {
+      "key": "buttonColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "isDisabled"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "isDisabled"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "isDefaultClickDisabled": true,
+  "isDisabled": "{{ inpSecurityCheck.text !== \"REVERSE\" }}",
+  "isLoading": false,
+  "isVisible": true,
+  "key": "vf5n0ppd3t",
+  "leftColumn": 41,
+  "minWidth": 120,
+  "mobileBottomRow": 22,
+  "mobileLeftColumn": 47,
+  "mobileRightColumn": 63,
+  "mobileTopRow": 18,
+  "needsErrorInfo": false,
+  "onClick": "{{apiReverseGRN.run().then(() => {\n  closeModal(modalConfirmReverse.name);\n  getGRNList.run().then(apiReverseGRN.data);\n});}}",
+  "originalBottomRow": 25,
+  "originalTopRow": 21,
+  "parentId": "jpc9sqipgu",
+  "placement": "CENTER",
+  "recaptchaType": "V3",
+  "renderMode": "CANVAS",
+  "resetFormOnClick": false,
+  "responsiveBehavior": "hug",
+  "rightColumn": 60,
+  "text": "Confirm",
+  "topRow": 21,
+  "type": "BUTTON_WIDGET",
+  "version": 1,
+  "widgetId": "0hpc1eo242",
+  "widgetName": "Button14"
+}

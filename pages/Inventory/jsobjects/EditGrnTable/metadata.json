@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "69a80abb79ac426a29eb8838_4aa53311-c6e1-4c60-a7b3-5ced27d1a755",
+  "id": "Inventory_EditGrnTable",
+  "unpublishedCollection": {
+    "name": "EditGrnTable",
+    "pageId": "Inventory",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}

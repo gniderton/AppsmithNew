@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "69a80abb79ac426a29eb8838_8c3f98d6-7648-4b72-b37d-3ccbc75f5c07",
+  "id": "Inventory_savePOLine",
+  "unpublishedCollection": {
+    "name": "savePOLine",
+    "pageId": "Inventory",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}
