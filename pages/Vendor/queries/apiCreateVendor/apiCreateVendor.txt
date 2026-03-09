@@ -1,0 +1,15 @@
+{
+  "vendor_code": "", // Leave empty for Auto-Generation
+  "vendor_name": "{{ inpNewVendorName.value }}",
+  "gst": "{{ inpNewVendorGST.value }}",
+  "pan": "{{ inpNewVendorPan.value }}",
+  "contact_no": "{{ inpNewVendorPhone.value }}",
+  "email": "{{ inpNewVendorEmail.value }}",
+  "address_line1": "{{ inpNewVendorAddress1.value }}",
+  "state": "{{ inpNewVendorState.value }}",
+  "district": "{{ inpNewVendorDistrict.value }}",
+  "pin_code": "{{ inpNewVendorPin.value }}",
+  "bank_name": "{{ inpNewVendorBankName.value }}",
+  "bank_account_no": "{{ inpNewVendorBankAcc.value }}",
+  "bank_ifsc": "{{ inpNewVendorIFSC.value }}"
+}

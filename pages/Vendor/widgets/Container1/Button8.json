@@ -11,7 +11,11 @@
       "key": "buttonColor"
     }
   ],
-  "dynamicTriggerPathList": [],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
   "isDefaultClickDisabled": true,
   "isDisabled": false,
   "isLoading": false,
@@ -24,6 +28,7 @@
   "mobileRightColumn": 64,
   "mobileTopRow": 0,
   "needsErrorInfo": false,
+  "onClick": "{{showModal(ModalCreateVendor.name);}}",
   "originalBottomRow": 111,
   "originalTopRow": 107,
   "parentColumnSpace": 19.9375,

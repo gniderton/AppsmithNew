@@ -4,7 +4,7 @@
   "bottomRow": 64,
   "boxShadow": "none",
   "canEscapeKeyClose": true,
-  "canOutsideClickClose": true,
+  "canOutsideClickClose": false,
   "children": [
     {
       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
@@ -57,6 +57,7 @@
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicTriggerPathList": [],
   "height": 640,
   "isCanvas": true,
   "isLoading": false,

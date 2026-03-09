@@ -78,7 +78,8 @@ export default {
 			// Post-save actions
 			storeValue('lastDNNumber', response.dn_number);
 			closeModal(modalDebitNote.name);
-
+			getDebitNotes.run();
+			
 		} catch (error) {
 			showAlert("Error: " + error.message, "error");
 		}

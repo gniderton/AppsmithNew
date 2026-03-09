@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "69a80abb79ac426a29eb8838_4f653f3f-78c6-4442-9a95-6c2597808e6a",
+  "id": "Inventory_PDF_Generator",
+  "unpublishedCollection": {
+    "name": "PDF_Generator",
+    "pageId": "Inventory",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}

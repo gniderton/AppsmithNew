@@ -50,16 +50,18 @@
     "created_at",
     "vendor_id",
     "customColumn1",
-    "customColumn2"
+    "customColumn2",
+    "customColumn3"
   ],
-  "columnUpdatedAt": 1772775375465,
+  "columnUpdatedAt": 1773043222357,
   "columnWidthMap": {
     "customColumn1": 88,
+    "customColumn2": 85,
     "po_date": 98,
     "po_number": 169,
     "status": 106,
     "total_qty": 134,
-    "vendor_name": 478
+    "vendor_name": 284
   },
   "customIsLoading": false,
   "customIsLoadingValue": "",
@@ -141,6 +143,15 @@
     },
     {
       "key": "primaryColumns.customColumn2.isCellVisible"
+    },
+    {
+      "key": "primaryColumns.customColumn3.buttonColor"
+    },
+    {
+      "key": "primaryColumns.customColumn3.borderRadius"
+    },
+    {
+      "key": "primaryColumns.customColumn3.boxShadow"
     }
   ],
   "dynamicPropertyPathList": [
@@ -149,6 +160,9 @@
     },
     {
       "key": "primaryColumns.customColumn2.isCellVisible"
+    },
+    {
+      "key": "primaryColumns.customColumn3.onClick"
     }
   ],
   "dynamicTriggerPathList": [
@@ -157,6 +171,9 @@
     },
     {
       "key": "primaryColumns.customColumn2.onClick"
+    },
+    {
+      "key": "primaryColumns.customColumn3.onClick"
     }
   ],
   "enableClientSideSearch": true,
@@ -331,6 +348,46 @@
       "verticalAlignment": "CENTER",
       "width": 150
     },
+    "customColumn3": {
+      "alias": "PDF",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "borderRadius": "{{poListTable.processedTableData.map((currentRow, currentIndex) => ( (appsmith.theme.borderRadius.appBorderRadius)))}}",
+      "boxShadow": "{{poListTable.processedTableData.map((currentRow, currentIndex) => ( \"none\"))}}",
+      "buttonColor": "{{poListTable.processedTableData.map((currentRow, currentIndex) => ( (appsmith.theme.colors.primaryColor)))}}",
+      "buttonStyle": "rgb(3, 179, 101)",
+      "buttonVariant": "TERTIARY",
+      "columnType": "iconButton",
+      "computedValue": "",
+      "currencyCode": "USD",
+      "customAlias": "",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "horizontalAlignment": "LEFT",
+      "iconName": "document",
+      "id": "customColumn3",
+      "index": 10,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": true,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": true,
+      "label": "PDF",
+      "labelColor": "#FFFFFF",
+      "notation": "standard",
+      "onClick": "{{ \n  getPOById.run().then(() => {\n    PDF_Generator.previewPO(getPOById.data);\n  });\n}}\n",
+      "originalId": "customColumn3",
+      "sticky": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
     "grand_total": {
       "alias": "grand_total",
       "allowCellWrapping": false,
@@ -387,7 +444,7 @@
       "isDiscardVisible": true,
       "isEditable": false,
       "isSaveVisible": true,
-      "isVisible": true,
+      "isVisible": false,
       "label": "gst",
       "notation": "standard",
       "originalId": "gst",
@@ -762,7 +819,7 @@
       "isDiscardVisible": true,
       "isEditable": false,
       "isSaveVisible": true,
-      "isVisible": true,
+      "isVisible": false,
       "label": "total_taxable",
       "notation": "standard",
       "originalId": "total_taxable",

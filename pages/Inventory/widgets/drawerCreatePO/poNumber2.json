@@ -3,7 +3,7 @@
   "animateLoading": true,
   "autoFocus": false,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 8,
+  "bottomRow": 9,
   "boxShadow": "none",
   "defaultText": "{{ appsmith.store.poMode === 'CREATE' ? (\"GD-CLT-PO-26-\" + (getNextPO.data.next_number || \"\")) : appsmith.store.selectedPONumber }}",
   "dynamicBindingPathList": [
@@ -41,7 +41,7 @@
   "mobileRightColumn": 7.000000000000001,
   "mobileTopRow": 4,
   "needsErrorInfo": false,
-  "originalBottomRow": 8,
+  "originalBottomRow": 9,
   "originalTopRow": 4,
   "parentColumnSpace": 19.228125,
   "parentId": "yh62fj0hnq",
