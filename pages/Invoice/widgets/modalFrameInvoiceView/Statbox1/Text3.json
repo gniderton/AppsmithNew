@@ -11,9 +11,13 @@
     },
     {
       "key": "borderRadius"
+    },
+    {
+      "key": "text"
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicTriggerPathList": [],
   "fontFamily": "{{appsmith.theme.fontFamily.appFont}}",
   "fontSize": "0.875rem",
   "fontStyle": "BOLD",
@@ -37,10 +41,10 @@
   "responsiveBehavior": "fill",
   "rightColumn": 37,
   "shouldTruncate": false,
-  "text": "21% more than last month",
+  "text": "Balance:{{appsmith.store.varInvoiceViewData.balance_amount}}",
   "textAlign": "LEFT",
   "textColor": "#03B365",
-  "topRow": 8,
+  "topRow": 9,
   "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
   "type": "TEXT_WIDGET",
   "version": 1,

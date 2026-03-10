@@ -8,13 +8,22 @@
     },
     {
       "key": "borderRadius"
+    },
+    {
+      "key": "isVisible"
     }
   ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "isVisible"
+    }
+  ],
+  "dynamicTriggerPathList": [],
   "fillColor": "{{appsmith.theme.colors.primaryColor}}",
   "isCanvas": false,
   "isIndeterminate": false,
   "isLoading": false,
-  "isVisible": true,
+  "isVisible": "{{getInvoices.isLoading}}",
   "key": "xy115ridaa",
   "leftColumn": 0,
   "mobileBottomRow": 10,
@@ -33,7 +42,7 @@
   "responsiveBehavior": "fill",
   "rightColumn": 64,
   "showResult": false,
-  "steps": 1,
+  "steps": "1",
   "topRow": 9,
   "type": "PROGRESS_WIDGET",
   "version": 1,

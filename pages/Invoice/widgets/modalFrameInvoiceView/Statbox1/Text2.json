@@ -11,9 +11,13 @@
     },
     {
       "key": "borderRadius"
+    },
+    {
+      "key": "text"
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicTriggerPathList": [],
   "fontFamily": "{{appsmith.theme.fontFamily.appFont}}",
   "fontSize": "1.25rem",
   "fontStyle": "BOLD",
@@ -29,13 +33,15 @@
   "mobileRightColumn": 37,
   "mobileTopRow": 4,
   "needsErrorInfo": false,
+  "originalBottomRow": 8,
+  "originalTopRow": 4,
   "overflow": "NONE",
   "parentId": "ugh5iocjjb",
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
   "rightColumn": 37,
   "shouldTruncate": false,
-  "text": "2.6 M",
+  "text": "Paid:{{appsmith.store.varInvoiceViewData.paid_amount}}",
   "textAlign": "LEFT",
   "textColor": "#231F20",
   "topRow": 4,

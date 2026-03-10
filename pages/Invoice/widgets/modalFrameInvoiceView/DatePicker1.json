@@ -2,30 +2,39 @@
   "accentColor": "{{appsmith.theme.colors.primaryColor}}",
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 7,
+  "bottomRow": 4,
   "boxShadow": "none",
   "closeOnSelection": true,
-  "dateFormat": "YYYY-MM-DD HH:mm",
+  "dateFormat": "DD-MM-YYYY",
   "datePickerType": "DATE_PICKER",
-  "defaultDate": "2026-03-10T11:03:57.995Z",
+  "defaultDate": "{{appsmith.store.varInvoiceViewData.invoice_date}}",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
     },
     {
       "key": "borderRadius"
+    },
+    {
+      "key": "defaultDate"
     }
   ],
-  "dynamicHeight": "FIXED",
+  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicPropertyPathList": [
+    {
+      "key": "defaultDate"
+    }
+  ],
+  "dynamicTriggerPathList": [],
   "firstDayOfWeek": 0,
-  "isDisabled": false,
+  "isDisabled": true,
   "isLoading": false,
   "isRequired": false,
   "isVisible": true,
   "key": "ojir7br2zu",
-  "label": "Label",
+  "label": "Date",
   "labelAlignment": "left",
-  "labelPosition": "Top",
+  "labelPosition": "Left",
   "labelTextSize": "0.875rem",
   "labelWidth": 5,
   "leftColumn": 0,
@@ -39,6 +48,8 @@
   "mobileRightColumn": 21,
   "mobileTopRow": 0,
   "needsErrorInfo": false,
+  "originalBottomRow": 7,
+  "originalTopRow": 0,
   "parentColumnSpace": 12.09375,
   "parentId": "jx8tp1ofhe",
   "parentRowSpace": 10,
@@ -46,6 +57,7 @@
   "responsiveBehavior": "fill",
   "rightColumn": 18,
   "shortcuts": false,
+  "shouldScrollContents": true,
   "timePrecision": "minute",
   "topRow": 0,
   "type": "DATE_PICKER_WIDGET2",

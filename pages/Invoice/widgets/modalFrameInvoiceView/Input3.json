@@ -3,28 +3,32 @@
   "animateLoading": true,
   "autoFocus": false,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 28,
+  "bottomRow": 16,
   "boxShadow": "none",
-  "defaultText": "",
+  "defaultText": "{{appsmith.store.varInvoiceViewData.gstin}}",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
     },
     {
       "key": "borderRadius"
+    },
+    {
+      "key": "defaultText"
     }
   ],
-  "dynamicHeight": "FIXED",
+  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicTriggerPathList": [],
   "iconAlign": "left",
   "inputType": "TEXT",
-  "isDisabled": false,
+  "isDisabled": true,
   "isLoading": false,
   "isRequired": false,
   "isVisible": true,
   "key": "2bltzpcvqf",
-  "label": "Label",
+  "label": "GST",
   "labelAlignment": "left",
-  "labelPosition": "Top",
+  "labelPosition": "Left",
   "labelStyle": "",
   "labelTextSize": "0.875rem",
   "labelWidth": 5,
@@ -37,6 +41,8 @@
   "mobileRightColumn": 21,
   "mobileTopRow": 21,
   "needsErrorInfo": false,
+  "originalBottomRow": 17,
+  "originalTopRow": 13,
   "parentColumnSpace": 12.09375,
   "parentId": "jx8tp1ofhe",
   "parentRowSpace": 10,
@@ -44,8 +50,9 @@
   "resetOnSubmit": true,
   "responsiveBehavior": "fill",
   "rightColumn": 18,
+  "shouldScrollContents": true,
   "showStepArrows": false,
-  "topRow": 21,
+  "topRow": 12,
   "type": "INPUT_WIDGET_V2",
   "version": 2,
   "widgetId": "bnopyog0bn",

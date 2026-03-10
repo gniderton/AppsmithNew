@@ -1,15 +1,15 @@
 {
   "animateLoading": true,
-  "backgroundColor": "white",
+  "backgroundColor": "{{ \n  Number(tblSales.triggeredRow.balance_amount) <= 0 \n    ? \"#22c55e\" // Green for Paid\n    : (Math.floor((new Date() - new Date(tblSales.triggeredRow.invoice_date)) / (1000 * 60 * 60 * 24)) > 30 \n        ? \"#ef4444\" // Red if older than 30 days\n        : \"transparent\") \n}}",
   "borderColor": "#E0DEDE",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": "1",
-  "bottomRow": 15,
+  "bottomRow": 19,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "children": [
     {
       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-      "bottomRow": 150,
+      "bottomRow": 190,
       "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
       "canExtend": false,
       "containerStyle": "none",
@@ -55,10 +55,19 @@
       "key": "borderRadius"
     },
     {
+      "key": "backgroundColor"
+    },
+    {
       "key": "boxShadow"
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicPropertyPathList": [
+    {
+      "key": "backgroundColor"
+    }
+  ],
+  "dynamicTriggerPathList": [],
   "flexVerticalAlignment": "stretch",
   "isCanvas": true,
   "isLoading": false,
@@ -72,7 +81,7 @@
   "mobileRightColumn": 48,
   "mobileTopRow": 13,
   "needsErrorInfo": false,
-  "originalBottomRow": 15,
+  "originalBottomRow": 19,
   "originalTopRow": 0,
   "parentColumnSpace": 12.09375,
   "parentId": "jx8tp1ofhe",

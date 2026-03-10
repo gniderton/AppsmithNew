@@ -3,28 +3,32 @@
   "animateLoading": true,
   "autoFocus": false,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 14,
+  "bottomRow": 8,
   "boxShadow": "none",
-  "defaultText": "",
+  "defaultText": "{{appsmith.store.varInvoiceViewData.invoice_number}}",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
     },
     {
       "key": "borderRadius"
+    },
+    {
+      "key": "defaultText"
     }
   ],
-  "dynamicHeight": "FIXED",
+  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicTriggerPathList": [],
   "iconAlign": "left",
   "inputType": "TEXT",
-  "isDisabled": false,
+  "isDisabled": true,
   "isLoading": false,
   "isRequired": false,
   "isVisible": true,
   "key": "2bltzpcvqf",
-  "label": "Label",
+  "label": "Invoice No",
   "labelAlignment": "left",
-  "labelPosition": "Top",
+  "labelPosition": "Left",
   "labelStyle": "",
   "labelTextSize": "0.875rem",
   "labelWidth": 5,
@@ -37,6 +41,8 @@
   "mobileRightColumn": 21,
   "mobileTopRow": 1,
   "needsErrorInfo": false,
+  "originalBottomRow": 9,
+  "originalTopRow": 4,
   "parentColumnSpace": 12.09375,
   "parentId": "jx8tp1ofhe",
   "parentRowSpace": 10,
@@ -44,8 +50,9 @@
   "resetOnSubmit": true,
   "responsiveBehavior": "fill",
   "rightColumn": 18,
+  "shouldScrollContents": true,
   "showStepArrows": false,
-  "topRow": 7,
+  "topRow": 4,
   "type": "INPUT_WIDGET_V2",
   "version": 2,
   "widgetId": "lv8cgrs9qa",

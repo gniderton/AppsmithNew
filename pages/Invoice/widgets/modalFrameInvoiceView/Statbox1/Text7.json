@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 8,
+  "bottomRow": 10,
   "dynamicBindingPathList": [
     {
       "key": "truncateButtonColor"
@@ -11,37 +11,43 @@
     },
     {
       "key": "borderRadius"
+    },
+    {
+      "key": "text"
     }
   ],
-  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicHeight": "FIXED",
+  "dynamicTriggerPathList": [],
   "fontFamily": "{{appsmith.theme.fontFamily.appFont}}",
-  "fontSize": "1.25rem",
+  "fontSize": "1rem",
   "fontStyle": "BOLD",
   "isLoading": false,
   "isVisible": true,
-  "key": "dakeeyt8sf",
-  "leftColumn": 1,
+  "key": "gazvirbp4x",
+  "leftColumn": 38,
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 4,
   "minWidth": 450,
-  "mobileBottomRow": 8,
-  "mobileLeftColumn": 1,
-  "mobileRightColumn": 37,
-  "mobileTopRow": 4,
+  "mobileBottomRow": 6,
+  "mobileLeftColumn": 38,
+  "mobileRightColumn": 54,
+  "mobileTopRow": 2,
   "needsErrorInfo": false,
   "overflow": "NONE",
-  "parentId": "fzh3thb697",
+  "parentColumnSpace": 4.794970703124999,
+  "parentId": "ugh5iocjjb",
+  "parentRowSpace": 10,
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
-  "rightColumn": 37,
+  "rightColumn": 63,
   "shouldTruncate": false,
-  "text": "2.6 M",
+  "text": "{{ \n  Number(tblSales.triggeredRow.balance_amount) <= 0 \n    ? \"Paid\" \n    : Math.floor((new Date() - new Date(tblSales.triggeredRow.invoice_date)) / (1000 * 60 * 60 * 24)) + \" Days\"\n}}",
   "textAlign": "LEFT",
   "textColor": "#231F20",
-  "topRow": 4,
+  "topRow": 2,
   "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
   "type": "TEXT_WIDGET",
   "version": 1,
-  "widgetId": "dyhae0rn3x",
-  "widgetName": "Text5"
+  "widgetId": "sdr49g3bnd",
+  "widgetName": "Text7"
 }
