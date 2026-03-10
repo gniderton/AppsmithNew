@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "69a80abb79ac426a29eb8838_044d6dab-dd32-43a5-821e-e3757d7e8e58",
+  "id": "Invoice_OpenModal",
+  "unpublishedCollection": {
+    "name": "OpenModal",
+    "pageId": "Invoice",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}

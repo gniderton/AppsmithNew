@@ -1,0 +1,61 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 5,
+  "defaultSelectedValues": "",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "options"
+    }
+  ],
+  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicPropertyPathList": [
+    {
+      "key": "options"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "flexVerticalAlignment": "start",
+  "isDisabled": false,
+  "isInline": true,
+  "isLoading": false,
+  "isRequired": false,
+  "isSelectAll": true,
+  "isVisible": true,
+  "key": "84fdrrwwxh",
+  "labelAlignment": "left",
+  "labelPosition": "Left",
+  "labelStyle": "BOLD",
+  "labelText": "Delivery Status",
+  "labelTextSize": "0.875rem",
+  "labelWidth": "7",
+  "leftColumn": 0,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "mobileBottomRow": 7,
+  "mobileLeftColumn": 0,
+  "mobileRightColumn": 23,
+  "mobileTopRow": 1,
+  "needsErrorInfo": false,
+  "optionAlignment": "flex-start",
+  "options": "{{ \n  [...new Set(getInvoices.data.map(item => item.delivery_status))]\n    .filter(Boolean)\n    .map(status => ({ label: String(status), value: String(status) })) \n}}",
+  "originalBottomRow": 5,
+  "originalTopRow": 1,
+  "parentColumnSpace": 19.9375,
+  "parentId": "fbllijqwaa",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "rightColumn": 32,
+  "topRow": 1,
+  "type": "CHECKBOX_GROUP_WIDGET",
+  "version": 2,
+  "widgetId": "344yiibsyh",
+  "widgetName": "CheckboxGroupDel"
+}

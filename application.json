@@ -40,6 +40,18 @@
     {
       "id": "Debit Notes",
       "isDefault": false
+    },
+    {
+      "id": "Items",
+      "isDefault": false
+    },
+    {
+      "id": "Sales",
+      "isDefault": false
+    },
+    {
+      "id": "Invoice",
+      "isDefault": false
     }
   ],
   "unpublishedAppLayout": {

@@ -1,0 +1,61 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 9,
+  "defaultSelectedValues": "",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "options"
+    }
+  ],
+  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicPropertyPathList": [
+    {
+      "key": "options"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "flexVerticalAlignment": "start",
+  "isDisabled": false,
+  "isInline": true,
+  "isLoading": false,
+  "isRequired": false,
+  "isSelectAll": true,
+  "isVisible": true,
+  "key": "tmib3rt93p",
+  "labelAlignment": "left",
+  "labelPosition": "Left",
+  "labelStyle": "BOLD",
+  "labelText": "Payment Status",
+  "labelTextSize": "0.875rem",
+  "labelWidth": "7",
+  "leftColumn": 0,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "mobileBottomRow": 12,
+  "mobileLeftColumn": 0,
+  "mobileRightColumn": 23,
+  "mobileTopRow": 6,
+  "needsErrorInfo": false,
+  "optionAlignment": "flex-start",
+  "options": "{{ \n  [...new Set(getInvoices.data.map(item => item.invoice_status))]\n    .filter(Boolean) // This removes null, undefined, or empty strings\n    .map(status => ({ \n      label: String(status), // Forces the value to be a string\n      value: String(status) \n    })) \n}}",
+  "originalBottomRow": 9,
+  "originalTopRow": 5,
+  "parentColumnSpace": 19.9375,
+  "parentId": "fbllijqwaa",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "rightColumn": 32,
+  "topRow": 5,
+  "type": "CHECKBOX_GROUP_WIDGET",
+  "version": 2,
+  "widgetId": "zv266i6scv",
+  "widgetName": "CheckboxGroupInv"
+}

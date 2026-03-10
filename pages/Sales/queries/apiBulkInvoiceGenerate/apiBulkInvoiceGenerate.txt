@@ -1,0 +1,5 @@
+{
+  "order_ids": {{this.params.order_ids}},
+  "transit_stock": {{this.params.transit_stock}},
+  "allow_negative_stock": {{this.params.allow_negative_stock}}
+}

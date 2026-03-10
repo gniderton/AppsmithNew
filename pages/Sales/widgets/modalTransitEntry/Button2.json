@@ -1,0 +1,50 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 9,
+  "boxShadow": "none",
+  "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "buttonVariant": "PRIMARY",
+  "disabledWhenInvalid": false,
+  "dynamicBindingPathList": [
+    {
+      "key": "buttonColor"
+    },
+    {
+      "key": "borderRadius"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "isDefaultClickDisabled": true,
+  "isDisabled": false,
+  "isLoading": false,
+  "isVisible": true,
+  "key": "xskg442zsr",
+  "leftColumn": 51,
+  "minWidth": 120,
+  "mobileBottomRow": 9,
+  "mobileLeftColumn": 48,
+  "mobileRightColumn": 64,
+  "mobileTopRow": 5,
+  "needsErrorInfo": false,
+  "onClick": "{{Transit_Actions.openTransitEntry();\nshowModal(modalStockAllocation.name);}}",
+  "parentColumnSpace": 15.875,
+  "parentId": "rc07gp8c9u",
+  "parentRowSpace": 10,
+  "placement": "CENTER",
+  "recaptchaType": "V3",
+  "renderMode": "CANVAS",
+  "resetFormOnClick": false,
+  "responsiveBehavior": "hug",
+  "rightColumn": 64,
+  "text": "Update Transit Stock",
+  "topRow": 5,
+  "type": "BUTTON_WIDGET",
+  "version": 1,
+  "widgetId": "ch6jk89zax",
+  "widgetName": "Button2"
+}
