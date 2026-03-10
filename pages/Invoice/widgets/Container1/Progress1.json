@@ -21,7 +21,7 @@
   "dynamicTriggerPathList": [],
   "fillColor": "{{appsmith.theme.colors.primaryColor}}",
   "isCanvas": false,
-  "isIndeterminate": false,
+  "isIndeterminate": true,
   "isLoading": false,
   "isVisible": "{{getInvoices.isLoading}}",
   "key": "xy115ridaa",
