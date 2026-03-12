@@ -4,7 +4,7 @@
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "bottomRow": 28,
   "boxShadow": "none",
-  "defaultOptionValue": "GREEN",
+  "defaultOptionValue": "",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
@@ -55,6 +55,7 @@
   "mobileRightColumn": 20,
   "mobileTopRow": 40,
   "needsErrorInfo": false,
+  "onOptionChange": "{{}}",
   "optionLabel": "{{selBankRefVendor.sourceData.map((item) => (item.id + ' | ' + item.debit_amount + ' | ' + item.consumed_amount))}}",
   "optionValue": "id",
   "originalBottomRow": 28,

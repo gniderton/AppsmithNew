@@ -64,10 +64,12 @@ export default {
       
       closeModal('modalMakePayment');
       showAlert("Payment Recorded Successfully", "success");
+			showModal(drawerVendorProfile.name);
       
       // Refresh Ledger and Pending Bills in parallel
       await Promise.all([
-        getVendorLedger.run()
+        getVendorLedger.run(),
+				q_getUnconsumedDebits.run()
       ]);
       
     } catch (e) {
