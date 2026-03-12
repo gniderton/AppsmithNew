@@ -41,7 +41,7 @@
   "responsiveBehavior": "fill",
   "rightColumn": 37,
   "shouldTruncate": false,
-  "text": "Paid:{{appsmith.store.varInvoiceViewData.paid_amount}}",
+  "text": "Paid:{{tblSales.triggeredRow.paid_amount}}",
   "textAlign": "LEFT",
   "textColor": "#231F20",
   "topRow": 4,

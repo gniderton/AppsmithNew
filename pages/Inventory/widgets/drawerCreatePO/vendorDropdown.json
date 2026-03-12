@@ -2,7 +2,7 @@
   "accentColor": "{{appsmith.theme.colors.primaryColor}}",
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 13,
+  "bottomRow": 16,
   "boxShadow": "none",
   "defaultOptionValue": "GREEN",
   "dynamicBindingPathList": [
@@ -74,7 +74,7 @@
   "serverSideFiltering": false,
   "shouldScrollContents": true,
   "sourceData": "{{ Vendors.data.data.map(v => ({ label: v.vendor_name, value: v.id })) }}",
-  "topRow": 13,
+  "topRow": 12,
   "type": "SELECT_WIDGET",
   "version": 1,
   "widgetId": "duhdguehvb",

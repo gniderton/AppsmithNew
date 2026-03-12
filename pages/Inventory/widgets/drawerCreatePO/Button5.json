@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 5,
+  "bottomRow": 13,
   "bottomRowBeforeCollapse": 13,
   "boxShadow": "none",
   "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
@@ -53,7 +53,7 @@
   "responsiveBehavior": "hug",
   "rightColumn": 62,
   "text": "Update PO",
-  "topRow": 5,
+  "topRow": 9,
   "topRowBeforeCollapse": 9,
   "type": "BUTTON_WIDGET",
   "version": 1,

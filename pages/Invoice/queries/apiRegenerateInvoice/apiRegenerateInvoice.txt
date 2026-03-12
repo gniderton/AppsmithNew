@@ -1,0 +1,5 @@
+{
+  "sales_order_id": {{appsmith.store.varEditingSOParams.sales_order_id}},
+  "original_invoice_number": {{appsmith.store.varEditingSOParams.original_invoice_number}},
+  "original_invoice_date": {{appsmith.store.varEditingSOParams.original_invoice_date}}
+}

@@ -1,9 +1,11 @@
 {
   "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "allowSelectAll": true,
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 9,
-  "defaultSelectedValues": "",
+  "bottomRow": 18,
+  "boxShadow": "none",
+  "defaultOptionValue": "",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
@@ -12,50 +14,53 @@
       "key": "borderRadius"
     },
     {
-      "key": "options"
+      "key": "sourceData"
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
   "dynamicPropertyPathList": [
     {
-      "key": "options"
+      "key": "sourceData"
     }
   ],
   "dynamicTriggerPathList": [],
-  "flexVerticalAlignment": "start",
   "isDisabled": false,
-  "isInline": true,
+  "isFilterable": true,
   "isLoading": false,
   "isRequired": false,
-  "isSelectAll": true,
   "isVisible": true,
-  "key": "tmib3rt93p",
+  "key": "gm457has9c",
   "labelAlignment": "left",
-  "labelPosition": "Left",
-  "labelStyle": "BOLD",
+  "labelPosition": "Top",
   "labelText": "Payment Status",
   "labelTextSize": "0.875rem",
   "labelWidth": "7",
-  "leftColumn": 0,
+  "leftColumn": 13,
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 4,
-  "mobileBottomRow": 12,
-  "mobileLeftColumn": 0,
-  "mobileRightColumn": 23,
-  "mobileTopRow": 6,
+  "minWidth": 450,
+  "mobileBottomRow": 9,
+  "mobileLeftColumn": 32,
+  "mobileRightColumn": 52,
+  "mobileTopRow": 2,
   "needsErrorInfo": false,
-  "optionAlignment": "flex-start",
-  "options": "{{ \n  [...new Set(getInvoices.data.map(item => item.invoice_status))]\n    .filter(Boolean) // This removes null, undefined, or empty strings\n    .map(status => ({ \n      label: String(status), // Forces the value to be a string\n      value: String(status) \n    })) \n}}",
-  "originalBottomRow": 9,
-  "originalTopRow": 5,
+  "optionLabel": "label",
+  "optionValue": "value",
+  "originalBottomRow": 18,
+  "originalTopRow": 11,
   "parentColumnSpace": 19.9375,
   "parentId": "fbllijqwaa",
   "parentRowSpace": 10,
+  "placeholderText": "Select option(s)",
   "renderMode": "CANVAS",
-  "rightColumn": 32,
-  "topRow": 5,
-  "type": "CHECKBOX_GROUP_WIDGET",
-  "version": 2,
-  "widgetId": "zv266i6scv",
+  "responsiveBehavior": "fill",
+  "rightColumn": 26,
+  "serverSideFiltering": false,
+  "shouldScrollContents": true,
+  "sourceData": "{{ \n  [...new Set(getInvoices.data.map(item => item.invoice_status))]\n    .filter(Boolean) // This removes null, undefined, or empty strings\n    .map(status => ({ \n      label: String(status), // Forces the value to be a string\n      value: String(status) \n    })) \n}}",
+  "topRow": 11,
+  "type": "MULTI_SELECT_WIDGET_V2",
+  "version": 1,
+  "widgetId": "8qmj3jua7t",
   "widgetName": "CheckboxGroupInv"
 }

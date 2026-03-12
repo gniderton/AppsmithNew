@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "69a80abb79ac426a29eb8838_62e0dae5-5225-4678-ad66-4384fc40bc94",
+  "id": "Sales Order_TransitTableEdit",
+  "unpublishedCollection": {
+    "name": "TransitTableEdit",
+    "pageId": "Sales Order",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}

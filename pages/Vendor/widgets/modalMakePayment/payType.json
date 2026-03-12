@@ -4,7 +4,7 @@
   "animateLoading": true,
   "bottomRow": 7,
   "boxShadow": "none",
-  "defaultOptionValue": "Y",
+  "defaultOptionValue": "PAYMENT",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"

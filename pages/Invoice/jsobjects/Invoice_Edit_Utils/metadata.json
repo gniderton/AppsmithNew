@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "69a80abb79ac426a29eb8838_1a4522db-e076-465b-b0d1-9ad7efe31699",
+  "id": "Invoice_Invoice_Edit_Utils",
+  "unpublishedCollection": {
+    "name": "Invoice_Edit_Utils",
+    "pageId": "Invoice",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}
