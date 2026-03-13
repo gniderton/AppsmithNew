@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 4,
+  "bottomRow": 5,
   "boxShadow": "none",
   "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
   "buttonVariant": "TERTIARY",
@@ -11,6 +11,17 @@
     },
     {
       "key": "borderRadius"
+    },
+    {
+      "key": "isDisabled"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "onClick"
+    },
+    {
+      "key": "isDisabled"
     }
   ],
   "dynamicTriggerPathList": [
@@ -18,27 +29,28 @@
       "key": "onClick"
     }
   ],
-  "iconName": "cross",
-  "iconSize": 24,
-  "isDisabled": false,
+  "iconName": "edit",
+  "isDisabled": "{{ appsmith.store.isEditMode }}",
   "isLoading": false,
   "isVisible": true,
   "key": "y6dejaojrm",
-  "leftColumn": 59,
+  "leftColumn": 41,
   "minWidth": 50,
-  "mobileBottomRow": 4,
-  "mobileLeftColumn": 58,
-  "mobileRightColumn": 64,
-  "mobileTopRow": 0,
+  "mobileBottomRow": 5,
+  "mobileLeftColumn": 41,
+  "mobileRightColumn": 45,
+  "mobileTopRow": 1,
   "needsErrorInfo": false,
-  "onClick": "{{closeModal(ModalProduct.name).then(() => {});}}",
+  "onClick": "{{ storeValue('isEditMode', true) }}",
+  "parentColumnSpace": 6.65625,
   "parentId": "uqlqubolwf",
+  "parentRowSpace": 10,
   "renderMode": "CANVAS",
   "responsiveBehavior": "hug",
-  "rightColumn": 64,
-  "topRow": 0,
+  "rightColumn": 45,
+  "topRow": 1,
   "type": "ICON_BUTTON_WIDGET",
   "version": 1,
-  "widgetId": "nhjm8yt23y",
-  "widgetName": "IconButton1"
+  "widgetId": "ybevjnldw7",
+  "widgetName": "IconButton2"
 }
