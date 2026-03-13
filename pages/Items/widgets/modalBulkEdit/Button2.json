@@ -1,0 +1,55 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 10,
+  "boxShadow": "none",
+  "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "buttonVariant": "PRIMARY",
+  "disabledWhenInvalid": false,
+  "dynamicBindingPathList": [
+    {
+      "key": "buttonColor"
+    },
+    {
+      "key": "borderRadius"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "isDefaultClickDisabled": true,
+  "isDisabled": false,
+  "isLoading": false,
+  "isVisible": true,
+  "key": "n6c95ymqon",
+  "leftColumn": 51,
+  "minWidth": 120,
+  "mobileBottomRow": 10,
+  "mobileLeftColumn": 47,
+  "mobileRightColumn": 63,
+  "mobileTopRow": 6,
+  "needsErrorInfo": false,
+  "onClick": "{{\n    apiBulkUpdateProducts.run()\n    .then(() => {\n        showAlert(`Successfully updated ${appsmith.store.varBulkData.length} items!`, \"success\");\n        \n        // Clear the data tables from memory\n        storeValue('varBulkData', []); \n        \n        // Turn off Bulk Edit Mode\n        storeValue('isBulkEditMode', false);\n        \n        // Close modal using its specific name string\n        closeModal(\"modalBulkEdit\");\n        \n        // Clear out the file cache\n        resetWidget(\"fileSmartUpload\");\n        \n        // Refresh the main table to see the final results\n        Products.run(); \n    })\n    .catch((err) => {\n        showAlert(\"Failed to update: \" + err.message, \"error\");\n    })\n}}\n",
+  "parentColumnSpace": 6.9375,
+  "parentId": "h0tguwci80",
+  "parentRowSpace": 10,
+  "placement": "CENTER",
+  "recaptchaType": "V3",
+  "renderMode": "CANVAS",
+  "resetFormOnClick": false,
+  "responsiveBehavior": "hug",
+  "rightColumn": 63,
+  "text": "Upload",
+  "topRow": 6,
+  "type": "BUTTON_WIDGET",
+  "version": 1,
+  "widgetId": "3f3ldrprea",
+  "widgetName": "Button2"
+}

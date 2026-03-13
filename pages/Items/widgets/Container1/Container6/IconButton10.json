@@ -1,0 +1,50 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 4,
+  "boxShadow": "none",
+  "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "buttonVariant": "TERTIARY",
+  "dynamicBindingPathList": [
+    {
+      "key": "buttonColor"
+    },
+    {
+      "key": "borderRadius"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "iconName": "arrow-down",
+  "isDisabled": false,
+  "isLoading": false,
+  "isVisible": true,
+  "key": "9ngjh1opiq",
+  "leftColumn": 50,
+  "minWidth": 50,
+  "mobileBottomRow": 4,
+  "mobileLeftColumn": 33,
+  "mobileRightColumn": 37,
+  "mobileTopRow": 0,
+  "needsErrorInfo": false,
+  "onClick": "{{\n  // If no brand is selected, it exports everything\n  navigateTo(`https://distribution-erp.onrender.com/api/products/export?brand_id=${selExportBrand.selectedOptionValue || ''}`, {}, 'NEW_WINDOW')\n}}",
+  "parentColumnSpace": 8.41015625,
+  "parentId": "5vavhycw26",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "hug",
+  "rightColumn": 57,
+  "topRow": 0,
+  "type": "ICON_BUTTON_WIDGET",
+  "version": 1,
+  "widgetId": "8m3m8oklos",
+  "widgetName": "IconButton10"
+}

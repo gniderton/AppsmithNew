@@ -20,12 +20,35 @@
       "key": "groupButtons.groupButton2.buttonColor"
     },
     {
-      "key": "groupButtons.groupButton3.buttonColor"
+      "key": "groupButtons.groupButtong1q4rfnylq.buttonColor"
+    },
+    {
+      "key": "groupButtons.groupButtonicq3rzdfp4.buttonColor"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "groupButtons.groupButton2.menuItems.menuItemd95umtyrol.onClick"
+    },
+    {
+      "key": "groupButtons.groupButtong1q4rfnylq.onClick"
     }
   ],
   "dynamicTriggerPathList": [
     {
       "key": "groupButtons.groupButton1.onClick"
+    },
+    {
+      "key": "groupButtons.groupButton2.onClick"
+    },
+    {
+      "key": "groupButtons.groupButton2.menuItems.menuItemd95umtyrol.onClick"
+    },
+    {
+      "key": "groupButtons.groupButton2.menuItems.menuItem7x8rrcxwrd.onClick"
+    },
+    {
+      "key": "groupButtons.groupButtong1q4rfnylq.onClick"
     }
   ],
   "groupButtons": {
@@ -33,12 +56,12 @@
       "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
       "buttonType": "SIMPLE",
       "disabledWhenInvalid": false,
-      "iconName": "heart",
+      "iconName": "add",
       "id": "groupButton1",
       "index": 0,
       "isDisabled": false,
       "isVisible": true,
-      "label": "Favorite",
+      "label": "Add Product",
       "menuItems": {},
       "onClick": "{{showModal(Modal1.name);}}",
       "placement": "CENTER",
@@ -46,76 +69,78 @@
     },
     "groupButton2": {
       "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
-      "buttonType": "SIMPLE",
+      "buttonType": "MENU",
       "disabledWhenInvalid": false,
-      "iconName": "add",
+      "iconName": "add-to-artifact",
       "id": "groupButton2",
       "index": 1,
       "isDisabled": false,
       "isVisible": true,
-      "label": "Add",
-      "menuItems": {},
-      "placement": "CENTER",
-      "widgetId": ""
-    },
-    "groupButton3": {
-      "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
-      "buttonType": "MENU",
-      "disabledWhenInvalid": false,
-      "iconName": "more",
-      "id": "groupButton3",
-      "index": 2,
-      "isDisabled": false,
-      "isVisible": true,
-      "label": "More",
+      "label": "Add Product Bulk",
       "menuItems": {
-        "menuItem1": {
-          "backgroundColor": "#FFFFFF",
-          "disabledWhenInvalid": false,
-          "id": "menuItem1",
+        "menuItem7x8rrcxwrd": {
+          "iconName": "import",
+          "id": "menuItem7x8rrcxwrd",
           "index": 0,
           "isDisabled": false,
           "isVisible": true,
-          "label": "First Option",
-          "onClick": "",
-          "widgetId": ""
+          "label": "Download Template",
+          "onClick": "{{ProductImportUtils.downloadTemplate();}}",
+          "widgetId": "4hy5xdcmqb"
         },
-        "menuItem2": {
-          "backgroundColor": "#FFFFFF",
-          "disabledWhenInvalid": false,
-          "id": "menuItem2",
+        "menuItemd95umtyrol": {
+          "iconName": "cloud-upload",
+          "id": "menuItemd95umtyrol",
           "index": 1,
           "isDisabled": false,
           "isVisible": true,
-          "label": "Second Option",
-          "onClick": "",
-          "widgetId": ""
-        },
-        "menuItem3": {
-          "backgroundColor": "#DD4B34",
-          "disabledWhenInvalid": false,
-          "iconAlign": "right",
-          "iconColor": "#FFFFFF",
-          "iconName": "trash",
-          "id": "menuItem3",
-          "index": 2,
-          "isDisabled": false,
-          "isVisible": true,
-          "label": "Delete",
-          "onClick": "",
-          "textColor": "#FFFFFF",
-          "widgetId": ""
+          "label": "Select File (Upload)",
+          "onClick": "{{ storeValue('showFilePicker', true) }}",
+          "widgetId": "s0i268jzcw"
         }
       },
+      "onClick": "{{showModal(modalBulkEdit.name);}}",
       "placement": "CENTER",
       "widgetId": ""
+    },
+    "groupButtong1q4rfnylq": {
+      "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+      "buttonType": "SIMPLE",
+      "iconName": "edit",
+      "id": "groupButtong1q4rfnylq",
+      "index": 2,
+      "isDisabled": false,
+      "isSeparator": false,
+      "isVisible": true,
+      "itemType": "BUTTON",
+      "label": "Edit Product Bulk",
+      "menuItems": {},
+      "onClick": "{{\n  storeValue('isBulkEditMode', true)\n  .then(() => getTemplateData.run())\n  .then(() => showAlert(\"Reference data loaded!\", \"success\"))\n}}",
+      "placement": "CENTER",
+      "variant": "filled",
+      "widgetId": "v00e3fo6mp"
+    },
+    "groupButtonicq3rzdfp4": {
+      "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+      "buttonType": "SIMPLE",
+      "id": "groupButtonicq3rzdfp4",
+      "index": 3,
+      "isDisabled": false,
+      "isSeparator": false,
+      "isVisible": true,
+      "itemType": "BUTTON",
+      "label": "Stock Adjustment",
+      "menuItems": {},
+      "placement": "CENTER",
+      "variant": "filled",
+      "widgetId": "rtn3mzyuxj"
     }
   },
   "isCanvas": false,
   "isLoading": false,
   "isVisible": true,
   "key": "vasa4sk8w7",
-  "leftColumn": 1,
+  "leftColumn": 0,
   "minWidth": 450,
   "mobileBottomRow": 4,
   "mobileLeftColumn": 1,
@@ -128,7 +153,7 @@
   "parentRowSpace": 10,
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
-  "rightColumn": 25,
+  "rightColumn": 30,
   "topRow": 0,
   "type": "BUTTON_GROUP_WIDGET",
   "version": 1,
