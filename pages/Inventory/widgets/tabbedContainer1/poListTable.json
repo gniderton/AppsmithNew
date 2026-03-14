@@ -8,6 +8,7 @@
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "cachedTableData": {},
   "canFreezeColumn": true,
+  "cellBackground": "",
   "childStylesheet": {
     "button": {
       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
@@ -279,6 +280,7 @@
       "borderRadius": "0.375rem",
       "buttonStyle": "rgb(3, 179, 101)",
       "buttonVariant": "PRIMARY",
+      "cellBackground": "",
       "columnType": "iconButton",
       "computedValue": "",
       "currencyCode": "USD",
@@ -318,6 +320,7 @@
       "boxShadow": "{{poListTable.processedTableData.map((currentRow, currentIndex) => ( \"none\"))}}",
       "buttonColor": "{{poListTable.processedTableData.map((currentRow, currentIndex) => ( (appsmith.theme.colors.primaryColor)))}}",
       "buttonStyle": "rgb(3, 179, 101)",
+      "cellBackground": "",
       "columnType": "iconButton",
       "computedValue": "",
       "currencyCode": "USD",
@@ -357,6 +360,7 @@
       "buttonColor": "{{poListTable.processedTableData.map((currentRow, currentIndex) => ( (appsmith.theme.colors.primaryColor)))}}",
       "buttonStyle": "rgb(3, 179, 101)",
       "buttonVariant": "TERTIARY",
+      "cellBackground": "",
       "columnType": "iconButton",
       "computedValue": "",
       "currencyCode": "USD",
