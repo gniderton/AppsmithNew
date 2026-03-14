@@ -16,11 +16,17 @@
     },
     {
       "key": "isVisible"
+    },
+    {
+      "key": "isDisabled"
     }
   ],
   "dynamicPropertyPathList": [
     {
       "key": "isVisible"
+    },
+    {
+      "key": "isDisabled"
     }
   ],
   "dynamicTriggerPathList": [
@@ -31,7 +37,7 @@
   "iconAlign": "left",
   "iconName": "add",
   "isDefaultClickDisabled": true,
-  "isDisabled": false,
+  "isDisabled": "{{ !appsmith.store.profileEditing }}",
   "isLoading": false,
   "isVisible": "{{ appsmith.store.profileEditing }}",
   "key": "1i5noccl13",
