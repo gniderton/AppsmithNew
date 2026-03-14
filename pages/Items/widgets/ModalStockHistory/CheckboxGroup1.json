@@ -1,0 +1,59 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 17,
+  "defaultSelectedValues": "",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "options"
+    }
+  ],
+  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicPropertyPathList": [
+    {
+      "key": "options"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "flexVerticalAlignment": "start",
+  "isDisabled": false,
+  "isInline": true,
+  "isLoading": false,
+  "isRequired": false,
+  "isSelectAll": true,
+  "isVisible": true,
+  "key": "1xeqcv4k22",
+  "labelAlignment": "left",
+  "labelPosition": "Left",
+  "labelText": "",
+  "labelTextSize": "0.875rem",
+  "labelWidth": 5,
+  "leftColumn": 1,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "mobileBottomRow": 19,
+  "mobileLeftColumn": 1,
+  "mobileRightColumn": 24,
+  "mobileTopRow": 13,
+  "needsErrorInfo": false,
+  "options": "{{\n  ['Damage', 'Expiry', 'Lost', 'Found'].map(reason => ({\n    label: reason,\n    value: reason.toUpperCase()\n  }))\n}}",
+  "originalBottomRow": 20,
+  "originalTopRow": 13,
+  "parentColumnSpace": 16.34375,
+  "parentId": "uue025iy8h",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "rightColumn": 35,
+  "topRow": 13,
+  "type": "CHECKBOX_GROUP_WIDGET",
+  "version": 2,
+  "widgetId": "tno5rgex9x",
+  "widgetName": "CheckboxGroup1"
+}

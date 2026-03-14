@@ -11,19 +11,16 @@
     },
     {
       "key": "borderRadius"
-    },
-    {
-      "key": "text"
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
   "dynamicTriggerPathList": [],
   "fontFamily": "{{appsmith.theme.fontFamily.appFont}}",
-  "fontSize": "1.25rem",
+  "fontSize": "0.875rem",
   "fontStyle": "BOLD",
   "isLoading": false,
   "isVisible": true,
-  "key": "ktwraymfuq",
+  "key": "qbg00oidsg",
   "leftColumn": 1,
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 4,
@@ -33,21 +30,19 @@
   "mobileRightColumn": 41,
   "mobileTopRow": 1,
   "needsErrorInfo": false,
-  "originalBottomRow": 7,
-  "originalTopRow": 1,
   "overflow": "NONE",
-  "parentId": "uqlqubolwf",
+  "parentId": "xrqjtjs3j0",
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
   "rightColumn": 41,
   "shouldTruncate": false,
-  "text": "{{tblProducts.triggeredRow.product_name}}",
+  "text": "Inventory Adjustment",
   "textAlign": "LEFT",
   "textColor": "#231F20",
   "topRow": 1,
   "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
   "type": "TEXT_WIDGET",
   "version": 1,
-  "widgetId": "ejdtxnp2u8",
-  "widgetName": "Text3"
+  "widgetId": "ihfq3oq9vm",
+  "widgetName": "Text8"
 }

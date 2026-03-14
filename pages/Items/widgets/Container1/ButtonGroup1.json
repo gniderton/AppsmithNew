@@ -49,6 +49,15 @@
     },
     {
       "key": "groupButtons.groupButtong1q4rfnylq.onClick"
+    },
+    {
+      "key": "groupButtons.groupButtonicq3rzdfp4.onClick"
+    },
+    {
+      "key": "groupButtons.groupButtonicq3rzdfp4.menuItems.menuItemohwbaos7qb.onClick"
+    },
+    {
+      "key": "groupButtons.groupButtonicq3rzdfp4.menuItems.menuItem9co943rrez.onClick"
     }
   ],
   "groupButtons": {
@@ -122,7 +131,7 @@
     },
     "groupButtonicq3rzdfp4": {
       "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
-      "buttonType": "SIMPLE",
+      "buttonType": "MENU",
       "id": "groupButtonicq3rzdfp4",
       "index": 3,
       "isDisabled": false,
@@ -130,7 +139,27 @@
       "isVisible": true,
       "itemType": "BUTTON",
       "label": "Stock Adjustment",
-      "menuItems": {},
+      "menuItems": {
+        "menuItem9co943rrez": {
+          "id": "menuItem9co943rrez",
+          "index": 1,
+          "isDisabled": false,
+          "isVisible": true,
+          "label": "Stock Adjusted History",
+          "onClick": "{{showModal(ModalStockHistory.name);}}",
+          "widgetId": "vondhiq7j7"
+        },
+        "menuItemohwbaos7qb": {
+          "id": "menuItemohwbaos7qb",
+          "index": 0,
+          "isDisabled": false,
+          "isVisible": true,
+          "label": "Adjust Stocks",
+          "onClick": "{{showModal(modalStockAdjust.name);}}",
+          "widgetId": "233ppbdi14"
+        }
+      },
+      "onClick": "{{showModal(modalStockAdjust.name);}}",
       "placement": "CENTER",
       "variant": "filled",
       "widgetId": "rtn3mzyuxj"

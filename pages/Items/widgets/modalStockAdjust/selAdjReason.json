@@ -1,0 +1,59 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 20,
+  "boxShadow": "none",
+  "defaultOptionValue": "GREEN",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
+    }
+  ],
+  "dynamicHeight": "FIXED",
+  "dynamicPropertyPathList": [
+    {
+      "key": "sourceData"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "isDisabled": false,
+  "isFilterable": true,
+  "isLoading": false,
+  "isRequired": false,
+  "isVisible": true,
+  "key": "6lryb7489v",
+  "labelAlignment": "left",
+  "labelPosition": "Top",
+  "labelText": "Reason",
+  "labelTextSize": "0.875rem",
+  "labelWidth": 5,
+  "leftColumn": 44,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 28,
+  "mobileLeftColumn": 26,
+  "mobileRightColumn": 46,
+  "mobileTopRow": 21,
+  "needsErrorInfo": false,
+  "optionLabel": "name",
+  "optionValue": "code",
+  "parentColumnSpace": 6.9375,
+  "parentId": "xrqjtjs3j0",
+  "parentRowSpace": 10,
+  "placeholderText": "Select option",
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 56,
+  "serverSideFiltering": false,
+  "sourceData": "[\n  {\n    \"name\": \"Damage\",\n    \"code\": \"Damage\"\n  },\n  {\n    \"name\": \"Expiry\",\n    \"code\": \"Expiry\"\n  },\n  {\n    \"name\": \"Lost\",\n    \"code\": \"Lost\"\n  },\n\t{\n    \"name\": \"Found\",\n    \"code\": \"Found\"\n  }\n]",
+  "topRow": 13,
+  "type": "SELECT_WIDGET",
+  "version": 1,
+  "widgetId": "ggtwwrwayw",
+  "widgetName": "selAdjReason"
+}

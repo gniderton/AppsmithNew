@@ -8,7 +8,7 @@
       "type": "FIXED"
     },
     "navigationSetting": {
-      "colorStyle": "theme",
+      "colorStyle": "light",
       "logoAssetId": "",
       "logoConfiguration": "logoAndApplicationTitle",
       "navStyle": "sidebar",
@@ -62,7 +62,7 @@
       "type": "FIXED"
     },
     "navigationSetting": {
-      "colorStyle": "theme",
+      "colorStyle": "light",
       "logoAssetId": "",
       "logoConfiguration": "logoAndApplicationTitle",
       "navStyle": "sidebar",

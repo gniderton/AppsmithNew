@@ -1,0 +1,6 @@
+{
+  "date": "{{ dpAdjDate.selectedDate }}",
+  "created_by": "{{ getMe.data.id }}",
+  "notes": "{{ inpAdjNotes.text }}",
+  "items": {{ appsmith.store.varAdjustmentList }}
+}

@@ -1,14 +1,14 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 3779,
+  "bottomRow": 504,
   "boxShadow": "none",
   "canEscapeKeyClose": true,
-  "canOutsideClickClose": false,
+  "canOutsideClickClose": true,
   "children": [
     {
       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-      "bottomRow": 3760,
+      "bottomRow": 470,
       "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
       "canExtend": true,
       "detachFromLayout": true,
@@ -25,11 +25,11 @@
       "isDisabled": false,
       "isLoading": false,
       "isVisible": true,
-      "key": "by4plfs9sl",
+      "key": "2u7d8ysmz6",
       "leftColumn": 0,
       "maxDynamicHeight": 9000,
       "minDynamicHeight": 4,
-      "minHeight": 3760,
+      "minHeight": 470,
       "minWidth": 450,
       "mobileBottomRow": 240,
       "mobileLeftColumn": 0,
@@ -37,7 +37,7 @@
       "mobileTopRow": 0,
       "needsErrorInfo": false,
       "parentColumnSpace": 1,
-      "parentId": "tfl4qcgih5",
+      "parentId": "eelhzzsu95",
       "parentRowSpace": 1,
       "renderMode": "CANVAS",
       "responsiveBehavior": "fill",
@@ -46,8 +46,8 @@
       "topRow": 0,
       "type": "CANVAS_WIDGET",
       "version": 1,
-      "widgetId": "uqlqubolwf",
-      "widgetName": "Canvas4"
+      "widgetId": "uue025iy8h",
+      "widgetName": "Canvas14"
     }
   ],
   "detachFromLayout": true,
@@ -57,40 +57,29 @@
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
-  "dynamicPropertyPathList": [
-    {
-      "key": "onClose"
-    }
-  ],
-  "dynamicTriggerPathList": [
-    {
-      "key": "onClose"
-    }
-  ],
-  "height": 3760,
+  "height": 470,
   "isCanvas": true,
   "isLoading": false,
-  "key": "swaol16q65",
-  "leftColumn": 8,
+  "key": "ikoe0fn3yb",
+  "leftColumn": 19,
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 24,
-  "minHeight": 3760,
-  "mobileBottomRow": 43,
-  "mobileLeftColumn": 8,
-  "mobileRightColumn": 32,
-  "mobileTopRow": 19,
+  "minHeight": 240,
+  "mobileBottomRow": 58,
+  "mobileLeftColumn": 19,
+  "mobileRightColumn": 43,
+  "mobileTopRow": 34,
   "needsErrorInfo": false,
-  "onClose": "{{ storeValue('isEditMode', true) }}",
   "parentColumnSpace": 19.9375,
   "parentId": "0",
   "parentRowSpace": 10,
   "renderMode": "CANVAS",
-  "rightColumn": 32,
+  "rightColumn": 43,
   "shouldScrollContents": true,
-  "topRow": 19,
+  "topRow": 34,
   "type": "MODAL_WIDGET",
   "version": 2,
-  "widgetId": "tfl4qcgih5",
-  "widgetName": "ModalProduct",
-  "width": 466
+  "widgetId": "eelhzzsu95",
+  "widgetName": "ModalStockHistory",
+  "width": 1052
 }
