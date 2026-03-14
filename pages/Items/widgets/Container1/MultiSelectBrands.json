@@ -1,10 +1,11 @@
 {
   "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "allowSelectAll": true,
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "bottomRow": 28,
   "boxShadow": "none",
-  "defaultOptionValue": "",
+  "defaultOptionValue": "{{ ((options, serverSideFiltering) => (  \n  (Brand_Utils.getGroupedBrands.data || [])\n    .filter(brand => brand.id)\n    .map(brand => brand.id) \n))(MultiSelectBrands.options, MultiSelectBrands.serverSideFiltering) }}",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
@@ -14,9 +15,12 @@
     },
     {
       "key": "sourceData"
+    },
+    {
+      "key": "defaultOptionValue"
     }
   ],
-  "dynamicHeight": "FIXED",
+  "dynamicHeight": "AUTO_HEIGHT",
   "dynamicPropertyPathList": [
     {
       "key": "sourceData"
@@ -45,8 +49,8 @@
   "needsErrorInfo": false,
   "optionLabel": "brand_name",
   "optionValue": "id",
-  "originalBottomRow": 26,
-  "originalTopRow": 22,
+  "originalBottomRow": 28,
+  "originalTopRow": 24,
   "parentColumnSpace": 19.9375,
   "parentId": "laoun5fqzg",
   "parentRowSpace": 10,
@@ -55,6 +59,7 @@
   "responsiveBehavior": "fill",
   "rightColumn": 13,
   "serverSideFiltering": false,
+  "shouldScrollContents": true,
   "sourceData": "{{Brand_Utils.getGroupedBrands.data}}",
   "topRow": 24,
   "type": "MULTI_SELECT_WIDGET_V2",

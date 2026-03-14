@@ -1576,7 +1576,7 @@
   },
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
-  "rightColumn": 64,
+  "rightColumn": 63,
   "searchKey": "",
   "tableData": "{{\n  getInvoices.data.filter(item => {\n    // 1. Must be an Invoice\n    if (item.document_type !== 'Invoice') return false;\n    \n    // 2. Filter by Invoice Status\n    // (If nothing is selected, we show all, otherwise we filter)\n    const invSelection = CheckboxGroupInv.selectedOptionValues;\n    const matchInv = invSelection.length === 0 || invSelection.includes(item.invoice_status);\n    \n    // 3. Filter by Delivery Status\n    const delSelection = CheckboxGroupDel.selectedOptionValues;\n    const matchDel = delSelection.length === 0 || delSelection.includes(item.delivery_status);\n    \n    return matchInv && matchDel;\n  })\n}}",
   "textSize": "0.875rem",

@@ -5,7 +5,7 @@
   "borderColor": "#E0DEDE",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": "1",
-  "bottomRow": 374,
+  "bottomRow": 376,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "childStylesheet": {
     "ARRAY": {
@@ -699,8 +699,8 @@
   "mobileTopRow": 6,
   "needsErrorInfo": false,
   "onSubmit": "{{ \n    apiUpdateProduct.run()\n    .then(() => {\n        // 1. Show a success message\n        showAlert(\"Product successfully updated!\", \"success\");\n        \n        // 2. Turn off Edit Mode (so it's locked next time)\n        storeValue('isEditMode', false);\n        \n        // 3. Refresh the main product list\n        Products.run();\n        \n        // 4. Refresh your brand groupings if needed\n        Brand_Utils.getGroupedBrands();\n        \n        // 5. Close the popup\n        closeModal(\"ModalProduct\");\n    })\n    .catch((error) => {\n        // If the API fails for any reason, show the error\n        showAlert(\"Failed to update product: \" + error.message, \"error\");\n    })\n}}",
-  "originalBottomRow": 376,
-  "originalTopRow": 8,
+  "originalBottomRow": 374,
+  "originalTopRow": 6,
   "parentColumnSpace": 6.65625,
   "parentId": "uqlqubolwf",
   "parentRowSpace": 10,
@@ -1920,7 +1920,7 @@
     "buttonVariant": "PRIMARY"
   },
   "title": "",
-  "topRow": 6,
+  "topRow": 8,
   "type": "JSON_FORM_WIDGET",
   "useSourceData": false,
   "version": 1,
