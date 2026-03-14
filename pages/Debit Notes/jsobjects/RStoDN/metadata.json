@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "69a80abb79ac426a29eb8838_eb87a30c-6d0d-4467-8c45-334419c544fd",
+  "id": "Debit Notes_RStoDN",
+  "unpublishedCollection": {
+    "name": "RStoDN",
+    "pageId": "Debit Notes",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}

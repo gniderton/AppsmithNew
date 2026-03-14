@@ -1,7 +1,7 @@
 {
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 6,
-  "bottomRowBeforeCollapse": 10,
+  "bottomRow": 13,
+  "bottomRowBeforeCollapse": 13,
   "counterClosewise": false,
   "dynamicBindingPathList": [
     {
@@ -32,8 +32,8 @@
   "mobileRightColumn": 29,
   "mobileTopRow": 6,
   "needsErrorInfo": false,
-  "originalBottomRow": 6,
-  "originalTopRow": 6,
+  "originalBottomRow": 13,
+  "originalTopRow": 9,
   "parentColumnSpace": 6.9375,
   "parentId": "upikdaspx7",
   "parentRowSpace": 10,
@@ -44,8 +44,8 @@
   "rightColumn": 63,
   "showResult": false,
   "steps": 1,
-  "topRow": 6,
-  "topRowBeforeCollapse": 6,
+  "topRow": 9,
+  "topRowBeforeCollapse": 9,
   "type": "PROGRESS_WIDGET",
   "version": 1,
   "widgetId": "zku67b1i1u",

@@ -49,9 +49,11 @@
     "sgst_amount",
     "igst_amount",
     "place_of_supply",
-    "customColumn1"
+    "customColumn1",
+    "note_type",
+    "converted_from_rs"
   ],
-  "columnUpdatedAt": 1772935362116,
+  "columnUpdatedAt": 1773471216678,
   "columnWidthMap": {
     "vendor_name": 294
   },
@@ -135,6 +137,12 @@
     },
     {
       "key": "primaryColumns.customColumn1.boxShadow"
+    },
+    {
+      "key": "primaryColumns.note_type.computedValue"
+    },
+    {
+      "key": "primaryColumns.converted_from_rs.computedValue"
     }
   ],
   "dynamicPropertyPathList": [
@@ -230,6 +238,40 @@
       "notation": "standard",
       "originalId": "cgst_amount",
       "sticky": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
+    "converted_from_rs": {
+      "alias": "converted_from_rs",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "cellBackground": "",
+      "columnType": "text",
+      "computedValue": "{{(() => { const tableData = debiteNotetbl.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"converted_from_rs\"])) : converted_from_rs })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "fontStyle": "",
+      "horizontalAlignment": "LEFT",
+      "id": "converted_from_rs",
+      "index": 16,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": true,
+      "label": "converted_from_rs",
+      "notation": "standard",
+      "originalId": "converted_from_rs",
+      "sticky": "",
+      "textColor": "",
       "textSize": "0.875rem",
       "thousandSeparator": true,
       "validation": {},
@@ -494,6 +536,40 @@
       "verticalAlignment": "CENTER",
       "width": 150
     },
+    "note_type": {
+      "alias": "note_type",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "cellBackground": "",
+      "columnType": "text",
+      "computedValue": "{{(() => { const tableData = debiteNotetbl.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"note_type\"])) : note_type })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "fontStyle": "",
+      "horizontalAlignment": "LEFT",
+      "id": "note_type",
+      "index": 15,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": true,
+      "label": "note_type",
+      "notation": "standard",
+      "originalId": "note_type",
+      "sticky": "",
+      "textColor": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
     "place_of_supply": {
       "alias": "place_of_supply",
       "allowCellWrapping": false,
@@ -747,7 +823,7 @@
   "responsiveBehavior": "fill",
   "rightColumn": 64,
   "searchKey": "",
-  "tableData": "{{getDebitNotes.data}}",
+  "tableData": "{{\n  getDebitNotes.data.filter(note => {\n    // 1. If no checkboxes are selected, show the full list\n    if (CheckboxGroupType.selectedValues.length === 0) {\n      return true;\n    }\n    \n    // 2. Filter data where note_type matches the selected values\n    // Ensure the case matches (e.g., \"Return Slip\" in data vs \"Return Slip\" in checkbox value)\n    return CheckboxGroupType.selectedValues.includes(note.note_type);\n  })\n}}",
   "textSize": "0.875rem",
   "topRow": 8,
   "totalRecordsCount": 0,

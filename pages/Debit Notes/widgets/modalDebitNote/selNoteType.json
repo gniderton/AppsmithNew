@@ -2,18 +2,15 @@
   "accentColor": "{{appsmith.theme.colors.primaryColor}}",
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 20,
+  "bottomRow": 4,
   "boxShadow": "none",
-  "defaultOptionValue": "GREEN",
+  "defaultOptionValue": "Debit Note",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
     },
     {
       "key": "borderRadius"
-    },
-    {
-      "key": "sourceData"
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
@@ -28,26 +25,26 @@
   "isLoading": false,
   "isRequired": false,
   "isVisible": true,
-  "key": "8tkyehoorz",
+  "key": "6lryb7489v",
   "labelAlignment": "left",
   "labelPosition": "Left",
-  "labelText": "Select Invoice",
+  "labelText": "Type",
   "labelTextSize": "0.875rem",
   "labelWidth": "6",
   "leftColumn": 0,
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 4,
   "minWidth": 450,
-  "mobileBottomRow": 23,
+  "mobileBottomRow": 5,
   "mobileLeftColumn": 0,
-  "mobileRightColumn": 20,
-  "mobileTopRow": 16,
+  "mobileRightColumn": 7.000000000000001,
+  "mobileTopRow": 0,
   "needsErrorInfo": false,
-  "optionLabel": "invoice_number",
-  "optionValue": "id",
-  "originalBottomRow": 21,
-  "originalTopRow": 17,
-  "parentColumnSpace": 6.9375,
+  "optionLabel": "label",
+  "optionValue": "value",
+  "originalBottomRow": 5,
+  "originalTopRow": 0,
+  "parentColumnSpace": 19.228125,
   "parentId": "ye1b8rm96d",
   "parentRowSpace": 10,
   "placeholderText": "Select option",
@@ -56,10 +53,10 @@
   "rightColumn": 26,
   "serverSideFiltering": false,
   "shouldScrollContents": true,
-  "sourceData": "{{getPendingBills.data}}",
-  "topRow": 16,
+  "sourceData": "[{\"label\": \"Debit Note\", \"value\": \"Debit Note\"}, {\"label\": \"Return Slip\", \"value\": \"Return Slip\"}]",
+  "topRow": 0,
   "type": "SELECT_WIDGET",
   "version": 1,
-  "widgetId": "cp2l698loa",
-  "widgetName": "selLinkedBill"
+  "widgetId": "4iga5f621l",
+  "widgetName": "selNoteType"
 }
