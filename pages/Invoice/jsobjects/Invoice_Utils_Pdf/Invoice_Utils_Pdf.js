@@ -3,13 +3,11 @@ export default {
 		try {
 			if (!invoiceData || !invoiceData.invoice_id) throw new Error("No Invoice data selected.");
 
-			// 1. Prepare Data
 			const lines = invoiceData.invoice_lines || [];
 			const summaryData = this.getSummary(lines);
 			const grandTotal = Number(invoiceData.grand_total || 0);
 			const brand = Global_Assets.getSummary();
 
-			// Fetch Bank Details for the slip
 			await getBankDetails.run();
 			const bank = getBankDetails.data || {};
 
@@ -18,7 +16,6 @@ export default {
 			const margin = 12; 
 			const pageWidth = doc.internal.pageSize.width;
 
-			// --- HELPER: AMOUNT TO WORDS ---
 			const toWords = (num) => {
 				const a = ['','One ','Two ','Three ','Four ', 'Five ','Six ','Seven ','Eight ','Nine ','Ten ','Eleven ','Twelve ','Thirteen ','Fourteen ','Fifteen ','Sixteen ','Seventeen ','Eighteen ','Nineteen '];
 				const b = ['', '', 'Twenty','Thirty','Forty','Fifty', 'Sixty','Seventy','Eighty','Ninety'];
@@ -33,11 +30,8 @@ export default {
 				return str;
 			};
 
-			// --- HELPER: DRAW RECURRING HEADER ---
 			const drawMainHeader = (currentPage, totalPages) => {
 				const headerY = margin;
-
-				// 1. Logo
 				try {
 					const logo = Global_Assets.getLogo();
 					if (logo.startsWith("data:image/")) {
@@ -45,7 +39,6 @@ export default {
 					}
 				} catch(e) {}
 
-				// Center: Title
 				doc.setTextColor(0, 0, 0); 
 				doc.setFont("helvetica", "bold");
 				doc.setFontSize(16);
@@ -53,13 +46,11 @@ export default {
 				doc.setFontSize(11);
 				doc.text(String(invoiceData.invoice_number), pageWidth / 2, headerY + 30, { align: "center" });
 
-				// THREE SEPARATE BOXES (Order: Branding -> Customer -> Metadata)
 				const boxesY = headerY + 40;
 				const gap = 8;
 				const boxWidth = (pageWidth - (margin * 2) - (gap * 2)) / 3;
 				const boxHeight = 95; 
 
-				// Box 1: From (Branding)
 				this._drawSimpleBox(doc, margin, boxesY, boxWidth, boxHeight, [
 					["From", String(brand.regt_name)],
 					["Address", String(brand.address)],
@@ -70,13 +61,7 @@ export default {
 					["Contact No", String(brand.contact_no)]
 				]);
 
-				// Box 2: To (Customer)
-				const cAddr = [
-					invoiceData.customer_address,
-					invoiceData.district,
-					invoiceData.pin_code ? "PIN: " + invoiceData.pin_code : null
-				].filter(Boolean).join(", ");
-
+				const cAddr = [invoiceData.customer_address, invoiceData.district, invoiceData.pin_code ? "PIN: " + invoiceData.pin_code : null].filter(Boolean).join(", ");
 				this._drawSimpleBox(doc, margin + boxWidth + gap, boxesY, boxWidth, boxHeight, [
 					["To", String(invoiceData.customer_name)],
 					["Address", cAddr || "-"],
@@ -85,7 +70,6 @@ export default {
 					["Email", String(invoiceData.customer_email || "-")]
 				], 60);
 
-				// Box 3: Metadata
 				this._drawSimpleBox(doc, margin + (boxWidth * 2) + (gap * 2), boxesY, boxWidth, boxHeight, [
 					["INV No", String(invoiceData.invoice_number)],
 					["Date", moment(invoiceData.invoice_date).format("DD/MM/YYYY")],
@@ -100,64 +84,55 @@ export default {
 				return boxesY + boxHeight; 
 			};
 
-			// --- 2. ITEMS TABLE (8pt FONT, WRAPPING) ---
 			doc.autoTable({
 				startY: margin + 40 + 95 + 10,
-				margin: { left: margin, right: margin, top: margin + 170 },
+				// Standard small margin to utilize complete page space
+				// margin.top adjusted to 157 to match page 1 start exactly (12 + 40 + 95 + 10)
+				margin: { left: margin, right: margin, top: 157, bottom: 12 },
 				head: [["S.N", "ITEM NAME", "CODE\nEAN", "HSN", "BATCH\nEXPIRY", "MRP", "QTY", "PRICE", "GROSS", "SCH", "D%", "D.AMT", "TXBL", "GST%", "GST$", "NET$"]],
 				body: lines.map((row, index) => {
 					const expiryStr = row.expiry_date ? moment(row.expiry_date).format("MM/YY") : "-";
 					return [
-						index + 1, 
-						row.product_name, 
-						`${row.product_code || ""}\n${row.ean_code || ""}`, 
-						row.hsn_code || "-", 
-						`${row.batch_code || ""}\n${expiryStr}`,
-						Number(row.mrp || 0).toFixed(2), 
-						row.shipped_qty, 
-						Number(row.rate || 0).toFixed(2),
-						Number(row.gross_amount || 0).toFixed(2), 
-						Number(row.scheme_amount || 0).toFixed(2), 
-						(row.discount_percent || 0) + "%", 
-						Number(row.discount_amount || 0).toFixed(2),
-						Number(row.taxable_amount || 0).toFixed(2), 
-						(row.tax_percent || 0) + "%",
-						Number(row.tax_amount || 0).toFixed(2), 
-						Number(row.amount || 0).toFixed(2)
+						index + 1, row.product_name, `${row.product_code || ""}\n${row.ean_code || ""}`, row.hsn_code || "-", 
+						`${row.batch_code || ""}\n${expiryStr}`, Number(row.mrp || 0).toFixed(2), row.shipped_qty, 
+						Number(row.rate || 0).toFixed(2), Number(row.gross_amount || 0).toFixed(2), Number(row.scheme_amount || 0).toFixed(2), 
+						(row.discount_percent || 0) + "%", Number(row.discount_amount || 0).toFixed(2), Number(row.taxable_amount || 0).toFixed(2), 
+						(row.tax_percent || 0) + "%", Number(row.tax_amount || 0).toFixed(2), Number(row.amount || 0).toFixed(2)
 					];
 				}),
 				didDrawPage: (data) => {
-					const totalPages = doc.internal.getNumberOfPages();
-					drawMainHeader(data.pageNumber, totalPages);
+					drawMainHeader(data.pageNumber, doc.internal.getNumberOfPages());
 				},
 				theme: 'grid',
-				styles: { 
-					fontSize: 8, 
-					cellPadding: 2, 
-					lineColor: [0, 0, 0], lineWidth: 0.5,
-					textColor: [0, 0, 0],
-					overflow: 'linebreak',
-					valign: 'middle'
-				},
-				headStyles: { 
-					fillColor: [255, 255, 255], 
-					textColor: [0, 0, 0], 
-					fontStyle: 'bold',
-					lineWidth: 0.5 
-				},
+				styles: { fontSize: 8, cellPadding: 2, lineColor: [0, 0, 0], lineWidth: 0.5, textColor: [0, 0, 0], overflow: 'linebreak', valign: 'middle' },
+				headStyles: { fillColor: [255, 255, 255], textColor: [0, 0, 0], fontStyle: 'bold', lineWidth: 0.5 },
 				columnStyles: { 
-					0: { cellWidth: 20 }, 1: { cellWidth: 'auto', minCellWidth: 100 },
-					2: { cellWidth: 45 }, 3: { cellWidth: 35 }, 4: { cellWidth: 45 },
-					5: { halign: 'right' }, 6: { halign: 'right' }, 7: { halign: 'right' },
-					8: { halign: 'right' }, 9: { halign: 'right' }, 10: { halign: 'right' },
-					11: { halign: 'right' }, 12: { halign: 'right' }, 13: { halign: 'center' },
-					14: { halign: 'right' }, 15: { halign: 'right' }
+					0: { cellWidth: 20 }, 1: { cellWidth: 'auto', minCellWidth: 100 }, 2: { cellWidth: 45 }, 3: { cellWidth: 35 }, 4: { cellWidth: 45 },
+					5: { halign: 'right' }, 6: { halign: 'right' }, 7: { halign: 'right' }, 8: { halign: 'right' }, 9: { halign: 'right' }, 10: { halign: 'right' },
+					11: { halign: 'right' }, 12: { halign: 'right' }, 13: { halign: 'center' }, 14: { halign: 'right' }, 15: { halign: 'right' }
 				}
 			});
 
+			// --- DYNAMIC FOOTER CHECK ---
+			let currentY = doc.lastAutoTable.finalY + 20;
+			const pageHeight = doc.internal.pageSize.height;
+			
+			// Prepare Schemes Data from order_lines
+			const schemeLines = (invoiceData.order_lines || [])
+				.filter(l => l.tier_applied)
+				.map(l => [l.product_name, l.tier_applied]);
+
+			// Estimate required space for Tax Summary + Schemes Table + Slip + Padding (~400pt)
+			const estimatedFooterHeight = (summaryData.length * 20) + (schemeLines.length * 20) + 210; 
+			if (currentY + estimatedFooterHeight > pageHeight) {
+				doc.addPage();
+				drawMainHeader(doc.internal.getNumberOfPages(), doc.internal.getNumberOfPages());
+				currentY = 157;
+			}
+
 			// --- 3. TAX SUMMARY ---
 			doc.autoTable({
-				startY: doc.lastAutoTable.finalY + 8,
+				startY: currentY,
 				margin: { left: margin },
 				head: [["TAX SUMMARY", "PCS", "GROSS", "SCH", "DISC", "TAXABLE", "TAX", "NET"]],
 				body: summaryData.map(row => [
@@ -170,39 +145,42 @@ export default {
 				bodyStyles: (row) => (row.at(0).includes('Total') ? { fontStyle: 'bold', fillColor: [250, 250, 250] } : {})
 			});
 
-			// --- 4. AMOUNT IN WORDS ---
+			// --- 4. SCHEMES APPLIED ---
+			if (schemeLines.length > 0) {
+				doc.autoTable({
+					startY: doc.lastAutoTable.finalY + 10,
+					margin: { left: margin },
+					head: [["PRODUCT NAME", "SCHEMES / TIER APPLIED"]],
+					body: schemeLines,
+					theme: 'grid',
+					styles: { fontSize: 8, cellPadding: 3, lineColor: [0, 0, 0], lineWidth: 0.5, textColor: [0, 0, 0] },
+					headStyles: { fillColor: [245, 245, 245], textColor: [0, 0, 0], fontStyle: 'bold' },
+					columnStyles: { 0: { cellWidth: 150 }, 1: { cellWidth: 'auto' } }
+				});
+			}
+
+			// --- 5. AMOUNT IN WORDS ---
 			const wordsY = doc.lastAutoTable.finalY + 38;
-			doc.setFontSize(10.5);
-			doc.setFont("helvetica", "bold");
-			doc.text(`Grand Total: ${Number(grandTotal).toFixed(2)}`, margin, wordsY - 14); // Amount in Number
+			doc.setFontSize(10.5); doc.setFont("helvetica", "bold");
+			doc.text(`Grand Total: ${Number(grandTotal).toFixed(2)}`, margin, wordsY - 14);
 			doc.text("Total Amount (in words):", margin, wordsY);
 			doc.setFont("helvetica", "normal");
 			doc.text(toWords(Math.round(grandTotal)), margin + 140, wordsY);
 
-			// --- 5. FOOTER (Moved right above the acknowledgement slip) ---
-
-			// --- 6. DETACHABLE ACKNOWLEDGEMENT SLIP ---
-			const pageHeight = doc.internal.pageSize.height;
-
-			// Computer generated note right above the slip
+			// --- 6. FOOTER ---
 			doc.setFontSize(8.5);
-			doc.setFont("helvetica", "normal");
 			doc.text("This is a computer generated document and does not require a physical signature.", margin, pageHeight - 170);
 
+			// --- 7. DETACHABLE ACKNOWLEDGEMENT SLIP ---
 			const slipY = pageHeight - 160; 
+			doc.setDrawColor(0, 0, 0); doc.setLineDash([3, 3], 0);
+			doc.line(margin, slipY, pageWidth - margin, slipY); doc.setLineDash([], 0);
 
-			doc.setDrawColor(0, 0, 0); // Black dotted line
-			doc.setLineDash([3, 3], 0);
-			doc.line(margin, slipY, pageWidth - margin, slipY);
-			doc.setLineDash([], 0);
-
-			doc.setFontSize(10);
-			doc.setFont("helvetica", "bold");
+			doc.setFontSize(10); doc.setFont("helvetica", "bold");
 			doc.text("RECEIPT ACKNOWLEDGEMENT", pageWidth / 2, slipY + 20, { align: "center" });
 
 			const slipBoxY = slipY + 30;
-			const slipBoxHeight = 100;
-			doc.rect(margin, slipBoxY, pageWidth - (margin * 2), slipBoxHeight); // Black box
+			doc.rect(margin, slipBoxY, pageWidth - (margin * 2), 100);
 
 			doc.setFontSize(9);
 			doc.text(`Invoice No: ${invoiceData.invoice_number}`, margin + 10, slipBoxY + 15);
@@ -210,26 +188,18 @@ export default {
 			doc.text(`Customer: ${invoiceData.customer_name}`, margin + 10, slipBoxY + 45);
 			doc.text(`Total Amount: ${Number(grandTotal).toFixed(2)}`, margin + 10, slipBoxY + 60);
 
-			doc.setFontSize(9);
-			doc.text(`Receiver's Signature: __________________`, margin + 10, slipBoxY + 90);
-
-			// Right side: Bank Details (Text only, no sub-box)
 			const bankInfoX = pageWidth / 2 + 5;
-			doc.setFont("helvetica", "bold");
-			doc.text("PAYMENT BANK DETAILS", bankInfoX, slipBoxY + 15);
-			doc.setFont("helvetica", "normal");
-			doc.setFontSize(8);
+			doc.setFont("helvetica", "bold"); doc.text("PAYMENT BANK DETAILS", bankInfoX, slipBoxY + 15);
+			doc.setFont("helvetica", "normal"); doc.setFontSize(8);
 			doc.text(`Bank: ${bank.bank_name || "-"}`, bankInfoX, slipBoxY + 28);
 			doc.text(`Acc No: ${bank.account_number || "-"}`, bankInfoX, slipBoxY + 38);
 			doc.text(`IFSC: ${bank.ifsc_code || "-"}`, bankInfoX, slipBoxY + 48);
 
-			// Authorized Signatory positioned on the right
 			doc.setFontSize(9);
+			doc.text(`Receiver's Signature: __________________`, margin + 10, slipBoxY + 90);
 			doc.text(`Authorized Signatory: __________________`, bankInfoX, slipBoxY + 90);
 
-			// Terms and Conditions at the very bottom
-			doc.setFontSize(8);
-			doc.setFont("helvetica", "bold");
+			doc.setFontSize(8); doc.setFont("helvetica", "bold");
 			doc.text("Terms and Condition: ALL LEGAL DISPUTES ARE SUBJECT TO CALICUT JURIDICTION ONLY", margin, pageHeight - 15);
 
 			const base64String = doc.output('dataurlstring');
@@ -251,56 +221,32 @@ export default {
 				groups[taxName] = { PARTICULARS: taxName, Pcs: 0, Gross: 0, Sch: 0, Disc: 0, Taxable: 0, Tax: 0, Net: 0 };
 			}
 			const g = groups[taxName];
-			g.Pcs     += Number(row.shipped_qty || 0);
-			g.Gross   += Number(row.gross_amount || 0);
-			g.Sch     += Number(row.scheme_amount || 0);
-			g.Disc    += Number(row.discount_amount || 0);
-			g.Taxable += Number(row.taxable_amount || 0);
-			g.Tax     += Number(row.tax_amount || 0);
-			g.Net     += Number(row.amount || 0);
+			g.Pcs += Number(row.shipped_qty || 0); g.Gross += Number(row.gross_amount || 0); g.Sch += Number(row.scheme_amount || 0);
+			g.Disc += Number(row.discount_amount || 0); g.Taxable += Number(row.taxable_amount || 0); g.Tax += Number(row.tax_amount || 0); g.Net += Number(row.amount || 0);
 		});
 		const resultRows = Object.values(groups);
 		if (resultRows.length > 0) {
 			const totalRow = resultRows.reduce((acc, curr) => {
-				acc.Pcs     += curr.Pcs;
-				acc.Gross   += curr.Gross;
-				acc.Sch     += curr.Sch;
-				acc.Disc    += curr.Disc;
-				acc.Taxable += curr.Taxable;
-				acc.Tax     += curr.Tax;
-				acc.Net     += curr.Net;
+				acc.Pcs += curr.Pcs; acc.Gross += curr.Gross; acc.Sch += curr.Sch; acc.Disc += curr.Disc; acc.Taxable += curr.Taxable; acc.Tax += curr.Tax; acc.Net += curr.Net;
 				return acc;
 			}, { PARTICULARS: 'Grand Total', Pcs: 0, Gross: 0, Sch: 0, Disc: 0, Taxable: 0, Tax: 0, Net: 0 });
 			resultRows.push(totalRow);
 		}
 		return resultRows.map(row => ({
-			PARTICULARS: row.PARTICULARS,
-			Pcs: row.Pcs,
-			Gross: row.Gross.toFixed(2),
-			Sch: row.Sch.toFixed(2),
-			Disc: row.Disc.toFixed(2),
-			Taxable: row.Taxable.toFixed(2),
-			Tax: row.Tax.toFixed(2),
-			Net: Math.round(row.Net).toFixed(2)
+			PARTICULARS: row.PARTICULARS, Pcs: row.Pcs, Gross: row.Gross.toFixed(2), Sch: row.Sch.toFixed(2),
+			Disc: row.Disc.toFixed(2), Taxable: row.Taxable.toFixed(2), Tax: row.Tax.toFixed(2), Net: Math.round(row.Net).toFixed(2)
 		}));
 	},
 
 	_drawSimpleBox: (doc, x, y, width, height, rows, labelWidth = 58) => {
-		doc.setDrawColor(0, 0, 0);
-		doc.setLineWidth(0.5);
-		doc.rect(x, y, width, height);
+		doc.setDrawColor(0, 0, 0); doc.setLineWidth(0.5); doc.rect(x, y, width, height);
 		let rowY = y + 11;
 		rows.forEach(r => {
-			doc.setFontSize(8.5);
-			doc.setFont("helvetica", "bold");
-			doc.setTextColor(0, 0, 0);
-			const label = String(r[0]) + ":";
-			doc.text(label, x + 5, rowY);
+			doc.setFontSize(8.5); doc.setFont("helvetica", "bold"); doc.setTextColor(0, 0, 0);
+			const label = String(r[0]) + ":"; doc.text(label, x + 5, rowY);
 			doc.setFont("helvetica", "normal");
-			const val = String(r[1] || "-");
-			const splitVal = doc.splitTextToSize(val, width - labelWidth - 5); 
-			doc.text(splitVal, x + labelWidth, rowY);
-			rowY += (splitVal.length * 9.5) + 1.5; 
+			const val = String(r[1] || "-"); const splitVal = doc.splitTextToSize(val, width - labelWidth - 5); 
+			doc.text(splitVal, x + labelWidth, rowY); rowY += (splitVal.length * 9.5) + 1.5; 
 		});
 	}
 }
