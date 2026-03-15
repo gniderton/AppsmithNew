@@ -55,13 +55,14 @@ export default {
                 const boxesY = headerY + 40;
                 const gap = 8;
                 const boxWidth = (pageWidth - (margin * 2) - (gap * 2)) / 3;
-                const boxHeight = 85; 
+                const boxHeight = 85; // Increased to fit all rows
 
                 // Box 1: Metadata
                 this._drawSimpleBox(doc, margin, boxesY, boxWidth, boxHeight, [
                     ["DN NUMBER", String(dnHeader.debit_note_number)],
                     ["DATE", moment(dnHeader.debit_note_date).format("DD/MM/YYYY")],
                     ["LINKED INV", String(dnHeader.linked_invoice_number || "-")],
+                    ["TOTAL AMT", Number(grandTotal).toFixed(2)],
                     ["PAGE", `${currentPage} / ${totalPages}`]
                 ]);
 
@@ -69,11 +70,11 @@ export default {
                 this._drawSimpleBox(doc, margin + boxWidth + gap, boxesY, boxWidth, boxHeight, [
                     ["From", String(brand.regt_name)],
                     ["Address", String(brand.address)],
-										["Dist/PIN", `${brand.District} - ${brand.pin}`],
+                    ["Dist/PIN", `${brand.District} - ${brand.pin}`],
                     ["GST", String(brand.gst)],
                     ["FSSAI", String(brand.fssai_no)],
                     ["Email", String(brand.email)],
-										["Contact No", String(brand.contact_no)]
+                    ["Contact No", String(brand.contact_no)]
                 ]);
 
                 // Box 3: Vendor Details
@@ -174,6 +175,27 @@ export default {
             const notesY = wordsY + 20;
             doc.setFontSize(8.5);
             doc.text("This is a computer generated document and does not require a physical signature.", margin, notesY);
+
+            // --- 6. DETACHABLE ACKNOWLEDGEMENT SLIP ---
+            const pageHeight = doc.internal.pageSize.height;
+            const slipY = pageHeight - 120; // Position near bottom
+            
+            doc.setLineDash([3, 3], 0); // Dotted line
+            doc.line(margin, slipY, pageWidth - margin, slipY);
+            doc.setLineDash([], 0); // Reset
+
+            doc.setFontSize(9);
+            doc.setFont("helvetica", "bold");
+            doc.text("DETACHABLE ACKNOWLEDGEMENT SLIP", pageWidth / 2, slipY + 20, { align: "center" });
+            
+            const slipContentY = slipY + 40;
+            doc.setFont("helvetica", "normal");
+            doc.text(`Debit Note No: ${dnHeader.debit_note_number}`, margin, slipContentY);
+            doc.text(`Date: ${moment(dnHeader.debit_note_date).format("DD/MM/YYYY")}`, margin + 180, slipContentY);
+            doc.text(`Amount: ${Number(grandTotal).toFixed(2)}`, margin + 350, slipContentY);
+            
+            doc.text(`Vendor: ${dnHeader.vendor_name}`, margin, slipContentY + 15);
+            doc.text(`Receiver's Signature: ___________________________`, margin + 310, slipContentY + 40);
 
             const base64String = doc.output('dataurlstring');
             storeValue('currentPDF', base64String);
