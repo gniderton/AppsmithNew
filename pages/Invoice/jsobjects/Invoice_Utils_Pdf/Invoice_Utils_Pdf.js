@@ -100,7 +100,7 @@ export default {
 				return boxesY + boxHeight; 
 			};
 
-			// --- 2. ITEMS TABLE (9pt FONT, WRAPPING) ---
+			// --- 2. ITEMS TABLE (8pt FONT, WRAPPING) ---
 			doc.autoTable({
 				startY: margin + 40 + 95 + 10,
 				margin: { left: margin, right: margin, top: margin + 170 },
@@ -132,11 +132,12 @@ export default {
 				},
 				theme: 'grid',
 				styles: { 
-					fontSize: 9, 
+					fontSize: 8, 
 					cellPadding: 2, 
 					lineColor: [0, 0, 0], lineWidth: 0.5,
 					textColor: [0, 0, 0],
-					overflow: 'linebreak'
+					overflow: 'linebreak',
+					valign: 'middle'
 				},
 				headStyles: { 
 					fillColor: [255, 255, 255], 
@@ -170,7 +171,7 @@ export default {
 			});
 
 			// --- 4. AMOUNT IN WORDS ---
-			const wordsY = doc.lastAutoTable.finalY + 28;
+			const wordsY = doc.lastAutoTable.finalY + 38;
 			doc.setFontSize(10.5);
 			doc.setFont("helvetica", "bold");
 			doc.text(`Grand Total: ${Number(grandTotal).toFixed(2)}`, margin, wordsY - 14); // Amount in Number
@@ -190,6 +191,7 @@ export default {
 
 			const slipY = pageHeight - 160; 
 
+			doc.setDrawColor(0, 0, 0); // Black dotted line
 			doc.setLineDash([3, 3], 0);
 			doc.line(margin, slipY, pageWidth - margin, slipY);
 			doc.setLineDash([], 0);
@@ -200,7 +202,7 @@ export default {
 
 			const slipBoxY = slipY + 30;
 			const slipBoxHeight = 100;
-			doc.rect(margin, slipBoxY, pageWidth - (margin * 2), slipBoxHeight);
+			doc.rect(margin, slipBoxY, pageWidth - (margin * 2), slipBoxHeight); // Black box
 
 			doc.setFontSize(9);
 			doc.text(`Invoice No: ${invoiceData.invoice_number}`, margin + 10, slipBoxY + 15);
@@ -208,22 +210,22 @@ export default {
 			doc.text(`Customer: ${invoiceData.customer_name}`, margin + 10, slipBoxY + 45);
 			doc.text(`Total Amount: ${Number(grandTotal).toFixed(2)}`, margin + 10, slipBoxY + 60);
 
-			const bankBoxX = pageWidth / 2;
-			const bankBoxW = (pageWidth / 2) - margin - 10;
-			doc.rect(bankBoxX, slipBoxY + 5, bankBoxW, 55);
-			doc.setFont("helvetica", "bold");
-			doc.text("PAYMENT BANK DETAILS", bankBoxX + 5, slipBoxY + 15);
-			doc.setFont("helvetica", "normal");
-			doc.setFontSize(8);
-			doc.text(`Bank: ${bank.bank_name || "-"}`, bankBoxX + 5, slipBoxY + 28);
-			doc.text(`Acc No: ${bank.account_number || "-"}`, bankBoxX + 5, slipBoxY + 38);
-			doc.text(`IFSC: ${bank.ifsc_code || "-"}`, bankBoxX + 5, slipBoxY + 48);
-
 			doc.setFontSize(9);
 			doc.text(`Receiver's Signature: __________________`, margin + 10, slipBoxY + 90);
 
-			// Authorized Signatory right under the bank box
-			doc.text(`Authorized Signatory: __________________`, bankBoxX + 5, slipBoxY + 85);
+			// Right side: Bank Details (Text only, no sub-box)
+			const bankInfoX = pageWidth / 2 + 5;
+			doc.setFont("helvetica", "bold");
+			doc.text("PAYMENT BANK DETAILS", bankInfoX, slipBoxY + 15);
+			doc.setFont("helvetica", "normal");
+			doc.setFontSize(8);
+			doc.text(`Bank: ${bank.bank_name || "-"}`, bankInfoX, slipBoxY + 28);
+			doc.text(`Acc No: ${bank.account_number || "-"}`, bankInfoX, slipBoxY + 38);
+			doc.text(`IFSC: ${bank.ifsc_code || "-"}`, bankInfoX, slipBoxY + 48);
+
+			// Authorized Signatory positioned on the right
+			doc.setFontSize(9);
+			doc.text(`Authorized Signatory: __________________`, bankInfoX, slipBoxY + 90);
 
 			// Terms and Conditions at the very bottom
 			doc.setFontSize(8);

@@ -16,7 +16,7 @@
       "httpMethod": "GET",
       "httpVersion": "HTTP11",
       "paginationType": "NONE",
-      "path": "/api/sales/bank-details",
+      "path": "/api/sales/bank-details/3",
       "pluginSpecifiedTemplates": [
         {
           "value": true
