@@ -1,0 +1,57 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "alignment": "left",
+  "animateLoading": true,
+  "bottomRow": 14,
+  "boxShadow": "none",
+  "defaultOptionValue": "Y",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    }
+  ],
+  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicTriggerPathList": [],
+  "flexVerticalAlignment": "start",
+  "isDisabled": false,
+  "isInline": true,
+  "isLoading": false,
+  "isRequired": false,
+  "isVisible": true,
+  "key": "nkvb2pt14x",
+  "label": "",
+  "labelAlignment": "left",
+  "labelPosition": "Top",
+  "labelTextSize": "0.875rem",
+  "labelWidth": 5,
+  "leftColumn": 1,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "mobileBottomRow": 19,
+  "mobileLeftColumn": 0,
+  "mobileRightColumn": 20,
+  "mobileTopRow": 13,
+  "needsErrorInfo": false,
+  "options": [
+    {
+      "label": "Same Product",
+      "value": "Same Product"
+    },
+    {
+      "label": "Different Product",
+      "value": "Different Product"
+    }
+  ],
+  "originalBottomRow": 14,
+  "originalTopRow": 10,
+  "parentColumnSpace": 12.6640625,
+  "parentId": "vmkpkqlmrf",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "rightColumn": 28,
+  "topRow": 10,
+  "type": "RADIO_GROUP_WIDGET",
+  "version": 1,
+  "widgetId": "jkk5vfuucs",
+  "widgetName": "radioFreeItemType"
+}

@@ -1,0 +1,62 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 26,
+  "boxShadow": "none",
+  "defaultOptionValue": "GREEN",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
+    }
+  ],
+  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicPropertyPathList": [
+    {
+      "key": "sourceData"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "isDisabled": false,
+  "isFilterable": true,
+  "isLoading": false,
+  "isRequired": false,
+  "isVisible": true,
+  "key": "nxj0kx41bc",
+  "labelAlignment": "left",
+  "labelPosition": "Top",
+  "labelText": "Channel",
+  "labelTextSize": "0.875rem",
+  "labelWidth": 5,
+  "leftColumn": 0,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 31,
+  "mobileLeftColumn": 0,
+  "mobileRightColumn": 20,
+  "mobileTopRow": 24,
+  "needsErrorInfo": false,
+  "optionLabel": "name",
+  "optionValue": "code",
+  "originalBottomRow": 26,
+  "originalTopRow": 19,
+  "parentColumnSpace": 12.6640625,
+  "parentId": "vmkpkqlmrf",
+  "parentRowSpace": 10,
+  "placeholderText": "Select option",
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 20,
+  "serverSideFiltering": false,
+  "shouldScrollContents": true,
+  "sourceData": "[\n  {\n    \"name\": \"Distributor\",\n    \"code\": \"Distributor\"\n  },\n  {\n    \"name\": \"Wholesale\",\n    \"code\": \"Wholesale\"\n  },\n  {\n    \"name\": \"Dealer\",\n    \"code\": \"Dealer\"\n  },\n\t{\n    \"name\": \"Retail\",\n    \"code\": \"Retail\"\n  }\n]",
+  "topRow": 19,
+  "type": "SELECT_WIDGET",
+  "version": 1,
+  "widgetId": "dnnz0iga4e",
+  "widgetName": "selectChannel"
+}

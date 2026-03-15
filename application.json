@@ -52,6 +52,10 @@
     {
       "id": "Invoice",
       "isDefault": false
+    },
+    {
+      "id": "Schemes",
+      "isDefault": false
     }
   ],
   "unpublishedAppLayout": {
