@@ -116,13 +116,33 @@ export default {
 			// --- DYNAMIC FOOTER CHECK ---
 			let currentY = doc.lastAutoTable.finalY + 20;
 			const pageHeight = doc.internal.pageSize.height;
-			
-			// Prepare Schemes Data from order_lines
-			const schemeLines = (invoiceData.order_lines || [])
-				.filter(l => l.tier_applied)
-				.map(l => [l.product_name, l.tier_applied]);
 
-			// Estimate required space for Tax Summary + Schemes Table + Slip + Padding (~400pt)
+			// Prepare Schemes Data (Include Amount and Total)
+			let totalSchemeAmt = 0;
+			let schemeLines = (invoiceData.invoice_lines || [])
+			.filter(l => l.tier_applied)
+			.map(l => {
+				const amt = Number(l.scheme_amount || 0);
+				totalSchemeAmt += amt;
+				return [l.product_name, l.tier_applied, amt.toFixed(2)];
+			});
+
+			if (schemeLines.length === 0) {
+				schemeLines = (invoiceData.order_lines || [])
+					.filter(l => l.tier_applied)
+					.map(l => {
+					const amt = Number(l.scheme_amount || 0);
+					totalSchemeAmt += amt;
+					return [l.product_name, l.tier_applied, amt.toFixed(2)];
+				});
+			}
+
+			// Add Total Row for Schemes
+			if (schemeLines.length > 0) {
+				schemeLines.push([{ content: 'Total Scheme Discount', colSpan: 2, styles: { halign: 'right', fontStyle: 'bold' } }, { content: totalSchemeAmt.toFixed(2), styles: { halign: 'right', fontStyle: 'bold' } }]);
+			}
+
+			// Estimate required space (Updated for 3 columns)
 			const estimatedFooterHeight = (summaryData.length * 20) + (schemeLines.length * 20) + 210; 
 			if (currentY + estimatedFooterHeight > pageHeight) {
 				doc.addPage();
@@ -150,12 +170,16 @@ export default {
 				doc.autoTable({
 					startY: doc.lastAutoTable.finalY + 10,
 					margin: { left: margin },
-					head: [["PRODUCT NAME", "SCHEMES / TIER APPLIED"]],
+					head: [["PRODUCT NAME", "SCHEMES / TIER APPLIED", "SCHEME AMT"]],
 					body: schemeLines,
 					theme: 'grid',
 					styles: { fontSize: 8, cellPadding: 3, lineColor: [0, 0, 0], lineWidth: 0.5, textColor: [0, 0, 0] },
 					headStyles: { fillColor: [245, 245, 245], textColor: [0, 0, 0], fontStyle: 'bold' },
-					columnStyles: { 0: { cellWidth: 150 }, 1: { cellWidth: 'auto' } }
+					columnStyles: { 
+						0: { cellWidth: 150 }, 
+						1: { cellWidth: 'auto' },
+						2: { cellWidth: 70, halign: 'right' }
+					}
 				});
 			}
 
