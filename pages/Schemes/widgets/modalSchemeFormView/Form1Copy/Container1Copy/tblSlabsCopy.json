@@ -37,17 +37,17 @@
     "trigger_type",
     "trigger_id",
     "trigger_name",
-    "reward_product_id",
     "channel_tier",
     "min_qty",
     "reward_qty",
     "tier_level",
     "is_recursive",
     "customColumn1",
-    "combo_products",
-    "special_price"
+    "reward_product_name",
+    "special_price",
+    "combo_products"
   ],
-  "columnUpdatedAt": 1773634066011,
+  "columnUpdatedAt": 1773665964675,
   "columnWidthMap": {
     "trigger_name": 214
   },
@@ -70,9 +70,6 @@
       "key": "boxShadow"
     },
     {
-      "key": "tableData"
-    },
-    {
       "key": "primaryColumns.id.computedValue"
     },
     {
@@ -86,9 +83,6 @@
     },
     {
       "key": "primaryColumns.trigger_name.computedValue"
-    },
-    {
-      "key": "primaryColumns.reward_product_id.computedValue"
     },
     {
       "key": "primaryColumns.channel_tier.computedValue"
@@ -115,10 +109,16 @@
       "key": "primaryColumns.customColumn1.boxShadow"
     },
     {
-      "key": "primaryColumns.combo_products.computedValue"
+      "key": "primaryColumns.reward_product_name.computedValue"
+    },
+    {
+      "key": "tableData"
     },
     {
       "key": "primaryColumns.special_price.computedValue"
+    },
+    {
+      "key": "primaryColumns.combo_products.computedValue"
     }
   ],
   "dynamicPropertyPathList": [
@@ -207,7 +207,7 @@
       "fontStyle": "",
       "horizontalAlignment": "LEFT",
       "id": "combo_products",
-      "index": 5,
+      "index": 12,
       "isCellEditable": false,
       "isCellVisible": true,
       "isDerived": false,
@@ -360,19 +360,21 @@
       "verticalAlignment": "CENTER",
       "width": 150
     },
-    "reward_product_id": {
-      "alias": "reward_product_id",
+    "reward_product_name": {
+      "alias": "reward_product_name",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
+      "cellBackground": "",
       "columnType": "text",
-      "computedValue": "{{(() => { const tableData = tblSlabsCopy.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"reward_product_id\"])) : reward_product_id })()}}",
+      "computedValue": "{{(() => { const tableData = tblSlabsCopy.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"reward_product_name\"])) : reward_product_name })()}}",
       "currencyCode": "USD",
       "decimals": 0,
       "enableFilter": true,
       "enableSort": true,
+      "fontStyle": "",
       "horizontalAlignment": "LEFT",
-      "id": "reward_product_id",
-      "index": 5,
+      "id": "reward_product_name",
+      "index": 6,
       "isCellEditable": false,
       "isCellVisible": true,
       "isDerived": false,
@@ -381,10 +383,11 @@
       "isEditable": false,
       "isSaveVisible": true,
       "isVisible": true,
-      "label": "reward_product_id",
+      "label": "reward_product_name",
       "notation": "standard",
-      "originalId": "reward_product_id",
+      "originalId": "reward_product_name",
       "sticky": "",
+      "textColor": "",
       "textSize": "0.875rem",
       "thousandSeparator": true,
       "validation": {},
@@ -458,7 +461,7 @@
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
       "cellBackground": "",
-      "columnType": "number",
+      "columnType": "text",
       "computedValue": "{{(() => { const tableData = tblSlabsCopy.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"special_price\"])) : special_price })()}}",
       "currencyCode": "USD",
       "decimals": 0,
@@ -467,7 +470,7 @@
       "fontStyle": "",
       "horizontalAlignment": "LEFT",
       "id": "special_price",
-      "index": 7,
+      "index": 6,
       "isCellEditable": false,
       "isCellVisible": true,
       "isDerived": false,
@@ -616,7 +619,7 @@
   "responsiveBehavior": "fill",
   "rightColumn": 64,
   "searchKey": "",
-  "tableData": "{{appsmith.store.varSlabsData}}",
+  "tableData": "{{tblScheme.triggeredRow.rules}}",
   "textSize": "0.875rem",
   "topRow": 26,
   "totalRecordsCount": 0,

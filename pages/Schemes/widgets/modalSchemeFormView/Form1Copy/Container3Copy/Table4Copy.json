@@ -39,15 +39,15 @@
     "trigger_name",
     "channel_tier",
     "min_qty",
-    "special_price",
     "reward_qty",
-    "reward_product_id",
-    "combo_products",
     "tier_level",
     "is_recursive",
-    "customColumn1"
+    "customColumn1",
+    "reward_product_name",
+    "special_price",
+    "combo_products"
   ],
-  "columnUpdatedAt": 1773634132227,
+  "columnUpdatedAt": 1773665793885,
   "columnWidthMap": {
     "min_qty": 112,
     "special_price": 137.15625,
@@ -72,9 +72,6 @@
       "key": "boxShadow"
     },
     {
-      "key": "tableData"
-    },
-    {
       "key": "primaryColumns.id.computedValue"
     },
     {
@@ -96,16 +93,7 @@
       "key": "primaryColumns.min_qty.computedValue"
     },
     {
-      "key": "primaryColumns.special_price.computedValue"
-    },
-    {
       "key": "primaryColumns.reward_qty.computedValue"
-    },
-    {
-      "key": "primaryColumns.reward_product_id.computedValue"
-    },
-    {
-      "key": "primaryColumns.combo_products.computedValue"
     },
     {
       "key": "primaryColumns.tier_level.computedValue"
@@ -121,6 +109,15 @@
     },
     {
       "key": "primaryColumns.customColumn1.boxShadow"
+    },
+    {
+      "key": "primaryColumns.reward_product_name.computedValue"
+    },
+    {
+      "key": "primaryColumns.special_price.computedValue"
+    },
+    {
+      "key": "primaryColumns.combo_products.computedValue"
     }
   ],
   "dynamicPropertyPathList": [
@@ -189,15 +186,17 @@
       "alias": "combo_products",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
+      "cellBackground": "",
       "columnType": "text",
       "computedValue": "{{(() => { const tableData = Table4Copy.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"combo_products\"])) : combo_products })()}}",
       "currencyCode": "USD",
       "decimals": 0,
       "enableFilter": true,
       "enableSort": true,
+      "fontStyle": "",
       "horizontalAlignment": "LEFT",
       "id": "combo_products",
-      "index": 10,
+      "index": 12,
       "isCellEditable": false,
       "isCellVisible": true,
       "isDerived": false,
@@ -205,11 +204,12 @@
       "isDiscardVisible": true,
       "isEditable": false,
       "isSaveVisible": true,
-      "isVisible": false,
+      "isVisible": true,
       "label": "combo_products",
       "notation": "standard",
       "originalId": "combo_products",
       "sticky": "",
+      "textColor": "",
       "textSize": "0.875rem",
       "thousandSeparator": true,
       "validation": {},
@@ -348,19 +348,21 @@
       "verticalAlignment": "CENTER",
       "width": 150
     },
-    "reward_product_id": {
-      "alias": "reward_product_id",
+    "reward_product_name": {
+      "alias": "reward_product_name",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
+      "cellBackground": "",
       "columnType": "text",
-      "computedValue": "{{(() => { const tableData = Table4Copy.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"reward_product_id\"])) : reward_product_id })()}}",
+      "computedValue": "{{(() => { const tableData = Table4Copy.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"reward_product_name\"])) : reward_product_name })()}}",
       "currencyCode": "USD",
       "decimals": 0,
       "enableFilter": true,
       "enableSort": true,
+      "fontStyle": "",
       "horizontalAlignment": "LEFT",
-      "id": "reward_product_id",
-      "index": 9,
+      "id": "reward_product_name",
+      "index": 6,
       "isCellEditable": false,
       "isCellVisible": true,
       "isDerived": false,
@@ -368,11 +370,12 @@
       "isDiscardVisible": true,
       "isEditable": false,
       "isSaveVisible": true,
-      "isVisible": false,
-      "label": "reward_product_id",
+      "isVisible": true,
+      "label": "reward_product_name",
       "notation": "standard",
-      "originalId": "reward_product_id",
+      "originalId": "reward_product_name",
       "sticky": "",
+      "textColor": "",
       "textSize": "0.875rem",
       "thousandSeparator": true,
       "validation": {},
@@ -445,15 +448,17 @@
       "alias": "special_price",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
-      "columnType": "number",
+      "cellBackground": "",
+      "columnType": "text",
       "computedValue": "{{(() => { const tableData = Table4Copy.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"special_price\"])) : special_price })()}}",
       "currencyCode": "USD",
       "decimals": 0,
       "enableFilter": true,
       "enableSort": true,
+      "fontStyle": "",
       "horizontalAlignment": "LEFT",
       "id": "special_price",
-      "index": 7,
+      "index": 6,
       "isCellEditable": false,
       "isCellVisible": true,
       "isDerived": false,
@@ -466,6 +471,7 @@
       "notation": "standard",
       "originalId": "special_price",
       "sticky": "",
+      "textColor": "",
       "textSize": "0.875rem",
       "thousandSeparator": true,
       "validation": {},
@@ -601,7 +607,7 @@
   "responsiveBehavior": "fill",
   "rightColumn": 64,
   "searchKey": "",
-  "tableData": "{{appsmith.store.varSlabsData}}",
+  "tableData": "",
   "textSize": "0.875rem",
   "topRow": 7,
   "totalRecordsCount": 0,
