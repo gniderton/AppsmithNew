@@ -13,7 +13,11 @@
       "key": "borderRadius"
     }
   ],
-  "dynamicTriggerPathList": [],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
   "iconName": "plus",
   "isDisabled": false,
   "isLoading": false,
@@ -26,6 +30,7 @@
   "mobileRightColumn": 38,
   "mobileTopRow": 0,
   "needsErrorInfo": false,
+  "onClick": "{{Combo_Group_Add.addComboProduct();}}",
   "parentColumnSpace": 13.00244140625,
   "parentId": "b441iyi96f",
   "parentRowSpace": 10,

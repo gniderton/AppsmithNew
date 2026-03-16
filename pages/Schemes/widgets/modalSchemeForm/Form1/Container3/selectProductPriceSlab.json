@@ -1,56 +1,62 @@
 {
   "accentColor": "{{appsmith.theme.colors.primaryColor}}",
   "animateLoading": true,
-  "autoFocus": false,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 40,
+  "bottomRow": 7,
   "boxShadow": "none",
-  "defaultText": "",
+  "defaultOptionValue": "GREEN",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
     },
     {
       "key": "borderRadius"
+    },
+    {
+      "key": "sourceData"
     }
   ],
   "dynamicHeight": "FIXED",
+  "dynamicPropertyPathList": [
+    {
+      "key": "sourceData"
+    }
+  ],
   "dynamicTriggerPathList": [],
-  "iconAlign": "left",
-  "inputType": "TEXT",
   "isDisabled": false,
+  "isFilterable": true,
   "isLoading": false,
   "isRequired": false,
   "isVisible": true,
-  "key": "dsui8p9nyy",
-  "label": "Min Qty",
+  "key": "8hmp71rm8t",
   "labelAlignment": "left",
   "labelPosition": "Top",
-  "labelStyle": "",
+  "labelText": "Product",
   "labelTextSize": "0.875rem",
   "labelWidth": 5,
-  "leftColumn": 20,
+  "leftColumn": 14,
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 4,
   "minWidth": 450,
-  "mobileBottomRow": 43,
-  "mobileLeftColumn": 20,
-  "mobileRightColumn": 40,
-  "mobileTopRow": 36,
+  "mobileBottomRow": 7,
+  "mobileLeftColumn": 14,
+  "mobileRightColumn": 34,
+  "mobileTopRow": 0,
   "needsErrorInfo": false,
-  "originalBottomRow": 41,
-  "originalTopRow": 34,
+  "optionLabel": "product_name",
+  "optionValue": "id",
   "parentColumnSpace": 13.00244140625,
-  "parentId": "b441iyi96f",
+  "parentId": "xvfjmpd1sp",
   "parentRowSpace": 10,
+  "placeholderText": "Select option",
   "renderMode": "CANVAS",
-  "resetOnSubmit": true,
   "responsiveBehavior": "fill",
-  "rightColumn": 40,
-  "showStepArrows": false,
-  "topRow": 33,
-  "type": "INPUT_WIDGET_V2",
-  "version": 2,
-  "widgetId": "dz86n90p15",
-  "widgetName": "numberMinQtyCombo"
+  "rightColumn": 36,
+  "serverSideFiltering": false,
+  "sourceData": "{{getProducts.data.data}}",
+  "topRow": 0,
+  "type": "SELECT_WIDGET",
+  "version": 1,
+  "widgetId": "nizocddfew",
+  "widgetName": "selectProductPriceSlab"
 }

@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 40,
+  "bottomRow": 6,
   "boxShadow": "none",
   "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
   "buttonVariant": "TERTIARY",
@@ -11,14 +11,6 @@
     },
     {
       "key": "borderRadius"
-    },
-    {
-      "key": "isDisabled"
-    }
-  ],
-  "dynamicPropertyPathList": [
-    {
-      "key": "isDisabled"
     }
   ],
   "dynamicTriggerPathList": [
@@ -27,27 +19,27 @@
     }
   ],
   "iconName": "plus",
-  "isDisabled": "{{  numberMinQtyCombo.value <= 0 || numberFreeQtyCombo.value <= 0 }}",
+  "isDisabled": false,
   "isLoading": false,
   "isVisible": true,
-  "key": "guf317x99o",
+  "key": "dpfnhxepdh",
   "leftColumn": 60,
   "minWidth": 50,
-  "mobileBottomRow": 40,
-  "mobileLeftColumn": 60,
-  "mobileRightColumn": 64,
-  "mobileTopRow": 36,
+  "mobileBottomRow": 4,
+  "mobileLeftColumn": 58,
+  "mobileRightColumn": 62,
+  "mobileTopRow": 0,
   "needsErrorInfo": false,
-  "onClick": "{{Combo_Utils.addComboSlab();}}",
+  "onClick": "{{PriceSlab_Utils.addPriceSlab();}}",
   "parentColumnSpace": 13.00244140625,
-  "parentId": "b441iyi96f",
+  "parentId": "xvfjmpd1sp",
   "parentRowSpace": 10,
   "renderMode": "CANVAS",
   "responsiveBehavior": "hug",
   "rightColumn": 64,
-  "topRow": 33,
+  "topRow": 0,
   "type": "ICON_BUTTON_WIDGET",
   "version": 1,
-  "widgetId": "cixjpdelcc",
-  "widgetName": "IconButton3"
+  "widgetId": "4zwnixowqb",
+  "widgetName": "IconButton4"
 }
