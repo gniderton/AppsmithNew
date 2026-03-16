@@ -13,6 +13,11 @@
       "key": "borderRadius"
     }
   ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
   "dynamicTriggerPathList": [
     {
       "key": "onClick"
@@ -31,7 +36,7 @@
   "mobileRightColumn": 64,
   "mobileTopRow": 0,
   "needsErrorInfo": false,
-  "onClick": "{{closeModal(modalFrameInvoiceView.name);}}",
+  "onClick": "{{ \n  closeModal('modalFrameInvoiceView'); \n  storeValue('varIsEditMode', false); \n}}",
   "parentId": "jx8tp1ofhe",
   "renderMode": "CANVAS",
   "responsiveBehavior": "hug",
