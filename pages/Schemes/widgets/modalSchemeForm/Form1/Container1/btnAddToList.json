@@ -38,7 +38,7 @@
   "mobileRightColumn": 64,
   "mobileTopRow": 24,
   "needsErrorInfo": false,
-  "onClick": "{{Scheme_Utils.addNewSlab();}}",
+  "onClick": "{{JS_Schemes.addNewSlab();}}",
   "parentColumnSpace": 12.6640625,
   "parentId": "vmkpkqlmrf",
   "parentRowSpace": 10,

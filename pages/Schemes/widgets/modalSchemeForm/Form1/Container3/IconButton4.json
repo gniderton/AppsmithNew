@@ -30,7 +30,7 @@
   "mobileRightColumn": 62,
   "mobileTopRow": 0,
   "needsErrorInfo": false,
-  "onClick": "{{PriceSlab_Utils.addPriceSlab();}}",
+  "onClick": "{{JS_Schemes.addPriceSlab();}}",
   "parentColumnSpace": 13.00244140625,
   "parentId": "xvfjmpd1sp",
   "parentRowSpace": 10,

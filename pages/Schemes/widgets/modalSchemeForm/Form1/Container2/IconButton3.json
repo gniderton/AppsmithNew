@@ -38,7 +38,7 @@
   "mobileRightColumn": 64,
   "mobileTopRow": 36,
   "needsErrorInfo": false,
-  "onClick": "{{Combo_Utils.addComboSlab();}}",
+  "onClick": "{{JS_Schemes.addComboSlab();}}",
   "parentColumnSpace": 13.00244140625,
   "parentId": "b441iyi96f",
   "parentRowSpace": 10,

@@ -31,7 +31,7 @@
   "mobileRightColumn": 64,
   "mobileTopRow": 0,
   "needsErrorInfo": false,
-  "onClick": "{{showModal(modalSchemeForm.name);}}",
+  "onClick": "{{JS_Schemes.initCreate();}}",
   "parentColumnSpace": 17.53125,
   "parentId": "0",
   "parentRowSpace": 10,

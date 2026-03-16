@@ -4,10 +4,13 @@
   "animateLoading": true,
   "bottomRow": 22,
   "boxShadow": "none",
-  "defaultOptionValue": "",
+  "defaultOptionValue": "{{appsmith.store.editType}}",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
+    },
+    {
+      "key": "defaultOptionValue"
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",

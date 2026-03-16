@@ -7,6 +7,7 @@
   "closeOnSelection": true,
   "dateFormat": "DD-MM-YYYY",
   "datePickerType": "DATE_PICKER",
+  "defaultDate": "{{appsmith.store.editEnd}}",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
@@ -16,12 +17,18 @@
     },
     {
       "key": "isDisabled"
+    },
+    {
+      "key": "defaultDate"
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
   "dynamicPropertyPathList": [
     {
       "key": "isDisabled"
+    },
+    {
+      "key": "defaultDate"
     }
   ],
   "dynamicTriggerPathList": [],

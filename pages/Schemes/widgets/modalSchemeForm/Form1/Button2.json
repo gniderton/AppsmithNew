@@ -39,7 +39,7 @@
   "mobileRightColumn": 63,
   "mobileTopRow": 0,
   "needsErrorInfo": false,
-  "onClick": "{{Save_Scheme.createScheme();}}",
+  "onClick": "{{JS_Schemes.saveScheme();}}",
   "parentColumnSpace": 12.9765625,
   "parentId": "cnuqgjwhdp",
   "parentRowSpace": 10,
