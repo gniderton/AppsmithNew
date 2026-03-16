@@ -85,7 +85,7 @@
   "isVisible": true,
   "isVisibleDownload": false,
   "isVisibleFilters": false,
-  "isVisiblePagination": true,
+  "isVisiblePagination": false,
   "isVisibleSearch": false,
   "key": "y5jffltf0u",
   "label": "Data",
@@ -99,7 +99,7 @@
   "originalBottomRow": 26,
   "originalTopRow": 7,
   "parentColumnSpace": 12.6640625,
-  "parentId": "b441iyi96f",
+  "parentId": "05xstbd4i9",
   "parentRowSpace": 10,
   "primaryColumns": {
     "id": {
@@ -108,7 +108,7 @@
       "allowSameOptionsInNewRow": true,
       "cellBackground": "",
       "columnType": "number",
-      "computedValue": "{{(() => { const tableData = Table2.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"id\"])) : id })()}}",
+      "computedValue": "{{(() => { const tableData = Table2Copy.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"id\"])) : id })()}}",
       "currencyCode": "USD",
       "decimals": 0,
       "enableFilter": true,
@@ -142,7 +142,7 @@
       "allowSameOptionsInNewRow": true,
       "cellBackground": "",
       "columnType": "text",
-      "computedValue": "{{(() => { const tableData = Table2.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"product_id\"])) : product_id })()}}",
+      "computedValue": "{{(() => { const tableData = Table2Copy.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"product_id\"])) : product_id })()}}",
       "currencyCode": "USD",
       "decimals": 0,
       "enableFilter": true,
@@ -176,7 +176,7 @@
       "allowSameOptionsInNewRow": true,
       "cellBackground": "",
       "columnType": "text",
-      "computedValue": "{{(() => { const tableData = Table2.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"product_name\"])) : product_name })()}}",
+      "computedValue": "{{(() => { const tableData = Table2Copy.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"product_name\"])) : product_name })()}}",
       "currencyCode": "USD",
       "decimals": 0,
       "enableFilter": true,
@@ -216,6 +216,6 @@
   "type": "TABLE_WIDGET_V2",
   "version": 2,
   "verticalAlignment": "CENTER",
-  "widgetId": "yjr3wiswi3",
-  "widgetName": "Table2"
+  "widgetId": "xnlckd8nw3",
+  "widgetName": "Table2Copy"
 }

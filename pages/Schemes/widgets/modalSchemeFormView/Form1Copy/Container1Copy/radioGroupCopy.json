@@ -2,7 +2,7 @@
   "accentColor": "{{appsmith.theme.colors.primaryColor}}",
   "alignment": "left",
   "animateLoading": true,
-  "bottomRow": 22,
+  "bottomRow": 6,
   "boxShadow": "none",
   "defaultOptionValue": "",
   "dynamicBindingPathList": [
@@ -11,11 +11,6 @@
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
-  "dynamicPropertyPathList": [
-    {
-      "key": "options"
-    }
-  ],
   "dynamicTriggerPathList": [],
   "flexVerticalAlignment": "start",
   "isDisabled": false,
@@ -24,30 +19,43 @@
   "isRequired": false,
   "isVisible": true,
   "key": "nkvb2pt14x",
-  "label": "Type",
+  "label": "Group",
   "labelAlignment": "left",
   "labelPosition": "Top",
   "labelTextSize": "0.875rem",
-  "labelWidth": "7",
+  "labelWidth": 5,
   "leftColumn": 1,
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 4,
-  "mobileBottomRow": 31,
+  "mobileBottomRow": 6,
   "mobileLeftColumn": 1,
   "mobileRightColumn": 21,
-  "mobileTopRow": 25,
+  "mobileTopRow": 0,
   "needsErrorInfo": false,
-  "options": "[\n  {\n    \"label\": \"BUY_GET_FREE\",\n    \"value\": \"BUY_GET_FREE\"\n  },\n  {\n    \"label\": \"COMBO\",\n    \"value\": \"COMBO\"\n  },\n  {\n    \"label\": \"PRICE_SLAB\",\n    \"value\": \"PRICE_SLAB\"\n  }\n]",
-  "originalBottomRow": 22,
-  "originalTopRow": 16,
-  "parentColumnSpace": 6.5166015625,
-  "parentId": "cnuqgjwhdp",
+  "options": [
+    {
+      "label": "Products",
+      "value": "Products"
+    },
+    {
+      "label": "Brand",
+      "value": "Brand"
+    },
+    {
+      "label": "Category",
+      "value": "Category"
+    }
+  ],
+  "originalBottomRow": 6,
+  "originalTopRow": 0,
+  "parentColumnSpace": 12.6640625,
+  "parentId": "bbymt7c6hn",
   "parentRowSpace": 10,
   "renderMode": "CANVAS",
   "rightColumn": 36,
-  "topRow": 16,
+  "topRow": 0,
   "type": "RADIO_GROUP_WIDGET",
   "version": 1,
-  "widgetId": "e4ep8sdpx4",
-  "widgetName": "radioSchemeType"
+  "widgetId": "odr6llqm7e",
+  "widgetName": "radioGroupCopy"
 }
