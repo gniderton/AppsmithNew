@@ -42,14 +42,22 @@ export default {
 
 	getProductSummary: (lines) => {
 		const groups = _.groupBy(lines, 'product_name');
-		return _.map(groups, (items, name) => ({
-			"Product": name,
-			"Qty": _.sumBy(items, l => Number(l.shipped_qty)),
-			"Gross": _.sumBy(items, l => Number(l.gross_amount)).toFixed(2),
-			"Scheme Disc": _.sumBy(items, l => Number(l.scheme_amount)).toFixed(2),
-			"Taxable": _.sumBy(items, l => Number(l.taxable_amount)).toFixed(2),
-			"Net Amt": _.sumBy(items, l => Number(l.amount)).toFixed(2)
-		}));
+		return _.map(groups, (items, name) => {
+			const totalSchemeAmt = _.sumBy(items, l => Number(l.scheme_amount));
+			const rate = Number(items[0].rate || 0);
+			// Calculate Free Qty: Scheme Amount / Rate (rounded to nearest whole number or decimals as needed)
+			const freeQty = rate > 0 ? (totalSchemeAmt / rate).toFixed(0) : 0;
+
+			return {
+				"Product": name,
+				"Total Qty": _.sumBy(items, l => Number(l.shipped_qty)),
+				"Free Qty": freeQty + " pcs",
+				"Gross": _.sumBy(items, l => Number(l.gross_amount)).toFixed(2),
+				"Total Scheme Disc": totalSchemeAmt.toFixed(2),
+				"Taxable": _.sumBy(items, l => Number(l.taxable_amount)).toFixed(2),
+				"Net Amt": _.sumBy(items, l => Number(l.amount)).toFixed(2)
+			};
+		});
 	},
 
 	getTaxSummary: (lines) => {
