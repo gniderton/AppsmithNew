@@ -1,4 +1,41 @@
 export default {
+	// --- A. THE BATCH PROCESSOR (The Loop) ---
+	downloadBulkInvoices: async () => {
+		const ids = appsmith.store.bulkInvoiceIds || [];
+		if (ids.length === 0) return;
+
+		showAlert(`Processing batch of ${ids.length} invoices...`, "info");
+
+		for (const id of ids) {
+			// 1. Set the variable your EXISTING Unified API uses
+			await storeValue('varSelectedInvoice', id);
+			
+			// 2. Fetch full details (Reusing your existing detailed API)
+			await getUnifiedInvoiceDetail.run(); 
+			const detailedData = getUnifiedInvoiceDetail.data;
+			
+			if (detailedData && detailedData.invoice_id) {
+				// 3. Trigger your EXACT drawing logic below
+				await this.previewInvoice(detailedData);
+				
+				// 4. Delay (650ms) to ensure browser clears the download queue
+				await new Promise(r => setTimeout(r, 650));
+			}
+		}
+
+		// 5. Cleanup
+		await storeValue('bulkInvoiceIds', []);
+		showAlert("Bulk Download Complete!", "success");
+	},
+
+	// --- B. AUTO-TRIGGER ---
+	onPageLoad: async () => {
+		if (appsmith.store.bulkInvoiceIds && appsmith.store.bulkInvoiceIds.length > 0) {
+			await this.downloadBulkInvoices();
+		}
+	},
+
+	// --- C. YOUR EXACT PREVIEW LOGIC ---
 	previewInvoice: async (invoiceData) => {
 		try {
 			if (!invoiceData || !invoiceData.invoice_id) throw new Error("No Invoice data selected.");
@@ -236,6 +273,7 @@ export default {
 		}
 	},
 
+	// --- D. HELPERS ---
 	getSummary: (lines) => {
 		if (!lines || lines.length === 0) return [];
 		const groups = {};

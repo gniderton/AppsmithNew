@@ -16,7 +16,7 @@
       "httpMethod": "GET",
       "httpVersion": "HTTP11",
       "paginationType": "NONE",
-      "path": "//api/sales/unified/{{tblSales.triggeredRow.id}}",
+      "path": "/api/sales/unified/{{tblSales.triggeredRow.id}}",
       "pluginSpecifiedTemplates": [
         {
           "value": true

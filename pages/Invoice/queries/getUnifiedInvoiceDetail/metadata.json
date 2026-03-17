@@ -39,7 +39,7 @@
     ],
     "name": "getUnifiedInvoiceDetail",
     "pageId": "Invoice",
-    "runBehaviour": "MANUAL",
+    "runBehaviour": "AUTOMATIC",
     "userSetOnLoad": false
   }
 }

@@ -1,6 +1,6 @@
 {
   "gitSyncId": "69a80abb79ac426a29eb8838_1a834652-4d48-4727-b78e-80896e286069",
-  "id": "Schemes_getBulkInvoiceLines",
+  "id": "Schemes_getBulkInvoiceLinestbl",
   "pluginId": "restapi-plugin",
   "pluginType": "API",
   "unpublishedAction": {
@@ -45,7 +45,7 @@
         "key": "queryParameters[0].value"
       }
     ],
-    "name": "getBulkInvoiceLines",
+    "name": "getBulkInvoiceLinestbl",
     "pageId": "Schemes",
     "runBehaviour": "AUTOMATIC",
     "userSetOnLoad": false
