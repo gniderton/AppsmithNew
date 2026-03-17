@@ -394,7 +394,7 @@
       "label": "PDF",
       "labelColor": "#FFFFFF",
       "notation": "standard",
-      "onClick": "{{\n(async () => {\n\t// 1. Fetch full details for the triggered row\n\tawait getInvoiceLines.run();\n\n\t// 2. Generate and store the PDF\n\tawait Invoice_Utils_Pdf.previewInvoice(getInvoiceLines.data);\n\n\t// 3. Open the preview modal (Modal is opened by this trigger)\n\tshowModal('modalInvoicePDF');\n})()\n}}",
+      "onClick": "{{\n(async () => {\n\t// 1. Fetch full details for the triggered row\n\tawait getInvoiceLines.run();\n\n\t// 2. Generate and store the PDF\n\tawait Invoice_Utils_Pdf.previewInvoice(getInvoiceLines.data);\n\n})()\n}}",
       "originalId": "customColumn2",
       "sticky": "",
       "textSize": "0.875rem",

@@ -3,6 +3,16 @@ export default {
 		try {
 			if (!invoiceData || !invoiceData.invoice_id) throw new Error("No Invoice data selected.");
 
+			// --- 1. LIBRARY SAFETY (Post-Downgrade Fix) ---
+			if (typeof jspdf === "undefined") throw new Error("jspdf library not loaded.");
+			const jsPDFConstructor = jspdf.jsPDF || jspdf;
+			const doc = new jsPDFConstructor('p', 'pt', 'a4'); 
+
+			// Ensure AutoTable attachment
+			if (typeof doc.autoTable !== "function" && jspdf.plugin && jspdf.plugin.autotable) {
+				jsPDFConstructor.API.autoTable = jspdf.plugin.autotable;
+			}
+
 			const lines = invoiceData.invoice_lines || [];
 			const summaryData = this.getSummary(lines);
 			const grandTotal = Number(invoiceData.grand_total || 0);
@@ -11,11 +21,10 @@ export default {
 			await getBankDetails.run();
 			const bank = getBankDetails.data || {};
 
-			const { jsPDF } = jspdf;
-			const doc = new jsPDF('p', 'pt', 'a4'); 
 			const margin = 12; 
 			const pageWidth = doc.internal.pageSize.width;
 
+			// --- HELPER: AMOUNT TO WORDS ---
 			const toWords = (num) => {
 				const a = ['','One ','Two ','Three ','Four ', 'Five ','Six ','Seven ','Eight ','Nine ','Ten ','Eleven ','Twelve ','Thirteen ','Fourteen ','Fifteen ','Sixteen ','Seventeen ','Eighteen ','Nineteen '];
 				const b = ['', '', 'Twenty','Thirty','Forty','Fifty', 'Sixty','Seventy','Eighty','Ninety'];
@@ -30,6 +39,7 @@ export default {
 				return str;
 			};
 
+			// --- HELPER: DRAW RECURRING HEADER ---
 			const drawMainHeader = (currentPage, totalPages) => {
 				const headerY = margin;
 				try {
@@ -84,10 +94,9 @@ export default {
 				return boxesY + boxHeight; 
 			};
 
+			// --- 2. ITEMS TABLE ---
 			doc.autoTable({
 				startY: margin + 40 + 95 + 10,
-				// Standard small margin to utilize complete page space
-				// margin.top adjusted to 157 to match page 1 start exactly (12 + 40 + 95 + 10)
 				margin: { left: margin, right: margin, top: 157, bottom: 12 },
 				head: [["S.N", "ITEM NAME", "CODE\nEAN", "HSN", "BATCH\nEXPIRY", "MRP", "QTY", "PRICE", "GROSS", "SCH", "D%", "D.AMT", "TXBL", "GST%", "GST$", "NET$"]],
 				body: lines.map((row, index) => {
@@ -96,7 +105,7 @@ export default {
 						index + 1, row.product_name, `${row.product_code || ""}\n${row.ean_code || ""}`, row.hsn_code || "-", 
 						`${row.batch_code || ""}\n${expiryStr}`, Number(row.mrp || 0).toFixed(2), row.shipped_qty, 
 						Number(row.rate || 0).toFixed(2), Number(row.gross_amount || 0).toFixed(2), Number(row.scheme_amount || 0).toFixed(2), 
-						(row.discount_percent || 0) + "%", Number(row.discount_amount || 0).toFixed(2), Number(row.taxable_amount || 0).toFixed(2), 
+						(row.tax_percent || 0) + "%", Number(row.discount_amount || 0).toFixed(2), Number(row.taxable_amount || 0).toFixed(2), 
 						(row.tax_percent || 0) + "%", Number(row.tax_amount || 0).toFixed(2), Number(row.amount || 0).toFixed(2)
 					];
 				}),
@@ -117,7 +126,6 @@ export default {
 			let currentY = doc.lastAutoTable.finalY + 20;
 			const pageHeight = doc.internal.pageSize.height;
 
-			// Prepare Schemes Data (Include Amount and Total)
 			let totalSchemeAmt = 0;
 			let schemeLines = (invoiceData.invoice_lines || [])
 			.filter(l => l.tier_applied)
@@ -137,12 +145,10 @@ export default {
 				});
 			}
 
-			// Add Total Row for Schemes
 			if (schemeLines.length > 0) {
 				schemeLines.push([{ content: 'Total Scheme Discount', colSpan: 2, styles: { halign: 'right', fontStyle: 'bold' } }, { content: totalSchemeAmt.toFixed(2), styles: { halign: 'right', fontStyle: 'bold' } }]);
 			}
 
-			// Estimate required space (Updated for 3 columns)
 			const estimatedFooterHeight = (summaryData.length * 20) + (schemeLines.length * 20) + 210; 
 			if (currentY + estimatedFooterHeight > pageHeight) {
 				doc.addPage();
@@ -175,15 +181,11 @@ export default {
 					theme: 'grid',
 					styles: { fontSize: 8, cellPadding: 3, lineColor: [0, 0, 0], lineWidth: 0.5, textColor: [0, 0, 0] },
 					headStyles: { fillColor: [245, 245, 245], textColor: [0, 0, 0], fontStyle: 'bold' },
-					columnStyles: { 
-						0: { cellWidth: 150 }, 
-						1: { cellWidth: 'auto' },
-						2: { cellWidth: 70, halign: 'right' }
-					}
+					columnStyles: { 0: { cellWidth: 150 }, 1: { cellWidth: 'auto' }, 2: { cellWidth: 70, halign: 'right' } }
 				});
 			}
 
-			// --- 5. AMOUNT IN WORDS ---
+			// --- 5. AMOUNT IN WORDS & ACKNOWLEDGEMENT ---
 			const wordsY = doc.lastAutoTable.finalY + 38;
 			doc.setFontSize(10.5); doc.setFont("helvetica", "bold");
 			doc.text(`Grand Total: ${Number(grandTotal).toFixed(2)}`, margin, wordsY - 14);
@@ -191,11 +193,9 @@ export default {
 			doc.setFont("helvetica", "normal");
 			doc.text(toWords(Math.round(grandTotal)), margin + 140, wordsY);
 
-			// --- 6. FOOTER ---
 			doc.setFontSize(8.5);
 			doc.text("This is a computer generated document and does not require a physical signature.", margin, pageHeight - 170);
 
-			// --- 7. DETACHABLE ACKNOWLEDGEMENT SLIP ---
 			const slipY = pageHeight - 160; 
 			doc.setDrawColor(0, 0, 0); doc.setLineDash([3, 3], 0);
 			doc.line(margin, slipY, pageWidth - margin, slipY); doc.setLineDash([], 0);
@@ -226,9 +226,10 @@ export default {
 			doc.setFontSize(8); doc.setFont("helvetica", "bold");
 			doc.text("Terms and Condition: ALL LEGAL DISPUTES ARE SUBJECT TO CALICUT JURIDICTION ONLY", margin, pageHeight - 15);
 
-			const base64String = doc.output('dataurlstring');
-			storeValue('currentPDF', base64String);
-			storeValue('currentPDFName', (invoiceData.invoice_number || "INV") + ".pdf");
+			// --- 7. THE FIX: DIRECT DOWNLOAD ---
+			const fileName = (invoiceData.invoice_number || "INV") + ".pdf";
+			download(doc.output('dataurlstring'), fileName, "application/pdf");
+			showAlert("Invoice Downloaded Successfully", "success");
 
 		} catch (error) {
 			showAlert("Invoice PDF Error: " + error.message, "error");
@@ -236,7 +237,7 @@ export default {
 	},
 
 	getSummary: (lines) => {
-		if (lines.length === 0) return [];
+		if (!lines || lines.length === 0) return [];
 		const groups = {};
 		lines.forEach(row => {
 			const taxRate = Number(row.tax_percent || 0);
@@ -269,7 +270,8 @@ export default {
 			doc.setFontSize(8.5); doc.setFont("helvetica", "bold"); doc.setTextColor(0, 0, 0);
 			const label = String(r[0]) + ":"; doc.text(label, x + 5, rowY);
 			doc.setFont("helvetica", "normal");
-			const val = String(r[1] || "-"); const splitVal = doc.splitTextToSize(val, width - labelWidth - 5); 
+			const val = String(r[1] || "-"); 
+            const splitVal = doc.splitTextToSize(val, width - labelWidth - 5); 
 			doc.text(splitVal, x + labelWidth, rowY); rowY += (splitVal.length * 9.5) + 1.5; 
 		});
 	}
