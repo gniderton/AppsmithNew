@@ -1,0 +1,74 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 10,
+  "boxShadow": "none",
+  "defaultOptionValue": "GREEN",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "labelText"
+    },
+    {
+      "key": "sourceData"
+    },
+    {
+      "key": "isDisabled"
+    }
+  ],
+  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicPropertyPathList": [
+    {
+      "key": "sourceData"
+    },
+    {
+      "key": "isDisabled"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "isDisabled": "{{ appsmith.store.varIsReadOnly }}",
+  "isFilterable": true,
+  "isLoading": false,
+  "isRequired": false,
+  "isVisible": true,
+  "key": "nxj0kx41bc",
+  "labelAlignment": "left",
+  "labelPosition": "Left",
+  "labelText": "Choose {{radioGroup.selectedOptionValue}}",
+  "labelTextSize": "0.875rem",
+  "labelWidth": "10",
+  "leftColumn": 1,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 12,
+  "mobileLeftColumn": 0,
+  "mobileRightColumn": 20,
+  "mobileTopRow": 5,
+  "needsErrorInfo": false,
+  "optionLabel": "label",
+  "optionValue": "value",
+  "originalBottomRow": 10,
+  "originalTopRow": 6,
+  "parentColumnSpace": 12.6640625,
+  "parentId": "vmkpkqlmrf",
+  "parentRowSpace": 10,
+  "placeholderText": "Select option",
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 34,
+  "serverSideFiltering": false,
+  "shouldScrollContents": true,
+  "sourceData": "{{\n  radioGroup.value === 'Products' \n    ? (getProducts.data.data || []).map(p => ({ label: p.product_name, value: p.id }))\n    : radioGroup.value === 'Brand' \n      ? (getBrands.data || []).map(b => ({ label: b.brand_name, value: b.id }))\n      : radioGroup.value === 'Category' \n        ? (getCategories.data || []).map(c => ({ label: c.category_name, value: c.id }))\n        : []\n}}",
+  "topRow": 6,
+  "type": "SELECT_WIDGET",
+  "version": 1,
+  "widgetId": "z83l6x55hr",
+  "widgetName": "selectTriggerItem"
+}

@@ -2,6 +2,7 @@
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "bottomRow": 4,
+  "bottomRowBeforeCollapse": 4,
   "boxShadow": "none",
   "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
   "buttonVariant": "PRIMARY",
@@ -15,11 +16,17 @@
     },
     {
       "key": "isDisabled"
+    },
+    {
+      "key": "isVisible"
     }
   ],
   "dynamicPropertyPathList": [
     {
       "key": "isDisabled"
+    },
+    {
+      "key": "isVisible"
     }
   ],
   "dynamicTriggerPathList": [
@@ -30,7 +37,7 @@
   "isDefaultClickDisabled": true,
   "isDisabled": "{{\n  !inputSchemeName.text ||\n  !dateStart.selectedDate ||\n  (!checkboxNoExpiry.isChecked && !dateEnd.selectedDate) ||\n  (appsmith.store.varSlabsData || []).length === 0\n}}",
   "isLoading": false,
-  "isVisible": true,
+  "isVisible": "{{ !appsmith.store.varIsReadOnly }}",
   "key": "y5w81pny3t",
   "leftColumn": 50,
   "minWidth": 120,
@@ -40,6 +47,8 @@
   "mobileTopRow": 0,
   "needsErrorInfo": false,
   "onClick": "{{JS_Schemes.saveScheme();}}",
+  "originalBottomRow": 4,
+  "originalTopRow": 0,
   "parentColumnSpace": 12.9765625,
   "parentId": "cnuqgjwhdp",
   "parentRowSpace": 10,
@@ -51,6 +60,7 @@
   "rightColumn": 63,
   "text": "Submit",
   "topRow": 0,
+  "topRowBeforeCollapse": 0,
   "type": "BUTTON_WIDGET",
   "version": 1,
   "widgetId": "z22labpt2w",

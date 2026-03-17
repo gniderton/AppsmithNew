@@ -1,20 +1,13 @@
 {
   "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "alignment": "left",
   "animateLoading": true,
-  "autoFocus": false,
-  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 4,
+  "bottomRow": 6,
   "boxShadow": "none",
-  "defaultText": "{{appsmith.store.editName}}",
+  "defaultOptionValue": "",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
-    },
-    {
-      "key": "borderRadius"
-    },
-    {
-      "key": "defaultText"
     },
     {
       "key": "isDisabled"
@@ -27,42 +20,50 @@
     }
   ],
   "dynamicTriggerPathList": [],
-  "iconAlign": "left",
-  "inputType": "TEXT",
+  "flexVerticalAlignment": "start",
   "isDisabled": "{{ appsmith.store.varIsReadOnly }}",
+  "isInline": true,
   "isLoading": false,
   "isRequired": false,
   "isVisible": true,
-  "key": "2doky7utfa",
-  "label": "Scheme Name",
+  "key": "nkvb2pt14x",
+  "label": "Group",
   "labelAlignment": "left",
-  "labelPosition": "Left",
-  "labelStyle": "",
+  "labelPosition": "Top",
   "labelTextSize": "0.875rem",
-  "labelWidth": "8",
+  "labelWidth": 5,
   "leftColumn": 1,
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 4,
-  "minWidth": 450,
-  "mobileBottomRow": 7,
+  "mobileBottomRow": 6,
   "mobileLeftColumn": 1,
   "mobileRightColumn": 21,
   "mobileTopRow": 0,
   "needsErrorInfo": false,
-  "originalBottomRow": 4,
+  "options": [
+    {
+      "label": "Products",
+      "value": "Products"
+    },
+    {
+      "label": "Brand",
+      "value": "Brand"
+    },
+    {
+      "label": "Category",
+      "value": "Category"
+    }
+  ],
+  "originalBottomRow": 6,
   "originalTopRow": 0,
-  "parentColumnSpace": 6.5166015625,
-  "parentId": "cnuqgjwhdp",
+  "parentColumnSpace": 12.6640625,
+  "parentId": "vmkpkqlmrf",
   "parentRowSpace": 10,
   "renderMode": "CANVAS",
-  "resetOnSubmit": true,
-  "responsiveBehavior": "fill",
-  "rightColumn": 27,
-  "shouldScrollContents": true,
-  "showStepArrows": false,
+  "rightColumn": 36,
   "topRow": 0,
-  "type": "INPUT_WIDGET_V2",
-  "version": 2,
-  "widgetId": "848g6t7zug",
-  "widgetName": "inputSchemeName"
+  "type": "RADIO_GROUP_WIDGET",
+  "version": 1,
+  "widgetId": "c2xvqt8nq9",
+  "widgetName": "radioGroup"
 }

@@ -1,0 +1,102 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 8,
+  "boxShadow": "none",
+  "buttonVariant": "SECONDARY",
+  "childStylesheet": {
+    "button": {
+      "buttonColor": "{{appsmith.theme.colors.primaryColor}}"
+    }
+  },
+  "dynamicBindingPathList": [
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "groupButtons.groupButton1.buttonColor"
+    },
+    {
+      "key": "groupButtons.groupButton2.buttonColor"
+    },
+    {
+      "key": "groupButtons.groupButton1.isVisible"
+    },
+    {
+      "key": "groupButtons.groupButton2.isVisible"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "groupButtons.groupButton1.isVisible"
+    },
+    {
+      "key": "groupButtons.groupButton2.isVisible"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "groupButtons.groupButton1.onClick"
+    },
+    {
+      "key": "groupButtons.groupButton2.onClick"
+    }
+  ],
+  "groupButtons": {
+    "groupButton1": {
+      "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+      "buttonType": "SIMPLE",
+      "disabledWhenInvalid": false,
+      "iconName": "edit",
+      "id": "groupButton1",
+      "index": 0,
+      "isDisabled": false,
+      "isVisible": "{{ appsmith.store.varIsReadOnly }}",
+      "label": "Edit",
+      "menuItems": {},
+      "onClick": "{{JS_Schemes.enableEdit();}}",
+      "placement": "CENTER",
+      "widgetId": ""
+    },
+    "groupButton2": {
+      "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+      "buttonType": "SIMPLE",
+      "disabledWhenInvalid": false,
+      "iconName": "remove",
+      "id": "groupButton2",
+      "index": 1,
+      "isDisabled": false,
+      "isVisible": "{{ !appsmith.store.varIsReadOnly && appsmith.store.varIsEditMode }}",
+      "label": "Cancel",
+      "menuItems": {},
+      "onClick": "{{JS_Schemes.cancelEdit();}}",
+      "placement": "CENTER",
+      "widgetId": ""
+    }
+  },
+  "isCanvas": false,
+  "isLoading": false,
+  "isVisible": true,
+  "key": "lzn6nlpmf9",
+  "leftColumn": 50,
+  "minWidth": 450,
+  "mobileBottomRow": 8,
+  "mobileLeftColumn": 39,
+  "mobileRightColumn": 63,
+  "mobileTopRow": 4,
+  "needsErrorInfo": false,
+  "orientation": "horizontal",
+  "originalBottomRow": 8,
+  "originalTopRow": 4,
+  "parentColumnSpace": 13.31494140625,
+  "parentId": "cnuqgjwhdp",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 63,
+  "topRow": 4,
+  "type": "BUTTON_GROUP_WIDGET",
+  "version": 1,
+  "widgetId": "z0y3k0q4jj",
+  "widgetName": "ButtonGroup1"
+}

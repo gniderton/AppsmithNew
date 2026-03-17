@@ -1,0 +1,71 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "alignment": "left",
+  "animateLoading": true,
+  "bottomRow": 29,
+  "boxShadow": "none",
+  "defaultOptionValue": "Different Product",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "isDisabled"
+    },
+    {
+      "key": "isVisible"
+    }
+  ],
+  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicPropertyPathList": [
+    {
+      "key": "isDisabled"
+    },
+    {
+      "key": "isVisible"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "flexVerticalAlignment": "start",
+  "isDisabled": "{{ appsmith.store.varIsReadOnly }}",
+  "isInline": true,
+  "isLoading": false,
+  "isRequired": false,
+  "isVisible": "{{ !appsmith.store.varIsReadOnly }}",
+  "key": "rdkmdvd2ap",
+  "label": "",
+  "labelAlignment": "left",
+  "labelPosition": "Top",
+  "labelTextSize": "0.875rem",
+  "labelWidth": 5,
+  "leftColumn": 0,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "mobileBottomRow": 29,
+  "mobileLeftColumn": 0,
+  "mobileRightColumn": 20,
+  "mobileTopRow": 23,
+  "needsErrorInfo": false,
+  "options": [
+    {
+      "label": "From the Same Group",
+      "value": "From the Same Group"
+    },
+    {
+      "label": "Different Product",
+      "value": "Different Product"
+    }
+  ],
+  "originalBottomRow": 29,
+  "originalTopRow": 25,
+  "parentColumnSpace": 13.00244140625,
+  "parentId": "b441iyi96f",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "rightColumn": 29,
+  "topRow": 25,
+  "type": "RADIO_GROUP_WIDGET",
+  "version": 1,
+  "widgetId": "bsujojatmr",
+  "widgetName": "radioFreeItemTypeCombo"
+}

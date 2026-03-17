@@ -2,15 +2,12 @@
   "accentColor": "{{appsmith.theme.colors.primaryColor}}",
   "alignment": "left",
   "animateLoading": true,
-  "bottomRow": 22,
+  "bottomRow": 14,
   "boxShadow": "none",
-  "defaultOptionValue": "{{appsmith.store.editType}}",
+  "defaultOptionValue": "Y",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
-    },
-    {
-      "key": "defaultOptionValue"
     },
     {
       "key": "isDisabled"
@@ -24,49 +21,45 @@
   ],
   "dynamicTriggerPathList": [],
   "flexVerticalAlignment": "start",
-  "isDisabled": "{{ appsmith.store.varIsEditMode || appsmith.store.varIsReadOnly }}\n",
+  "isDisabled": "{{ appsmith.store.varIsReadOnly }}",
   "isInline": true,
   "isLoading": false,
   "isRequired": false,
   "isVisible": true,
   "key": "nkvb2pt14x",
-  "label": "Type",
+  "label": "",
   "labelAlignment": "left",
   "labelPosition": "Top",
   "labelTextSize": "0.875rem",
-  "labelWidth": "7",
+  "labelWidth": 5,
   "leftColumn": 1,
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 4,
-  "mobileBottomRow": 31,
-  "mobileLeftColumn": 1,
-  "mobileRightColumn": 21,
-  "mobileTopRow": 25,
+  "mobileBottomRow": 19,
+  "mobileLeftColumn": 0,
+  "mobileRightColumn": 20,
+  "mobileTopRow": 13,
   "needsErrorInfo": false,
   "options": [
     {
-      "label": "BUY_GET_FREE",
-      "value": "BUY_GET_FREE"
+      "label": "Same Product",
+      "value": "Same Product"
     },
     {
-      "label": "COMBO",
-      "value": "COMBO"
-    },
-    {
-      "label": "PRICE_SLAB",
-      "value": "PRICE_SLAB"
+      "label": "Different Product",
+      "value": "Different Product"
     }
   ],
-  "originalBottomRow": 22,
-  "originalTopRow": 16,
-  "parentColumnSpace": 6.5166015625,
-  "parentId": "cnuqgjwhdp",
+  "originalBottomRow": 14,
+  "originalTopRow": 10,
+  "parentColumnSpace": 12.6640625,
+  "parentId": "vmkpkqlmrf",
   "parentRowSpace": 10,
   "renderMode": "CANVAS",
-  "rightColumn": 36,
-  "topRow": 16,
+  "rightColumn": 28,
+  "topRow": 10,
   "type": "RADIO_GROUP_WIDGET",
   "version": 1,
-  "widgetId": "e4ep8sdpx4",
-  "widgetName": "radioSchemeType"
+  "widgetId": "jkk5vfuucs",
+  "widgetName": "radioFreeItemType"
 }

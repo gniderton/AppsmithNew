@@ -3,9 +3,9 @@
   "animateLoading": true,
   "autoFocus": false,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 8,
+  "bottomRow": 40,
   "boxShadow": "none",
-  "defaultText": "{{appsmith.store.editDesc}}",
+  "defaultText": "",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
@@ -14,16 +14,19 @@
       "key": "borderRadius"
     },
     {
-      "key": "defaultText"
+      "key": "isDisabled"
     },
     {
-      "key": "isDisabled"
+      "key": "isVisible"
     }
   ],
-  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicHeight": "FIXED",
   "dynamicPropertyPathList": [
     {
       "key": "isDisabled"
+    },
+    {
+      "key": "isVisible"
     }
   ],
   "dynamicTriggerPathList": [],
@@ -32,37 +35,34 @@
   "isDisabled": "{{ appsmith.store.varIsReadOnly }}",
   "isLoading": false,
   "isRequired": false,
-  "isVisible": true,
-  "key": "2doky7utfa",
-  "label": "Description",
+  "isVisible": "{{ !appsmith.store.varIsReadOnly }}",
+  "key": "dsui8p9nyy",
+  "label": "Free Qty",
   "labelAlignment": "left",
-  "labelPosition": "Left",
+  "labelPosition": "Top",
   "labelStyle": "",
   "labelTextSize": "0.875rem",
-  "labelWidth": "8",
-  "leftColumn": 1,
+  "labelWidth": 5,
+  "leftColumn": 40,
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 4,
   "minWidth": 450,
-  "mobileBottomRow": 14,
-  "mobileLeftColumn": 1,
-  "mobileRightColumn": 21,
-  "mobileTopRow": 7,
+  "mobileBottomRow": 43,
+  "mobileLeftColumn": 40,
+  "mobileRightColumn": 60,
+  "mobileTopRow": 36,
   "needsErrorInfo": false,
-  "originalBottomRow": 8,
-  "originalTopRow": 4,
-  "parentColumnSpace": 6.5166015625,
-  "parentId": "cnuqgjwhdp",
+  "parentColumnSpace": 13.00244140625,
+  "parentId": "b441iyi96f",
   "parentRowSpace": 10,
   "renderMode": "CANVAS",
   "resetOnSubmit": true,
   "responsiveBehavior": "fill",
-  "rightColumn": 27,
-  "shouldScrollContents": true,
+  "rightColumn": 60,
   "showStepArrows": false,
-  "topRow": 4,
+  "topRow": 33,
   "type": "INPUT_WIDGET_V2",
   "version": 2,
-  "widgetId": "1vp8tkg7hh",
-  "widgetName": "inputDescription"
+  "widgetId": "biivnxeqby",
+  "widgetName": "numberFreeQtyCombo"
 }

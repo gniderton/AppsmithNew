@@ -1,22 +1,51 @@
 export default {
 	// ==========================================
-	// 1. INITIALIZATION & UI MODE STATE
+	// 1. INITIALIZATION & VIEW/EDIT MODES
 	// ==========================================
 	
-	initEdit: async () => {
+	// Call this from the Table Row Button
+	initView: async () => {
 		const row = tblSchemes.triggeredRow; 
-		if (!row) return showAlert("Please select a scheme to edit", "warning");
+		if (!row) return showAlert("Please select a scheme", "warning");
 
+		storeValue('varIsReadOnly', true); // Lock the fields
+		storeValue('varIsEditMode', false);
+		
+		this.hydrateUI(row);
+		showModal("modalSchemeForm");
+	},
+
+	// Call this from the "Edit" button inside the Modal
+	enableEdit: () => {
+		storeValue('varIsReadOnly', false);
 		storeValue('varIsEditMode', true);
+		showAlert("Editing enabled", "info");
+	},
 
-		// Save Header Data to Store (Reactive pattern)
-		storeValue('editName', row.scheme_name);
-		storeValue('editDesc', row.description);
-		storeValue('editStart', row.start_date);
-		storeValue('editEnd', row.end_date);
+	// Call this from the "Cancel" button inside the Modal
+	cancelEdit: () => {
+		storeValue('varIsReadOnly', true);
+		storeValue('varIsEditMode', false);
+		// Re-load the original data to undo any typed changes
+		this.hydrateUI(tblSchemes.triggeredRow); 
+		showAlert("Changes cancelled", "info");
+	},
 
-		// Format Rules (Mapping DB data back to local varSlabsData)
-		const formattedRules = (row.rules || []).map(r => ({
+	initCreate: async () => {
+		storeValue('varIsReadOnly', false); // Unlock fields
+		storeValue('varIsEditMode', false);
+		this.resetModal();
+		showModal("modalSchemeForm");
+	},
+
+	// Helper to load data into the store (DRY)
+	hydrateUI: (data) => {
+		storeValue('editName', data.scheme_name);
+		storeValue('editDesc', data.description);
+		storeValue('editStart', data.start_date);
+		storeValue('editEnd', data.end_date);
+
+		const formattedRules = (data.rules || []).map(r => ({
 			id: Date.now() + Math.random(), 
 			scheme_type: r.scheme_type,
 			trigger_type: r.trigger_type,
@@ -35,27 +64,22 @@ export default {
 
 		storeValue('varSlabsData', formattedRules);
 
-		// Force the header widgets to re-read their "Default Value" from the store
-		const widgets = [
-			"inputSchemeName", "inputDescription", "dateStart", 
-			"dateEnd", "checkboxNoExpiry", "radioSchemeType"
-		];
+		// Populate Combo Picker if it's a Combo
+		if (formattedRules.length > 0 && formattedRules[0].scheme_type === 'COMBO') {
+			storeValue('varComboProducts', formattedRules[0].combo_products);
+		} else {
+			storeValue('varComboProducts', []);
+		}
+
+		// Reset widgets to show the new data
+		const widgets = ["inputSchemeName", "inputDescription", "dateStart", "dateEnd", "checkboxNoExpiry", "radioSchemeType"];
 		widgets.forEach(w => resetWidget(w, true));
 
-		// Set the Type to trigger the correct container visibility
 		if (formattedRules.length > 0) {
-			const typeMap = { 'BUY_GET_FREE': 'Buy-Get-Free', 'COMBO': 'Combo', 'PRICE_SLAB': 'Price Slab' };
+			const typeMap = { 'BUY_GET_FREE': 'BUY_GET_FREE', 'COMBO': 'COMBO', 'PRICE_SLAB': 'PRICE_SLAB' };
 			storeValue('editType', typeMap[formattedRules[0].scheme_type]);
 			resetWidget("radioSchemeType", true);
 		}
-
-		showModal("modalSchemeForm");
-	},
-
-	initCreate: async () => {
-		storeValue('varIsEditMode', false);
-		this.resetModal();
-		showModal("modalSchemeForm");
 	},
 
 	// ==========================================
@@ -91,7 +115,7 @@ export default {
 					this.onSaveSuccess();
 				},
 				(err) => showAlert("Update Failed: " + err.message, "error"),
-				{ id: tblSchemes.selectedRow.id, payload: payload }
+				{ id: tblSchemes.triggeredRow.id, payload: payload }
 			);
 		} else {
 			return createScheme.run(
@@ -105,6 +129,7 @@ export default {
 		}
 	},
 
+    // (Helpers onSaveSuccess, resetModal, and Slab Adders remain same as previous version...)
 	onSaveSuccess: () => {
 		getSchemes.run();
 		closeModal("modalSchemeForm");
@@ -127,10 +152,7 @@ export default {
 		widgets.forEach(w => resetWidget(w, true));
 	},
 
-	// ==========================================
-	// 3. STATUS TOGGLE (NEW)
-	// ==========================================
-    
+    // ... (addNewSlab, addComboProduct, addComboSlab, addPriceSlab, toggleStatus methods)
 	toggleStatus: async (schemeId, currentName) => {
 		return toggleSchemeStatus.run(
 			(res) => {
@@ -138,19 +160,14 @@ export default {
 				showAlert(`${currentName} is now ${statusText}`, "info");
 				getSchemes.run();
 			},
-			(err) => showAlert("Failed to toggle status: " + err.message, "error"),
+			(err) => showAlert("Failed: " + err.message, "error"),
 			{ id: schemeId }
 		);
 	},
-
-	// ==========================================
-	// 4. RULE MANAGEMENT (BUY-GET-FREE, COMBO, SLAB)
-	// ==========================================
-	
+    
 	addNewSlab: () => {
 		const typeMap = { 'Buy-Get-Free': 'BUY_GET_FREE', 'Combo': 'COMBO', 'Price Slab': 'PRICE_SLAB' };
 		const triggerMap = { 'Products': 'Product', 'Brand': 'Brand', 'Category': 'Category' };
-
 		const newSlab = {
 			id: Date.now(),
 			scheme_type: typeMap[radioSchemeType.selectedOptionValue] || 'BUY_GET_FREE',
@@ -165,15 +182,13 @@ export default {
 			tier_level: 1,
 			is_recursive: true
 		};
-
 		storeValue('varSlabsData', [...(appsmith.store.varSlabsData || []), newSlab]);
 		["selectChannel", "numberMinQty", "numberFreeQty", "selectFreeProduct"].forEach(w => resetWidget(w, true));
-		showAlert("Slab added", "success");
 	},
 
 	addComboProduct: () => {
 		const currentCombo = appsmith.store.varComboProducts || [];
-		const productId = selectComboProduct.selectedOptionValue;
+        const productId = selectComboProduct.selectedOptionValue;
 		if (!productId) return showAlert("Select a product", "error");
 		storeValue('varComboProducts', [...currentCombo, { id: Date.now(), product_id: productId, product_name: selectComboProduct.selectedOptionLabel }]);
 		resetWidget("selectComboProduct", true);
@@ -181,7 +196,6 @@ export default {
 
 	addComboSlab: () => {
 		const comboProducts = appsmith.store.varComboProducts || [];
-		if (comboProducts.length === 0) return showAlert("Add products to group first", "error");
 		const isDiff = radioFreeItemTypeCombo.selectedOptionValue === 'Different Product';
 		const newSlab = {
 			id: Date.now(),

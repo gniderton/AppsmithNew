@@ -1,0 +1,77 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 33,
+  "boxShadow": "none",
+  "defaultOptionValue": "",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "sourceData"
+    },
+    {
+      "key": "isDisabled"
+    },
+    {
+      "key": "isVisible"
+    }
+  ],
+  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicPropertyPathList": [
+    {
+      "key": "sourceData"
+    },
+    {
+      "key": "isDisabled"
+    },
+    {
+      "key": "isVisible"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "isDisabled": "{{ appsmith.store.varIsReadOnly || radioFreeItemTypeCombo.selectedOptionValue !== 'Different Product' }}",
+  "isFilterable": true,
+  "isLoading": false,
+  "isRequired": false,
+  "isVisible": "{{ !appsmith.store.varIsReadOnly }}",
+  "key": "ufmfm4ccs6",
+  "labelAlignment": "left",
+  "labelPosition": "Left",
+  "labelText": "Free Product",
+  "labelTextSize": "0.875rem",
+  "labelWidth": "7",
+  "leftColumn": 0,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 36,
+  "mobileLeftColumn": 0,
+  "mobileRightColumn": 20,
+  "mobileTopRow": 29,
+  "needsErrorInfo": false,
+  "optionLabel": "product_name",
+  "optionValue": "id",
+  "originalBottomRow": 33,
+  "originalTopRow": 29,
+  "parentColumnSpace": 13.00244140625,
+  "parentId": "b441iyi96f",
+  "parentRowSpace": 10,
+  "placeholderText": "Select option",
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 33,
+  "serverSideFiltering": false,
+  "shouldScrollContents": true,
+  "sourceData": "{{getProducts.data.data}}",
+  "topRow": 29,
+  "type": "SELECT_WIDGET",
+  "version": 1,
+  "widgetId": "c05mk2b8gx",
+  "widgetName": "selectFreeProductCombo"
+}

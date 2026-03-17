@@ -17,17 +17,23 @@
     },
     {
       "key": "defaultDate"
+    },
+    {
+      "key": "isDisabled"
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
   "dynamicPropertyPathList": [
     {
       "key": "defaultDate"
+    },
+    {
+      "key": "isDisabled"
     }
   ],
   "dynamicTriggerPathList": [],
   "firstDayOfWeek": 0,
-  "isDisabled": false,
+  "isDisabled": "{{ appsmith.store.varIsReadOnly }}",
   "isLoading": false,
   "isRequired": false,
   "isVisible": true,
