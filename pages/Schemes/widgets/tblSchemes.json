@@ -403,7 +403,7 @@
       "isVisible": true,
       "label": "is_active",
       "notation": "standard",
-      "onCheckChange": "{{ \n  (() => {\n    // 1. Try to find the row from any available context\n    const row = (typeof currentItem !== \"undefined\" ? currentItem : null) || \n                (typeof currentRow !== \"undefined\" ? currentRow : null) || \n                tblSchemes.triggeredRow || \n                tblSchemes.selectedRow;\n\n    // 2. Safety check: Did we find the row?\n    if (!row || !row.id) {\n       return showAlert(\"Error: Table identity missing. Ensure 'Primary Key' is set to 'id' in Table Settings.\", \"error\");\n    }\n\n    // 3. Run the API\n    return toggleSchemeStatus.run({ id: row.id })\n      .then(() => {\n         showAlert((row.scheme_name || \"Scheme\") + \" status updated\", \"success\");\n         getSchemes.run(); // Refresh your table automatically\n      })\n      .catch((err) => showAlert(\"Toggle Failed: \" + err.message, \"error\"));\n  })()\n}}",
+      "onCheckChange": "{{ \n  (() => {\n    // 1. Get the row data directly from the Switch's own context\n    // This works in Preview even if the row is NOT selected\n    const row = (typeof currentItem !== 'undefined' ? currentItem : currentRow);\n\n    if (!row || !row.id) {\n       return showAlert(\"Error: Table identity missing. Please hit 'Deploy' once to sync settings.\", \"error\");\n    }\n\n    return toggleSchemeStatus.run({ id: row.id })\n      .then(() => {\n         showAlert(row.scheme_name + \" status updated\", \"success\");\n         getSchemes.run(); \n      })\n      .catch((err) => showAlert(\"Toggle Failed: \" + err.message, \"error\"));\n  })()\n}}\n",
       "originalId": "is_active",
       "sticky": "",
       "textSize": "0.875rem",
