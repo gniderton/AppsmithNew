@@ -4,7 +4,7 @@
   "borderColor": "#E0DEDE",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": "1",
-  "bottomRow": 77,
+  "bottomRow": 62,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "cachedTableData": {},
   "canFreezeColumn": true,
@@ -113,11 +113,23 @@
     },
     {
       "key": "primaryColumns.rules.computedValue"
+    },
+    {
+      "key": "primaryColumns.is_active.buttonLabel"
+    },
+    {
+      "key": "primaryColumns.is_active.buttonColor"
     }
   ],
   "dynamicPropertyPathList": [
     {
       "key": "primaryColumns.is_active.onCheckChange"
+    },
+    {
+      "key": "primaryColumns.is_active.buttonColor"
+    },
+    {
+      "key": "primaryColumns.is_active.onClick"
     }
   ],
   "dynamicTriggerPathList": [
@@ -126,6 +138,9 @@
     },
     {
       "key": "primaryColumns.is_active.onCheckChange"
+    },
+    {
+      "key": "primaryColumns.is_active.onClick"
     }
   ],
   "enableClientSideSearch": true,
@@ -150,7 +165,7 @@
   "mobileTopRow": 6,
   "needsErrorInfo": false,
   "parentColumnSpace": 17.53125,
-  "parentId": "0",
+  "parentId": "s0neswbpzx",
   "parentRowSpace": 10,
   "primaryColumnId": "id",
   "primaryColumns": {
@@ -384,9 +399,12 @@
       "alias": "is_active",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
-      "columnType": "switch",
+      "buttonColor": "{{(() => { const tableData = tblSchemes.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( currentRow.is_active ? \"#4ade80\" : \"#f87171\" )) :  currentRow.is_active ? \"#4ade80\" : \"#f87171\"  })()}}",
+      "buttonLabel": "{{(() => { const tableData = tblSchemes.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( currentRow.is_active ? \"Deactivate\" : \"Activate\" )) :  currentRow.is_active ? \"Deactivate\" : \"Activate\"  })()}}",
+      "columnType": "button",
       "computedValue": "{{(() => { const tableData = tblSchemes.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"is_active\"])) : is_active })()}}",
       "currencyCode": "USD",
+      "customAlias": "",
       "decimals": 0,
       "enableFilter": true,
       "enableSort": true,
@@ -403,7 +421,8 @@
       "isVisible": true,
       "label": "is_active",
       "notation": "standard",
-      "onCheckChange": "{{ \n  (() => {\n    // 1. Get the row data directly from the Switch's own context\n    // This works in Preview even if the row is NOT selected\n    const row = (typeof currentItem !== 'undefined' ? currentItem : currentRow);\n\n    if (!row || !row.id) {\n       return showAlert(\"Error: Table identity missing. Please hit 'Deploy' once to sync settings.\", \"error\");\n    }\n\n    return toggleSchemeStatus.run({ id: row.id })\n      .then(() => {\n         showAlert(row.scheme_name + \" status updated\", \"success\");\n         getSchemes.run(); \n      })\n      .catch((err) => showAlert(\"Toggle Failed: \" + err.message, \"error\"));\n  })()\n}}\n",
+      "onCheckChange": "{{ \n  toggleSchemeStatus.run({ id:  })\n    .then(() => {\n       showAlert(currentItem.scheme_name + \" status updated\", \"success\");\n       getSchemes.run(); \n    })\n}}",
+      "onClick": "{{ \n  toggleSchemeStatus.run({ id: tblSchemes.triggeredRow.id })\n    .then(() => {\n       showAlert(\"Status updated\", \"success\");\n       getSchemes.run(); \n    })\n}}\n",
       "originalId": "is_active",
       "sticky": "",
       "textSize": "0.875rem",
@@ -548,7 +567,7 @@
   "showInlineEditingOptionDropdown": true,
   "tableData": "{{getSchemes.data}}",
   "textSize": "0.875rem",
-  "topRow": 4,
+  "topRow": 0,
   "totalRecordsCount": 0,
   "type": "TABLE_WIDGET_V2",
   "version": 2,
