@@ -22,7 +22,16 @@
           "value": true
         }
       ],
-      "queryParameters": [],
+      "queryParameters": [
+        {
+          "key": "startDate",
+          "value": "{{dtpStart.selectedDate}}"
+        },
+        {
+          "key": "endDate",
+          "value": "{{dtpEnd.selectedDate}}"
+        }
+      ],
       "timeoutInMillisecond": 10000
     },
     "confirmBeforeExecute": false,
@@ -35,6 +44,12 @@
     "dynamicBindingPathList": [
       {
         "key": "path"
+      },
+      {
+        "key": "queryParameters[0].value"
+      },
+      {
+        "key": "queryParameters[1].value"
       }
     ],
     "name": "getSchemeUsage",

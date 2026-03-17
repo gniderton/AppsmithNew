@@ -1287,7 +1287,7 @@
   "responsiveBehavior": "fill",
   "rightColumn": 64,
   "searchKey": "",
-  "tableData": "{{getBulkInvoiceLinestbl.data}}",
+  "tableData": "{{getBulkInvoiceLines.data}}",
   "textSize": "0.7rem",
   "topRow": 5,
   "totalRecordsCount": 0,
