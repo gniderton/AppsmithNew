@@ -56,6 +56,10 @@
     {
       "id": "Schemes",
       "isDefault": false
+    },
+    {
+      "id": "Customer",
+      "isDefault": false
     }
   ],
   "unpublishedAppLayout": {

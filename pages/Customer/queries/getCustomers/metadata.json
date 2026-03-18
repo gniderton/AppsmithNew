@@ -1,6 +1,6 @@
 {
-  "gitSyncId": "69a80abb79ac426a29eb8838_1a834652-4d48-4727-b78e-80896e286069",
-  "id": "Schemes_getBulkInvoiceLines",
+  "gitSyncId": "69a80abb79ac426a29eb8838_2898ed16-94e8-41b7-84cf-2a7f9b6cc13f",
+  "id": "Customer_getCustomers",
   "pluginId": "restapi-plugin",
   "pluginType": "API",
   "unpublishedAction": {
@@ -16,22 +16,13 @@
       "httpMethod": "GET",
       "httpVersion": "HTTP11",
       "paginationType": "NONE",
-      "path": "/api/sales/invoices/lines-bulk",
+      "path": "/api/customers/detailed-list",
       "pluginSpecifiedTemplates": [
         {
           "value": true
         }
       ],
-      "queryParameters": [
-        {
-          "key": "ids",
-          "value": "{{tblUsageInvoices.selectedRows.map(r => r.invoice_id).join(',')}}"
-        },
-        {
-          "key": "schemeName",
-          "value": "{{SelectScheme.selectedOptionLabel}}"
-        }
-      ],
+      "queryParameters": [],
       "timeoutInMillisecond": 10000
     },
     "confirmBeforeExecute": false,
@@ -41,20 +32,10 @@
       "name": "RenderCloud",
       "pluginId": "restapi-plugin"
     },
-    "dynamicBindingPathList": [
-      {
-        "key": "path"
-      },
-      {
-        "key": "queryParameters[0].value"
-      },
-      {
-        "key": "queryParameters[1].value"
-      }
-    ],
-    "name": "getBulkInvoiceLines",
-    "pageId": "Schemes",
+    "dynamicBindingPathList": [],
+    "name": "getCustomers",
+    "pageId": "Customer",
     "runBehaviour": "AUTOMATIC",
-    "userSetOnLoad": true
+    "userSetOnLoad": false
   }
 }

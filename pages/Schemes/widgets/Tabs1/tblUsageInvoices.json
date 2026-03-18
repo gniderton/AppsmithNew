@@ -4,7 +4,7 @@
   "borderColor": "#E0DEDE",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": "1",
-  "bottomRow": 47,
+  "bottomRow": 80,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "cachedTableData": {},
   "canFreezeColumn": true,
@@ -40,10 +40,11 @@
     "status",
     "id"
   ],
-  "columnUpdatedAt": 1773761809439,
+  "columnUpdatedAt": 1773795591313,
   "columnWidthMap": {
-    "invoice_date": 101,
-    "invoice_number": 113
+    "customer_name": 281,
+    "invoice_date": 91,
+    "invoice_number": 106
   },
   "customIsLoading": false,
   "customIsLoadingValue": "",
@@ -93,7 +94,11 @@
       "key": "tableData"
     }
   ],
-  "dynamicTriggerPathList": [],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onRowSelected"
+    }
+  ],
   "enableClientSideSearch": true,
   "endOfData": false,
   "flexVerticalAlignment": "start",
@@ -116,6 +121,9 @@
   "mobileTopRow": 5,
   "multiRowSelection": true,
   "needsErrorInfo": false,
+  "onRowSelected": "{{getBulkInvoiceLines.run().then(() => {});}}",
+  "originalBottomRow": 80,
+  "originalTopRow": 11,
   "parentColumnSpace": 17.21875,
   "parentId": "yagnp5o5d6",
   "parentRowSpace": 10,
@@ -172,7 +180,7 @@
       "isDiscardVisible": true,
       "isEditable": false,
       "isSaveVisible": true,
-      "isVisible": true,
+      "isVisible": false,
       "label": "grand_total",
       "notation": "standard",
       "originalId": "grand_total",
@@ -205,7 +213,7 @@
       "isDiscardVisible": true,
       "isEditable": false,
       "isSaveVisible": true,
-      "isVisible": true,
+      "isVisible": false,
       "label": "id",
       "notation": "standard",
       "originalId": "id",
@@ -345,7 +353,7 @@
   },
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
-  "rightColumn": 29,
+  "rightColumn": 23,
   "searchKey": "",
   "tableData": "{{getSchemeUsage.data}}",
   "textSize": "0.875rem",
