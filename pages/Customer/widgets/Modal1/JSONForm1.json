@@ -337,6 +337,21 @@
     },
     {
       "key": "schema.__root_schema__.children.Tax_and_Accounting.children.channel_id.options"
+    },
+    {
+      "key": "schema.__root_schema__.children.Logistics_Assignment.children.route_id.options"
+    },
+    {
+      "key": "schema.__root_schema__.children.Logistics_Assignment.children.dse_id.options"
+    },
+    {
+      "key": "schema.__root_schema__.children.Logistics_Assignment.children.route_type_id.options"
+    },
+    {
+      "key": "schema.__root_schema__.children.Default_Address.children.city.options"
+    },
+    {
+      "key": "schema.__root_schema__.children.Default_Address.children.state.options"
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
@@ -364,7 +379,7 @@
   "mobileRightColumn": 24,
   "mobileTopRow": 6,
   "needsErrorInfo": false,
-  "originalBottomRow": 44,
+  "originalBottomRow": 193,
   "originalTopRow": 5,
   "parentColumnSpace": 6.9375,
   "parentId": "d79jsuv15q",
@@ -560,18 +575,19 @@
               "children": {},
               "dataType": "string",
               "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.Default_Address.city))(JSONForm1.sourceData, JSONForm1.formData, JSONForm1.fieldState)}}",
-              "fieldType": "Text Input",
-              "iconAlign": "left",
+              "fieldType": "Select",
               "identifier": "city",
               "isCustomField": false,
               "isDisabled": false,
+              "isFilterable": false,
               "isRequired": false,
-              "isSpellCheck": false,
               "isVisible": true,
-              "label": "City",
+              "label": "District",
               "labelTextSize": "0.875rem",
+              "options": "{{ Location_Data.getDistricts(JSONForm1.formData.Default_Address.state) }}",
               "originalIdentifier": "city",
-              "position": 2,
+              "position": 3,
+              "serverSideFiltering": false,
               "sourceData": ""
             },
             "location_lat": {
@@ -646,18 +662,19 @@
               "children": {},
               "dataType": "string",
               "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.Default_Address.state))(JSONForm1.sourceData, JSONForm1.formData, JSONForm1.fieldState)}}",
-              "fieldType": "Text Input",
-              "iconAlign": "left",
+              "fieldType": "Select",
               "identifier": "state",
               "isCustomField": false,
               "isDisabled": false,
+              "isFilterable": false,
               "isRequired": false,
-              "isSpellCheck": false,
               "isVisible": true,
               "label": "State",
               "labelTextSize": "0.875rem",
+              "options": "{{ \n  Location_Data.getStates().map(state => ({\n    label: String(state.label || state),\n    value: String(state.value || state)\n  })) \n}}",
               "originalIdentifier": "state",
-              "position": 3,
+              "position": 2,
+              "serverSideFiltering": false,
               "sourceData": "Kerala"
             }
           },
@@ -696,18 +713,19 @@
               "children": {},
               "dataType": "string",
               "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.Logistics_Assignment.dse_id))(JSONForm1.sourceData, JSONForm1.formData, JSONForm1.fieldState)}}",
-              "fieldType": "Text Input",
-              "iconAlign": "left",
+              "fieldType": "Select",
               "identifier": "dse_id",
               "isCustomField": false,
               "isDisabled": false,
+              "isFilterable": false,
               "isRequired": false,
-              "isSpellCheck": false,
               "isVisible": true,
               "label": "Dse Id",
               "labelTextSize": "0.875rem",
+              "options": "{{ \n  getDSEs.data.map(item => ({\n    label: item.full_name,\n    value: item.id // or item.channel_name, as long as it is unique\n  })) \n}}",
               "originalIdentifier": "dse_id",
               "position": 1,
+              "serverSideFiltering": false,
               "sourceData": "10"
             },
             "route_id": {
@@ -718,18 +736,19 @@
               "children": {},
               "dataType": "string",
               "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.Logistics_Assignment.route_id))(JSONForm1.sourceData, JSONForm1.formData, JSONForm1.fieldState)}}",
-              "fieldType": "Text Input",
-              "iconAlign": "left",
+              "fieldType": "Select",
               "identifier": "route_id",
               "isCustomField": false,
               "isDisabled": false,
+              "isFilterable": false,
               "isRequired": false,
-              "isSpellCheck": false,
               "isVisible": true,
               "label": "Route Id",
               "labelTextSize": "0.875rem",
+              "options": "{{ \n  getRoutes.data.map(item => ({\n    label: item.route_name,\n    value: item.id // or item.channel_name, as long as it is unique\n  })) \n}}",
               "originalIdentifier": "route_id",
               "position": 0,
+              "serverSideFiltering": false,
               "sourceData": "4"
             },
             "route_sequence": {
@@ -762,18 +781,19 @@
               "children": {},
               "dataType": "string",
               "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.Logistics_Assignment.route_type_id))(JSONForm1.sourceData, JSONForm1.formData, JSONForm1.fieldState)}}",
-              "fieldType": "Text Input",
-              "iconAlign": "left",
+              "fieldType": "Select",
               "identifier": "route_type_id",
               "isCustomField": false,
               "isDisabled": false,
+              "isFilterable": false,
               "isRequired": false,
-              "isSpellCheck": false,
               "isVisible": true,
               "label": "Route Type Id",
               "labelTextSize": "0.875rem",
+              "options": "{{ \n  getRouteFrequency.data.map(item => ({\n    label: item.frequency_name,\n    value: item.id // or item.channel_name, as long as it is unique\n  })) \n}}",
               "originalIdentifier": "route_type_id",
               "position": 2,
+              "serverSideFiltering": false,
               "sourceData": "1"
             }
           },
