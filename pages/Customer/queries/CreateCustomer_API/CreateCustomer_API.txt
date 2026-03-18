@@ -1,0 +1,27 @@
+{
+  "customer_name": "{{JSONForm1.formData.Basic_Info.customer_name}}",
+  "customer_phone": "{{JSONForm1.formData.Basic_Info.whatsapp_number}}",
+  "email": "{{JSONForm1.formData.Basic_Info.email}}",
+  "gstin": "{{JSONForm1.formData.Tax_and_Accounting.gstin}}",
+  "pan": "{{JSONForm1.formData.Tax_and_Accounting.pan}}",
+  "credit_limit": {{JSONForm1.formData.Tax_and_Accounting.credit_limit || 0}},
+  "credit_days": {{JSONForm1.formData.Tax_and_Accounting.credit_days || 0}},
+  "channel_id": "{{JSONForm1.formData.Tax_and_Accounting.channel_id}}",
+  "route_id": "{{JSONForm1.formData.Logistics_Assignment.route_id}}",
+  "dse_id": "{{JSONForm1.formData.Logistics_Assignment.dse_id}}",
+  "whatsapp_number": "{{JSONForm1.formData.Basic_Info.whatsapp_number}}",
+  "route_type_id": "{{JSONForm1.formData.Logistics_Assignment.route_type_id}}",
+  "addresses": [
+    {
+      "address_line1": "{{JSONForm1.formData.Default_Address.address_line1}}",
+      "address_line2": "{{JSONForm1.formData.Default_Address.address_line2}}",
+      "city": "{{JSONForm1.formData.Default_Address.city}}",
+      "state": "{{JSONForm1.formData.Default_Address.state}}",
+      "pincode": "{{JSONForm1.formData.Default_Address.pincode}}",
+      "is_default_billing": true,
+      "is_default_shipping": true,
+      "location_lat": {{JSONForm1.formData.Default_Address.location_lat || null}},
+      "location_lng": {{JSONForm1.formData.Default_Address.location_lng || null}}
+    }
+  ]
+}

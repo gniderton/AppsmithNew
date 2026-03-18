@@ -361,9 +361,16 @@
     },
     {
       "key": "schema.__root_schema__.children.Basic_Info.children.is_active.defaultValue"
+    },
+    {
+      "key": "onSubmit"
     }
   ],
-  "dynamicTriggerPathList": [],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onSubmit"
+    }
+  ],
   "fieldLimitExceeded": false,
   "fixedFooter": true,
   "flexVerticalAlignment": "start",
@@ -379,6 +386,7 @@
   "mobileRightColumn": 24,
   "mobileTopRow": 6,
   "needsErrorInfo": false,
+  "onSubmit": "{{\n  CreateCustomer_API.run(\n    () => {\n      showAlert(\"Customer Created Successfully! 🎉\", \"success\");\n      resetWidget(\"JSONForm1\", true);\n      closeModal('ModalCreateCustomer');\n      getCustomers.run();\n    },\n    () => {\n      showAlert(\"Failed to create customer. Please check your data.\", \"error\");\n    }\n  )\n}}\n",
   "originalBottomRow": 193,
   "originalTopRow": 5,
   "parentColumnSpace": 6.9375,
