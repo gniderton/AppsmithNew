@@ -1,0 +1,12 @@
+{
+  "asset_id": {{tblAssets.triggeredRow.id}},
+  "amount": {{JSONForm_AssetPayment.formData.Payment_Details.Amount}},
+  "payment_date": "{{JSONForm_AssetPayment.formData.Payment_Details.Payment_Date}}",
+  "payment_mode": "{{JSONForm_AssetPayment.formData.Payment_Details.Payment_Mode}}",
+  "bank_account_id": {{JSONForm_AssetPayment.formData.Bank_Reference.Bank_Account || null}},
+  "bank_statement_entry_id": {{JSONForm_AssetPayment.formData.Bank_Reference.Bank_Statement_Entry || null}},
+  "cheque_no": "{{JSONForm_AssetPayment.formData.Bank_Reference.Cheque_No}}",
+  "cheque_date": "{{JSONForm_AssetPayment.formData.Bank_Reference.Cheque_Date}}",
+  "bank_name": "{{JSONForm_AssetPayment.formData.Bank_Reference.Cheque_Bank_Name}}",
+  "remarks": "{{JSONForm_AssetPayment.formData.Payment_Details.Remarks}}"
+}

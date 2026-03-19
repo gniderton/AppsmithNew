@@ -1,0 +1,16 @@
+{
+  "asset_name": "{{JSONForm_AssetPurchase.formData.Asset_Info.Name}}",
+  "category": "{{JSONForm_AssetPurchase.formData.Asset_Info.Category}}",
+  "purchase_date": "{{JSONForm_AssetPurchase.formData.Financial_Details.Purchase_Date}}",
+  "purchase_cost": {{JSONForm_AssetPurchase.formData.Financial_Details.Total_Cost}},
+  "is_gst_purchase": {{JSONForm_AssetPurchase.formData.Financial_Details.Is_GST_Purchase}},
+  "taxable_amount": {{JSONForm_AssetPurchase.formData.Financial_Details.Taxable_Amount || 0}},
+  "tax_amount": {{JSONForm_AssetPurchase.formData.Financial_Details.Tax_Amount || 0}},
+  "bill_no": "{{JSONForm_AssetPurchase.formData.Financial_Details.Bill_No}}",
+  "useful_life_years": {{JSONForm_AssetPurchase.formData.Depreciation_Details.Useful_Life_Years}},
+  "salvage_value": {{JSONForm_AssetPurchase.formData.Depreciation_Details.Salvage_Value || 0}},
+  "asset_account_code": {{JSONForm_AssetPurchase.formData.Asset_Info.Asset_Account}},
+  "vendor_id": {{JSONForm_AssetPurchase.formData.Asset_Info.Vendor}},
+  "created_by": {{getMe.data.id}},
+  "remarks": "{{JSONForm_AssetPurchase.formData.Depreciation_Details.Remarks}}"
+}
