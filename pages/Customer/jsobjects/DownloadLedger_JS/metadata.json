@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "69a80abb79ac426a29eb8838_457ea4e6-a50d-4f07-aae1-0909b5d923c2",
+  "id": "Customer_DownloadLedger_JS",
+  "unpublishedCollection": {
+    "name": "DownloadLedger_JS",
+    "pageId": "Customer",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}
