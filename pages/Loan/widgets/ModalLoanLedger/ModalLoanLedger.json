@@ -1,14 +1,14 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 437,
+  "bottomRow": 547,
   "boxShadow": "none",
   "canEscapeKeyClose": true,
-  "canOutsideClickClose": true,
+  "canOutsideClickClose": false,
   "children": [
     {
       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-      "bottomRow": 420,
+      "bottomRow": 530,
       "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
       "canExtend": true,
       "detachFromLayout": true,
@@ -29,7 +29,7 @@
       "leftColumn": 0,
       "maxDynamicHeight": 9000,
       "minDynamicHeight": 4,
-      "minHeight": 240,
+      "minHeight": 530,
       "minWidth": 450,
       "mobileBottomRow": 240,
       "mobileLeftColumn": 0,
@@ -57,13 +57,15 @@
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
-  "height": 420,
+  "dynamicTriggerPathList": [],
+  "height": 530,
   "isCanvas": true,
   "isLoading": false,
   "key": "2yajwoqkc5",
   "leftColumn": 16,
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 24,
+  "minHeight": 530,
   "mobileBottomRow": 41,
   "mobileLeftColumn": 16,
   "mobileRightColumn": 40,
@@ -80,5 +82,5 @@
   "version": 2,
   "widgetId": "mp0wc0i0hr",
   "widgetName": "ModalLoanLedger",
-  "width": 456
+  "width": 1077.3
 }

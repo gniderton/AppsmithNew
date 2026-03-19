@@ -1,14 +1,14 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 469,
+  "bottomRow": 549,
   "boxShadow": "none",
   "canEscapeKeyClose": true,
-  "canOutsideClickClose": true,
+  "canOutsideClickClose": false,
   "children": [
     {
       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-      "bottomRow": 460,
+      "bottomRow": 540,
       "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
       "canExtend": true,
       "detachFromLayout": true,
@@ -29,7 +29,7 @@
       "leftColumn": 0,
       "maxDynamicHeight": 9000,
       "minDynamicHeight": 4,
-      "minHeight": 240,
+      "minHeight": 540,
       "minWidth": 450,
       "mobileBottomRow": 240,
       "mobileLeftColumn": 0,
@@ -57,13 +57,15 @@
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
-  "height": 460,
+  "dynamicTriggerPathList": [],
+  "height": 540,
   "isCanvas": true,
   "isLoading": false,
   "key": "2yajwoqkc5",
   "leftColumn": 18,
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 24,
+  "minHeight": 540,
   "mobileBottomRow": 33,
   "mobileLeftColumn": 18,
   "mobileRightColumn": 42,
@@ -80,5 +82,5 @@
   "version": 2,
   "widgetId": "v9b118bfii",
   "widgetName": "ModalEntityLedger",
-  "width": 456
+  "width": 1077.3
 }
