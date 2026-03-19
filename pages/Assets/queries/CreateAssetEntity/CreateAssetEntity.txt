@@ -1,0 +1,16 @@
+{
+  "entity_type": "{{JSONForm1.formData.Entity_Details.Entity_Type}}",
+  "entity_name": "{{JSONForm1.formData.Entity_Details.Entity_Name}}",
+  "contact_number": "{{JSONForm1.formData.Entity_Details.Contact_Number}}",
+  "email": "{{JSONForm1.formData.Entity_Details.Email}}",
+  "opening_balance": {{JSONForm1.formData.Entity_Details.Opening_Balance || 0}},
+  "gst_number": "{{JSONForm1.formData.Legal_Info.GST_Number}}",
+  "pan_number": "{{JSONForm1.formData.Legal_Info.PAN_Number}}",
+  "address": "{{JSONForm1.formData.Address_Info.Address}}",
+  "district": "{{JSONForm1.formData.Address_Info.District}}",
+  "state": "{{JSONForm1.formData.Address_Info.State}}",
+  "pincode": "{{JSONForm1.formData.Address_Info.Pincode}}",
+  "bank_account_id": {{JSONForm1.formData.Bank_Details.Bank_Account_ID || null}},
+  "account_no": "{{JSONForm1.formData.Bank_Details.Account_No}}",
+  "ifsc_code": "{{JSONForm1.formData.Bank_Details.IFSC_Code}}"
+}

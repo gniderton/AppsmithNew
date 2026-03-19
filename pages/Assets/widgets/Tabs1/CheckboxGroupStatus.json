@@ -1,0 +1,62 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 4,
+  "defaultSelectedValues": [
+    "BLUE"
+  ],
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
+    }
+  ],
+  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicTriggerPathList": [],
+  "flexVerticalAlignment": "start",
+  "isDisabled": false,
+  "isInline": true,
+  "isLoading": false,
+  "isRequired": false,
+  "isSelectAll": true,
+  "isVisible": true,
+  "key": "acuijq94l9",
+  "labelAlignment": "left",
+  "labelPosition": "Top",
+  "labelText": "",
+  "labelTextSize": "0.875rem",
+  "labelWidth": 5,
+  "leftColumn": 1,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "mobileBottomRow": 6,
+  "mobileLeftColumn": 0,
+  "mobileRightColumn": 23,
+  "mobileTopRow": 0,
+  "needsErrorInfo": false,
+  "options": [
+    {
+      "label": "Active",
+      "value": "Active"
+    },
+    {
+      "label": "Sold",
+      "value": "Sold"
+    }
+  ],
+  "originalBottomRow": 7,
+  "originalTopRow": 0,
+  "parentColumnSpace": 17.21875,
+  "parentId": "68a6f01ajw",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "rightColumn": 18,
+  "topRow": 0,
+  "type": "CHECKBOX_GROUP_WIDGET",
+  "version": 2,
+  "widgetId": "a48f1o40mk",
+  "widgetName": "CheckboxGroupStatus"
+}

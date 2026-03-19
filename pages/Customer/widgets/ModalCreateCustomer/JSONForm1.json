@@ -387,7 +387,7 @@
   "mobileTopRow": 6,
   "needsErrorInfo": false,
   "onSubmit": "{{\n  CreateCustomer_API.run(\n    () => {\n      showAlert(\"Customer Created Successfully! 🎉\", \"success\");\n      resetWidget(\"JSONForm1\", true);\n      closeModal('ModalCreateCustomer');\n      getCustomers.run();\n    },\n    () => {\n      showAlert(\"Failed to create customer. Please check your data.\", \"error\");\n    }\n  )\n}}\n",
-  "originalBottomRow": 193,
+  "originalBottomRow": 200,
   "originalTopRow": 5,
   "parentColumnSpace": 6.9375,
   "parentId": "d79jsuv15q",
