@@ -73,6 +73,7 @@
   "columnWidthMap": {
     "purchase_date": 134
   },
+  "compactMode": "SHORT",
   "customIsLoading": false,
   "customIsLoadingValue": "",
   "defaultPageSize": 0,

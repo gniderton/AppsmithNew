@@ -14,12 +14,13 @@
       "key": "borderRadius"
     }
   ],
+  "dynamicTriggerPathList": [],
   "isDefaultClickDisabled": true,
   "isDisabled": false,
   "isLoading": false,
   "isVisible": true,
   "key": "74whddlr1l",
-  "leftColumn": 48,
+  "leftColumn": 55,
   "minWidth": 120,
   "mobileBottomRow": 4,
   "mobileLeftColumn": 48,
@@ -35,7 +36,7 @@
   "resetFormOnClick": false,
   "responsiveBehavior": "hug",
   "rightColumn": 64,
-  "text": "Submit",
+  "text": "Create",
   "topRow": 0,
   "type": "BUTTON_WIDGET",
   "version": 1,
