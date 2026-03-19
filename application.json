@@ -60,6 +60,14 @@
     {
       "id": "Customer",
       "isDefault": false
+    },
+    {
+      "id": "Migration Setup",
+      "isDefault": false
+    },
+    {
+      "id": "Loan",
+      "isDefault": false
     }
   ],
   "unpublishedAppLayout": {

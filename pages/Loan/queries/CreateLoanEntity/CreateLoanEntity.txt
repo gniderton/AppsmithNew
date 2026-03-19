@@ -1,0 +1,11 @@
+{
+  "entity_name": "{{JSONForm1.formData.Basic_Details.Entity_Type === 'Employee' ? JSONForm1.formData.Additional_Info.Linked_Employee_ID : JSONForm1.formData.Basic_Details.Entity_Name}}",
+  "entity_type": "{{JSONForm1.formData.Basic_Details.Entity_Type}}", 
+  "role_type": "{{JSONForm1.formData.Basic_Details.Role_Type}}",
+  "contact_number": "{{JSONForm1.formData.Contact_Details.Contact_Number}}",
+  "email": "{{JSONForm1.formData.Contact_Details.Email}}",
+  "address": "{{JSONForm1.formData.Contact_Details.Address}}",
+  "notes": "{{JSONForm1.formData.Additional_Info.Notes}}",
+  "is_active": {{JSONForm1.formData.Basic_Details.Is_Active}},
+  "reference_id": {{JSONForm1.formData.Basic_Details.Entity_Type === 'Employee' ? JSONForm1.formData.Additional_Info.Linked_Employee_ID : null}}
+}

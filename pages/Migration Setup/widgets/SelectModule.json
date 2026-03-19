@@ -1,0 +1,62 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 4,
+  "boxShadow": "none",
+  "defaultOptionValue": "GREEN",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
+    }
+  ],
+  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicPropertyPathList": [
+    {
+      "key": "sourceData"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "isDisabled": false,
+  "isFilterable": true,
+  "isLoading": false,
+  "isRequired": false,
+  "isVisible": true,
+  "key": "klmlhfqvmn",
+  "labelAlignment": "left",
+  "labelPosition": "Left",
+  "labelText": "Select File",
+  "labelTextSize": "0.875rem",
+  "labelWidth": "6",
+  "leftColumn": 0,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 7,
+  "mobileLeftColumn": 0,
+  "mobileRightColumn": 20,
+  "mobileTopRow": 0,
+  "needsErrorInfo": false,
+  "optionLabel": "label",
+  "optionValue": "value",
+  "originalBottomRow": 7,
+  "originalTopRow": 0,
+  "parentColumnSpace": 17.53125,
+  "parentId": "0",
+  "parentRowSpace": 10,
+  "placeholderText": "Select option",
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 20,
+  "serverSideFiltering": false,
+  "shouldScrollContents": true,
+  "sourceData": "[\n  { \"label\": \"Customers\", \"value\": \"Customers\" },\n  { \"label\": \"Vendors\", \"value\": \"Vendors\" },\n  { \"label\": \"Opening Stock\", \"value\": \"OpeningStock\" },\n  { \"label\": \"Outstanding Sales Invoices\", \"value\": \"OutstandingInvoices\" },\n  { \"label\": \"Outstanding Purchase Bills\", \"value\": \"OutstandingBills\" },\n  { \"label\": \"Customer Advances\", \"value\": \"CustomerAdvances\" },\n  { \"label\": \"Vendor Advances\", \"value\": \"VendorAdvances\" },\n  { \"label\": \"Loans\", \"value\": \"Loans\" }\n]\n",
+  "topRow": 0,
+  "type": "SELECT_WIDGET",
+  "version": 1,
+  "widgetId": "2051lsnsjy",
+  "widgetName": "SelectModule"
+}

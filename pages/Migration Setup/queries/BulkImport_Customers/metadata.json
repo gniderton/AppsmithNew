@@ -1,6 +1,6 @@
 {
-  "gitSyncId": "69a80abb79ac426a29eb8838_316d778b-a52a-4401-acbf-f8b3ef91e4fc",
-  "id": "Customer_UpdateCustomer_API",
+  "gitSyncId": "69a80abb79ac426a29eb8838_b2ee0fbf-f2cc-4f56-ae1b-6c5c8014a0a4",
+  "id": "Migration Setup_BulkImport_Customers",
   "pluginId": "restapi-plugin",
   "pluginType": "API",
   "unpublishedAction": {
@@ -11,17 +11,17 @@
           "value": "application/json"
         }
       ],
-      "body": "{{JSONForm2.formData}}",
+      "body": "{{this.params.data}}",
       "bodyFormData": [],
       "encodeParamsToggle": true,
       "formData": {
         "apiContentType": "application/json"
       },
       "headers": [],
-      "httpMethod": "PUT",
+      "httpMethod": "POST",
       "httpVersion": "HTTP11",
       "paginationType": "NONE",
-      "path": "//api/customers/{{tblCustomers.triggeredRow.id}}",
+      "path": "/api/migration/customers",
       "pluginSpecifiedTemplates": [
         {
           "value": true
@@ -39,14 +39,11 @@
     },
     "dynamicBindingPathList": [
       {
-        "key": "path"
-      },
-      {
         "key": "body"
       }
     ],
-    "name": "UpdateCustomer_API",
-    "pageId": "Customer",
+    "name": "BulkImport_Customers",
+    "pageId": "Migration Setup",
     "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
