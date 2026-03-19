@@ -1,0 +1,21 @@
+{
+  "transaction_date": "{{JSONForm_Installment.formData.Installment_Details.Transaction_Date}}",
+  "total_amount": {{JSONForm_Installment.formData.Installment_Details.Total_Amount}},
+  "principal_portion": {{JSONForm_Installment.formData.Installment_Details.Principal_Portion}},
+  "interest_portion": {{JSONForm_Installment.formData.Installment_Details.Interest_Portion}},
+  
+  "payment_mode": "{{JSONForm_Installment.formData.Payment_Details.Payment_Mode}}",
+  "bank_account_id": {{JSONForm_Installment.formData.Payment_Details.Bank_Account || null}},
+  
+  "bank_statement_entry_id": {{ JSONForm_Installment.formData.Payment_Details.Payment_Mode === 'ONLINE' ? JSONForm_Installment.formData.Payment_Details.Bank_Statement_Entry : null }},
+  
+  "reference_no": "{{ 
+    JSONForm_Installment.formData.Payment_Details.Payment_Mode === 'ONLINE' 
+      ? (tblLoans.selectedRow.loan_type === 'TAKEN' 
+          ? GetUnconsumedDebits.data.find(d => d.id === JSONForm_Installment.formData.Payment_Details.Bank_Statement_Entry)?.bank_ref_id 
+          : GetUnconsumedCredits.data.find(c => c.id === JSONForm_Installment.formData.Payment_Details.Bank_Statement_Entry)?.bank_ref_id) 
+      : JSONForm_Installment.formData.Payment_Details.Manual_Reference_No 
+  }}",
+  
+  "remarks": "{{JSONForm_Installment.formData.Payment_Details.Remarks}}"
+}

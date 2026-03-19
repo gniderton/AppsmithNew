@@ -273,7 +273,7 @@
   "mobileTopRow": 6,
   "needsErrorInfo": false,
   "onSubmit": "{{\n  CreateLoanEntity.run()\n    .then(() => {\n      // 1. Show a green success popup\n      showAlert('Loan Entity created successfully!', 'success');\n      \n      // 2. Clear the form so it's ready for the next entry\n      resetWidget('JSONForm1', true);\n      \n      // 3. Refresh your dropdowns or tables displaying these entities!\n      GetLoanEntities.run();\n      \n      // 4. (Uncomment if your form is inside a Modal to close it)\n      // closeModal('Modal_CreateEntity');\n    })\n    .catch(() => {\n      // Show a red popup with the exact error message from the backend\n      showAlert('Failed to create Entity: ' + CreateLoanEntity.data.error, 'error');\n    });\n}}",
-  "originalBottomRow": 110,
+  "originalBottomRow": 99,
   "originalTopRow": 6,
   "parentColumnSpace": 6.9375,
   "parentId": "y9gfaih6di",

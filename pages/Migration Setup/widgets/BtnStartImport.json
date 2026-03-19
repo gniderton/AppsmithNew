@@ -12,6 +12,20 @@
     },
     {
       "key": "borderRadius"
+    },
+    {
+      "key": "isVisible"
+    },
+    {
+      "key": "isDisabled"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "isVisible"
+    },
+    {
+      "key": "isDisabled"
     }
   ],
   "dynamicTriggerPathList": [
@@ -20,9 +34,9 @@
     }
   ],
   "isDefaultClickDisabled": true,
-  "isDisabled": false,
+  "isDisabled": "{{FilePickerImport.files.length == 0}}",
   "isLoading": false,
-  "isVisible": true,
+  "isVisible": "{{FilePickerImport.files.length > 0}}",
   "key": "74whddlr1l",
   "leftColumn": 54,
   "minWidth": 120,

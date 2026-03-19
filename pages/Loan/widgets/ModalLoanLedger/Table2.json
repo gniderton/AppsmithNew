@@ -4,8 +4,7 @@
   "borderColor": "#E0DEDE",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": "1",
-  "bottomRow": 38,
-  "bottomRowBeforeCollapse": 38,
+  "bottomRow": 40,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "cachedTableData": {},
   "canFreezeColumn": true,
@@ -55,17 +54,11 @@
     },
     {
       "key": "tableData"
-    },
-    {
-      "key": "isVisible"
     }
   ],
   "dynamicPropertyPathList": [
     {
       "key": "tableData"
-    },
-    {
-      "key": "isVisible"
     }
   ],
   "dynamicTriggerPathList": [],
@@ -76,7 +69,7 @@
   "inlineEditingSaveOption": "ROW_LEVEL",
   "isLoading": false,
   "isSortable": true,
-  "isVisible": "{{FilePickerImport.files.length > 0}}",
+  "isVisible": true,
   "isVisibleDownload": true,
   "isVisibleFilters": false,
   "isVisiblePagination": true,
@@ -85,29 +78,26 @@
   "label": "Data",
   "leftColumn": 0,
   "minWidth": 450,
-  "mobileBottomRow": 38,
+  "mobileBottomRow": 40,
   "mobileLeftColumn": 0,
-  "mobileRightColumn": 12,
-  "mobileTopRow": 10,
+  "mobileRightColumn": 34,
+  "mobileTopRow": 12,
   "needsErrorInfo": false,
-  "originalBottomRow": 38,
-  "originalTopRow": 10,
-  "parentColumnSpace": 17.53125,
-  "parentId": "0",
+  "parentColumnSpace": 6.9375,
+  "parentId": "poxt1y6z4c",
   "parentRowSpace": 10,
   "primaryColumns": {},
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
-  "rightColumn": 64,
+  "rightColumn": 63,
   "searchKey": "",
-  "tableData": "{{FilePickerImport.files[0]?.data || []}}",
+  "tableData": "{{GetLoanLedger.data}}",
   "textSize": "0.875rem",
-  "topRow": 10,
-  "topRowBeforeCollapse": 10,
+  "topRow": 12,
   "totalRecordsCount": 0,
   "type": "TABLE_WIDGET_V2",
   "version": 2,
   "verticalAlignment": "CENTER",
-  "widgetId": "6m3a1nr4f9",
-  "widgetName": "TablePreview"
+  "widgetId": "vm480oxoel",
+  "widgetName": "Table2"
 }

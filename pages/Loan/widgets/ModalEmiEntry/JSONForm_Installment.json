@@ -1,0 +1,595 @@
+{
+  "animateLoading": true,
+  "autoGenerateForm": true,
+  "backgroundColor": "#fff",
+  "borderColor": "#E0DEDE",
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "borderWidth": "1",
+  "bottomRow": 95,
+  "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+  "childStylesheet": {
+    "ARRAY": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none",
+      "cellBorderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "cellBoxShadow": "none"
+    },
+    "CHECKBOX": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}"
+    },
+    "CURRENCY_INPUT": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none"
+    },
+    "DATEPICKER": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none"
+    },
+    "EMAIL_INPUT": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none"
+    },
+    "MULTILINE_TEXT_INPUT": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none"
+    },
+    "MULTISELECT": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none"
+    },
+    "NUMBER_INPUT": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none"
+    },
+    "OBJECT": {
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none",
+      "cellBorderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "cellBoxShadow": "none"
+    },
+    "PASSWORD_INPUT": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none"
+    },
+    "PHONE_NUMBER_INPUT": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none"
+    },
+    "RADIO_GROUP": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "boxShadow": "none"
+    },
+    "SELECT": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none"
+    },
+    "SWITCH": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "boxShadow": "none"
+    },
+    "TEXT_INPUT": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none"
+    }
+  },
+  "disabledWhenInvalid": true,
+  "dynamicBindingPathList": [
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "boxShadow"
+    },
+    {
+      "key": "submitButtonStyles.buttonColor"
+    },
+    {
+      "key": "submitButtonStyles.borderRadius"
+    },
+    {
+      "key": "resetButtonStyles.buttonColor"
+    },
+    {
+      "key": "resetButtonStyles.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.Installment_Details.children.Transaction_Date.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.Installment_Details.children.Transaction_Date.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.Installment_Details.children.Transaction_Date.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.Installment_Details.children.Total_Amount.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.Installment_Details.children.Total_Amount.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.Installment_Details.children.Principal_Portion.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.Installment_Details.children.Principal_Portion.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.Installment_Details.children.Principal_Portion.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.Installment_Details.children.Interest_Portion.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.Installment_Details.children.Interest_Portion.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.Installment_Details.children.Interest_Portion.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.Installment_Details.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.Installment_Details.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.Installment_Details.cellBorderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.Payment_Details.children.Payment_Mode.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.Payment_Details.children.Payment_Mode.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.Payment_Details.children.Payment_Mode.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.Payment_Details.children.Bank_Account.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.Payment_Details.children.Bank_Account.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.Payment_Details.children.Bank_Account.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.Payment_Details.children.Bank_Statement_Entry.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.Payment_Details.children.Bank_Statement_Entry.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.Payment_Details.children.Bank_Statement_Entry.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.Payment_Details.children.Manual_Reference_No.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.Payment_Details.children.Manual_Reference_No.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.Payment_Details.children.Manual_Reference_No.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.Payment_Details.children.Remarks.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.Payment_Details.children.Remarks.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.Payment_Details.children.Remarks.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.Payment_Details.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.Payment_Details.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.Payment_Details.cellBorderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.cellBorderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.Payment_Details.children.Bank_Statement_Entry.options"
+    },
+    {
+      "key": "schema.__root_schema__.children.Payment_Details.children.Bank_Account.options"
+    },
+    {
+      "key": "schema.__root_schema__.children.Payment_Details.children.Manual_Reference_No.isVisible"
+    },
+    {
+      "key": "schema.__root_schema__.children.Payment_Details.children.Bank_Statement_Entry.isVisible"
+    },
+    {
+      "key": "schema.__root_schema__.children.Installment_Details.children.Total_Amount.defaultValue"
+    }
+  ],
+  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicPropertyPathList": [
+    {
+      "key": "sourceData"
+    },
+    {
+      "key": "schema.__root_schema__.children.Payment_Details.children.Manual_Reference_No.isVisible"
+    },
+    {
+      "key": "schema.__root_schema__.children.Payment_Details.children.Bank_Statement_Entry.isVisible"
+    },
+    {
+      "key": "onSubmit"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onSubmit"
+    }
+  ],
+  "fieldLimitExceeded": false,
+  "fixedFooter": true,
+  "flexVerticalAlignment": "start",
+  "isLoading": false,
+  "isVisible": true,
+  "key": "rhm6fyjhnv",
+  "leftColumn": 0,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 50,
+  "mobileLeftColumn": 0,
+  "mobileRightColumn": 23,
+  "mobileTopRow": 9,
+  "needsErrorInfo": false,
+  "onSubmit": "{{\n  CreateInstallment.run()\n    .then(() => {\n      // 1. Show a green success popup\n      showAlert('Installment recorded successfully!', 'success');\n      \n      // 2. Refresh the transaction table so the new payment appears\n      getLoanTransactions.run();\n      \n      // 3. Clear the form so it's fresh for the next payment\n      resetWidget('JSONForm_Installment', true);\n      \n      // 4. Close the modal automatically\n      closeModal('ModalEmiEntry');\n    })\n    .catch(() => {\n      // Show a red error popup with the exact message from the backend\n      showAlert('Failed to record installment: ' + CreateInstallment.data.error, 'error');\n    });\n}}",
+  "originalBottomRow": 45,
+  "originalTopRow": 6,
+  "parentColumnSpace": 6.9375,
+  "parentId": "s0ymv732sm",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "resetButtonLabel": "Reset",
+  "resetButtonStyles": {
+    "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+    "boxShadow": "none",
+    "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+    "buttonVariant": "SECONDARY"
+  },
+  "responsiveBehavior": "fill",
+  "rightColumn": 63,
+  "schema": {
+    "__root_schema__": {
+      "accessor": "__root_schema__",
+      "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONForm_Installment.sourceData, JSONForm_Installment.formData, JSONForm_Installment.fieldState)}}",
+      "boxShadow": "none",
+      "cellBorderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONForm_Installment.sourceData, JSONForm_Installment.formData, JSONForm_Installment.fieldState)}}",
+      "cellBoxShadow": "none",
+      "children": {
+        "Installment_Details": {
+          "accessor": "Installment_Details",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONForm_Installment.sourceData, JSONForm_Installment.formData, JSONForm_Installment.fieldState)}}",
+          "boxShadow": "none",
+          "cellBorderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONForm_Installment.sourceData, JSONForm_Installment.formData, JSONForm_Installment.fieldState)}}",
+          "cellBoxShadow": "none",
+          "children": {
+            "Interest_Portion": {
+              "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(JSONForm_Installment.sourceData, JSONForm_Installment.formData, JSONForm_Installment.fieldState)}}",
+              "accessor": "Interest_Portion",
+              "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONForm_Installment.sourceData, JSONForm_Installment.formData, JSONForm_Installment.fieldState)}}",
+              "boxShadow": "none",
+              "children": {},
+              "dataType": "number",
+              "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.Installment_Details.Interest_Portion))(JSONForm_Installment.sourceData, JSONForm_Installment.formData, JSONForm_Installment.fieldState)}}",
+              "fieldType": "Number Input",
+              "iconAlign": "left",
+              "identifier": "Interest_Portion",
+              "isCustomField": false,
+              "isDisabled": false,
+              "isRequired": false,
+              "isSpellCheck": false,
+              "isVisible": true,
+              "label": "Interest Portion",
+              "labelTextSize": "0.875rem",
+              "originalIdentifier": "Interest_Portion",
+              "position": 2,
+              "sourceData": 0
+            },
+            "Principal_Portion": {
+              "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(JSONForm_Installment.sourceData, JSONForm_Installment.formData, JSONForm_Installment.fieldState)}}",
+              "accessor": "Principal_Portion",
+              "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONForm_Installment.sourceData, JSONForm_Installment.formData, JSONForm_Installment.fieldState)}}",
+              "boxShadow": "none",
+              "children": {},
+              "dataType": "number",
+              "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.Installment_Details.Principal_Portion))(JSONForm_Installment.sourceData, JSONForm_Installment.formData, JSONForm_Installment.fieldState)}}",
+              "fieldType": "Number Input",
+              "iconAlign": "left",
+              "identifier": "Principal_Portion",
+              "isCustomField": false,
+              "isDisabled": false,
+              "isRequired": false,
+              "isSpellCheck": false,
+              "isVisible": true,
+              "label": "Principal Portion",
+              "labelTextSize": "0.875rem",
+              "originalIdentifier": "Principal_Portion",
+              "position": 1,
+              "sourceData": 0
+            },
+            "Total_Amount": {
+              "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(JSONForm_Installment.sourceData, JSONForm_Installment.formData, JSONForm_Installment.fieldState)}}",
+              "accessor": "Total_Amount",
+              "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONForm_Installment.sourceData, JSONForm_Installment.formData, JSONForm_Installment.fieldState)}}",
+              "boxShadow": "none",
+              "children": {},
+              "dataType": "number",
+              "defaultValue": "{{((sourceData, formData, fieldState) => ( (JSONForm_Installment.formData.Installment_Details.Principal_Portion || 0) + (JSONForm_Installment.formData.Installment_Details.Interest_Portion || 0) ))(JSONForm_Installment.sourceData, JSONForm_Installment.formData, JSONForm_Installment.fieldState)}}",
+              "fieldType": "Number Input",
+              "iconAlign": "left",
+              "identifier": "Total_Amount",
+              "isCustomField": false,
+              "isDisabled": false,
+              "isRequired": false,
+              "isSpellCheck": false,
+              "isVisible": true,
+              "label": "Total Amount",
+              "labelTextSize": "0.875rem",
+              "originalIdentifier": "Total_Amount",
+              "position": 3,
+              "sourceData": 0
+            },
+            "Transaction_Date": {
+              "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(JSONForm_Installment.sourceData, JSONForm_Installment.formData, JSONForm_Installment.fieldState)}}",
+              "accessor": "Transaction_Date",
+              "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONForm_Installment.sourceData, JSONForm_Installment.formData, JSONForm_Installment.fieldState)}}",
+              "boxShadow": "none",
+              "children": {},
+              "closeOnSelection": false,
+              "convertToISO": false,
+              "dataType": "string",
+              "dateFormat": "YYYY-MM-DD HH:mm",
+              "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.Installment_Details.Transaction_Date))(JSONForm_Installment.sourceData, JSONForm_Installment.formData, JSONForm_Installment.fieldState)}}",
+              "fieldType": "Datepicker",
+              "identifier": "Transaction_Date",
+              "isCustomField": false,
+              "isDisabled": false,
+              "isRequired": false,
+              "isVisible": true,
+              "label": "Transaction Date",
+              "labelTextSize": "0.875rem",
+              "maxDate": "2121-12-31T18:29:00.000Z",
+              "minDate": "1920-12-31T18:30:00.000Z",
+              "originalIdentifier": "Transaction_Date",
+              "position": 0,
+              "shortcuts": false,
+              "sourceData": "",
+              "timePrecision": "minute"
+            }
+          },
+          "dataType": "object",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.Installment_Details))(JSONForm_Installment.sourceData, JSONForm_Installment.formData, JSONForm_Installment.fieldState)}}",
+          "fieldType": "Object",
+          "identifier": "Installment_Details",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isVisible": true,
+          "label": "Installment Details",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "Installment_Details",
+          "position": 0,
+          "sourceData": {
+            "Interest_Portion": 0,
+            "Principal_Portion": 0,
+            "Total_Amount": 0,
+            "Transaction_Date": ""
+          }
+        },
+        "Payment_Details": {
+          "accessor": "Payment_Details",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONForm_Installment.sourceData, JSONForm_Installment.formData, JSONForm_Installment.fieldState)}}",
+          "boxShadow": "none",
+          "cellBorderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONForm_Installment.sourceData, JSONForm_Installment.formData, JSONForm_Installment.fieldState)}}",
+          "cellBoxShadow": "none",
+          "children": {
+            "Bank_Account": {
+              "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(JSONForm_Installment.sourceData, JSONForm_Installment.formData, JSONForm_Installment.fieldState)}}",
+              "accessor": "Bank_Account",
+              "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONForm_Installment.sourceData, JSONForm_Installment.formData, JSONForm_Installment.fieldState)}}",
+              "boxShadow": "none",
+              "children": {},
+              "dataType": "string",
+              "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.Payment_Details.Bank_Account))(JSONForm_Installment.sourceData, JSONForm_Installment.formData, JSONForm_Installment.fieldState)}}",
+              "fieldType": "Select",
+              "identifier": "Bank_Account",
+              "isCustomField": false,
+              "isDisabled": false,
+              "isFilterable": false,
+              "isRequired": false,
+              "isVisible": true,
+              "label": "Bank Account",
+              "labelTextSize": "0.875rem",
+              "options": "{{getBanks.data.map(b => ({ label: b.name, value: b.id }))}}",
+              "originalIdentifier": "Bank_Account",
+              "position": 1,
+              "serverSideFiltering": false,
+              "sourceData": ""
+            },
+            "Bank_Statement_Entry": {
+              "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(JSONForm_Installment.sourceData, JSONForm_Installment.formData, JSONForm_Installment.fieldState)}}",
+              "accessor": "Bank_Statement_Entry",
+              "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONForm_Installment.sourceData, JSONForm_Installment.formData, JSONForm_Installment.fieldState)}}",
+              "boxShadow": "none",
+              "children": {},
+              "dataType": "string",
+              "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.Payment_Details.Bank_Statement_Entry))(JSONForm_Installment.sourceData, JSONForm_Installment.formData, JSONForm_Installment.fieldState)}}",
+              "fieldType": "Select",
+              "identifier": "Bank_Statement_Entry",
+              "isCustomField": false,
+              "isDisabled": false,
+              "isFilterable": false,
+              "isRequired": false,
+              "isVisible": "{{((sourceData, formData, fieldState) => (JSONForm_Installment.formData.Payment_Details.Payment_Mode === 'ONLINE'))(JSONForm_Installment.sourceData, JSONForm_Installment.formData, JSONForm_Installment.fieldState)}}",
+              "label": "Bank Statement Entry",
+              "labelTextSize": "0.875rem",
+              "options": "{{\n  tblLoans.selectedRow.loan_type === 'TAKEN' \n    ? GetUnconsumedDebits.data.map(d => ({ label: `${d.bank_ref_id} (₹${d.debit_amount})`, value: d.id }))\n    : GetUnconsumedCredits.data.map(c => ({ label: `${c.bank_ref_id} (₹${c.credit_amount})`, value: c.id }))\n}}\n",
+              "originalIdentifier": "Bank_Statement_Entry",
+              "position": 2,
+              "serverSideFiltering": false,
+              "sourceData": ""
+            },
+            "Manual_Reference_No": {
+              "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(JSONForm_Installment.sourceData, JSONForm_Installment.formData, JSONForm_Installment.fieldState)}}",
+              "accessor": "Manual_Reference_No",
+              "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONForm_Installment.sourceData, JSONForm_Installment.formData, JSONForm_Installment.fieldState)}}",
+              "boxShadow": "none",
+              "children": {},
+              "dataType": "string",
+              "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.Payment_Details.Manual_Reference_No))(JSONForm_Installment.sourceData, JSONForm_Installment.formData, JSONForm_Installment.fieldState)}}",
+              "fieldType": "Text Input",
+              "iconAlign": "left",
+              "identifier": "Manual_Reference_No",
+              "isCustomField": false,
+              "isDisabled": false,
+              "isRequired": false,
+              "isSpellCheck": false,
+              "isVisible": "{{((sourceData, formData, fieldState) => (JSONForm_Installment.formData.Payment_Details.Payment_Mode !== 'ONLINE'))(JSONForm_Installment.sourceData, JSONForm_Installment.formData, JSONForm_Installment.fieldState)}}",
+              "label": "Manual Reference No",
+              "labelTextSize": "0.875rem",
+              "originalIdentifier": "Manual_Reference_No",
+              "position": 3,
+              "sourceData": ""
+            },
+            "Payment_Mode": {
+              "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(JSONForm_Installment.sourceData, JSONForm_Installment.formData, JSONForm_Installment.fieldState)}}",
+              "accessor": "Payment_Mode",
+              "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONForm_Installment.sourceData, JSONForm_Installment.formData, JSONForm_Installment.fieldState)}}",
+              "boxShadow": "none",
+              "children": {},
+              "dataType": "string",
+              "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.Payment_Details.Payment_Mode))(JSONForm_Installment.sourceData, JSONForm_Installment.formData, JSONForm_Installment.fieldState)}}",
+              "fieldType": "Select",
+              "identifier": "Payment_Mode",
+              "isCustomField": false,
+              "isDisabled": false,
+              "isFilterable": false,
+              "isRequired": false,
+              "isVisible": true,
+              "label": "Payment Mode",
+              "labelTextSize": "0.875rem",
+              "options": "[\n  {\n    \"label\": \"Cash\",\n    \"value\": \"CASH\"\n  },\n  {\n    \"label\": \"Online Transfer\",\n    \"value\": \"ONLINE\"\n  },\n  {\n    \"label\": \"Cheque\",\n    \"value\": \"CHEQUE\"\n  }\n]\n",
+              "originalIdentifier": "Payment_Mode",
+              "position": 0,
+              "serverSideFiltering": false,
+              "sourceData": "ONLINE"
+            },
+            "Remarks": {
+              "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(JSONForm_Installment.sourceData, JSONForm_Installment.formData, JSONForm_Installment.fieldState)}}",
+              "accessor": "Remarks",
+              "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONForm_Installment.sourceData, JSONForm_Installment.formData, JSONForm_Installment.fieldState)}}",
+              "boxShadow": "none",
+              "children": {},
+              "dataType": "string",
+              "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.Payment_Details.Remarks))(JSONForm_Installment.sourceData, JSONForm_Installment.formData, JSONForm_Installment.fieldState)}}",
+              "fieldType": "Text Input",
+              "iconAlign": "left",
+              "identifier": "Remarks",
+              "isCustomField": false,
+              "isDisabled": false,
+              "isRequired": false,
+              "isSpellCheck": false,
+              "isVisible": true,
+              "label": "Remarks",
+              "labelTextSize": "0.875rem",
+              "originalIdentifier": "Remarks",
+              "position": 4,
+              "sourceData": ""
+            }
+          },
+          "dataType": "object",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.Payment_Details))(JSONForm_Installment.sourceData, JSONForm_Installment.formData, JSONForm_Installment.fieldState)}}",
+          "fieldType": "Object",
+          "identifier": "Payment_Details",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isVisible": true,
+          "label": "Payment Details",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "Payment_Details",
+          "position": 1,
+          "sourceData": {
+            "Bank_Account": "",
+            "Bank_Statement_Entry": "",
+            "Manual_Reference_No": "",
+            "Payment_Mode": "ONLINE",
+            "Remarks": ""
+          }
+        }
+      },
+      "dataType": "object",
+      "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData))(JSONForm_Installment.sourceData, JSONForm_Installment.formData, JSONForm_Installment.fieldState)}}",
+      "fieldType": "Object",
+      "identifier": "__root_schema__",
+      "isCustomField": false,
+      "isDisabled": false,
+      "isRequired": false,
+      "isVisible": true,
+      "label": "",
+      "labelTextSize": "0.875rem",
+      "originalIdentifier": "__root_schema__",
+      "position": -1,
+      "sourceData": {
+        "Installment_Details": {
+          "Interest_Portion": 0,
+          "Principal_Portion": 0,
+          "Total_Amount": 0,
+          "Transaction_Date": ""
+        },
+        "Payment_Details": {
+          "Bank_Account": "",
+          "Bank_Statement_Entry": "",
+          "Manual_Reference_No": "",
+          "Payment_Mode": "ONLINE",
+          "Remarks": ""
+        }
+      }
+    }
+  },
+  "scrollContents": true,
+  "showReset": true,
+  "sourceData": "{\n  \"Installment_Details\": {\n    \"Transaction_Date\": \"\",\n    \"Total_Amount\": 0,\n    \"Principal_Portion\": 0,\n    \"Interest_Portion\": 0\n  },\n  \"Payment_Details\": {\n    \"Payment_Mode\": \"ONLINE\",\n    \"Bank_Account\": \"\",\n    \"Bank_Statement_Entry\": \"\",\n    \"Manual_Reference_No\": \"\",\n    \"Remarks\": \"\"\n  }\n}\n",
+  "submitButtonLabel": "Submit",
+  "submitButtonStyles": {
+    "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+    "boxShadow": "none",
+    "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+    "buttonVariant": "PRIMARY"
+  },
+  "title": "",
+  "topRow": 7,
+  "type": "JSON_FORM_WIDGET",
+  "useSourceData": false,
+  "version": 1,
+  "widgetId": "2meaafn2nu",
+  "widgetName": "JSONForm_Installment"
+}

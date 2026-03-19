@@ -1,0 +1,31 @@
+{
+  "loan_type": "{{JSONForm2.formData.Loan_Details.Loan_Type}}",
+  "party_id": {{JSONForm2.formData.Loan_Details.Loan_Entity}},
+  "party_type": "{{ (() => {
+    let type = (GetLoanEntities.data.find(e => e.id === JSONForm2.formData.Loan_Details.Loan_Entity)?.entity_type || 'OTHER').toUpperCase();
+    if (type === 'FINANCIAL INSTITUTION') return 'BANK';
+    return type;
+  })() }}",
+  "party_name": "{{ GetLoanEntities.data.find(e => e.id === JSONForm2.formData.Loan_Details.Loan_Entity)?.entity_name || '' }}",
+  "principal_amount": {{JSONForm2.formData.Loan_Details.Principal_Amount}},
+  "interest_rate_pa": {{JSONForm2.formData.Loan_Details.Interest_Rate_PA}},
+  "tenor_months": {{JSONForm2.formData.Loan_Details.Tenor_Months}},
+  "emi_amount": {{JSONForm2.formData.Loan_Details.EMI_Amount}},
+  "disbursement_date": "{{moment(JSONForm2.formData.Loan_Details.Disbursement_Date, 'DD-MM-YYYY').format('YYYY-MM-DD')}}",
+  "start_date": "{{moment(JSONForm2.formData.Loan_Details.Start_Date, 'DD-MM-YYYY').format('YYYY-MM-DD')}}",
+  "payment_mode": "{{JSONForm2.formData.Payment_Details.Payment_Mode}}",
+  "bank_account_id": {{JSONForm2.formData.Payment_Details.Bank_Account || null}},
+  
+  "bank_statement_entry_id": {{ JSONForm2.formData.Payment_Details.Payment_Mode === 'ONLINE' ? JSONForm2.formData.Payment_Details.Bank_Statement_Entry : null }},
+  
+  "reference_no": "{{ 
+    JSONForm2.formData.Payment_Details.Payment_Mode === 'ONLINE' 
+      ? (JSONForm2.formData.Loan_Details.Loan_Type === 'TAKEN' 
+          ? GetUnconsumedCredits.data.find(c => c.id === JSONForm2.formData.Payment_Details.Bank_Statement_Entry)?.bank_ref_id 
+          : GetUnconsumedDebits.data.find(d => d.id === JSONForm2.formData.Payment_Details.Bank_Statement_Entry)?.bank_ref_id) 
+      : JSONForm2.formData.Payment_Details.Manual_Reference_No 
+  }}",
+  
+  "user_id": {{getMe.data.id || 1}},
+  "remarks": "{{JSONForm2.formData.Payment_Details.Remarks}}"
+}

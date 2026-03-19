@@ -1,0 +1,729 @@
+{
+  "animateLoading": true,
+  "autoGenerateForm": true,
+  "backgroundColor": "#fff",
+  "borderColor": "#E0DEDE",
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "borderWidth": "1",
+  "bottomRow": 131,
+  "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+  "childStylesheet": {
+    "ARRAY": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none",
+      "cellBorderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "cellBoxShadow": "none"
+    },
+    "CHECKBOX": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}"
+    },
+    "CURRENCY_INPUT": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none"
+    },
+    "DATEPICKER": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none"
+    },
+    "EMAIL_INPUT": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none"
+    },
+    "MULTILINE_TEXT_INPUT": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none"
+    },
+    "MULTISELECT": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none"
+    },
+    "NUMBER_INPUT": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none"
+    },
+    "OBJECT": {
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none",
+      "cellBorderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "cellBoxShadow": "none"
+    },
+    "PASSWORD_INPUT": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none"
+    },
+    "PHONE_NUMBER_INPUT": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none"
+    },
+    "RADIO_GROUP": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "boxShadow": "none"
+    },
+    "SELECT": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none"
+    },
+    "SWITCH": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "boxShadow": "none"
+    },
+    "TEXT_INPUT": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none"
+    }
+  },
+  "disabledWhenInvalid": true,
+  "dynamicBindingPathList": [
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "boxShadow"
+    },
+    {
+      "key": "submitButtonStyles.buttonColor"
+    },
+    {
+      "key": "submitButtonStyles.borderRadius"
+    },
+    {
+      "key": "resetButtonStyles.buttonColor"
+    },
+    {
+      "key": "resetButtonStyles.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.Loan_Details.children.Loan_Type.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.Loan_Details.children.Loan_Type.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.Loan_Details.children.Loan_Type.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.Loan_Details.children.Loan_Entity.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.Loan_Details.children.Loan_Entity.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.Loan_Details.children.Loan_Entity.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.Loan_Details.children.Principal_Amount.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.Loan_Details.children.Principal_Amount.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.Loan_Details.children.Principal_Amount.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.Loan_Details.children.Interest_Rate_PA.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.Loan_Details.children.Interest_Rate_PA.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.Loan_Details.children.Interest_Rate_PA.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.Loan_Details.children.Tenor_Months.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.Loan_Details.children.Tenor_Months.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.Loan_Details.children.Tenor_Months.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.Loan_Details.children.EMI_Amount.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.Loan_Details.children.EMI_Amount.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.Loan_Details.children.EMI_Amount.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.Loan_Details.children.Disbursement_Date.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.Loan_Details.children.Disbursement_Date.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.Loan_Details.children.Start_Date.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.Loan_Details.children.Start_Date.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.Loan_Details.children.Start_Date.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.Loan_Details.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.Loan_Details.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.Loan_Details.cellBorderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.Payment_Details.children.Payment_Mode.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.Payment_Details.children.Payment_Mode.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.Payment_Details.children.Payment_Mode.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.Payment_Details.children.Bank_Account.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.Payment_Details.children.Bank_Account.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.Payment_Details.children.Bank_Account.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.Payment_Details.children.Reference_Number.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.Payment_Details.children.Reference_Number.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.Payment_Details.children.Reference_Number.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.Payment_Details.children.Remarks.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.Payment_Details.children.Remarks.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.Payment_Details.children.Remarks.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.Payment_Details.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.Payment_Details.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.Payment_Details.cellBorderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.cellBorderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.Loan_Details.children.Loan_Entity.options"
+    },
+    {
+      "key": "schema.__root_schema__.children.Payment_Details.children.Bank_Account.options"
+    },
+    {
+      "key": "schema.__root_schema__.children.Payment_Details.children.Reference_Number.options"
+    },
+    {
+      "key": "schema.__root_schema__.children.Payment_Details.children.Manual_Reference_No.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.Payment_Details.children.Manual_Reference_No.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.Payment_Details.children.Manual_Reference_No.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.Payment_Details.children.Manual_Reference_No.isVisible"
+    }
+  ],
+  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicPropertyPathList": [
+    {
+      "key": "sourceData"
+    },
+    {
+      "key": "schema.__root_schema__.children.Loan_Details.children.Loan_Entity.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.Payment_Details.children.Manual_Reference_No.isVisible"
+    },
+    {
+      "key": "onSubmit"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onSubmit"
+    }
+  ],
+  "fieldLimitExceeded": false,
+  "fixedFooter": true,
+  "flexVerticalAlignment": "start",
+  "isLoading": false,
+  "isVisible": true,
+  "key": "rhm6fyjhnv",
+  "leftColumn": 0,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 47,
+  "mobileLeftColumn": 0,
+  "mobileRightColumn": 22,
+  "mobileTopRow": 6,
+  "needsErrorInfo": false,
+  "onSubmit": "{{\n  CreateLoanTransaction.run()\n    .then(() => {\n      // 1. Show success message\n      showAlert('Loan Transaction created successfully!', 'success');\n      \n      // 2. Refresh the transaction table\n      getLoanTransactions.run();\n      \n      // 3. Clear the form\n      resetWidget('JSONForm2', true);\n      \n      // 4. Close the modal\n      closeModal('ModalCreateTransaction');\n    })\n    .catch(() => {\n      // Show error message\n      showAlert('Failed to create transaction: ' + CreateLoanTransaction.data.error, 'error');\n    });\n}}\n",
+  "originalBottomRow": 123,
+  "originalTopRow": 6,
+  "parentColumnSpace": 6.9375,
+  "parentId": "yw2vxrx74w",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "resetButtonLabel": "Reset",
+  "resetButtonStyles": {
+    "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+    "boxShadow": "none",
+    "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+    "buttonVariant": "SECONDARY"
+  },
+  "responsiveBehavior": "fill",
+  "rightColumn": 63,
+  "schema": {
+    "__root_schema__": {
+      "accessor": "__root_schema__",
+      "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONForm2.sourceData, JSONForm2.formData, JSONForm2.fieldState)}}",
+      "boxShadow": "none",
+      "cellBorderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONForm2.sourceData, JSONForm2.formData, JSONForm2.fieldState)}}",
+      "cellBoxShadow": "none",
+      "children": {
+        "Loan_Details": {
+          "accessor": "Loan_Details",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONForm2.sourceData, JSONForm2.formData, JSONForm2.fieldState)}}",
+          "boxShadow": "none",
+          "cellBorderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONForm2.sourceData, JSONForm2.formData, JSONForm2.fieldState)}}",
+          "cellBoxShadow": "none",
+          "children": {
+            "Disbursement_Date": {
+              "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(JSONForm2.sourceData, JSONForm2.formData, JSONForm2.fieldState)}}",
+              "accessor": "Disbursement_Date",
+              "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONForm2.sourceData, JSONForm2.formData, JSONForm2.fieldState)}}",
+              "boxShadow": "none",
+              "children": {},
+              "closeOnSelection": false,
+              "convertToISO": false,
+              "dataType": "string",
+              "dateFormat": "DD-MM-YYYY",
+              "defaultValue": "2026-03-19T00:00:00.000+05:30",
+              "fieldType": "Datepicker",
+              "identifier": "Disbursement_Date",
+              "isCustomField": false,
+              "isDisabled": false,
+              "isRequired": false,
+              "isVisible": true,
+              "label": "Disbursement Date",
+              "labelTextSize": "0.875rem",
+              "maxDate": "2121-12-31T18:29:00.000Z",
+              "minDate": "1920-12-31T18:30:00.000Z",
+              "originalIdentifier": "Disbursement_Date",
+              "position": 6,
+              "shortcuts": false,
+              "sourceData": "",
+              "timePrecision": "minute"
+            },
+            "EMI_Amount": {
+              "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(JSONForm2.sourceData, JSONForm2.formData, JSONForm2.fieldState)}}",
+              "accessor": "EMI_Amount",
+              "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONForm2.sourceData, JSONForm2.formData, JSONForm2.fieldState)}}",
+              "boxShadow": "none",
+              "children": {},
+              "dataType": "number",
+              "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.Loan_Details.EMI_Amount))(JSONForm2.sourceData, JSONForm2.formData, JSONForm2.fieldState)}}",
+              "fieldType": "Number Input",
+              "iconAlign": "left",
+              "identifier": "EMI_Amount",
+              "isCustomField": false,
+              "isDisabled": false,
+              "isRequired": false,
+              "isSpellCheck": false,
+              "isVisible": true,
+              "label": "EMI Amount",
+              "labelTextSize": "0.875rem",
+              "originalIdentifier": "EMI_Amount",
+              "position": 5,
+              "sourceData": 0
+            },
+            "Interest_Rate_PA": {
+              "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(JSONForm2.sourceData, JSONForm2.formData, JSONForm2.fieldState)}}",
+              "accessor": "Interest_Rate_PA",
+              "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONForm2.sourceData, JSONForm2.formData, JSONForm2.fieldState)}}",
+              "boxShadow": "none",
+              "children": {},
+              "dataType": "number",
+              "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.Loan_Details.Interest_Rate_PA))(JSONForm2.sourceData, JSONForm2.formData, JSONForm2.fieldState)}}",
+              "fieldType": "Number Input",
+              "iconAlign": "left",
+              "identifier": "Interest_Rate_PA",
+              "isCustomField": false,
+              "isDisabled": false,
+              "isRequired": false,
+              "isSpellCheck": false,
+              "isVisible": true,
+              "label": "Interest Rate PA",
+              "labelTextSize": "0.875rem",
+              "originalIdentifier": "Interest_Rate_PA",
+              "position": 3,
+              "sourceData": 0
+            },
+            "Loan_Entity": {
+              "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(JSONForm2.sourceData, JSONForm2.formData, JSONForm2.fieldState)}}",
+              "accessor": "Loan_Entity",
+              "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONForm2.sourceData, JSONForm2.formData, JSONForm2.fieldState)}}",
+              "boxShadow": "none",
+              "children": {},
+              "dataType": "string",
+              "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.Loan_Details.Loan_Entity))(JSONForm2.sourceData, JSONForm2.formData, JSONForm2.fieldState)}}",
+              "fieldType": "Select",
+              "identifier": "Loan_Entity",
+              "isCustomField": false,
+              "isDisabled": false,
+              "isFilterable": false,
+              "isRequired": false,
+              "isVisible": true,
+              "label": "Loan Entity",
+              "labelTextSize": "0.875rem",
+              "options": "{{GetLoanEntities.data.map(e => ({ label: e.entity_name + \" (\" + e.entity_type + \")\", value: e.id }))}}",
+              "originalIdentifier": "Loan_Entity",
+              "position": 1,
+              "serverSideFiltering": false,
+              "sourceData": ""
+            },
+            "Loan_Type": {
+              "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(JSONForm2.sourceData, JSONForm2.formData, JSONForm2.fieldState)}}",
+              "accessor": "Loan_Type",
+              "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONForm2.sourceData, JSONForm2.formData, JSONForm2.fieldState)}}",
+              "boxShadow": "none",
+              "children": {},
+              "dataType": "string",
+              "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.Loan_Details.Loan_Type))(JSONForm2.sourceData, JSONForm2.formData, JSONForm2.fieldState)}}",
+              "fieldType": "Select",
+              "identifier": "Loan_Type",
+              "isCustomField": false,
+              "isDisabled": false,
+              "isFilterable": false,
+              "isRequired": false,
+              "isVisible": true,
+              "label": "Loan Type",
+              "labelTextSize": "0.875rem",
+              "options": "[{\"label\": \"Taken (Payable)\", \"value\": \"TAKEN\"}, {\"label\": \"Given (Receivable)\", \"value\": \"GIVEN\"}]",
+              "originalIdentifier": "Loan_Type",
+              "position": 0,
+              "serverSideFiltering": false,
+              "sourceData": "TAKEN"
+            },
+            "Principal_Amount": {
+              "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(JSONForm2.sourceData, JSONForm2.formData, JSONForm2.fieldState)}}",
+              "accessor": "Principal_Amount",
+              "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONForm2.sourceData, JSONForm2.formData, JSONForm2.fieldState)}}",
+              "boxShadow": "none",
+              "children": {},
+              "dataType": "number",
+              "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.Loan_Details.Principal_Amount))(JSONForm2.sourceData, JSONForm2.formData, JSONForm2.fieldState)}}",
+              "fieldType": "Number Input",
+              "iconAlign": "left",
+              "identifier": "Principal_Amount",
+              "isCustomField": false,
+              "isDisabled": false,
+              "isRequired": false,
+              "isSpellCheck": false,
+              "isVisible": true,
+              "label": "Principal Amount",
+              "labelTextSize": "0.875rem",
+              "originalIdentifier": "Principal_Amount",
+              "position": 2,
+              "sourceData": 0
+            },
+            "Start_Date": {
+              "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(JSONForm2.sourceData, JSONForm2.formData, JSONForm2.fieldState)}}",
+              "accessor": "Start_Date",
+              "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONForm2.sourceData, JSONForm2.formData, JSONForm2.fieldState)}}",
+              "boxShadow": "none",
+              "children": {},
+              "closeOnSelection": false,
+              "convertToISO": false,
+              "dataType": "string",
+              "dateFormat": "DD-MM-YYYY",
+              "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.Loan_Details.Start_Date))(JSONForm2.sourceData, JSONForm2.formData, JSONForm2.fieldState)}}",
+              "fieldType": "Datepicker",
+              "identifier": "Start_Date",
+              "isCustomField": false,
+              "isDisabled": false,
+              "isRequired": false,
+              "isVisible": true,
+              "label": "Start Date",
+              "labelTextSize": "0.875rem",
+              "maxDate": "2121-12-31T18:29:00.000Z",
+              "minDate": "1920-12-31T18:30:00.000Z",
+              "originalIdentifier": "Start_Date",
+              "position": 7,
+              "shortcuts": false,
+              "sourceData": "",
+              "timePrecision": "minute"
+            },
+            "Tenor_Months": {
+              "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(JSONForm2.sourceData, JSONForm2.formData, JSONForm2.fieldState)}}",
+              "accessor": "Tenor_Months",
+              "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONForm2.sourceData, JSONForm2.formData, JSONForm2.fieldState)}}",
+              "boxShadow": "none",
+              "children": {},
+              "dataType": "number",
+              "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.Loan_Details.Tenor_Months))(JSONForm2.sourceData, JSONForm2.formData, JSONForm2.fieldState)}}",
+              "fieldType": "Number Input",
+              "iconAlign": "left",
+              "identifier": "Tenor_Months",
+              "isCustomField": false,
+              "isDisabled": false,
+              "isRequired": false,
+              "isSpellCheck": false,
+              "isVisible": true,
+              "label": "Tenor Months",
+              "labelTextSize": "0.875rem",
+              "originalIdentifier": "Tenor_Months",
+              "position": 4,
+              "sourceData": 1
+            }
+          },
+          "dataType": "object",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.Loan_Details))(JSONForm2.sourceData, JSONForm2.formData, JSONForm2.fieldState)}}",
+          "fieldType": "Object",
+          "identifier": "Loan_Details",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isVisible": true,
+          "label": "Loan Details",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "Loan_Details",
+          "position": 0,
+          "sourceData": {
+            "Disbursement_Date": "",
+            "EMI_Amount": 0,
+            "Interest_Rate_PA": 0,
+            "Loan_Entity": "",
+            "Loan_Type": "TAKEN",
+            "Principal_Amount": 0,
+            "Start_Date": "",
+            "Tenor_Months": 1
+          }
+        },
+        "Payment_Details": {
+          "accessor": "Payment_Details",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONForm2.sourceData, JSONForm2.formData, JSONForm2.fieldState)}}",
+          "boxShadow": "none",
+          "cellBorderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONForm2.sourceData, JSONForm2.formData, JSONForm2.fieldState)}}",
+          "cellBoxShadow": "none",
+          "children": {
+            "Bank_Account": {
+              "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(JSONForm2.sourceData, JSONForm2.formData, JSONForm2.fieldState)}}",
+              "accessor": "Bank_Account",
+              "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONForm2.sourceData, JSONForm2.formData, JSONForm2.fieldState)}}",
+              "boxShadow": "none",
+              "children": {},
+              "dataType": "string",
+              "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.Payment_Details.Bank_Account))(JSONForm2.sourceData, JSONForm2.formData, JSONForm2.fieldState)}}",
+              "fieldType": "Select",
+              "identifier": "Bank_Account",
+              "isCustomField": false,
+              "isDisabled": false,
+              "isFilterable": false,
+              "isRequired": false,
+              "isVisible": true,
+              "label": "Bank Account",
+              "labelTextSize": "0.875rem",
+              "options": "{{getBanks.data.map(b => ({ label: b.name, value: b.id }))}}",
+              "originalIdentifier": "Bank_Account",
+              "position": 1,
+              "serverSideFiltering": false,
+              "sourceData": ""
+            },
+            "Manual_Reference_No": {
+              "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(JSONForm2.sourceData, JSONForm2.formData, JSONForm2.fieldState)}}",
+              "accessor": "Manual_Reference_No",
+              "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONForm2.sourceData, JSONForm2.formData, JSONForm2.fieldState)}}",
+              "boxShadow": "none",
+              "children": {},
+              "dataType": "string",
+              "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.Payment_Details.Manual_Reference_No))(JSONForm2.sourceData, JSONForm2.formData, JSONForm2.fieldState)}}",
+              "fieldType": "Text Input",
+              "iconAlign": "left",
+              "identifier": "Manual_Reference_No",
+              "isCustomField": false,
+              "isDisabled": false,
+              "isRequired": false,
+              "isSpellCheck": false,
+              "isVisible": "{{((sourceData, formData, fieldState) => (JSONForm2.formData.Payment_Details.Payment_Mode !== 'ONLINE'))(JSONForm2.sourceData, JSONForm2.formData, JSONForm2.fieldState)}}",
+              "label": "Manual Reference No",
+              "labelTextSize": "0.875rem",
+              "originalIdentifier": "Manual_Reference_No",
+              "position": 3,
+              "sourceData": ""
+            },
+            "Payment_Mode": {
+              "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(JSONForm2.sourceData, JSONForm2.formData, JSONForm2.fieldState)}}",
+              "accessor": "Payment_Mode",
+              "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONForm2.sourceData, JSONForm2.formData, JSONForm2.fieldState)}}",
+              "boxShadow": "none",
+              "children": {},
+              "dataType": "string",
+              "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.Payment_Details.Payment_Mode))(JSONForm2.sourceData, JSONForm2.formData, JSONForm2.fieldState)}}",
+              "fieldType": "Select",
+              "identifier": "Payment_Mode",
+              "isCustomField": false,
+              "isDisabled": false,
+              "isFilterable": false,
+              "isRequired": false,
+              "isVisible": true,
+              "label": "Payment Mode",
+              "labelTextSize": "0.875rem",
+              "options": "[\n  {\n    \"label\": \"Cash\",\n    \"value\": \"CASH\"\n  },\n  {\n    \"label\": \"Online Transfer\",\n    \"value\": \"ONLINE\"\n  },\n  {\n    \"label\": \"Cheque\",\n    \"value\": \"CHEQUE\"\n  }\n]\n",
+              "originalIdentifier": "Payment_Mode",
+              "position": 0,
+              "serverSideFiltering": false,
+              "sourceData": "Bank Transfer"
+            },
+            "Reference_Number": {
+              "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(JSONForm2.sourceData, JSONForm2.formData, JSONForm2.fieldState)}}",
+              "accessor": "Reference_Number",
+              "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONForm2.sourceData, JSONForm2.formData, JSONForm2.fieldState)}}",
+              "boxShadow": "none",
+              "children": {},
+              "dataType": "string",
+              "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.Payment_Details.Reference_Number))(JSONForm2.sourceData, JSONForm2.formData, JSONForm2.fieldState)}}",
+              "fieldType": "Select",
+              "identifier": "Reference_Number",
+              "isCustomField": false,
+              "isDisabled": false,
+              "isFilterable": false,
+              "isRequired": false,
+              "isVisible": true,
+              "label": "Reference Number",
+              "labelTextSize": "0.875rem",
+              "options": "{{\n  JSONForm2.formData.Loan_Details.Loan_Type === 'TAKEN' \n    ? GetUnconsumedCredits.data.map(c => ({ label: `${c.bank_ref_id} (₹${c.credit_amount})`, value: c.id }))\n    : GetUnconsumedDebits.data.map(d => ({ label: `${d.bank_ref_id} (₹${d.debit_amount})`, value: d.id }))\n}}\n",
+              "originalIdentifier": "Reference_Number",
+              "position": 2,
+              "serverSideFiltering": false,
+              "sourceData": ""
+            },
+            "Remarks": {
+              "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(JSONForm2.sourceData, JSONForm2.formData, JSONForm2.fieldState)}}",
+              "accessor": "Remarks",
+              "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONForm2.sourceData, JSONForm2.formData, JSONForm2.fieldState)}}",
+              "boxShadow": "none",
+              "children": {},
+              "dataType": "string",
+              "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.Payment_Details.Remarks))(JSONForm2.sourceData, JSONForm2.formData, JSONForm2.fieldState)}}",
+              "fieldType": "Text Input",
+              "iconAlign": "left",
+              "identifier": "Remarks",
+              "isCustomField": false,
+              "isDisabled": false,
+              "isRequired": false,
+              "isSpellCheck": false,
+              "isVisible": true,
+              "label": "Remarks",
+              "labelTextSize": "0.875rem",
+              "originalIdentifier": "Remarks",
+              "position": 4,
+              "sourceData": ""
+            }
+          },
+          "dataType": "object",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.Payment_Details))(JSONForm2.sourceData, JSONForm2.formData, JSONForm2.fieldState)}}",
+          "fieldType": "Object",
+          "identifier": "Payment_Details",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isVisible": true,
+          "label": "Payment Details",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "Payment_Details",
+          "position": 1,
+          "sourceData": {
+            "Bank_Account": "",
+            "Payment_Mode": "Bank Transfer",
+            "Reference_Number": "",
+            "Remarks": ""
+          }
+        }
+      },
+      "dataType": "object",
+      "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData))(JSONForm2.sourceData, JSONForm2.formData, JSONForm2.fieldState)}}",
+      "fieldType": "Object",
+      "identifier": "__root_schema__",
+      "isCustomField": false,
+      "isDisabled": false,
+      "isRequired": false,
+      "isVisible": true,
+      "label": "",
+      "labelTextSize": "0.875rem",
+      "originalIdentifier": "__root_schema__",
+      "position": -1,
+      "sourceData": {
+        "Loan_Details": {
+          "Disbursement_Date": "",
+          "EMI_Amount": 0,
+          "Interest_Rate_PA": 0,
+          "Loan_Entity": "",
+          "Loan_Type": "TAKEN",
+          "Principal_Amount": 0,
+          "Start_Date": "",
+          "Tenor_Months": 1
+        },
+        "Payment_Details": {
+          "Bank_Account": "",
+          "Payment_Mode": "Bank Transfer",
+          "Reference_Number": "",
+          "Remarks": ""
+        }
+      }
+    }
+  },
+  "scrollContents": true,
+  "showReset": true,
+  "sourceData": "{\n  \"Loan_Details\": {\n    \"Loan_Type\": \"TAKEN\",\n    \"Loan_Entity\": \"\",\n    \"Principal_Amount\": 0,\n    \"Interest_Rate_PA\": 0,\n    \"Tenor_Months\": 1,\n    \"EMI_Amount\": 0,\n    \"Disbursement_Date\": \"\",\n    \"Start_Date\": \"\"\n  },\n  \"Payment_Details\": {\n    \"Payment_Mode\": \"Bank Transfer\",\n    \"Bank_Account\": \"\",\n    \"Reference_Number\": \"\",\n\t\t\"Manual_Reference_No\": \"\",\n    \"Remarks\": \"\"\n  }\n}\n",
+  "submitButtonLabel": "Submit",
+  "submitButtonStyles": {
+    "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+    "boxShadow": "none",
+    "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+    "buttonVariant": "PRIMARY"
+  },
+  "title": "",
+  "topRow": 6,
+  "type": "JSON_FORM_WIDGET",
+  "useSourceData": false,
+  "version": 1,
+  "widgetId": "iq4p7q15m8",
+  "widgetName": "JSONForm2"
+}
