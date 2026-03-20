@@ -2,10 +2,8 @@
   "accentColor": "{{appsmith.theme.colors.primaryColor}}",
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 7,
-  "defaultSelectedValues": [
-    "BLUE"
-  ],
+  "bottomRow": 4,
+  "defaultSelectedValues": "[\n  \"Active\"\n]",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
