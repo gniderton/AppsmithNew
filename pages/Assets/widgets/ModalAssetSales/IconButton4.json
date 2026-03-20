@@ -4,8 +4,7 @@
   "bottomRow": 4,
   "boxShadow": "none",
   "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
-  "buttonVariant": "PRIMARY",
-  "disabledWhenInvalid": false,
+  "buttonVariant": "TERTIARY",
   "dynamicBindingPathList": [
     {
       "key": "buttonColor"
@@ -19,32 +18,27 @@
       "key": "onClick"
     }
   ],
-  "isDefaultClickDisabled": true,
+  "iconName": "cross",
+  "iconSize": 24,
   "isDisabled": false,
   "isLoading": false,
   "isVisible": true,
-  "key": "74whddlr1l",
-  "leftColumn": 53,
-  "minWidth": 120,
+  "key": "2yqrpkq6pc",
+  "leftColumn": 58,
+  "minWidth": 50,
   "mobileBottomRow": 4,
-  "mobileLeftColumn": 48,
+  "mobileLeftColumn": 58,
   "mobileRightColumn": 64,
   "mobileTopRow": 0,
   "needsErrorInfo": false,
-  "onClick": "{{showModal(ModalPurchaseAssets.name);}}",
-  "parentColumnSpace": 17.21875,
-  "parentId": "68a6f01ajw",
-  "parentRowSpace": 10,
-  "placement": "CENTER",
-  "recaptchaType": "V3",
+  "onClick": "{{closeModal(ModalAssetSales.name);}}",
+  "parentId": "a0b1tg23od",
   "renderMode": "CANVAS",
-  "resetFormOnClick": false,
   "responsiveBehavior": "hug",
   "rightColumn": 64,
-  "text": "Purchase Assets",
   "topRow": 0,
-  "type": "BUTTON_WIDGET",
+  "type": "ICON_BUTTON_WIDGET",
   "version": 1,
-  "widgetId": "mzkmb7xjce",
-  "widgetName": "Button2"
+  "widgetId": "tkosf01edp",
+  "widgetName": "IconButton4"
 }

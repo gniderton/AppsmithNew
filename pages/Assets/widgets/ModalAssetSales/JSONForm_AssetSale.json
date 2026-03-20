@@ -1,0 +1,710 @@
+{
+  "animateLoading": true,
+  "autoGenerateForm": true,
+  "backgroundColor": "#fff",
+  "borderColor": "#E0DEDE",
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "borderWidth": "1",
+  "bottomRow": 129,
+  "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+  "childStylesheet": {
+    "ARRAY": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none",
+      "cellBorderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "cellBoxShadow": "none"
+    },
+    "CHECKBOX": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}"
+    },
+    "CURRENCY_INPUT": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none"
+    },
+    "DATEPICKER": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none"
+    },
+    "EMAIL_INPUT": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none"
+    },
+    "MULTILINE_TEXT_INPUT": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none"
+    },
+    "MULTISELECT": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none"
+    },
+    "NUMBER_INPUT": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none"
+    },
+    "OBJECT": {
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none",
+      "cellBorderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "cellBoxShadow": "none"
+    },
+    "PASSWORD_INPUT": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none"
+    },
+    "PHONE_NUMBER_INPUT": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none"
+    },
+    "RADIO_GROUP": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "boxShadow": "none"
+    },
+    "SELECT": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none"
+    },
+    "SWITCH": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "boxShadow": "none"
+    },
+    "TEXT_INPUT": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none"
+    }
+  },
+  "disabledWhenInvalid": true,
+  "dynamicBindingPathList": [
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "boxShadow"
+    },
+    {
+      "key": "submitButtonStyles.buttonColor"
+    },
+    {
+      "key": "submitButtonStyles.borderRadius"
+    },
+    {
+      "key": "resetButtonStyles.buttonColor"
+    },
+    {
+      "key": "resetButtonStyles.borderRadius"
+    },
+    {
+      "key": "sourceData"
+    },
+    {
+      "key": "schema.__root_schema__.children.Sale_Info.children.Sale_Date.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.Sale_Info.children.Sale_Date.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.Sale_Info.children.Sale_Date.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.Sale_Info.children.Sale_Amount.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.Sale_Info.children.Sale_Amount.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.Sale_Info.children.Sale_Amount.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.Sale_Info.children.Remarks.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.Sale_Info.children.Remarks.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.Sale_Info.children.Remarks.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.Sale_Info.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.Sale_Info.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.Sale_Info.cellBorderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.Buyer_Selection.children.Select_Buyer.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.Buyer_Selection.children.Select_Buyer.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.Buyer_Selection.children.Select_Buyer.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.Buyer_Selection.children.Buyer_Name.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.Buyer_Selection.children.Buyer_Name.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.Buyer_Selection.children.Buyer_GST.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.Buyer_Selection.children.Buyer_GST.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.Buyer_Selection.children.Buyer_Address.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.Buyer_Selection.children.Buyer_Address.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.Buyer_Selection.children.Delivery_Address.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.Buyer_Selection.children.Delivery_Address.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.Buyer_Selection.children.Delivery_Address.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.Buyer_Selection.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.Buyer_Selection.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.Buyer_Selection.cellBorderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.GST_Breakdown.children.Is_GST_Sale.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.GST_Breakdown.children.Is_GST_Sale.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.GST_Breakdown.children.Taxable_Amount.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.GST_Breakdown.children.Taxable_Amount.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.GST_Breakdown.children.Taxable_Amount.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.GST_Breakdown.children.Tax_Amount.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.GST_Breakdown.children.Tax_Amount.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.GST_Breakdown.children.Tax_Amount.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.GST_Breakdown.children.HSN_Code.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.GST_Breakdown.children.HSN_Code.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.GST_Breakdown.children.HSN_Code.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.GST_Breakdown.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.GST_Breakdown.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.GST_Breakdown.cellBorderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.cellBorderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.Buyer_Selection.children.Select_Buyer.options"
+    },
+    {
+      "key": "schema.__root_schema__.children.Buyer_Selection.children.Buyer_Name.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.Buyer_Selection.children.Buyer_GST.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.Buyer_Selection.children.Buyer_Address.defaultValue"
+    }
+  ],
+  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicPropertyPathList": [
+    {
+      "key": "schema.__root_schema__.children.Buyer_Selection.children.Select_Buyer.onOptionChange"
+    },
+    {
+      "key": "onSubmit"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "schema.__root_schema__.children.Buyer_Selection.children.Select_Buyer.onOptionChange"
+    },
+    {
+      "key": "onSubmit"
+    }
+  ],
+  "fieldLimitExceeded": false,
+  "fixedFooter": true,
+  "flexVerticalAlignment": "start",
+  "isLoading": false,
+  "isVisible": true,
+  "key": "rhm6fyjhnv",
+  "leftColumn": 0,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 47,
+  "mobileLeftColumn": 0,
+  "mobileRightColumn": 17,
+  "mobileTopRow": 6,
+  "needsErrorInfo": false,
+  "onSubmit": "{{\n  SellAssets.run().then(() => {\n    showAlert('Asset Sold Successfully! Invoice: ' + SellAssets.data.invoice_no, 'success');\n    getAssets.run(); // Refresh your table\n    closeModal('ModalAssetSales');\n    resetWidget('JSONForm_AssetSale');\n  }).catch(e => {\n    showAlert('Failed to sell asset: ' + SellAssets.data.error, 'error');\n  });\n}}\n",
+  "originalBottomRow": 129,
+  "originalTopRow": 6,
+  "parentColumnSpace": 6.9375,
+  "parentId": "a0b1tg23od",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "resetButtonLabel": "Reset",
+  "resetButtonStyles": {
+    "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+    "boxShadow": "none",
+    "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+    "buttonVariant": "SECONDARY"
+  },
+  "responsiveBehavior": "fill",
+  "rightColumn": 63,
+  "schema": {
+    "__root_schema__": {
+      "accessor": "__root_schema__",
+      "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONForm_AssetSale.sourceData, JSONForm_AssetSale.formData, JSONForm_AssetSale.fieldState)}}",
+      "boxShadow": "none",
+      "cellBorderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONForm_AssetSale.sourceData, JSONForm_AssetSale.formData, JSONForm_AssetSale.fieldState)}}",
+      "cellBoxShadow": "none",
+      "children": {
+        "Buyer_Selection": {
+          "accessor": "Buyer_Selection",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONForm_AssetSale.sourceData, JSONForm_AssetSale.formData, JSONForm_AssetSale.fieldState)}}",
+          "boxShadow": "none",
+          "cellBorderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONForm_AssetSale.sourceData, JSONForm_AssetSale.formData, JSONForm_AssetSale.fieldState)}}",
+          "cellBoxShadow": "none",
+          "children": {
+            "Buyer_Address": {
+              "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(JSONForm_AssetSale.sourceData, JSONForm_AssetSale.formData, JSONForm_AssetSale.fieldState)}}",
+              "accessor": "Buyer_Address",
+              "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONForm_AssetSale.sourceData, JSONForm_AssetSale.formData, JSONForm_AssetSale.fieldState)}}",
+              "boxShadow": "none",
+              "children": {},
+              "dataType": "string",
+              "defaultValue": "{{((sourceData, formData, fieldState) => ( GetAssetEntities.data.find(e => e.id === JSONForm_AssetSale.formData.Buyer_Selection.Select_Buyer)?.address || \"\" ))(JSONForm_AssetSale.sourceData, JSONForm_AssetSale.formData, JSONForm_AssetSale.fieldState)}}",
+              "fieldType": "Text Input",
+              "iconAlign": "left",
+              "identifier": "Buyer_Address",
+              "isCustomField": false,
+              "isDisabled": false,
+              "isRequired": false,
+              "isSpellCheck": false,
+              "isVisible": true,
+              "label": "Buyer Address",
+              "labelTextSize": "0.875rem",
+              "originalIdentifier": "Buyer_Address",
+              "position": 3,
+              "sourceData": ""
+            },
+            "Buyer_GST": {
+              "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(JSONForm_AssetSale.sourceData, JSONForm_AssetSale.formData, JSONForm_AssetSale.fieldState)}}",
+              "accessor": "Buyer_GST",
+              "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONForm_AssetSale.sourceData, JSONForm_AssetSale.formData, JSONForm_AssetSale.fieldState)}}",
+              "boxShadow": "none",
+              "children": {},
+              "dataType": "string",
+              "defaultValue": "{{((sourceData, formData, fieldState) => ( GetAssetEntities.data.find(e => e.id === JSONForm_AssetSale.formData.Buyer_Selection.Select_Buyer)?.gst_number || \"\" ))(JSONForm_AssetSale.sourceData, JSONForm_AssetSale.formData, JSONForm_AssetSale.fieldState)}}",
+              "fieldType": "Text Input",
+              "iconAlign": "left",
+              "identifier": "Buyer_GST",
+              "isCustomField": false,
+              "isDisabled": false,
+              "isRequired": false,
+              "isSpellCheck": false,
+              "isVisible": true,
+              "label": "Buyer GST",
+              "labelTextSize": "0.875rem",
+              "originalIdentifier": "Buyer_GST",
+              "position": 2,
+              "sourceData": ""
+            },
+            "Buyer_Name": {
+              "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(JSONForm_AssetSale.sourceData, JSONForm_AssetSale.formData, JSONForm_AssetSale.fieldState)}}",
+              "accessor": "Buyer_Name",
+              "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONForm_AssetSale.sourceData, JSONForm_AssetSale.formData, JSONForm_AssetSale.fieldState)}}",
+              "boxShadow": "none",
+              "children": {},
+              "dataType": "string",
+              "defaultValue": "{{((sourceData, formData, fieldState) => ( GetAssetEntities.data.find(e => e.id === JSONForm_AssetSale.formData.Buyer_Selection.Select_Buyer)?.entity_name || \"\" ))(JSONForm_AssetSale.sourceData, JSONForm_AssetSale.formData, JSONForm_AssetSale.fieldState)}}",
+              "fieldType": "Text Input",
+              "iconAlign": "left",
+              "identifier": "Buyer_Name",
+              "isCustomField": false,
+              "isDisabled": false,
+              "isRequired": false,
+              "isSpellCheck": false,
+              "isVisible": true,
+              "label": "Buyer Name",
+              "labelTextSize": "0.875rem",
+              "originalIdentifier": "Buyer_Name",
+              "position": 1,
+              "sourceData": ""
+            },
+            "Delivery_Address": {
+              "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(JSONForm_AssetSale.sourceData, JSONForm_AssetSale.formData, JSONForm_AssetSale.fieldState)}}",
+              "accessor": "Delivery_Address",
+              "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONForm_AssetSale.sourceData, JSONForm_AssetSale.formData, JSONForm_AssetSale.fieldState)}}",
+              "boxShadow": "none",
+              "children": {},
+              "dataType": "string",
+              "defaultValue": "{{((sourceData, formData, fieldState) => ( GetAssetEntities.data.find(e => e.id === JSONForm_AssetSale.formData.Buyer_Selection.Select_Buyer)?.address || \"\" ))(JSONForm_AssetSale.sourceData, JSONForm_AssetSale.formData, JSONForm_AssetSale.fieldState)}}",
+              "fieldType": "Text Input",
+              "iconAlign": "left",
+              "identifier": "Delivery_Address",
+              "isCustomField": false,
+              "isDisabled": false,
+              "isRequired": false,
+              "isSpellCheck": false,
+              "isVisible": true,
+              "label": "Delivery Address",
+              "labelTextSize": "0.875rem",
+              "originalIdentifier": "Delivery_Address",
+              "position": 4,
+              "sourceData": ""
+            },
+            "Select_Buyer": {
+              "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(JSONForm_AssetSale.sourceData, JSONForm_AssetSale.formData, JSONForm_AssetSale.fieldState)}}",
+              "accessor": "Select_Buyer",
+              "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONForm_AssetSale.sourceData, JSONForm_AssetSale.formData, JSONForm_AssetSale.fieldState)}}",
+              "boxShadow": "none",
+              "children": {},
+              "dataType": "null",
+              "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.Buyer_Selection.Select_Buyer))(JSONForm_AssetSale.sourceData, JSONForm_AssetSale.formData, JSONForm_AssetSale.fieldState)}}",
+              "fieldType": "Select",
+              "identifier": "Select_Buyer",
+              "isCustomField": false,
+              "isDisabled": false,
+              "isFilterable": false,
+              "isRequired": false,
+              "isVisible": true,
+              "label": "Select Buyer",
+              "labelTextSize": "0.875rem",
+              "onOptionChange": "{{\n  (() => {\n    const entity = GetAssetEntities.data.find(e => e.id === JSONForm_AssetSale.formData.Buyer_Selection.Select_Buyer);\n    if (entity) {\n      JSONForm_AssetSale.formData.Buyer_Selection.Buyer_Name = entity.entity_name;\n      JSONForm_AssetSale.formData.Buyer_Selection.Buyer_GST = entity.gst_number;\n      JSONForm_AssetSale.formData.Buyer_Selection.Buyer_Address = entity.address;\n      JSONForm_AssetSale.formData.Buyer_Selection.Delivery_Address = entity.address;\n    }\n  })()\n}}\n",
+              "options": "{{ GetAssetEntities.data.filter(e => e.entity_type !== 'VENDOR').map(e => ({ label: e.entity_name, value: e.id })) }}",
+              "originalIdentifier": "Select_Buyer",
+              "position": 0,
+              "serverSideFiltering": false
+            }
+          },
+          "dataType": "object",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.Buyer_Selection))(JSONForm_AssetSale.sourceData, JSONForm_AssetSale.formData, JSONForm_AssetSale.fieldState)}}",
+          "fieldType": "Object",
+          "identifier": "Buyer_Selection",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isVisible": true,
+          "label": "Buyer Selection",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "Buyer_Selection",
+          "position": 1,
+          "sourceData": {
+            "Buyer_Address": "",
+            "Buyer_GST": "",
+            "Buyer_Name": "",
+            "Delivery_Address": ""
+          }
+        },
+        "GST_Breakdown": {
+          "accessor": "GST_Breakdown",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONForm_AssetSale.sourceData, JSONForm_AssetSale.formData, JSONForm_AssetSale.fieldState)}}",
+          "boxShadow": "none",
+          "cellBorderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONForm_AssetSale.sourceData, JSONForm_AssetSale.formData, JSONForm_AssetSale.fieldState)}}",
+          "cellBoxShadow": "none",
+          "children": {
+            "HSN_Code": {
+              "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(JSONForm_AssetSale.sourceData, JSONForm_AssetSale.formData, JSONForm_AssetSale.fieldState)}}",
+              "accessor": "HSN_Code",
+              "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONForm_AssetSale.sourceData, JSONForm_AssetSale.formData, JSONForm_AssetSale.fieldState)}}",
+              "boxShadow": "none",
+              "children": {},
+              "dataType": "string",
+              "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.GST_Breakdown.HSN_Code))(JSONForm_AssetSale.sourceData, JSONForm_AssetSale.formData, JSONForm_AssetSale.fieldState)}}",
+              "fieldType": "Text Input",
+              "iconAlign": "left",
+              "identifier": "HSN_Code",
+              "isCustomField": false,
+              "isDisabled": false,
+              "isRequired": false,
+              "isSpellCheck": false,
+              "isVisible": true,
+              "label": "HSN Code",
+              "labelTextSize": "0.875rem",
+              "originalIdentifier": "HSN_Code",
+              "position": 3,
+              "sourceData": "8471"
+            },
+            "Is_GST_Sale": {
+              "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(JSONForm_AssetSale.sourceData, JSONForm_AssetSale.formData, JSONForm_AssetSale.fieldState)}}",
+              "accessor": "Is_GST_Sale",
+              "alignWidget": "LEFT",
+              "boxShadow": "none",
+              "children": {},
+              "dataType": "boolean",
+              "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.GST_Breakdown.Is_GST_Sale))(JSONForm_AssetSale.sourceData, JSONForm_AssetSale.formData, JSONForm_AssetSale.fieldState)}}",
+              "fieldType": "Switch",
+              "identifier": "Is_GST_Sale",
+              "isCustomField": false,
+              "isDisabled": false,
+              "isRequired": false,
+              "isVisible": true,
+              "label": "Is GST Sale",
+              "labelTextSize": "0.875rem",
+              "originalIdentifier": "Is_GST_Sale",
+              "position": 0,
+              "sourceData": false
+            },
+            "Tax_Amount": {
+              "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(JSONForm_AssetSale.sourceData, JSONForm_AssetSale.formData, JSONForm_AssetSale.fieldState)}}",
+              "accessor": "Tax_Amount",
+              "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONForm_AssetSale.sourceData, JSONForm_AssetSale.formData, JSONForm_AssetSale.fieldState)}}",
+              "boxShadow": "none",
+              "children": {},
+              "dataType": "number",
+              "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.GST_Breakdown.Tax_Amount))(JSONForm_AssetSale.sourceData, JSONForm_AssetSale.formData, JSONForm_AssetSale.fieldState)}}",
+              "fieldType": "Number Input",
+              "iconAlign": "left",
+              "identifier": "Tax_Amount",
+              "isCustomField": false,
+              "isDisabled": false,
+              "isRequired": false,
+              "isSpellCheck": false,
+              "isVisible": true,
+              "label": "Tax Amount",
+              "labelTextSize": "0.875rem",
+              "originalIdentifier": "Tax_Amount",
+              "position": 2,
+              "sourceData": 0
+            },
+            "Taxable_Amount": {
+              "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(JSONForm_AssetSale.sourceData, JSONForm_AssetSale.formData, JSONForm_AssetSale.fieldState)}}",
+              "accessor": "Taxable_Amount",
+              "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONForm_AssetSale.sourceData, JSONForm_AssetSale.formData, JSONForm_AssetSale.fieldState)}}",
+              "boxShadow": "none",
+              "children": {},
+              "dataType": "number",
+              "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.GST_Breakdown.Taxable_Amount))(JSONForm_AssetSale.sourceData, JSONForm_AssetSale.formData, JSONForm_AssetSale.fieldState)}}",
+              "fieldType": "Number Input",
+              "iconAlign": "left",
+              "identifier": "Taxable_Amount",
+              "isCustomField": false,
+              "isDisabled": false,
+              "isRequired": false,
+              "isSpellCheck": false,
+              "isVisible": true,
+              "label": "Taxable Amount",
+              "labelTextSize": "0.875rem",
+              "originalIdentifier": "Taxable_Amount",
+              "position": 1,
+              "sourceData": 0
+            }
+          },
+          "dataType": "object",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.GST_Breakdown))(JSONForm_AssetSale.sourceData, JSONForm_AssetSale.formData, JSONForm_AssetSale.fieldState)}}",
+          "fieldType": "Object",
+          "identifier": "GST_Breakdown",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isVisible": true,
+          "label": "GST Breakdown",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "GST_Breakdown",
+          "position": 2,
+          "sourceData": {
+            "HSN_Code": "8471",
+            "Is_GST_Sale": false,
+            "Tax_Amount": 0,
+            "Taxable_Amount": 0
+          }
+        },
+        "Sale_Info": {
+          "accessor": "Sale_Info",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONForm_AssetSale.sourceData, JSONForm_AssetSale.formData, JSONForm_AssetSale.fieldState)}}",
+          "boxShadow": "none",
+          "cellBorderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONForm_AssetSale.sourceData, JSONForm_AssetSale.formData, JSONForm_AssetSale.fieldState)}}",
+          "cellBoxShadow": "none",
+          "children": {
+            "Remarks": {
+              "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(JSONForm_AssetSale.sourceData, JSONForm_AssetSale.formData, JSONForm_AssetSale.fieldState)}}",
+              "accessor": "Remarks",
+              "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONForm_AssetSale.sourceData, JSONForm_AssetSale.formData, JSONForm_AssetSale.fieldState)}}",
+              "boxShadow": "none",
+              "children": {},
+              "dataType": "string",
+              "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.Sale_Info.Remarks))(JSONForm_AssetSale.sourceData, JSONForm_AssetSale.formData, JSONForm_AssetSale.fieldState)}}",
+              "fieldType": "Text Input",
+              "iconAlign": "left",
+              "identifier": "Remarks",
+              "isCustomField": false,
+              "isDisabled": false,
+              "isRequired": false,
+              "isSpellCheck": false,
+              "isVisible": true,
+              "label": "Remarks",
+              "labelTextSize": "0.875rem",
+              "originalIdentifier": "Remarks",
+              "position": 2,
+              "sourceData": ""
+            },
+            "Sale_Amount": {
+              "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(JSONForm_AssetSale.sourceData, JSONForm_AssetSale.formData, JSONForm_AssetSale.fieldState)}}",
+              "accessor": "Sale_Amount",
+              "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONForm_AssetSale.sourceData, JSONForm_AssetSale.formData, JSONForm_AssetSale.fieldState)}}",
+              "boxShadow": "none",
+              "children": {},
+              "dataType": "number",
+              "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.Sale_Info.Sale_Amount))(JSONForm_AssetSale.sourceData, JSONForm_AssetSale.formData, JSONForm_AssetSale.fieldState)}}",
+              "fieldType": "Number Input",
+              "iconAlign": "left",
+              "identifier": "Sale_Amount",
+              "isCustomField": false,
+              "isDisabled": false,
+              "isRequired": false,
+              "isSpellCheck": false,
+              "isVisible": true,
+              "label": "Sale Amount",
+              "labelTextSize": "0.875rem",
+              "originalIdentifier": "Sale_Amount",
+              "position": 1,
+              "sourceData": 0
+            },
+            "Sale_Date": {
+              "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(JSONForm_AssetSale.sourceData, JSONForm_AssetSale.formData, JSONForm_AssetSale.fieldState)}}",
+              "accessor": "Sale_Date",
+              "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONForm_AssetSale.sourceData, JSONForm_AssetSale.formData, JSONForm_AssetSale.fieldState)}}",
+              "boxShadow": "none",
+              "children": {},
+              "closeOnSelection": false,
+              "convertToISO": false,
+              "dataType": "string",
+              "dateFormat": "YYYY-MM-DD",
+              "defaultValue": "{{((sourceData, formData, fieldState) => (moment(sourceData.Sale_Info.Sale_Date, \"YYYY-MM-DD\").format(\"YYYY-MM-DDTHH:mm:ss.sssZ\")))(JSONForm_AssetSale.sourceData, JSONForm_AssetSale.formData, JSONForm_AssetSale.fieldState)}}",
+              "fieldType": "Datepicker",
+              "identifier": "Sale_Date",
+              "isCustomField": false,
+              "isDisabled": false,
+              "isRequired": false,
+              "isVisible": true,
+              "label": "Sale Date",
+              "labelTextSize": "0.875rem",
+              "maxDate": "2121-12-31T18:29:00.000Z",
+              "minDate": "1920-12-31T18:30:00.000Z",
+              "originalIdentifier": "Sale_Date",
+              "position": 0,
+              "shortcuts": false,
+              "sourceData": "2026-03-20",
+              "timePrecision": "minute"
+            }
+          },
+          "dataType": "object",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.Sale_Info))(JSONForm_AssetSale.sourceData, JSONForm_AssetSale.formData, JSONForm_AssetSale.fieldState)}}",
+          "fieldType": "Object",
+          "identifier": "Sale_Info",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isVisible": true,
+          "label": "Sale Info",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "Sale_Info",
+          "position": 0,
+          "sourceData": {
+            "Remarks": "",
+            "Sale_Amount": 0,
+            "Sale_Date": "2026-03-20"
+          }
+        }
+      },
+      "dataType": "object",
+      "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData))(JSONForm_AssetSale.sourceData, JSONForm_AssetSale.formData, JSONForm_AssetSale.fieldState)}}",
+      "fieldType": "Object",
+      "identifier": "__root_schema__",
+      "isCustomField": false,
+      "isDisabled": false,
+      "isRequired": false,
+      "isVisible": true,
+      "label": "",
+      "labelTextSize": "0.875rem",
+      "originalIdentifier": "__root_schema__",
+      "position": -1,
+      "sourceData": {
+        "Buyer_Selection": {
+          "Buyer_Address": "",
+          "Buyer_GST": "",
+          "Buyer_Name": "",
+          "Delivery_Address": ""
+        },
+        "GST_Breakdown": {
+          "HSN_Code": "8471",
+          "Is_GST_Sale": false,
+          "Tax_Amount": 0,
+          "Taxable_Amount": 0
+        },
+        "Sale_Info": {
+          "Remarks": "",
+          "Sale_Amount": 0,
+          "Sale_Date": "2026-03-20"
+        }
+      }
+    }
+  },
+  "scrollContents": true,
+  "showReset": true,
+  "sourceData": "{\n  \"Sale_Info\": {\n    \"Sale_Date\": \"{{moment().format('YYYY-MM-DD')}}\",\n    \"Sale_Amount\": 0,\n    \"Remarks\": \"\"\n  },\n  \"Buyer_Selection\": {\n    \"Select_Buyer\": null,\n    \"Buyer_Name\": \"\",\n    \"Buyer_GST\": \"\",\n    \"Buyer_Address\": \"\",\n    \"Delivery_Address\": \"\"\n  },\n  \"GST_Breakdown\": {\n    \"Is_GST_Sale\": false,\n    \"Taxable_Amount\": 0,\n    \"Tax_Amount\": 0,\n    \"HSN_Code\": \"8471\"\n  }\n}\n",
+  "submitButtonLabel": "Submit",
+  "submitButtonStyles": {
+    "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+    "boxShadow": "none",
+    "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+    "buttonVariant": "PRIMARY"
+  },
+  "title": "",
+  "topRow": 6,
+  "type": "JSON_FORM_WIDGET",
+  "useSourceData": false,
+  "version": 1,
+  "widgetId": "5rz7w5tnno",
+  "widgetName": "JSONForm_AssetSale"
+}

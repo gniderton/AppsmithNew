@@ -2,7 +2,7 @@
   "accentColor": "{{appsmith.theme.colors.primaryColor}}",
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 4,
+  "bottomRow": 7,
   "defaultSelectedValues": [
     "BLUE"
   ],
@@ -47,7 +47,7 @@
       "value": "Sold"
     }
   ],
-  "originalBottomRow": 4,
+  "originalBottomRow": 7,
   "originalTopRow": 0,
   "parentColumnSpace": 17.21875,
   "parentId": "68a6f01ajw",

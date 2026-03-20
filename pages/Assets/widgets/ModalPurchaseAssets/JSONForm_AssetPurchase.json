@@ -303,7 +303,7 @@
   "mobileTopRow": 6,
   "needsErrorInfo": false,
   "onSubmit": "{{\n  CreateAsset.run().then(() => {\n    showAlert('Asset Recorded Successfully! Purchase No: ' + CreateAsset.data.asset_purchase_no, 'success');\n    getAssets.run();\n    resetWidget('JSONForm_AssetPurchase');\n  }).catch(e => {\n    showAlert('Failed to record asset: ' + CreateAsset.data.error, 'error');\n  });\n}}",
-  "originalBottomRow": 48,
+  "originalBottomRow": 136,
   "originalTopRow": 6,
   "parentColumnSpace": 6.9375,
   "parentId": "8ikcrp4rxb",

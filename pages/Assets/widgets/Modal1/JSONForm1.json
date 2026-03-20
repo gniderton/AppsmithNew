@@ -520,7 +520,7 @@
               "label": "Bank Account ID",
               "labelTextSize": "0.875rem",
               "onOptionChange": "",
-              "options": "{{getBanks.data.map(b => ({ label: b.name, value: b.id }))}}",
+              "options": "{{getBanksGen.data.map(b => ({ label: b.bank_name, value: b.id }))}}",
               "originalIdentifier": "Bank_Account_ID",
               "position": 0,
               "serverSideFiltering": false

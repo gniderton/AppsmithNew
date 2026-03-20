@@ -1,0 +1,15 @@
+{
+  "sale_date": "{{JSONForm_AssetSale.formData.Sale_Info.Sale_Date}}",
+  "sale_amount": {{JSONForm_AssetSale.formData.Sale_Info.Sale_Amount}},
+  "remarks": "{{JSONForm_AssetSale.formData.Sale_Info.Remarks}}",
+  "sale_entity_id": {{JSONForm_AssetSale.formData.Buyer_Selection.Select_Buyer}},
+  "sale_buyer_name": "{{JSONForm_AssetSale.formData.Buyer_Selection.Buyer_Name}}",
+  "sale_buyer_gst": "{{JSONForm_AssetSale.formData.Buyer_Selection.Buyer_GST}}",
+  "sale_is_gst": {{JSONForm_AssetSale.formData.GST_Breakdown.Is_GST_Sale}},
+  "sale_taxable_amount": {{JSONForm_AssetSale.formData.GST_Breakdown.Taxable_Amount || 0}},
+  "sale_tax_amount": {{JSONForm_AssetSale.formData.GST_Breakdown.Tax_Amount || 0}},
+  "sale_hsn_code": "{{JSONForm_AssetSale.formData.GST_Breakdown.HSN_Code}}",
+  "sale_buyer_address": "{{JSONForm_AssetSale.formData.Buyer_Selection.Buyer_Address}}",
+  "sale_delivery_address": "{{JSONForm_AssetSale.formData.Buyer_Selection.Delivery_Address}}",
+  "created_by": {{getMe.data.id}}
+}
