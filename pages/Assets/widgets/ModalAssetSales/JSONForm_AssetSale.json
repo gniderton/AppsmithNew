@@ -5,7 +5,7 @@
   "borderColor": "#E0DEDE",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": "1",
-  "bottomRow": 129,
+  "bottomRow": 136,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "childStylesheet": {
     "ARRAY": {
@@ -195,16 +195,10 @@
       "key": "schema.__root_schema__.children.GST_Breakdown.children.Is_GST_Sale.accentColor"
     },
     {
-      "key": "schema.__root_schema__.children.GST_Breakdown.children.Taxable_Amount.defaultValue"
-    },
-    {
       "key": "schema.__root_schema__.children.GST_Breakdown.children.Taxable_Amount.accentColor"
     },
     {
       "key": "schema.__root_schema__.children.GST_Breakdown.children.Taxable_Amount.borderRadius"
-    },
-    {
-      "key": "schema.__root_schema__.children.GST_Breakdown.children.Tax_Amount.defaultValue"
     },
     {
       "key": "schema.__root_schema__.children.GST_Breakdown.children.Tax_Amount.accentColor"
@@ -250,6 +244,21 @@
     },
     {
       "key": "schema.__root_schema__.children.Buyer_Selection.children.Buyer_Address.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.GST_Breakdown.children.Taxable_Amount.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.GST_Breakdown.children.Tax_Perc.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.GST_Breakdown.children.Tax_Perc.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.GST_Breakdown.children.Tax_Perc.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.GST_Breakdown.children.Tax_Amount.defaultValue"
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
@@ -259,6 +268,9 @@
     },
     {
       "key": "onSubmit"
+    },
+    {
+      "key": "sourceData"
     }
   ],
   "dynamicTriggerPathList": [
@@ -472,7 +484,7 @@
               "label": "HSN Code",
               "labelTextSize": "0.875rem",
               "originalIdentifier": "HSN_Code",
-              "position": 3,
+              "position": 4,
               "sourceData": "8471"
             },
             "Is_GST_Sale": {
@@ -502,18 +514,40 @@
               "boxShadow": "none",
               "children": {},
               "dataType": "number",
-              "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.GST_Breakdown.Tax_Amount))(JSONForm_AssetSale.sourceData, JSONForm_AssetSale.formData, JSONForm_AssetSale.fieldState)}}",
+              "defaultValue": "{{((sourceData, formData, fieldState) => ( \n  JSONForm_AssetSale.formData.GST_Breakdown.Is_GST_Sale \n    ? (JSONForm_AssetSale.formData.Sale_Info.Sale_Amount - (JSONForm_AssetSale.formData.Sale_Info.Sale_Amount / (1 + (JSONForm_AssetSale.formData.GST_Breakdown.Tax_Perc / 100)))).toFixed(2) \n    : 0 \n))(JSONForm_AssetSale.sourceData, JSONForm_AssetSale.formData, JSONForm_AssetSale.fieldState)}}",
               "fieldType": "Number Input",
               "iconAlign": "left",
               "identifier": "Tax_Amount",
               "isCustomField": false,
-              "isDisabled": false,
+              "isDisabled": true,
               "isRequired": false,
               "isSpellCheck": false,
               "isVisible": true,
               "label": "Tax Amount",
               "labelTextSize": "0.875rem",
               "originalIdentifier": "Tax_Amount",
+              "position": 3,
+              "sourceData": 0
+            },
+            "Tax_Perc": {
+              "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(JSONForm_AssetSale.sourceData, JSONForm_AssetSale.formData, JSONForm_AssetSale.fieldState)}}",
+              "accessor": "Tax_Perc",
+              "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONForm_AssetSale.sourceData, JSONForm_AssetSale.formData, JSONForm_AssetSale.fieldState)}}",
+              "boxShadow": "none",
+              "children": {},
+              "dataType": "number",
+              "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.GST_Breakdown.Tax_Perc))(JSONForm_AssetSale.sourceData, JSONForm_AssetSale.formData, JSONForm_AssetSale.fieldState)}}",
+              "fieldType": "Number Input",
+              "iconAlign": "left",
+              "identifier": "Tax_Perc",
+              "isCustomField": false,
+              "isDisabled": false,
+              "isRequired": false,
+              "isSpellCheck": false,
+              "isVisible": true,
+              "label": "Tax Perc",
+              "labelTextSize": "0.875rem",
+              "originalIdentifier": "Tax_Perc",
               "position": 2,
               "sourceData": 0
             },
@@ -524,12 +558,12 @@
               "boxShadow": "none",
               "children": {},
               "dataType": "number",
-              "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.GST_Breakdown.Taxable_Amount))(JSONForm_AssetSale.sourceData, JSONForm_AssetSale.formData, JSONForm_AssetSale.fieldState)}}",
+              "defaultValue": "{{((sourceData, formData, fieldState) => ( \n  JSONForm_AssetSale.formData.GST_Breakdown.Is_GST_Sale \n    ? (JSONForm_AssetSale.formData.Sale_Info.Sale_Amount - JSONForm_AssetSale.formData.GST_Breakdown.Tax_Amount) \n    : JSONForm_AssetSale.formData.Sale_Info.Sale_Amount \n))(JSONForm_AssetSale.sourceData, JSONForm_AssetSale.formData, JSONForm_AssetSale.fieldState)}}",
               "fieldType": "Number Input",
               "iconAlign": "left",
               "identifier": "Taxable_Amount",
               "isCustomField": false,
-              "isDisabled": false,
+              "isDisabled": true,
               "isRequired": false,
               "isSpellCheck": false,
               "isVisible": true,
@@ -692,7 +726,7 @@
   },
   "scrollContents": true,
   "showReset": true,
-  "sourceData": "{\n  \"Sale_Info\": {\n    \"Sale_Date\": \"{{moment().format('YYYY-MM-DD')}}\",\n    \"Sale_Amount\": 0,\n    \"Remarks\": \"\"\n  },\n  \"Buyer_Selection\": {\n    \"Select_Buyer\": null,\n    \"Buyer_Name\": \"\",\n    \"Buyer_GST\": \"\",\n    \"Buyer_Address\": \"\",\n    \"Delivery_Address\": \"\"\n  },\n  \"GST_Breakdown\": {\n    \"Is_GST_Sale\": false,\n    \"Taxable_Amount\": 0,\n    \"Tax_Amount\": 0,\n    \"HSN_Code\": \"8471\"\n  }\n}\n",
+  "sourceData": "{\n  \"Sale_Info\": {\n    \"Sale_Date\": \"{{moment().format('YYYY-MM-DD')}}\",\n    \"Sale_Amount\": 0,\n    \"Remarks\": \"\"\n  },\n  \"Buyer_Selection\": {\n    \"Select_Buyer\": null,\n    \"Buyer_Name\": \"\",\n    \"Buyer_GST\": \"\",\n    \"Buyer_Address\": \"\",\n    \"Delivery_Address\": \"\"\n  },\n  \"GST_Breakdown\": {\n    \"Is_GST_Sale\": false,\n    \"Taxable_Amount\": 0,\n\t\t\"Tax_Perc\":0,\n    \"Tax_Amount\": 0,\n    \"HSN_Code\": \"8471\"\n  }\n}\n",
   "submitButtonLabel": "Submit",
   "submitButtonStyles": {
     "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",

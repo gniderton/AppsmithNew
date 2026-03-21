@@ -5,7 +5,7 @@
   "borderColor": "#E0DEDE",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": "1",
-  "bottomRow": 102,
+  "bottomRow": 108,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "childStylesheet": {
     "ARRAY": {
@@ -126,22 +126,13 @@
       "key": "schema.__root_schema__.children.Asset_Details.children.Asset_ID.borderRadius"
     },
     {
-      "key": "schema.__root_schema__.children.Asset_Details.children.Total_Cost.defaultValue"
+      "key": "schema.__root_schema__.children.Asset_Details.children.Receivable_Balance.defaultValue"
     },
     {
-      "key": "schema.__root_schema__.children.Asset_Details.children.Total_Cost.accentColor"
+      "key": "schema.__root_schema__.children.Asset_Details.children.Receivable_Balance.accentColor"
     },
     {
-      "key": "schema.__root_schema__.children.Asset_Details.children.Total_Cost.borderRadius"
-    },
-    {
-      "key": "schema.__root_schema__.children.Asset_Details.children.Balance_Payable.defaultValue"
-    },
-    {
-      "key": "schema.__root_schema__.children.Asset_Details.children.Balance_Payable.accentColor"
-    },
-    {
-      "key": "schema.__root_schema__.children.Asset_Details.children.Balance_Payable.borderRadius"
+      "key": "schema.__root_schema__.children.Asset_Details.children.Receivable_Balance.borderRadius"
     },
     {
       "key": "schema.__root_schema__.children.Asset_Details.defaultValue"
@@ -216,6 +207,12 @@
       "key": "schema.__root_schema__.children.Bank_Reference.children.Bank_Statement_Entry.borderRadius"
     },
     {
+      "key": "schema.__root_schema__.children.Bank_Reference.children.Bank_Ref_No.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.Bank_Reference.children.Bank_Ref_No.borderRadius"
+    },
+    {
       "key": "schema.__root_schema__.children.Bank_Reference.children.Cheque_No.defaultValue"
     },
     {
@@ -261,49 +258,49 @@
       "key": "schema.__root_schema__.cellBorderRadius"
     },
     {
-      "key": "schema.__root_schema__.children.Bank_Reference.children.Bank_Account.options"
+      "key": "schema.__root_schema__.children.Payment_Details.children.Payment_Mode.options"
     },
     {
       "key": "schema.__root_schema__.children.Bank_Reference.children.Bank_Statement_Entry.options"
     },
     {
-      "key": "schema.__root_schema__.children.Bank_Reference.children.Cheque_Bank_Name.options"
-    },
-    {
       "key": "schema.__root_schema__.children.Bank_Reference.children.Bank_Statement_Entry.isVisible"
-    },
-    {
-      "key": "schema.__root_schema__.children.Bank_Reference.children.Cheque_Bank_Name.isVisible"
     },
     {
       "key": "schema.__root_schema__.children.Bank_Reference.children.Cheque_No.isVisible"
     },
     {
       "key": "schema.__root_schema__.children.Bank_Reference.children.Cheque_Date.isVisible"
+    },
+    {
+      "key": "schema.__root_schema__.children.Bank_Reference.children.Cheque_Bank_Name.isVisible"
+    },
+    {
+      "key": "schema.__root_schema__.children.Bank_Reference.children.Bank_Ref_No.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.Bank_Reference.children.Cheque_Bank_Name.options"
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
   "dynamicPropertyPathList": [
     {
-      "key": "sourceData"
-    },
-    {
-      "key": "schema.__root_schema__.children.Payment_Details.children.Payment_Date.defaultValue"
-    },
-    {
-      "key": "schema.__root_schema__.children.Bank_Reference.children.Cheque_Bank_Name.isVisible"
-    },
-    {
-      "key": "schema.__root_schema__.children.Bank_Reference.children.Cheque_Date.isVisible"
+      "key": "schema.__root_schema__.children.Bank_Reference.children.Bank_Statement_Entry.isVisible"
     },
     {
       "key": "schema.__root_schema__.children.Bank_Reference.children.Cheque_No.isVisible"
     },
     {
-      "key": "schema.__root_schema__.children.Bank_Reference.children.Bank_Statement_Entry.isVisible"
+      "key": "schema.__root_schema__.children.Bank_Reference.children.Cheque_Date.isVisible"
+    },
+    {
+      "key": "schema.__root_schema__.children.Bank_Reference.children.Cheque_Bank_Name.isVisible"
     },
     {
       "key": "onSubmit"
+    },
+    {
+      "key": "sourceData"
     }
   ],
   "dynamicTriggerPathList": [
@@ -316,21 +313,21 @@
   "flexVerticalAlignment": "start",
   "isLoading": false,
   "isVisible": true,
-  "key": "rhm6fyjhnv",
+  "key": "rp7j7emybt",
   "leftColumn": 0,
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 4,
   "minWidth": 450,
   "mobileBottomRow": 47,
   "mobileLeftColumn": 0,
-  "mobileRightColumn": 15,
+  "mobileRightColumn": 25,
   "mobileTopRow": 6,
   "needsErrorInfo": false,
-  "onSubmit": "{{\n  RecordAssetPayment.run().then(() => {\n    showAlert('Payment Recorded Successfully!', 'success');\n    getAssets.run(); // Refresh your table\n    closeModal('Modal_AssetPayment');\n  }).catch(e => {\n    showAlert('Error: ' + RecordAssetPayment.data.error, 'error');\n  });\n}}\n",
-  "originalBottomRow": 124,
-  "originalTopRow": 7,
+  "onSubmit": "{{\n  RecordAssetSalesPayment.run().then(() => {\n    showAlert('Sale Payment Recorded!', 'success');\n    getAssets.run(); \n    closeModal('ModalAssetSalePayment'); // Closes your specific modal\n    resetWidget('JSONForm_AssetSalePayment');\n  }).catch(e => {\n    showAlert('Error: ' + RecordAssetSalesPayment.data.error, 'error');\n  });\n}}\n",
+  "originalBottomRow": 96,
+  "originalTopRow": 8,
   "parentColumnSpace": 6.9375,
-  "parentId": "51m65vv9gz",
+  "parentId": "xvy8vmw84f",
   "parentRowSpace": 10,
   "renderMode": "CANVAS",
   "resetButtonLabel": "Reset",
@@ -345,26 +342,26 @@
   "schema": {
     "__root_schema__": {
       "accessor": "__root_schema__",
-      "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONForm_AssetPayment.sourceData, JSONForm_AssetPayment.formData, JSONForm_AssetPayment.fieldState)}}",
+      "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONForm_AssetSalePayment.sourceData, JSONForm_AssetSalePayment.formData, JSONForm_AssetSalePayment.fieldState)}}",
       "boxShadow": "none",
-      "cellBorderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONForm_AssetPayment.sourceData, JSONForm_AssetPayment.formData, JSONForm_AssetPayment.fieldState)}}",
+      "cellBorderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONForm_AssetSalePayment.sourceData, JSONForm_AssetSalePayment.formData, JSONForm_AssetSalePayment.fieldState)}}",
       "cellBoxShadow": "none",
       "children": {
         "Asset_Details": {
           "accessor": "Asset_Details",
-          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONForm_AssetPayment.sourceData, JSONForm_AssetPayment.formData, JSONForm_AssetPayment.fieldState)}}",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONForm_AssetSalePayment.sourceData, JSONForm_AssetSalePayment.formData, JSONForm_AssetSalePayment.fieldState)}}",
           "boxShadow": "none",
-          "cellBorderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONForm_AssetPayment.sourceData, JSONForm_AssetPayment.formData, JSONForm_AssetPayment.fieldState)}}",
+          "cellBorderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONForm_AssetSalePayment.sourceData, JSONForm_AssetSalePayment.formData, JSONForm_AssetSalePayment.fieldState)}}",
           "cellBoxShadow": "none",
           "children": {
             "Asset_ID": {
-              "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(JSONForm_AssetPayment.sourceData, JSONForm_AssetPayment.formData, JSONForm_AssetPayment.fieldState)}}",
+              "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(JSONForm_AssetSalePayment.sourceData, JSONForm_AssetSalePayment.formData, JSONForm_AssetSalePayment.fieldState)}}",
               "accessor": "Asset_ID",
-              "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONForm_AssetPayment.sourceData, JSONForm_AssetPayment.formData, JSONForm_AssetPayment.fieldState)}}",
+              "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONForm_AssetSalePayment.sourceData, JSONForm_AssetSalePayment.formData, JSONForm_AssetSalePayment.fieldState)}}",
               "boxShadow": "none",
               "children": {},
               "dataType": "string",
-              "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.Asset_Details.Asset_ID))(JSONForm_AssetPayment.sourceData, JSONForm_AssetPayment.formData, JSONForm_AssetPayment.fieldState)}}",
+              "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.Asset_Details.Asset_ID))(JSONForm_AssetSalePayment.sourceData, JSONForm_AssetSalePayment.formData, JSONForm_AssetSalePayment.fieldState)}}",
               "fieldType": "Text Input",
               "iconAlign": "left",
               "identifier": "Asset_ID",
@@ -377,16 +374,16 @@
               "labelTextSize": "0.875rem",
               "originalIdentifier": "Asset_ID",
               "position": 1,
-              "sourceData": "3"
+              "sourceData": ""
             },
             "Asset_Name": {
-              "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(JSONForm_AssetPayment.sourceData, JSONForm_AssetPayment.formData, JSONForm_AssetPayment.fieldState)}}",
+              "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(JSONForm_AssetSalePayment.sourceData, JSONForm_AssetSalePayment.formData, JSONForm_AssetSalePayment.fieldState)}}",
               "accessor": "Asset_Name",
-              "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONForm_AssetPayment.sourceData, JSONForm_AssetPayment.formData, JSONForm_AssetPayment.fieldState)}}",
+              "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONForm_AssetSalePayment.sourceData, JSONForm_AssetSalePayment.formData, JSONForm_AssetSalePayment.fieldState)}}",
               "boxShadow": "none",
               "children": {},
               "dataType": "string",
-              "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.Asset_Details.Asset_Name))(JSONForm_AssetPayment.sourceData, JSONForm_AssetPayment.formData, JSONForm_AssetPayment.fieldState)}}",
+              "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.Asset_Details.Asset_Name))(JSONForm_AssetSalePayment.sourceData, JSONForm_AssetSalePayment.formData, JSONForm_AssetSalePayment.fieldState)}}",
               "fieldType": "Text Input",
               "iconAlign": "left",
               "identifier": "Asset_Name",
@@ -399,55 +396,33 @@
               "labelTextSize": "0.875rem",
               "originalIdentifier": "Asset_Name",
               "position": 0,
-              "sourceData": "Warehouse Storage Fecilities"
+              "sourceData": ""
             },
-            "Balance_Payable": {
-              "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(JSONForm_AssetPayment.sourceData, JSONForm_AssetPayment.formData, JSONForm_AssetPayment.fieldState)}}",
-              "accessor": "Balance_Payable",
-              "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONForm_AssetPayment.sourceData, JSONForm_AssetPayment.formData, JSONForm_AssetPayment.fieldState)}}",
+            "Receivable_Balance": {
+              "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(JSONForm_AssetSalePayment.sourceData, JSONForm_AssetSalePayment.formData, JSONForm_AssetSalePayment.fieldState)}}",
+              "accessor": "Receivable_Balance",
+              "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONForm_AssetSalePayment.sourceData, JSONForm_AssetSalePayment.formData, JSONForm_AssetSalePayment.fieldState)}}",
               "boxShadow": "none",
               "children": {},
               "dataType": "string",
-              "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.Asset_Details.Balance_Payable))(JSONForm_AssetPayment.sourceData, JSONForm_AssetPayment.formData, JSONForm_AssetPayment.fieldState)}}",
+              "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.Asset_Details.Receivable_Balance))(JSONForm_AssetSalePayment.sourceData, JSONForm_AssetSalePayment.formData, JSONForm_AssetSalePayment.fieldState)}}",
               "fieldType": "Text Input",
               "iconAlign": "left",
-              "identifier": "Balance_Payable",
+              "identifier": "Receivable_Balance",
               "isCustomField": false,
               "isDisabled": true,
               "isRequired": false,
               "isSpellCheck": false,
               "isVisible": true,
-              "label": "Balance Payable",
+              "label": "Receivable Balance",
               "labelTextSize": "0.875rem",
-              "originalIdentifier": "Balance_Payable",
-              "position": 3,
-              "sourceData": "11800.00"
-            },
-            "Total_Cost": {
-              "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(JSONForm_AssetPayment.sourceData, JSONForm_AssetPayment.formData, JSONForm_AssetPayment.fieldState)}}",
-              "accessor": "Total_Cost",
-              "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONForm_AssetPayment.sourceData, JSONForm_AssetPayment.formData, JSONForm_AssetPayment.fieldState)}}",
-              "boxShadow": "none",
-              "children": {},
-              "dataType": "string",
-              "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.Asset_Details.Total_Cost))(JSONForm_AssetPayment.sourceData, JSONForm_AssetPayment.formData, JSONForm_AssetPayment.fieldState)}}",
-              "fieldType": "Text Input",
-              "iconAlign": "left",
-              "identifier": "Total_Cost",
-              "isCustomField": false,
-              "isDisabled": true,
-              "isRequired": false,
-              "isSpellCheck": false,
-              "isVisible": true,
-              "label": "Total Cost",
-              "labelTextSize": "0.875rem",
-              "originalIdentifier": "Total_Cost",
+              "originalIdentifier": "Receivable_Balance",
               "position": 2,
-              "sourceData": "11800.00"
+              "sourceData": ""
             }
           },
           "dataType": "object",
-          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.Asset_Details))(JSONForm_AssetPayment.sourceData, JSONForm_AssetPayment.formData, JSONForm_AssetPayment.fieldState)}}",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.Asset_Details))(JSONForm_AssetSalePayment.sourceData, JSONForm_AssetSalePayment.formData, JSONForm_AssetSalePayment.fieldState)}}",
           "fieldType": "Object",
           "identifier": "Asset_Details",
           "isCustomField": false,
@@ -459,121 +434,141 @@
           "originalIdentifier": "Asset_Details",
           "position": 0,
           "sourceData": {
-            "Asset_ID": "3",
-            "Asset_Name": "Warehouse Storage Fecilities",
-            "Balance_Payable": "11800.00",
-            "Total_Cost": "11800.00"
+            "Asset_ID": "",
+            "Asset_Name": "",
+            "Receivable_Balance": ""
           }
         },
         "Bank_Reference": {
           "accessor": "Bank_Reference",
-          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONForm_AssetPayment.sourceData, JSONForm_AssetPayment.formData, JSONForm_AssetPayment.fieldState)}}",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONForm_AssetSalePayment.sourceData, JSONForm_AssetSalePayment.formData, JSONForm_AssetSalePayment.fieldState)}}",
           "boxShadow": "none",
-          "cellBorderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONForm_AssetPayment.sourceData, JSONForm_AssetPayment.formData, JSONForm_AssetPayment.fieldState)}}",
+          "cellBorderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONForm_AssetSalePayment.sourceData, JSONForm_AssetSalePayment.formData, JSONForm_AssetSalePayment.fieldState)}}",
           "cellBoxShadow": "none",
           "children": {
             "Bank_Account": {
-              "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(JSONForm_AssetPayment.sourceData, JSONForm_AssetPayment.formData, JSONForm_AssetPayment.fieldState)}}",
+              "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(JSONForm_AssetSalePayment.sourceData, JSONForm_AssetSalePayment.formData, JSONForm_AssetSalePayment.fieldState)}}",
               "accessor": "Bank_Account",
-              "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONForm_AssetPayment.sourceData, JSONForm_AssetPayment.formData, JSONForm_AssetPayment.fieldState)}}",
+              "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONForm_AssetSalePayment.sourceData, JSONForm_AssetSalePayment.formData, JSONForm_AssetSalePayment.fieldState)}}",
               "boxShadow": "none",
               "children": {},
               "dataType": "null",
-              "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.Bank_Reference.Bank_Account))(JSONForm_AssetPayment.sourceData, JSONForm_AssetPayment.formData, JSONForm_AssetPayment.fieldState)}}",
-              "fieldType": "Select",
+              "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.Bank_Reference.Bank_Account))(JSONForm_AssetSalePayment.sourceData, JSONForm_AssetSalePayment.formData, JSONForm_AssetSalePayment.fieldState)}}",
+              "fieldType": "Text Input",
+              "iconAlign": "left",
               "identifier": "Bank_Account",
               "isCustomField": false,
               "isDisabled": false,
-              "isFilterable": false,
               "isRequired": false,
-              "isVisible": true,
+              "isSpellCheck": false,
+              "isVisible": false,
               "label": "Bank Account",
               "labelTextSize": "0.875rem",
-              "options": "{{getBanks.data.map(b => ({ label: b.name, value: b.id }))}}",
               "originalIdentifier": "Bank_Account",
-              "position": 0,
-              "serverSideFiltering": false
+              "position": 0
+            },
+            "Bank_Ref_No": {
+              "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(JSONForm_AssetSalePayment.sourceData, JSONForm_AssetSalePayment.formData, JSONForm_AssetSalePayment.fieldState)}}",
+              "accessor": "Bank_Ref_No",
+              "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONForm_AssetSalePayment.sourceData, JSONForm_AssetSalePayment.formData, JSONForm_AssetSalePayment.fieldState)}}",
+              "boxShadow": "none",
+              "children": {},
+              "dataType": "string",
+              "defaultValue": "{{((sourceData, formData, fieldState) => ( getUnconsumedCredits.data.find(c => c.id === JSONForm_AssetSalePayment.formData.Bank_Reference.Bank_Statement_Entry)?.bank_ref_id || \"\" ))(JSONForm_AssetSalePayment.sourceData, JSONForm_AssetSalePayment.formData, JSONForm_AssetSalePayment.fieldState)}}",
+              "fieldType": "Text Input",
+              "iconAlign": "left",
+              "identifier": "Bank_Ref_No",
+              "isCustomField": false,
+              "isDisabled": false,
+              "isRequired": false,
+              "isSpellCheck": false,
+              "isVisible": false,
+              "label": "Bank Ref No",
+              "labelTextSize": "0.875rem",
+              "originalIdentifier": "Bank_Ref_No",
+              "position": 5,
+              "sourceData": ""
             },
             "Bank_Statement_Entry": {
-              "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(JSONForm_AssetPayment.sourceData, JSONForm_AssetPayment.formData, JSONForm_AssetPayment.fieldState)}}",
+              "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(JSONForm_AssetSalePayment.sourceData, JSONForm_AssetSalePayment.formData, JSONForm_AssetSalePayment.fieldState)}}",
               "accessor": "Bank_Statement_Entry",
-              "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONForm_AssetPayment.sourceData, JSONForm_AssetPayment.formData, JSONForm_AssetPayment.fieldState)}}",
+              "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONForm_AssetSalePayment.sourceData, JSONForm_AssetSalePayment.formData, JSONForm_AssetSalePayment.fieldState)}}",
               "boxShadow": "none",
               "children": {},
               "dataType": "null",
-              "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.Bank_Reference.Bank_Statement_Entry))(JSONForm_AssetPayment.sourceData, JSONForm_AssetPayment.formData, JSONForm_AssetPayment.fieldState)}}",
+              "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.Bank_Reference.Bank_Statement_Entry))(JSONForm_AssetSalePayment.sourceData, JSONForm_AssetSalePayment.formData, JSONForm_AssetSalePayment.fieldState)}}",
               "fieldType": "Select",
               "identifier": "Bank_Statement_Entry",
               "isCustomField": false,
               "isDisabled": false,
               "isFilterable": false,
               "isRequired": false,
-              "isVisible": "{{((sourceData, formData, fieldState) => ( JSONForm_AssetPayment.formData.Payment_Details.Payment_Mode === 'ONLINE' ))(JSONForm_AssetPayment.sourceData, JSONForm_AssetPayment.formData, JSONForm_AssetPayment.fieldState)}}",
+              "isVisible": "{{((sourceData, formData, fieldState) => ( JSONForm_AssetSalePayment.formData.Payment_Details.Payment_Mode === 'Online' ))(JSONForm_AssetSalePayment.sourceData, JSONForm_AssetSalePayment.formData, JSONForm_AssetSalePayment.fieldState)}}",
               "label": "Bank Statement Entry",
               "labelTextSize": "0.875rem",
-              "options": "{{ \n  getUnconsumedDebits.data.map(d => ({ \n    label: `${d.bank_ref_id} (₹${d.debit_amount})`, \n    value: d.id \n  })) \n}}",
+              "options": "{{ getUnconsumedCredits.data.map(c => ({label: c.particulars + \" - ₹\" + c.credit_amount, value: c.id})) }}",
               "originalIdentifier": "Bank_Statement_Entry",
               "position": 1,
               "serverSideFiltering": false
             },
             "Cheque_Bank_Name": {
-              "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(JSONForm_AssetPayment.sourceData, JSONForm_AssetPayment.formData, JSONForm_AssetPayment.fieldState)}}",
+              "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(JSONForm_AssetSalePayment.sourceData, JSONForm_AssetSalePayment.formData, JSONForm_AssetSalePayment.fieldState)}}",
               "accessor": "Cheque_Bank_Name",
-              "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONForm_AssetPayment.sourceData, JSONForm_AssetPayment.formData, JSONForm_AssetPayment.fieldState)}}",
+              "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONForm_AssetSalePayment.sourceData, JSONForm_AssetSalePayment.formData, JSONForm_AssetSalePayment.fieldState)}}",
               "boxShadow": "none",
               "children": {},
               "dataType": "string",
-              "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.Bank_Reference.Cheque_Bank_Name))(JSONForm_AssetPayment.sourceData, JSONForm_AssetPayment.formData, JSONForm_AssetPayment.fieldState)}}",
+              "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.Bank_Reference.Cheque_Bank_Name))(JSONForm_AssetSalePayment.sourceData, JSONForm_AssetSalePayment.formData, JSONForm_AssetSalePayment.fieldState)}}",
               "fieldType": "Select",
               "identifier": "Cheque_Bank_Name",
               "isCustomField": false,
               "isDisabled": false,
               "isFilterable": false,
               "isRequired": false,
-              "isVisible": "{{((sourceData, formData, fieldState) => ( JSONForm_AssetPayment.formData.Payment_Details.Payment_Mode === 'CHEQUE' ))(JSONForm_AssetPayment.sourceData, JSONForm_AssetPayment.formData, JSONForm_AssetPayment.fieldState)}}",
+              "isVisible": "{{((sourceData, formData, fieldState) => ( JSONForm_AssetSalePayment.formData.Payment_Details.Payment_Mode === 'Cheque' ))(JSONForm_AssetSalePayment.sourceData, JSONForm_AssetSalePayment.formData, JSONForm_AssetSalePayment.fieldState)}}",
               "label": "Cheque Bank Name",
               "labelTextSize": "0.875rem",
-              "options": "{{\n  getBanksGen.data.map(bank => ({\n    label: bank.bank_name,\n    value: bank.id\n  }))\n}}",
+              "options": "{{\n  getBanksGen.data\n    .map(bank => ({\n      label: bank.bank_name,\n      value: bank.id\n    }))\n    .sort((a, b) => a.label.localeCompare(b.label))\n}}",
               "originalIdentifier": "Cheque_Bank_Name",
               "position": 2,
               "serverSideFiltering": false,
               "sourceData": ""
             },
             "Cheque_Date": {
-              "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(JSONForm_AssetPayment.sourceData, JSONForm_AssetPayment.formData, JSONForm_AssetPayment.fieldState)}}",
+              "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(JSONForm_AssetSalePayment.sourceData, JSONForm_AssetSalePayment.formData, JSONForm_AssetSalePayment.fieldState)}}",
               "accessor": "Cheque_Date",
-              "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONForm_AssetPayment.sourceData, JSONForm_AssetPayment.formData, JSONForm_AssetPayment.fieldState)}}",
+              "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONForm_AssetSalePayment.sourceData, JSONForm_AssetSalePayment.formData, JSONForm_AssetSalePayment.fieldState)}}",
               "boxShadow": "none",
               "children": {},
               "closeOnSelection": false,
               "convertToISO": false,
               "dataType": "string",
               "dateFormat": "YYYY-MM-DD HH:mm",
-              "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.Bank_Reference.Cheque_Date))(JSONForm_AssetPayment.sourceData, JSONForm_AssetPayment.formData, JSONForm_AssetPayment.fieldState)}}",
+              "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.Bank_Reference.Cheque_Date))(JSONForm_AssetSalePayment.sourceData, JSONForm_AssetSalePayment.formData, JSONForm_AssetSalePayment.fieldState)}}",
               "fieldType": "Datepicker",
               "identifier": "Cheque_Date",
               "isCustomField": false,
               "isDisabled": false,
               "isRequired": false,
-              "isVisible": "{{((sourceData, formData, fieldState) => ( JSONForm_AssetPayment.formData.Payment_Details.Payment_Mode === 'CHEQUE' ))(JSONForm_AssetPayment.sourceData, JSONForm_AssetPayment.formData, JSONForm_AssetPayment.fieldState)}}",
+              "isVisible": "{{((sourceData, formData, fieldState) => ( JSONForm_AssetSalePayment.formData.Payment_Details.Payment_Mode === 'Cheque' ))(JSONForm_AssetSalePayment.sourceData, JSONForm_AssetSalePayment.formData, JSONForm_AssetSalePayment.fieldState)}}",
               "label": "Cheque Date",
               "labelTextSize": "0.875rem",
               "maxDate": "2121-12-31T18:29:00.000Z",
               "minDate": "1920-12-31T18:30:00.000Z",
               "originalIdentifier": "Cheque_Date",
-              "position": 3,
+              "position": 4,
               "shortcuts": false,
               "sourceData": "",
               "timePrecision": "minute"
             },
             "Cheque_No": {
-              "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(JSONForm_AssetPayment.sourceData, JSONForm_AssetPayment.formData, JSONForm_AssetPayment.fieldState)}}",
+              "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(JSONForm_AssetSalePayment.sourceData, JSONForm_AssetSalePayment.formData, JSONForm_AssetSalePayment.fieldState)}}",
               "accessor": "Cheque_No",
-              "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONForm_AssetPayment.sourceData, JSONForm_AssetPayment.formData, JSONForm_AssetPayment.fieldState)}}",
+              "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONForm_AssetSalePayment.sourceData, JSONForm_AssetSalePayment.formData, JSONForm_AssetSalePayment.fieldState)}}",
               "boxShadow": "none",
               "children": {},
               "dataType": "string",
-              "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.Bank_Reference.Cheque_No))(JSONForm_AssetPayment.sourceData, JSONForm_AssetPayment.formData, JSONForm_AssetPayment.fieldState)}}",
+              "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.Bank_Reference.Cheque_No))(JSONForm_AssetSalePayment.sourceData, JSONForm_AssetSalePayment.formData, JSONForm_AssetSalePayment.fieldState)}}",
               "fieldType": "Text Input",
               "iconAlign": "left",
               "identifier": "Cheque_No",
@@ -581,16 +576,16 @@
               "isDisabled": false,
               "isRequired": false,
               "isSpellCheck": false,
-              "isVisible": "{{((sourceData, formData, fieldState) => ( JSONForm_AssetPayment.formData.Payment_Details.Payment_Mode === 'CHEQUE' ))(JSONForm_AssetPayment.sourceData, JSONForm_AssetPayment.formData, JSONForm_AssetPayment.fieldState)}}",
+              "isVisible": "{{((sourceData, formData, fieldState) => ( JSONForm_AssetSalePayment.formData.Payment_Details.Payment_Mode === 'Cheque' ))(JSONForm_AssetSalePayment.sourceData, JSONForm_AssetSalePayment.formData, JSONForm_AssetSalePayment.fieldState)}}",
               "label": "Cheque No",
               "labelTextSize": "0.875rem",
               "originalIdentifier": "Cheque_No",
-              "position": 4,
+              "position": 3,
               "sourceData": ""
             }
           },
           "dataType": "object",
-          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.Bank_Reference))(JSONForm_AssetPayment.sourceData, JSONForm_AssetPayment.formData, JSONForm_AssetPayment.fieldState)}}",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.Bank_Reference))(JSONForm_AssetSalePayment.sourceData, JSONForm_AssetSalePayment.formData, JSONForm_AssetSalePayment.fieldState)}}",
           "fieldType": "Object",
           "identifier": "Bank_Reference",
           "isCustomField": false,
@@ -602,6 +597,7 @@
           "originalIdentifier": "Bank_Reference",
           "position": 2,
           "sourceData": {
+            "Bank_Ref_No": "",
             "Cheque_Bank_Name": "",
             "Cheque_Date": "",
             "Cheque_No": ""
@@ -609,19 +605,19 @@
         },
         "Payment_Details": {
           "accessor": "Payment_Details",
-          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONForm_AssetPayment.sourceData, JSONForm_AssetPayment.formData, JSONForm_AssetPayment.fieldState)}}",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONForm_AssetSalePayment.sourceData, JSONForm_AssetSalePayment.formData, JSONForm_AssetSalePayment.fieldState)}}",
           "boxShadow": "none",
-          "cellBorderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONForm_AssetPayment.sourceData, JSONForm_AssetPayment.formData, JSONForm_AssetPayment.fieldState)}}",
+          "cellBorderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONForm_AssetSalePayment.sourceData, JSONForm_AssetSalePayment.formData, JSONForm_AssetSalePayment.fieldState)}}",
           "cellBoxShadow": "none",
           "children": {
             "Amount": {
-              "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(JSONForm_AssetPayment.sourceData, JSONForm_AssetPayment.formData, JSONForm_AssetPayment.fieldState)}}",
+              "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(JSONForm_AssetSalePayment.sourceData, JSONForm_AssetSalePayment.formData, JSONForm_AssetSalePayment.fieldState)}}",
               "accessor": "Amount",
-              "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONForm_AssetPayment.sourceData, JSONForm_AssetPayment.formData, JSONForm_AssetPayment.fieldState)}}",
+              "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONForm_AssetSalePayment.sourceData, JSONForm_AssetSalePayment.formData, JSONForm_AssetSalePayment.fieldState)}}",
               "boxShadow": "none",
               "children": {},
               "dataType": "string",
-              "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.Payment_Details.Amount))(JSONForm_AssetPayment.sourceData, JSONForm_AssetPayment.formData, JSONForm_AssetPayment.fieldState)}}",
+              "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.Payment_Details.Amount))(JSONForm_AssetSalePayment.sourceData, JSONForm_AssetSalePayment.formData, JSONForm_AssetSalePayment.fieldState)}}",
               "fieldType": "Text Input",
               "iconAlign": "left",
               "identifier": "Amount",
@@ -634,19 +630,19 @@
               "labelTextSize": "0.875rem",
               "originalIdentifier": "Amount",
               "position": 0,
-              "sourceData": "11800.00"
+              "sourceData": ""
             },
             "Payment_Date": {
-              "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(JSONForm_AssetPayment.sourceData, JSONForm_AssetPayment.formData, JSONForm_AssetPayment.fieldState)}}",
+              "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(JSONForm_AssetSalePayment.sourceData, JSONForm_AssetSalePayment.formData, JSONForm_AssetSalePayment.fieldState)}}",
               "accessor": "Payment_Date",
-              "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONForm_AssetPayment.sourceData, JSONForm_AssetPayment.formData, JSONForm_AssetPayment.fieldState)}}",
+              "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONForm_AssetSalePayment.sourceData, JSONForm_AssetSalePayment.formData, JSONForm_AssetSalePayment.fieldState)}}",
               "boxShadow": "none",
               "children": {},
               "closeOnSelection": false,
               "convertToISO": false,
               "dataType": "string",
               "dateFormat": "YYYY-MM-DD",
-              "defaultValue": "{{((sourceData, formData, fieldState) => (moment(sourceData.Payment_Details.Payment_Date, \"YYYY-MM-DD\").format(\"YYYY-MM-DDTHH:mm:ss.sssZ\")))(JSONForm_AssetPayment.sourceData, JSONForm_AssetPayment.formData, JSONForm_AssetPayment.fieldState)}}",
+              "defaultValue": "{{((sourceData, formData, fieldState) => (moment(sourceData.Payment_Details.Payment_Date, \"YYYY-MM-DD\").format(\"YYYY-MM-DDTHH:mm:ss.sssZ\")))(JSONForm_AssetSalePayment.sourceData, JSONForm_AssetSalePayment.formData, JSONForm_AssetSalePayment.fieldState)}}",
               "fieldType": "Datepicker",
               "identifier": "Payment_Date",
               "isCustomField": false,
@@ -660,17 +656,17 @@
               "originalIdentifier": "Payment_Date",
               "position": 1,
               "shortcuts": false,
-              "sourceData": "2026-03-19",
+              "sourceData": "2026-03-21",
               "timePrecision": "minute"
             },
             "Payment_Mode": {
-              "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(JSONForm_AssetPayment.sourceData, JSONForm_AssetPayment.formData, JSONForm_AssetPayment.fieldState)}}",
+              "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(JSONForm_AssetSalePayment.sourceData, JSONForm_AssetSalePayment.formData, JSONForm_AssetSalePayment.fieldState)}}",
               "accessor": "Payment_Mode",
-              "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONForm_AssetPayment.sourceData, JSONForm_AssetPayment.formData, JSONForm_AssetPayment.fieldState)}}",
+              "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONForm_AssetSalePayment.sourceData, JSONForm_AssetSalePayment.formData, JSONForm_AssetSalePayment.fieldState)}}",
               "boxShadow": "none",
               "children": {},
               "dataType": "string",
-              "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.Payment_Details.Payment_Mode))(JSONForm_AssetPayment.sourceData, JSONForm_AssetPayment.formData, JSONForm_AssetPayment.fieldState)}}",
+              "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.Payment_Details.Payment_Mode))(JSONForm_AssetSalePayment.sourceData, JSONForm_AssetSalePayment.formData, JSONForm_AssetSalePayment.fieldState)}}",
               "fieldType": "Select",
               "identifier": "Payment_Mode",
               "isCustomField": false,
@@ -680,20 +676,20 @@
               "isVisible": true,
               "label": "Payment Mode",
               "labelTextSize": "0.875rem",
-              "options": "[\n  {\n    \"label\": \"Cash\",\n    \"value\": \"CASH\"\n  },\n  {\n    \"label\": \"Online Transfer\",\n    \"value\": \"ONLINE\"\n  },\n  {\n    \"label\": \"Cheque\",\n    \"value\": \"CHEQUE\"\n  }\n]\n",
+              "options": "{{ [\"Cash\", \"Online\", \"Cheque\"].map(m => ({label: m, value: m})) }}",
               "originalIdentifier": "Payment_Mode",
               "position": 2,
               "serverSideFiltering": false,
               "sourceData": "Online"
             },
             "Remarks": {
-              "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(JSONForm_AssetPayment.sourceData, JSONForm_AssetPayment.formData, JSONForm_AssetPayment.fieldState)}}",
+              "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(JSONForm_AssetSalePayment.sourceData, JSONForm_AssetSalePayment.formData, JSONForm_AssetSalePayment.fieldState)}}",
               "accessor": "Remarks",
-              "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONForm_AssetPayment.sourceData, JSONForm_AssetPayment.formData, JSONForm_AssetPayment.fieldState)}}",
+              "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONForm_AssetSalePayment.sourceData, JSONForm_AssetSalePayment.formData, JSONForm_AssetSalePayment.fieldState)}}",
               "boxShadow": "none",
               "children": {},
               "dataType": "string",
-              "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.Payment_Details.Remarks))(JSONForm_AssetPayment.sourceData, JSONForm_AssetPayment.formData, JSONForm_AssetPayment.fieldState)}}",
+              "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.Payment_Details.Remarks))(JSONForm_AssetSalePayment.sourceData, JSONForm_AssetSalePayment.formData, JSONForm_AssetSalePayment.fieldState)}}",
               "fieldType": "Text Input",
               "iconAlign": "left",
               "identifier": "Remarks",
@@ -710,7 +706,7 @@
             }
           },
           "dataType": "object",
-          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.Payment_Details))(JSONForm_AssetPayment.sourceData, JSONForm_AssetPayment.formData, JSONForm_AssetPayment.fieldState)}}",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.Payment_Details))(JSONForm_AssetSalePayment.sourceData, JSONForm_AssetSalePayment.formData, JSONForm_AssetSalePayment.fieldState)}}",
           "fieldType": "Object",
           "identifier": "Payment_Details",
           "isCustomField": false,
@@ -722,15 +718,15 @@
           "originalIdentifier": "Payment_Details",
           "position": 1,
           "sourceData": {
-            "Amount": "11800.00",
-            "Payment_Date": "2026-03-19",
+            "Amount": "",
+            "Payment_Date": "2026-03-21",
             "Payment_Mode": "Online",
             "Remarks": ""
           }
         }
       },
       "dataType": "object",
-      "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData))(JSONForm_AssetPayment.sourceData, JSONForm_AssetPayment.formData, JSONForm_AssetPayment.fieldState)}}",
+      "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData))(JSONForm_AssetSalePayment.sourceData, JSONForm_AssetSalePayment.formData, JSONForm_AssetSalePayment.fieldState)}}",
       "fieldType": "Object",
       "identifier": "__root_schema__",
       "isCustomField": false,
@@ -743,19 +739,19 @@
       "position": -1,
       "sourceData": {
         "Asset_Details": {
-          "Asset_ID": "3",
-          "Asset_Name": "Warehouse Storage Fecilities",
-          "Balance_Payable": "11800.00",
-          "Total_Cost": "11800.00"
+          "Asset_ID": "",
+          "Asset_Name": "",
+          "Receivable_Balance": ""
         },
         "Bank_Reference": {
+          "Bank_Ref_No": "",
           "Cheque_Bank_Name": "",
           "Cheque_Date": "",
           "Cheque_No": ""
         },
         "Payment_Details": {
-          "Amount": "11800.00",
-          "Payment_Date": "2026-03-19",
+          "Amount": "",
+          "Payment_Date": "2026-03-21",
           "Payment_Mode": "Online",
           "Remarks": ""
         }
@@ -764,7 +760,7 @@
   },
   "scrollContents": true,
   "showReset": true,
-  "sourceData": "{\n  \"Asset_Details\": {\n    \"Asset_Name\": \"{{tblAssets.triggeredRow.asset_name}}\",\n    \"Asset_ID\": {{tblAssets.triggeredRow.id}},\n    \"Total_Cost\": {{tblAssets.triggeredRow.purchase_cost}},\n    \"Balance_Payable\": {{tblAssets.triggeredRow.balance_payable}}\n  },\n  \"Payment_Details\": {\n    \"Amount\": {{tblAssets.triggeredRow.balance_payable}},\n    \"Payment_Date\": \"{{moment().format('YYYY-MM-DD')}}\",\n    \"Payment_Mode\": \"Online\",\n    \"Remarks\": \"\"\n  },\n  \"Bank_Reference\": {\n    \"Bank_Account\": null,\n    \"Bank_Statement_Entry\": null,\n    \"Cheque_No\": \"\",\n    \"Cheque_Date\": \"\",\n    \"Cheque_Bank_Name\": \"\"\n  }\n}\n",
+  "sourceData": "{\n  \"Asset_Details\": {\n    \"Asset_Name\": \"{{tblAssets.triggeredRow.asset_name}}\",\n    \"Asset_ID\": {{tblAssets.triggeredRow.id}},\n    \"Receivable_Balance\": {{tblAssets.triggeredRow.sale_balance_receivable}}\n  },\n  \"Payment_Details\": {\n    \"Amount\": {{tblAssets.triggeredRow.sale_balance_receivable}},\n    \"Payment_Date\": \"{{moment().format('YYYY-MM-DD')}}\",\n    \"Payment_Mode\": \"Online\",\n    \"Remarks\": \"\"\n  },\n  \"Bank_Reference\": {\n    \"Bank_Account\": null,\n    \"Bank_Statement_Entry\": null,\n    \"Bank_Ref_No\": \"\",\n    \"Cheque_No\": \"\",\n    \"Cheque_Date\": \"\",\n    \"Cheque_Bank_Name\": \"\"\n  }\n}\n",
   "submitButtonLabel": "Submit",
   "submitButtonStyles": {
     "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
@@ -773,10 +769,10 @@
     "buttonVariant": "PRIMARY"
   },
   "title": "",
-  "topRow": 7,
+  "topRow": 6,
   "type": "JSON_FORM_WIDGET",
   "useSourceData": false,
   "version": 1,
-  "widgetId": "en2y7ixcga",
-  "widgetName": "JSONForm_AssetPayment"
+  "widgetId": "ijej1uuv3g",
+  "widgetName": "JSONForm_AssetSalePayment"
 }

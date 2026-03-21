@@ -1,0 +1,12 @@
+{
+  "amount": {{JSONForm_AssetSalePayment.formData.Payment_Details.Amount}},
+  "payment_date": "{{JSONForm_AssetSalePayment.formData.Payment_Details.Payment_Date}}",
+  "payment_mode": "{{JSONForm_AssetSalePayment.formData.Payment_Details.Payment_Mode}}",
+  "bank_account_id": {{JSONForm_AssetSalePayment.formData.Bank_Reference.Bank_Account || null}},
+  "bank_statement_entry_id": {{JSONForm_AssetSalePayment.formData.Bank_Reference.Bank_Statement_Entry || null}},
+  "cheque_no": "{{JSONForm_AssetSalePayment.formData.Bank_Reference.Cheque_No}}",
+  "cheque_date": "{{JSONForm_AssetSalePayment.formData.Bank_Reference.Cheque_Date}}",
+  "bank_name": "{{JSONForm_AssetSalePayment.formData.Bank_Reference.Cheque_Bank_Name}}",
+  "online_reference_no": "{{JSONForm_AssetSalePayment.formData.Bank_Reference.Bank_Ref_No}}",
+  "remarks": "{{JSONForm_AssetSalePayment.formData.Payment_Details.Remarks}}"
+}
