@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 4,
+  "bottomRow": 7,
   "boxShadow": "none",
   "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
   "buttonVariant": "PRIMARY",
@@ -12,6 +12,14 @@
     },
     {
       "key": "borderRadius"
+    },
+    {
+      "key": "isDisabled"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "isDisabled"
     }
   ],
   "dynamicTriggerPathList": [
@@ -20,20 +28,20 @@
     }
   ],
   "isDefaultClickDisabled": true,
-  "isDisabled": false,
+  "isDisabled": "{{ \n  tblCheques.selectedRowIndices.length === 0 || \n  selStatus.selectedOptionValue !== \"PENDING\" ||\n  tblCheques.isLoading\n}}",
   "isLoading": false,
   "isVisible": true,
-  "key": "74whddlr1l",
-  "leftColumn": 58,
+  "key": "ljxudcxqy6",
+  "leftColumn": 55,
   "minWidth": 120,
-  "mobileBottomRow": 4,
+  "mobileBottomRow": 7,
   "mobileLeftColumn": 48,
   "mobileRightColumn": 64,
-  "mobileTopRow": 0,
+  "mobileTopRow": 3,
   "needsErrorInfo": false,
-  "onClick": "{{showModal(ModalPurchaseAssets.name);}}",
-  "parentColumnSpace": 17.21875,
-  "parentId": "68a6f01ajw",
+  "onClick": "{{showModal(ModalClearCheques.name);}}",
+  "parentColumnSpace": 20.25,
+  "parentId": "0",
   "parentRowSpace": 10,
   "placement": "CENTER",
   "recaptchaType": "V3",
@@ -41,10 +49,10 @@
   "resetFormOnClick": false,
   "responsiveBehavior": "hug",
   "rightColumn": 64,
-  "text": "Purchase Assets",
-  "topRow": 0,
+  "text": "Clear Selected Cheques",
+  "topRow": 3,
   "type": "BUTTON_WIDGET",
   "version": 1,
-  "widgetId": "mzkmb7xjce",
-  "widgetName": "Button2"
+  "widgetId": "bem37sbymj",
+  "widgetName": "Button1"
 }

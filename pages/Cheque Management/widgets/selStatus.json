@@ -1,0 +1,62 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 4,
+  "boxShadow": "none",
+  "defaultOptionValue": "PENDING",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
+    }
+  ],
+  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicPropertyPathList": [
+    {
+      "key": "sourceData"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "isDisabled": false,
+  "isFilterable": true,
+  "isLoading": false,
+  "isRequired": false,
+  "isVisible": true,
+  "key": "6kq1ryqd6s",
+  "labelAlignment": "left",
+  "labelPosition": "Left",
+  "labelText": "Status",
+  "labelTextSize": "0.875rem",
+  "labelWidth": "7",
+  "leftColumn": 0,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 7,
+  "mobileLeftColumn": 0,
+  "mobileRightColumn": 9,
+  "mobileTopRow": 0,
+  "needsErrorInfo": false,
+  "optionLabel": "name",
+  "optionValue": "code",
+  "originalBottomRow": 7,
+  "originalTopRow": 0,
+  "parentColumnSpace": 20.25,
+  "parentId": "0",
+  "parentRowSpace": 10,
+  "placeholderText": "Select option",
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 23,
+  "serverSideFiltering": false,
+  "shouldScrollContents": true,
+  "sourceData": "[\n  {\n    \"name\": \"PENDING\",\n    \"code\": \"PENDING\"\n  },\n  {\n    \"name\": \"CLEARED\",\n    \"code\": \"CLEARED\"\n  },\n  {\n    \"name\": \"BOUNCED\",\n    \"code\": \"BOUNCED\"\n  }\n]",
+  "topRow": 0,
+  "type": "SELECT_WIDGET",
+  "version": 1,
+  "widgetId": "sws37gk7fj",
+  "widgetName": "selStatus"
+}

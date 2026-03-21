@@ -1,23 +1,23 @@
 {
-  "gitSyncId": "69a80abb79ac426a29eb8838_355fa445-b315-4eb2-9f7d-59c3a731c51f",
+  "gitSyncId": "69a80abb79ac426a29eb8838_7c5e91c3-a178-4013-bf27-23f15d0b0efd",
   "unpublishedPage": {
     "isHidden": false,
     "layouts": [
       {
         "dsl": {
           "backgroundColor": "none",
-          "bottomRow": 720,
+          "bottomRow": 380,
           "canExtend": true,
           "containerStyle": "none",
           "detachFromLayout": true,
           "dynamicBindingPathList": [],
           "leftColumn": 0,
-          "minHeight": 710,
+          "minHeight": 800,
           "parentColumnSpace": 1,
           "parentRowSpace": 1,
           "rightColumn": 1224,
           "snapColumns": 64,
-          "snapRows": 69,
+          "snapRows": 78,
           "topRow": 0,
           "type": "CANVAS_WIDGET",
           "version": 94,
@@ -26,7 +26,7 @@
         }
       }
     ],
-    "name": "Assets",
-    "slug": "assets"
+    "name": "Cheque Management",
+    "slug": "cheque-management"
   }
 }

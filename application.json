@@ -72,6 +72,10 @@
     {
       "id": "Assets",
       "isDefault": false
+    },
+    {
+      "id": "Cheque Management",
+      "isDefault": false
     }
   ],
   "unpublishedAppLayout": {

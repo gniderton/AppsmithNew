@@ -1,0 +1,55 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 10,
+  "boxShadow": "none",
+  "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "buttonVariant": "PRIMARY",
+  "disabledWhenInvalid": false,
+  "dynamicBindingPathList": [
+    {
+      "key": "buttonColor"
+    },
+    {
+      "key": "borderRadius"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "isDefaultClickDisabled": true,
+  "isDisabled": false,
+  "isLoading": false,
+  "isVisible": true,
+  "key": "ljxudcxqy6",
+  "leftColumn": 39,
+  "minWidth": 120,
+  "mobileBottomRow": 10,
+  "mobileLeftColumn": 39,
+  "mobileRightColumn": 55,
+  "mobileTopRow": 6,
+  "needsErrorInfo": false,
+  "onClick": "{{\n  BounceCheque.run().then(() => {\n    showAlert('Cheque bounced and reversals posted!', 'warning');\n    getCheques.run(); // Refresh the list\n    closeModal('ModalBounceCheque'); // Close the modal\n    resetWidget('ModalBounceCheque'); // Reset the form fields\n  }).catch(e => {\n    showAlert('Error: ' + (BounceCheque.data.error || e.message), 'error');\n  });\n}}\n",
+  "parentColumnSpace": 10.28125,
+  "parentId": "55whh2vbxa",
+  "parentRowSpace": 10,
+  "placement": "CENTER",
+  "recaptchaType": "V3",
+  "renderMode": "CANVAS",
+  "resetFormOnClick": false,
+  "responsiveBehavior": "hug",
+  "rightColumn": 55,
+  "text": "Submit",
+  "topRow": 6,
+  "type": "BUTTON_WIDGET",
+  "version": 1,
+  "widgetId": "74hiaexub1",
+  "widgetName": "Button2"
+}

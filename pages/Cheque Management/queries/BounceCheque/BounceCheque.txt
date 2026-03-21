@@ -1,0 +1,7 @@
+{
+  "bounce_date": {{ dateBounce.value }},
+  "bounce_reason": {{ selBounceReason.selectedOptionValue}},
+  "bank_charges": {{ numBankCharges.value || 0 }},
+  "customer_penalty": {{ numCustomerPenalty.value || 0 }},
+  "user_id": {{ appsmith.user.id }}
+}

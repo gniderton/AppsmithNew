@@ -1,0 +1,89 @@
+{
+  "animateLoading": true,
+  "backgroundColor": "white",
+  "borderColor": "#E0DEDE",
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "borderWidth": "1",
+  "bottomRow": 14,
+  "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+  "children": [
+    {
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "bottomRow": 140,
+      "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+      "canExtend": false,
+      "containerStyle": "none",
+      "detachFromLayout": true,
+      "dynamicBindingPathList": [
+        {
+          "key": "borderRadius"
+        },
+        {
+          "key": "boxShadow"
+        }
+      ],
+      "dynamicHeight": "AUTO_HEIGHT",
+      "flexLayers": [],
+      "isLoading": false,
+      "isVisible": true,
+      "key": "e9ir18c4uv",
+      "leftColumn": 0,
+      "maxDynamicHeight": 9000,
+      "minDynamicHeight": 4,
+      "minHeight": 140,
+      "minWidth": 450,
+      "mobileBottomRow": 140,
+      "mobileLeftColumn": 0,
+      "mobileRightColumn": 346.01874999999995,
+      "mobileTopRow": 0,
+      "needsErrorInfo": false,
+      "parentColumnSpace": 1,
+      "parentId": "k26un5cm6h",
+      "parentRowSpace": 1,
+      "renderMode": "CANVAS",
+      "responsiveBehavior": "fill",
+      "rightColumn": 346.01874999999995,
+      "topRow": 0,
+      "type": "CANVAS_WIDGET",
+      "version": 1,
+      "widgetId": "ja109hczrf",
+      "widgetName": "Canvas4"
+    }
+  ],
+  "dynamicBindingPathList": [
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "boxShadow"
+    }
+  ],
+  "dynamicHeight": "AUTO_HEIGHT",
+  "flexVerticalAlignment": "stretch",
+  "isCanvas": true,
+  "isLoading": false,
+  "isVisible": true,
+  "key": "g0gmcd54qw",
+  "leftColumn": 22,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 10,
+  "mobileBottomRow": 14,
+  "mobileLeftColumn": 22,
+  "mobileRightColumn": 44,
+  "mobileTopRow": 0,
+  "needsErrorInfo": false,
+  "originalBottomRow": 14,
+  "originalTopRow": 0,
+  "parentColumnSpace": 15.728124999999999,
+  "parentId": "kq03f8jk4l",
+  "parentRowSpace": 10,
+  "positioning": "fixed",
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 44,
+  "shouldScrollContents": true,
+  "topRow": 0,
+  "type": "STATBOX_WIDGET",
+  "widgetId": "k26un5cm6h",
+  "widgetName": "Statbox1"
+}

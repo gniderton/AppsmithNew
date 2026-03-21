@@ -1,0 +1,82 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 4,
+  "boxShadow": "none",
+  "buttonVariant": "PRIMARY",
+  "childStylesheet": {
+    "button": {
+      "buttonColor": "{{appsmith.theme.colors.primaryColor}}"
+    }
+  },
+  "dynamicBindingPathList": [
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "groupButtons.groupButton1.buttonColor"
+    },
+    {
+      "key": "groupButtons.groupButton2.buttonColor"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "groupButtons.groupButton1.onClick"
+    }
+  ],
+  "groupButtons": {
+    "groupButton1": {
+      "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+      "buttonType": "SIMPLE",
+      "disabledWhenInvalid": false,
+      "iconName": "add",
+      "id": "groupButton1",
+      "index": 0,
+      "isDisabled": false,
+      "isVisible": true,
+      "label": "Purchase Assets",
+      "menuItems": {},
+      "onClick": "{{showModal(ModalPurchaseAssets.name);}}",
+      "placement": "START",
+      "widgetId": ""
+    },
+    "groupButton2": {
+      "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+      "buttonType": "SIMPLE",
+      "disabledWhenInvalid": false,
+      "iconName": "automatic-updates",
+      "id": "groupButton2",
+      "index": 1,
+      "isDisabled": false,
+      "isVisible": true,
+      "label": "Run Depreciation",
+      "menuItems": {},
+      "placement": "START",
+      "widgetId": ""
+    }
+  },
+  "isCanvas": false,
+  "isLoading": false,
+  "isVisible": true,
+  "key": "3xizjzww2y",
+  "leftColumn": 48,
+  "minWidth": 450,
+  "mobileBottomRow": 4,
+  "mobileLeftColumn": 33,
+  "mobileRightColumn": 57,
+  "mobileTopRow": 0,
+  "needsErrorInfo": false,
+  "orientation": "horizontal",
+  "parentColumnSpace": 19.9375,
+  "parentId": "68a6f01ajw",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 64,
+  "topRow": 0,
+  "type": "BUTTON_GROUP_WIDGET",
+  "version": 1,
+  "widgetId": "x9n2vcy26q",
+  "widgetName": "ButtonGroup1"
+}

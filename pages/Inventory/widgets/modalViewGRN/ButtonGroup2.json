@@ -41,6 +41,9 @@
     },
     {
       "key": "groupButtons.groupButton0rgl2tisyb.onClick"
+    },
+    {
+      "key": "groupButtons.groupButton2.onClick"
     }
   ],
   "dynamicTriggerPathList": [
@@ -49,6 +52,9 @@
     },
     {
       "key": "groupButtons.groupButton0rgl2tisyb.onClick"
+    },
+    {
+      "key": "groupButtons.groupButton2.onClick"
     }
   ],
   "groupButtons": {
@@ -94,6 +100,7 @@
       "isVisible": true,
       "label": "Print",
       "menuItems": {},
+      "onClick": "{{ PDFUtilsGRN.previewGRN(tblGrn.triggeredRow) }}\n",
       "placement": "START",
       "widgetId": ""
     },

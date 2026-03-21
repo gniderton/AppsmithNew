@@ -1,0 +1,62 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 8,
+  "boxShadow": "none",
+  "defaultOptionValue": "INCOMING",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
+    }
+  ],
+  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicPropertyPathList": [
+    {
+      "key": "sourceData"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "isDisabled": false,
+  "isFilterable": true,
+  "isLoading": false,
+  "isRequired": false,
+  "isVisible": true,
+  "key": "6kq1ryqd6s",
+  "labelAlignment": "left",
+  "labelPosition": "Left",
+  "labelText": "Cheque Direction",
+  "labelTextSize": "0.875rem",
+  "labelWidth": "7",
+  "leftColumn": 0,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 11,
+  "mobileLeftColumn": 0,
+  "mobileRightColumn": 20,
+  "mobileTopRow": 4,
+  "needsErrorInfo": false,
+  "optionLabel": "name",
+  "optionValue": "code",
+  "originalBottomRow": 11,
+  "originalTopRow": 7,
+  "parentColumnSpace": 20.25,
+  "parentId": "0",
+  "parentRowSpace": 10,
+  "placeholderText": "Select option",
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 23,
+  "serverSideFiltering": false,
+  "shouldScrollContents": true,
+  "sourceData": "[\n  {\n    \"name\": \"INCOMING\",\n    \"code\": \"INCOMING\"\n  },\n  {\n    \"name\": \"OUTGOING\",\n    \"code\": \"OUTGOING\"\n  }\n]",
+  "topRow": 4,
+  "type": "SELECT_WIDGET",
+  "version": 1,
+  "widgetId": "0whg7vgeup",
+  "widgetName": "selType"
+}

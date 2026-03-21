@@ -1,0 +1,11 @@
+{
+  "mappings": {{ 
+    List1.currentItemsView.map((itemView, index) => ({
+      "cheque_id": List1.listData[index].id,
+      "bank_statement_entry_id": itemView.selStatementEntry.selectedOptionValue 
+    }))
+  }},
+  "clearance_date": {{ dateClearance.value }},
+  "bank_account_id": {{ selClearBank.value }},
+  "remarks": {{ txtClearRemarks.value }}
+}
