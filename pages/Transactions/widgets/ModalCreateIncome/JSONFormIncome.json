@@ -1,0 +1,827 @@
+{
+  "animateLoading": true,
+  "autoGenerateForm": true,
+  "backgroundColor": "#fff",
+  "borderColor": "#E0DEDE",
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "borderWidth": "1",
+  "bottomRow": 135,
+  "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+  "childStylesheet": {
+    "ARRAY": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none",
+      "cellBorderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "cellBoxShadow": "none"
+    },
+    "CHECKBOX": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}"
+    },
+    "CURRENCY_INPUT": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none"
+    },
+    "DATEPICKER": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none"
+    },
+    "EMAIL_INPUT": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none"
+    },
+    "MULTILINE_TEXT_INPUT": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none"
+    },
+    "MULTISELECT": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none"
+    },
+    "NUMBER_INPUT": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none"
+    },
+    "OBJECT": {
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none",
+      "cellBorderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "cellBoxShadow": "none"
+    },
+    "PASSWORD_INPUT": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none"
+    },
+    "PHONE_NUMBER_INPUT": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none"
+    },
+    "RADIO_GROUP": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "boxShadow": "none"
+    },
+    "SELECT": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none"
+    },
+    "SWITCH": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "boxShadow": "none"
+    },
+    "TEXT_INPUT": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none"
+    }
+  },
+  "disabledWhenInvalid": true,
+  "dynamicBindingPathList": [
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "boxShadow"
+    },
+    {
+      "key": "submitButtonStyles.buttonColor"
+    },
+    {
+      "key": "submitButtonStyles.borderRadius"
+    },
+    {
+      "key": "resetButtonStyles.buttonColor"
+    },
+    {
+      "key": "resetButtonStyles.borderRadius"
+    },
+    {
+      "key": "sourceData"
+    },
+    {
+      "key": "schema.__root_schema__.children.Income_Details.children.transaction_date.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.Income_Details.children.transaction_date.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.Income_Details.children.transaction_date.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.Income_Details.children.received_from.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.Income_Details.children.received_from.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.Income_Details.children.received_from.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.Income_Details.children.category_account_id.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.Income_Details.children.category_account_id.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.Income_Details.children.category_account_id.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.Income_Details.children.description.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.Income_Details.children.description.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.Income_Details.children.description.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.Income_Details.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.Income_Details.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.Income_Details.cellBorderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.Financials.children.is_gst_income.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.Financials.children.is_gst_income.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.Financials.children.taxable_amount.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.Financials.children.taxable_amount.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.Financials.children.taxable_amount.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.Financials.children.tax_amount.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.Financials.children.tax_amount.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.Financials.children.tax_amount.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.Financials.children.amount.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.Financials.children.amount.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.Financials.children.amount.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.Financials.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.Financials.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.Financials.cellBorderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.Payment_Info.children.destination_account_id.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.Payment_Info.children.destination_account_id.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.Payment_Info.children.destination_account_id.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.Payment_Info.children.payment_mode.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.Payment_Info.children.payment_mode.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.Payment_Info.children.payment_mode.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.Payment_Info.children.reference_no.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.Payment_Info.children.reference_no.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.Payment_Info.children.reference_no.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.Payment_Info.children.cheque_no.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.Payment_Info.children.cheque_no.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.Payment_Info.children.cheque_no.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.Payment_Info.children.cheque_date.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.Payment_Info.children.cheque_date.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.Payment_Info.children.cheque_date.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.Payment_Info.children.bank_name.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.Payment_Info.children.bank_name.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.Payment_Info.children.bank_name.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.Payment_Info.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.Payment_Info.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.Payment_Info.cellBorderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.cellBorderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.Income_Details.children.received_from.options"
+    },
+    {
+      "key": "schema.__root_schema__.children.Income_Details.children.category_account_id.options"
+    },
+    {
+      "key": "schema.__root_schema__.children.Payment_Info.children.destination_account_id.options"
+    },
+    {
+      "key": "schema.__root_schema__.children.Payment_Info.children.reference_no.options"
+    },
+    {
+      "key": "schema.__root_schema__.children.Payment_Info.children.reference_no.isVisible"
+    },
+    {
+      "key": "schema.__root_schema__.children.Payment_Info.children.bank_name.options"
+    },
+    {
+      "key": "schema.__root_schema__.children.Payment_Info.children.cheque_date.isVisible"
+    },
+    {
+      "key": "schema.__root_schema__.children.Payment_Info.children.cheque_no.isVisible"
+    },
+    {
+      "key": "schema.__root_schema__.children.Payment_Info.children.bank_name.isVisible"
+    }
+  ],
+  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicPropertyPathList": [
+    {
+      "key": "sourceData"
+    },
+    {
+      "key": "schema.__root_schema__.children.Income_Details.children.transaction_date.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.Financials.children.is_gst_income.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.Payment_Info.children.reference_no.isVisible"
+    },
+    {
+      "key": "schema.__root_schema__.children.Payment_Info.children.cheque_date.isVisible"
+    },
+    {
+      "key": "schema.__root_schema__.children.Payment_Info.children.cheque_no.isVisible"
+    },
+    {
+      "key": "schema.__root_schema__.children.Payment_Info.children.bank_name.isVisible"
+    },
+    {
+      "key": "onSubmit"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onSubmit"
+    }
+  ],
+  "fieldLimitExceeded": false,
+  "fixedFooter": true,
+  "flexVerticalAlignment": "start",
+  "isLoading": false,
+  "isVisible": true,
+  "key": "zxf8snb1qj",
+  "leftColumn": 0,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 47,
+  "mobileLeftColumn": 0,
+  "mobileRightColumn": 21,
+  "mobileTopRow": 6,
+  "needsErrorInfo": false,
+  "onSubmit": "{{\n  createIncome.run()\n    .then(() => {\n      showAlert(\"Income Recorded!\", \"success\");\n      resetWidget(\"JSONFormIncome\"); // Clean form\n      getIncome.run();         // Update your table\n    })\n    .catch(err => showAlert(\"Error: \" + err.message, \"error\"))\n}}\n",
+  "originalBottomRow": 44,
+  "originalTopRow": 5,
+  "parentColumnSpace": 6.9375,
+  "parentId": "nr7m8jd4nv",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "resetButtonLabel": "Reset",
+  "resetButtonStyles": {
+    "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+    "boxShadow": "none",
+    "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+    "buttonVariant": "SECONDARY"
+  },
+  "responsiveBehavior": "fill",
+  "rightColumn": 63,
+  "schema": {
+    "__root_schema__": {
+      "accessor": "__root_schema__",
+      "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONFormIncome.sourceData, JSONFormIncome.formData, JSONFormIncome.fieldState)}}",
+      "boxShadow": "none",
+      "cellBorderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONFormIncome.sourceData, JSONFormIncome.formData, JSONFormIncome.fieldState)}}",
+      "cellBoxShadow": "none",
+      "children": {
+        "Financials": {
+          "accessor": "Financials",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONFormIncome.sourceData, JSONFormIncome.formData, JSONFormIncome.fieldState)}}",
+          "boxShadow": "none",
+          "cellBorderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONFormIncome.sourceData, JSONFormIncome.formData, JSONFormIncome.fieldState)}}",
+          "cellBoxShadow": "none",
+          "children": {
+            "amount": {
+              "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(JSONFormIncome.sourceData, JSONFormIncome.formData, JSONFormIncome.fieldState)}}",
+              "accessor": "amount",
+              "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONFormIncome.sourceData, JSONFormIncome.formData, JSONFormIncome.fieldState)}}",
+              "boxShadow": "none",
+              "children": {},
+              "dataType": "number",
+              "defaultValue": "{{((sourceData, formData, fieldState) => ( JSONFormIncome.formData.Financials.is_gst_income ? (Number(JSONFormIncome.formData.Financials.taxable_amount || 0) + Number(JSONFormIncome.formData.Financials.tax_amount || 0)) : Number(JSONFormIncome.formData.Financials.taxable_amount || 0) ))(JSONFormIncome.sourceData, JSONFormIncome.formData, JSONFormIncome.fieldState)}}",
+              "fieldType": "Number Input",
+              "iconAlign": "left",
+              "identifier": "amount",
+              "isCustomField": false,
+              "isDisabled": true,
+              "isRequired": false,
+              "isSpellCheck": false,
+              "isVisible": true,
+              "label": "Amount",
+              "labelTextSize": "0.875rem",
+              "originalIdentifier": "amount",
+              "position": 3,
+              "sourceData": 0
+            },
+            "is_gst_income": {
+              "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(JSONFormIncome.sourceData, JSONFormIncome.formData, JSONFormIncome.fieldState)}}",
+              "accessor": "is_gst_income",
+              "alignWidget": "LEFT",
+              "boxShadow": "none",
+              "children": {},
+              "dataType": "boolean",
+              "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.Financials.is_gst_income))(JSONFormIncome.sourceData, JSONFormIncome.formData, JSONFormIncome.fieldState)}}",
+              "fieldType": "Switch",
+              "identifier": "is_gst_income",
+              "isCustomField": false,
+              "isDisabled": false,
+              "isRequired": false,
+              "isVisible": true,
+              "label": "Is Gst Income",
+              "labelTextSize": "0.875rem",
+              "originalIdentifier": "is_gst_income",
+              "position": 0,
+              "sourceData": false
+            },
+            "tax_amount": {
+              "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(JSONFormIncome.sourceData, JSONFormIncome.formData, JSONFormIncome.fieldState)}}",
+              "accessor": "tax_amount",
+              "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONFormIncome.sourceData, JSONFormIncome.formData, JSONFormIncome.fieldState)}}",
+              "boxShadow": "none",
+              "children": {},
+              "dataType": "number",
+              "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.Financials.tax_amount))(JSONFormIncome.sourceData, JSONFormIncome.formData, JSONFormIncome.fieldState)}}",
+              "fieldType": "Number Input",
+              "iconAlign": "left",
+              "identifier": "tax_amount",
+              "isCustomField": false,
+              "isDisabled": false,
+              "isRequired": false,
+              "isSpellCheck": false,
+              "isVisible": true,
+              "label": "Tax Amount",
+              "labelTextSize": "0.875rem",
+              "originalIdentifier": "tax_amount",
+              "position": 2,
+              "sourceData": 0
+            },
+            "taxable_amount": {
+              "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(JSONFormIncome.sourceData, JSONFormIncome.formData, JSONFormIncome.fieldState)}}",
+              "accessor": "taxable_amount",
+              "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONFormIncome.sourceData, JSONFormIncome.formData, JSONFormIncome.fieldState)}}",
+              "boxShadow": "none",
+              "children": {},
+              "dataType": "number",
+              "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.Financials.taxable_amount))(JSONFormIncome.sourceData, JSONFormIncome.formData, JSONFormIncome.fieldState)}}",
+              "fieldType": "Number Input",
+              "iconAlign": "left",
+              "identifier": "taxable_amount",
+              "isCustomField": false,
+              "isDisabled": false,
+              "isRequired": false,
+              "isSpellCheck": false,
+              "isVisible": true,
+              "label": "Taxable Amount",
+              "labelTextSize": "0.875rem",
+              "originalIdentifier": "taxable_amount",
+              "position": 1,
+              "sourceData": 0
+            }
+          },
+          "dataType": "object",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.Financials))(JSONFormIncome.sourceData, JSONFormIncome.formData, JSONFormIncome.fieldState)}}",
+          "fieldType": "Object",
+          "identifier": "Financials",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isVisible": true,
+          "label": "Financials",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "Financials",
+          "position": 1,
+          "sourceData": {
+            "amount": 0,
+            "is_gst_income": false,
+            "tax_amount": 0,
+            "taxable_amount": 0
+          }
+        },
+        "Income_Details": {
+          "accessor": "Income_Details",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONFormIncome.sourceData, JSONFormIncome.formData, JSONFormIncome.fieldState)}}",
+          "boxShadow": "none",
+          "cellBorderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONFormIncome.sourceData, JSONFormIncome.formData, JSONFormIncome.fieldState)}}",
+          "cellBoxShadow": "none",
+          "children": {
+            "category_account_id": {
+              "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(JSONFormIncome.sourceData, JSONFormIncome.formData, JSONFormIncome.fieldState)}}",
+              "accessor": "category_account_id",
+              "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONFormIncome.sourceData, JSONFormIncome.formData, JSONFormIncome.fieldState)}}",
+              "boxShadow": "none",
+              "children": {},
+              "dataType": "string",
+              "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.Income_Details.category_account_id))(JSONFormIncome.sourceData, JSONFormIncome.formData, JSONFormIncome.fieldState)}}",
+              "fieldType": "Select",
+              "identifier": "category_account_id",
+              "isCustomField": false,
+              "isDisabled": false,
+              "isFilterable": false,
+              "isRequired": false,
+              "isVisible": true,
+              "label": "Category Account Id",
+              "labelTextSize": "0.875rem",
+              "options": "{{ \n  getIncomeCat.data.map(cat => ({ \n    label: cat.name, \n    value: cat.id \n  })) \n}}",
+              "originalIdentifier": "category_account_id",
+              "position": 2,
+              "serverSideFiltering": false,
+              "sourceData": ""
+            },
+            "description": {
+              "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(JSONFormIncome.sourceData, JSONFormIncome.formData, JSONFormIncome.fieldState)}}",
+              "accessor": "description",
+              "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONFormIncome.sourceData, JSONFormIncome.formData, JSONFormIncome.fieldState)}}",
+              "boxShadow": "none",
+              "children": {},
+              "dataType": "string",
+              "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.Income_Details.description))(JSONFormIncome.sourceData, JSONFormIncome.formData, JSONFormIncome.fieldState)}}",
+              "fieldType": "Text Input",
+              "iconAlign": "left",
+              "identifier": "description",
+              "isCustomField": false,
+              "isDisabled": false,
+              "isRequired": false,
+              "isSpellCheck": false,
+              "isVisible": true,
+              "label": "Description",
+              "labelTextSize": "0.875rem",
+              "originalIdentifier": "description",
+              "position": 3,
+              "sourceData": ""
+            },
+            "received_from": {
+              "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(JSONFormIncome.sourceData, JSONFormIncome.formData, JSONFormIncome.fieldState)}}",
+              "accessor": "received_from",
+              "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONFormIncome.sourceData, JSONFormIncome.formData, JSONFormIncome.fieldState)}}",
+              "boxShadow": "none",
+              "children": {},
+              "dataType": "string",
+              "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.Income_Details.received_from))(JSONFormIncome.sourceData, JSONFormIncome.formData, JSONFormIncome.fieldState)}}",
+              "fieldType": "Select",
+              "identifier": "received_from",
+              "isCustomField": false,
+              "isDisabled": false,
+              "isFilterable": false,
+              "isRequired": false,
+              "isVisible": true,
+              "label": "Received From",
+              "labelTextSize": "0.875rem",
+              "options": "{{ getIncomeEntity.data.map(e => ({ label: e.name, value: e.id })) }}",
+              "originalIdentifier": "received_from",
+              "position": 1,
+              "serverSideFiltering": false,
+              "sourceData": ""
+            },
+            "transaction_date": {
+              "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(JSONFormIncome.sourceData, JSONFormIncome.formData, JSONFormIncome.fieldState)}}",
+              "accessor": "transaction_date",
+              "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONFormIncome.sourceData, JSONFormIncome.formData, JSONFormIncome.fieldState)}}",
+              "boxShadow": "none",
+              "children": {},
+              "closeOnSelection": false,
+              "convertToISO": false,
+              "dataType": "string",
+              "dateFormat": "YYYY-MM-DD",
+              "defaultValue": "{{((sourceData, formData, fieldState) => (moment(sourceData.Income_Details.transaction_date, \"YYYY-MM-DD\").format(\"YYYY-MM-DDTHH:mm:ss.sssZ\")))(JSONFormIncome.sourceData, JSONFormIncome.formData, JSONFormIncome.fieldState)}}",
+              "fieldType": "Datepicker",
+              "identifier": "transaction_date",
+              "isCustomField": false,
+              "isDisabled": false,
+              "isRequired": false,
+              "isVisible": true,
+              "label": "Transaction Date",
+              "labelTextSize": "0.875rem",
+              "maxDate": "2121-12-31T18:29:00.000Z",
+              "minDate": "1920-12-31T18:30:00.000Z",
+              "originalIdentifier": "transaction_date",
+              "position": 0,
+              "shortcuts": false,
+              "sourceData": "2026-03-21",
+              "timePrecision": "minute"
+            }
+          },
+          "dataType": "object",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.Income_Details))(JSONFormIncome.sourceData, JSONFormIncome.formData, JSONFormIncome.fieldState)}}",
+          "fieldType": "Object",
+          "identifier": "Income_Details",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isVisible": true,
+          "label": "Income Details",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "Income_Details",
+          "position": 0,
+          "sourceData": {
+            "category_account_id": "",
+            "description": "",
+            "received_from": "",
+            "transaction_date": "2026-03-21"
+          }
+        },
+        "Payment_Info": {
+          "accessor": "Payment_Info",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONFormIncome.sourceData, JSONFormIncome.formData, JSONFormIncome.fieldState)}}",
+          "boxShadow": "none",
+          "cellBorderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONFormIncome.sourceData, JSONFormIncome.formData, JSONFormIncome.fieldState)}}",
+          "cellBoxShadow": "none",
+          "children": {
+            "bank_name": {
+              "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(JSONFormIncome.sourceData, JSONFormIncome.formData, JSONFormIncome.fieldState)}}",
+              "accessor": "bank_name",
+              "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONFormIncome.sourceData, JSONFormIncome.formData, JSONFormIncome.fieldState)}}",
+              "boxShadow": "none",
+              "children": {},
+              "dataType": "string",
+              "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.Payment_Info.bank_name))(JSONFormIncome.sourceData, JSONFormIncome.formData, JSONFormIncome.fieldState)}}",
+              "fieldType": "Select",
+              "identifier": "bank_name",
+              "isCustomField": false,
+              "isDisabled": false,
+              "isFilterable": false,
+              "isRequired": false,
+              "isVisible": "{{((sourceData, formData, fieldState) => ( JSONFormIncome.formData.Payment_Info.payment_mode === 'CHEQUE' ))(JSONFormIncome.sourceData, JSONFormIncome.formData, JSONFormIncome.fieldState)}}",
+              "label": "Bank Name",
+              "labelTextSize": "0.875rem",
+              "options": "{{ \n  getBanksGen.data.map(bank => ({ \n    label: bank.bank_name, \n    value: bank.bank_name \n  })) \n}}",
+              "originalIdentifier": "bank_name",
+              "position": 5,
+              "serverSideFiltering": false,
+              "sourceData": ""
+            },
+            "cheque_date": {
+              "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(JSONFormIncome.sourceData, JSONFormIncome.formData, JSONFormIncome.fieldState)}}",
+              "accessor": "cheque_date",
+              "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONFormIncome.sourceData, JSONFormIncome.formData, JSONFormIncome.fieldState)}}",
+              "boxShadow": "none",
+              "children": {},
+              "closeOnSelection": false,
+              "convertToISO": false,
+              "dataType": "string",
+              "dateFormat": "YYYY-MM-DD HH:mm",
+              "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.Payment_Info.cheque_date))(JSONFormIncome.sourceData, JSONFormIncome.formData, JSONFormIncome.fieldState)}}",
+              "fieldType": "Datepicker",
+              "identifier": "cheque_date",
+              "isCustomField": false,
+              "isDisabled": false,
+              "isRequired": false,
+              "isVisible": "{{((sourceData, formData, fieldState) => ( JSONFormIncome.formData.Payment_Info.payment_mode === 'CHEQUE' ))(JSONFormIncome.sourceData, JSONFormIncome.formData, JSONFormIncome.fieldState)}}",
+              "label": "Cheque Date",
+              "labelTextSize": "0.875rem",
+              "maxDate": "2121-12-31T18:29:00.000Z",
+              "minDate": "1920-12-31T18:30:00.000Z",
+              "originalIdentifier": "cheque_date",
+              "position": 4,
+              "shortcuts": false,
+              "sourceData": "",
+              "timePrecision": "minute"
+            },
+            "cheque_no": {
+              "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(JSONFormIncome.sourceData, JSONFormIncome.formData, JSONFormIncome.fieldState)}}",
+              "accessor": "cheque_no",
+              "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONFormIncome.sourceData, JSONFormIncome.formData, JSONFormIncome.fieldState)}}",
+              "boxShadow": "none",
+              "children": {},
+              "dataType": "string",
+              "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.Payment_Info.cheque_no))(JSONFormIncome.sourceData, JSONFormIncome.formData, JSONFormIncome.fieldState)}}",
+              "fieldType": "Text Input",
+              "iconAlign": "left",
+              "identifier": "cheque_no",
+              "isCustomField": false,
+              "isDisabled": false,
+              "isRequired": false,
+              "isSpellCheck": false,
+              "isVisible": "{{((sourceData, formData, fieldState) => ( JSONFormIncome.formData.Payment_Info.payment_mode === 'CHEQUE' ))(JSONFormIncome.sourceData, JSONFormIncome.formData, JSONFormIncome.fieldState)}}",
+              "label": "Cheque No",
+              "labelTextSize": "0.875rem",
+              "originalIdentifier": "cheque_no",
+              "position": 3,
+              "sourceData": ""
+            },
+            "destination_account_id": {
+              "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(JSONFormIncome.sourceData, JSONFormIncome.formData, JSONFormIncome.fieldState)}}",
+              "accessor": "destination_account_id",
+              "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONFormIncome.sourceData, JSONFormIncome.formData, JSONFormIncome.fieldState)}}",
+              "boxShadow": "none",
+              "children": {},
+              "dataType": "string",
+              "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.Payment_Info.destination_account_id))(JSONFormIncome.sourceData, JSONFormIncome.formData, JSONFormIncome.fieldState)}}",
+              "fieldType": "Select",
+              "identifier": "destination_account_id",
+              "isCustomField": false,
+              "isDisabled": false,
+              "isFilterable": false,
+              "isRequired": false,
+              "isVisible": true,
+              "label": "Destination Account Id",
+              "labelTextSize": "0.875rem",
+              "options": "{{ \n  getBanks.data.map(bank => ({ \n    label: bank.name, \n    value: bank.id \n  })) \n}}",
+              "originalIdentifier": "destination_account_id",
+              "position": 1,
+              "serverSideFiltering": false,
+              "sourceData": ""
+            },
+            "payment_mode": {
+              "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(JSONFormIncome.sourceData, JSONFormIncome.formData, JSONFormIncome.fieldState)}}",
+              "accessor": "payment_mode",
+              "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONFormIncome.sourceData, JSONFormIncome.formData, JSONFormIncome.fieldState)}}",
+              "boxShadow": "none",
+              "children": {},
+              "dataType": "string",
+              "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.Payment_Info.payment_mode))(JSONFormIncome.sourceData, JSONFormIncome.formData, JSONFormIncome.fieldState)}}",
+              "fieldType": "Select",
+              "identifier": "payment_mode",
+              "isCustomField": false,
+              "isDisabled": false,
+              "isFilterable": false,
+              "isRequired": false,
+              "isVisible": true,
+              "label": "Payment Mode",
+              "labelTextSize": "0.875rem",
+              "options": "[\n  {\n    \"label\": \"Cash\",\n    \"value\": \"CASH\"\n  },\n  {\n    \"label\": \"Online Transfer\",\n    \"value\": \"ONLINE\"\n  },\n  {\n    \"label\": \"Cheque\",\n    \"value\": \"CHEQUE\"\n  }\n]\n",
+              "originalIdentifier": "payment_mode",
+              "position": 0,
+              "serverSideFiltering": false,
+              "sourceData": "Cash"
+            },
+            "reference_no": {
+              "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(JSONFormIncome.sourceData, JSONFormIncome.formData, JSONFormIncome.fieldState)}}",
+              "accessor": "reference_no",
+              "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONFormIncome.sourceData, JSONFormIncome.formData, JSONFormIncome.fieldState)}}",
+              "boxShadow": "none",
+              "children": {},
+              "dataType": "string",
+              "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.Payment_Info.reference_no))(JSONFormIncome.sourceData, JSONFormIncome.formData, JSONFormIncome.fieldState)}}",
+              "fieldType": "Select",
+              "identifier": "reference_no",
+              "isCustomField": false,
+              "isDisabled": false,
+              "isFilterable": false,
+              "isRequired": false,
+              "isVisible": "{{((sourceData, formData, fieldState) => ( JSONFormIncome.formData.Payment_Info.payment_mode === 'ONLINE' ))(JSONFormIncome.sourceData, JSONFormIncome.formData, JSONFormIncome.fieldState)}}",
+              "label": "Reference No",
+              "labelTextSize": "0.875rem",
+              "options": "{{ \n  getUnconsumedCredits.data.map(debit => ({ \n    label: `${debit.credit_amount} - ₹${debit.consumed_amount}`, \n    value: debit.id \n  })) \n}}",
+              "originalIdentifier": "reference_no",
+              "position": 2,
+              "serverSideFiltering": false,
+              "sourceData": ""
+            }
+          },
+          "dataType": "object",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.Payment_Info))(JSONFormIncome.sourceData, JSONFormIncome.formData, JSONFormIncome.fieldState)}}",
+          "fieldType": "Object",
+          "identifier": "Payment_Info",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isVisible": true,
+          "label": "Payment Info",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "Payment_Info",
+          "position": 2,
+          "sourceData": {
+            "bank_name": "",
+            "cheque_date": "",
+            "cheque_no": "",
+            "destination_account_id": "",
+            "payment_mode": "Cash",
+            "reference_no": ""
+          }
+        }
+      },
+      "dataType": "object",
+      "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData))(JSONFormIncome.sourceData, JSONFormIncome.formData, JSONFormIncome.fieldState)}}",
+      "fieldType": "Object",
+      "identifier": "__root_schema__",
+      "isCustomField": false,
+      "isDisabled": false,
+      "isRequired": false,
+      "isVisible": true,
+      "label": "",
+      "labelTextSize": "0.875rem",
+      "originalIdentifier": "__root_schema__",
+      "position": -1,
+      "sourceData": {
+        "Financials": {
+          "amount": 0,
+          "is_gst_income": false,
+          "tax_amount": 0,
+          "taxable_amount": 0
+        },
+        "Income_Details": {
+          "category_account_id": "",
+          "description": "",
+          "received_from": "",
+          "transaction_date": "2026-03-21"
+        },
+        "Payment_Info": {
+          "bank_name": "",
+          "cheque_date": "",
+          "cheque_no": "",
+          "destination_account_id": "",
+          "payment_mode": "Cash",
+          "reference_no": ""
+        }
+      }
+    }
+  },
+  "scrollContents": true,
+  "showReset": true,
+  "sourceData": "{\n  \"Income_Details\": {\n    \"transaction_date\": \"{{ moment().format('YYYY-MM-DD') }}\",\n    \"received_from\": \"\",\n    \"category_account_id\": \"\",\n    \"description\": \"\"\n  },\n  \"Financials\": {\n    \"is_gst_income\": false,\n    \"taxable_amount\": 0,\n    \"tax_amount\": 0,\n    \"amount\": 0\n  },\n  \"Payment_Info\": {\n    \"destination_account_id\": \"\",\n    \"payment_mode\": \"Cash\",\n    \"reference_no\": \"\",\n    \"cheque_no\": \"\",\n    \"cheque_date\": \"\",\n    \"bank_name\": \"\"\n  }\n}\n",
+  "submitButtonLabel": "Submit",
+  "submitButtonStyles": {
+    "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+    "boxShadow": "none",
+    "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+    "buttonVariant": "PRIMARY"
+  },
+  "title": "",
+  "topRow": 5,
+  "type": "JSON_FORM_WIDGET",
+  "useSourceData": false,
+  "version": 1,
+  "widgetId": "ytopi9183d",
+  "widgetName": "JSONFormIncome"
+}

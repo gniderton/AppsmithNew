@@ -1,0 +1,35 @@
+{
+  "expense_date": "{{ JSONForm3.formData.General_Info.expense_date }}",
+  "vendor_name": "{{ JSONForm3.formData.General_Info.vendor_name }}",
+  "category_account_id": {{ JSONForm3.formData.General_Info.category_account_id }},
+  "description": "{{ JSONForm3.formData.General_Info.description }}",
+  
+  "grand_total": {{ JSONForm3.formData.Financials.grand_total }},
+  "taxable_amount": {{ JSONForm3.formData.Financials.taxable_amount || 0 }},
+  "tax_amount": {{ JSONForm3.formData.Financials.tax_amount || 0 }},
+  "is_gst_expense": {{ JSONForm3.formData.Financials.is_gst_expense }},
+  "bill_no": "{{ JSONForm3.formData.Financials.bill_no }}",
+  "gst_no": "{{ JSONForm3.formData.Financials.gst_no }}",
+  
+  "payment_mode": "{{ JSONForm3.formData.Payment_Details.payment_mode }}",
+  "payment_source_id": {{ JSONForm3.formData.Payment_Details.payment_source_id }},
+  "user_id": {{ getMe.data.id }},
+  
+  "reference_no": "{{ 
+    JSONForm3.formData.Payment_Details.payment_mode === 'ONLINE' 
+      ? selBankRefExpense.selectedItem.bank_ref_id 
+      : (JSONForm3.formData.Payment_Details.payment_mode === 'CHEQUE' 
+          ? JSONForm3.formData.Payment_Details.cheque_no 
+          : JSONForm3.formData.Payment_Details.reference_no) 
+  }}",
+  
+  "bank_statement_entry_id": {{ 
+    JSONForm3.formData.Payment_Details.payment_mode === 'ONLINE' 
+      ? (selBankRefExpense.selectedItem.id || null) 
+      : null 
+  }},
+  
+  "cheque_no": "{{ JSONForm3.formData.Payment_Details.cheque_no }}",
+  "cheque_date": "{{ JSONForm3.formData.Payment_Details.cheque_date }}",
+  "bank_name": "{{ JSONForm3.formData.Payment_Details.bank_name }}"
+}

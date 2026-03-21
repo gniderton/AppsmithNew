@@ -327,7 +327,7 @@
   "mobileTopRow": 6,
   "needsErrorInfo": false,
   "onSubmit": "{{\n  RecordAssetPayment.run().then(() => {\n    showAlert('Payment Recorded Successfully!', 'success');\n    getAssets.run(); // Refresh your table\n    closeModal('Modal_AssetPayment');\n  }).catch(e => {\n    showAlert('Error: ' + RecordAssetPayment.data.error, 'error');\n  });\n}}\n",
-  "originalBottomRow": 124,
+  "originalBottomRow": 102,
   "originalTopRow": 7,
   "parentColumnSpace": 6.9375,
   "parentId": "51m65vv9gz",

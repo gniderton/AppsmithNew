@@ -1,0 +1,20 @@
+{
+  "transaction_date": "{{ JSONFormIncome.formData.Income_Details.transaction_date }}",
+  "received_from": {{ JSONFormIncome.formData.Income_Details.received_from }},
+  "category_account_id": {{ JSONFormIncome.formData.Income_Details.category_account_id }},
+  "description": "{{ JSONFormIncome.formData.Income_Details.description }}",
+  
+  "is_gst_income": {{ JSONFormIncome.formData.Financials.is_gst_income }},
+  "taxable_amount": {{ JSONFormIncome.formData.Financials.taxable_amount }},
+  "tax_amount": {{ JSONFormIncome.formData.Financials.tax_amount }},
+  "amount": {{ JSONFormIncome.formData.Financials.amount }},
+  
+  "destination_account_id": {{ JSONFormIncome.formData.Payment_Info.destination_account_id }},
+  "payment_mode": "{{ JSONFormIncome.formData.Payment_Info.payment_mode }}",
+  "reference_no": "{{ JSONFormIncome.formData.Payment_Info.reference_no }}",
+  "cheque_no": "{{ JSONFormIncome.formData.Payment_Info.cheque_no }}",
+  "cheque_date": "{{ JSONFormIncome.formData.Payment_Info.cheque_date }}",
+  "bank_name": "{{ JSONFormIncome.formData.Payment_Info.bank_name }}",
+  
+  "user_id": {{ getMe.data.id }}
+}

@@ -76,6 +76,10 @@
     {
       "id": "Cheque Management",
       "isDefault": false
+    },
+    {
+      "id": "Transactions",
+      "isDefault": false
     }
   ],
   "unpublishedAppLayout": {
