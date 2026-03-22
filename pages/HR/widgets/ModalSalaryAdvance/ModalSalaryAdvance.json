@@ -1,14 +1,14 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 755,
+  "bottomRow": 448,
   "boxShadow": "none",
   "canEscapeKeyClose": true,
   "canOutsideClickClose": true,
   "children": [
     {
       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-      "bottomRow": 740,
+      "bottomRow": 430,
       "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
       "canExtend": true,
       "detachFromLayout": true,
@@ -29,7 +29,7 @@
       "leftColumn": 0,
       "maxDynamicHeight": 9000,
       "minDynamicHeight": 4,
-      "minHeight": 270,
+      "minHeight": 380,
       "minWidth": 450,
       "mobileBottomRow": 240,
       "mobileLeftColumn": 0,
@@ -37,7 +37,7 @@
       "mobileTopRow": 0,
       "needsErrorInfo": false,
       "parentColumnSpace": 1,
-      "parentId": "nqort0bc2z",
+      "parentId": "5ssnezrcvz",
       "parentRowSpace": 1,
       "renderMode": "CANVAS",
       "responsiveBehavior": "fill",
@@ -46,8 +46,8 @@
       "topRow": 0,
       "type": "CANVAS_WIDGET",
       "version": 1,
-      "widgetId": "foswiu4dan",
-      "widgetName": "Canvas4"
+      "widgetId": "cjftjwhspc",
+      "widgetName": "Canvas12"
     }
   ],
   "detachFromLayout": true,
@@ -57,18 +57,18 @@
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
-  "height": 740,
+  "height": 430,
   "isCanvas": true,
   "isLoading": false,
   "key": "t2e9c4e5l1",
   "leftColumn": 14,
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 24,
-  "minHeight": 740,
-  "mobileBottomRow": 39,
+  "minHeight": 390,
+  "mobileBottomRow": 42,
   "mobileLeftColumn": 14,
   "mobileRightColumn": 38,
-  "mobileTopRow": 15,
+  "mobileTopRow": 18,
   "needsErrorInfo": false,
   "parentColumnSpace": 20.25,
   "parentId": "0",
@@ -76,10 +76,10 @@
   "renderMode": "CANVAS",
   "rightColumn": 38,
   "shouldScrollContents": true,
-  "topRow": 15,
+  "topRow": 18,
   "type": "MODAL_WIDGET",
   "version": 2,
-  "widgetId": "nqort0bc2z",
-  "widgetName": "ModalProfile",
-  "width": 1056
+  "widgetId": "5ssnezrcvz",
+  "widgetName": "ModalSalaryAdvance",
+  "width": 1050
 }

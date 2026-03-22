@@ -1,6 +1,6 @@
 {
-  "gitSyncId": "69a80abb79ac426a29eb8838_ddf7bb4a-e03c-4048-922c-de7ad11a6754",
-  "id": "HR_EmployeeAttendanceHistory",
+  "gitSyncId": "69a80abb79ac426a29eb8838_10845acb-a9e2-415f-9e33-6b0c9e00d891",
+  "id": "HR_getUnconsumedDebits",
   "pluginId": "restapi-plugin",
   "pluginType": "API",
   "unpublishedAction": {
@@ -16,22 +16,13 @@
       "httpMethod": "GET",
       "httpVersion": "HTTP11",
       "paginationType": "NONE",
-      "path": "/api/employees/{{tblEmployees.triggeredRow.id}}/attendance",
+      "path": "/api/finance/reconciliation/bank/unconsumed-debits",
       "pluginSpecifiedTemplates": [
         {
           "value": true
         }
       ],
-      "queryParameters": [
-        {
-          "key": "start_date",
-          "value": "{{dateStart.selectedDate}}"
-        },
-        {
-          "key": "end_date",
-          "value": "{{dateEnd.selectedDate}}"
-        }
-      ],
+      "queryParameters": [],
       "timeoutInMillisecond": 10000
     },
     "confirmBeforeExecute": false,
@@ -41,18 +32,8 @@
       "name": "RenderCloud",
       "pluginId": "restapi-plugin"
     },
-    "dynamicBindingPathList": [
-      {
-        "key": "path"
-      },
-      {
-        "key": "queryParameters[0].value"
-      },
-      {
-        "key": "queryParameters[1].value"
-      }
-    ],
-    "name": "EmployeeAttendanceHistory",
+    "dynamicBindingPathList": [],
+    "name": "getUnconsumedDebits",
     "pageId": "HR",
     "runBehaviour": "AUTOMATIC",
     "userSetOnLoad": false

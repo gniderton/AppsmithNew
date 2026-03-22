@@ -20,12 +20,15 @@
       "key": "groupButtons.groupButton2.buttonColor"
     },
     {
-      "key": "groupButtons.groupButton3.buttonColor"
+      "key": "groupButtons.groupButtonktfzxapisf.buttonColor"
     }
   ],
   "dynamicPropertyPathList": [
     {
       "key": "groupButtons.groupButton1.onClick"
+    },
+    {
+      "key": "groupButtons.groupButtonktfzxapisf.onClick"
     }
   ],
   "dynamicTriggerPathList": [
@@ -34,6 +37,9 @@
     },
     {
       "key": "groupButtons.groupButton2.onClick"
+    },
+    {
+      "key": "groupButtons.groupButtonktfzxapisf.onClick"
     }
   ],
   "groupButtons": {
@@ -55,7 +61,6 @@
       "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
       "buttonType": "SIMPLE",
       "disabledWhenInvalid": false,
-      "iconName": "add",
       "id": "groupButton2",
       "index": 1,
       "isDisabled": false,
@@ -66,57 +71,21 @@
       "placement": "CENTER",
       "widgetId": ""
     },
-    "groupButton3": {
+    "groupButtonktfzxapisf": {
       "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
-      "buttonType": "MENU",
-      "disabledWhenInvalid": false,
-      "iconName": "more",
-      "id": "groupButton3",
+      "buttonType": "SIMPLE",
+      "id": "groupButtonktfzxapisf",
       "index": 2,
       "isDisabled": false,
+      "isSeparator": false,
       "isVisible": true,
-      "label": "More",
-      "menuItems": {
-        "menuItem1": {
-          "backgroundColor": "#FFFFFF",
-          "disabledWhenInvalid": false,
-          "id": "menuItem1",
-          "index": 0,
-          "isDisabled": false,
-          "isVisible": true,
-          "label": "First Option",
-          "onClick": "",
-          "widgetId": ""
-        },
-        "menuItem2": {
-          "backgroundColor": "#FFFFFF",
-          "disabledWhenInvalid": false,
-          "id": "menuItem2",
-          "index": 1,
-          "isDisabled": false,
-          "isVisible": true,
-          "label": "Second Option",
-          "onClick": "",
-          "widgetId": ""
-        },
-        "menuItem3": {
-          "backgroundColor": "#DD4B34",
-          "disabledWhenInvalid": false,
-          "iconAlign": "right",
-          "iconColor": "#FFFFFF",
-          "iconName": "trash",
-          "id": "menuItem3",
-          "index": 2,
-          "isDisabled": false,
-          "isVisible": true,
-          "label": "Delete",
-          "onClick": "",
-          "textColor": "#FFFFFF",
-          "widgetId": ""
-        }
-      },
+      "itemType": "BUTTON",
+      "label": "Salary Advance",
+      "menuItems": {},
+      "onClick": "{{\n  storeValue('bulkAdvances', tblEmployees.selectedRows.map(r => ({\n    id: r.id,\n    full_name: r.full_name,\n    employee_code: r.employee_code,\n    amount: 0,\n    payment_mode: 'Cash',\n    from_account_id: 1, // Default to Cash account ID\n    bank_statement_entry_id: null\n  })));\n  showModal('ModalSalaryAdvance');\n}}\n",
       "placement": "CENTER",
-      "widgetId": ""
+      "variant": "filled",
+      "widgetId": "z0om5089bk"
     }
   },
   "isCanvas": false,

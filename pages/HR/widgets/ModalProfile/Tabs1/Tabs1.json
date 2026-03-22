@@ -219,6 +219,8 @@
   "mobileRightColumn": 22,
   "mobileTopRow": 6,
   "needsErrorInfo": false,
+  "originalBottomRow": 72,
+  "originalTopRow": 7,
   "parentColumnSpace": 6.9375,
   "parentId": "foswiu4dan",
   "parentRowSpace": 10,

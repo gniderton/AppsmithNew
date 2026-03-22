@@ -1,0 +1,394 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "animateLoading": true,
+  "borderColor": "#E0DEDE",
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "borderWidth": "1",
+  "bottomRow": 41,
+  "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+  "cachedTableData": {},
+  "canFreezeColumn": true,
+  "childStylesheet": {
+    "button": {
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none",
+      "buttonColor": "{{appsmith.theme.colors.primaryColor}}"
+    },
+    "editActions": {
+      "discardBorderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "discardButtonColor": "{{appsmith.theme.colors.primaryColor}}",
+      "saveBorderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "saveButtonColor": "{{appsmith.theme.colors.primaryColor}}"
+    },
+    "iconButton": {
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none",
+      "buttonColor": "{{appsmith.theme.colors.primaryColor}}"
+    },
+    "menuButton": {
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none",
+      "menuColor": "{{appsmith.theme.colors.primaryColor}}"
+    }
+  },
+  "columnOrder": [
+    "id",
+    "employee_code",
+    "full_name",
+    "amount",
+    "payment_mode",
+    "from_account_id",
+    "bank_statement_entry_id"
+  ],
+  "columnUpdatedAt": 1774180399760,
+  "columnWidthMap": {},
+  "customIsLoading": false,
+  "customIsLoadingValue": "",
+  "defaultPageSize": 0,
+  "defaultSelectedRowIndex": 0,
+  "defaultSelectedRowIndices": [
+    0
+  ],
+  "delimiter": ",",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "boxShadow"
+    },
+    {
+      "key": "tableData"
+    },
+    {
+      "key": "primaryColumns.id.computedValue"
+    },
+    {
+      "key": "primaryColumns.full_name.computedValue"
+    },
+    {
+      "key": "primaryColumns.employee_code.computedValue"
+    },
+    {
+      "key": "primaryColumns.amount.computedValue"
+    },
+    {
+      "key": "primaryColumns.payment_mode.computedValue"
+    },
+    {
+      "key": "primaryColumns.from_account_id.computedValue"
+    },
+    {
+      "key": "primaryColumns.bank_statement_entry_id.computedValue"
+    },
+    {
+      "key": "primaryColumns.from_account_id.selectOptions"
+    },
+    {
+      "key": "primaryColumns.bank_statement_entry_id.selectOptions"
+    },
+    {
+      "key": "primaryColumns.payment_mode.selectOptions"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "tableData"
+    },
+    {
+      "key": "primaryColumns.amount.onSubmit"
+    },
+    {
+      "key": "primaryColumns.payment_mode.onOptionChange"
+    },
+    {
+      "key": "primaryColumns.from_account_id.onOptionChange"
+    },
+    {
+      "key": "primaryColumns.bank_statement_entry_id.onOptionChange"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "primaryColumns.amount.onSubmit"
+    },
+    {
+      "key": "primaryColumns.payment_mode.onOptionChange"
+    },
+    {
+      "key": "primaryColumns.from_account_id.onOptionChange"
+    },
+    {
+      "key": "primaryColumns.bank_statement_entry_id.onOptionChange"
+    }
+  ],
+  "enableClientSideSearch": true,
+  "endOfData": false,
+  "flexVerticalAlignment": "start",
+  "horizontalAlignment": "LEFT",
+  "inlineEditingSaveOption": "CUSTOM",
+  "isLoading": false,
+  "isSortable": true,
+  "isVisible": true,
+  "isVisibleDownload": true,
+  "isVisibleFilters": false,
+  "isVisiblePagination": true,
+  "isVisibleSearch": true,
+  "key": "ygau302brc",
+  "label": "Data",
+  "leftColumn": 0,
+  "minWidth": 450,
+  "mobileBottomRow": 36,
+  "mobileLeftColumn": 29,
+  "mobileRightColumn": 63,
+  "mobileTopRow": 8,
+  "needsErrorInfo": false,
+  "originalBottomRow": 40,
+  "originalTopRow": 12,
+  "parentColumnSpace": 6.9375,
+  "parentId": "cjftjwhspc",
+  "parentRowSpace": 10,
+  "primaryColumns": {
+    "amount": {
+      "alias": "amount",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "columnType": "number",
+      "computedValue": "{{(() => { const tableData = tblAdvancePreview.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"amount\"])) : amount })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "horizontalAlignment": "LEFT",
+      "id": "amount",
+      "index": 3,
+      "isCellEditable": true,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": true,
+      "isSaveVisible": true,
+      "isVisible": true,
+      "label": "amount",
+      "notation": "standard",
+      "onSubmit": "{{\n  storeValue('bulkAdvances', (appsmith.store.bulkAdvances || []).map(r => \n    r.id === tblAdvancePreview.triggeredRow.id \n    ? { \n        ...r, \n        amount: Number(tblAdvancePreview.updatedRow.amount || r.amount),\n        payment_mode: tblAdvancePreview.updatedRow.payment_mode || r.payment_mode,\n        from_account_id: tblAdvancePreview.updatedRow.from_account_id || r.from_account_id,\n        bank_statement_entry_id: tblAdvancePreview.updatedRow.bank_statement_entry_id || r.bank_statement_entry_id\n      } \n    : r\n  ));\n}}\n",
+      "originalId": "amount",
+      "sticky": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
+    "bank_statement_entry_id": {
+      "alias": "bank_statement_entry_id",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "columnType": "select",
+      "computedValue": "{{(() => { const tableData = tblAdvancePreview.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( currentRow.bank_statement_entry_id )) :  currentRow.bank_statement_entry_id  })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "horizontalAlignment": "LEFT",
+      "id": "bank_statement_entry_id",
+      "index": 6,
+      "isCellEditable": true,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": true,
+      "isSaveVisible": true,
+      "isVisible": true,
+      "label": "bank_statement_entry_id",
+      "notation": "standard",
+      "onOptionChange": "{{\n  storeValue('bulkAdvances', (appsmith.store.bulkAdvances || []).map(r => \n    r.id === tblAdvancePreview.triggeredRow.id \n    ? { \n        ...r, \n        amount: Number(tblAdvancePreview.updatedRow.amount || r.amount),\n        payment_mode: tblAdvancePreview.updatedRow.payment_mode || r.payment_mode,\n        from_account_id: tblAdvancePreview.updatedRow.from_account_id || r.from_account_id,\n        bank_statement_entry_id: tblAdvancePreview.updatedRow.bank_statement_entry_id || r.bank_statement_entry_id\n      } \n    : r\n  ));\n}}\n",
+      "originalId": "bank_statement_entry_id",
+      "selectOptions": "{{(() => { const tableData = tblAdvancePreview.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( \n  getUnconsumedDebits.data.map(debit => ({ \n    label: `${debit.debit_amount} - ₹${debit.consumed_amount}`, \n    value: debit.id \n  })) \n)) :  \n  getUnconsumedDebits.data.map(debit => ({ \n    label: `${debit.debit_amount} - ₹${debit.consumed_amount}`, \n    value: debit.id \n  })) \n })()}}",
+      "sticky": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
+    "employee_code": {
+      "alias": "employee_code",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "columnType": "text",
+      "computedValue": "{{(() => { const tableData = tblAdvancePreview.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"employee_code\"])) : employee_code })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "horizontalAlignment": "LEFT",
+      "id": "employee_code",
+      "index": 2,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": true,
+      "label": "employee_code",
+      "notation": "standard",
+      "originalId": "employee_code",
+      "sticky": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
+    "from_account_id": {
+      "alias": "from_account_id",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "columnType": "select",
+      "computedValue": "{{(() => { const tableData = tblAdvancePreview.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( currentRow.from_account_id )) :  currentRow.from_account_id  })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "horizontalAlignment": "LEFT",
+      "id": "from_account_id",
+      "index": 5,
+      "isCellEditable": true,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": true,
+      "isSaveVisible": true,
+      "isVisible": true,
+      "label": "from_account_id",
+      "notation": "standard",
+      "onOptionChange": "{{\n  storeValue('bulkAdvances', (appsmith.store.bulkAdvances || []).map(r => \n    r.id === tblAdvancePreview.triggeredRow.id \n    ? { \n        ...r, \n        amount: Number(tblAdvancePreview.updatedRow.amount || r.amount),\n        payment_mode: tblAdvancePreview.updatedRow.payment_mode || r.payment_mode,\n        from_account_id: tblAdvancePreview.updatedRow.from_account_id || r.from_account_id,\n        bank_statement_entry_id: tblAdvancePreview.updatedRow.bank_statement_entry_id || r.bank_statement_entry_id\n      } \n    : r\n  ));\n}}\n",
+      "originalId": "from_account_id",
+      "selectOptions": "{{(() => { const tableData = tblAdvancePreview.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( \n  getAccounts.data.map(bank => ({ \n    label: bank.name, \n    value: bank.id \n  })) \n)) :  \n  getAccounts.data.map(bank => ({ \n    label: bank.name, \n    value: bank.id \n  })) \n })()}}",
+      "sticky": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
+    "full_name": {
+      "alias": "full_name",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "columnType": "text",
+      "computedValue": "{{(() => { const tableData = tblAdvancePreview.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"full_name\"])) : full_name })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "horizontalAlignment": "LEFT",
+      "id": "full_name",
+      "index": 1,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": true,
+      "label": "full_name",
+      "notation": "standard",
+      "originalId": "full_name",
+      "sticky": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
+    "id": {
+      "alias": "id",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "columnType": "text",
+      "computedValue": "{{(() => { const tableData = tblAdvancePreview.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"id\"])) : id })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "horizontalAlignment": "LEFT",
+      "id": "id",
+      "index": 0,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": false,
+      "label": "id",
+      "notation": "standard",
+      "originalId": "id",
+      "sticky": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
+    "payment_mode": {
+      "alias": "payment_mode",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "columnType": "select",
+      "computedValue": "{{(() => { const tableData = tblAdvancePreview.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"payment_mode\"])) : payment_mode })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "horizontalAlignment": "LEFT",
+      "id": "payment_mode",
+      "index": 4,
+      "isCellEditable": true,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": true,
+      "isSaveVisible": true,
+      "isVisible": true,
+      "label": "payment_mode",
+      "notation": "standard",
+      "onOptionChange": "{{\n  storeValue('bulkAdvances', (appsmith.store.bulkAdvances || []).map(r => \n    r.id === tblAdvancePreview.triggeredRow.id \n    ? { \n        ...r, \n        amount: Number(tblAdvancePreview.updatedRow.amount || r.amount),\n        payment_mode: tblAdvancePreview.updatedRow.payment_mode || r.payment_mode,\n        from_account_id: tblAdvancePreview.updatedRow.from_account_id || r.from_account_id,\n        bank_statement_entry_id: tblAdvancePreview.updatedRow.bank_statement_entry_id || r.bank_statement_entry_id\n      } \n    : r\n  ));\n}}\n",
+      "originalId": "payment_mode",
+      "selectOptions": "{{(() => { const tableData = tblAdvancePreview.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( [{label: \"Cash\", value: \"Cash\"}, {label: \"Online\", value: \"Online\"}] )) :  [{label: \"Cash\", value: \"Cash\"}, {label: \"Online\", value: \"Online\"}]  })()}}",
+      "sticky": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    }
+  },
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 64,
+  "searchKey": "",
+  "showInlineEditingOptionDropdown": true,
+  "tableData": "{{appsmith.store.bulkAdvances}}",
+  "textSize": "0.875rem",
+  "topRow": 13,
+  "totalRecordsCount": 0,
+  "type": "TABLE_WIDGET_V2",
+  "version": 2,
+  "verticalAlignment": "CENTER",
+  "widgetId": "z6qxjc6zrl",
+  "widgetName": "tblAdvancePreview"
+}

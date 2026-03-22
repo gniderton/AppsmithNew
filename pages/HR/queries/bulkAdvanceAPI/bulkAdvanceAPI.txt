@@ -1,0 +1,6 @@
+{
+  "advance_date": {{ datAdvanceDate.selectedDate }},
+  "remarks": {{ txtAdvanceRemarks.text }},
+  "user_id": {{getMe.data.id}},
+  "advances": {{ AdvanceUtils.getPayload() }}
+}
