@@ -1,0 +1,23 @@
+{
+  "transfer_date": {{ JSONFormTransfer.formData.Basic_Details.transfer_date }},
+  "from_account_id": {{ JSONFormTransfer.formData.Source_Account.from_account_id }},
+  "to_account_id": {{ JSONFormTransfer.formData.Destination_Account.to_account_id }},
+  "amount": {{ Number(JSONFormTransfer.formData.Basic_Details.amount) }},
+  "payment_mode": {{ 
+    (JSONFormTransfer.formData.Source_Account.from_account_id == 1 && 
+     JSONFormTransfer.formData.Destination_Account.to_account_id == 1) ? 'Cash' : 'Online' 
+  }},
+  "reference_no": {{ JSONFormTransfer.formData.Notes.reference_no }},
+  "remarks": {{ JSONFormTransfer.formData.Notes.remarks }},
+  
+  /* CRITICAL FOR AUDIT VIEW */
+  "from_bank_statement_entry_id": {{ JSONFormTransfer.formData.Source_Account.from_bank_statement_entry_id }},
+  "to_bank_statement_entry_id": {{ JSONFormTransfer.formData.Destination_Account.to_bank_statement_entry_id }},
+  
+  "denominations": {{ 
+    (JSONFormTransfer.formData.Source_Account.from_account_id == 1 || 
+     JSONFormTransfer.formData.Destination_Account.to_account_id == 1) 
+    ? DenomUtils.getApiObject() 
+    : null 
+  }}
+}

@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "69a80abb79ac426a29eb8838_2f743d13-81b2-486d-9658-ef6d8d77de6e",
+  "id": "Transactions_InternalTransfer",
+  "unpublishedCollection": {
+    "name": "InternalTransfer",
+    "pageId": "Transactions",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}

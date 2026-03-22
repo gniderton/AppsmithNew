@@ -1,0 +1,639 @@
+{
+  "animateLoading": true,
+  "autoGenerateForm": true,
+  "backgroundColor": "#fff",
+  "borderColor": "#E0DEDE",
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "borderWidth": "1",
+  "bottomRow": 100,
+  "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+  "childStylesheet": {
+    "ARRAY": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none",
+      "cellBorderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "cellBoxShadow": "none"
+    },
+    "CHECKBOX": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}"
+    },
+    "CURRENCY_INPUT": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none"
+    },
+    "DATEPICKER": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none"
+    },
+    "EMAIL_INPUT": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none"
+    },
+    "MULTILINE_TEXT_INPUT": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none"
+    },
+    "MULTISELECT": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none"
+    },
+    "NUMBER_INPUT": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none"
+    },
+    "OBJECT": {
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none",
+      "cellBorderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "cellBoxShadow": "none"
+    },
+    "PASSWORD_INPUT": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none"
+    },
+    "PHONE_NUMBER_INPUT": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none"
+    },
+    "RADIO_GROUP": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "boxShadow": "none"
+    },
+    "SELECT": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none"
+    },
+    "SWITCH": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "boxShadow": "none"
+    },
+    "TEXT_INPUT": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none"
+    }
+  },
+  "disabledWhenInvalid": true,
+  "dynamicBindingPathList": [
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "boxShadow"
+    },
+    {
+      "key": "submitButtonStyles.buttonColor"
+    },
+    {
+      "key": "submitButtonStyles.borderRadius"
+    },
+    {
+      "key": "resetButtonStyles.buttonColor"
+    },
+    {
+      "key": "resetButtonStyles.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.cellBorderRadius"
+    },
+    {
+      "key": "sourceData"
+    },
+    {
+      "key": "schema.__root_schema__.children.Basic_Details.children.transfer_date.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.Basic_Details.children.transfer_date.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.Basic_Details.children.transfer_date.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.Basic_Details.children.amount.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.Basic_Details.children.amount.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.Basic_Details.children.amount.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.Basic_Details.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.Basic_Details.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.Basic_Details.cellBorderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.Source_Account.children.from_account_id.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.Source_Account.children.from_account_id.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.Source_Account.children.from_account_id.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.Source_Account.children.from_bank_statement_entry_id.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.Source_Account.children.from_bank_statement_entry_id.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.Source_Account.children.from_bank_statement_entry_id.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.Source_Account.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.Source_Account.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.Source_Account.cellBorderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.Destination_Account.children.to_account_id.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.Destination_Account.children.to_account_id.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.Destination_Account.children.to_account_id.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.Destination_Account.children.to_bank_statement_entry_id.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.Destination_Account.children.to_bank_statement_entry_id.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.Destination_Account.children.to_bank_statement_entry_id.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.Destination_Account.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.Destination_Account.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.Destination_Account.cellBorderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.Notes.children.reference_no.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.Notes.children.reference_no.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.Notes.children.reference_no.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.Notes.children.remarks.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.Notes.children.remarks.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.Notes.children.remarks.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.Notes.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.Notes.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.Notes.cellBorderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.Source_Account.children.from_account_id.options"
+    },
+    {
+      "key": "schema.__root_schema__.children.Destination_Account.children.to_account_id.options"
+    },
+    {
+      "key": "schema.__root_schema__.children.Source_Account.children.from_bank_statement_entry_id.options"
+    },
+    {
+      "key": "schema.__root_schema__.children.Destination_Account.children.to_bank_statement_entry_id.options"
+    },
+    {
+      "key": "schema.__root_schema__.children.Source_Account.children.from_bank_statement_entry_id.isVisible"
+    },
+    {
+      "key": "schema.__root_schema__.children.Destination_Account.children.to_bank_statement_entry_id.isVisible"
+    }
+  ],
+  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicPropertyPathList": [
+    {
+      "key": "schema.__root_schema__.children.Source_Account.children.from_bank_statement_entry_id.isVisible"
+    },
+    {
+      "key": "sourceData"
+    },
+    {
+      "key": "schema.__root_schema__.children.Destination_Account.children.to_bank_statement_entry_id.isVisible"
+    },
+    {
+      "key": "schema.__root_schema__.children.Source_Account.isVisible"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onSubmit"
+    }
+  ],
+  "fieldLimitExceeded": false,
+  "fixedFooter": true,
+  "flexVerticalAlignment": "start",
+  "isLoading": false,
+  "isVisible": true,
+  "key": "87gezwa25a",
+  "leftColumn": 0,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 47,
+  "mobileLeftColumn": 0,
+  "mobileRightColumn": 22,
+  "mobileTopRow": 6,
+  "needsErrorInfo": false,
+  "onSubmit": "{{DenomUtils.handleTransfer();}}",
+  "originalBottomRow": 108,
+  "originalTopRow": 6,
+  "parentColumnSpace": 6.9375,
+  "parentId": "wi68ey436w",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "resetButtonLabel": "Reset",
+  "resetButtonStyles": {
+    "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+    "boxShadow": "none",
+    "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+    "buttonVariant": "SECONDARY"
+  },
+  "responsiveBehavior": "fill",
+  "rightColumn": 33,
+  "schema": {
+    "__root_schema__": {
+      "accessor": "__root_schema__",
+      "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONFormTransfer.sourceData, JSONFormTransfer.formData, JSONFormTransfer.fieldState)}}",
+      "boxShadow": "none",
+      "cellBorderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONFormTransfer.sourceData, JSONFormTransfer.formData, JSONFormTransfer.fieldState)}}",
+      "cellBoxShadow": "none",
+      "children": {
+        "Basic_Details": {
+          "accessor": "Basic_Details",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONFormTransfer.sourceData, JSONFormTransfer.formData, JSONFormTransfer.fieldState)}}",
+          "boxShadow": "none",
+          "cellBorderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONFormTransfer.sourceData, JSONFormTransfer.formData, JSONFormTransfer.fieldState)}}",
+          "cellBoxShadow": "none",
+          "children": {
+            "amount": {
+              "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(JSONFormTransfer.sourceData, JSONFormTransfer.formData, JSONFormTransfer.fieldState)}}",
+              "accessor": "amount",
+              "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONFormTransfer.sourceData, JSONFormTransfer.formData, JSONFormTransfer.fieldState)}}",
+              "boxShadow": "none",
+              "children": {},
+              "dataType": "number",
+              "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.Basic_Details.amount))(JSONFormTransfer.sourceData, JSONFormTransfer.formData, JSONFormTransfer.fieldState)}}",
+              "fieldType": "Number Input",
+              "iconAlign": "left",
+              "identifier": "amount",
+              "isCustomField": false,
+              "isDisabled": false,
+              "isRequired": false,
+              "isSpellCheck": false,
+              "isVisible": true,
+              "label": "Amount",
+              "labelTextSize": "0.875rem",
+              "originalIdentifier": "amount",
+              "position": 1,
+              "sourceData": 0
+            },
+            "transfer_date": {
+              "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(JSONFormTransfer.sourceData, JSONFormTransfer.formData, JSONFormTransfer.fieldState)}}",
+              "accessor": "transfer_date",
+              "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONFormTransfer.sourceData, JSONFormTransfer.formData, JSONFormTransfer.fieldState)}}",
+              "boxShadow": "none",
+              "children": {},
+              "closeOnSelection": false,
+              "convertToISO": false,
+              "dataType": "string",
+              "dateFormat": "YYYY-MM-DD",
+              "defaultValue": "{{((sourceData, formData, fieldState) => (moment(sourceData.Basic_Details.transfer_date, \"YYYY-MM-DD\").format(\"YYYY-MM-DDTHH:mm:ss.sssZ\")))(JSONFormTransfer.sourceData, JSONFormTransfer.formData, JSONFormTransfer.fieldState)}}",
+              "fieldType": "Datepicker",
+              "identifier": "transfer_date",
+              "isCustomField": false,
+              "isDisabled": false,
+              "isRequired": false,
+              "isVisible": true,
+              "label": "Transfer Date",
+              "labelTextSize": "0.875rem",
+              "maxDate": "2121-12-31T18:29:00.000Z",
+              "minDate": "1920-12-31T18:30:00.000Z",
+              "originalIdentifier": "transfer_date",
+              "position": 0,
+              "shortcuts": false,
+              "sourceData": "2026-03-22",
+              "timePrecision": "minute"
+            }
+          },
+          "dataType": "object",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.Basic_Details))(JSONFormTransfer.sourceData, JSONFormTransfer.formData, JSONFormTransfer.fieldState)}}",
+          "fieldType": "Object",
+          "identifier": "Basic_Details",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isVisible": true,
+          "label": "Basic Details",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "Basic_Details",
+          "position": 0,
+          "sourceData": {
+            "amount": 0,
+            "transfer_date": "2026-03-22"
+          }
+        },
+        "Destination_Account": {
+          "accessor": "Destination_Account",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONFormTransfer.sourceData, JSONFormTransfer.formData, JSONFormTransfer.fieldState)}}",
+          "boxShadow": "none",
+          "cellBorderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONFormTransfer.sourceData, JSONFormTransfer.formData, JSONFormTransfer.fieldState)}}",
+          "cellBoxShadow": "none",
+          "children": {
+            "to_account_id": {
+              "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(JSONFormTransfer.sourceData, JSONFormTransfer.formData, JSONFormTransfer.fieldState)}}",
+              "accessor": "to_account_id",
+              "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONFormTransfer.sourceData, JSONFormTransfer.formData, JSONFormTransfer.fieldState)}}",
+              "boxShadow": "none",
+              "children": {},
+              "dataType": "string",
+              "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.Destination_Account.to_account_id))(JSONFormTransfer.sourceData, JSONFormTransfer.formData, JSONFormTransfer.fieldState)}}",
+              "fieldType": "Select",
+              "identifier": "to_account_id",
+              "isCustomField": false,
+              "isDisabled": false,
+              "isFilterable": false,
+              "isRequired": false,
+              "isVisible": true,
+              "label": "To Account Id",
+              "labelTextSize": "0.875rem",
+              "options": "{{getBanks.data.map(a => ({label: a.name, value: a.id}))}}",
+              "originalIdentifier": "to_account_id",
+              "position": 0,
+              "serverSideFiltering": false,
+              "sourceData": ""
+            },
+            "to_bank_statement_entry_id": {
+              "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(JSONFormTransfer.sourceData, JSONFormTransfer.formData, JSONFormTransfer.fieldState)}}",
+              "accessor": "to_bank_statement_entry_id",
+              "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONFormTransfer.sourceData, JSONFormTransfer.formData, JSONFormTransfer.fieldState)}}",
+              "boxShadow": "none",
+              "children": {},
+              "dataType": "null",
+              "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.Destination_Account.to_bank_statement_entry_id))(JSONFormTransfer.sourceData, JSONFormTransfer.formData, JSONFormTransfer.fieldState)}}",
+              "fieldType": "Select",
+              "identifier": "to_bank_statement_entry_id",
+              "isCustomField": false,
+              "isDisabled": false,
+              "isFilterable": false,
+              "isRequired": false,
+              "isVisible": "{{((sourceData, formData, fieldState) => ( JSONFormTransfer.formData.Destination_Account?.to_account_id != 1 ))(JSONFormTransfer.sourceData, JSONFormTransfer.formData, JSONFormTransfer.fieldState)}}",
+              "label": "To Bank Statement Entry Id",
+              "labelTextSize": "0.875rem",
+              "options": "{{ \n  getUnconsumedCredits.data.map(credit => ({ \n    label: `${credit.credit_amount} - ₹${credit.consumed_amount}`, \n    value: credit.id \n  })) \n}}",
+              "originalIdentifier": "to_bank_statement_entry_id",
+              "position": 1,
+              "serverSideFiltering": false
+            }
+          },
+          "dataType": "object",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.Destination_Account))(JSONFormTransfer.sourceData, JSONFormTransfer.formData, JSONFormTransfer.fieldState)}}",
+          "fieldType": "Object",
+          "identifier": "Destination_Account",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isVisible": true,
+          "label": "Destination Account",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "Destination_Account",
+          "position": 2,
+          "sourceData": {
+            "to_account_id": ""
+          }
+        },
+        "Notes": {
+          "accessor": "Notes",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONFormTransfer.sourceData, JSONFormTransfer.formData, JSONFormTransfer.fieldState)}}",
+          "boxShadow": "none",
+          "cellBorderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONFormTransfer.sourceData, JSONFormTransfer.formData, JSONFormTransfer.fieldState)}}",
+          "cellBoxShadow": "none",
+          "children": {
+            "reference_no": {
+              "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(JSONFormTransfer.sourceData, JSONFormTransfer.formData, JSONFormTransfer.fieldState)}}",
+              "accessor": "reference_no",
+              "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONFormTransfer.sourceData, JSONFormTransfer.formData, JSONFormTransfer.fieldState)}}",
+              "boxShadow": "none",
+              "children": {},
+              "dataType": "string",
+              "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.Notes.reference_no))(JSONFormTransfer.sourceData, JSONFormTransfer.formData, JSONFormTransfer.fieldState)}}",
+              "fieldType": "Text Input",
+              "iconAlign": "left",
+              "identifier": "reference_no",
+              "isCustomField": false,
+              "isDisabled": false,
+              "isRequired": false,
+              "isSpellCheck": false,
+              "isVisible": true,
+              "label": "Reference No",
+              "labelTextSize": "0.875rem",
+              "originalIdentifier": "reference_no",
+              "position": 0,
+              "sourceData": ""
+            },
+            "remarks": {
+              "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(JSONFormTransfer.sourceData, JSONFormTransfer.formData, JSONFormTransfer.fieldState)}}",
+              "accessor": "remarks",
+              "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONFormTransfer.sourceData, JSONFormTransfer.formData, JSONFormTransfer.fieldState)}}",
+              "boxShadow": "none",
+              "children": {},
+              "dataType": "string",
+              "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.Notes.remarks))(JSONFormTransfer.sourceData, JSONFormTransfer.formData, JSONFormTransfer.fieldState)}}",
+              "fieldType": "Text Input",
+              "iconAlign": "left",
+              "identifier": "remarks",
+              "isCustomField": false,
+              "isDisabled": false,
+              "isRequired": false,
+              "isSpellCheck": false,
+              "isVisible": true,
+              "label": "Remarks",
+              "labelTextSize": "0.875rem",
+              "originalIdentifier": "remarks",
+              "position": 1,
+              "sourceData": ""
+            }
+          },
+          "dataType": "object",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.Notes))(JSONFormTransfer.sourceData, JSONFormTransfer.formData, JSONFormTransfer.fieldState)}}",
+          "fieldType": "Object",
+          "identifier": "Notes",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isVisible": true,
+          "label": "Notes",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "Notes",
+          "position": 3,
+          "sourceData": {
+            "reference_no": "",
+            "remarks": ""
+          }
+        },
+        "Source_Account": {
+          "accessor": "Source_Account",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONFormTransfer.sourceData, JSONFormTransfer.formData, JSONFormTransfer.fieldState)}}",
+          "boxShadow": "none",
+          "cellBorderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONFormTransfer.sourceData, JSONFormTransfer.formData, JSONFormTransfer.fieldState)}}",
+          "cellBoxShadow": "none",
+          "children": {
+            "from_account_id": {
+              "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(JSONFormTransfer.sourceData, JSONFormTransfer.formData, JSONFormTransfer.fieldState)}}",
+              "accessor": "from_account_id",
+              "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONFormTransfer.sourceData, JSONFormTransfer.formData, JSONFormTransfer.fieldState)}}",
+              "boxShadow": "none",
+              "children": {},
+              "dataType": "string",
+              "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.Source_Account.from_account_id))(JSONFormTransfer.sourceData, JSONFormTransfer.formData, JSONFormTransfer.fieldState)}}",
+              "fieldType": "Select",
+              "identifier": "from_account_id",
+              "isCustomField": false,
+              "isDisabled": false,
+              "isFilterable": false,
+              "isRequired": false,
+              "isVisible": true,
+              "label": "From Account Id",
+              "labelTextSize": "0.875rem",
+              "options": "{{getBanks.data.map(a => ({label: a.name, value: a.id}))}}",
+              "originalIdentifier": "from_account_id",
+              "position": 0,
+              "serverSideFiltering": false,
+              "sourceData": ""
+            },
+            "from_bank_statement_entry_id": {
+              "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(JSONFormTransfer.sourceData, JSONFormTransfer.formData, JSONFormTransfer.fieldState)}}",
+              "accessor": "from_bank_statement_entry_id",
+              "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONFormTransfer.sourceData, JSONFormTransfer.formData, JSONFormTransfer.fieldState)}}",
+              "boxShadow": "none",
+              "children": {},
+              "dataType": "null",
+              "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.Source_Account.from_bank_statement_entry_id))(JSONFormTransfer.sourceData, JSONFormTransfer.formData, JSONFormTransfer.fieldState)}}",
+              "fieldType": "Select",
+              "identifier": "from_bank_statement_entry_id",
+              "isCustomField": false,
+              "isDisabled": false,
+              "isFilterable": false,
+              "isRequired": false,
+              "isVisible": "{{((sourceData, formData, fieldState) => ( JSONFormTransfer.formData.Source_Account?.from_account_id != 1 ))(JSONFormTransfer.sourceData, JSONFormTransfer.formData, JSONFormTransfer.fieldState)}}",
+              "label": "From Bank Statement Entry Id",
+              "labelTextSize": "0.875rem",
+              "options": "{{ \n  getUnconsumedDebits.data.map(debit => ({ \n    label: `${debit.debit_amount} - ₹${debit.consumed_amount}`, \n    value: debit.id \n  })) \n}}",
+              "originalIdentifier": "from_bank_statement_entry_id",
+              "position": 1,
+              "serverSideFiltering": false
+            }
+          },
+          "dataType": "object",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.Source_Account))(JSONFormTransfer.sourceData, JSONFormTransfer.formData, JSONFormTransfer.fieldState)}}",
+          "fieldType": "Object",
+          "identifier": "Source_Account",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isVisible": "true",
+          "label": "Source Account",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "Source_Account",
+          "position": 1,
+          "sourceData": {
+            "from_account_id": ""
+          }
+        }
+      },
+      "dataType": "object",
+      "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData))(JSONFormTransfer.sourceData, JSONFormTransfer.formData, JSONFormTransfer.fieldState)}}",
+      "fieldType": "Object",
+      "identifier": "__root_schema__",
+      "isCustomField": false,
+      "isDisabled": false,
+      "isRequired": false,
+      "isVisible": true,
+      "label": "",
+      "labelTextSize": "0.875rem",
+      "originalIdentifier": "__root_schema__",
+      "position": -1,
+      "sourceData": {
+        "amount": 0,
+        "denominations": {
+          "1": 0,
+          "10": 0,
+          "100": 0,
+          "1000": 0,
+          "2": 0,
+          "20": 0,
+          "200": 0,
+          "2000": 0,
+          "5": 0,
+          "50": 0,
+          "500": 0
+        },
+        "from_account_id": "",
+        "reference_no": "",
+        "remarks": "",
+        "to_account_id": "",
+        "transfer_date": "2026-03-22"
+      }
+    }
+  },
+  "scrollContents": true,
+  "showReset": true,
+  "sourceData": "{\n  \"Basic_Details\": {\n    \"transfer_date\": \"{{moment().format('YYYY-MM-DD')}}\",\n    \"amount\": 0\n  },\n  \"Source_Account\": {\n    \"from_account_id\": \"\",\n    \"from_bank_statement_entry_id\": null\n  },\n  \"Destination_Account\": {\n    \"to_account_id\": \"\",\n    \"to_bank_statement_entry_id\": null\n  },\n  \"Notes\": {\n    \"reference_no\": \"\",\n    \"remarks\": \"\"\n  }\n}\n",
+  "submitButtonLabel": "Submit",
+  "submitButtonStyles": {
+    "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+    "boxShadow": "none",
+    "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+    "buttonVariant": "PRIMARY"
+  },
+  "title": "",
+  "topRow": 6,
+  "type": "JSON_FORM_WIDGET",
+  "useSourceData": false,
+  "version": 1,
+  "widgetId": "elusm8azqm",
+  "widgetName": "JSONFormTransfer"
+}

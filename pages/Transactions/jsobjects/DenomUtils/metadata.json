@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "69a80abb79ac426a29eb8838_3295920a-d6f6-4d73-81d0-1a970688c1b1",
+  "id": "Transactions_DenomUtils",
+  "unpublishedCollection": {
+    "name": "DenomUtils",
+    "pageId": "Transactions",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}
