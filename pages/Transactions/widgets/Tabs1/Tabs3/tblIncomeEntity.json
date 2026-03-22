@@ -43,10 +43,13 @@
     "updated_at",
     "bank_name",
     "account_no",
-    "ifsc_code"
+    "ifsc_code",
+    "customColumn1"
   ],
-  "columnUpdatedAt": 1774109422201,
-  "columnWidthMap": {},
+  "columnUpdatedAt": 1774158076626,
+  "columnWidthMap": {
+    "address": 530
+  },
   "customIsLoading": false,
   "customIsLoadingValue": "",
   "defaultPageSize": 0,
@@ -103,6 +106,15 @@
     },
     {
       "key": "primaryColumns.ifsc_code.computedValue"
+    },
+    {
+      "key": "primaryColumns.customColumn1.buttonColor"
+    },
+    {
+      "key": "primaryColumns.customColumn1.borderRadius"
+    },
+    {
+      "key": "primaryColumns.customColumn1.boxShadow"
     }
   ],
   "dynamicPropertyPathList": [
@@ -110,7 +122,11 @@
       "key": "tableData"
     }
   ],
-  "dynamicTriggerPathList": [],
+  "dynamicTriggerPathList": [
+    {
+      "key": "primaryColumns.customColumn1.onClick"
+    }
+  ],
   "enableClientSideSearch": true,
   "endOfData": false,
   "flexVerticalAlignment": "start",
@@ -141,7 +157,7 @@
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
       "columnType": "text",
-      "computedValue": "{{(() => { const tableData = Table3.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"account_no\"])) : account_no })()}}",
+      "computedValue": "{{(() => { const tableData = tblIncomeEntity.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"account_no\"])) : account_no })()}}",
       "currencyCode": "USD",
       "decimals": 0,
       "enableFilter": true,
@@ -172,7 +188,7 @@
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
       "columnType": "text",
-      "computedValue": "{{(() => { const tableData = Table3.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"address\"])) : address })()}}",
+      "computedValue": "{{(() => { const tableData = tblIncomeEntity.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"address\"])) : address })()}}",
       "currencyCode": "USD",
       "decimals": 0,
       "enableFilter": true,
@@ -203,7 +219,7 @@
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
       "columnType": "text",
-      "computedValue": "{{(() => { const tableData = Table3.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"bank_name\"])) : bank_name })()}}",
+      "computedValue": "{{(() => { const tableData = tblIncomeEntity.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"bank_name\"])) : bank_name })()}}",
       "currencyCode": "USD",
       "decimals": 0,
       "enableFilter": true,
@@ -234,7 +250,7 @@
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
       "columnType": "date",
-      "computedValue": "{{(() => { const tableData = Table3.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"created_at\"])) : created_at })()}}",
+      "computedValue": "{{(() => { const tableData = tblIncomeEntity.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"created_at\"])) : created_at })()}}",
       "currencyCode": "USD",
       "decimals": 0,
       "enableFilter": true,
@@ -260,12 +276,52 @@
       "verticalAlignment": "CENTER",
       "width": 150
     },
+    "customColumn1": {
+      "alias": "View",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "borderRadius": "{{tblIncomeEntity.processedTableData.map((currentRow, currentIndex) => ( (appsmith.theme.borderRadius.appBorderRadius)))}}",
+      "boxShadow": "{{tblIncomeEntity.processedTableData.map((currentRow, currentIndex) => ( \"none\"))}}",
+      "buttonColor": "{{tblIncomeEntity.processedTableData.map((currentRow, currentIndex) => ( (appsmith.theme.colors.primaryColor)))}}",
+      "buttonStyle": "rgb(3, 179, 101)",
+      "buttonVariant": "TERTIARY",
+      "columnType": "iconButton",
+      "computedValue": "",
+      "currencyCode": "USD",
+      "customAlias": "",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "horizontalAlignment": "LEFT",
+      "iconName": "eye-open",
+      "id": "customColumn1",
+      "index": 10,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": true,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": true,
+      "label": "View",
+      "labelColor": "#FFFFFF",
+      "notation": "standard",
+      "onClick": "{{showModal(ModalIncomeLedger.name);}}",
+      "originalId": "customColumn1",
+      "sticky": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
     "email": {
       "alias": "email",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
       "columnType": "text",
-      "computedValue": "{{(() => { const tableData = Table3.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"email\"])) : email })()}}",
+      "computedValue": "{{(() => { const tableData = tblIncomeEntity.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"email\"])) : email })()}}",
       "currencyCode": "USD",
       "decimals": 0,
       "enableFilter": true,
@@ -296,7 +352,7 @@
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
       "columnType": "text",
-      "computedValue": "{{(() => { const tableData = Table3.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"gst_no\"])) : gst_no })()}}",
+      "computedValue": "{{(() => { const tableData = tblIncomeEntity.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"gst_no\"])) : gst_no })()}}",
       "currencyCode": "USD",
       "decimals": 0,
       "enableFilter": true,
@@ -327,7 +383,7 @@
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
       "columnType": "text",
-      "computedValue": "{{(() => { const tableData = Table3.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"id\"])) : id })()}}",
+      "computedValue": "{{(() => { const tableData = tblIncomeEntity.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"id\"])) : id })()}}",
       "currencyCode": "USD",
       "decimals": 0,
       "enableFilter": true,
@@ -358,7 +414,7 @@
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
       "columnType": "text",
-      "computedValue": "{{(() => { const tableData = Table3.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"ifsc_code\"])) : ifsc_code })()}}",
+      "computedValue": "{{(() => { const tableData = tblIncomeEntity.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"ifsc_code\"])) : ifsc_code })()}}",
       "currencyCode": "USD",
       "decimals": 0,
       "enableFilter": true,
@@ -389,7 +445,7 @@
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
       "columnType": "checkbox",
-      "computedValue": "{{(() => { const tableData = Table3.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"is_active\"])) : is_active })()}}",
+      "computedValue": "{{(() => { const tableData = tblIncomeEntity.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"is_active\"])) : is_active })()}}",
       "currencyCode": "USD",
       "decimals": 0,
       "enableFilter": true,
@@ -420,7 +476,7 @@
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
       "columnType": "text",
-      "computedValue": "{{(() => { const tableData = Table3.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"name\"])) : name })()}}",
+      "computedValue": "{{(() => { const tableData = tblIncomeEntity.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"name\"])) : name })()}}",
       "currencyCode": "USD",
       "decimals": 0,
       "enableFilter": true,
@@ -451,7 +507,7 @@
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
       "columnType": "text",
-      "computedValue": "{{(() => { const tableData = Table3.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"phone\"])) : phone })()}}",
+      "computedValue": "{{(() => { const tableData = tblIncomeEntity.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"phone\"])) : phone })()}}",
       "currencyCode": "USD",
       "decimals": 0,
       "enableFilter": true,
@@ -482,7 +538,7 @@
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
       "columnType": "date",
-      "computedValue": "{{(() => { const tableData = Table3.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"updated_at\"])) : updated_at })()}}",
+      "computedValue": "{{(() => { const tableData = tblIncomeEntity.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"updated_at\"])) : updated_at })()}}",
       "currencyCode": "USD",
       "decimals": 0,
       "enableFilter": true,
@@ -521,5 +577,5 @@
   "version": 2,
   "verticalAlignment": "CENTER",
   "widgetId": "ply5t0ufaf",
-  "widgetName": "Table3"
+  "widgetName": "tblIncomeEntity"
 }

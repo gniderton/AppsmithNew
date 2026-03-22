@@ -1,0 +1,6 @@
+{
+  "new_salary": {{ Number(JSONFormUpdateSalary.formData.new_salary) }},
+  "reason": {{ JSONFormUpdateSalary.formData.reason }},
+  "effective_date": {{ JSONFormUpdateSalary.formData.effective_date }},
+  "user_id": {{getMe.data.id}}
+}

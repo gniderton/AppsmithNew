@@ -1,0 +1,742 @@
+{
+  "animateLoading": true,
+  "autoGenerateForm": true,
+  "backgroundColor": "#fff",
+  "borderColor": "#E0DEDE",
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "borderWidth": "1",
+  "bottomRow": 137,
+  "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+  "childStylesheet": {
+    "ARRAY": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none",
+      "cellBorderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "cellBoxShadow": "none"
+    },
+    "CHECKBOX": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}"
+    },
+    "CURRENCY_INPUT": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none"
+    },
+    "DATEPICKER": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none"
+    },
+    "EMAIL_INPUT": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none"
+    },
+    "MULTILINE_TEXT_INPUT": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none"
+    },
+    "MULTISELECT": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none"
+    },
+    "NUMBER_INPUT": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none"
+    },
+    "OBJECT": {
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none",
+      "cellBorderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "cellBoxShadow": "none"
+    },
+    "PASSWORD_INPUT": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none"
+    },
+    "PHONE_NUMBER_INPUT": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none"
+    },
+    "RADIO_GROUP": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "boxShadow": "none"
+    },
+    "SELECT": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none"
+    },
+    "SWITCH": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "boxShadow": "none"
+    },
+    "TEXT_INPUT": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none"
+    }
+  },
+  "disabledWhenInvalid": true,
+  "dynamicBindingPathList": [
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "boxShadow"
+    },
+    {
+      "key": "submitButtonStyles.buttonColor"
+    },
+    {
+      "key": "submitButtonStyles.borderRadius"
+    },
+    {
+      "key": "resetButtonStyles.buttonColor"
+    },
+    {
+      "key": "resetButtonStyles.borderRadius"
+    },
+    {
+      "key": "sourceData"
+    },
+    {
+      "key": "schema.__root_schema__.children.full_name.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.full_name.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.full_name.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.designation_id.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.designation_id.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.designation_id.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.email.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.email.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.email.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.contact_primary.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.contact_primary.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.contact_primary.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.contact_secondary.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.contact_secondary.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.contact_secondary.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.gender.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.gender.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.gender.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.joining_date.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.joining_date.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.joining_date.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.salary.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.salary.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.salary.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.address.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.address.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.address.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.identity.children.aadhar_no.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.identity.children.aadhar_no.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.identity.children.aadhar_no.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.identity.children.license_no.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.identity.children.license_no.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.identity.children.license_no.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.identity.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.identity.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.identity.cellBorderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.bank_details.children.bank_name.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.bank_details.children.bank_name.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.bank_details.children.bank_name.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.bank_details.children.account_no.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.bank_details.children.account_no.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.bank_details.children.account_no.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.bank_details.children.ifsc_code.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.bank_details.children.ifsc_code.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.bank_details.children.ifsc_code.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.bank_details.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.bank_details.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.bank_details.cellBorderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.cellBorderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.designation_id.options"
+    },
+    {
+      "key": "schema.__root_schema__.children.bank_details.children.bank_name.options"
+    }
+  ],
+  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicPropertyPathList": [
+    {
+      "key": "sourceData"
+    },
+    {
+      "key": "schema.__root_schema__.children.joining_date.defaultValue"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onSubmit"
+    }
+  ],
+  "fieldLimitExceeded": false,
+  "fixedFooter": true,
+  "flexVerticalAlignment": "start",
+  "isLoading": false,
+  "isVisible": true,
+  "key": "55v63q1y3a",
+  "leftColumn": 0,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 47,
+  "mobileLeftColumn": 0,
+  "mobileRightColumn": 25,
+  "mobileTopRow": 6,
+  "needsErrorInfo": false,
+  "onSubmit": "{{Utils.saveEmployee();}}",
+  "originalBottomRow": 137,
+  "originalTopRow": 5,
+  "parentColumnSpace": 6.9375,
+  "parentId": "3in9gyubsr",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "resetButtonLabel": "Reset",
+  "resetButtonStyles": {
+    "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+    "boxShadow": "none",
+    "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+    "buttonVariant": "SECONDARY"
+  },
+  "responsiveBehavior": "fill",
+  "rightColumn": 63,
+  "schema": {
+    "__root_schema__": {
+      "accessor": "__root_schema__",
+      "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONFormCreateEmployee.sourceData, JSONFormCreateEmployee.formData, JSONFormCreateEmployee.fieldState)}}",
+      "boxShadow": "none",
+      "cellBorderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONFormCreateEmployee.sourceData, JSONFormCreateEmployee.formData, JSONFormCreateEmployee.fieldState)}}",
+      "cellBoxShadow": "none",
+      "children": {
+        "address": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(JSONFormCreateEmployee.sourceData, JSONFormCreateEmployee.formData, JSONFormCreateEmployee.fieldState)}}",
+          "accessor": "address",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONFormCreateEmployee.sourceData, JSONFormCreateEmployee.formData, JSONFormCreateEmployee.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "string",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.address))(JSONFormCreateEmployee.sourceData, JSONFormCreateEmployee.formData, JSONFormCreateEmployee.fieldState)}}",
+          "fieldType": "Text Input",
+          "iconAlign": "left",
+          "identifier": "address",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isSpellCheck": false,
+          "isVisible": true,
+          "label": "Address",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "address",
+          "position": 8,
+          "sourceData": ""
+        },
+        "bank_details": {
+          "accessor": "bank_details",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONFormCreateEmployee.sourceData, JSONFormCreateEmployee.formData, JSONFormCreateEmployee.fieldState)}}",
+          "boxShadow": "none",
+          "cellBorderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONFormCreateEmployee.sourceData, JSONFormCreateEmployee.formData, JSONFormCreateEmployee.fieldState)}}",
+          "cellBoxShadow": "none",
+          "children": {
+            "account_no": {
+              "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(JSONFormCreateEmployee.sourceData, JSONFormCreateEmployee.formData, JSONFormCreateEmployee.fieldState)}}",
+              "accessor": "account_no",
+              "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONFormCreateEmployee.sourceData, JSONFormCreateEmployee.formData, JSONFormCreateEmployee.fieldState)}}",
+              "boxShadow": "none",
+              "children": {},
+              "dataType": "string",
+              "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.bank_details.account_no))(JSONFormCreateEmployee.sourceData, JSONFormCreateEmployee.formData, JSONFormCreateEmployee.fieldState)}}",
+              "fieldType": "Text Input",
+              "iconAlign": "left",
+              "identifier": "account_no",
+              "isCustomField": false,
+              "isDisabled": false,
+              "isRequired": false,
+              "isSpellCheck": false,
+              "isVisible": true,
+              "label": "Account No",
+              "labelTextSize": "0.875rem",
+              "originalIdentifier": "account_no",
+              "position": 1,
+              "sourceData": ""
+            },
+            "bank_name": {
+              "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(JSONFormCreateEmployee.sourceData, JSONFormCreateEmployee.formData, JSONFormCreateEmployee.fieldState)}}",
+              "accessor": "bank_name",
+              "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONFormCreateEmployee.sourceData, JSONFormCreateEmployee.formData, JSONFormCreateEmployee.fieldState)}}",
+              "boxShadow": "none",
+              "children": {},
+              "dataType": "string",
+              "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.bank_details.bank_name))(JSONFormCreateEmployee.sourceData, JSONFormCreateEmployee.formData, JSONFormCreateEmployee.fieldState)}}",
+              "fieldType": "Select",
+              "identifier": "bank_name",
+              "isCustomField": false,
+              "isDisabled": false,
+              "isFilterable": false,
+              "isRequired": false,
+              "isVisible": true,
+              "label": "Bank Name",
+              "labelTextSize": "0.875rem",
+              "options": "{{getBanksGen.data.map(d => ({label: d.bank_name, value: d.bank_name}))}}",
+              "originalIdentifier": "bank_name",
+              "position": 0,
+              "serverSideFiltering": false,
+              "sourceData": ""
+            },
+            "ifsc_code": {
+              "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(JSONFormCreateEmployee.sourceData, JSONFormCreateEmployee.formData, JSONFormCreateEmployee.fieldState)}}",
+              "accessor": "ifsc_code",
+              "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONFormCreateEmployee.sourceData, JSONFormCreateEmployee.formData, JSONFormCreateEmployee.fieldState)}}",
+              "boxShadow": "none",
+              "children": {},
+              "dataType": "string",
+              "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.bank_details.ifsc_code))(JSONFormCreateEmployee.sourceData, JSONFormCreateEmployee.formData, JSONFormCreateEmployee.fieldState)}}",
+              "fieldType": "Text Input",
+              "iconAlign": "left",
+              "identifier": "ifsc_code",
+              "isCustomField": false,
+              "isDisabled": false,
+              "isRequired": false,
+              "isSpellCheck": false,
+              "isVisible": true,
+              "label": "Ifsc Code",
+              "labelTextSize": "0.875rem",
+              "originalIdentifier": "ifsc_code",
+              "position": 2,
+              "sourceData": ""
+            }
+          },
+          "dataType": "object",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.bank_details))(JSONFormCreateEmployee.sourceData, JSONFormCreateEmployee.formData, JSONFormCreateEmployee.fieldState)}}",
+          "fieldType": "Object",
+          "identifier": "bank_details",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isVisible": true,
+          "label": "Bank Details",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "bank_details",
+          "position": 10,
+          "sourceData": {
+            "account_no": "",
+            "bank_name": "",
+            "ifsc_code": ""
+          }
+        },
+        "contact_primary": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(JSONFormCreateEmployee.sourceData, JSONFormCreateEmployee.formData, JSONFormCreateEmployee.fieldState)}}",
+          "accessor": "contact_primary",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONFormCreateEmployee.sourceData, JSONFormCreateEmployee.formData, JSONFormCreateEmployee.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "string",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.contact_primary))(JSONFormCreateEmployee.sourceData, JSONFormCreateEmployee.formData, JSONFormCreateEmployee.fieldState)}}",
+          "fieldType": "Text Input",
+          "iconAlign": "left",
+          "identifier": "contact_primary",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isSpellCheck": false,
+          "isVisible": true,
+          "label": "Contact Primary",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "contact_primary",
+          "position": 3,
+          "sourceData": ""
+        },
+        "contact_secondary": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(JSONFormCreateEmployee.sourceData, JSONFormCreateEmployee.formData, JSONFormCreateEmployee.fieldState)}}",
+          "accessor": "contact_secondary",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONFormCreateEmployee.sourceData, JSONFormCreateEmployee.formData, JSONFormCreateEmployee.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "string",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.contact_secondary))(JSONFormCreateEmployee.sourceData, JSONFormCreateEmployee.formData, JSONFormCreateEmployee.fieldState)}}",
+          "fieldType": "Text Input",
+          "iconAlign": "left",
+          "identifier": "contact_secondary",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isSpellCheck": false,
+          "isVisible": true,
+          "label": "Contact Secondary",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "contact_secondary",
+          "position": 4,
+          "sourceData": ""
+        },
+        "designation_id": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(JSONFormCreateEmployee.sourceData, JSONFormCreateEmployee.formData, JSONFormCreateEmployee.fieldState)}}",
+          "accessor": "designation_id",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONFormCreateEmployee.sourceData, JSONFormCreateEmployee.formData, JSONFormCreateEmployee.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "string",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.designation_id))(JSONFormCreateEmployee.sourceData, JSONFormCreateEmployee.formData, JSONFormCreateEmployee.fieldState)}}",
+          "fieldType": "Select",
+          "identifier": "designation_id",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isFilterable": false,
+          "isRequired": false,
+          "isVisible": true,
+          "label": "Designation Id",
+          "labelTextSize": "0.875rem",
+          "options": "{{getDesignations.data.map(d => ({label: d.title, value: d.id}))}}",
+          "originalIdentifier": "designation_id",
+          "position": 1,
+          "serverSideFiltering": false,
+          "sourceData": ""
+        },
+        "email": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(JSONFormCreateEmployee.sourceData, JSONFormCreateEmployee.formData, JSONFormCreateEmployee.fieldState)}}",
+          "accessor": "email",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONFormCreateEmployee.sourceData, JSONFormCreateEmployee.formData, JSONFormCreateEmployee.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "string",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.email))(JSONFormCreateEmployee.sourceData, JSONFormCreateEmployee.formData, JSONFormCreateEmployee.fieldState)}}",
+          "fieldType": "Text Input",
+          "iconAlign": "left",
+          "identifier": "email",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isSpellCheck": false,
+          "isVisible": true,
+          "label": "Email",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "email",
+          "position": 2,
+          "sourceData": ""
+        },
+        "full_name": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(JSONFormCreateEmployee.sourceData, JSONFormCreateEmployee.formData, JSONFormCreateEmployee.fieldState)}}",
+          "accessor": "full_name",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONFormCreateEmployee.sourceData, JSONFormCreateEmployee.formData, JSONFormCreateEmployee.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "string",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.full_name))(JSONFormCreateEmployee.sourceData, JSONFormCreateEmployee.formData, JSONFormCreateEmployee.fieldState)}}",
+          "fieldType": "Text Input",
+          "iconAlign": "left",
+          "identifier": "full_name",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isSpellCheck": false,
+          "isVisible": true,
+          "label": "Full Name",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "full_name",
+          "position": 0,
+          "sourceData": ""
+        },
+        "gender": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(JSONFormCreateEmployee.sourceData, JSONFormCreateEmployee.formData, JSONFormCreateEmployee.fieldState)}}",
+          "accessor": "gender",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONFormCreateEmployee.sourceData, JSONFormCreateEmployee.formData, JSONFormCreateEmployee.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "string",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.gender))(JSONFormCreateEmployee.sourceData, JSONFormCreateEmployee.formData, JSONFormCreateEmployee.fieldState)}}",
+          "fieldType": "Select",
+          "identifier": "gender",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isFilterable": false,
+          "isRequired": false,
+          "isVisible": true,
+          "label": "Gender",
+          "labelTextSize": "0.875rem",
+          "options": "[\n  {\n    \"label\": \"Male\",\n    \"value\": \"Male\"\n  },\n  {\n    \"label\": \"Female\",\n    \"value\": \"Female\"\n  },\n  {\n    \"label\": \"Other\",\n    \"value\": \"Other\"\n  }\n]",
+          "originalIdentifier": "gender",
+          "position": 5,
+          "serverSideFiltering": false,
+          "sourceData": "Male"
+        },
+        "identity": {
+          "accessor": "identity",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONFormCreateEmployee.sourceData, JSONFormCreateEmployee.formData, JSONFormCreateEmployee.fieldState)}}",
+          "boxShadow": "none",
+          "cellBorderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONFormCreateEmployee.sourceData, JSONFormCreateEmployee.formData, JSONFormCreateEmployee.fieldState)}}",
+          "cellBoxShadow": "none",
+          "children": {
+            "aadhar_no": {
+              "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(JSONFormCreateEmployee.sourceData, JSONFormCreateEmployee.formData, JSONFormCreateEmployee.fieldState)}}",
+              "accessor": "aadhar_no",
+              "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONFormCreateEmployee.sourceData, JSONFormCreateEmployee.formData, JSONFormCreateEmployee.fieldState)}}",
+              "boxShadow": "none",
+              "children": {},
+              "dataType": "string",
+              "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.identity.aadhar_no))(JSONFormCreateEmployee.sourceData, JSONFormCreateEmployee.formData, JSONFormCreateEmployee.fieldState)}}",
+              "fieldType": "Text Input",
+              "iconAlign": "left",
+              "identifier": "aadhar_no",
+              "isCustomField": false,
+              "isDisabled": false,
+              "isRequired": false,
+              "isSpellCheck": false,
+              "isVisible": true,
+              "label": "Aadhar No",
+              "labelTextSize": "0.875rem",
+              "originalIdentifier": "aadhar_no",
+              "position": 0,
+              "sourceData": ""
+            },
+            "license_no": {
+              "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(JSONFormCreateEmployee.sourceData, JSONFormCreateEmployee.formData, JSONFormCreateEmployee.fieldState)}}",
+              "accessor": "license_no",
+              "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONFormCreateEmployee.sourceData, JSONFormCreateEmployee.formData, JSONFormCreateEmployee.fieldState)}}",
+              "boxShadow": "none",
+              "children": {},
+              "dataType": "string",
+              "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.identity.license_no))(JSONFormCreateEmployee.sourceData, JSONFormCreateEmployee.formData, JSONFormCreateEmployee.fieldState)}}",
+              "fieldType": "Text Input",
+              "iconAlign": "left",
+              "identifier": "license_no",
+              "isCustomField": false,
+              "isDisabled": false,
+              "isRequired": false,
+              "isSpellCheck": false,
+              "isVisible": true,
+              "label": "License No",
+              "labelTextSize": "0.875rem",
+              "originalIdentifier": "license_no",
+              "position": 1,
+              "sourceData": ""
+            }
+          },
+          "dataType": "object",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.identity))(JSONFormCreateEmployee.sourceData, JSONFormCreateEmployee.formData, JSONFormCreateEmployee.fieldState)}}",
+          "fieldType": "Object",
+          "identifier": "identity",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isVisible": true,
+          "label": "Identity",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "identity",
+          "position": 9,
+          "sourceData": {
+            "aadhar_no": "",
+            "license_no": ""
+          }
+        },
+        "joining_date": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(JSONFormCreateEmployee.sourceData, JSONFormCreateEmployee.formData, JSONFormCreateEmployee.fieldState)}}",
+          "accessor": "joining_date",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONFormCreateEmployee.sourceData, JSONFormCreateEmployee.formData, JSONFormCreateEmployee.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "closeOnSelection": false,
+          "convertToISO": false,
+          "dataType": "string",
+          "dateFormat": "YYYY-MM-DD",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (moment(sourceData.joining_date, \"YYYY-MM-DD\").format(\"YYYY-MM-DDTHH:mm:ss.sssZ\")))(JSONFormCreateEmployee.sourceData, JSONFormCreateEmployee.formData, JSONFormCreateEmployee.fieldState)}}",
+          "fieldType": "Datepicker",
+          "identifier": "joining_date",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isVisible": true,
+          "label": "Joining Date",
+          "labelTextSize": "0.875rem",
+          "maxDate": "2121-12-31T18:29:00.000Z",
+          "minDate": "1920-12-31T18:30:00.000Z",
+          "originalIdentifier": "joining_date",
+          "position": 6,
+          "shortcuts": false,
+          "sourceData": "2026-03-22",
+          "timePrecision": "minute"
+        },
+        "salary": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(JSONFormCreateEmployee.sourceData, JSONFormCreateEmployee.formData, JSONFormCreateEmployee.fieldState)}}",
+          "accessor": "salary",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONFormCreateEmployee.sourceData, JSONFormCreateEmployee.formData, JSONFormCreateEmployee.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "number",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.salary))(JSONFormCreateEmployee.sourceData, JSONFormCreateEmployee.formData, JSONFormCreateEmployee.fieldState)}}",
+          "fieldType": "Number Input",
+          "iconAlign": "left",
+          "identifier": "salary",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isSpellCheck": false,
+          "isVisible": true,
+          "label": "Salary",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "salary",
+          "position": 7,
+          "sourceData": 0
+        }
+      },
+      "dataType": "object",
+      "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData))(JSONFormCreateEmployee.sourceData, JSONFormCreateEmployee.formData, JSONFormCreateEmployee.fieldState)}}",
+      "fieldType": "Object",
+      "identifier": "__root_schema__",
+      "isCustomField": false,
+      "isDisabled": false,
+      "isRequired": false,
+      "isVisible": true,
+      "label": "",
+      "labelTextSize": "0.875rem",
+      "originalIdentifier": "__root_schema__",
+      "position": -1,
+      "sourceData": {
+        "address": "",
+        "bank_details": {
+          "account_no": "",
+          "bank_name": "",
+          "ifsc_code": ""
+        },
+        "contact_primary": "",
+        "contact_secondary": "",
+        "designation_id": "",
+        "email": "",
+        "full_name": "",
+        "gender": "Male",
+        "identity": {
+          "aadhar_no": "",
+          "license_no": ""
+        },
+        "joining_date": "2026-03-22",
+        "salary": 0
+      }
+    }
+  },
+  "scrollContents": true,
+  "showReset": true,
+  "sourceData": "{\n  \"full_name\": \"\",\n  \"designation_id\": \"\",\n  \"email\": \"\",\n  \"contact_primary\": \"\",\n  \"contact_secondary\": \"\",\n  \"gender\": \"Male\",\n  \"joining_date\": \"{{moment().format('YYYY-MM-DD')}}\",\n  \"salary\": 0,\n  \"address\": \"\",\n  \"identity\": {\n    \"aadhar_no\": \"\",\n    \"license_no\": \"\"\n  },\n  \"bank_details\": {\n    \"bank_name\": \"\",\n    \"account_no\": \"\",\n    \"ifsc_code\": \"\"\n  }\n}\n",
+  "submitButtonLabel": "Submit",
+  "submitButtonStyles": {
+    "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+    "boxShadow": "none",
+    "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+    "buttonVariant": "PRIMARY"
+  },
+  "title": "",
+  "topRow": 5,
+  "type": "JSON_FORM_WIDGET",
+  "useSourceData": false,
+  "version": 1,
+  "widgetId": "x7iqg4czs7",
+  "widgetName": "JSONFormCreateEmployee"
+}

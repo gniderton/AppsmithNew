@@ -1,0 +1,17 @@
+{
+  "full_name": {{ JSONFormCreateEmployee.formData.full_name }},
+  "designation_id": {{ JSONFormCreateEmployee.formData.designation_id }},
+  "email": {{ JSONFormCreateEmployee.formData.email }},
+  "contact_primary": {{ JSONFormCreateEmployee.formData.contact_primary }},
+  "contact_secondary": {{ JSONFormCreateEmployee.formData.contact_secondary }},
+  "gender": {{ JSONFormCreateEmployee.formData.gender }},
+  "joining_date": {{ JSONFormCreateEmployee.formData.joining_date }},
+  "salary": {{ Number(JSONFormCreateEmployee.formData.salary) }},
+  "address": {{ JSONFormCreateEmployee.formData.address }},
+  "aadhar_no": {{ JSONFormCreateEmployee.formData.identity.aadhar_no }},
+  "license_no": {{ JSONFormCreateEmployee.formData.identity.license_no }},
+  "bank_name": {{ JSONFormCreateEmployee.formData.bank_details.bank_name }},
+  "account_no": {{ JSONFormCreateEmployee.formData.bank_details.account_no }},
+  "ifsc_code": {{ JSONFormCreateEmployee.formData.bank_details.ifsc_code }},
+  "user_id": {{ getMe.data.id }}
+}

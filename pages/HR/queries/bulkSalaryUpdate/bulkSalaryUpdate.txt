@@ -1,0 +1,6 @@
+{
+  "updates": {{ SalaryUtils.getBulkPayload() }},
+  "effective_date": {{ datBulkEffective.selectedDate }},
+  "reason": {{ selBulkReason.selectedOptionValue }},
+  "user_id": {{getMe.data.id}}
+}

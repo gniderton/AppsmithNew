@@ -5,7 +5,7 @@
   "borderColor": "#E0DEDE",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": "1",
-  "bottomRow": 102,
+  "bottomRow": 101,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "childStylesheet": {
     "ARRAY": {
@@ -773,7 +773,7 @@
     "buttonVariant": "PRIMARY"
   },
   "title": "",
-  "topRow": 7,
+  "topRow": 6,
   "type": "JSON_FORM_WIDGET",
   "useSourceData": false,
   "version": 1,

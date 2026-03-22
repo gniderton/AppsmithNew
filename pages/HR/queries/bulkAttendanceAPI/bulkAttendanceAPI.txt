@@ -1,0 +1,6 @@
+{
+  "employee_ids": {{ tblEmployees.selectedRows.map(r => r.id) }},
+  "status": {{ selAttendanceStatus.selectedOptionValue }},
+  "attendance_date": {{ datAttendanceDate.selectedDate }},
+  "remarks": "Marked via Bulk Action"
+}

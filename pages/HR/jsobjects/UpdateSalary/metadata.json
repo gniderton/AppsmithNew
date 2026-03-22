@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "69a80abb79ac426a29eb8838_322fd97e-f995-4e7a-aa11-ded7bba8f45c",
+  "id": "HR_UpdateSalary",
+  "unpublishedCollection": {
+    "name": "UpdateSalary",
+    "pageId": "HR",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}

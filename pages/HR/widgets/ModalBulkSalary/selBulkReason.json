@@ -1,0 +1,62 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 14,
+  "boxShadow": "none",
+  "defaultOptionValue": "GREEN",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
+    }
+  ],
+  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicPropertyPathList": [
+    {
+      "key": "sourceData"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "isDisabled": false,
+  "isFilterable": true,
+  "isLoading": false,
+  "isRequired": false,
+  "isVisible": true,
+  "key": "gbd0zl5f7v",
+  "labelAlignment": "left",
+  "labelPosition": "Left",
+  "labelText": "Reason",
+  "labelTextSize": "0.875rem",
+  "labelWidth": "10",
+  "leftColumn": 1,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 17,
+  "mobileLeftColumn": 1,
+  "mobileRightColumn": 21,
+  "mobileTopRow": 10,
+  "needsErrorInfo": false,
+  "optionLabel": "label",
+  "optionValue": "value",
+  "originalBottomRow": 17,
+  "originalTopRow": 10,
+  "parentColumnSpace": 11.15625,
+  "parentId": "9fidj9sdgd",
+  "parentRowSpace": 10,
+  "placeholderText": "Select option",
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 28,
+  "serverSideFiltering": false,
+  "shouldScrollContents": true,
+  "sourceData": "[{\"label\": \"Annual Review\", \"value\": \"Annual Review\"}, {\"label\": \"Promotion\", \"value\": \"Promotion\"}, {\"label\": \"Market Correction\", \"value\": \"Market Correction\"}, {\"label\": \"Retention Hike\", \"value\": \"Retention Hike\"}, {\"label\": \"Joining Bonus\", \"value\": \"Joining Bonus\"}, {\"label\": \"Performance Achievement\", \"value\": \"Performance Achievement\"}]",
+  "topRow": 10,
+  "type": "SELECT_WIDGET",
+  "version": 1,
+  "widgetId": "hgfu4ieosj",
+  "widgetName": "selBulkReason"
+}

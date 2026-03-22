@@ -5,7 +5,7 @@
   "borderColor": "#E0DEDE",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": "1",
-  "bottomRow": 128,
+  "bottomRow": 120,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "childStylesheet": {
     "ARRAY": {
@@ -363,7 +363,7 @@
   "mobileTopRow": 5,
   "needsErrorInfo": false,
   "onSubmit": "{{\n  createExpenses.run()\n    .then(() => {\n      // 1. Show success message\n      showAlert(\"Expense Recorded Successfully!\", \"success\");\n      \n      // 2. Clear the form for next entry\n      resetWidget(\"JSONForm3\");\n      \n      // 3. Refresh your expense list table (so you see the new entry)\n      getExpenses.run(); \n    })\n    .catch((err) => {\n      // 4. Handle errors\n      showAlert(\"Failed to save: \" + err.message, \"error\");\n    })\n}}\n",
-  "originalBottomRow": 120,
+  "originalBottomRow": 128,
   "originalTopRow": 5,
   "parentColumnSpace": 6.9375,
   "parentId": "563absqnye",

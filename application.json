@@ -80,6 +80,14 @@
     {
       "id": "Transactions",
       "isDefault": false
+    },
+    {
+      "id": "Reports",
+      "isDefault": false
+    },
+    {
+      "id": "HR",
+      "isDefault": false
     }
   ],
   "unpublishedAppLayout": {
