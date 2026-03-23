@@ -224,6 +224,7 @@
   "parentColumnSpace": 19.9375,
   "parentId": "0",
   "parentRowSpace": 10,
+  "primaryColumnId": "id",
   "primaryColumns": {
     "aadhar_no": {
       "alias": "aadhar_no",

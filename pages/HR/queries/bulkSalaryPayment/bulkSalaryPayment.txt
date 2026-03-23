@@ -1,0 +1,6 @@
+{
+  "month": {{ selMonth.selectedOptionValue }},
+  "year": {{ selYear.selectedOptionValue }},
+  "user_id": {{getMe.data.id}},
+  "payments": {{ appsmith.store.salaryBatch }}
+}

@@ -21,6 +21,9 @@
     },
     {
       "key": "groupButtons.groupButtonktfzxapisf.buttonColor"
+    },
+    {
+      "key": "groupButtons.groupButtoncxkvrwgv8b.buttonColor"
     }
   ],
   "dynamicPropertyPathList": [
@@ -40,6 +43,9 @@
     },
     {
       "key": "groupButtons.groupButtonktfzxapisf.onClick"
+    },
+    {
+      "key": "groupButtons.groupButtoncxkvrwgv8b.onClick"
     }
   ],
   "groupButtons": {
@@ -70,6 +76,22 @@
       "onClick": "{{showModal(ModalAttendance.name);}}",
       "placement": "CENTER",
       "widgetId": ""
+    },
+    "groupButtoncxkvrwgv8b": {
+      "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+      "buttonType": "SIMPLE",
+      "id": "groupButtoncxkvrwgv8b",
+      "index": 3,
+      "isDisabled": false,
+      "isSeparator": false,
+      "isVisible": true,
+      "itemType": "BUTTON",
+      "label": "Bulk Salary Processing",
+      "menuItems": {},
+      "onClick": "{{showModal(ModalBulkSalaryProcessing.name);}}",
+      "placement": "CENTER",
+      "variant": "filled",
+      "widgetId": "kx4vih18au"
     },
     "groupButtonktfzxapisf": {
       "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
@@ -105,7 +127,7 @@
   "parentRowSpace": 10,
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
-  "rightColumn": 24,
+  "rightColumn": 26,
   "topRow": 0,
   "type": "BUTTON_GROUP_WIDGET",
   "version": 1,

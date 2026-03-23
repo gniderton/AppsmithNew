@@ -1,0 +1,55 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 5,
+  "boxShadow": "none",
+  "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "buttonVariant": "PRIMARY",
+  "disabledWhenInvalid": false,
+  "dynamicBindingPathList": [
+    {
+      "key": "buttonColor"
+    },
+    {
+      "key": "borderRadius"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "isDefaultClickDisabled": true,
+  "isDisabled": false,
+  "isLoading": false,
+  "isVisible": true,
+  "key": "yc0vhhc15z",
+  "leftColumn": 43,
+  "minWidth": 120,
+  "mobileBottomRow": 5,
+  "mobileLeftColumn": 39,
+  "mobileRightColumn": 55,
+  "mobileTopRow": 1,
+  "needsErrorInfo": false,
+  "onClick": "{{\n  (() => {\n    const selectedIds = tblSalaryPreview.selectedRows.map(sel => sel.id);\n    \n    const updatedBatch = (appsmith.store.salaryBatch || []).map(r => {\n      if (selectedIds.includes(r.id)) {\n        return { \n          ...r, \n          payment_mode: selBulkMode.selectedOptionValue,\n          from_account_id: selBulkAccount.selectedOptionValue,\n          bank_statement_entry_id: selBulkAccountRefNo.selectedOptionValue\n        };\n      }\n      return r;\n    });\n\n    return storeValue('salaryBatch', updatedBatch);\n  })()\n}}",
+  "parentColumnSpace": 19.228125,
+  "parentId": "n5lcj97ef9",
+  "parentRowSpace": 10,
+  "placement": "CENTER",
+  "recaptchaType": "V3",
+  "renderMode": "CANVAS",
+  "resetFormOnClick": false,
+  "responsiveBehavior": "hug",
+  "rightColumn": 57,
+  "text": "Apply Bulk",
+  "topRow": 1,
+  "type": "BUTTON_WIDGET",
+  "version": 1,
+  "widgetId": "t01if9slnx",
+  "widgetName": "Button10Copy1Copy"
+}

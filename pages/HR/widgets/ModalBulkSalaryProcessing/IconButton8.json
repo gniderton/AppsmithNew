@@ -1,0 +1,50 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 9,
+  "boxShadow": "none",
+  "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "buttonVariant": "TERTIARY",
+  "dynamicBindingPathList": [
+    {
+      "key": "buttonColor"
+    },
+    {
+      "key": "borderRadius"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "iconName": "eye-open",
+  "isDisabled": false,
+  "isLoading": false,
+  "isVisible": true,
+  "key": "h55t8ae397",
+  "leftColumn": 20,
+  "minWidth": 50,
+  "mobileBottomRow": 9,
+  "mobileLeftColumn": 20,
+  "mobileRightColumn": 24,
+  "mobileTopRow": 5,
+  "needsErrorInfo": false,
+  "onClick": "{{\n  getSalaryPreview.run().then(() => {\n    // Map the results to include default payment settings\n    let dataWithDefaults = getSalaryPreview.data.map(row => ({\n      ...row,\n      payment_mode: \"Cash\",\n      from_account_id: 1, // Change to your default Account ID\n      bank_statement_entry_id: null\n    }));\n    storeValue(\"salaryBatch\", dataWithDefaults); \n    showAlert(\"Data Loaded!\", \"success\");\n  })\n}}\n",
+  "parentColumnSpace": 19.228125,
+  "parentId": "n5lcj97ef9",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "hug",
+  "rightColumn": 22,
+  "topRow": 5,
+  "type": "ICON_BUTTON_WIDGET",
+  "version": 1,
+  "widgetId": "o5kv7h45vb",
+  "widgetName": "IconButton8"
+}
