@@ -88,6 +88,10 @@
     {
       "id": "HR",
       "isDefault": false
+    },
+    {
+      "id": "Payment Settlement",
+      "isDefault": false
     }
   ],
   "unpublishedAppLayout": {

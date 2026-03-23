@@ -1,0 +1,6 @@
+{
+  "action": "{{ this.params.action }}",
+  "reason": "{{ this.params.reason }}",
+  "bank_account_id": "{{ this.params.bank_account_id || null }}",
+  "user_id": "{{ getMe.data.id}}"
+}

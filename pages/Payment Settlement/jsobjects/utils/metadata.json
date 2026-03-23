@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "69a80abb79ac426a29eb8838_e730accd-eb3d-403d-8ae4-4784010d9087",
+  "id": "Payment Settlement_utils",
+  "unpublishedCollection": {
+    "name": "utils",
+    "pageId": "Payment Settlement",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}
