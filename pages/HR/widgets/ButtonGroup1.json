@@ -24,6 +24,9 @@
     },
     {
       "key": "groupButtons.groupButtoncxkvrwgv8b.buttonColor"
+    },
+    {
+      "key": "groupButtons.groupButton2ng724u73j.buttonColor"
     }
   ],
   "dynamicPropertyPathList": [
@@ -32,6 +35,9 @@
     },
     {
       "key": "groupButtons.groupButtonktfzxapisf.onClick"
+    },
+    {
+      "key": "groupButtons.groupButton2ng724u73j.onClick"
     }
   ],
   "dynamicTriggerPathList": [
@@ -46,6 +52,9 @@
     },
     {
       "key": "groupButtons.groupButtoncxkvrwgv8b.onClick"
+    },
+    {
+      "key": "groupButtons.groupButton2ng724u73j.onClick"
     }
   ],
   "groupButtons": {
@@ -76,6 +85,22 @@
       "onClick": "{{showModal(ModalAttendance.name);}}",
       "placement": "CENTER",
       "widgetId": ""
+    },
+    "groupButton2ng724u73j": {
+      "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+      "buttonType": "SIMPLE",
+      "id": "groupButton2ng724u73j",
+      "index": 4,
+      "isDisabled": false,
+      "isSeparator": false,
+      "isVisible": true,
+      "itemType": "BUTTON",
+      "label": "Bonus",
+      "menuItems": {},
+      "onClick": "{{\n  storeValue('bonusBatch', tblEmployees.selectedRows.map(r => ({\n    employee_id: r.id,\n    full_name: r.full_name,\n\t\temployee_code: r.employee_code,\n    amount: 0,\n    remarks: \"\",\n    bonus_type: \"MANUAL\"\n  })));\n  showModal('mdlBulkBonus');\n}}\n",
+      "placement": "CENTER",
+      "variant": "filled",
+      "widgetId": "a2soldmdwq"
     },
     "groupButtoncxkvrwgv8b": {
       "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
@@ -127,7 +152,7 @@
   "parentRowSpace": 10,
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
-  "rightColumn": 26,
+  "rightColumn": 29,
   "topRow": 0,
   "type": "BUTTON_GROUP_WIDGET",
   "version": 1,
