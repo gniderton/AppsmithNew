@@ -4,19 +4,19 @@ export default {
      * Use this as the Data Source for all your tables!
      */
     getMergedData: () => {
-        const dbData = getReportDetails.data;
+        const dbData = getReportDetails.data || {};
         const localChanges = appsmith.store.stagedChanges || {};
 
-        if (!dbData || !dbData.payments) return { payments: [], expenses: [], summary: {} };
-
-        // Patch Payments
-        const mergedPayments = dbData.payments.map(p => {
-            // FIXED: Added String() to match the store key perfectly
+        // 1. Map Payments (Inject bank_stmt_id field)
+        const mergedPayments = (dbData.payments || []).map(p => {
             const change = localChanges[String(p.id)];
-            if (change && change.type === 'payment') {
-                return { ...p, verification_status: change.status, rejection_reason: change.reason };
-            }
-            return p;
+            return {
+                ...p,
+                // 🚀 INJECTED FIELD: This "unlocks" the Editable checkbox in Appsmith!
+                bank_stmt_id: change?.bank_stmt_id || p.bank_statement_entry_id || "",
+                verification_status: change?.status || p.verification_status,
+                rejection_reason: change?.reason || p.rejection_reason
+            };
         });
 
         // Patch Expenses

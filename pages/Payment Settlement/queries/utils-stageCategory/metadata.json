@@ -1,12 +1,19 @@
 {
-  "gitSyncId": "69a80abb79ac426a29eb8838_f96aef76-e99a-4947-836b-65047c246c80",
-  "id": "Payment Settlement_utils.getEnteredCashTotal",
+  "gitSyncId": "69a80abb79ac426a29eb8838_91d09668-c24f-4c7b-b511-aea1395be6b1",
+  "id": "Payment Settlement_utils.stageCategory",
   "pluginId": "js-plugin",
   "pluginType": "JS",
   "unpublishedAction": {
     "actionConfiguration": {
       "encodeParamsToggle": true,
-      "jsArguments": [],
+      "jsArguments": [
+        {
+          "name": "rows"
+        },
+        {
+          "name": "categoryLabel"
+        }
+      ],
       "paginationType": "NONE",
       "timeoutInMillisecond": 10000
     },
@@ -22,8 +29,8 @@
         "key": "body"
       }
     ],
-    "fullyQualifiedName": "utils.getEnteredCashTotal",
-    "name": "getEnteredCashTotal",
+    "fullyQualifiedName": "utils.stageCategory",
+    "name": "stageCategory",
     "pageId": "Payment Settlement",
     "runBehaviour": "MANUAL",
     "userSetOnLoad": false

@@ -1,6 +1,6 @@
 {
-  "gitSyncId": "69a80abb79ac426a29eb8838_09ea6503-86f6-4da5-a44c-02cd5e39cccf",
-  "id": "Payment Settlement_utils.isCashMatching",
+  "gitSyncId": "69a80abb79ac426a29eb8838_7bb81019-a523-45ee-8cfb-08094bd82a0f",
+  "id": "Payment Settlement_utils.getMergedData",
   "pluginId": "js-plugin",
   "pluginType": "JS",
   "unpublishedAction": {
@@ -22,8 +22,8 @@
         "key": "body"
       }
     ],
-    "fullyQualifiedName": "utils.isCashMatching",
-    "name": "isCashMatching",
+    "fullyQualifiedName": "utils.getMergedData",
+    "name": "getMergedData",
     "pageId": "Payment Settlement",
     "runBehaviour": "MANUAL",
     "userSetOnLoad": false

@@ -15,11 +15,23 @@
     },
     {
       "key": "text"
+    },
+    {
+      "key": "isDisabled"
+    },
+    {
+      "key": "isVisible"
     }
   ],
   "dynamicPropertyPathList": [
     {
       "key": "onClick"
+    },
+    {
+      "key": "isDisabled"
+    },
+    {
+      "key": "isVisible"
     }
   ],
   "dynamicTriggerPathList": [
@@ -28,9 +40,9 @@
     }
   ],
   "isDefaultClickDisabled": true,
-  "isDisabled": false,
+  "isDisabled": "{{ !utils.getSummaryStats().all_cleared }}",
   "isLoading": false,
-  "isVisible": true,
+  "isVisible": "{{ getReportDetails.data.summary.settlement_status !== 'Settled' }}",
   "key": "3vmursytfu",
   "leftColumn": 50,
   "minWidth": 120,
@@ -39,7 +51,7 @@
   "mobileRightColumn": 63,
   "mobileTopRow": 25,
   "needsErrorInfo": false,
-  "onClick": "{{\n  bulkUpdateAPI.run(\n    // 1. Map the Staged Changes to the Backend Body\n    {\n      \"user_id\": appsmith.user.id,\n      \"items\": Object.entries(appsmith.store.stagedChanges || {}).map(([id, change]) => ({\n        id: Number(id),\n        type: change.type,\n        status: change.status,\n        reason: change.reason,\n        report_id: getReportDetails.data.summary.id\n      }))\n    },\n    // 2. SUCCESS: Clean up and Refresh\n    () => {\n      showAlert('All Changes Saved & Report Finalized!', 'success');\n      storeValue('stagedChanges', {}); // 🧹 Clear staging store\n      storeValue('denoms', {});        // 🧹 Clear denominations store\n      getReportDetails.run();          // 🔄 Refresh the data from DB\n    },\n    // 3. ERROR: Keep the changes in store if it fails!\n    () => {\n      showAlert('Save Failed: ' + bulkUpdateAPI.data.error, 'error');\n    }\n  )\n}}\n",
+  "onClick": "{{\n  bulkUpdateAPI.run(\n    {\n      \"user_id\": appsmith.user.id,\n      \"report_id\": getReportDetails.data.summary.id, // 🚀 THIS IS THE KEY!\n      \"items\": Object.entries(appsmith.store.stagedChanges || {}).map(([id, change]) => ({\n        id: Number(id),\n        type: change.type,\n        status: change.status,\n        reason: change.reason,\n        report_id: getReportDetails.data.summary.id\n      }))\n    },\n    () => {\n      showAlert('Changes Saved & Report Finalized!', 'success');\n      storeValue('stagedChanges', {}); \n      storeValue('denoms', {});        \n      getReportDetails.run();          \n    },\n    () => {\n      showAlert('Save Failed: ' + bulkUpdateAPI.data.error, 'error');\n    }\n  )\n}}\n",
   "parentColumnSpace": 13.609375,
   "parentId": "9x49utkt2s",
   "parentRowSpace": 10,

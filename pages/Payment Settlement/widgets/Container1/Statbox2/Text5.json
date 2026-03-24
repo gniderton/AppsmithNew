@@ -33,6 +33,8 @@
   "mobileRightColumn": 37,
   "mobileTopRow": 4,
   "needsErrorInfo": false,
+  "originalBottomRow": 8,
+  "originalTopRow": 4,
   "overflow": "NONE",
   "parentId": "rx1b21yak3",
   "renderMode": "CANVAS",

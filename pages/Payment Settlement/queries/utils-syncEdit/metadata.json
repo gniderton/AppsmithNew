@@ -1,12 +1,22 @@
 {
-  "gitSyncId": "69a80abb79ac426a29eb8838_4981b54a-3caa-4fba-bd51-f86edf640408",
-  "id": "Payment Settlement_utils.getCashRequirement",
+  "gitSyncId": "69a80abb79ac426a29eb8838_d666d772-4c7d-4d3c-94e9-bf6508eb41e4",
+  "id": "Payment Settlement_utils.syncEdit",
   "pluginId": "js-plugin",
   "pluginType": "JS",
   "unpublishedAction": {
     "actionConfiguration": {
       "encodeParamsToggle": true,
-      "jsArguments": [],
+      "jsArguments": [
+        {
+          "name": "row"
+        },
+        {
+          "name": "update"
+        },
+        {
+          "name": "type"
+        }
+      ],
       "paginationType": "NONE",
       "timeoutInMillisecond": 10000
     },
@@ -22,8 +32,8 @@
         "key": "body"
       }
     ],
-    "fullyQualifiedName": "utils.getCashRequirement",
-    "name": "getCashRequirement",
+    "fullyQualifiedName": "utils.syncEdit",
+    "name": "syncEdit",
     "pageId": "Payment Settlement",
     "runBehaviour": "MANUAL",
     "userSetOnLoad": false

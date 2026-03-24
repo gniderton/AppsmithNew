@@ -11,7 +11,7 @@
           "value": "application/json"
         }
       ],
-      "body": "{\n  \"user_id\": {{ getMe.data.id }},\n  \"items\": {{ \n    Object.entries(appsmith.store.stagedChanges || {}).map(([id, change]) => ({\n      id: Number(id),\n      type: change.type,\n      status: change.status,\n      reason: change.reason,\n      report_id: getReportDetails.data.summary.id \n    }))\n  }}\n}\n",
+      "body": "{\n  \"user_id\": {{ getMe.data.id }},\n  \"report_id\": {{ getReportDetails.data.summary.id }},\n  \"items\": {{ \n    Object.entries(appsmith.store.stagedChanges || {}).map(([id, change]) => ({\n      id: Number(id),\n      type: change.type,\n      status: change.status,\n      reason: change.reason,\n      report_id: getReportDetails.data.summary.id\n    }))\n  }}\n}\n",
       "bodyFormData": [],
       "encodeParamsToggle": true,
       "formData": {

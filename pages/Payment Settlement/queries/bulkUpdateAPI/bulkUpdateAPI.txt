@@ -1,12 +1,13 @@
 {
   "user_id": {{ getMe.data.id }},
+  "report_id": {{ getReportDetails.data.summary.id }},
   "items": {{ 
     Object.entries(appsmith.store.stagedChanges || {}).map(([id, change]) => ({
       id: Number(id),
       type: change.type,
       status: change.status,
       reason: change.reason,
-      report_id: getReportDetails.data.summary.id 
+      report_id: getReportDetails.data.summary.id
     }))
   }}
 }

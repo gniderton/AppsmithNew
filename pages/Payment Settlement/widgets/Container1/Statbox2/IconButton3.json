@@ -12,6 +12,14 @@
     },
     {
       "key": "borderRadius"
+    },
+    {
+      "key": "isVisible"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "isVisible"
     }
   ],
   "dynamicTriggerPathList": [
@@ -22,7 +30,7 @@
   "iconName": "arrow-top-right",
   "isDisabled": false,
   "isLoading": false,
-  "isVisible": true,
+  "isVisible": "{{ getReportDetails.data.summary.settlement_status !== 'Settled' }}",
   "key": "6o43c6gdrl",
   "leftColumn": 46,
   "minWidth": 50,

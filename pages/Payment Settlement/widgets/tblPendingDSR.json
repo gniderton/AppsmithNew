@@ -37,10 +37,11 @@
     "dse_name",
     "settlement_status",
     "total_payment_collection",
-    "pending_count",
-    "customColumn1"
+    "customColumn1",
+    "pending_payment_count",
+    "pending_expense_count"
   ],
-  "columnUpdatedAt": 1774274370312,
+  "columnUpdatedAt": 1774346287501,
   "columnWidthMap": {
     "dse_name": 208,
     "report_date": 108,
@@ -84,9 +85,6 @@
       "key": "primaryColumns.total_payment_collection.computedValue"
     },
     {
-      "key": "primaryColumns.pending_count.computedValue"
-    },
-    {
       "key": "primaryColumns.customColumn1.buttonColor"
     },
     {
@@ -94,6 +92,12 @@
     },
     {
       "key": "primaryColumns.customColumn1.boxShadow"
+    },
+    {
+      "key": "primaryColumns.pending_payment_count.computedValue"
+    },
+    {
+      "key": "primaryColumns.pending_expense_count.computedValue"
     }
   ],
   "dynamicPropertyPathList": [],
@@ -198,18 +202,54 @@
       "verticalAlignment": "CENTER",
       "width": 150
     },
-    "pending_count": {
-      "alias": "pending_count",
+    "pending_expense_count": {
+      "alias": "pending_expense_count",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
+      "cellBackground": "",
       "columnType": "text",
-      "computedValue": "{{(() => { const tableData = tblPendingDSR.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"pending_count\"])) : pending_count })()}}",
+      "computedValue": "{{(() => { const tableData = tblPendingDSR.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"pending_expense_count\"])) : pending_expense_count })()}}",
       "currencyCode": "USD",
       "decimals": 0,
       "enableFilter": true,
       "enableSort": true,
+      "fontStyle": "",
       "horizontalAlignment": "LEFT",
-      "id": "pending_count",
+      "id": "pending_expense_count",
+      "index": 6,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": true,
+      "label": "pending_expense_count",
+      "notation": "standard",
+      "originalId": "pending_expense_count",
+      "sticky": "",
+      "textColor": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
+    "pending_payment_count": {
+      "alias": "pending_payment_count",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "cellBackground": "",
+      "columnType": "text",
+      "computedValue": "{{(() => { const tableData = tblPendingDSR.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"pending_payment_count\"])) : pending_payment_count })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "fontStyle": "",
+      "horizontalAlignment": "LEFT",
+      "id": "pending_payment_count",
       "index": 5,
       "isCellEditable": false,
       "isCellVisible": true,
@@ -218,11 +258,12 @@
       "isDiscardVisible": true,
       "isEditable": false,
       "isSaveVisible": true,
-      "isVisible": false,
-      "label": "pending_count",
+      "isVisible": true,
+      "label": "pending_payment_count",
       "notation": "standard",
-      "originalId": "pending_count",
+      "originalId": "pending_payment_count",
       "sticky": "",
+      "textColor": "",
       "textSize": "0.875rem",
       "thousandSeparator": true,
       "validation": {},

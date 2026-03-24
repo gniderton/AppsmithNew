@@ -1,6 +1,6 @@
 {
-  "gitSyncId": "69a80abb79ac426a29eb8838_aae42650-9bf4-4a0c-81ba-b11ec75ee03f",
-  "id": "Payment Settlement_utils.approveRow",
+  "gitSyncId": "69a80abb79ac426a29eb8838_68dd9334-0799-4448-83cf-3c665e5f7efc",
+  "id": "Payment Settlement_utils.getSummaryStats",
   "pluginId": "js-plugin",
   "pluginType": "JS",
   "unpublishedAction": {
@@ -22,8 +22,8 @@
         "key": "body"
       }
     ],
-    "fullyQualifiedName": "utils.approveRow",
-    "name": "approveRow",
+    "fullyQualifiedName": "utils.getSummaryStats",
+    "name": "getSummaryStats",
     "pageId": "Payment Settlement",
     "runBehaviour": "MANUAL",
     "userSetOnLoad": false
