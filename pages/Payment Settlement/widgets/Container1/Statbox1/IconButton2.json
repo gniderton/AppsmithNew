@@ -30,7 +30,7 @@
   "iconName": "arrow-top-right",
   "isDisabled": false,
   "isLoading": false,
-  "isVisible": "{{ getReportDetails.data.summary.settlement_status !== 'Settled' }}",
+  "isVisible": "{{ \n  !!getReportDetails.data?.summary?.settlement_status &&\n  getReportDetails.data.summary.settlement_status !== 'Settled'\n}}",
   "key": "hwcz0x8zz5",
   "leftColumn": 46,
   "minWidth": 50,

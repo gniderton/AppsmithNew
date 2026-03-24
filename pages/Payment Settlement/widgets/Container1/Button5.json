@@ -17,10 +17,10 @@
       "key": "text"
     },
     {
-      "key": "isVisible"
+      "key": "isDisabled"
     },
     {
-      "key": "isDisabled"
+      "key": "isVisible"
     }
   ],
   "dynamicPropertyPathList": [
@@ -42,7 +42,7 @@
   "isDefaultClickDisabled": true,
   "isDisabled": "{{ !utils.getSummaryStats().all_cleared }}",
   "isLoading": false,
-  "isVisible": "{{ getReportDetails.data.summary.settlement_status !== 'Settled' }}",
+  "isVisible": "{{ \n  !!getReportDetails.data?.summary?.settlement_status &&\n  getReportDetails.data.summary.settlement_status !== 'Settled'\n}}",
   "key": "3vmursytfu",
   "leftColumn": 50,
   "minWidth": 120,
