@@ -363,7 +363,7 @@
       "isVisible": true,
       "label": "bank_stmt_id",
       "notation": "standard",
-      "onOptionChange": "{{ \n  utils.syncEdit(\n    currentRow, \n    { bank_stmt_id: String(self.selectedOptionValue) }, \n    'payment'\n  ) \n}}",
+      "onOptionChange": "{{ \n  utils.syncEdit(\n    currentRow,\n    { bank_stmt_id: self.selectedoption },\n    'payment'\n  )\n}}",
       "originalId": "bank_stmt_id",
       "selectOptions": "{{(() => { const tableData = tblOnline.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( \n  getUnconsumedCredits.data.map(credit => ({ \n    label: `${credit.credit_amount} - ₹${credit.consumed_amount}`, \n    value: credit.id \n  })) \n)) :  \n  getUnconsumedCredits.data.map(credit => ({ \n    label: `${credit.credit_amount} - ₹${credit.consumed_amount}`, \n    value: credit.id \n  })) \n })()}}",
       "sticky": "",

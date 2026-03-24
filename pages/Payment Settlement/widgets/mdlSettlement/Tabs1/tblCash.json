@@ -47,9 +47,10 @@
     "bank_match_status",
     "bank_total_amount",
     "bank_consumed_amount",
-    "rejection_reason"
+    "rejection_reason",
+    "bank_stmt_id"
   ],
-  "columnUpdatedAt": 1774331097576,
+  "columnUpdatedAt": 1774361997985,
   "columnWidthMap": {
     "amount": 105,
     "customer_name": 222,
@@ -128,6 +129,9 @@
     },
     {
       "key": "primaryColumns.rejection_reason.selectOptions"
+    },
+    {
+      "key": "primaryColumns.bank_stmt_id.computedValue"
     }
   ],
   "dynamicPropertyPathList": [
@@ -318,6 +322,40 @@
       "notation": "standard",
       "originalId": "bank_name",
       "sticky": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
+    "bank_stmt_id": {
+      "alias": "bank_stmt_id",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "cellBackground": "",
+      "columnType": "text",
+      "computedValue": "{{(() => { const tableData = tblCash.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"bank_stmt_id\"])) : bank_stmt_id })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "fontStyle": "",
+      "horizontalAlignment": "LEFT",
+      "id": "bank_stmt_id",
+      "index": 16,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": false,
+      "label": "bank_stmt_id",
+      "notation": "standard",
+      "originalId": "bank_stmt_id",
+      "sticky": "",
+      "textColor": "",
       "textSize": "0.875rem",
       "thousandSeparator": true,
       "validation": {},

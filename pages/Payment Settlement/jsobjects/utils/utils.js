@@ -81,18 +81,29 @@ export default {
      * 4. CELL SYNC (Silent Record)
      */
     syncEdit: async (row, update, type) => {
-        if (!row || !row.id) return; 
+  if (!row || !row.id) return;
 
-        const current = appsmith.store.stagedChanges || {};
-        const finalReason = (update.rejection_reason !== undefined) ? update.rejection_reason : row.rejection_reason;
-        
-        current[String(row.id)] = { 
-            type: type, 
-            status: 'Pending', 
-            reason: finalReason 
-        };
-        await storeValue('stagedChanges', current);
-    },
+  const current = appsmith.store.stagedChanges || {};
+
+  const finalReason =
+    update.rejection_reason !== undefined
+      ? update.rejection_reason
+      : row.rejection_reason;
+
+  const finalBankStmt =
+    update.bank_stmt_id !== undefined
+      ? update.bank_stmt_id
+      : row.bank_stmt_id;
+
+  current[String(row.id)] = {
+    type: type,
+    status: 'Pending',
+    reason: finalReason,
+    bank_stmt_id: finalBankStmt   // ✅ REQUIRED
+  };
+
+  await storeValue('stagedChanges', current);
+},
 
     /**
      * 5. CASH & DENOMINATION LOGIC

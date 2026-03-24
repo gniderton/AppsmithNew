@@ -17,10 +17,10 @@
       "key": "text"
     },
     {
-      "key": "isDisabled"
+      "key": "isVisible"
     },
     {
-      "key": "isVisible"
+      "key": "isDisabled"
     }
   ],
   "dynamicPropertyPathList": [
