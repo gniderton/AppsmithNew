@@ -1,0 +1,58 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 28,
+  "boxShadow": "none",
+  "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "buttonVariant": "PRIMARY",
+  "disabledWhenInvalid": false,
+  "dynamicBindingPathList": [
+    {
+      "key": "buttonColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "text"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "isDefaultClickDisabled": true,
+  "isDisabled": false,
+  "isLoading": false,
+  "isVisible": true,
+  "key": "3vmursytfu",
+  "leftColumn": 50,
+  "minWidth": 120,
+  "mobileBottomRow": 29,
+  "mobileLeftColumn": 47,
+  "mobileRightColumn": 63,
+  "mobileTopRow": 25,
+  "needsErrorInfo": false,
+  "onClick": "{{\n  bulkUpdateAPI.run(\n    // 1. Map the Staged Changes to the Backend Body\n    {\n      \"user_id\": appsmith.user.id,\n      \"items\": Object.entries(appsmith.store.stagedChanges || {}).map(([id, change]) => ({\n        id: Number(id),\n        type: change.type,\n        status: change.status,\n        reason: change.reason,\n        report_id: getReportDetails.data.summary.id\n      }))\n    },\n    // 2. SUCCESS: Clean up and Refresh\n    () => {\n      showAlert('All Changes Saved & Report Finalized!', 'success');\n      storeValue('stagedChanges', {}); // 🧹 Clear staging store\n      storeValue('denoms', {});        // 🧹 Clear denominations store\n      getReportDetails.run();          // 🔄 Refresh the data from DB\n    },\n    // 3. ERROR: Keep the changes in store if it fails!\n    () => {\n      showAlert('Save Failed: ' + bulkUpdateAPI.data.error, 'error');\n    }\n  )\n}}\n",
+  "parentColumnSpace": 13.609375,
+  "parentId": "9x49utkt2s",
+  "parentRowSpace": 10,
+  "placement": "CENTER",
+  "recaptchaType": "V3",
+  "renderMode": "CANVAS",
+  "resetFormOnClick": false,
+  "responsiveBehavior": "hug",
+  "rightColumn": 63,
+  "text": "{{ \"Finalize & Save \" + Object.keys(appsmith.store.stagedChanges || {}).length + \" Changes\" }}",
+  "topRow": 24,
+  "type": "BUTTON_WIDGET",
+  "version": 1,
+  "widgetId": "mvnzordy4l",
+  "widgetName": "Button5"
+}

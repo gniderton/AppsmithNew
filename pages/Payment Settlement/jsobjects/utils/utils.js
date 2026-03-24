@@ -11,6 +11,7 @@ export default {
 
         // Patch Payments
         const mergedPayments = dbData.payments.map(p => {
+            // FIXED: Added String() to match the store key perfectly
             const change = localChanges[String(p.id)];
             if (change && change.type === 'payment') {
                 return { ...p, verification_status: change.status, rejection_reason: change.reason };
@@ -20,6 +21,7 @@ export default {
 
         // Patch Expenses
         const mergedExpenses = (dbData.expenses || []).map(e => {
+            // FIXED: Added String() here too
             const change = localChanges[String(e.id)];
             if (change && change.type === 'expense') {
                 return { ...e, status: change.status, rejection_reason: change.reason };
@@ -35,8 +37,7 @@ export default {
      * Calculates real-time totals.
      */
     getSummaryStats: () => {
-        // Change 'utils' below if you named your JS Object something else!
-        const data = utils.getMergedData(); 
+        const data = this.getMergedData(); 
         if (!data || !data.payments) return {};
 
         const sum = (items) => items.reduce((acc, i) => acc + Number(i.amount || 0), 0);
@@ -56,20 +57,18 @@ export default {
     },
 
     /**
-     * 3. CATEGORY STAGER (The Final Decision Decision)
-     * ✨ This is where 'Rejected' vs 'Verified' is decided!
+     * 3. CATEGORY STAGER (Deferred Decision)
      */
     stageCategory: async (rows, categoryLabel) => {
         const current = appsmith.store.stagedChanges || {};
         
         rows.forEach(line => {
             const reasonVal = line.rejection_reason;
-            // The Logic: If reason is NOT 0, it's a Reject. Else, it's a Verify.
             const isRejected = (reasonVal && Number(reasonVal) !== 0);
 
             current[String(line.id)] = { 
                 type: 'payment',
-                status: isRejected ? 'Rejected' : 'Verified', // Decided here!
+                status: isRejected ? 'Rejected' : 'Verified', 
                 reason: isRejected ? reasonVal : null 
             };
         });
@@ -80,26 +79,56 @@ export default {
 
     /**
      * 4. CELL SYNC (Silent Record)
-     * Just records the selection to clear the 'blue mark'.
-     * Status stays 'Pending' until the Stage button is clicked.
      */
     syncEdit: async (row, update, type) => {
         if (!row || !row.id) return; 
+
         const current = appsmith.store.stagedChanges || {};
-        
-        // Save the selection, but ALWAYS keep status as 'Pending' for now
         const finalReason = (update.rejection_reason !== undefined) ? update.rejection_reason : row.rejection_reason;
         
         current[String(row.id)] = { 
             type: type, 
-            status: 'Pending', // Stays pending for now!
+            status: 'Pending', 
             reason: finalReason 
         };
         await storeValue('stagedChanges', current);
     },
 
     /**
-     * 5. INDIVIDUAL APPROVE
+     * 5. CASH & DENOMINATION LOGIC
+     * Requirement = (Gross Cash Collection) - (All Verified Expenses)
+     */
+    getCashRequirement: () => {
+        const data = this.getMergedData();
+        const totalCollection = Number(data.summary?.total_collection_cash || 0);
+        
+        // Subtract ALL expenses that are 'Verified'. 
+        // (In DSR, expenses are paid from the cash collected).
+        const totalExpenses = (data.expenses || [])
+            .filter(e => e.status === 'Verified')
+            .reduce((acc, e) => acc + Number(e.amount || 0), 0);
+            
+        return totalCollection - totalExpenses;
+    },
+
+    getEnteredCashTotal: () => {
+        const denoms = appsmith.store.denoms || {};
+        // Safety: Ensure every value is treated as a clean number to avoid NaN
+        return Object.entries(denoms).reduce((acc, [val, count]) => {
+            const denomination = Number(val === 'coins' ? 1 : val) || 0;
+            const noteCount = Number(count) || 0;
+            return acc + (denomination * noteCount);
+        }, 0);
+    },
+
+    isCashMatching: () => {
+        const req = this.getCashRequirement();
+        const entered = this.getEnteredCashTotal();
+        return Math.abs(req - entered) < 0.01;
+    },
+
+    /**
+     * 6. INDIVIDUAL APPROVE
      */
     approveRow: async () => {
         const row = tblExpenses.triggeredRow;

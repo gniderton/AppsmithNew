@@ -1,6 +1,6 @@
 {
-  "gitSyncId": "69a80abb79ac426a29eb8838_a1182564-65dd-4f02-a9ab-e88e691d2956",
-  "id": "Payment Settlement_utils.getSummaryStats",
+  "gitSyncId": "69a80abb79ac426a29eb8838_f96aef76-e99a-4947-836b-65047c246c80",
+  "id": "Payment Settlement_utils.getEnteredCashTotal",
   "pluginId": "js-plugin",
   "pluginType": "JS",
   "unpublishedAction": {
@@ -22,8 +22,8 @@
         "key": "body"
       }
     ],
-    "fullyQualifiedName": "utils.getSummaryStats",
-    "name": "getSummaryStats",
+    "fullyQualifiedName": "utils.getEnteredCashTotal",
+    "name": "getEnteredCashTotal",
     "pageId": "Payment Settlement",
     "runBehaviour": "MANUAL",
     "userSetOnLoad": false
