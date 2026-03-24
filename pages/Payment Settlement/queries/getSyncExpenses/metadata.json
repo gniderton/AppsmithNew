@@ -47,7 +47,7 @@
     ],
     "name": "getSyncExpenses",
     "pageId": "Payment Settlement",
-    "runBehaviour": "AUTOMATIC",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }

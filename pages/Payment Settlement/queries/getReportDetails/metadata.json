@@ -24,8 +24,8 @@
       ],
       "queryParameters": [
         {
-          "key": "report_id",
-          "value": "{{ tblPendingDSR.triggeredRow.report_id }}"
+          "key": "status",
+          "value": "{{sltStatus.selectedOptionValue}}"
         }
       ],
       "timeoutInMillisecond": 10000
