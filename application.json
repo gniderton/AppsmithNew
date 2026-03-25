@@ -92,6 +92,10 @@
     {
       "id": "Payment Settlement",
       "isDefault": false
+    },
+    {
+      "id": "Settings",
+      "isDefault": false
     }
   ],
   "unpublishedAppLayout": {

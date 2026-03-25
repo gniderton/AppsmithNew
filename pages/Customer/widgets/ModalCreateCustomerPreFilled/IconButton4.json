@@ -4,8 +4,7 @@
   "bottomRow": 4,
   "boxShadow": "none",
   "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
-  "buttonVariant": "PRIMARY",
-  "disabledWhenInvalid": false,
+  "buttonVariant": "TERTIARY",
   "dynamicBindingPathList": [
     {
       "key": "buttonColor"
@@ -19,32 +18,27 @@
       "key": "onClick"
     }
   ],
-  "isDefaultClickDisabled": true,
+  "iconName": "cross",
+  "iconSize": 24,
   "isDisabled": false,
   "isLoading": false,
   "isVisible": true,
-  "key": "xamy77hb7y",
+  "key": "e0s4bnw1s2",
   "leftColumn": 58,
-  "minWidth": 120,
+  "minWidth": 50,
   "mobileBottomRow": 4,
-  "mobileLeftColumn": 48,
+  "mobileLeftColumn": 58,
   "mobileRightColumn": 64,
   "mobileTopRow": 0,
   "needsErrorInfo": false,
-  "onClick": "{{showModal(ModalCreateCustomer.name);}}",
-  "parentColumnSpace": 17.53125,
-  "parentId": "0",
-  "parentRowSpace": 10,
-  "placement": "CENTER",
-  "recaptchaType": "V3",
+  "onClick": "{{closeModal(ModalCreateCustomerPreFilled.name);}}",
+  "parentId": "bxya2ikkml",
   "renderMode": "CANVAS",
-  "resetFormOnClick": false,
   "responsiveBehavior": "hug",
   "rightColumn": 64,
-  "text": "Create Customer",
   "topRow": 0,
-  "type": "BUTTON_WIDGET",
+  "type": "ICON_BUTTON_WIDGET",
   "version": 1,
-  "widgetId": "b456wvj74a",
-  "widgetName": "Button1"
+  "widgetId": "yotp0liogr",
+  "widgetName": "IconButton4"
 }
