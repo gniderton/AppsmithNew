@@ -132,6 +132,9 @@
     },
     {
       "key": "primaryColumns.bank_stmt_id.computedValue"
+    },
+    {
+      "key": "primaryColumns.rejection_reason.isCellEditable"
     }
   ],
   "dynamicPropertyPathList": [
@@ -140,6 +143,9 @@
     },
     {
       "key": "primaryColumns.rejection_reason.onOptionChange"
+    },
+    {
+      "key": "primaryColumns.rejection_reason.isCellEditable"
     }
   ],
   "dynamicTriggerPathList": [
@@ -168,6 +174,8 @@
   "mobileRightColumn": 23,
   "mobileTopRow": 0,
   "needsErrorInfo": false,
+  "originalBottomRow": 29,
+  "originalTopRow": 4,
   "parentColumnSpace": 16,
   "parentId": "n2sja4dezm",
   "parentRowSpace": 10,
@@ -624,7 +632,7 @@
       "horizontalAlignment": "LEFT",
       "id": "rejection_reason",
       "index": 12,
-      "isCellEditable": true,
+      "isCellEditable": "{{(() => { const tableData = tblCash.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( getReportDetails.data?.summary?.settlement_status !== 'Settled' )) :  getReportDetails.data?.summary?.settlement_status !== 'Settled'  })()}}",
       "isCellVisible": true,
       "isDerived": false,
       "isDisabled": false,

@@ -12,14 +12,11 @@
     },
     {
       "key": "borderRadius"
-    },
-    {
-      "key": "isVisible"
     }
   ],
   "dynamicPropertyPathList": [
     {
-      "key": "isVisible"
+      "key": "onClick"
     }
   ],
   "dynamicTriggerPathList": [
@@ -30,7 +27,7 @@
   "iconName": "arrow-top-right",
   "isDisabled": false,
   "isLoading": false,
-  "isVisible": "{{ \n  !!getReportDetails.data?.summary?.settlement_status &&\n  getReportDetails.data.summary.settlement_status !== 'Settled'\n}}",
+  "isVisible": true,
   "key": "6o43c6gdrl",
   "leftColumn": 46,
   "minWidth": 50,
@@ -39,7 +36,7 @@
   "mobileRightColumn": 62,
   "mobileTopRow": 2,
   "needsErrorInfo": false,
-  "onClick": "{{showModal(mdlSettlement.name);}}",
+  "onClick": "{{ \nstoreValue('activeTab', 'Online'); \nshowModal(mdlSettlement.name); \n}}",
   "parentId": "2ak9el0535",
   "renderMode": "CANVAS",
   "responsiveBehavior": "hug",

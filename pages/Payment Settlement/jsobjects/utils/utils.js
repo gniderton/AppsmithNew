@@ -31,6 +31,25 @@ export default {
 
         return { ...dbData, payments: mergedPayments, expenses: mergedExpenses };
     },
+	  getCategoryStats: (mode) => {
+    const data = utils.getMergedData();
+    const payments = data.payments || [];
+    
+    // 1. Filter by category (e.g. Cash)
+    let list = [];
+    if (mode === 'Online') {
+      list = payments.filter(p => ['NEFT','UPI','Bank Transfer','Online'].includes(p.payment_mode));
+    } else {
+      list = payments.filter(p => p.payment_mode === mode);
+    }
+    
+    // 2. Sum up Total and Verified
+    const total = list.reduce((acc, p) => acc + Number(p.amount || 0), 0);
+    const verified = list.filter(p => p.verification_status === 'Verified')
+                         .reduce((acc, p) => acc + Number(p.amount || 0), 0);
+                         
+    return `₹${verified.toLocaleString()} / ₹${total.toLocaleString()}`;
+  },
 
     /**
      * 2. SUMMARY & STATS
@@ -59,23 +78,27 @@ export default {
     /**
      * 3. CATEGORY STAGER (Deferred Decision)
      */
-    stageCategory: async (rows, categoryLabel) => {
+        stageCategory: async (rows, categoryLabel) => {
         const current = appsmith.store.stagedChanges || {};
         
         rows.forEach(line => {
+            const id = String(line.id);
             const reasonVal = line.rejection_reason;
             const isRejected = (reasonVal && Number(reasonVal) !== 0);
 
-            current[String(line.id)] = { 
+            // 🚀 MERGE: Don't just overwrite, keep what was already there (like bank_stmt_id)
+            current[id] = { 
+                ...(current[id] || {}), // Preserves bank_stmt_id!
                 type: 'payment',
                 status: isRejected ? 'Rejected' : 'Verified', 
-                reason: isRejected ? reasonVal : null 
+                reason: isRejected ? reasonVal : (current[id]?.reason || null)
             };
         });
 
         await storeValue('stagedChanges', current);
         showAlert(`${categoryLabel} items processed!`, "success");
     },
+
 
     /**
      * 4. CELL SYNC (Silent Record)

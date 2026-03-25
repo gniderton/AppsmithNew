@@ -6,8 +6,17 @@
       id: Number(id),
       type: change.type,
       status: change.status,
-      reason: change.reason,
+      reason: change.reason || null,
+      bank_stmt_id: change.bank_stmt_id || null, // 🚀 Forced key entry
       report_id: getReportDetails.data.summary.id
-    }))
+    })) 
+  }},
+  "denominations": {{ 
+    Object.fromEntries(
+      Object.entries(appsmith.store.denoms || {}).map(([k, v]) => [
+        k === 'coins' ? 'coins' : 'note_' + k, 
+        Number(v)
+      ])
+    )
   }}
 }

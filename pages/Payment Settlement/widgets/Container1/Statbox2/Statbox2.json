@@ -1,6 +1,6 @@
 {
   "animateLoading": true,
-  "backgroundColor": "white",
+  "backgroundColor": "{{ \n  (() => {\n    const stats = utils.getCategoryStats('Cash'); // Change 'Cash' for each widget\n    const [verified, total] = stats.replace(/[₹,]/g, '').split(' / ').map(Number);\n    \n    if (verified === 0) return \"#94a3b8\";          // Muted Slate (Not started)\n    if (verified < total) return \"#f59e0b\";        // Vibrant Amber (In Progress)\n    return \"#10b981\";                              // Success Emerald (Done!)\n  })()\n}}\n",
   "borderColor": "#E0DEDE",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": "1",
@@ -56,9 +56,17 @@
     },
     {
       "key": "boxShadow"
+    },
+    {
+      "key": "backgroundColor"
     }
   ],
   "dynamicHeight": "FIXED",
+  "dynamicPropertyPathList": [
+    {
+      "key": "backgroundColor"
+    }
+  ],
   "dynamicTriggerPathList": [],
   "flexVerticalAlignment": "stretch",
   "isCanvas": true,

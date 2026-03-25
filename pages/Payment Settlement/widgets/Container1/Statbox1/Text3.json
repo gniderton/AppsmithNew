@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 13,
+  "bottomRow": 14,
   "dynamicBindingPathList": [
     {
       "key": "truncateButtonColor"
@@ -17,6 +17,7 @@
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicPropertyPathList": [],
   "dynamicTriggerPathList": [],
   "fontFamily": "{{appsmith.theme.fontFamily.appFont}}",
   "fontSize": "0.875rem",
@@ -34,17 +35,17 @@
   "mobileTopRow": 8,
   "needsErrorInfo": false,
   "originalBottomRow": 13,
-  "originalTopRow": 8,
+  "originalTopRow": 9,
   "overflow": "NONE",
   "parentId": "frle0uy2k6",
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
-  "rightColumn": 37,
+  "rightColumn": 45,
   "shouldTruncate": false,
   "text": "Cash: {{ utils.getSummaryStats().cash_pending ? \"⚠️ ₹\" + utils.getSummaryStats().cash_pending + \" Pending\" : \"✅ Verified\" }}\n",
   "textAlign": "LEFT",
-  "textColor": "#03B365",
-  "topRow": 8,
+  "textColor": "#231f20",
+  "topRow": 9,
   "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
   "type": "TEXT_WIDGET",
   "version": 1,

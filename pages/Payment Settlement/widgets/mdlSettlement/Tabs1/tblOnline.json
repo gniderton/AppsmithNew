@@ -53,6 +53,7 @@
   "columnUpdatedAt": 1774349670954,
   "columnWidthMap": {
     "amount": 105,
+    "bank_stmt_id": 229.5999999999999,
     "customer_name": 222,
     "payment_date": 120,
     "rejection_reason": 303,
@@ -76,9 +77,6 @@
     },
     {
       "key": "boxShadow"
-    },
-    {
-      "key": "tableData"
     },
     {
       "key": "primaryColumns.id.computedValue"
@@ -136,6 +134,15 @@
     },
     {
       "key": "primaryColumns.bank_stmt_id.selectOptions"
+    },
+    {
+      "key": "tableData"
+    },
+    {
+      "key": "primaryColumns.rejection_reason.isCellEditable"
+    },
+    {
+      "key": "primaryColumns.bank_stmt_id.isCellEditable"
     }
   ],
   "dynamicPropertyPathList": [
@@ -147,6 +154,15 @@
     },
     {
       "key": "primaryColumns.bank_stmt_id.onOptionChange"
+    },
+    {
+      "key": "primaryColumns.bank_stmt_id.isCellVisible"
+    },
+    {
+      "key": "primaryColumns.rejection_reason.isCellEditable"
+    },
+    {
+      "key": "primaryColumns.bank_stmt_id.isCellEditable"
     }
   ],
   "dynamicTriggerPathList": [
@@ -178,6 +194,8 @@
   "mobileRightColumn": 23,
   "mobileTopRow": 0,
   "needsErrorInfo": false,
+  "originalBottomRow": 29,
+  "originalTopRow": 4,
   "parentColumnSpace": 16,
   "parentId": "theo8lo6el",
   "parentRowSpace": 10,
@@ -353,8 +371,7 @@
       "horizontalAlignment": "LEFT",
       "id": "bank_stmt_id",
       "index": 16,
-      "isCellEditable": true,
-      "isCellVisible": true,
+      "isCellEditable": "{{(() => { const tableData = tblOnline.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( getReportDetails.data?.summary?.settlement_status !== 'Settled' )) :  getReportDetails.data?.summary?.settlement_status !== 'Settled'  })()}}",
       "isDerived": false,
       "isDisabled": false,
       "isDiscardVisible": true,
@@ -363,9 +380,9 @@
       "isVisible": true,
       "label": "bank_stmt_id",
       "notation": "standard",
-      "onOptionChange": "{{ \n  utils.syncEdit(\n    currentRow,\n    { bank_stmt_id: self.selectedoption },\n    'payment'\n  )\n}}",
+      "onOptionChange": "{{ \n  utils.syncEdit(\n    currentRow,\n    { bank_stmt_id: self.selectedOptionValue }, // 🚀 Fixed Property Name\n    'payment'\n  )\n}}\n",
       "originalId": "bank_stmt_id",
-      "selectOptions": "{{(() => { const tableData = tblOnline.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( \n  getUnconsumedCredits.data.map(credit => ({ \n    label: `${credit.credit_amount} - ₹${credit.consumed_amount}`, \n    value: credit.id \n  })) \n)) :  \n  getUnconsumedCredits.data.map(credit => ({ \n    label: `${credit.credit_amount} - ₹${credit.consumed_amount}`, \n    value: credit.id \n  })) \n })()}}",
+      "selectOptions": "{{(() => { const tableData = tblOnline.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( \n  getUnconsumedCredits.data.map(credit => ({ \n    label: `₹${credit.credit_amount} - ₹${credit.consumed_amount} - ${credit.id}`, \n    value: credit.id \n  })) \n)) :  \n  getUnconsumedCredits.data.map(credit => ({ \n    label: `₹${credit.credit_amount} - ₹${credit.consumed_amount} - ${credit.id}`, \n    value: credit.id \n  })) \n })()}}",
       "sticky": "",
       "textColor": "",
       "textSize": "0.875rem",
@@ -636,7 +653,7 @@
       "horizontalAlignment": "LEFT",
       "id": "rejection_reason",
       "index": 12,
-      "isCellEditable": true,
+      "isCellEditable": "{{(() => { const tableData = tblOnline.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( getReportDetails.data?.summary?.settlement_status !== 'Settled' )) :  getReportDetails.data?.summary?.settlement_status !== 'Settled'  })()}}",
       "isCellVisible": true,
       "isDerived": false,
       "isDisabled": false,
@@ -728,7 +745,7 @@
   "rightColumn": 64,
   "searchKey": "",
   "showInlineEditingOptionDropdown": true,
-  "tableData": "{{ utils.getMergedData().payments.filter(p => p.payment_mode === 'NEFT','UPI','Bank Transfer') }}",
+  "tableData": "{{ \nutils.getMergedData().payments.filter(p =>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t['NEFT','UPI','Bank Transfer'].includes(p.payment_mode)\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t ) \n}}",
   "textSize": "0.875rem",
   "topRow": 4,
   "totalRecordsCount": 0,

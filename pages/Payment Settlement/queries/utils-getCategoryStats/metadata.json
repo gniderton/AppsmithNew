@@ -1,6 +1,6 @@
 {
-  "gitSyncId": "69a80abb79ac426a29eb8838_91d09668-c24f-4c7b-b511-aea1395be6b1",
-  "id": "Payment Settlement_utils.stageCategory",
+  "gitSyncId": "69a80abb79ac426a29eb8838_ba98d84d-2549-49d8-b394-b382768ba608",
+  "id": "Payment Settlement_utils.getCategoryStats",
   "pluginId": "js-plugin",
   "pluginType": "JS",
   "unpublishedAction": {
@@ -8,10 +8,7 @@
       "encodeParamsToggle": true,
       "jsArguments": [
         {
-          "name": "rows"
-        },
-        {
-          "name": "categoryLabel"
+          "name": "mode"
         }
       ],
       "paginationType": "NONE",
@@ -29,8 +26,8 @@
         "key": "body"
       }
     ],
-    "fullyQualifiedName": "utils.stageCategory",
-    "name": "stageCategory",
+    "fullyQualifiedName": "utils.getCategoryStats",
+    "name": "getCategoryStats",
     "pageId": "Payment Settlement",
     "runBehaviour": "MANUAL",
     "userSetOnLoad": false

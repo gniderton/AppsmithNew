@@ -47,7 +47,7 @@
     ],
     "name": "getMe",
     "pageId": "Payment Settlement",
-    "runBehaviour": "MANUAL",
-    "userSetOnLoad": false
+    "runBehaviour": "ON_PAGE_LOAD",
+    "userSetOnLoad": true
   }
 }

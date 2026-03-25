@@ -1,6 +1,6 @@
 {
   "animateLoading": true,
-  "backgroundColor": "{{ utils.getSummaryStats().cash_pending > 0 ? \"#ef4444\" : \"#22c55e\" }}\n",
+  "backgroundColor": "{{ \n  (() => {\n    const stats = utils.getCategoryStats('Cash'); // Change 'Cash' per widget\n    const [verified, total] = stats.replace(/[₹,]/g, '').split(' / ').map(Number);\n    \n    if (verified === 0) return \"#f8fafc\";          // Very Light Grey (Soft Start)\n    if (verified < total) return \"#fef3c7\";        // Soft Yellow (In Progress)\n    return \"#10b981\";                              // Success Emerald (Done!)\n  })()\n}}\n",
   "borderColor": "#E0DEDE",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": "1",

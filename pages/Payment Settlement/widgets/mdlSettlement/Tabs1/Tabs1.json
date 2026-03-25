@@ -191,7 +191,7 @@
       "widgetName": "Canvas10"
     }
   ],
-  "defaultTab": "Tab 1",
+  "defaultTab": "{{ appsmith.store.activeTab || \"Cash\" }}",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
@@ -201,6 +201,9 @@
     },
     {
       "key": "boxShadow"
+    },
+    {
+      "key": "defaultTab"
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
