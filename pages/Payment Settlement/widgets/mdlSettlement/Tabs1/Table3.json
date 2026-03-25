@@ -77,7 +77,13 @@
       "key": "primaryColumns.customColumn1.computedValue"
     },
     {
+      "key": "primaryColumns.finance_count.isCellEditable"
+    },
+    {
       "key": "tableData"
+    },
+    {
+      "key": "primaryColumns.dse_count.isCellVisible"
     }
   ],
   "dynamicPropertyPathList": [
@@ -86,6 +92,12 @@
     },
     {
       "key": "primaryColumns.finance_count.onSubmit"
+    },
+    {
+      "key": "primaryColumns.finance_count.isCellEditable"
+    },
+    {
+      "key": "primaryColumns.dse_count.isCellVisible"
     }
   ],
   "dynamicTriggerPathList": [
@@ -197,7 +209,7 @@
       "id": "dse_count",
       "index": 2,
       "isCellEditable": false,
-      "isCellVisible": true,
+      "isCellVisible": "{{(() => { const tableData = Table3.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( getReportDetails.data?.summary?.settlement_status !== 'Settled' )) :  getReportDetails.data?.summary?.settlement_status !== 'Settled'  })()}}",
       "isDerived": false,
       "isDisabled": false,
       "isDiscardVisible": true,
@@ -219,7 +231,7 @@
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
       "columnType": "number",
-      "computedValue": "{{(() => { const tableData = Table3.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"finance_count\"])) : finance_count })()}}",
+      "computedValue": "{{(() => { const tableData = Table3.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"finance_count\"])) : currentRow[\"finance_count\"] })()}}",
       "currencyCode": "USD",
       "decimals": 0,
       "enableFilter": true,
@@ -227,7 +239,7 @@
       "horizontalAlignment": "RIGHT",
       "id": "finance_count",
       "index": 3,
-      "isCellEditable": true,
+      "isCellEditable": "{{(() => { const tableData = Table3.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( getReportDetails.data?.summary?.settlement_status !== 'Settled' )) :  getReportDetails.data?.summary?.settlement_status !== 'Settled'  })()}}",
       "isCellVisible": true,
       "isDerived": false,
       "isDisabled": false,
@@ -283,7 +295,7 @@
   "rightColumn": 33,
   "searchKey": "",
   "showInlineEditingOptionDropdown": true,
-  "tableData": "{{ \n  Object.entries(utils.getMergedData().denominations?.[0] || {})\n    .filter(([key]) => key.startsWith('note_') || key === 'coins')\n    .map(([key, value]) => {\n        const d = key.replace('note_', '');\n        return {\n          id: d,\n          denomination: d,\n          dse_count: Number(value) || 0,\n          // 🚀 PULL FROM STORE: This clears the blue mark instantly!\n          finance_count: Number(appsmith.store.denoms?.[d] || 0) \n        }\n    })\n}}\n",
+  "tableData": "{{ \n  Object.entries(utils.getMergedData().denominations?.[0] || {})\n    .filter(([key]) => key.startsWith('note_') || key === 'coins')\n    .map(([key, value]) => {\n        const d = key.replace('note_', '');\n        const dseCount = Number(value) || 0;\n        const isSettled = getReportDetails.data?.summary?.settlement_status === 'Settled';\n        \n        return {\n          id: d,\n          denomination: d,\n          dse_count: dseCount,\n          // 🚀 LOGIC: If settled, show DSE count. Otherwise, show what's being typed in the store.\n          finance_count: isSettled \n            ? dseCount \n            : Number(appsmith.store.denoms?.[d] || 0)\n        }\n    })\n}}\n",
   "textSize": "0.875rem",
   "topRow": 0,
   "totalRecordsCount": 0,
