@@ -209,6 +209,7 @@
   "parentColumnSpace": 6.9375,
   "parentId": "ahpqf72ud1",
   "parentRowSpace": 10,
+  "primaryColumnId": "id",
   "primaryColumns": {
     "created_at": {
       "alias": "created_at",
@@ -347,7 +348,7 @@
       "label": "Approve",
       "labelColor": "#FFFFFF",
       "notation": "standard",
-      "onClick": "{{\n  approveRequest.run(\n    () => { \n      showAlert('Store Data Updated Successfully!', 'success');\n      getPendingRequests.run(); // Refresh the list\n    },\n    (error) => { showAlert('Error: ' + error, 'error'); }\n  )\n}}\n",
+      "onClick": "{{\napproveRequest.run(\n\t() => { \n\t\tshowAlert('Store Data Updated Successfully!', 'success');\n\n\t\tgetCustomers.run();     getPendingRequests.run(); // Refresh the list\n\t},\n\t(error) => { showAlert('Error: ' + error, 'error'); }\n)\n}}\n",
       "originalId": "customColumn2",
       "sticky": "",
       "textSize": "0.875rem",

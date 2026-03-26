@@ -54,7 +54,7 @@
       "isVisible": true,
       "label": "Verify Customer",
       "menuItems": {},
-      "onClick": "{{showModal(ModalVerifyCustomer.name);}}",
+      "onClick": "{{getPendingRequests.run().then(() => {\n  showModal(ModalVerifyCustomer.name);\n});}}",
       "placement": "CENTER",
       "widgetId": ""
     }
