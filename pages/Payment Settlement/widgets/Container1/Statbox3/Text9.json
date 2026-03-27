@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 14,
+  "bottomRow": 76,
   "dynamicBindingPathList": [
     {
       "key": "truncateButtonColor"
@@ -34,8 +34,8 @@
   "mobileRightColumn": 37,
   "mobileTopRow": 8,
   "needsErrorInfo": false,
-  "originalBottomRow": 14,
-  "originalTopRow": 9,
+  "originalBottomRow": 15,
+  "originalTopRow": 10,
   "overflow": "NONE",
   "parentId": "2ak9el0535",
   "renderMode": "CANVAS",
@@ -45,7 +45,7 @@
   "text": "Bank Transfer: {{ utils.getSummaryStats().online_pending ? \"⚠️ ₹\" + utils.getSummaryStats().online_pending + \" Pending\" : \"✅ Verified\" }}\n",
   "textAlign": "LEFT",
   "textColor": "#231f20",
-  "topRow": 9,
+  "topRow": 33,
   "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
   "type": "TEXT_WIDGET",
   "version": 1,

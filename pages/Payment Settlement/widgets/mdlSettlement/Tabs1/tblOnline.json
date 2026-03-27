@@ -4,7 +4,7 @@
   "borderColor": "#E0DEDE",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": "1",
-  "bottomRow": 29,
+  "bottomRow": 33,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "cachedTableData": {},
   "canFreezeColumn": true,
@@ -32,8 +32,6 @@
     }
   },
   "columnOrder": [
-    "id",
-    "customer_id",
     "payment_date",
     "customer_name",
     "amount",
@@ -41,24 +39,26 @@
     "cheque_number",
     "cheque_date",
     "bank_name",
+    "verification_status",
     "bank_id",
     "transaction_reference",
-    "verification_status",
+    "rejection_reason",
     "bank_match_status",
     "bank_total_amount",
     "bank_consumed_amount",
-    "rejection_reason",
-    "bank_stmt_id"
+    "bank_stmt_id",
+    "id",
+    "customer_id"
   ],
-  "columnUpdatedAt": 1774349670954,
+  "columnUpdatedAt": 1774638201601,
   "columnWidthMap": {
-    "amount": 105,
-    "bank_stmt_id": 229.5999999999999,
-    "customer_name": 222,
-    "payment_date": 120,
-    "rejection_reason": 303,
-    "transaction_reference": 200,
-    "verification_status": 132
+    "amount": 99,
+    "bank_stmt_id": 221,
+    "customer_name": 195,
+    "payment_date": 112,
+    "rejection_reason": 148,
+    "transaction_reference": 99,
+    "verification_status": 96
   },
   "customIsLoading": false,
   "customIsLoadingValue": "",
@@ -77,6 +77,9 @@
     },
     {
       "key": "boxShadow"
+    },
+    {
+      "key": "tableData"
     },
     {
       "key": "primaryColumns.id.computedValue"
@@ -127,22 +130,16 @@
       "key": "primaryColumns.bank_consumed_amount.computedValue"
     },
     {
-      "key": "primaryColumns.rejection_reason.selectOptions"
-    },
-    {
       "key": "primaryColumns.bank_stmt_id.computedValue"
     },
     {
       "key": "primaryColumns.bank_stmt_id.selectOptions"
     },
     {
-      "key": "tableData"
-    },
-    {
       "key": "primaryColumns.rejection_reason.isCellEditable"
     },
     {
-      "key": "primaryColumns.bank_stmt_id.isCellEditable"
+      "key": "primaryColumns.rejection_reason.selectOptions"
     }
   ],
   "dynamicPropertyPathList": [
@@ -150,27 +147,21 @@
       "key": "tableData"
     },
     {
-      "key": "primaryColumns.rejection_reason.onOptionChange"
-    },
-    {
       "key": "primaryColumns.bank_stmt_id.onOptionChange"
-    },
-    {
-      "key": "primaryColumns.bank_stmt_id.isCellVisible"
     },
     {
       "key": "primaryColumns.rejection_reason.isCellEditable"
     },
     {
-      "key": "primaryColumns.bank_stmt_id.isCellEditable"
+      "key": "primaryColumns.rejection_reason.onOptionChange"
     }
   ],
   "dynamicTriggerPathList": [
     {
-      "key": "primaryColumns.rejection_reason.onOptionChange"
+      "key": "primaryColumns.bank_stmt_id.onOptionChange"
     },
     {
-      "key": "primaryColumns.bank_stmt_id.onOptionChange"
+      "key": "primaryColumns.rejection_reason.onOptionChange"
     }
   ],
   "enableClientSideSearch": true,
@@ -185,18 +176,18 @@
   "isVisibleFilters": false,
   "isVisiblePagination": true,
   "isVisibleSearch": true,
-  "key": "gh6tzwcdxb",
+  "key": "n5sjrrzyk0",
   "label": "Data",
   "leftColumn": 0,
   "minWidth": 450,
-  "mobileBottomRow": 28,
+  "mobileBottomRow": 70,
   "mobileLeftColumn": 0,
-  "mobileRightColumn": 23,
-  "mobileTopRow": 0,
+  "mobileRightColumn": 34,
+  "mobileTopRow": 42,
   "needsErrorInfo": false,
-  "originalBottomRow": 29,
-  "originalTopRow": 4,
-  "parentColumnSpace": 16,
+  "originalBottomRow": 33,
+  "originalTopRow": 5,
+  "parentColumnSpace": 15.884374999999999,
   "parentId": "theo8lo6el",
   "parentRowSpace": 10,
   "primaryColumnId": "id",
@@ -360,18 +351,17 @@
       "alias": "bank_stmt_id",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
-      "cellBackground": "",
       "columnType": "select",
       "computedValue": "{{(() => { const tableData = tblOnline.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"bank_stmt_id\"])) : bank_stmt_id })()}}",
       "currencyCode": "USD",
       "decimals": 0,
       "enableFilter": true,
       "enableSort": true,
-      "fontStyle": "",
       "horizontalAlignment": "LEFT",
       "id": "bank_stmt_id",
       "index": 16,
-      "isCellEditable": "{{(() => { const tableData = tblOnline.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( getReportDetails.data?.summary?.settlement_status !== 'Settled' )) :  getReportDetails.data?.summary?.settlement_status !== 'Settled'  })()}}",
+      "isCellEditable": true,
+      "isCellVisible": true,
       "isDerived": false,
       "isDisabled": false,
       "isDiscardVisible": true,
@@ -380,11 +370,10 @@
       "isVisible": true,
       "label": "bank_stmt_id",
       "notation": "standard",
-      "onOptionChange": "{{ \n  utils.syncEdit(\n    currentRow,\n    { bank_stmt_id: self.selectedOptionValue }, // 🚀 Fixed Property Name\n    'payment'\n  )\n}}\n",
+      "onOptionChange": "{{ \n  utils.syncEdit(\n    currentRow,\n    { bank_stmt_id: self.selectedOptionValue }, // 🚀 Fixed Property Name\n    'payment'\n  )\n}}",
       "originalId": "bank_stmt_id",
-      "selectOptions": "{{(() => { const tableData = tblOnline.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( \n  getUnconsumedCredits.data.map(credit => ({ \n    label: `₹${credit.credit_amount} - ₹${credit.consumed_amount} - ${credit.id}`, \n    value: credit.id \n  })) \n)) :  \n  getUnconsumedCredits.data.map(credit => ({ \n    label: `₹${credit.credit_amount} - ₹${credit.consumed_amount} - ${credit.id}`, \n    value: credit.id \n  })) \n })()}}",
+      "selectOptions": "{{(() => { const tableData = tblOnline.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( \n  getUnconsumedCredits.data.map(credit => {\n    const balance = (credit.credit_amount - credit.consumed_amount).toFixed(2);\n    return { \n      label: `Balance: ₹${balance} (${credit.id})`, \n      value: credit.id \n    };\n  }) \n)) :  \n  getUnconsumedCredits.data.map(credit => {\n    const balance = (credit.credit_amount - credit.consumed_amount).toFixed(2);\n    return { \n      label: `Balance: ₹${balance} (${credit.id})`, \n      value: credit.id \n    };\n  }) \n })()}}",
       "sticky": "",
-      "textColor": "",
       "textSize": "0.875rem",
       "thousandSeparator": true,
       "validation": {},
@@ -426,7 +415,7 @@
       "alias": "cheque_date",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
-      "columnType": "text",
+      "columnType": "date",
       "computedValue": "{{(() => { const tableData = tblOnline.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"cheque_date\"])) : cheque_date })()}}",
       "currencyCode": "USD",
       "decimals": 0,
@@ -601,7 +590,7 @@
       "label": "payment_date",
       "notation": "standard",
       "originalId": "payment_date",
-      "outputFormat": "DD-MM-YYYY",
+      "outputFormat": "DD/MM/YYYY",
       "sticky": "",
       "textSize": "0.875rem",
       "thousandSeparator": true,
@@ -659,21 +648,17 @@
       "isDisabled": false,
       "isDiscardVisible": true,
       "isEditable": true,
-      "isFilterable": false,
       "isSaveVisible": true,
       "isVisible": true,
       "label": "rejection_reason",
       "notation": "standard",
       "onOptionChange": "{{ utils.syncEdit(currentRow, { reason: self.selectedOptionValue, status: 'Rejected' }, 'payment') }}",
       "originalId": "rejection_reason",
-      "resetFilterTextOnClose": false,
       "selectOptions": "{{(() => { const tableData = tblOnline.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (\n[\n  { \"label\": \"None / Clear\", \"value\": 0 },\n  { \"label\": \"Short Collection\", \"value\": 1 },\n  { \"label\": \"Denomination Mismatch\", \"value\": 2 },\n  { \"label\": \"Counterfeit Suspicion\", \"value\": 3 },\n  { \"label\": \"Damaged/Soiled Notes\", \"value\": 4 },\n  { \"label\": \"Unauthorized Discount\", \"value\": 5 },\n  { \"label\": \"Other Cash Issue\", \"value\": 6 }\n]\n)) : \n[\n  { \"label\": \"None / Clear\", \"value\": 0 },\n  { \"label\": \"Short Collection\", \"value\": 1 },\n  { \"label\": \"Denomination Mismatch\", \"value\": 2 },\n  { \"label\": \"Counterfeit Suspicion\", \"value\": 3 },\n  { \"label\": \"Damaged/Soiled Notes\", \"value\": 4 },\n  { \"label\": \"Unauthorized Discount\", \"value\": 5 },\n  { \"label\": \"Other Cash Issue\", \"value\": 6 }\n]\n })()}}",
       "sticky": "",
       "textSize": "0.875rem",
       "thousandSeparator": true,
-      "validation": {
-        "isColumnEditableCellRequired": false
-      },
+      "validation": {},
       "verticalAlignment": "CENTER",
       "width": 150
     },
@@ -747,11 +732,11 @@
   "showInlineEditingOptionDropdown": true,
   "tableData": "{{ \nutils.getMergedData().payments.filter(p =>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t['NEFT','UPI','Bank Transfer'].includes(p.payment_mode)\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t ) \n}}",
   "textSize": "0.875rem",
-  "topRow": 4,
+  "topRow": 5,
   "totalRecordsCount": 0,
   "type": "TABLE_WIDGET_V2",
   "version": 2,
   "verticalAlignment": "CENTER",
-  "widgetId": "7tpvcd6852",
+  "widgetId": "kn6dezvd66",
   "widgetName": "tblOnline"
 }

@@ -96,6 +96,10 @@
     {
       "id": "Settings",
       "isDefault": false
+    },
+    {
+      "id": "Incentives",
+      "isDefault": false
     }
   ],
   "unpublishedAppLayout": {
