@@ -1,0 +1,58 @@
+{
+  "allowedFileTypes": [],
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 5,
+  "boxShadow": "none",
+  "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "dynamicBindingPathList": [
+    {
+      "key": "buttonColor"
+    },
+    {
+      "key": "borderRadius"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "onFilesSelected"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onFilesSelected"
+    }
+  ],
+  "dynamicTyping": true,
+  "fileDataType": "Base64",
+  "files": [],
+  "isDefaultClickDisabled": true,
+  "isDisabled": false,
+  "isLoading": false,
+  "isRequired": false,
+  "isVisible": true,
+  "key": "958e3un1ac",
+  "label": "Select Files",
+  "leftColumn": 1,
+  "maxFileSize": 5,
+  "maxNumFiles": 1,
+  "minWidth": 120,
+  "mobileBottomRow": 5,
+  "mobileLeftColumn": 1,
+  "mobileRightColumn": 17,
+  "mobileTopRow": 1,
+  "needsErrorInfo": false,
+  "onFilesSelected": "{{\n  (async () => {\n    try {\n      // 1. Get the content from the file\n      const base64String = fpSyncImport.files[0].data.split(\",\")[1];\n      const payload = JSON.parse(atob(base64String));\n      \n      showAlert(`Importing: ${payload.metadata?.employee_name || 'DSE Backup'}...`, \"info\");\n      \n      // 2. Send it to the server\n      await apiManualSync.run({ \n        ...payload, \n        sync_source: 'MANUAL_IMPORT' \n      });\n\n      showAlert(\"✅ Manual Sync Success! Data is now in your database.\", \"success\");\n      \n\n      \n    } catch (err) {\n      showAlert(\"❌ Error: Invalid sync file format.\", \"error\");\n    }\n  })()\n}}\n",
+  "parentColumnSpace": 16.45703125,
+  "parentId": "pb1977c86b",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "hug",
+  "rightColumn": 17,
+  "selectedFiles": [],
+  "topRow": 1,
+  "type": "FILE_PICKER_WIDGET_V2",
+  "version": 1,
+  "widgetId": "2xo4zcwu5m",
+  "widgetName": "fpSyncImport"
+}

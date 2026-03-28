@@ -23,6 +23,9 @@
   "dynamicTriggerPathList": [
     {
       "key": "groupButtons.groupButton1.onClick"
+    },
+    {
+      "key": "groupButtons.groupButton2.onClick"
     }
   ],
   "groupButtons": {
@@ -52,6 +55,7 @@
       "isVisible": true,
       "label": "Run Depreciation",
       "menuItems": {},
+      "onClick": "{{showModal(Modal3.name);}}",
       "placement": "START",
       "widgetId": ""
     }

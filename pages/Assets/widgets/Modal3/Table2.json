@@ -40,9 +40,10 @@
     "journal_entry_id",
     "created_at",
     "id",
-    "asset_id"
+    "asset_id",
+    "bank_statement_entry_id"
   ],
-  "columnUpdatedAt": 1774070276969,
+  "columnUpdatedAt": 1774678486894,
   "columnWidthMap": {},
   "customIsLoading": false,
   "customIsLoadingValue": "",
@@ -91,6 +92,9 @@
     },
     {
       "key": "primaryColumns.asset_name.computedValue"
+    },
+    {
+      "key": "primaryColumns.bank_statement_entry_id.computedValue"
     }
   ],
   "dynamicPropertyPathList": [
@@ -211,6 +215,40 @@
       "notation": "standard",
       "originalId": "asset_name",
       "sticky": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
+    "bank_statement_entry_id": {
+      "alias": "bank_statement_entry_id",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "cellBackground": "",
+      "columnType": "text",
+      "computedValue": "{{(() => { const tableData = Table2.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"bank_statement_entry_id\"])) : bank_statement_entry_id })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "fontStyle": "",
+      "horizontalAlignment": "LEFT",
+      "id": "bank_statement_entry_id",
+      "index": 8,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": true,
+      "label": "bank_statement_entry_id",
+      "notation": "standard",
+      "originalId": "bank_statement_entry_id",
+      "sticky": "",
+      "textColor": "",
       "textSize": "0.875rem",
       "thousandSeparator": true,
       "validation": {},
