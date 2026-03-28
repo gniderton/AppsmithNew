@@ -40,7 +40,7 @@
     }
   ],
   "isDefaultClickDisabled": true,
-  "isDisabled": "{{ utils.getSummaryStats().all_cleared }}",
+  "isDisabled": "{{ !utils.getSummaryStats().all_cleared }}",
   "isLoading": false,
   "isVisible": "{{ \n  !!getReportDetails.data?.summary?.settlement_status &&\n  getReportDetails.data.summary.settlement_status !== 'Settled'\n}}",
   "key": "3vmursytfu",

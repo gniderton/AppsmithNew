@@ -56,24 +56,24 @@ export default {
      * Calculates real-time totals.
      */
     getSummaryStats: () => {
-        const data = this.getMergedData(); 
-        if (!data || !data.payments) return {};
+    const data = this.getMergedData(); 
+    if (!data || !data.payments) return {};
 
-        const sum = (items) => items.reduce((acc, i) => acc + Number(i.amount || 0), 0);
-        const p = data.payments;
-        const e = data.expenses || [];
+    const sum = (items) => items.reduce((acc, i) => acc + Number(i.amount || 0), 0);
+    const p = data.payments;
+    const e = data.expenses || [];
 
-        const stats = {
-            cash_pending: sum(p.filter(x => x.payment_mode === 'Cash' && x.verification_status === 'Pending')),
-            cheque_pending: sum(p.filter(x => x.payment_mode === 'Cheque' && x.verification_status === 'Pending')),
-            online_pending: sum(p.filter(x => ['NEFT','UPI','Bank Transfer'].includes(x.payment_mode) && x.verification_status === 'Pending')),
-            expenses_pending: sum(e.filter(x => x.status === 'Pending')),
-            expense_auth_blocked: data.expense_stats?.requires_auth && data.expense_stats?.daily_total > 250
-        };
+    const stats = {
+        cash_pending: sum(p.filter(x => x.payment_mode === 'Cash' && x.verification_status === 'Pending')),
+        cheque_pending: sum(p.filter(x => x.payment_mode === 'Cheque' && x.verification_status === 'Pending')),
+        online_pending: sum(p.filter(x => ['NEFT','UPI','Bank Transfer'].includes(x.payment_mode) && x.verification_status === 'Pending')),
+        expenses_pending: sum(e.filter(x => x.status === 'Pending'))
+    };
 
-        stats.all_cleared = (stats.cash_pending + stats.cheque_pending + stats.online_pending + stats.expenses_pending) === 0 && !stats.expense_auth_blocked;
-        return stats;
-    },
+    // Now all_cleared only cares about pending verifications!
+    stats.all_cleared = (stats.cash_pending + stats.cheque_pending + stats.online_pending + stats.expenses_pending) === 0;
+    return stats;
+},
 
     /**
      * 3. CATEGORY STAGER (Deferred Decision)
