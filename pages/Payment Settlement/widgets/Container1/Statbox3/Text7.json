@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 25,
+  "bottomRow": 5,
   "dynamicBindingPathList": [
     {
       "key": "truncateButtonColor"
@@ -34,7 +34,7 @@
   "mobileRightColumn": 37,
   "mobileTopRow": 0,
   "needsErrorInfo": false,
-  "originalBottomRow": 6,
+  "originalBottomRow": 25,
   "originalTopRow": 0,
   "overflow": "NONE",
   "parentId": "2ak9el0535",

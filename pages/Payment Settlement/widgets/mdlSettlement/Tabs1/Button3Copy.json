@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 0,
+  "bottomRow": 4,
   "bottomRowBeforeCollapse": 4,
   "boxShadow": "none",
   "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
@@ -50,7 +50,7 @@
   "mobileTopRow": 0,
   "needsErrorInfo": false,
   "onClick": "{{ utils.stageCategory(tblCheque.tableData, 'Cheque') }}",
-  "originalBottomRow": 4,
+  "originalBottomRow": 0,
   "originalTopRow": 0,
   "parentColumnSpace": 16,
   "parentId": "cxa8pbprt8",
