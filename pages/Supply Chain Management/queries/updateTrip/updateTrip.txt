@@ -1,0 +1,6 @@
+{
+  "team_id": {{ selTeamEdit.selectedOptionValue }},
+  "driver_id": {{ getDeliveryTeam.data.find(t => t.id == selTeamEdit.selectedOptionValue)?.driver_id }},
+  "vehicle_number": "{{ getDeliveryTeam.data.find(t => t.id == selTeamEdit.selectedOptionValue)?.vehicle_number }}",
+  "invoice_ids": {{ tblEditInvoices.selectedRows.map(r => r.id) }}
+}

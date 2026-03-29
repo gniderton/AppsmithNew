@@ -1,0 +1,169 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 13,
+  "boxShadow": "none",
+  "buttonVariant": "TERTIARY",
+  "childStylesheet": {
+    "button": {
+      "buttonColor": "{{appsmith.theme.colors.primaryColor}}"
+    }
+  },
+  "dynamicBindingPathList": [
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "groupButtons.groupButton1.buttonColor"
+    },
+    {
+      "key": "groupButtons.groupButton2.buttonColor"
+    },
+    {
+      "key": "groupButtons.groupButtonsf0ugmcu6l.buttonColor"
+    },
+    {
+      "key": "groupButtons.groupButton2.isDisabled"
+    },
+    {
+      "key": "groupButtons.groupButtonwdmc8zt18i.buttonColor"
+    },
+    {
+      "key": "groupButtons.groupButtonwdmc8zt18i.isVisible"
+    },
+    {
+      "key": "groupButtons.groupButton2.isVisible"
+    },
+    {
+      "key": "groupButtons.groupButton1.isVisible"
+    },
+    {
+      "key": "groupButtons.groupButtonsf0ugmcu6l.isVisible"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "groupButtons.groupButton2.isDisabled"
+    },
+    {
+      "key": "groupButtons.groupButtonwdmc8zt18i.onClick"
+    },
+    {
+      "key": "groupButtons.groupButton2.onClick"
+    },
+    {
+      "key": "groupButtons.groupButtonwdmc8zt18i.isVisible"
+    },
+    {
+      "key": "groupButtons.groupButton2.isVisible"
+    },
+    {
+      "key": "groupButtons.groupButtonsf0ugmcu6l.onClick"
+    },
+    {
+      "key": "groupButtons.groupButton1.isVisible"
+    },
+    {
+      "key": "groupButtons.groupButtonsf0ugmcu6l.isVisible"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "groupButtons.groupButtonwdmc8zt18i.onClick"
+    },
+    {
+      "key": "groupButtons.groupButton2.onClick"
+    },
+    {
+      "key": "groupButtons.groupButtonsf0ugmcu6l.onClick"
+    }
+  ],
+  "groupButtons": {
+    "groupButton1": {
+      "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+      "buttonType": "SIMPLE",
+      "disabledWhenInvalid": false,
+      "iconName": "print",
+      "id": "groupButton1",
+      "index": 1,
+      "isDisabled": false,
+      "isVisible": "{{ !appsmith.store.isTripEditActive }}",
+      "label": "Print",
+      "menuItems": {},
+      "placement": "START",
+      "widgetId": ""
+    },
+    "groupButton2": {
+      "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+      "buttonType": "SIMPLE",
+      "disabledWhenInvalid": false,
+      "iconName": "edit",
+      "id": "groupButton2",
+      "index": 0,
+      "isDisabled": "{{ tblTripList.triggeredRow.start_time }}",
+      "isVisible": "{{ !appsmith.store.isTripEditActive && !tblTripList.triggeredRow.start_time }}",
+      "label": "Edit",
+      "menuItems": {},
+      "onClick": "{{\n  // 1. Refresh both lists first so the manager sees the current data\n  getDeliveryList.run()\n    .then(() => getPendingInvoices.run())\n    .then(() => {\n      // 2. ONLY once the data is loaded, turn on the Edit mode\n      storeValue('isTripEditActive', true);\n      \n      // 3. Optional: Give a small hint that they are editing\n      showAlert('Edit Mode Active', 'info');\n    });\n}}\n",
+      "placement": "START",
+      "widgetId": ""
+    },
+    "groupButtonsf0ugmcu6l": {
+      "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+      "buttonType": "SIMPLE",
+      "iconName": "automatic-updates",
+      "id": "groupButtonsf0ugmcu6l",
+      "index": 2,
+      "isDisabled": false,
+      "isSeparator": false,
+      "isVisible": "{{ appsmith.store.isTripEditActive }}",
+      "itemType": "BUTTON",
+      "label": "Update",
+      "menuItems": {},
+      "onClick": "{{\n  updateTrip.run()\n    .then(() => {\n      // 1. Give the manager a success message\n      showAlert('Trip updated successfully', 'success');\n      \n      // 2. Turn OFF Edit Mode (Hides edit table, shows regular list)\n      storeValue('isTripEditActive', false);\n      \n      // 3. Refresh your lists so the changes appear instantly\n      getTrips.run();           // Refreshes the main trip list\n      getDeliveryList.run();    // Refreshes the specific trip's invoices\n    })\n    .catch((error) => {\n      // Show an error if the trip already started or any other issue\n      showAlert('Update failed: ' + error.message, 'error');\n    });\n}}\n",
+      "placement": "START",
+      "variant": "filled",
+      "widgetId": "dlbqmf550r"
+    },
+    "groupButtonwdmc8zt18i": {
+      "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+      "buttonType": "SIMPLE",
+      "iconName": "remove",
+      "id": "groupButtonwdmc8zt18i",
+      "index": 3,
+      "isDisabled": false,
+      "isSeparator": false,
+      "isVisible": "{{ appsmith.store.isTripEditActive }}",
+      "itemType": "BUTTON",
+      "label": "Cancel edit",
+      "menuItems": {},
+      "onClick": "{{\n  storeValue('isTripEditActive', false);\n}}\n",
+      "placement": "START",
+      "variant": "filled",
+      "widgetId": "6wjw4hjm98"
+    }
+  },
+  "isCanvas": false,
+  "isLoading": false,
+  "isVisible": true,
+  "key": "0h1f5ulswd",
+  "leftColumn": 53,
+  "minWidth": 450,
+  "mobileBottomRow": 8,
+  "mobileLeftColumn": 39,
+  "mobileRightColumn": 63,
+  "mobileTopRow": 4,
+  "needsErrorInfo": false,
+  "orientation": "vertical",
+  "parentColumnSpace": 16.321875,
+  "parentId": "8lb8is7sf9",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 63,
+  "topRow": 5,
+  "type": "BUTTON_GROUP_WIDGET",
+  "version": 1,
+  "widgetId": "djdwalrzaf",
+  "widgetName": "ButtonGroup1"
+}

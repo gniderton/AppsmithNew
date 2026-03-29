@@ -1,12 +1,12 @@
 {
-  "gitSyncId": "69a80abb79ac426a29eb8838_e6b8ee07-56b6-48cb-bc29-e155fe7b4d5e",
+  "gitSyncId": "69a80abb79ac426a29eb8838_ff24157a-d72d-4bc9-ae9b-6f1510fb66a8",
   "unpublishedPage": {
     "isHidden": false,
     "layouts": [
       {
         "dsl": {
           "backgroundColor": "none",
-          "bottomRow": 860,
+          "bottomRow": 800,
           "canExtend": true,
           "containerStyle": "none",
           "detachFromLayout": true,
@@ -26,7 +26,7 @@
         }
       }
     ],
-    "name": "Payment Settlement",
-    "slug": "payment-settlement"
+    "name": "Supply Chain Management",
+    "slug": "supply-chain-management"
   }
 }

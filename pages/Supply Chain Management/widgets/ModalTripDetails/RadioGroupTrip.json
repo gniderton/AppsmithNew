@@ -1,0 +1,53 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "alignment": "left",
+  "animateLoading": true,
+  "bottomRow": 28,
+  "boxShadow": "none",
+  "defaultOptionValue": "Pick List",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    }
+  ],
+  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicPropertyPathList": [
+    {
+      "key": "options"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "flexVerticalAlignment": "start",
+  "isDisabled": false,
+  "isInline": true,
+  "isLoading": false,
+  "isRequired": false,
+  "isVisible": true,
+  "key": "pmsi8o9qfx",
+  "label": "",
+  "labelAlignment": "left",
+  "labelPosition": "Top",
+  "labelTextSize": "0.875rem",
+  "labelWidth": 5,
+  "leftColumn": 0,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "mobileBottomRow": 19,
+  "mobileLeftColumn": 0,
+  "mobileRightColumn": 20,
+  "mobileTopRow": 13,
+  "needsErrorInfo": false,
+  "options": "[\n  {\n    \"label\": \"Pick List\",\n    \"value\": \"Pick List\"\n  },\n  {\n    \"label\": \"Delivery List\",\n    \"value\": \"Delivery List\"\n  }\n]",
+  "originalBottomRow": 28,
+  "originalTopRow": 24,
+  "parentColumnSpace": 16.3125,
+  "parentId": "8lb8is7sf9",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "rightColumn": 16,
+  "topRow": 24,
+  "type": "RADIO_GROUP_WIDGET",
+  "version": 1,
+  "widgetId": "7e8n48urvl",
+  "widgetName": "RadioGroupTrip"
+}
