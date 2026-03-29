@@ -39,6 +39,12 @@
     },
     {
       "key": "groupButtons.groupButtonsf0ugmcu6l.isVisible"
+    },
+    {
+      "key": "groupButtons.groupButtonvch3wycj9r.buttonColor"
+    },
+    {
+      "key": "groupButtons.groupButtonvch3wycj9r.isVisible"
     }
   ],
   "dynamicPropertyPathList": [
@@ -65,6 +71,12 @@
     },
     {
       "key": "groupButtons.groupButtonsf0ugmcu6l.isVisible"
+    },
+    {
+      "key": "groupButtons.groupButtonvch3wycj9r.isVisible"
+    },
+    {
+      "key": "groupButtons.groupButtonvch3wycj9r.onClick"
     }
   ],
   "dynamicTriggerPathList": [
@@ -76,6 +88,9 @@
     },
     {
       "key": "groupButtons.groupButtonsf0ugmcu6l.onClick"
+    },
+    {
+      "key": "groupButtons.groupButtonvch3wycj9r.onClick"
     }
   ],
   "groupButtons": {
@@ -124,6 +139,23 @@
       "placement": "START",
       "variant": "filled",
       "widgetId": "dlbqmf550r"
+    },
+    "groupButtonvch3wycj9r": {
+      "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+      "buttonType": "SIMPLE",
+      "iconName": "trash",
+      "id": "groupButtonvch3wycj9r",
+      "index": 4,
+      "isDisabled": false,
+      "isSeparator": false,
+      "isVisible": "{{!tblTripList.triggeredRow.start_time }}",
+      "itemType": "BUTTON",
+      "label": "Delete",
+      "menuItems": {},
+      "onClick": "{{\n  deleteTrip.run()\n    .then(() => {\n      showAlert('Trip Deleted Successfully', 'success');\n      getTrips.run();\n      closeModal('ModalTripDetails');\n    })\n    .catch((e) => {\n      showAlert('Deletion Failed: ' + e.message, 'error');\n    });\n}}\n",
+      "placement": "START",
+      "variant": "filled",
+      "widgetId": "ixuvps62xb"
     },
     "groupButtonwdmc8zt18i": {
       "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
