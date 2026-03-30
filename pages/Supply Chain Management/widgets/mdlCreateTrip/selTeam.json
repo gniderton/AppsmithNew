@@ -1,0 +1,68 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 9,
+  "boxShadow": "none",
+  "defaultOptionValue": "",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "sourceData"
+    }
+  ],
+  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicPropertyPathList": [
+    {
+      "key": "sourceData"
+    },
+    {
+      "key": "isDisabled"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "isDisabled": "",
+  "isFilterable": true,
+  "isLoading": false,
+  "isRequired": false,
+  "isVisible": true,
+  "key": "hxl95f01d0",
+  "labelAlignment": "left",
+  "labelPosition": "Left",
+  "labelText": "Delivery Team",
+  "labelTextSize": "0.875rem",
+  "labelWidth": "7",
+  "leftColumn": 0,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 12,
+  "mobileLeftColumn": 0,
+  "mobileRightColumn": 20,
+  "mobileTopRow": 5,
+  "needsErrorInfo": false,
+  "optionLabel": "label",
+  "optionValue": "value",
+  "originalBottomRow": 8,
+  "originalTopRow": 4,
+  "parentColumnSpace": 6.9375,
+  "parentId": "4j4ggid2dw",
+  "parentRowSpace": 10,
+  "placeholderText": "Select option",
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 26,
+  "serverSideFiltering": false,
+  "shouldScrollContents": true,
+  "sourceData": "{{getDeliveryTeam.data.map( (obj) =>{ return  {'label': obj.name, 'value': obj.id } })}}",
+  "topRow": 5,
+  "type": "SELECT_WIDGET",
+  "version": 1,
+  "widgetId": "ahlz8n4aid",
+  "widgetName": "selTeam"
+}

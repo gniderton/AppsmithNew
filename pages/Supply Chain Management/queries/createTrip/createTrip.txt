@@ -1,0 +1,7 @@
+{
+  "team_id": {{ selTeam.selectedOptionValue }},
+  "driver_id": {{ getDeliveryTeam.data.find(t => t.id == selTeam.selectedOptionValue)?.driver_id }},
+  "vehicle_number": "{{ getDeliveryTeam.data.find(t => t.id == selTeam.selectedOptionValue)?.vehicle_number }}",
+  "invoice_ids": {{ tblPendingInvoices.selectedRows.map(r => r.id) }},
+  "created_by": {{ getMe.data.id }}
+}

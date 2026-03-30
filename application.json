@@ -104,6 +104,10 @@
     {
       "id": "Supply Chain Management",
       "isDefault": false
+    },
+    {
+      "id": "Credit Note",
+      "isDefault": false
     }
   ],
   "unpublishedAppLayout": {
