@@ -1,0 +1,20 @@
+{
+  "gitSyncId": "69a80abb79ac426a29eb8838_6c8fb5ff-7578-46ef-b23b-7744c0fa7dd2",
+  "id": "Supply Chain Management_Global_Assets",
+  "unpublishedCollection": {
+    "name": "Global_Assets",
+    "pageId": "Supply Chain Management",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "myVar1",
+        "value": "[]"
+      },
+      {
+        "name": "myVar2",
+        "value": "{}"
+      }
+    ]
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "69a80abb79ac426a29eb8838_f9fde0a0-f782-4d18-9dec-cf3b0ebe2c71",
+  "id": "Credit Note_CreditNoteManager",
+  "unpublishedCollection": {
+    "name": "CreditNoteManager",
+    "pageId": "Credit Note",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}
