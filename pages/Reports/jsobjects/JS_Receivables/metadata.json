@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "69a80abb79ac426a29eb8838_6da9bf33-23c3-4673-9edb-bf2c49244bf8",
+  "id": "Reports_JS_Receivables",
+  "unpublishedCollection": {
+    "name": "JS_Receivables",
+    "pageId": "Reports",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}

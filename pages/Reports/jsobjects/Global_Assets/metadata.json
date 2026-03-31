@@ -1,9 +1,9 @@
 {
-  "gitSyncId": "69a80abb79ac426a29eb8838_6c8fb5ff-7578-46ef-b23b-7744c0fa7dd2",
-  "id": "Supply Chain Management_Global_Assets",
+  "gitSyncId": "69a80abb79ac426a29eb8838_d1c22b87-acee-4c39-8cc1-7f0adfdb9259",
+  "id": "Reports_Global_Assets",
   "unpublishedCollection": {
     "name": "Global_Assets",
-    "pageId": "Supply Chain Management",
+    "pageId": "Reports",
     "pluginId": "js-plugin",
     "pluginType": "JS",
     "variables": [

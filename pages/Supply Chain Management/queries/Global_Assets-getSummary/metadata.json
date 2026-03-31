@@ -1,6 +1,6 @@
 {
-  "gitSyncId": "69a80abb79ac426a29eb8838_7252bd9e-91d8-445f-a99f-fc18890e36cc",
-  "id": "Supply Chain Management_Global_Assets.myFun1",
+  "gitSyncId": "69a80abb79ac426a29eb8838_8d018062-2d19-4044-ae44-a658c1d54065",
+  "id": "Supply Chain Management_Global_Assets.getSummary",
   "pluginId": "js-plugin",
   "pluginType": "JS",
   "unpublishedAction": {
@@ -10,7 +10,6 @@
       "paginationType": "NONE",
       "timeoutInMillisecond": 10000
     },
-    "clientSideExecution": true,
     "collectionId": "Supply Chain Management_Global_Assets",
     "confirmBeforeExecute": false,
     "datasource": {
@@ -23,8 +22,8 @@
         "key": "body"
       }
     ],
-    "fullyQualifiedName": "Global_Assets.myFun1",
-    "name": "myFun1",
+    "fullyQualifiedName": "Global_Assets.getSummary",
+    "name": "getSummary",
     "pageId": "Supply Chain Management",
     "runBehaviour": "MANUAL",
     "userSetOnLoad": false
