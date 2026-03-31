@@ -1,12 +1,16 @@
 {
-  "gitSyncId": "69a80abb79ac426a29eb8838_b8615d5e-cd7c-4bd2-b2e7-7312c7cdd547",
-  "id": "Migration Setup_Migration_Utils.startImport",
+  "gitSyncId": "69a80abb79ac426a29eb8838_2bcfd934-1c7f-425f-bba5-81fd3f677a16",
+  "id": "Migration Setup_Migration_Utils.formatDate",
   "pluginId": "js-plugin",
   "pluginType": "JS",
   "unpublishedAction": {
     "actionConfiguration": {
       "encodeParamsToggle": true,
-      "jsArguments": [],
+      "jsArguments": [
+        {
+          "name": "dateStr"
+        }
+      ],
       "paginationType": "NONE",
       "timeoutInMillisecond": 10000
     },
@@ -22,8 +26,8 @@
         "key": "body"
       }
     ],
-    "fullyQualifiedName": "Migration_Utils.startImport",
-    "name": "startImport",
+    "fullyQualifiedName": "Migration_Utils.formatDate",
+    "name": "formatDate",
     "pageId": "Migration Setup",
     "runBehaviour": "MANUAL",
     "userSetOnLoad": false

@@ -1,14 +1,14 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 75,
+  "bottomRow": 152,
   "boxShadow": "none",
   "canEscapeKeyClose": true,
   "canOutsideClickClose": false,
   "children": [
     {
       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-      "bottomRow": 750,
+      "bottomRow": 1520,
       "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
       "canExtend": true,
       "detachFromLayout": true,
@@ -29,7 +29,7 @@
       "leftColumn": 0,
       "maxDynamicHeight": 9000,
       "minDynamicHeight": 4,
-      "minHeight": 420,
+      "minHeight": 1100,
       "minWidth": 450,
       "mobileBottomRow": 240,
       "mobileLeftColumn": 0,
@@ -58,14 +58,14 @@
   ],
   "dynamicHeight": "AUTO_HEIGHT",
   "dynamicTriggerPathList": [],
-  "height": 750,
+  "height": 1520,
   "isCanvas": true,
   "isLoading": false,
   "key": "d7rc6e1s07",
   "leftColumn": 21,
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 24,
-  "minHeight": 750,
+  "minHeight": 1520,
   "mobileBottomRow": 39,
   "mobileLeftColumn": 21,
   "mobileRightColumn": 45,
@@ -82,5 +82,5 @@
   "version": 2,
   "widgetId": "sgyghssfn0",
   "widgetName": "modalFrameImport",
-  "width": 982.5999999999999
+  "width": 1242.6
 }

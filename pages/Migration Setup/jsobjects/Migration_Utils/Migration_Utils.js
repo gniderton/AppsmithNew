@@ -1,5 +1,14 @@
 export default {
-	// Function 1: Generates the correct blank CSV for the selected module
+	// 1. Helper to safely format dates for the backend
+	formatDate: (dateStr) => {
+		if (!dateStr || dateStr === "") return null;
+		// moment is built into Appsmith. 
+		// This handles YYYY-MM-DD, DD/MM/YYYY, DD-MM-YYYY, etc.
+		const d = moment(dateStr, ["YYYY-MM-DD", "DD/MM/YYYY", "DD-MM-YYYY", "MM/DD/YYYY", "YYYY/MM/DD"]);
+		return d.isValid() ? d.format("YYYY-MM-DD") : null;
+	},
+
+	// 2. Generates the correct blank CSV for the selected module
 	downloadTemplate: () => {
 		const module = SelectModule.selectedOptionValue;
 		if (!module) return showAlert("Please select a module first", "warning");
@@ -48,7 +57,7 @@ export default {
 		showAlert(`Template for ${module} downloaded!`, "success");
 	},
 
-    // Function 2: Routes the imported data to the correct Backend API
+    // 3. Routes the imported data to the correct Backend API with date cleaning
     startImport: async () => {
         const module = SelectModule.selectedOptionValue;
         const uploadData = FilePickerImport.files[0]?.data;
@@ -57,34 +66,45 @@ export default {
             return showAlert("Please upload a filled CSV file first.", "error");
         }
 
+        // Standardize dates across all modules before sending to backend
+        const cleanedData = uploadData.map(row => {
+            const newRow = { ...row };
+            if (newRow.bill_date) newRow.bill_date = this.formatDate(newRow.bill_date);
+            if (newRow.invoice_date) newRow.invoice_date = this.formatDate(newRow.invoice_date);
+            if (newRow.loan_date) newRow.loan_date = this.formatDate(newRow.loan_date);
+            if (newRow.advance_date) newRow.advance_date = this.formatDate(newRow.advance_date);
+            if (newRow.expiry_date) newRow.expiry_date = this.formatDate(newRow.expiry_date);
+            return newRow;
+        });
+
         try {
             switch(module) {
                 case "Customers":
-                    await BulkImport_Customers.run({ data: uploadData });
+                    await BulkImport_Customers.run({ data: cleanedData });
                     break;
                 case "Vendors":
-                    await BulkImport_Vendors.run({ data: uploadData });
+                    await BulkImport_Vendors.run({ data: cleanedData });
                     break;
                 case "OpeningStock":
-                    await BulkImport_Inventory.run({ data: uploadData });
+                    await BulkImport_Inventory.run({ data: cleanedData });
                     break;
                 case "OutstandingInvoices":
-                    await BulkImport_Invoices.run({ data: uploadData });
+                    await BulkImport_Invoices.run({ data: cleanedData });
                     break;
                 case "OutstandingBills":
-                    await BulkImport_Bills.run({ data: uploadData });
+                    await BulkImport_Bills.run({ data: cleanedData });
                     break;
                 case "CustomerAdvances":
-                    await BulkImport_CustAdvances.run({ data: uploadData });
+                    await BulkImport_CustAdvances.run({ data: cleanedData });
                     break;
                 case "VendorAdvances":
-                    await BulkImport_VendAdvances.run({ data: uploadData });
+                    await BulkImport_VendAdvances.run({ data: cleanedData });
                     break;
                 case "Loans":
-                    await BulkImport_Loans.run({ data: uploadData });
+                    await BulkImport_Loans.run({ data: cleanedData });
                     break;
             }
-            showAlert(`Successfully imported ${uploadData.length} records into ${module}!`, "success");
+            showAlert(`Successfully imported ${cleanedData.length} records into ${module}!`, "success");
             resetWidget("FilePickerImport", true); 
             
         } catch (error) {

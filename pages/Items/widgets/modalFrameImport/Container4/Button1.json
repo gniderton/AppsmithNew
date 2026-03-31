@@ -1,5 +1,5 @@
 {
-  "animateLoading": true,
+  "animateLoading": "true",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "bottomRow": 4,
   "boxShadow": "none",
@@ -17,6 +17,9 @@
   "dynamicPropertyPathList": [
     {
       "key": "onClick"
+    },
+    {
+      "key": "animateLoading"
     }
   ],
   "dynamicTriggerPathList": [
