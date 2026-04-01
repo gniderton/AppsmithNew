@@ -139,7 +139,7 @@ export default {
 				// FIXED: didDrawPage now draws a clean footer instead of overlapping top text
 				didDrawPage: (data) => {
 					const totalPages = doc.internal.getNumberOfPages();
-					doc.setFontSize(5);
+					doc.setFontSize(8);
 					doc.setTextColor(100);
 					doc.setFont("helvetica", "normal");
 					

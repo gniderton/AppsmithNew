@@ -84,9 +84,6 @@
       "key": "boxShadow"
     },
     {
-      "key": "tableData"
-    },
-    {
       "key": "primaryColumns.id.computedValue"
     },
     {
@@ -166,6 +163,9 @@
     },
     {
       "key": "primaryColumns.credit_period_days.computedValue"
+    },
+    {
+      "key": "tableData"
     }
   ],
   "dynamicPropertyPathList": [
@@ -205,7 +205,7 @@
   "mobileRightColumn": 10,
   "mobileTopRow": 4,
   "needsErrorInfo": false,
-  "originalBottomRow": 50,
+  "originalBottomRow": 80,
   "originalTopRow": 10,
   "parentColumnSpace": 19.9375,
   "parentId": "ozwk9f2meg",
