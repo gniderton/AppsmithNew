@@ -2,13 +2,11 @@ export default {
 	// 1. Helper to safely format dates for the backend
 	formatDate: (dateStr) => {
 		if (!dateStr || dateStr === "") return null;
-		// moment is built into Appsmith. 
-		// This handles YYYY-MM-DD, DD/MM/YYYY, DD-MM-YYYY, etc.
 		const d = moment(dateStr, ["YYYY-MM-DD", "DD/MM/YYYY", "DD-MM-YYYY", "MM/DD/YYYY", "YYYY/MM/DD"]);
 		return d.isValid() ? d.format("YYYY-MM-DD") : null;
 	},
 
-	// 2. Generates the correct blank CSV for the selected module
+	// 2. Updated Template with 5 Prices for OpeningStock
 	downloadTemplate: () => {
 		const module = SelectModule.selectedOptionValue;
 		if (!module) return showAlert("Please select a module first", "warning");
@@ -26,7 +24,8 @@ export default {
 				fileName = "Template_Vendors.csv";
 				break;
 			case "OpeningStock":
-				headers = "product_id,batch_code,expiry_date,quantity,mrp,status_type\n";
+                // Added: purchase_rate, distributor_rate, wholesale_rate, dealer_rate, retail_rate
+				headers = "product_id,batch_code,expiry_date,quantity,mrp,purchase_rate,distributor_rate,wholesale_rate,dealer_rate,retail_rate,status_type\n";
 				fileName = "Template_Opening_Stock.csv";
 				break;
 			case "OutstandingInvoices":
@@ -66,7 +65,6 @@ export default {
             return showAlert("Please upload a filled CSV file first.", "error");
         }
 
-        // Standardize dates across all modules before sending to backend
         const cleanedData = uploadData.map(row => {
             const newRow = { ...row };
             if (newRow.bill_date) newRow.bill_date = this.formatDate(newRow.bill_date);
@@ -79,34 +77,17 @@ export default {
 
         try {
             switch(module) {
-                case "Customers":
-                    await BulkImport_Customers.run({ data: cleanedData });
-                    break;
-                case "Vendors":
-                    await BulkImport_Vendors.run({ data: cleanedData });
-                    break;
-                case "OpeningStock":
-                    await BulkImport_Inventory.run({ data: cleanedData });
-                    break;
-                case "OutstandingInvoices":
-                    await BulkImport_Invoices.run({ data: cleanedData });
-                    break;
-                case "OutstandingBills":
-                    await BulkImport_Bills.run({ data: cleanedData });
-                    break;
-                case "CustomerAdvances":
-                    await BulkImport_CustAdvances.run({ data: cleanedData });
-                    break;
-                case "VendorAdvances":
-                    await BulkImport_VendAdvances.run({ data: cleanedData });
-                    break;
-                case "Loans":
-                    await BulkImport_Loans.run({ data: cleanedData });
-                    break;
+                case "Customers": await BulkImport_Customers.run({ data: cleanedData }); break;
+                case "Vendors": await BulkImport_Vendors.run({ data: cleanedData }); break;
+                case "OpeningStock": await BulkImport_Inventory.run({ data: cleanedData }); break;
+                case "OutstandingInvoices": await BulkImport_Invoices.run({ data: cleanedData }); break;
+                case "OutstandingBills": await BulkImport_Bills.run({ data: cleanedData }); break;
+                case "CustomerAdvances": await BulkImport_CustAdvances.run({ data: cleanedData }); break;
+                case "VendorAdvances": await BulkImport_VendAdvances.run({ data: cleanedData }); break;
+                case "Loans": await BulkImport_Loans.run({ data: cleanedData }); break;
             }
             showAlert(`Successfully imported ${cleanedData.length} records into ${module}!`, "success");
             resetWidget("FilePickerImport", true); 
-            
         } catch (error) {
             showAlert(`Import Failed: ${error.message}`, "error");
         }
