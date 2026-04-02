@@ -43,12 +43,12 @@
     "sync_time",
     "sync_id"
   ],
-  "columnUpdatedAt": 1774748742566,
+  "columnUpdatedAt": 1775089692936,
   "columnWidthMap": {
     "dse_name": 208,
     "report_date": 108,
     "settlement_status": 201,
-    "total_payment_collection": 104
+    "total_payment_collection": 86
   },
   "customIsLoading": false,
   "customIsLoadingValue": "",
@@ -67,9 +67,6 @@
     },
     {
       "key": "boxShadow"
-    },
-    {
-      "key": "tableData"
     },
     {
       "key": "primaryColumns.report_id.computedValue"
@@ -106,9 +103,16 @@
     },
     {
       "key": "primaryColumns.sync_id.computedValue"
+    },
+    {
+      "key": "tableData"
     }
   ],
-  "dynamicPropertyPathList": [],
+  "dynamicPropertyPathList": [
+    {
+      "key": "tableData"
+    }
+  ],
   "dynamicTriggerPathList": [
     {
       "key": "primaryColumns.customColumn1.onClick"
@@ -266,7 +270,7 @@
       "isDiscardVisible": true,
       "isEditable": false,
       "isSaveVisible": true,
-      "isVisible": true,
+      "isVisible": false,
       "label": "pending_payment_count",
       "notation": "standard",
       "originalId": "pending_payment_count",
@@ -394,7 +398,7 @@
       "isDiscardVisible": true,
       "isEditable": false,
       "isSaveVisible": true,
-      "isVisible": true,
+      "isVisible": false,
       "label": "sync_id",
       "notation": "standard",
       "originalId": "sync_id",
@@ -428,7 +432,7 @@
       "isDiscardVisible": true,
       "isEditable": false,
       "isSaveVisible": true,
-      "isVisible": true,
+      "isVisible": false,
       "label": "sync_time",
       "notation": "standard",
       "originalId": "sync_time",
@@ -476,7 +480,7 @@
   "responsiveBehavior": "fill",
   "rightColumn": 20,
   "searchKey": "",
-  "tableData": "{{getPendingReports.data}}",
+  "tableData": "{{\n  getPendingReports.data.filter(report => {\n    // Return true only if it is NOT (0 collection AND 0 expense)\n    return !(report.total_payment_collection === \"0.00\" && report.pending_expense_count === \"0\");\n  })\n}}",
   "textSize": "0.875rem",
   "topRow": 7,
   "totalRecordsCount": 0,
