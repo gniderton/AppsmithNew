@@ -126,7 +126,7 @@
       "isVisible": "{{ !appsmith.store.isTripEditActive && !tblTripList.triggeredRow.start_time }}",
       "label": "Edit",
       "menuItems": {},
-      "onClick": "{{\n  // 1. Refresh both lists first so the manager sees the current data\n  getDeliveryList.run()\n    .then(() => getPendingInvoices.run())\n    .then(() => {\n      // 2. ONLY once the data is loaded, turn on the Edit mode\n      storeValue('isTripEditActive', true);\n      \n      // 3. Optional: Give a small hint that they are editing\n      showAlert('Edit Mode Active', 'info');\n    });\n}}\n",
+      "onClick": "{{TripEditor.prepareEditMode()}}\n",
       "placement": "START",
       "widgetId": ""
     },

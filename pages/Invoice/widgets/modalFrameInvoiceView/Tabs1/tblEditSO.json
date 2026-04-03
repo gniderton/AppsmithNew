@@ -43,11 +43,12 @@
     "tax_percent",
     "amount",
     "tier_applied",
-    "customColumn1",
-    "gross_amount"
+    "customColumn1"
   ],
-  "columnUpdatedAt": 1773298526564,
-  "columnWidthMap": {},
+  "columnUpdatedAt": 1775189552926,
+  "columnWidthMap": {
+    "product_name": 309
+  },
   "customIsLoading": false,
   "customIsLoadingValue": "",
   "defaultPageSize": 0,
@@ -110,9 +111,6 @@
     },
     {
       "key": "primaryColumns.customColumn1.boxShadow"
-    },
-    {
-      "key": "primaryColumns.gross_amount.computedValue"
     }
   ],
   "dynamicPropertyPathList": [
@@ -158,7 +156,7 @@
   "parentColumnSpace": 15.946874999999999,
   "parentId": "3weccq0vpq",
   "parentRowSpace": 10,
-  "primaryColumnId": "id",
+  "primaryColumnId": "product_id",
   "primaryColumns": {
     "amount": {
       "alias": "amount",
@@ -317,37 +315,6 @@
       "label": "dispatched_qty",
       "notation": "standard",
       "originalId": "dispatched_qty",
-      "sticky": "",
-      "textSize": "0.875rem",
-      "thousandSeparator": true,
-      "validation": {},
-      "verticalAlignment": "CENTER",
-      "width": 150
-    },
-    "gross_amount": {
-      "alias": "gross_amount",
-      "allowCellWrapping": false,
-      "allowSameOptionsInNewRow": true,
-      "columnType": "number",
-      "computedValue": "{{(() => { const tableData = tblEditSO.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"gross_amount\"])) : gross_amount })()}}",
-      "currencyCode": "USD",
-      "decimals": 0,
-      "enableFilter": true,
-      "enableSort": true,
-      "horizontalAlignment": "LEFT",
-      "id": "gross_amount",
-      "index": 11,
-      "isCellEditable": false,
-      "isCellVisible": true,
-      "isDerived": false,
-      "isDisabled": false,
-      "isDiscardVisible": true,
-      "isEditable": false,
-      "isSaveVisible": true,
-      "isVisible": true,
-      "label": "gross_amount",
-      "notation": "standard",
-      "originalId": "gross_amount",
       "sticky": "",
       "textSize": "0.875rem",
       "thousandSeparator": true,
