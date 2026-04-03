@@ -1,6 +1,7 @@
 {
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "bottomRow": 11,
+  "bottomRowBeforeCollapse": 11,
   "counterClosewise": false,
   "dynamicBindingPathList": [
     {
@@ -31,8 +32,8 @@
   "mobileRightColumn": 28,
   "mobileTopRow": 6,
   "needsErrorInfo": false,
-  "originalBottomRow": 14,
-  "originalTopRow": 10,
+  "originalBottomRow": 11,
+  "originalTopRow": 7,
   "parentColumnSpace": 19.9375,
   "parentId": "fbllijqwaa",
   "parentRowSpace": 10,
@@ -44,6 +45,7 @@
   "showResult": false,
   "steps": "1",
   "topRow": 7,
+  "topRowBeforeCollapse": 7,
   "type": "PROGRESS_WIDGET",
   "version": 1,
   "widgetId": "sa6xycb83c",

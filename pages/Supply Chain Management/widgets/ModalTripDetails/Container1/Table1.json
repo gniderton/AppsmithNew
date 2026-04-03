@@ -45,9 +45,10 @@
     "customer_id",
     "latitude",
     "longitude",
-    "delivery_status"
+    "delivery_status",
+    "sales_order_id"
   ],
-  "columnUpdatedAt": 1774789080591,
+  "columnUpdatedAt": 1775186451602,
   "columnWidthMap": {
     "address": 314,
     "customer_name": 276,
@@ -119,6 +120,9 @@
     },
     {
       "key": "primaryColumns.instructions.computedValue"
+    },
+    {
+      "key": "primaryColumns.sales_order_id.computedValue"
     }
   ],
   "dynamicPropertyPathList": [
@@ -557,6 +561,40 @@
       "verticalAlignment": "CENTER",
       "width": 150
     },
+    "sales_order_id": {
+      "alias": "sales_order_id",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "cellBackground": "",
+      "columnType": "text",
+      "computedValue": "{{(() => { const tableData = Table1.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"sales_order_id\"])) : sales_order_id })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "fontStyle": "",
+      "horizontalAlignment": "LEFT",
+      "id": "sales_order_id",
+      "index": 2,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": true,
+      "label": "sales_order_id",
+      "notation": "standard",
+      "originalId": "sales_order_id",
+      "sticky": "",
+      "textColor": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
     "trip_invoice_id": {
       "alias": "trip_invoice_id",
       "allowCellWrapping": false,
@@ -593,7 +631,7 @@
   "responsiveBehavior": "fill",
   "rightColumn": 64,
   "searchKey": "",
-  "tableData": "{{getDeliveryList.data}}",
+  "tableData": "{{getDeliveryList.data.items}}",
   "textSize": "0.875rem",
   "topRow": 4,
   "totalRecordsCount": 0,

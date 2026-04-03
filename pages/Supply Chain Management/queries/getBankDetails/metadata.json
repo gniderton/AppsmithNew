@@ -1,6 +1,6 @@
 {
-  "gitSyncId": "69a80abb79ac426a29eb8838_094a3382-5af7-43e0-a15d-ffa3226efc30",
-  "id": "Supply Chain Management_getDeliveryList",
+  "gitSyncId": "69a80abb79ac426a29eb8838_f2e14899-085e-498b-bea8-eadd78196c01",
+  "id": "Supply Chain Management_getBankDetails",
   "pluginId": "restapi-plugin",
   "pluginType": "API",
   "unpublishedAction": {
@@ -16,7 +16,7 @@
       "httpMethod": "GET",
       "httpVersion": "HTTP11",
       "paginationType": "NONE",
-      "path": "/api/delivery/trips/{{ tblTripList.triggeredRow.id }}/manifest-web",
+      "path": "/api/sales/bank-details/3",
       "pluginSpecifiedTemplates": [
         {
           "value": true
@@ -32,14 +32,10 @@
       "name": "RenderCloud",
       "pluginId": "restapi-plugin"
     },
-    "dynamicBindingPathList": [
-      {
-        "key": "path"
-      }
-    ],
-    "name": "getDeliveryList",
+    "dynamicBindingPathList": [],
+    "name": "getBankDetails",
     "pageId": "Supply Chain Management",
-    "runBehaviour": "AUTOMATIC",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }

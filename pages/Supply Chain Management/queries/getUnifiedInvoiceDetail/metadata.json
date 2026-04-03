@@ -1,6 +1,6 @@
 {
-  "gitSyncId": "69a80abb79ac426a29eb8838_094a3382-5af7-43e0-a15d-ffa3226efc30",
-  "id": "Supply Chain Management_getDeliveryList",
+  "gitSyncId": "69a80abb79ac426a29eb8838_dc242364-a62e-49cb-8b55-0d5e6133d35b",
+  "id": "Supply Chain Management_getUnifiedInvoiceDetail",
   "pluginId": "restapi-plugin",
   "pluginType": "API",
   "unpublishedAction": {
@@ -16,7 +16,7 @@
       "httpMethod": "GET",
       "httpVersion": "HTTP11",
       "paginationType": "NONE",
-      "path": "/api/delivery/trips/{{ tblTripList.triggeredRow.id }}/manifest-web",
+      "path": "/api/sales/unified/{{this.params.id}}",
       "pluginSpecifiedTemplates": [
         {
           "value": true
@@ -37,9 +37,9 @@
         "key": "path"
       }
     ],
-    "name": "getDeliveryList",
+    "name": "getUnifiedInvoiceDetail",
     "pageId": "Supply Chain Management",
-    "runBehaviour": "AUTOMATIC",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }

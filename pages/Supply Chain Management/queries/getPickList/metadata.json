@@ -16,7 +16,7 @@
       "httpMethod": "GET",
       "httpVersion": "HTTP11",
       "paginationType": "NONE",
-      "path": "/api/delivery/trips/{{ tblTripList.triggeredRow.id}}/picklist",
+      "path": "/api/delivery/trips/{{ tblTripList.triggeredRow.id}}/picklist-web",
       "pluginSpecifiedTemplates": [
         {
           "value": true

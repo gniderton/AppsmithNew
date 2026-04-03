@@ -1,6 +1,6 @@
 {
-  "gitSyncId": "69a80abb79ac426a29eb8838_05532692-fa3b-4141-b00f-8c88c6872b2a",
-  "id": "Supply Chain Management_TripReports.generateDeliveryList",
+  "gitSyncId": "69a80abb79ac426a29eb8838_24c1e214-93f8-4b18-9cf2-105a0350d932",
+  "id": "Supply Chain Management_TripReports._drawSimpleBox",
   "pluginId": "js-plugin",
   "pluginType": "JS",
   "unpublishedAction": {
@@ -8,10 +8,22 @@
       "encodeParamsToggle": true,
       "jsArguments": [
         {
-          "name": "data"
+          "name": "doc"
         },
         {
-          "name": "tripInfo"
+          "name": "x"
+        },
+        {
+          "name": "y"
+        },
+        {
+          "name": "width"
+        },
+        {
+          "name": "height"
+        },
+        {
+          "name": "rows"
         }
       ],
       "paginationType": "NONE",
@@ -29,8 +41,8 @@
         "key": "body"
       }
     ],
-    "fullyQualifiedName": "TripReports.generateDeliveryList",
-    "name": "generateDeliveryList",
+    "fullyQualifiedName": "TripReports._drawSimpleBox",
+    "name": "_drawSimpleBox",
     "pageId": "Supply Chain Management",
     "runBehaviour": "MANUAL",
     "userSetOnLoad": false

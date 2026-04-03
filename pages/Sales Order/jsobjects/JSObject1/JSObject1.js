@@ -3,7 +3,7 @@ export default {
         // 1. Debugging Inputs
         // Make sure your tblSalesOrders widget has "Enable multi-row selection" turned ON
         const selectedOrders = tblSalesOrders.selectedRows || [];
-        const allProducts = getProducts.data?.data || getProducts.data || [];
+        const allProducts = getProducts.data.data || getProducts.data || [];
         
         // Appsmith uses the global 'store' for state variables
         const transitMap = appsmith.store.varTransitStock || {};

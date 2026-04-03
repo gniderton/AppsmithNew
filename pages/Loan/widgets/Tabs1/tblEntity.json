@@ -41,13 +41,15 @@
     "address",
     "notes",
     "is_active",
+    "customColumn1",
     "created_at",
     "updated_at",
-    "reference_id",
-    "customColumn1"
+    "reference_id"
   ],
-  "columnUpdatedAt": 1773911686647,
-  "columnWidthMap": {},
+  "columnUpdatedAt": 1775177469866,
+  "columnWidthMap": {
+    "id": 60
+  },
   "customIsLoading": false,
   "customIsLoadingValue": "",
   "defaultPageSize": 0,
@@ -416,7 +418,7 @@
       "isDiscardVisible": true,
       "isEditable": false,
       "isSaveVisible": true,
-      "isVisible": false,
+      "isVisible": true,
       "label": "id",
       "notation": "standard",
       "originalId": "id",

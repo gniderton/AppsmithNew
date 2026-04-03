@@ -1,44 +1,58 @@
 export default {
-	// --- A. THE BATCH PROCESSOR (The Loop) ---
-	downloadBulkInvoices: async () => {
-		const ids = appsmith.store.bulkInvoiceIds || [];
-		if (ids.length === 0) return;
+	// --- 1. THE TRIGGER (Link your button to this) ---
+	downloadAllTripInvoices: async () => {
+		try {
+			// Refresh trip manifest data
+			await getDeliveryList.run();
+			const invoices = (getDeliveryList.data || {}).items || [];
+			
+			if (invoices.length === 0) {
+				showAlert("No invoices found for this trip.", "warning");
+				return;
+			}
 
-		showAlert(`Processing batch of ${ids.length} invoices...`, "info");
+			// Extract Sales Order IDs (Now available in backend!)
+			const ids = invoices.map(r => r.sales_order_id).filter(Boolean);
+			
+			if (ids.length === 0) {
+				showAlert("Internal Error: Could not find Sales Order IDs in the manifest.", "error");
+				return;
+			}
 
-		// Fetch bank once for the whole batch
+			// Start the loop directly on this page
+			await this.downloadBulkInvoices(ids);
+
+		} catch (error) {
+			showAlert("Preparing Batch Error: " + error.message, "error");
+		}
+	},
+
+	// --- 2. THE FIXED LOOP ---
+	downloadBulkInvoices: async (ids) => {
+		if (!ids || ids.length === 0) return;
+
+		showAlert(`Starting batch download of ${ids.length} invoices...`, "info");
+		
+		// Pre-fetch bank details once per batch
 		await getBankDetails.run();
-		const bank = getBankDetails.data || {};
 
 		for (const id of ids) {
-			// FIX: Passing ID as parameter to avoid race conditions
-			// Update your query to use: WHERE sales_order_id = {{this.params.id}}
+			// FIX: Using parameters to avoid race conditions
+			// Ensure your query uses: WHERE sales_order_id = {{this.params.id}}
 			await getUnifiedInvoiceDetail.run({ id: id }); 
 			const detailedData = getUnifiedInvoiceDetail.data;
-			
+
 			if (detailedData && detailedData.invoice_id) {
+				// Call the exact drawing function below
 				await this.previewInvoice(detailedData);
-				// Delay (700ms) to ensure browser clears download queue
-				await new Promise(r => setTimeout(r, 700));
+				// Delay (750ms) to ensure browser clears download queue
+				await new Promise(r => setTimeout(r, 750));
 			}
 		}
-
-		// Cleanup
-		await storeValue('bulkInvoiceIds', []);
-		showAlert("Bulk Download Complete!", "success");
+		showAlert("All Invoices Downloaded Successfully!", "success");
 	},
 
-	// --- B. AUTO-TRIGGER (WITH SAFETY DELAY) ---
-	onPageLoad: async () => {
-		// Wait 500ms for the browser to catch up after navigation
-		await new Promise(r => setTimeout(r, 500)); 
-
-		if (appsmith.store.bulkInvoiceIds && appsmith.store.bulkInvoiceIds.length > 0) {
-			await this.downloadBulkInvoices();
-		}
-	},
-
-	// --- C. YOUR EXACT ORIGINAL PREVIEW LOGIC ---
+	// --- 3. YOUR EXACT ORIGINAL PREVIEW LOGIC ---
 	previewInvoice: async (invoiceData) => {
 		try {
 			if (!invoiceData || !invoiceData.invoice_id) throw new Error("No Invoice data selected.");
@@ -48,6 +62,7 @@ export default {
 			const jsPDFConstructor = jspdf.jsPDF || jspdf;
 			const doc = new jsPDFConstructor('p', 'pt', 'a4'); 
 
+			// Ensure AutoTable attachment
 			if (typeof doc.autoTable !== "function" && jspdf.plugin && jspdf.plugin.autotable) {
 				jsPDFConstructor.API.autoTable = jspdf.plugin.autotable;
 			}
@@ -275,7 +290,7 @@ export default {
 		}
 	},
 
-	// --- C. HELPERS (EXACT COPIES) ---
+	// --- HELPERS (EXACT COPIES) ---
 	getSummary: (lines) => {
 		if (!lines || lines.length === 0) return [];
 		const groups = {};

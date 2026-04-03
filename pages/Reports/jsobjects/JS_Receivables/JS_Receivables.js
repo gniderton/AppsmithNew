@@ -29,7 +29,7 @@ export default {
 			const jsPDFConstructor = jspdf.jsPDF || jspdf;
 			const doc = new jsPDFConstructor('p', 'pt', 'a4'); 
 			const brand = Global_Assets.getSummary(); 
-			
+
 			const margin = 5; 
 			const pageWidth = doc.internal.pageSize.width;
 			const pageHeight = doc.internal.pageSize.height;
@@ -122,7 +122,7 @@ export default {
 
 			const firstPageTableStart = drawTopSection();
 
-			// --- 4. MAIN BILL TABLE ---
+			// --- 4. MAIN BILL TABLE (UPDATED FONT SIZE) ---
 			doc.autoTable({
 				startY: firstPageTableStart,
 				margin: { left: margin, right: margin, bottom: 13, top: 5 }, 
@@ -136,29 +136,38 @@ export default {
 					"", "", "", "", 
 					row.days_from_billed
 				]),
-				// FIXED: didDrawPage now draws a clean footer instead of overlapping top text
 				didDrawPage: (data) => {
-					const totalPages = doc.internal.getNumberOfPages();
-					doc.setFontSize(8);
+					doc.setFontSize(6);
 					doc.setTextColor(100);
 					doc.setFont("helvetica", "normal");
-					
 					const footerText = `Page ${data.pageNumber}`;
 					const timestamp = `Generated on: ${moment().format("DD MMM YYYY, hh:mm A")}`;
-					
-					// Draw page number on the right
 					doc.text(footerText, pageWidth - margin - 30, pageHeight - 5);
-					// Draw timestamp on the left
 					doc.text(timestamp, margin, pageHeight - 5);
 				},
 				theme: 'grid',
-				styles: { fontSize: 5, cellPadding: 4, lineColor: [0, 0, 0], lineWidth: 0.5, minCellHeight: 22, textColor: [0,0,0], valign: 'middle' },
+				// Increased fontSize to 7.5 and adjusted cellPadding for clarity
+				styles: { 
+					fontSize: 7.5, 
+					cellPadding: 3, 
+					lineColor: [0, 0, 0], 
+					lineWidth: 0.5, 
+					minCellHeight: 20, 
+					textColor: [0,0,0], 
+					valign: 'middle' 
+				},
 				headStyles: { fillColor: [255, 255, 255], textColor: [0, 0, 0], fontStyle: 'bold' },
 				columnStyles: { 
-					0: { cellWidth: 50 }, 1: { cellWidth: 45 }, 2: { cellWidth: 'auto' },
-					3: { halign: 'right', cellWidth: 40 }, 4: { halign: 'right', cellWidth: 40 },
-					5: { cellWidth: 50 }, 6: { cellWidth: 40 }, 7: { cellWidth: 'auto' },
-					8: { cellWidth: 45 }, 9: { halign: 'center', cellWidth: 25 }
+					0: { cellWidth: 48 }, // Date
+					1: { cellWidth: 42 }, // Inv No
+					2: { cellWidth: 'auto' }, // Customer
+					3: { halign: 'right', cellWidth: 38 }, // Amt
+					4: { halign: 'right', cellWidth: 38 }, // Bal
+					5: { cellWidth: 48 }, // P.Date
+					6: { cellWidth: 38 }, // Mode
+					7: { cellWidth: 65 }, // Bank/Ref No
+					8: { cellWidth: 42 }, // Paid
+					9: { halign: 'center', cellWidth: 18 } // D (Days)
 				}
 			});
 

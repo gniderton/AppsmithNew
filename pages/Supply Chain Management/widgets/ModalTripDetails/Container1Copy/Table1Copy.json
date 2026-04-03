@@ -305,7 +305,7 @@
   "responsiveBehavior": "fill",
   "rightColumn": 64,
   "searchKey": "",
-  "tableData": "{{getPickList.data}}",
+  "tableData": "{{getPickList.data.items}}",
   "textSize": "0.875rem",
   "topRow": 4,
   "totalRecordsCount": 0,
