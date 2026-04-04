@@ -39,7 +39,7 @@
       "isVisible": true,
       "label": "Bank Statement",
       "menuItems": {},
-      "onClick": "{{showModal(mdlBankStatement.name);}}",
+      "onClick": "{{showModal(mdlBankStatement.name).then(() => {\n  getBankStatement.run();\n});}}",
       "placement": "START",
       "widgetId": ""
     },
