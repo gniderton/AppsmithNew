@@ -5,7 +5,7 @@
   "borderColor": "#E0DEDE",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": "1",
-  "bottomRow": 135,
+  "bottomRow": 120,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "childStylesheet": {
     "ARRAY": {
@@ -342,7 +342,7 @@
   "mobileTopRow": 6,
   "needsErrorInfo": false,
   "onSubmit": "{{\n  createIncome.run()\n    .then(() => {\n      showAlert(\"Income Recorded!\", \"success\");\n      resetWidget(\"JSONFormIncome\"); // Clean form\n      getIncome.run();         // Update your table\n    })\n    .catch(err => showAlert(\"Error: \" + err.message, \"error\"))\n}}\n",
-  "originalBottomRow": 44,
+  "originalBottomRow": 113,
   "originalTopRow": 5,
   "parentColumnSpace": 6.9375,
   "parentId": "nr7m8jd4nv",
