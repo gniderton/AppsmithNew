@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "69a80abb79ac426a29eb8838_2a7dc000-6a27-4328-8082-03ef1ad1587a",
+  "id": "Reports_JS_BankUpload",
+  "unpublishedCollection": {
+    "name": "JS_BankUpload",
+    "pageId": "Reports",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}

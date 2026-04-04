@@ -1,0 +1,62 @@
+{
+  "allowedFileTypes": [],
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 15,
+  "bottomRowBeforeCollapse": 15,
+  "boxShadow": "none",
+  "buttonColor": "#f4f4f5",
+  "dynamicBindingPathList": [
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "isVisible"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "isVisible"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onFilesSelected"
+    }
+  ],
+  "dynamicTyping": true,
+  "fileDataType": "Base64",
+  "files": [],
+  "isDefaultClickDisabled": true,
+  "isDisabled": false,
+  "isLoading": false,
+  "isRequired": false,
+  "isVisible": "{{ !!SelectBank.selectedOptionValue }}\n",
+  "key": "1bmo860k5x",
+  "label": "Select Files",
+  "leftColumn": 14,
+  "maxFileSize": 5,
+  "maxNumFiles": 1,
+  "minWidth": 120,
+  "mobileBottomRow": 19,
+  "mobileLeftColumn": 20,
+  "mobileRightColumn": 36,
+  "mobileTopRow": 15,
+  "needsErrorInfo": false,
+  "onFilesSelected": "{{JS_BankUpload.uploadStatement();}}",
+  "originalBottomRow": 15,
+  "originalTopRow": 11,
+  "parentColumnSpace": 7.96875,
+  "parentId": "ddhpt31l0b",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "hug",
+  "rightColumn": 37,
+  "selectedFiles": [],
+  "topRow": 11,
+  "topRowBeforeCollapse": 11,
+  "type": "FILE_PICKER_WIDGET_V2",
+  "version": 1,
+  "widgetId": "dr8rfeptlw",
+  "widgetName": "FilePicker1"
+}

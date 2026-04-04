@@ -1,0 +1,4 @@
+{
+  "content": "{{ FilePicker1.files[0] ? FilePicker1.files[0].data : '' }}",
+  "bank_type": "{{ SelectBank.selectedOptionValue || '' }}"
+}

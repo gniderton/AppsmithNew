@@ -23,7 +23,11 @@
       "key": "groupButtons.groupButton3.buttonColor"
     }
   ],
-  "dynamicTriggerPathList": [],
+  "dynamicTriggerPathList": [
+    {
+      "key": "groupButtons.groupButton1.onClick"
+    }
+  ],
   "groupButtons": {
     "groupButton1": {
       "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
@@ -35,6 +39,7 @@
       "isVisible": true,
       "label": "Bank Statement",
       "menuItems": {},
+      "onClick": "{{showModal(mdlBankStatement.name);}}",
       "placement": "START",
       "widgetId": ""
     },
@@ -115,6 +120,8 @@
   "mobileTopRow": 8,
   "needsErrorInfo": false,
   "orientation": "horizontal",
+  "originalBottomRow": 12,
+  "originalTopRow": 8,
   "parentColumnSpace": 20.25,
   "parentId": "0",
   "parentRowSpace": 10,
