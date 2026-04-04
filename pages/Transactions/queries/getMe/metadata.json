@@ -47,7 +47,7 @@
     ],
     "name": "getMe",
     "pageId": "Transactions",
-    "runBehaviour": "MANUAL",
-    "userSetOnLoad": false
+    "runBehaviour": "AUTOMATIC",
+    "userSetOnLoad": true
   }
 }

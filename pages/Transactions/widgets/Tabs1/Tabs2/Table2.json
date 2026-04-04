@@ -56,7 +56,9 @@
     "payment_source_name"
   ],
   "columnUpdatedAt": 1774109640676,
-  "columnWidthMap": {},
+  "columnWidthMap": {
+    "bank_statement_entry_id": 193
+  },
   "customIsLoading": false,
   "customIsLoadingValue": "",
   "defaultPageSize": 0,
