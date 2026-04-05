@@ -5,7 +5,7 @@
   "borderColor": "#E0DEDE",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": "1",
-  "bottomRow": 376,
+  "bottomRow": 110,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "childStylesheet": {
     "ARRAY": {
@@ -201,9 +201,6 @@
       "key": "schema.__root_schema__.children.Inventory_Status.cellBorderRadius"
     },
     {
-      "key": "sourceData"
-    },
-    {
       "key": "schema.__root_schema__.children.Basic_Info.children.ean_code.defaultValue"
     },
     {
@@ -265,42 +262,6 @@
     },
     {
       "key": "schema.__root_schema__.children.Pricing___Margins.children.purchase_rate.borderRadius"
-    },
-    {
-      "key": "schema.__root_schema__.children.Pricing___Margins.children.distributor_rate.defaultValue"
-    },
-    {
-      "key": "schema.__root_schema__.children.Pricing___Margins.children.distributor_rate.accentColor"
-    },
-    {
-      "key": "schema.__root_schema__.children.Pricing___Margins.children.distributor_rate.borderRadius"
-    },
-    {
-      "key": "schema.__root_schema__.children.Pricing___Margins.children.wholesale_rate.defaultValue"
-    },
-    {
-      "key": "schema.__root_schema__.children.Pricing___Margins.children.wholesale_rate.accentColor"
-    },
-    {
-      "key": "schema.__root_schema__.children.Pricing___Margins.children.wholesale_rate.borderRadius"
-    },
-    {
-      "key": "schema.__root_schema__.children.Pricing___Margins.children.dealer_rate.defaultValue"
-    },
-    {
-      "key": "schema.__root_schema__.children.Pricing___Margins.children.dealer_rate.accentColor"
-    },
-    {
-      "key": "schema.__root_schema__.children.Pricing___Margins.children.dealer_rate.borderRadius"
-    },
-    {
-      "key": "schema.__root_schema__.children.Pricing___Margins.children.retail_rate.defaultValue"
-    },
-    {
-      "key": "schema.__root_schema__.children.Pricing___Margins.children.retail_rate.accentColor"
-    },
-    {
-      "key": "schema.__root_schema__.children.Pricing___Margins.children.retail_rate.borderRadius"
     },
     {
       "key": "schema.__root_schema__.children.Pricing___Margins.children.margin_amount.defaultValue"
@@ -555,36 +516,6 @@
       "key": "schema.__root_schema__.children.Basic_Info.children.case_quantity.borderRadius"
     },
     {
-      "key": "schema.__root_schema__.children.Basic_Info.isDisabled"
-    },
-    {
-      "key": "schema.__root_schema__.children.Basic_Info.children.product_name.isDisabled"
-    },
-    {
-      "key": "schema.__root_schema__.children.Basic_Info.children.product_code.isDisabled"
-    },
-    {
-      "key": "schema.__root_schema__.children.Basic_Info.children.is_active.isDisabled"
-    },
-    {
-      "key": "schema.__root_schema__.children.Basic_Info.children.description.isDisabled"
-    },
-    {
-      "key": "schema.__root_schema__.children.Basic_Info.children.model_number.isDisabled"
-    },
-    {
-      "key": "schema.__root_schema__.children.Basic_Info.children.ean_code.isDisabled"
-    },
-    {
-      "key": "schema.__root_schema__.children.Basic_Info.children.min_stock_level.isDisabled"
-    },
-    {
-      "key": "schema.__root_schema__.children.Basic_Info.children.uom.isDisabled"
-    },
-    {
-      "key": "schema.__root_schema__.children.Basic_Info.children.case_quantity.isDisabled"
-    },
-    {
       "key": "schema.__root_schema__.children.System___Tax_Mapping.isDisabled"
     },
     {
@@ -627,22 +558,85 @@
       "key": "schema.__root_schema__.children.Pricing___Margins.children.purchase_rate.isDisabled"
     },
     {
-      "key": "schema.__root_schema__.children.Pricing___Margins.children.distributor_rate.isDisabled"
+      "key": "sourceData"
     },
     {
-      "key": "schema.__root_schema__.children.Pricing___Margins.children.wholesale_rate.isDisabled"
+      "key": "schema.__root_schema__.children.Channel_Margins____.children.distributor_margin.defaultValue"
     },
     {
-      "key": "schema.__root_schema__.children.Pricing___Margins.children.dealer_rate.isDisabled"
+      "key": "schema.__root_schema__.children.Channel_Margins____.children.distributor_margin.accentColor"
     },
     {
-      "key": "schema.__root_schema__.children.Pricing___Margins.children.retail_rate.isDisabled"
+      "key": "schema.__root_schema__.children.Channel_Margins____.children.distributor_margin.borderRadius"
     },
     {
-      "key": "schema.__root_schema__.children.Basic_Info.children.is_active.borderRadius"
+      "key": "schema.__root_schema__.children.Channel_Margins____.children.wholesale_margin.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.Channel_Margins____.children.wholesale_margin.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.Channel_Margins____.children.wholesale_margin.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.Channel_Margins____.children.dealer_margin.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.Channel_Margins____.children.dealer_margin.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.Channel_Margins____.children.dealer_margin.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.Channel_Margins____.children.retail_margin.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.Channel_Margins____.children.retail_margin.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.Channel_Margins____.children.retail_margin.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.Channel_Margins____.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.Channel_Margins____.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.Channel_Margins____.cellBorderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.Basic_Info.isDisabled"
+    },
+    {
+      "key": "schema.__root_schema__.children.Basic_Info.children.product_name.isDisabled"
+    },
+    {
+      "key": "schema.__root_schema__.children.Basic_Info.children.product_code.isDisabled"
+    },
+    {
+      "key": "schema.__root_schema__.children.Basic_Info.children.is_active.isDisabled"
+    },
+    {
+      "key": "schema.__root_schema__.children.Basic_Info.children.description.isDisabled"
+    },
+    {
+      "key": "schema.__root_schema__.children.Basic_Info.children.model_number.isDisabled"
+    },
+    {
+      "key": "schema.__root_schema__.children.Basic_Info.children.ean_code.isDisabled"
+    },
+    {
+      "key": "schema.__root_schema__.children.Basic_Info.children.min_stock_level.isDisabled"
+    },
+    {
+      "key": "schema.__root_schema__.children.Basic_Info.children.uom.isDisabled"
+    },
+    {
+      "key": "schema.__root_schema__.children.Basic_Info.children.case_quantity.isDisabled"
     }
   ],
-  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicHeight": "FIXED",
   "dynamicPropertyPathList": [
     {
       "key": "sourceData"
@@ -692,7 +686,7 @@
   "isLoading": false,
   "isVisible": true,
   "key": "n141d24grp",
-  "leftColumn": 0,
+  "leftColumn": 44,
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 4,
   "minWidth": 450,
@@ -702,10 +696,8 @@
   "mobileTopRow": 6,
   "needsErrorInfo": false,
   "onSubmit": "{{ \n    apiUpdateProduct.run()\n    .then(() => {\n        // 1. Show a success message\n        showAlert(\"Product successfully updated!\", \"success\");\n        \n        // 2. Turn off Edit Mode (so it's locked next time)\n        storeValue('isEditMode', false);\n        \n        // 3. Refresh the main product list\n        Products.run();\n        \n        // 4. Refresh your brand groupings if needed\n        Brand_Utils.getGroupedBrands();\n        \n        // 5. Close the popup\n        closeModal(\"ModalProduct\");\n    })\n    .catch((error) => {\n        // If the API fails for any reason, show the error\n        showAlert(\"Failed to update product: \" + error.message, \"error\");\n    })\n}}",
-  "originalBottomRow": 374,
-  "originalTopRow": 6,
   "parentColumnSpace": 6.65625,
-  "parentId": "uqlqubolwf",
+  "parentId": "5dlyv298y4",
   "parentRowSpace": 10,
   "renderMode": "CANVAS",
   "resetButtonLabel": "Reset",
@@ -716,7 +708,7 @@
     "buttonVariant": "SECONDARY"
   },
   "responsiveBehavior": "fill",
-  "rightColumn": 63,
+  "rightColumn": 64,
   "schema": {
     "__root_schema__": {
       "accessor": "__root_schema__",
@@ -738,13 +730,13 @@
               "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONForm1.sourceData, JSONForm1.formData, JSONForm1.fieldState)}}",
               "boxShadow": "none",
               "children": {},
-              "dataType": "string",
+              "dataType": "number",
               "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData[\"Basic Info\"].case_quantity))(JSONForm1.sourceData, JSONForm1.formData, JSONForm1.fieldState)}}",
-              "fieldType": "Text Input",
+              "fieldType": "Number Input",
               "iconAlign": "left",
               "identifier": "case_quantity",
               "isCustomField": false,
-              "isDisabled": false,
+              "isDisabled": "{{((sourceData, formData, fieldState) => ( !appsmith.store.isEditMode ))(JSONForm1.sourceData, JSONForm1.formData, JSONForm1.fieldState)}}",
               "isRequired": false,
               "isSpellCheck": false,
               "isVisible": true,
@@ -752,7 +744,7 @@
               "labelTextSize": "0.875rem",
               "originalIdentifier": "case_quantity",
               "position": 8,
-              "sourceData": ""
+              "sourceData": 24
             },
             "description": {
               "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(JSONForm1.sourceData, JSONForm1.formData, JSONForm1.fieldState)}}",
@@ -800,24 +792,22 @@
             "is_active": {
               "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(JSONForm1.sourceData, JSONForm1.formData, JSONForm1.fieldState)}}",
               "accessor": "is_active",
-              "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONForm1.sourceData, JSONForm1.formData, JSONForm1.fieldState)}}",
+              "alignWidget": "LEFT",
               "boxShadow": "none",
               "children": {},
-              "dataType": "string",
+              "dataType": "boolean",
               "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData[\"Basic Info\"].is_active))(JSONForm1.sourceData, JSONForm1.formData, JSONForm1.fieldState)}}",
-              "fieldType": "Text Input",
-              "iconAlign": "left",
+              "fieldType": "Switch",
               "identifier": "is_active",
               "isCustomField": false,
-              "isDisabled": false,
+              "isDisabled": "{{((sourceData, formData, fieldState) => ( !appsmith.store.isEditMode ))(JSONForm1.sourceData, JSONForm1.formData, JSONForm1.fieldState)}}",
               "isRequired": false,
-              "isSpellCheck": false,
               "isVisible": true,
               "label": "Is Active",
               "labelTextSize": "0.875rem",
               "originalIdentifier": "is_active",
               "position": 2,
-              "sourceData": ""
+              "sourceData": true
             },
             "min_stock_level": {
               "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(JSONForm1.sourceData, JSONForm1.formData, JSONForm1.fieldState)}}",
@@ -825,13 +815,13 @@
               "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONForm1.sourceData, JSONForm1.formData, JSONForm1.fieldState)}}",
               "boxShadow": "none",
               "children": {},
-              "dataType": "string",
+              "dataType": "number",
               "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData[\"Basic Info\"].min_stock_level))(JSONForm1.sourceData, JSONForm1.formData, JSONForm1.fieldState)}}",
-              "fieldType": "Text Input",
+              "fieldType": "Number Input",
               "iconAlign": "left",
               "identifier": "min_stock_level",
               "isCustomField": false,
-              "isDisabled": false,
+              "isDisabled": "{{((sourceData, formData, fieldState) => ( !appsmith.store.isEditMode ))(JSONForm1.sourceData, JSONForm1.formData, JSONForm1.fieldState)}}",
               "isRequired": false,
               "isSpellCheck": false,
               "isVisible": true,
@@ -839,7 +829,7 @@
               "labelTextSize": "0.875rem",
               "originalIdentifier": "min_stock_level",
               "position": 6,
-              "sourceData": ""
+              "sourceData": 0
             },
             "model_number": {
               "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(JSONForm1.sourceData, JSONForm1.formData, JSONForm1.fieldState)}}",
@@ -945,6 +935,121 @@
             "is_active": true,
             "product_code": "THA-BEV-009",
             "product_name": "TH_Syrup_Sarsaparilla_750ml"
+          }
+        },
+        "Channel_Margins____": {
+          "accessor": "Channel Margins (%)",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONForm1.sourceData, JSONForm1.formData, JSONForm1.fieldState)}}",
+          "boxShadow": "none",
+          "cellBorderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONForm1.sourceData, JSONForm1.formData, JSONForm1.fieldState)}}",
+          "cellBoxShadow": "none",
+          "children": {
+            "dealer_margin": {
+              "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(JSONForm1.sourceData, JSONForm1.formData, JSONForm1.fieldState)}}",
+              "accessor": "dealer_margin",
+              "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONForm1.sourceData, JSONForm1.formData, JSONForm1.fieldState)}}",
+              "boxShadow": "none",
+              "children": {},
+              "dataType": "string",
+              "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData[\"Channel Margins (%)\"].dealer_margin))(JSONForm1.sourceData, JSONForm1.formData, JSONForm1.fieldState)}}",
+              "fieldType": "Text Input",
+              "iconAlign": "left",
+              "identifier": "dealer_margin",
+              "isCustomField": false,
+              "isDisabled": true,
+              "isRequired": false,
+              "isSpellCheck": false,
+              "isVisible": true,
+              "label": "Dealer Margin",
+              "labelTextSize": "0.875rem",
+              "originalIdentifier": "dealer_margin",
+              "position": 2,
+              "sourceData": "16.59%"
+            },
+            "distributor_margin": {
+              "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(JSONForm1.sourceData, JSONForm1.formData, JSONForm1.fieldState)}}",
+              "accessor": "distributor_margin",
+              "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONForm1.sourceData, JSONForm1.formData, JSONForm1.fieldState)}}",
+              "boxShadow": "none",
+              "children": {},
+              "dataType": "string",
+              "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData[\"Channel Margins (%)\"].distributor_margin))(JSONForm1.sourceData, JSONForm1.formData, JSONForm1.fieldState)}}",
+              "fieldType": "Text Input",
+              "iconAlign": "left",
+              "identifier": "distributor_margin",
+              "isCustomField": false,
+              "isDisabled": true,
+              "isRequired": false,
+              "isSpellCheck": false,
+              "isVisible": true,
+              "label": "Distributor Margin",
+              "labelTextSize": "0.875rem",
+              "originalIdentifier": "distributor_margin",
+              "position": 0,
+              "sourceData": "16.59%"
+            },
+            "retail_margin": {
+              "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(JSONForm1.sourceData, JSONForm1.formData, JSONForm1.fieldState)}}",
+              "accessor": "retail_margin",
+              "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONForm1.sourceData, JSONForm1.formData, JSONForm1.fieldState)}}",
+              "boxShadow": "none",
+              "children": {},
+              "dataType": "string",
+              "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData[\"Channel Margins (%)\"].retail_margin))(JSONForm1.sourceData, JSONForm1.formData, JSONForm1.fieldState)}}",
+              "fieldType": "Text Input",
+              "iconAlign": "left",
+              "identifier": "retail_margin",
+              "isCustomField": false,
+              "isDisabled": true,
+              "isRequired": false,
+              "isSpellCheck": false,
+              "isVisible": true,
+              "label": "Retail Margin",
+              "labelTextSize": "0.875rem",
+              "originalIdentifier": "retail_margin",
+              "position": 3,
+              "sourceData": "45.78%"
+            },
+            "wholesale_margin": {
+              "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(JSONForm1.sourceData, JSONForm1.formData, JSONForm1.fieldState)}}",
+              "accessor": "wholesale_margin",
+              "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONForm1.sourceData, JSONForm1.formData, JSONForm1.fieldState)}}",
+              "boxShadow": "none",
+              "children": {},
+              "dataType": "string",
+              "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData[\"Channel Margins (%)\"].wholesale_margin))(JSONForm1.sourceData, JSONForm1.formData, JSONForm1.fieldState)}}",
+              "fieldType": "Text Input",
+              "iconAlign": "left",
+              "identifier": "wholesale_margin",
+              "isCustomField": false,
+              "isDisabled": true,
+              "isRequired": false,
+              "isSpellCheck": false,
+              "isVisible": true,
+              "label": "Wholesale Margin",
+              "labelTextSize": "0.875rem",
+              "originalIdentifier": "wholesale_margin",
+              "position": 1,
+              "sourceData": "16.59%"
+            }
+          },
+          "dataType": "object",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData[\"Channel Margins (%)\"]))(JSONForm1.sourceData, JSONForm1.formData, JSONForm1.fieldState)}}",
+          "fieldType": "Object",
+          "identifier": "Channel_Margins____",
+          "isCustomField": false,
+          "isDisabled": true,
+          "isRequired": false,
+          "isVisible": true,
+          "label": "Channel Margins",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "Channel Margins (%)",
+          "position": 7,
+          "sourceData": {
+            "dealer_margin": "16.59%",
+            "distributor_margin": "16.59%",
+            "retail_margin": "45.78%",
+            "wholesale_margin": "16.59%"
           }
         },
         "Inventory_Status": {
@@ -1243,52 +1348,6 @@
           "cellBorderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONForm1.sourceData, JSONForm1.formData, JSONForm1.fieldState)}}",
           "cellBoxShadow": "none",
           "children": {
-            "dealer_rate": {
-              "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(JSONForm1.sourceData, JSONForm1.formData, JSONForm1.fieldState)}}",
-              "accessor": "dealer_rate",
-              "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONForm1.sourceData, JSONForm1.formData, JSONForm1.fieldState)}}",
-              "boxShadow": "none",
-              "children": {},
-              "currencyCountryCode": "INR",
-              "dataType": "string",
-              "decimalsInCurrency": 2,
-              "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData[\"Pricing & Margins\"].dealer_rate))(JSONForm1.sourceData, JSONForm1.formData, JSONForm1.fieldState)}}",
-              "fieldType": "Currency Input",
-              "identifier": "dealer_rate",
-              "isCustomField": false,
-              "isDisabled": "{{((sourceData, formData, fieldState) => ( !appsmith.store.isEditMode ))(JSONForm1.sourceData, JSONForm1.formData, JSONForm1.fieldState)}}",
-              "isRequired": false,
-              "isSpellCheck": false,
-              "isVisible": true,
-              "label": "Dealer Rate",
-              "labelTextSize": "0.875rem",
-              "originalIdentifier": "dealer_rate",
-              "position": 4,
-              "sourceData": "99.05000"
-            },
-            "distributor_rate": {
-              "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(JSONForm1.sourceData, JSONForm1.formData, JSONForm1.fieldState)}}",
-              "accessor": "distributor_rate",
-              "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONForm1.sourceData, JSONForm1.formData, JSONForm1.fieldState)}}",
-              "boxShadow": "none",
-              "children": {},
-              "currencyCountryCode": "INR",
-              "dataType": "string",
-              "decimalsInCurrency": 2,
-              "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData[\"Pricing & Margins\"].distributor_rate))(JSONForm1.sourceData, JSONForm1.formData, JSONForm1.fieldState)}}",
-              "fieldType": "Currency Input",
-              "identifier": "distributor_rate",
-              "isCustomField": false,
-              "isDisabled": "{{((sourceData, formData, fieldState) => ( !appsmith.store.isEditMode ))(JSONForm1.sourceData, JSONForm1.formData, JSONForm1.fieldState)}}",
-              "isRequired": false,
-              "isSpellCheck": false,
-              "isVisible": true,
-              "label": "Distributor Rate",
-              "labelTextSize": "0.875rem",
-              "originalIdentifier": "distributor_rate",
-              "position": 2,
-              "sourceData": "95.24000"
-            },
             "margin_amount": {
               "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(JSONForm1.sourceData, JSONForm1.formData, JSONForm1.fieldState)}}",
               "accessor": "margin_amount",
@@ -1379,52 +1438,6 @@
               "originalIdentifier": "purchase_rate",
               "position": 1,
               "sourceData": "85.71000"
-            },
-            "retail_rate": {
-              "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(JSONForm1.sourceData, JSONForm1.formData, JSONForm1.fieldState)}}",
-              "accessor": "retail_rate",
-              "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONForm1.sourceData, JSONForm1.formData, JSONForm1.fieldState)}}",
-              "boxShadow": "none",
-              "children": {},
-              "currencyCountryCode": "INR",
-              "dataType": "string",
-              "decimalsInCurrency": 2,
-              "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData[\"Pricing & Margins\"].retail_rate))(JSONForm1.sourceData, JSONForm1.formData, JSONForm1.fieldState)}}",
-              "fieldType": "Currency Input",
-              "identifier": "retail_rate",
-              "isCustomField": false,
-              "isDisabled": "{{((sourceData, formData, fieldState) => ( !appsmith.store.isEditMode ))(JSONForm1.sourceData, JSONForm1.formData, JSONForm1.fieldState)}}",
-              "isRequired": false,
-              "isSpellCheck": false,
-              "isVisible": true,
-              "label": "Retail Rate",
-              "labelTextSize": "0.875rem",
-              "originalIdentifier": "retail_rate",
-              "position": 5,
-              "sourceData": "123.81000"
-            },
-            "wholesale_rate": {
-              "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(JSONForm1.sourceData, JSONForm1.formData, JSONForm1.fieldState)}}",
-              "accessor": "wholesale_rate",
-              "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONForm1.sourceData, JSONForm1.formData, JSONForm1.fieldState)}}",
-              "boxShadow": "none",
-              "children": {},
-              "currencyCountryCode": "INR",
-              "dataType": "string",
-              "decimalsInCurrency": 2,
-              "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData[\"Pricing & Margins\"].wholesale_rate))(JSONForm1.sourceData, JSONForm1.formData, JSONForm1.fieldState)}}",
-              "fieldType": "Currency Input",
-              "identifier": "wholesale_rate",
-              "isCustomField": false,
-              "isDisabled": "{{((sourceData, formData, fieldState) => ( !appsmith.store.isEditMode ))(JSONForm1.sourceData, JSONForm1.formData, JSONForm1.fieldState)}}",
-              "isRequired": false,
-              "isSpellCheck": false,
-              "isVisible": true,
-              "label": "Wholesale Rate",
-              "labelTextSize": "0.875rem",
-              "originalIdentifier": "wholesale_rate",
-              "position": 3,
-              "sourceData": "95.24000"
             }
           },
           "dataType": "object",
@@ -1916,7 +1929,7 @@
   },
   "scrollContents": true,
   "showReset": false,
-  "sourceData": "{{\n  (row => ({\n    \"Basic Info\": {\n       \"product_name\": row.product_name,\n      \"product_code\": row.product_code,\n      \"model_number\": row.model_number,\n      \"description\": row.description,\n      \"ean_code\": row.ean_code,\n\t\t\t\"min_stock_level\": row.min_stock_level,\n      \"uom\": row.uom,\n      \"case_quantity\": row.case_quantity,\n      \"is_active\": row.is_active\n    },\n    \"Pricing & Margins\": {\n      \"mrp\": row.mrp,\n      \"purchase_rate\": row.purchase_rate,\n      \"distributor_rate\": row.distributor_rate,\n      \"wholesale_rate\": row.wholesale_rate,\n      \"dealer_rate\": row.dealer_rate,\n      \"retail_rate\": row.retail_rate,\n      \"margin_amount\": row.margin_amount,\n      \"margin_percentage\": row.margin_percentage + \"%\"\n    },\n    \"Inventory Status\": {\n      \"current_stock\": row.current_stock,\n      \"damaged_stock\": row.damaged_stock,\n      \"in_transit_qty\": row.in_transit_qty,\n      \"total_units_bought\": row.total_units_bought,\n      \"total_units_sold\": row.total_units_sold,\n      \"total_units_returned\": row.total_units_returned,\n      \"total_units_adjusted\": row.total_units_adjusted\n    },\n    \"Stock Valuation\": {\n      \"stock_value_cost\": row.stock_value_cost,\n      \"stock_value_gross\": row.stock_value_gross,\n      \"stock_value_total_bought\": row.stock_value_total_bought,\n      \"stock_damage\": row.stock_damage,\n      \"stock_expiry\": row.stock_expiry\n    },\n    \"Sales & Costing\": {\n      \"sales_value_taxable\": row.sales_value_taxable,\n      \"total_cogs_value\": row.total_cogs_value,\n      \"last_sold_date\": row.last_sold_date,\n      \"last_purchased_date\": row.last_purchased_date\n    },\n    \"System & Tax Mapping\": {\n      \"brand_name\": row.brand_name,\n      \"category_name\": row.category_name,\n      \"tax_name\": row.tax_name,\n      \"tax_percentage\": row.tax_percentage + \"%\",\n      \"hsn_code\": row.hsn_code\n    },\n    \"Physical Logistics\": {\n      \"weight_kg\": row.weight_kg,\n      \"box_length_cm\": row.box_length_cm,\n      \"box_width_cm\": row.box_width_cm,\n      \"box_height_cm\": row.box_height_cm\n    }\n  }))(tblProducts.triggeredRow)\n}}",
+  "sourceData": "{{\n  (row => {\n    // Helper to calculate margin safely\n    const calcMargin = (rate, purchase) => {\n      if (!purchase || purchase == 0) return \"0%\";\n      const margin = ((Number(rate) - Number(purchase)) / Number(purchase)) * 100;\n      return margin.toFixed(2) + \"%\";\n    };\n\n    return {\n      \"Basic Info\": {\n        \"product_name\": row.product_name,\n        \"product_code\": row.product_code,\n        \"model_number\": row.model_number,\n        \"description\": row.description,\n        \"ean_code\": row.ean_code,\n        \"min_stock_level\": row.min_stock_level,\n        \"uom\": row.uom,\n        \"case_quantity\": row.case_quantity,\n        \"is_active\": row.is_active\n      },\n      \"Pricing & Margins\": {\n        \"mrp\": row.mrp,\n        \"purchase_rate\": row.purchase_rate,\n        \"margin_amount\": row.margin_amount,\n        \"margin_percentage\": row.margin_percentage + \"%\"\n      },\n      \"Channel Margins (%)\": {\n        \"distributor_margin\": calcMargin(row.distributor_rate, row.purchase_rate),\n        \"wholesale_margin\": calcMargin(row.wholesale_rate, row.purchase_rate),\n        \"dealer_margin\": calcMargin(row.dealer_rate, row.purchase_rate),\n        \"retail_margin\": calcMargin(row.retail_rate, row.purchase_rate)\n      },\n      \"Inventory Status\": {\n        \"current_stock\": row.current_stock,\n        \"damaged_stock\": row.damaged_stock,\n        \"in_transit_qty\": row.in_transit_qty,\n        \"total_units_bought\": row.total_units_bought,\n        \"total_units_sold\": row.total_units_sold,\n        \"total_units_returned\": row.total_units_returned,\n        \"total_units_adjusted\": row.total_units_adjusted\n      },\n      \"Stock Valuation\": {\n        \"stock_value_cost\": row.stock_value_cost,\n        \"stock_value_gross\": row.stock_value_gross,\n        \"stock_value_total_bought\": row.stock_value_total_bought,\n        \"stock_damage\": row.stock_damage,\n        \"stock_expiry\": row.stock_expiry\n      },\n      \"Sales & Costing\": {\n        \"sales_value_taxable\": row.sales_value_taxable,\n        \"total_cogs_value\": row.total_cogs_value,\n        \"last_sold_date\": row.last_sold_date,\n        \"last_purchased_date\": row.last_purchased_date\n      },\n      \"System & Tax Mapping\": {\n        \"brand_name\": row.brand_name,\n        \"category_name\": row.category_name,\n        \"tax_name\": row.tax_name,\n        \"tax_percentage\": row.tax_percentage + \"%\",\n        \"hsn_code\": row.hsn_code\n      },\n      \"Physical Logistics\": {\n        \"weight_kg\": row.weight_kg,\n        \"box_length_cm\": row.box_length_cm,\n        \"box_width_cm\": row.box_width_cm,\n        \"box_height_cm\": row.box_height_cm\n      }\n    };\n  })(tblProducts.triggeredRow)\n}}\n",
   "submitButtonLabel": "Submit",
   "submitButtonStyles": {
     "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
@@ -1925,7 +1938,7 @@
     "buttonVariant": "PRIMARY"
   },
   "title": "",
-  "topRow": 8,
+  "topRow": 4,
   "type": "JSON_FORM_WIDGET",
   "useSourceData": false,
   "version": 1,

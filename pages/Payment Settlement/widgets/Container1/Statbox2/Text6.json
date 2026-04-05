@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 14,
+  "bottomRow": 12,
   "dynamicBindingPathList": [
     {
       "key": "truncateButtonColor"
@@ -44,7 +44,7 @@
   "text": "Cheque: {{ utils.getSummaryStats().cheque_pending ? \"⚠️ ₹\" + utils.getSummaryStats().cheque_pending + \" Pending\" : \"✅ Verified\" }}\n",
   "textAlign": "LEFT",
   "textColor": "#231f20",
-  "topRow": 9,
+  "topRow": 8,
   "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
   "type": "TEXT_WIDGET",
   "version": 1,
