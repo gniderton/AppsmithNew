@@ -1,8 +1,7 @@
 export default {
 	// --- 1. THE TRIGGER (Link your button to this) ---
-	downloadAllTripInvoices: async () => {
+	async downloadAllTripInvoices() {
 		try {
-			// Refresh trip manifest data
 			await getDeliveryList.run();
 			const invoices = (getDeliveryList.data || {}).items || [];
 			
@@ -11,15 +10,12 @@ export default {
 				return;
 			}
 
-			// Extract Sales Order IDs (Now available in backend!)
 			const ids = invoices.map(r => r.sales_order_id).filter(Boolean);
-			
 			if (ids.length === 0) {
-				showAlert("Internal Error: Could not find Sales Order IDs in the manifest.", "error");
+				showAlert("Internal Error: Could not find Sales Order IDs.", "error");
 				return;
 			}
 
-			// Start the loop directly on this page
 			await this.downloadBulkInvoices(ids);
 
 		} catch (error) {
@@ -27,58 +23,48 @@ export default {
 		}
 	},
 
-	// --- 2. THE FIXED LOOP ---
-	downloadBulkInvoices: async (ids) => {
+	// --- 2. THE LOOP ---
+	async downloadBulkInvoices(ids) {
 		if (!ids || ids.length === 0) return;
 
 		showAlert(`Starting batch download of ${ids.length} invoices...`, "info");
-		
-		// Pre-fetch bank details once per batch
 		await getBankDetails.run();
 
 		for (const id of ids) {
-			// FIX: Using parameters to avoid race conditions
-			// Ensure your query uses: WHERE sales_order_id = {{this.params.id}}
 			await getUnifiedInvoiceDetail.run({ id: id }); 
 			const detailedData = getUnifiedInvoiceDetail.data;
 
 			if (detailedData && detailedData.invoice_id) {
-				// Call the exact drawing function below
 				await this.previewInvoice(detailedData);
-				// Delay (750ms) to ensure browser clears download queue
 				await new Promise(r => setTimeout(r, 750));
 			}
 		}
 		showAlert("All Invoices Downloaded Successfully!", "success");
 	},
 
-	// --- 3. YOUR EXACT ORIGINAL PREVIEW LOGIC ---
-	previewInvoice: async (invoiceData) => {
+	// --- 3. PREVIEW LOGIC (FULL FOOTER RESTORED) ---
+	async previewInvoice(invoiceData) {
 		try {
 			if (!invoiceData || !invoiceData.invoice_id) throw new Error("No Invoice data selected.");
 
-			// --- 1. LIBRARY SAFETY (Post-Downgrade Fix) ---
 			if (typeof jspdf === "undefined") throw new Error("jspdf library not loaded.");
 			const jsPDFConstructor = jspdf.jsPDF || jspdf;
 			const doc = new jsPDFConstructor('p', 'pt', 'a4'); 
 
-			// Ensure AutoTable attachment
 			if (typeof doc.autoTable !== "function" && jspdf.plugin && jspdf.plugin.autotable) {
 				jsPDFConstructor.API.autoTable = jspdf.plugin.autotable;
 			}
 
 			const lines = invoiceData.invoice_lines || [];
-			const summaryData = this.getSummary(lines);
+			const summaryData = this.getSummary(lines); 
 			const grandTotal = Number(invoiceData.grand_total || 0);
 			const brand = Global_Assets.getSummary();
-
-			await getBankDetails.run();
 			const bank = getBankDetails.data || {};
 
 			const margin = 12; 
 			const pageWidth = doc.internal.pageSize.width;
+			const pageHeight = doc.internal.pageSize.height;
 
-			// --- HELPER: AMOUNT TO WORDS ---
 			const toWords = (num) => {
 				const a = ['','One ','Two ','Three ','Four ', 'Five ','Six ','Seven ','Eight ','Nine ','Ten ','Eleven ','Twelve ','Thirteen ','Fourteen ','Fifteen ','Sixteen ','Seventeen ','Eighteen ','Nineteen '];
 				const b = ['', '', 'Twenty','Thirty','Forty','Fifty', 'Sixty','Seventy','Eighty','Ninety'];
@@ -93,7 +79,6 @@ export default {
 				return str;
 			};
 
-			// --- HELPER: DRAW RECURRING HEADER ---
 			const drawMainHeader = (currentPage, totalPages) => {
 				const headerY = margin;
 				try {
@@ -103,12 +88,9 @@ export default {
 					}
 				} catch(e) {}
 
-				doc.setTextColor(0, 0, 0); 
-				doc.setFont("helvetica", "bold");
-				doc.setFontSize(16);
+				doc.setTextColor(0, 0, 0); doc.setFont("helvetica", "bold"); doc.setFontSize(16);
 				doc.text("SALES INVOICE", pageWidth / 2, headerY + 15, { align: "center" });
-				doc.setFontSize(11);
-				doc.text(String(invoiceData.invoice_number), pageWidth / 2, headerY + 30, { align: "center" });
+				doc.setFontSize(11); doc.text(String(invoiceData.invoice_number), pageWidth / 2, headerY + 30, { align: "center" });
 
 				const boxesY = headerY + 40;
 				const gap = 8;
@@ -116,47 +98,35 @@ export default {
 				const boxHeight = 95; 
 
 				this._drawSimpleBox(doc, margin, boxesY, boxWidth, boxHeight, [
-					["From", String(brand.regt_name)],
-					["Address", String(brand.address)],
-					["Dist/PIN", `${brand.District} - ${brand.pin}`],
-					["GST", String(brand.gst)],
-					["FSSAI", String(brand.fssai_no)],
-					["Email", String(brand.email)],
-					["Contact No", String(brand.contact_no)]
+					["From", String(brand.regt_name)], ["Address", String(brand.address)], ["Dist/PIN", `${brand.District} - ${brand.pin}`],
+					["GST", String(brand.gst)], ["FSSAI", String(brand.fssai_no)], ["Email", String(brand.email)], ["Contact No", String(brand.contact_no)]
 				]);
 
 				const cAddr = [invoiceData.customer_address, invoiceData.district, invoiceData.pin_code ? "PIN: " + invoiceData.pin_code : null].filter(Boolean).join(", ");
 				this._drawSimpleBox(doc, margin + boxWidth + gap, boxesY, boxWidth, boxHeight, [
-					["To", String(invoiceData.customer_name)],
-					["Address", cAddr || "-"],
-					["GSTIN", String(invoiceData.gstin || "-")],
-					["Phone", String(invoiceData.customer_phone || "-")],
-					["Email", String(invoiceData.customer_email || "-")]
+					["To", String(invoiceData.customer_name)], ["Address", cAddr || "-"], ["GSTIN", String(invoiceData.gstin || "-")],
+					["Phone", String(invoiceData.customer_phone || "-")], ["Email", String(invoiceData.customer_email || "-")]
 				], 60);
 
 				this._drawSimpleBox(doc, margin + (boxWidth * 2) + (gap * 2), boxesY, boxWidth, boxHeight, [
-					["INV No", String(invoiceData.invoice_number)],
-					["Date", moment(invoiceData.invoice_date).format("DD/MM/YYYY")],
-					["Order Date", moment(invoiceData.order_date).format("DD/MM/YYYY")],
-					["TOTAL AMT", Number(grandTotal).toFixed(2)],
-					["DSE", String(invoiceData.dse_name || "-")],
-					["Route", String(invoiceData.route || "-")],
-					["DSE Phone", String(invoiceData.dse_phone || "-")],
-					["PAGE", `${currentPage} / ${totalPages}`]
+					["INV No", String(invoiceData.invoice_number)], ["Date", moment(invoiceData.invoice_date).format("DD/MM/YYYY")],
+					["Order Date", moment(invoiceData.order_date).format("DD/MM/YYYY")], ["TOTAL AMT", Number(grandTotal).toFixed(2)],
+					["DSE", String(invoiceData.dse_name || "-")], ["Route", String(invoiceData.route || "-")],
+					["DSE Phone", String(invoiceData.dse_phone || "-")], ["PAGE", `${currentPage} / ${totalPages}`]
 				], 65);
 
 				return boxesY + boxHeight; 
 			};
 
-			// --- 2. ITEMS TABLE ---
+			// --- ITEMS TABLE ---
 			doc.autoTable({
 				startY: margin + 40 + 95 + 10,
 				margin: { left: margin, right: margin, top: 157, bottom: 12 },
-				head: [["S.N", "ITEM NAME", "CODE\nEAN", "HSN", "BATCH\nEXPIRY", "MRP", "QTY", "PRICE", "GROSS", "SCH", "D%", "D.AMT", "TXBL", "GST%", "GST$", "NET$"]],
+				head: [["S.N", "ITEM NAME", "EAN CODE", "HSN", "BATCH\nEXPIRY", "MRP", "QTY", "PRICE", "GROSS", "SCH", "D%", "D.AMT", "TXBL", "GST%", "GST$", "NET$"]],
 				body: lines.map((row, index) => {
 					const expiryStr = row.expiry_date ? moment(row.expiry_date).format("MM/YY") : "-";
 					return [
-						index + 1, row.product_name, `${row.product_code || ""}\n${row.ean_code || ""}`, row.hsn_code || "-", 
+						index + 1, row.product_name, row.ean_code || "-", row.hsn_code || "-", 
 						`${row.batch_code || ""}\n${expiryStr}`, Number(row.mrp || 0).toFixed(2), row.shipped_qty, 
 						Number(row.rate || 0).toFixed(2), Number(row.gross_amount || 0).toFixed(2), Number(row.scheme_amount || 0).toFixed(2), 
 						(row.tax_percent || 0) + "%", Number(row.discount_amount || 0).toFixed(2), Number(row.taxable_amount || 0).toFixed(2), 
@@ -170,15 +140,13 @@ export default {
 				styles: { fontSize: 8, cellPadding: 2, lineColor: [0, 0, 0], lineWidth: 0.5, textColor: [0, 0, 0], overflow: 'linebreak', valign: 'middle' },
 				headStyles: { fillColor: [255, 255, 255], textColor: [0, 0, 0], fontStyle: 'bold', lineWidth: 0.5 },
 				columnStyles: { 
-					0: { cellWidth: 20 }, 1: { cellWidth: 'auto', minCellWidth: 100 }, 2: { cellWidth: 45 }, 3: { cellWidth: 35 }, 4: { cellWidth: 45 },
+					0: { cellWidth: 20 }, 1: { cellWidth: 'auto', minCellWidth: 100 }, 2: { cellWidth: 50 }, 3: { cellWidth: 35 }, 4: { cellWidth: 45 },
 					5: { halign: 'right' }, 6: { halign: 'right' }, 7: { halign: 'right' }, 8: { halign: 'right' }, 9: { halign: 'right' }, 10: { halign: 'right' },
 					11: { halign: 'right' }, 12: { halign: 'right' }, 13: { halign: 'center' }, 14: { halign: 'right' }, 15: { halign: 'right' }
 				}
 			});
 
-			// --- DYNAMIC FOOTER CHECK ---
 			let currentY = doc.lastAutoTable.finalY + 20;
-			const pageHeight = doc.internal.pageSize.height;
 
 			let totalSchemeAmt = 0;
 			let schemeLines = (invoiceData.invoice_lines || [])
@@ -210,7 +178,6 @@ export default {
 				currentY = 157;
 			}
 
-			// --- 3. TAX SUMMARY ---
 			doc.autoTable({
 				startY: currentY,
 				margin: { left: margin },
@@ -225,7 +192,6 @@ export default {
 				bodyStyles: (row) => (row.at(0).includes('Total') ? { fontStyle: 'bold', fillColor: [250, 250, 250] } : {})
 			});
 
-			// --- 4. SCHEMES APPLIED ---
 			if (schemeLines.length > 0) {
 				doc.autoTable({
 					startY: doc.lastAutoTable.finalY + 10,
@@ -239,7 +205,7 @@ export default {
 				});
 			}
 
-			// --- 5. AMOUNT IN WORDS & ACKNOWLEDGEMENT ---
+			// --- FOOTER & ACKNOWLEDGEMENT SLIP (RESTORED) ---
 			const wordsY = doc.lastAutoTable.finalY + 38;
 			doc.setFontSize(10.5); doc.setFont("helvetica", "bold");
 			doc.text(`Grand Total: ${Number(grandTotal).toFixed(2)}`, margin, wordsY - 14);
@@ -280,18 +246,15 @@ export default {
 			doc.setFontSize(8); doc.setFont("helvetica", "bold");
 			doc.text("Terms and Condition: ALL LEGAL DISPUTES ARE SUBJECT TO CALICUT JURIDICTION ONLY", margin, pageHeight - 15);
 
-			// --- 7. THE FIX: DIRECT DOWNLOAD ---
 			const fileName = (invoiceData.invoice_number || "INV") + ".pdf";
 			download(doc.output('dataurlstring'), fileName, "application/pdf");
-			showAlert("Invoice Downloaded Successfully", "success");
 
 		} catch (error) {
 			showAlert("Invoice PDF Error: " + error.message, "error");
 		}
 	},
 
-	// --- HELPERS (EXACT COPIES) ---
-	getSummary: (lines) => {
+	getSummary(lines) {
 		if (!lines || lines.length === 0) return [];
 		const groups = {};
 		lines.forEach(row => {
@@ -318,7 +281,7 @@ export default {
 		}));
 	},
 
-	_drawSimpleBox: (doc, x, y, width, height, rows, labelWidth = 58) => {
+	_drawSimpleBox(doc, x, y, width, height, rows, labelWidth = 58) {
 		doc.setDrawColor(0, 0, 0); doc.setLineWidth(0.5); doc.rect(x, y, width, height);
 		let rowY = y + 11;
 		rows.forEach(r => {

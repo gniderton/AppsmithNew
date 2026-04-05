@@ -1,9 +1,10 @@
 export default {
-	previewInvoice: async (invoiceData) => {
+	// ✅ Fixed: Standard method syntax for 'previewInvoice'
+	async previewInvoice(invoiceData) {
 		try {
 			if (!invoiceData || !invoiceData.invoice_id) throw new Error("No Invoice data selected.");
 
-			// --- 1. LIBRARY SAFETY (Post-Downgrade Fix) ---
+			// --- 1. LIBRARY SAFETY ---
 			if (typeof jspdf === "undefined") throw new Error("jspdf library not loaded.");
 			const jsPDFConstructor = jspdf.jsPDF || jspdf;
 			const doc = new jsPDFConstructor('p', 'pt', 'a4'); 
@@ -14,7 +15,8 @@ export default {
 			}
 
 			const lines = invoiceData.invoice_lines || [];
-			const summaryData = this.getSummary(lines);
+			// ✅ Fixed: 'this' will now correctly find getSummary
+			const summaryData = this.getSummary(lines); 
 			const grandTotal = Number(invoiceData.grand_total || 0);
 			const brand = Global_Assets.getSummary();
 
@@ -98,15 +100,27 @@ export default {
 			doc.autoTable({
 				startY: margin + 40 + 95 + 10,
 				margin: { left: margin, right: margin, top: 157, bottom: 12 },
-				head: [["S.N", "ITEM NAME", "CODE\nEAN", "HSN", "BATCH\nEXPIRY", "MRP", "QTY", "PRICE", "GROSS", "SCH", "D%", "D.AMT", "TXBL", "GST%", "GST$", "NET$"]],
+				// ✅ Updated: Header is now just EAN CODE
+				head: [["S.N", "ITEM NAME", "EAN CODE", "HSN", "BATCH\nEXPIRY", "MRP", "QTY", "PRICE", "GROSS", "SCH", "D%", "D.AMT", "TXBL", "GST%", "GST$", "NET$"]],
 				body: lines.map((row, index) => {
 					const expiryStr = row.expiry_date ? moment(row.expiry_date).format("MM/YY") : "-";
 					return [
-						index + 1, row.product_name, `${row.product_code || ""}\n${row.ean_code || ""}`, row.hsn_code || "-", 
-						`${row.batch_code || ""}\n${expiryStr}`, Number(row.mrp || 0).toFixed(2), row.shipped_qty, 
-						Number(row.rate || 0).toFixed(2), Number(row.gross_amount || 0).toFixed(2), Number(row.scheme_amount || 0).toFixed(2), 
-						(row.tax_percent || 0) + "%", Number(row.discount_amount || 0).toFixed(2), Number(row.taxable_amount || 0).toFixed(2), 
-						(row.tax_percent || 0) + "%", Number(row.tax_amount || 0).toFixed(2), Number(row.amount || 0).toFixed(2)
+						index + 1, 
+						row.product_name, 
+						row.ean_code || "-", // ✅ Updated: Only showing EAN per your request
+						row.hsn_code || "-", 
+						`${row.batch_code || ""}\n${expiryStr}`, 
+						Number(row.mrp || 0).toFixed(2), 
+						row.shipped_qty, 
+						Number(row.rate || 0).toFixed(2), 
+						Number(row.gross_amount || 0).toFixed(2), 
+						Number(row.scheme_amount || 0).toFixed(2), 
+						(row.tax_percent || 0) + "%", 
+						Number(row.discount_amount || 0).toFixed(2), 
+						Number(row.taxable_amount || 0).toFixed(2), 
+						(row.tax_percent || 0) + "%", 
+						Number(row.tax_amount || 0).toFixed(2), 
+						Number(row.amount || 0).toFixed(2)
 					];
 				}),
 				didDrawPage: (data) => {
@@ -122,7 +136,7 @@ export default {
 				}
 			});
 
-			// --- DYNAMIC FOOTER CHECK ---
+			// --- REST OF FOOTER LOGIC (RECOGNIZING 'THIS' IS FIXED) ---
 			let currentY = doc.lastAutoTable.finalY + 20;
 			const pageHeight = doc.internal.pageSize.height;
 
@@ -226,7 +240,6 @@ export default {
 			doc.setFontSize(8); doc.setFont("helvetica", "bold");
 			doc.text("Terms and Condition: ALL LEGAL DISPUTES ARE SUBJECT TO CALICUT JURIDICTION ONLY", margin, pageHeight - 15);
 
-			// --- 7. THE FIX: DIRECT DOWNLOAD ---
 			const fileName = (invoiceData.invoice_number || "INV") + ".pdf";
 			download(doc.output('dataurlstring'), fileName, "application/pdf");
 			showAlert("Invoice Downloaded Successfully", "success");
@@ -236,7 +249,8 @@ export default {
 		}
 	},
 
-	getSummary: (lines) => {
+	// ✅ Fixed: Standard method syntax for 'getSummary'
+	getSummary(lines) {
 		if (!lines || lines.length === 0) return [];
 		const groups = {};
 		lines.forEach(row => {
@@ -263,7 +277,8 @@ export default {
 		}));
 	},
 
-	_drawSimpleBox: (doc, x, y, width, height, rows, labelWidth = 58) => {
+	// ✅ Fixed: Standard method syntax for '_drawSimpleBox'
+	_drawSimpleBox(doc, x, y, width, height, rows, labelWidth = 58) {
 		doc.setDrawColor(0, 0, 0); doc.setLineWidth(0.5); doc.rect(x, y, width, height);
 		let rowY = y + 11;
 		rows.forEach(r => {
