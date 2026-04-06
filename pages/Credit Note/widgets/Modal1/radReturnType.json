@@ -1,0 +1,53 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "alignment": "left",
+  "animateLoading": true,
+  "bottomRow": 26,
+  "boxShadow": "none",
+  "defaultOptionValue": "ITEMS",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    }
+  ],
+  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicPropertyPathList": [
+    {
+      "key": "options"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "flexVerticalAlignment": "start",
+  "isDisabled": false,
+  "isInline": true,
+  "isLoading": false,
+  "isRequired": false,
+  "isVisible": true,
+  "key": "qmfsqlgooz",
+  "label": "",
+  "labelAlignment": "left",
+  "labelPosition": "Top",
+  "labelTextSize": "0.875rem",
+  "labelWidth": 5,
+  "leftColumn": 0,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "mobileBottomRow": 23,
+  "mobileLeftColumn": 0,
+  "mobileRightColumn": 18,
+  "mobileTopRow": 17,
+  "needsErrorInfo": false,
+  "options": "[ { \"label\": \"Item-wise Return\", \"value\": \"ITEMS\" }, { \"label\": \"Flat Adjustment\", \"value\": \"FLAT\" } ]",
+  "originalBottomRow": 25,
+  "originalTopRow": 21,
+  "parentColumnSpace": 19.228125,
+  "parentId": "9qgxcgjwpq",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "rightColumn": 17,
+  "topRow": 22,
+  "type": "RADIO_GROUP_WIDGET",
+  "version": 1,
+  "widgetId": "dzm4wvm7bt",
+  "widgetName": "radReturnType"
+}

@@ -5,7 +5,7 @@
   "borderColor": "#E0DEDE",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": "1",
-  "bottomRow": 128,
+  "bottomRow": 120,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "childStylesheet": {
     "ARRAY": {
@@ -806,7 +806,7 @@
               "isDisabled": false,
               "isFilterable": false,
               "isRequired": false,
-              "isVisible": true,
+              "isVisible": "{{((sourceData, formData, fieldState) => ( JSONForm3.formData.Payment_Details.payment_mode === 'ONLINE' ))(JSONForm3.sourceData, JSONForm3.formData, JSONForm3.fieldState)}}",
               "label": "Reference No",
               "labelTextSize": "0.875rem",
               "options": "{{ \n  getUnconsumedDebits.data.map(debit => ({ \n    label: `${debit.debit_amount} - ₹${debit.consumed_amount}`, \n    value: debit.id \n  })) \n}}",

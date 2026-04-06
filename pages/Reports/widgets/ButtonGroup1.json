@@ -26,6 +26,9 @@
   "dynamicTriggerPathList": [
     {
       "key": "groupButtons.groupButton1.onClick"
+    },
+    {
+      "key": "groupButtons.groupButton3.onClick"
     }
   ],
   "groupButtons": {
@@ -104,6 +107,7 @@
           "widgetId": ""
         }
       },
+      "onClick": "{{AuditView.run().then(() => {\n  showModal(mdlAuditView.name);\n});}}",
       "placement": "START",
       "widgetId": ""
     }

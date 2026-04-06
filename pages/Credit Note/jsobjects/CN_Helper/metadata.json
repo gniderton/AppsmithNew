@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "69a80abb79ac426a29eb8838_e20b4db9-57f4-41d2-89b6-731ad85dea64",
+  "id": "Credit Note_CN_Helper",
+  "unpublishedCollection": {
+    "name": "CN_Helper",
+    "pageId": "Credit Note",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}

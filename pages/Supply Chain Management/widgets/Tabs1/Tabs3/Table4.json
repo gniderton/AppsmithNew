@@ -4,7 +4,7 @@
   "borderColor": "#E0DEDE",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": "1",
-  "bottomRow": 64,
+  "bottomRow": 68,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "cachedTableData": {},
   "canFreezeColumn": true,
@@ -159,7 +159,7 @@
   "mobileTopRow": 0,
   "needsErrorInfo": false,
   "parentColumnSpace": 14.0166015625,
-  "parentId": "6811mc9lu1",
+  "parentId": "fdsv24r4i1",
   "parentRowSpace": 10,
   "primaryColumns": {
     "customer_id": {
@@ -732,6 +732,6 @@
   "type": "TABLE_WIDGET_V2",
   "version": 2,
   "verticalAlignment": "CENTER",
-  "widgetId": "oapflb9na8",
+  "widgetId": "wgw6y639mo",
   "widgetName": "Table4"
 }

@@ -20,7 +20,11 @@
       "key": "groupButtons.groupButton2.buttonColor"
     }
   ],
-  "dynamicTriggerPathList": [],
+  "dynamicTriggerPathList": [
+    {
+      "key": "groupButtons.groupButton1.onClick"
+    }
+  ],
   "groupButtons": {
     "groupButton1": {
       "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
@@ -32,6 +36,7 @@
       "isVisible": true,
       "label": "Attendance Report",
       "menuItems": {},
+      "onClick": "{{AttendanceReport.run().then(() => {\n  showModal(mdlAttendance.name);\n});}}",
       "placement": "START",
       "widgetId": ""
     },

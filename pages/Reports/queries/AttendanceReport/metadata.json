@@ -60,7 +60,7 @@
     ],
     "name": "AttendanceReport",
     "pageId": "Reports",
-    "runBehaviour": "MANUAL",
+    "runBehaviour": "AUTOMATIC",
     "userSetOnLoad": false
   }
 }

@@ -47,9 +47,10 @@
     "journal_entry_id",
     "created_at",
     "to_bank_statement_entry_id",
-    "customColumn1"
+    "customColumn1",
+    "is_active"
   ],
-  "columnUpdatedAt": 1775269611761,
+  "columnUpdatedAt": 1775436390292,
   "columnWidthMap": {
     "from_bank_statement_entry_id": 251,
     "to_account_name": 212,
@@ -129,6 +130,9 @@
     },
     {
       "key": "primaryColumns.customColumn1.boxShadow"
+    },
+    {
+      "key": "primaryColumns.is_active.computedValue"
     }
   ],
   "dynamicPropertyPathList": [
@@ -420,6 +424,40 @@
       "notation": "standard",
       "originalId": "id",
       "sticky": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
+    "is_active": {
+      "alias": "is_active",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "cellBackground": "",
+      "columnType": "checkbox",
+      "computedValue": "{{(() => { const tableData = tblInternalTransfer.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"is_active\"])) : is_active })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "fontStyle": "",
+      "horizontalAlignment": "LEFT",
+      "id": "is_active",
+      "index": 13,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": true,
+      "label": "is_active",
+      "notation": "standard",
+      "originalId": "is_active",
+      "sticky": "",
+      "textColor": "",
       "textSize": "0.875rem",
       "thousandSeparator": true,
       "validation": {},

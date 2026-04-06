@@ -46,7 +46,7 @@
   ],
   "columnUpdatedAt": 1774880320335,
   "columnWidthMap": {
-    "created_at": 99,
+    "created_at": 106,
     "driver_name": 127,
     "trip_number": 155
   },
@@ -142,6 +142,8 @@
   "mobileRightColumn": 34,
   "mobileTopRow": 0,
   "needsErrorInfo": false,
+  "originalBottomRow": 167,
+  "originalTopRow": 94,
   "parentColumnSpace": 19.9375,
   "parentId": "4v0bvxjlbb",
   "parentRowSpace": 10,
@@ -500,7 +502,7 @@
   },
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
-  "rightColumn": 17,
+  "rightColumn": 20,
   "searchKey": "",
   "tableData": "{{getVerfiedTrips.data}}",
   "textSize": "0.875rem",

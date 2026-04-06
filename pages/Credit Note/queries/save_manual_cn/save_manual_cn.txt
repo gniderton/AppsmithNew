@@ -1,0 +1,8 @@
+{
+  "customer_id": "{{selCustomer.selectedOptionValue}}",
+  "invoice_id": "{{selInvoice.selectedOptionValue}}",
+  "return_date": "{{dpReturnDate.selectedDate}}",
+  "type": "{{radReturnType.selectedOptionValue === 'FLAT' ? selAdjType.selectedOptionValue : 'Sales Return'}}",
+  "remarks": "{{txtRemarks.text}}",
+  "items": "{{CN_Helper.getFinalItems()}}"
+}
