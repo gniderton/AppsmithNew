@@ -11,7 +11,7 @@
           "value": "application/json"
         }
       ],
-      "body": "{\n  \"bounce_date\": {{ dateBounce.value }},\n  \"bounce_reason\": {{ selBounceReason.selectedOptionValue}},\n  \"bank_charges\": {{ numBankCharges.value || 0 }},\n  \"customer_penalty\": {{ numCustomerPenalty.value || 0 }},\n  \"user_id\": {{ appsmith.user.id }}\n}\n",
+      "body": "{\n  \"bounce_date\": {{ dateBounce.value }},\n  \"bounce_reason\": {{ selBounceReason.selectedOptionValue}},\n  \"bank_charges\": {{ numBankCharges.value || 0 }},\n  \"customer_penalty\": {{ numCustomerPenalty.value || 0 }},\n  \"user_id\": {{ getMe.data.id }}\n}\n",
       "bodyFormData": [],
       "encodeParamsToggle": true,
       "formData": {
@@ -21,7 +21,7 @@
       "httpMethod": "POST",
       "httpVersion": "HTTP11",
       "paginationType": "NONE",
-      "path": "/api/finance/cheques/{{ tblCheques.selectedRow.id }}/bounce",
+      "path": "/api/finance/cheques/{{ tblCheques.triggeredRow.id }}/bounce",
       "pluginSpecifiedTemplates": [
         {
           "value": true
