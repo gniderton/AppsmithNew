@@ -341,7 +341,7 @@
   "responsiveBehavior": "fill",
   "rightColumn": 64,
   "searchKey": "",
-  "tableData": "{{Api1.data}}",
+  "tableData": "{{journalEntries.data}}",
   "textSize": "0.875rem",
   "topRow": 6,
   "totalRecordsCount": 0,
