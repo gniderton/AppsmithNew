@@ -348,7 +348,7 @@
       "label": "Make Payment",
       "labelColor": "#FFFFFF",
       "notation": "standard",
-      "onClick": "{{showModal(ModalEmiEntry.name);}}",
+      "onClick": "{{showModal(ModalEmiEntry.name).then(() => {\n  GetUnconsumedDebits.run();\n  GetUnconsumedCredits.run();\n});}}",
       "originalId": "customColumn1",
       "sticky": "",
       "textSize": "0.875rem",

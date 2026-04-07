@@ -451,7 +451,7 @@
               "isVisible": "{{((sourceData, formData, fieldState) => (JSONForm_Installment.formData.Payment_Details.Payment_Mode === 'ONLINE'))(JSONForm_Installment.sourceData, JSONForm_Installment.formData, JSONForm_Installment.fieldState)}}",
               "label": "Bank Statement Entry",
               "labelTextSize": "0.875rem",
-              "options": "{{\n  tblLoans.selectedRow.loan_type === 'GIVEN' \n    ? GetUnconsumedDebits.data.map(d => ({ label: `${d.bank_ref_id} (₹${d.debit_amount})`, value: d.id }))\n    : GetUnconsumedCredits.data.map(c => ({ label: `${c.bank_ref_id} (₹${c.credit_amount})`, value: c.id }))\n}}\n",
+              "options": "{{\n  tblLoans.triggeredRow.loan_type === 'TAKEN' \n    ? GetUnconsumedDebits.data.map(d => ({ label: `${d.bank_ref_id} (₹${d.debit_amount})`, value: d.id }))\n    : GetUnconsumedCredits.data.map(c => ({ label: `${c.bank_ref_id} (₹${c.credit_amount})`, value: c.id }))\n}}\n",
               "originalIdentifier": "Bank_Statement_Entry",
               "position": 2,
               "serverSideFiltering": false,

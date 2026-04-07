@@ -31,7 +31,7 @@
   "mobileRightColumn": 64,
   "mobileTopRow": 0,
   "needsErrorInfo": false,
-  "onClick": "{{showModal(ModalCreateTransaction.name);}}",
+  "onClick": "{{showModal(ModalCreateTransaction.name).then(() => {\n  GetUnconsumedDebits.run();\n  GetUnconsumedCredits.run();\n});}}",
   "parentColumnSpace": 17.21875,
   "parentId": "nenolul888",
   "parentRowSpace": 10,
