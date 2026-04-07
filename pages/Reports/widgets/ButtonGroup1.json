@@ -29,6 +29,9 @@
     },
     {
       "key": "groupButtons.groupButton3.onClick"
+    },
+    {
+      "key": "groupButtons.groupButton2.onClick"
     }
   ],
   "groupButtons": {
@@ -56,6 +59,7 @@
       "isVisible": true,
       "label": "Financial Statement",
       "menuItems": {},
+      "onClick": "{{getJournalLines.run().then(() => {\n  showModal(mdlJournal.name);\n});}}",
       "placement": "START",
       "widgetId": ""
     },

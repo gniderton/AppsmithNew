@@ -2,12 +2,9 @@
   "accentColor": "{{appsmith.theme.colors.primaryColor}}",
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 14,
+  "bottomRow": 12,
   "boxShadow": "none",
-  "closeOnSelection": true,
-  "dateFormat": "DD/MM/YY",
-  "datePickerType": "DATE_PICKER",
-  "defaultDate": "{{ moment().format(\"YYYY-MM-DD\") }}",
+  "defaultOptionValue": "GREEN",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
@@ -16,52 +13,53 @@
       "key": "borderRadius"
     },
     {
-      "key": "defaultDate"
+      "key": "sourceData"
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
   "dynamicPropertyPathList": [
     {
-      "key": "defaultDate"
+      "key": "sourceData"
     }
   ],
   "dynamicTriggerPathList": [],
-  "firstDayOfWeek": 0,
   "isDisabled": false,
+  "isFilterable": true,
   "isLoading": false,
   "isRequired": false,
   "isVisible": true,
-  "key": "s6k4a64ghr",
-  "label": "Date",
+  "key": "mqjatnqu6f",
   "labelAlignment": "left",
   "labelPosition": "Left",
+  "labelText": "Channel",
   "labelTextSize": "0.875rem",
-  "labelWidth": "14",
-  "leftColumn": 7,
-  "maxDate": "2121-12-31T18:29:00.000Z",
+  "labelWidth": "10",
+  "leftColumn": 0,
   "maxDynamicHeight": 9000,
-  "minDate": "1920-12-31T18:30:00.000Z",
   "minDynamicHeight": 4,
   "minWidth": 450,
-  "mobileBottomRow": 13,
+  "mobileBottomRow": 7,
   "mobileLeftColumn": 0,
   "mobileRightColumn": 20,
-  "mobileTopRow": 6,
+  "mobileTopRow": 0,
   "needsErrorInfo": false,
+  "optionLabel": "label",
+  "optionValue": "value",
   "originalBottomRow": 12,
   "originalTopRow": 8,
-  "parentColumnSpace": 6.9375,
-  "parentId": "55whh2vbxa",
+  "parentColumnSpace": 5.714773559570312,
+  "parentId": "p7wr7c62wl",
   "parentRowSpace": 10,
+  "placeholderText": "Select option",
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
-  "rightColumn": 55,
-  "shortcuts": false,
+  "rightColumn": 63,
+  "serverSideFiltering": false,
   "shouldScrollContents": true,
-  "timePrecision": "minute",
-  "topRow": 10,
-  "type": "DATE_PICKER_WIDGET2",
-  "version": 2,
-  "widgetId": "a8880cmoyk",
-  "widgetName": "dateBounce"
+  "sourceData": "{{getChannel.data.map( (obj) =>{ return  {'label': obj.channel_name, 'value': obj.id } })}}",
+  "topRow": 8,
+  "type": "SELECT_WIDGET",
+  "version": 1,
+  "widgetId": "4vk2o9s8q2",
+  "widgetName": "selChannel"
 }

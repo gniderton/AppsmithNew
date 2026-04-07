@@ -24,6 +24,9 @@
     },
     {
       "key": "groupButtons.groupButton2.isDisabled"
+    },
+    {
+      "key": "groupButtons.groupButton2.isVisible"
     }
   ],
   "dynamicPropertyPathList": [
@@ -38,6 +41,9 @@
     },
     {
       "key": "groupButtons.groupButton2.isDisabled"
+    },
+    {
+      "key": "groupButtons.groupButton2.isVisible"
     }
   ],
   "dynamicTriggerPathList": [
@@ -58,7 +64,7 @@
       "index": 0,
       "isDisabled": "{{ !!appsmith.store.isEditingCustomer }}",
       "isVisible": true,
-      "label": "Edit",
+      "label": "Edit Customer Profile",
       "menuItems": {},
       "onClick": "{{\n  storeValue('isEditingCustomer', true);\n}}",
       "placement": "CENTER",
@@ -72,7 +78,7 @@
       "id": "groupButton2",
       "index": 1,
       "isDisabled": "{{ !appsmith.store.isEditingCustomer }}",
-      "isVisible": true,
+      "isVisible": "{{ appsmith.store.isEditingCustomer }}",
       "label": "Cancel",
       "menuItems": {},
       "onClick": "{{\n  storeValue('isEditingCustomer', false);\n  resetWidget(\"JSONForm2\", true); // Name of your JSON form\n}}",
@@ -84,7 +90,7 @@
   "isLoading": false,
   "isVisible": true,
   "key": "cdqpfiiqd7",
-  "leftColumn": 39,
+  "leftColumn": 49,
   "minWidth": 450,
   "mobileBottomRow": 142,
   "mobileLeftColumn": 9,

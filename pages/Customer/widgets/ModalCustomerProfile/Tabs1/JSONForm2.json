@@ -433,6 +433,9 @@
     },
     {
       "key": "schema.__root_schema__.children.Default_Address.children.location_lng.isDisabled"
+    },
+    {
+      "key": "isVisible"
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
@@ -460,6 +463,9 @@
     },
     {
       "key": "onSubmit"
+    },
+    {
+      "key": "isVisible"
     }
   ],
   "dynamicTriggerPathList": [
@@ -471,7 +477,7 @@
   "fixedFooter": true,
   "flexVerticalAlignment": "start",
   "isLoading": false,
-  "isVisible": true,
+  "isVisible": "{{ appsmith.store.isEditingCustomer }}",
   "key": "cqayi21au2",
   "leftColumn": 39,
   "maxDynamicHeight": 9000,
@@ -983,7 +989,7 @@
               "iconAlign": "left",
               "identifier": "credit_limit",
               "isCustomField": false,
-              "isDisabled": "{{((sourceData, formData, fieldState) => ( !appsmith.store.isEditingCustomer ))(JSONForm2.sourceData, JSONForm2.formData, JSONForm2.fieldState)}}",
+              "isDisabled": false,
               "isRequired": false,
               "isSpellCheck": false,
               "isVisible": true,
@@ -991,7 +997,7 @@
               "labelTextSize": "0.875rem",
               "originalIdentifier": "credit_limit",
               "position": 2,
-              "sourceData": "1000000.00"
+              "sourceData": "10000.00"
             },
             "default_price_tier": {
               "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(JSONForm2.sourceData, JSONForm2.formData, JSONForm2.fieldState)}}",

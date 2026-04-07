@@ -1,13 +1,11 @@
 {
   "accentColor": "{{appsmith.theme.colors.primaryColor}}",
   "animateLoading": true,
+  "autoFocus": false,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 14,
+  "bottomRow": 12,
   "boxShadow": "none",
-  "closeOnSelection": true,
-  "dateFormat": "DD/MM/YY",
-  "datePickerType": "DATE_PICKER",
-  "defaultDate": "{{ moment().format(\"YYYY-MM-DD\") }}",
+  "defaultText": "{{tblCustomers.triggeredRow.customer_name}}",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
@@ -16,52 +14,48 @@
       "key": "borderRadius"
     },
     {
-      "key": "defaultDate"
+      "key": "defaultText"
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
-  "dynamicPropertyPathList": [
-    {
-      "key": "defaultDate"
-    }
-  ],
   "dynamicTriggerPathList": [],
-  "firstDayOfWeek": 0,
-  "isDisabled": false,
+  "iconAlign": "left",
+  "inputType": "MULTI_LINE_TEXT",
+  "isDisabled": true,
   "isLoading": false,
   "isRequired": false,
   "isVisible": true,
-  "key": "s6k4a64ghr",
-  "label": "Date",
+  "key": "4j3b9vhfp4",
+  "label": "Customer Name",
   "labelAlignment": "left",
   "labelPosition": "Left",
+  "labelStyle": "",
   "labelTextSize": "0.875rem",
-  "labelWidth": "14",
-  "leftColumn": 7,
-  "maxDate": "2121-12-31T18:29:00.000Z",
+  "labelWidth": "8",
+  "leftColumn": 0,
   "maxDynamicHeight": 9000,
-  "minDate": "1920-12-31T18:30:00.000Z",
   "minDynamicHeight": 4,
   "minWidth": 450,
-  "mobileBottomRow": 13,
+  "mobileBottomRow": 7,
   "mobileLeftColumn": 0,
   "mobileRightColumn": 20,
-  "mobileTopRow": 6,
+  "mobileTopRow": 0,
   "needsErrorInfo": false,
   "originalBottomRow": 12,
-  "originalTopRow": 8,
-  "parentColumnSpace": 6.9375,
-  "parentId": "55whh2vbxa",
+  "originalTopRow": 4,
+  "parentColumnSpace": 16.0727294921875,
+  "parentId": "gty1dcyp0y",
   "parentRowSpace": 10,
   "renderMode": "CANVAS",
+  "resetOnSubmit": true,
   "responsiveBehavior": "fill",
-  "rightColumn": 55,
-  "shortcuts": false,
+  "rightColumn": 24,
+  "shouldAllowAutofill": false,
   "shouldScrollContents": true,
-  "timePrecision": "minute",
-  "topRow": 10,
-  "type": "DATE_PICKER_WIDGET2",
+  "showStepArrows": false,
+  "topRow": 4,
+  "type": "INPUT_WIDGET_V2",
   "version": 2,
-  "widgetId": "a8880cmoyk",
-  "widgetName": "dateBounce"
+  "widgetId": "lt0fvzv8r5",
+  "widgetName": "Input3"
 }

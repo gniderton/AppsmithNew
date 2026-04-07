@@ -1,0 +1,4 @@
+{
+  "brand_id": {{selBrand.selectedOptionValue}},
+  "channel_id": {{selChannel.selectedOptionValue}}
+}

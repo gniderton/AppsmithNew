@@ -1,0 +1,50 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 4,
+  "boxShadow": "none",
+  "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "buttonVariant": "TERTIARY",
+  "dynamicBindingPathList": [
+    {
+      "key": "buttonColor"
+    },
+    {
+      "key": "borderRadius"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "iconName": "plus",
+  "isDisabled": false,
+  "isLoading": false,
+  "isVisible": true,
+  "key": "c7j81ug01k",
+  "leftColumn": 55,
+  "minWidth": 50,
+  "mobileBottomRow": 4,
+  "mobileLeftColumn": 59,
+  "mobileRightColumn": 63,
+  "mobileTopRow": 0,
+  "needsErrorInfo": false,
+  "onClick": "{{\n  apiUpdatePricing.run()\n    .then(() => {\n      showAlert(\"Pricing Updated Successfully\", \"success\");\n      // Refresh the list inside the modal\n      apiGetPricing.run(); \n      // Close the modal\n\n    })\n    .catch((err) => {\n      showAlert(\"Update Failed: \" + err.message, \"error\");\n    });\n}}\n",
+  "parentColumnSpace": 5.714773559570312,
+  "parentId": "p7wr7c62wl",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "hug",
+  "rightColumn": 59,
+  "topRow": 0,
+  "type": "ICON_BUTTON_WIDGET",
+  "version": 1,
+  "widgetId": "hw974cob09",
+  "widgetName": "IconButton5"
+}
