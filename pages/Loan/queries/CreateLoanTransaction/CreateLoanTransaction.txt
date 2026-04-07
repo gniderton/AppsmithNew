@@ -21,8 +21,8 @@
   "reference_no": "{{ 
     JSONForm2.formData.Payment_Details.Payment_Mode === 'ONLINE' 
       ? (JSONForm2.formData.Loan_Details.Loan_Type === 'TAKEN' 
-          ? GetUnconsumedCredits.data.find(c => c.id === JSONForm2.formData.Payment_Details.Bank_Statement_Entry)?.bank_ref_id 
-          : GetUnconsumedDebits.data.find(d => d.id === JSONForm2.formData.Payment_Details.Bank_Statement_Entry)?.bank_ref_id) 
+          ? GetUnconsumedCredits.data.find(c => c.id === JSONForm2.formData.Payment_Details.Reference_Number)?.bank_ref_id 
+          : GetUnconsumedDebits.data.find(d => d.id === JSONForm2.formData.Payment_Details.Reference_Number)?.bank_ref_id) 
       : JSONForm2.formData.Payment_Details.Manual_Reference_No 
   }}",
   

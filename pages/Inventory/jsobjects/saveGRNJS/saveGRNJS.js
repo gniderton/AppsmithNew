@@ -68,7 +68,7 @@ export default {
 
 		// 4. Send & Cleanup
 		await storeValue('grnPayload', finalPayload);
-		await saveGRN_API.run(); // Ensure this matches your API query name
+		await saveGRN.run(); // Ensure this matches your API query name
 
 		showAlert("GRN Saved Successfully", "success");
 		closeModal(modalFrameGRN.name);
