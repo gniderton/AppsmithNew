@@ -4,7 +4,7 @@
   "borderColor": "#E0DEDE",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": "1",
-  "bottomRow": 69,
+  "bottomRow": 72,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "cachedTableData": {},
   "canFreezeColumn": true,
@@ -79,9 +79,6 @@
       "key": "boxShadow"
     },
     {
-      "key": "tableData"
-    },
-    {
       "key": "primaryColumns.id.computedValue"
     },
     {
@@ -119,6 +116,9 @@
     },
     {
       "key": "primaryColumns.bank_account_id.computedValue"
+    },
+    {
+      "key": "tableData"
     }
   ],
   "dynamicPropertyPathList": [
@@ -154,6 +154,8 @@
   "mobileRightColumn": 34,
   "mobileTopRow": 6,
   "needsErrorInfo": false,
+  "originalBottomRow": 75,
+  "originalTopRow": 12,
   "parentColumnSpace": 6.9375,
   "parentId": "jm725p1gpd",
   "parentRowSpace": 10,
@@ -580,9 +582,9 @@
   "responsiveBehavior": "fill",
   "rightColumn": 64,
   "searchKey": "",
-  "tableData": "{{getBankStatement.data}}",
+  "tableData": "{{\n  getBankStatement.data.filter(row => {\n    // 1. Filter by Bank Name\n    const matchesBank = MultiSelectBank.selectedOptionValues.length > 0 \n      ? MultiSelectBank.selectedOptionValues.includes(row.bank_name)\n      : true;\n\n    // 2. Filter by Status\n    const matchesStatus = MultiSelectStatus.selectedOptionValues.length > 0 \n      ? MultiSelectStatus.selectedOptionValues.includes(row.status)\n      : true;\n\n    // 3. Filter by Type (Debit/Credit)\n    const selectedTypes = MultiSelectType.selectedOptionValues;\n    let matchesType = true;\n\n    if (selectedTypes.length > 0) {\n      const isDebit = parseFloat(row.debit_amount) > 0;\n      const isCredit = parseFloat(row.credit_amount) > 0;\n      \n      // Check if the row matches ANY of the selected types\n      matchesType = (selectedTypes.includes(\"debit\") && isDebit) || \n                    (selectedTypes.includes(\"credit\") && isCredit);\n    }\n\n    return matchesBank && matchesStatus && matchesType;\n  })\n}}",
   "textSize": "0.875rem",
-  "topRow": 6,
+  "topRow": 9,
   "totalRecordsCount": 0,
   "type": "TABLE_WIDGET_V2",
   "version": 2,
