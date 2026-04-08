@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "69a80abb79ac426a29eb8838_4d238411-03b3-4f36-93a8-b0f9c61bf199",
+  "id": "Reports_jsSales",
+  "unpublishedCollection": {
+    "name": "jsSales",
+    "pageId": "Reports",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}
