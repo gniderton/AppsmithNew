@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "69a80abb79ac426a29eb8838_641705f1-f429-49e9-893a-02b2d56375e6",
+  "id": "Credit Note_taxSummary",
+  "unpublishedCollection": {
+    "name": "taxSummary",
+    "pageId": "Credit Note",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}

@@ -182,51 +182,6 @@
       "renderMode": "CANVAS",
       "responsiveBehavior": "fill",
       "rightColumn": 897.125,
-      "tabId": "tab6ntaky8g5a",
-      "tabName": "Returns",
-      "topRow": 1,
-      "type": "CANVAS_WIDGET",
-      "version": 1,
-      "widgetId": "1xpqj40f1t",
-      "widgetName": "Canvas14"
-    },
-    {
-      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-      "bottomRow": 690,
-      "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
-      "canExtend": false,
-      "containerStyle": "none",
-      "detachFromLayout": true,
-      "dynamicBindingPathList": [
-        {
-          "key": "borderRadius"
-        },
-        {
-          "key": "boxShadow"
-        }
-      ],
-      "dynamicHeight": "AUTO_HEIGHT",
-      "dynamicTriggerPathList": [],
-      "flexLayers": [],
-      "isLoading": false,
-      "isVisible": true,
-      "key": "47uwrr0l6d",
-      "leftColumn": 0,
-      "maxDynamicHeight": 9000,
-      "minDynamicHeight": 4,
-      "minHeight": 190,
-      "minWidth": 450,
-      "mobileBottomRow": 191,
-      "mobileLeftColumn": 0,
-      "mobileRightColumn": 897.125,
-      "mobileTopRow": 1,
-      "needsErrorInfo": false,
-      "parentColumnSpace": 1,
-      "parentId": "wk2krpb6h8",
-      "parentRowSpace": 1,
-      "renderMode": "CANVAS",
-      "responsiveBehavior": "fill",
-      "rightColumn": 897.125,
       "tabId": "tabhmpppt660c",
       "tabName": "Credit Notes",
       "topRow": 1,
@@ -279,6 +234,51 @@
       "version": 1,
       "widgetId": "peu1ohpnum",
       "widgetName": "Canvas16"
+    },
+    {
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "bottomRow": 690,
+      "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+      "canExtend": false,
+      "containerStyle": "none",
+      "detachFromLayout": true,
+      "dynamicBindingPathList": [
+        {
+          "key": "borderRadius"
+        },
+        {
+          "key": "boxShadow"
+        }
+      ],
+      "dynamicHeight": "AUTO_HEIGHT",
+      "dynamicTriggerPathList": [],
+      "flexLayers": [],
+      "isLoading": false,
+      "isVisible": true,
+      "key": "o6q038l1fi",
+      "leftColumn": 0,
+      "maxDynamicHeight": 9000,
+      "minDynamicHeight": 4,
+      "minHeight": 730,
+      "minWidth": 450,
+      "mobileBottomRow": 731,
+      "mobileLeftColumn": 0,
+      "mobileRightColumn": 616.7734375,
+      "mobileTopRow": 1,
+      "needsErrorInfo": false,
+      "parentColumnSpace": 1,
+      "parentId": "wk2krpb6h8",
+      "parentRowSpace": 1,
+      "renderMode": "CANVAS",
+      "responsiveBehavior": "fill",
+      "rightColumn": 616.7734375,
+      "tabId": "tabt3toalzdzg",
+      "tabName": "Items",
+      "topRow": 1,
+      "type": "CANVAS_WIDGET",
+      "version": 1,
+      "widgetId": "530oj3upyb",
+      "widgetName": "Canvas17"
     }
   ],
   "defaultTab": "Tab 1",
@@ -334,26 +334,26 @@
       "positioning": "vertical",
       "widgetId": "fv6gkghml1"
     },
-    "tab6ntaky8g5a": {
-      "id": "tab6ntaky8g5a",
-      "index": 3,
-      "isVisible": true,
-      "label": "Returns",
-      "widgetId": "1xpqj40f1t"
-    },
     "tabhmpppt660c": {
       "id": "tabhmpppt660c",
-      "index": 4,
+      "index": 3,
       "isVisible": true,
       "label": "Credit Notes",
       "widgetId": "va1h9yrnrj"
     },
     "tabs07l1yf0sa": {
       "id": "tabs07l1yf0sa",
-      "index": 5,
+      "index": 4,
       "isVisible": true,
       "label": "Payments",
       "widgetId": "peu1ohpnum"
+    },
+    "tabt3toalzdzg": {
+      "id": "tabt3toalzdzg",
+      "index": 5,
+      "isVisible": true,
+      "label": "Items",
+      "widgetId": "530oj3upyb"
     },
     "tabtov7cplw8b": {
       "id": "tabtov7cplw8b",

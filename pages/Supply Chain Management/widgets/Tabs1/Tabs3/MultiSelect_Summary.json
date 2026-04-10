@@ -2,72 +2,64 @@
   "accentColor": "{{appsmith.theme.colors.primaryColor}}",
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 16,
+  "bottomRow": 4,
   "boxShadow": "none",
-  "defaultOptionValue": "GREEN",
+  "defaultOptionValue": [
+    "GREEN",
+    "RED"
+  ],
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
     },
     {
       "key": "borderRadius"
-    },
-    {
-      "key": "sourceData"
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
   "dynamicPropertyPathList": [
     {
       "key": "sourceData"
-    },
-    {
-      "key": "onOptionChange"
     }
   ],
-  "dynamicTriggerPathList": [
-    {
-      "key": "onOptionChange"
-    }
-  ],
+  "dynamicTriggerPathList": [],
   "isDisabled": false,
   "isFilterable": true,
   "isLoading": false,
   "isRequired": false,
   "isVisible": true,
-  "key": "c7mltfqow2",
+  "key": "pnduoqeqw2",
   "labelAlignment": "left",
   "labelPosition": "Left",
-  "labelText": "Select Invoice",
+  "labelText": "Type",
   "labelTextSize": "0.875rem",
-  "labelWidth": "7",
+  "labelWidth": 5,
   "leftColumn": 0,
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 4,
   "minWidth": 450,
-  "mobileBottomRow": 13,
+  "mobileBottomRow": 7,
   "mobileLeftColumn": 0,
   "mobileRightColumn": 20,
-  "mobileTopRow": 6,
+  "mobileTopRow": 0,
   "needsErrorInfo": false,
-  "onOptionChange": "{{ CN_Helper.loadInvoiceItems() }}",
   "optionLabel": "label",
   "optionValue": "value",
-  "originalBottomRow": 16,
-  "originalTopRow": 12,
-  "parentColumnSpace": 6.9375,
-  "parentId": "9qgxcgjwpq",
+  "originalBottomRow": 7,
+  "originalTopRow": 0,
+  "parentColumnSpace": 13.39453125,
+  "parentId": "530oj3upyb",
   "parentRowSpace": 10,
-  "placeholderText": "Select option",
+  "placeholderText": "Select option(s)",
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
-  "rightColumn": 22,
+  "rightColumn": 20,
   "serverSideFiltering": false,
   "shouldScrollContents": true,
-  "sourceData": "{{getCustomersInvoice.data.map( (obj) =>{ return  {'label': obj.invoice_number, 'value': obj.id } })}}",
-  "topRow": 12,
-  "type": "SELECT_WIDGET",
+  "sourceData": "[\n  { \"label\": \"Delivered\", \"value\": \"delivered_summary\" },\n  { \"label\": \"Rejected\", \"value\": \"rejected_summary\" },\n  { \"label\": \"Undelivered\", \"value\": \"undelivered_summary\" },\n  { \"label\": \"Returns\", \"value\": \"returns_summary\" }\n]",
+  "topRow": 0,
+  "type": "MULTI_SELECT_WIDGET_V2",
   "version": 1,
-  "widgetId": "qijhnqkg3b",
-  "widgetName": "selInvoice"
+  "widgetId": "y9l57p7ek0",
+  "widgetName": "MultiSelect_Summary"
 }
