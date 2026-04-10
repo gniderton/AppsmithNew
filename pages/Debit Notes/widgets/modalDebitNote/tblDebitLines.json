@@ -50,9 +50,10 @@
     "Reason",
     "Batch_No",
     "Expiry",
-    "_product_id"
+    "_product_id",
+    "_batches"
   ],
-  "columnUpdatedAt": 1775222859794,
+  "columnUpdatedAt": 1775783522227,
   "columnWidthMap": {
     "Batch_No": 98,
     "Disc__": 83,
@@ -151,6 +152,12 @@
     },
     {
       "key": "primaryColumns.Reason.selectOptions"
+    },
+    {
+      "key": "primaryColumns.Batch_No.selectOptions"
+    },
+    {
+      "key": "primaryColumns._batches.computedValue"
     }
   ],
   "dynamicPropertyPathList": [
@@ -179,6 +186,9 @@
     },
     {
       "key": "primaryColumns.Disc__.onSubmit"
+    },
+    {
+      "key": "primaryColumns.Batch_No.onOptionChange"
     }
   ],
   "enableClientSideSearch": true,
@@ -214,7 +224,7 @@
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
       "cellBackground": "",
-      "columnType": "text",
+      "columnType": "select",
       "computedValue": "{{(() => { const tableData = tblDebitLines.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"Batch No\"])) : Batch No })()}}",
       "currencyCode": "USD",
       "decimals": 0,
@@ -234,9 +244,10 @@
       "isVisible": true,
       "label": "Batch No",
       "notation": "standard",
+      "onOptionChange": "{{DebitNoteTableEdit.updateDebitRow();}}",
       "onSubmit": "{{DebitNoteTableEdit.updateDebitRow();}}",
       "originalId": "Batch No",
-      "selectOptions": "",
+      "selectOptions": "{{(() => { const tableData = tblDebitLines.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( currentRow._batches.map(b => ({ label: b.batch_code, value: b.batch_code })) )) :  currentRow._batches.map(b => ({ label: b.batch_code, value: b.batch_code }))  })()}}",
       "sortBy": "label",
       "sticky": "",
       "textColor": "",
@@ -790,6 +801,40 @@
       "label": "Taxable $",
       "notation": "standard",
       "originalId": "Taxable $",
+      "sticky": "",
+      "textColor": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
+    "_batches": {
+      "alias": "_batches",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "cellBackground": "",
+      "columnType": "text",
+      "computedValue": "{{(() => { const tableData = tblDebitLines.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"_batches\"])) : _batches })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "fontStyle": "",
+      "horizontalAlignment": "LEFT",
+      "id": "_batches",
+      "index": 18,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": true,
+      "label": "_batches",
+      "notation": "standard",
+      "originalId": "_batches",
       "sticky": "",
       "textColor": "",
       "textSize": "0.875rem",
