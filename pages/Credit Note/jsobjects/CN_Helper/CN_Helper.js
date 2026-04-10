@@ -1,5 +1,5 @@
 export default {
-  // --- OPTION A: Populate from Catalog ---
+  // --- Initialization Option A: From Catalog (Pre-fill with all products) ---
   loadAllProducts: async () => {
     const allBatches = await getBatch.run();
     const products = getProducts.data.data || [];
@@ -10,28 +10,28 @@ export default {
       return {
         _product_id: p.id,
         'Item Name': p.product_name,
-        'batch_id': null, 
-        'MRP': Number(p.mrp || 0), // [NEW]
+        'batch_id': null,          // [FIX] Stores the Numeric ID
+        'inventory_status': 'Good', // [NEW] Default to Good
+        'MRP': Number(p.mrp || 0),
         'Qty': 0,
         'Price': Number(p.dealer_rate || 0), 
         'Sch': 0,
         'Disc %': 0,
         'GST %': Number(p.tax_percentage || 0),
         'Invoiced Qty': "Catalog", 
-        'Gross $': 0,   // [NEW]
-        'Disc. $': 0,   // [NEW]
+        'Gross $': 0,
+        'Disc. $': 0,
         'Taxable $': 0,
         'GST $': 0,
         'Net $': 0,
-        'is_gst': false,
+        'return_to_stock': true,   // [NEW] Default to True
         '_batches': productBatches 
       };
     });
-
     storeValue('GlobalCreditLinesData', creditLines);
   },
 
-  // --- OPTION B: Populate from Specific Invoice ---
+  // --- Initialization Option B: From Invoice (Pre-fill with invoice lines) ---
   loadInvoiceItems: async () => {
     const invoiceId = selInvoice.selectedOptionValue;
     if (!invoiceId) return;
@@ -46,28 +46,28 @@ export default {
       return {
         _product_id: line.product_id,
         'Item Name': line.product_name,
-        'batch_id': line.batch_code, 
-        'MRP': Number(line.mrp || 0), // [NEW]
+        'batch_id': line.batch_id,  // [FIX] Stores the Numeric ID
+        'inventory_status': 'Good',
+        'MRP': Number(line.mrp || 0),
         'Qty': 0, 
         'Price': line.rate,
         'Sch': 0,
         'Disc %': 0,
         'GST %': line.tax_percent,
         'Invoiced Qty': line.shipped_qty,
-        'Gross $': 0,   // [NEW]
-        'Disc. $': 0,   // [NEW]
+        'Gross $': 0,
+        'Disc. $': 0,
         'Taxable $': 0,
         'GST $': 0,
         'Net $': 0,
-        'is_gst': false,
+        'return_to_stock': true,
         '_batches': productBatches 
       };
     });
-
     storeValue('GlobalCreditLinesData', creditLines);
   },
 
-  // Full Calculation Logic
+  // --- Central Update & Calculation Logic ---
   updateRow: () => {
     const change = tblCreditLines.updatedRow; 
     if (!change) return;
@@ -79,16 +79,16 @@ export default {
     let newData = [...currentData];
     let row = { ...newData[targetIndex], ...change };
 
-    // Batch Auto-fill
+    // 1. Batch Auto-fill (Lookup by ID)
     if (change["batch_id"]) {
-      const selectedBatch = (row._batches || []).find(b => b.batch_code === change["batch_id"]);
+      const selectedBatch = (row._batches || []).find(b => b.id == change["batch_id"]);
       if (selectedBatch) {
-        row['MRP'] = Number(selectedBatch.mrp || 0);     // [NEW]
-        row['Price'] = Number(selectedBatch.purchase_rate || 0);
+        row['MRP'] = Number(selectedBatch.mrp || 0);
+        row['Price'] = Number(selectedBatch.dealer_rate || 0);
       }
     }
 
-    // --- RE-CALCULATION BLOCK ---
+    // 2. Math Processing
     const Qty = Number(row['Qty'] || 0);
     const Price = Number(row['Price'] || 0);    
     const Sch = Number(row['Sch'] || 0);
@@ -101,11 +101,11 @@ export default {
     const GstAmt = Taxable * (GstPct / 100);
     const Net = Taxable + GstAmt;
 
-    // Save all calculated fields
+    // 3. Save Calculated Values
     newData[targetIndex] = {
       ...row,
-      'Gross $': Number(Gross.toFixed(2)),    // [NEW]
-      'Disc. $': Number(DiscAmt.toFixed(2)),  // [NEW]
+      'Gross $': Number(Gross.toFixed(2)),
+      'Disc. $': Number(DiscAmt.toFixed(2)),
       'Taxable $': Number(Taxable.toFixed(2)),
       'GST $': Number(GstAmt.toFixed(2)),
       'Net $': Number(Net.toFixed(2))
@@ -114,6 +114,7 @@ export default {
     storeValue('GlobalCreditLinesData', newData);
   },
 
+  // --- Final Payload Formatting ---
   getFinalItems: () => {
     if (radReturnType.selectedOptionValue === 'FLAT') {
       const total = Number(iptFlatAmount.text || 0);
@@ -123,6 +124,7 @@ export default {
 
       return [{
         'Item Name': selAdjType.selectedOptionValue,
+        '_product_id': 'FLAT_' + selAdjType.selectedOptionValue,
         'Qty': 1,
         'Price': total,
         'Taxable $': taxable.toFixed(2),
@@ -130,7 +132,8 @@ export default {
         'Net $': total.toFixed(2),
         'GST %': isGst ? 18 : 0,
         'is_gst': isGst,
-        'return_to_stock': false
+        'return_to_stock': false,
+        'inventory_status': 'Good'
       }];
     } else {
        return (appsmith.store.GlobalCreditLinesData || []).filter(item => Number(item.Qty) > 0);

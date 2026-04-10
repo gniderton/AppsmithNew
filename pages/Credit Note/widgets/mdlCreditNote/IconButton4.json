@@ -1,0 +1,50 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 8,
+  "boxShadow": "none",
+  "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "buttonVariant": "TERTIARY",
+  "dynamicBindingPathList": [
+    {
+      "key": "buttonColor"
+    },
+    {
+      "key": "borderRadius"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "iconName": "trash",
+  "isDisabled": false,
+  "isLoading": false,
+  "isVisible": true,
+  "key": "bsx45kaa7v",
+  "leftColumn": 59,
+  "minWidth": 50,
+  "mobileBottomRow": 8,
+  "mobileLeftColumn": 59,
+  "mobileRightColumn": 63,
+  "mobileTopRow": 4,
+  "needsErrorInfo": false,
+  "onClick": "{{ \n  deleteCN.run(() => {\n    showAlert('Credit Note Cancelled', 'success');\n    getCreditNote.run(); // Refresh your table\n  }, (err) => {\n    showAlert('Error: ' + deleteCN.data.error, 'error');\n  }) \n}}\n",
+  "parentColumnSpace": 16.34375,
+  "parentId": "a70khtlmod",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "hug",
+  "rightColumn": 63,
+  "topRow": 4,
+  "type": "ICON_BUTTON_WIDGET",
+  "version": 1,
+  "widgetId": "di22dwdhgk",
+  "widgetName": "IconButton4"
+}
