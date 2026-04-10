@@ -5,7 +5,7 @@
   "borderColor": "#E0DEDE",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": "1",
-  "bottomRow": 201,
+  "bottomRow": 194,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "childStylesheet": {
     "ARRAY": {
@@ -337,6 +337,24 @@
     },
     {
       "key": "schema.__root_schema__.cellBorderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.Tax_and_Accounting.children.channel_id.options"
+    },
+    {
+      "key": "schema.__root_schema__.children.Logistics_Assignment.children.route_id.options"
+    },
+    {
+      "key": "schema.__root_schema__.children.Logistics_Assignment.children.dse_id.options"
+    },
+    {
+      "key": "schema.__root_schema__.children.Logistics_Assignment.children.route_type_id.options"
+    },
+    {
+      "key": "schema.__root_schema__.children.Default_Address.children.state.options"
+    },
+    {
+      "key": "schema.__root_schema__.children.Default_Address.children.city.options"
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
@@ -563,18 +581,19 @@
               "children": {},
               "dataType": "string",
               "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.Default_Address.city))(JSONForm3.sourceData, JSONForm3.formData, JSONForm3.fieldState)}}",
-              "fieldType": "Text Input",
-              "iconAlign": "left",
+              "fieldType": "Select",
               "identifier": "city",
               "isCustomField": false,
               "isDisabled": false,
+              "isFilterable": false,
               "isRequired": false,
-              "isSpellCheck": false,
               "isVisible": true,
               "label": "City",
               "labelTextSize": "0.875rem",
+              "options": "{{ Location_Data.getDistricts(JSONForm3.formData.Default_Address.state) }}",
               "originalIdentifier": "city",
-              "position": 2,
+              "position": 3,
+              "serverSideFiltering": false,
               "sourceData": "Kerala"
             },
             "location_lat": {
@@ -649,18 +668,19 @@
               "children": {},
               "dataType": "string",
               "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.Default_Address.state))(JSONForm3.sourceData, JSONForm3.formData, JSONForm3.fieldState)}}",
-              "fieldType": "Text Input",
-              "iconAlign": "left",
+              "fieldType": "Select",
               "identifier": "state",
               "isCustomField": false,
               "isDisabled": false,
+              "isFilterable": false,
               "isRequired": false,
-              "isSpellCheck": false,
               "isVisible": true,
               "label": "State",
               "labelTextSize": "0.875rem",
+              "options": "{{ \n  Location_Data.getStates().map(state => ({\n    label: String(state.label || state),\n    value: String(state.value || state)\n  })) \n}}",
               "originalIdentifier": "state",
-              "position": 3,
+              "position": 2,
+              "serverSideFiltering": false,
               "sourceData": "Kerala"
             }
           },
@@ -699,18 +719,19 @@
               "children": {},
               "dataType": "null",
               "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.Logistics_Assignment.dse_id))(JSONForm3.sourceData, JSONForm3.formData, JSONForm3.fieldState)}}",
-              "fieldType": "Text Input",
-              "iconAlign": "left",
+              "fieldType": "Select",
               "identifier": "dse_id",
               "isCustomField": false,
               "isDisabled": false,
+              "isFilterable": false,
               "isRequired": false,
-              "isSpellCheck": false,
               "isVisible": true,
               "label": "Dse Id",
               "labelTextSize": "0.875rem",
+              "options": "{{ \n  getDSEs.data.map(item => ({\n    label: item.full_name,\n    value: item.id // or item.channel_name, as long as it is unique\n  })) \n}}",
               "originalIdentifier": "dse_id",
-              "position": 1
+              "position": 1,
+              "serverSideFiltering": false
             },
             "route_id": {
               "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(JSONForm3.sourceData, JSONForm3.formData, JSONForm3.fieldState)}}",
@@ -720,18 +741,19 @@
               "children": {},
               "dataType": "string",
               "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.Logistics_Assignment.route_id))(JSONForm3.sourceData, JSONForm3.formData, JSONForm3.fieldState)}}",
-              "fieldType": "Text Input",
-              "iconAlign": "left",
+              "fieldType": "Select",
               "identifier": "route_id",
               "isCustomField": false,
               "isDisabled": false,
+              "isFilterable": false,
               "isRequired": false,
-              "isSpellCheck": false,
               "isVisible": true,
               "label": "Route Id",
               "labelTextSize": "0.875rem",
+              "options": "{{ \n  getRoutes.data.map(item => ({\n    label: item.route_name,\n    value: item.id // or item.channel_name, as long as it is unique\n  })) \n}}",
               "originalIdentifier": "route_id",
               "position": 0,
+              "serverSideFiltering": false,
               "sourceData": "4"
             },
             "route_sequence": {
@@ -764,18 +786,19 @@
               "children": {},
               "dataType": "string",
               "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.Logistics_Assignment.route_type_id))(JSONForm3.sourceData, JSONForm3.formData, JSONForm3.fieldState)}}",
-              "fieldType": "Text Input",
-              "iconAlign": "left",
+              "fieldType": "Select",
               "identifier": "route_type_id",
               "isCustomField": false,
               "isDisabled": false,
+              "isFilterable": false,
               "isRequired": false,
-              "isSpellCheck": false,
               "isVisible": true,
               "label": "Route Type Id",
               "labelTextSize": "0.875rem",
+              "options": "{{ \n  getRouteFrequency.data.map(item => ({\n    label: item.frequency_name,\n    value: item.id // or item.channel_name, as long as it is unique\n  })) \n}}",
               "originalIdentifier": "route_type_id",
               "position": 2,
+              "serverSideFiltering": false,
               "sourceData": "1"
             }
           },
@@ -812,18 +835,19 @@
               "children": {},
               "dataType": "string",
               "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.Tax_and_Accounting.channel_id))(JSONForm3.sourceData, JSONForm3.formData, JSONForm3.fieldState)}}",
-              "fieldType": "Text Input",
-              "iconAlign": "left",
+              "fieldType": "Select",
               "identifier": "channel_id",
               "isCustomField": false,
               "isDisabled": false,
+              "isFilterable": false,
               "isRequired": false,
-              "isSpellCheck": false,
               "isVisible": true,
               "label": "Channel Id",
               "labelTextSize": "0.875rem",
+              "options": "{{ \n  getChannel.data.map(item => ({\n    label: item.channel_name,\n    value: item.id // or item.channel_name, as long as it is unique\n  })) \n}}",
               "originalIdentifier": "channel_id",
               "position": 4,
+              "serverSideFiltering": false,
               "sourceData": "3"
             },
             "credit_days": {
@@ -877,7 +901,7 @@
               "boxShadow": "none",
               "children": {},
               "dataType": "string",
-              "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.Tax_and_Accounting.default_price_tier))(JSONForm3.sourceData, JSONForm3.formData, JSONForm3.fieldState)}}",
+              "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.Tax_and_Accounting.channel_id))(JSONForm3.sourceData, JSONForm3.formData, JSONForm3.fieldState)}}",
               "fieldType": "Text Input",
               "iconAlign": "left",
               "identifier": "default_price_tier",
@@ -885,7 +909,7 @@
               "isDisabled": false,
               "isRequired": false,
               "isSpellCheck": false,
-              "isVisible": true,
+              "isVisible": false,
               "label": "Default Price Tier",
               "labelTextSize": "0.875rem",
               "originalIdentifier": "default_price_tier",
