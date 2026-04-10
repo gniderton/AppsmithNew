@@ -1,25 +1,32 @@
 export default {
-  // --- OPTION A: Populate from Catalog (All Products) ---
+  // --- OPTION A: Populate from Catalog ---
   loadAllProducts: async () => {
-    // 1. Fetch the full product catalog from your query
+    const allBatches = await getBatch.run();
     const products = getProducts.data.data || [];
 
-    // 2. Map catalog products to the Table format
-    const creditLines = products.map(p => ({
-      _product_id: p.id,
-      'Item Name': p.product_name,
-      'batch_id': null, // Optional for credit note
-      'Qty': 0,
-      'Price': Number(p.dealer_rate || 0), // Use your default rate column
-      'Sch': 0,
-      'Disc %': 0,
-      'GST %': Number(p.tax_percentage || 0),
-      'Invoiced Qty': "Catalog", 
-      'Taxable $': 0,
-      'GST $': 0,
-      'Net $': 0,
-      'is_gst': false
-    }));
+    const creditLines = products.map(p => {
+      const productBatches = allBatches.filter(b => String(b.product_id) === String(p.id));
+      
+      return {
+        _product_id: p.id,
+        'Item Name': p.product_name,
+        'batch_id': null, 
+        'MRP': Number(p.mrp || 0), // [NEW]
+        'Qty': 0,
+        'Price': Number(p.dealer_rate || 0), 
+        'Sch': 0,
+        'Disc %': 0,
+        'GST %': Number(p.tax_percentage || 0),
+        'Invoiced Qty': "Catalog", 
+        'Gross $': 0,   // [NEW]
+        'Disc. $': 0,   // [NEW]
+        'Taxable $': 0,
+        'GST $': 0,
+        'Net $': 0,
+        'is_gst': false,
+        '_batches': productBatches 
+      };
+    });
 
     storeValue('GlobalCreditLinesData', creditLines);
   },
@@ -29,44 +36,59 @@ export default {
     const invoiceId = selInvoice.selectedOptionValue;
     if (!invoiceId) return;
     
+    const allBatches = await getBatch.run();
     await get_invoice_details.run({ id: invoiceId });
     const lines = get_invoice_details.data.lines || [];
 
-    const creditLines = lines.map(line => ({
-      _product_id: line.product_id,
-      'Item Name': line.product_name,
-      'batch_id': line.batch_id,
-      'Qty': 0, 
-      'Price': line.rate,
-      'Sch': 0,
-      'Disc %': 0,
-      'GST %': line.tax_percent,
-      'Invoiced Qty': line.shipped_qty,
-      'Taxable $': 0,
-      'GST $': 0,
-      'Net $': 0,
-      'is_gst': false
-    }));
+    const creditLines = lines.map(line => {
+      const productBatches = allBatches.filter(b => String(b.product_id) === String(line.product_id));
+
+      return {
+        _product_id: line.product_id,
+        'Item Name': line.product_name,
+        'batch_id': line.batch_code, 
+        'MRP': Number(line.mrp || 0), // [NEW]
+        'Qty': 0, 
+        'Price': line.rate,
+        'Sch': 0,
+        'Disc %': 0,
+        'GST %': line.tax_percent,
+        'Invoiced Qty': line.shipped_qty,
+        'Gross $': 0,   // [NEW]
+        'Disc. $': 0,   // [NEW]
+        'Taxable $': 0,
+        'GST $': 0,
+        'Net $': 0,
+        'is_gst': false,
+        '_batches': productBatches 
+      };
+    });
 
     storeValue('GlobalCreditLinesData', creditLines);
   },
 
-  // Logic for the Item-wise Table Edit
+  // Full Calculation Logic
   updateRow: () => {
-    // 1. Get the current modified row from the table
     const change = tblCreditLines.updatedRow; 
     if (!change) return;
 
-    // 2. Get the data from store
     const currentData = appsmith.store.GlobalCreditLinesData || [];
     const targetIndex = currentData.findIndex(row => row._product_id === change._product_id);
     if (targetIndex === -1) return;
 
-    // 3. Merge changes
     let newData = [...currentData];
     let row = { ...newData[targetIndex], ...change };
 
-    // 4. Calculation logic
+    // Batch Auto-fill
+    if (change["batch_id"]) {
+      const selectedBatch = (row._batches || []).find(b => b.batch_code === change["batch_id"]);
+      if (selectedBatch) {
+        row['MRP'] = Number(selectedBatch.mrp || 0);     // [NEW]
+        row['Price'] = Number(selectedBatch.purchase_rate || 0);
+      }
+    }
+
+    // --- RE-CALCULATION BLOCK ---
     const Qty = Number(row['Qty'] || 0);
     const Price = Number(row['Price'] || 0);    
     const Sch = Number(row['Sch'] || 0);
@@ -75,12 +97,15 @@ export default {
 
     const Gross = Qty * Price;
     const DiscAmt = (Gross - Sch) * (DiscPct / 100);
-    const Taxable = Gross - Sch - DiscAmt;
+    const Taxable = Math.max(0, Gross - Sch - DiscAmt);
     const GstAmt = Taxable * (GstPct / 100);
     const Net = Taxable + GstAmt;
 
+    // Save all calculated fields
     newData[targetIndex] = {
       ...row,
+      'Gross $': Number(Gross.toFixed(2)),    // [NEW]
+      'Disc. $': Number(DiscAmt.toFixed(2)),  // [NEW]
       'Taxable $': Number(Taxable.toFixed(2)),
       'GST $': Number(GstAmt.toFixed(2)),
       'Net $': Number(Net.toFixed(2))
@@ -108,7 +133,6 @@ export default {
         'return_to_stock': false
       }];
     } else {
-       // Only send products where quantity was actually entered
        return (appsmith.store.GlobalCreditLinesData || []).filter(item => Number(item.Qty) > 0);
     }
   }

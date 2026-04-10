@@ -53,7 +53,7 @@
     "_product_id",
     "_batches"
   ],
-  "columnUpdatedAt": 1775783522227,
+  "columnUpdatedAt": 1775784122582,
   "columnWidthMap": {
     "Batch_No": 98,
     "Disc__": 83,
@@ -831,7 +831,7 @@
       "isDiscardVisible": true,
       "isEditable": false,
       "isSaveVisible": true,
-      "isVisible": true,
+      "isVisible": false,
       "label": "_batches",
       "notation": "standard",
       "originalId": "_batches",
