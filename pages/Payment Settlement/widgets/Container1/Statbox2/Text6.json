@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 12,
+  "bottomRow": 14,
   "dynamicBindingPathList": [
     {
       "key": "truncateButtonColor"
@@ -33,8 +33,8 @@
   "mobileRightColumn": 37,
   "mobileTopRow": 8,
   "needsErrorInfo": false,
-  "originalBottomRow": 14,
-  "originalTopRow": 9,
+  "originalBottomRow": 12,
+  "originalTopRow": 8,
   "overflow": "NONE",
   "parentId": "rx1b21yak3",
   "renderMode": "CANVAS",
@@ -44,7 +44,7 @@
   "text": "Cheque: {{ utils.getSummaryStats().cheque_pending ? \"⚠️ ₹\" + utils.getSummaryStats().cheque_pending + \" Pending\" : \"✅ Verified\" }}\n",
   "textAlign": "LEFT",
   "textColor": "#231f20",
-  "topRow": 8,
+  "topRow": 9,
   "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
   "type": "TEXT_WIDGET",
   "version": 1,

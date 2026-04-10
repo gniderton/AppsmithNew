@@ -15,10 +15,10 @@
       "key": "borderRadius"
     },
     {
-      "key": "isDisabled"
+      "key": "isVisible"
     },
     {
-      "key": "isVisible"
+      "key": "isDisabled"
     }
   ],
   "dynamicPropertyPathList": [
@@ -38,7 +38,7 @@
     }
   ],
   "isDefaultClickDisabled": true,
-  "isDisabled": "{{ !utils.isCashMatching() }}",
+  "isDisabled": "{{ !utilsdisable.canApproveOnline() }}",
   "isLoading": false,
   "isVisible": "{{ \n  !!getReportDetails.data?.summary?.settlement_status &&\n  getReportDetails.data.summary.settlement_status !== 'Settled'\n}}",
   "key": "g2jbu76edv",
