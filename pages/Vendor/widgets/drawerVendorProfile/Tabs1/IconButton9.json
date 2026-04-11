@@ -1,0 +1,50 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 9,
+  "boxShadow": "none",
+  "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "buttonVariant": "TERTIARY",
+  "dynamicBindingPathList": [
+    {
+      "key": "buttonColor"
+    },
+    {
+      "key": "borderRadius"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "iconName": "print",
+  "isDisabled": false,
+  "isLoading": false,
+  "isVisible": true,
+  "key": "vcxrxqygxw",
+  "leftColumn": 60,
+  "minWidth": 50,
+  "mobileBottomRow": 9,
+  "mobileLeftColumn": 60,
+  "mobileRightColumn": 64,
+  "mobileTopRow": 5,
+  "needsErrorInfo": false,
+  "onClick": "{{Vendor_Assets.previewPaymentSlip(tblVendorPayments.triggeredRow.id)}}",
+  "parentColumnSpace": 16.185009765624997,
+  "parentId": "a29tfvwt4j",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "hug",
+  "rightColumn": 64,
+  "topRow": 5,
+  "type": "ICON_BUTTON_WIDGET",
+  "version": 1,
+  "widgetId": "763p52ondl",
+  "widgetName": "IconButton9"
+}
