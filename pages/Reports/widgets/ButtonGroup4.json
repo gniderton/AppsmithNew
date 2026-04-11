@@ -26,6 +26,9 @@
   "dynamicTriggerPathList": [
     {
       "key": "groupButtons.groupButton1.onClick"
+    },
+    {
+      "key": "groupButtons.groupButton2.onClick"
     }
   ],
   "groupButtons": {
@@ -47,14 +50,14 @@
       "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
       "buttonType": "SIMPLE",
       "disabledWhenInvalid": false,
-      "iconName": "add",
       "id": "groupButton2",
       "index": 1,
       "isDisabled": false,
       "isVisible": true,
-      "label": "Add",
+      "label": "Sales Payment",
       "menuItems": {},
-      "placement": "CENTER",
+      "onClick": "{{showModal(mdlPaymentCst.name).then(() => {\n  custPayment.run();\n});}}",
+      "placement": "START",
       "widgetId": ""
     },
     "groupButton3": {

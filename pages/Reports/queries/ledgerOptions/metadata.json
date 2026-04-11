@@ -1,6 +1,6 @@
 {
   "gitSyncId": "69a80abb79ac426a29eb8838_97b23379-ea8a-4bc2-8e78-21a7870a51ea",
-  "id": "Reports_Api1",
+  "id": "Reports_ledgerOptions",
   "pluginId": "restapi-plugin",
   "pluginType": "API",
   "unpublishedAction": {
@@ -33,7 +33,7 @@
       "pluginId": "restapi-plugin"
     },
     "dynamicBindingPathList": [],
-    "name": "Api1",
+    "name": "ledgerOptions",
     "pageId": "Reports",
     "runBehaviour": "AUTOMATIC",
     "userSetOnLoad": false

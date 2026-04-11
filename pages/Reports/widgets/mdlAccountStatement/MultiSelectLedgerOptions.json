@@ -59,7 +59,7 @@
   "rightColumn": 22,
   "serverSideFiltering": false,
   "shouldScrollContents": true,
-  "sourceData": "{{Api1.data}}",
+  "sourceData": "{{ledgerOptions.data}}",
   "topRow": 5,
   "type": "MULTI_SELECT_WIDGET_V2",
   "version": 1,
