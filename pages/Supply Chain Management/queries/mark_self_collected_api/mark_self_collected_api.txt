@@ -1,0 +1,10 @@
+{
+  "invoice_id": {{tblSelfCollectInvoices.triggeredRow.id}},
+  "collector_name": {{inpCollectorName.text}},
+  "collector_phone": {{inpCollectorPhone.text}},
+  "collector_id_type": {{selIDType.selectedOptionValue}},
+  "collector_id_number": {{inpIDNumber.text}},
+  "collector_document_name": {{selIDType.selectedOptionValue}},
+  "created_by": {{getMe.data.id}},
+  "notes": {{inpCollectionNotes.text}}
+}

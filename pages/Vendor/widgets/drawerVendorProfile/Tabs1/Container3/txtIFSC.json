@@ -3,7 +3,7 @@
   "animateLoading": true,
   "autoFocus": false,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 36,
+  "bottomRow": 37,
   "boxShadow": "none",
   "defaultText": "{{ apiGetVendor.data.bank_ifsc }}",
   "dynamicBindingPathList": [
@@ -60,7 +60,7 @@
   "rightColumn": 63,
   "shouldScrollContents": true,
   "showStepArrows": false,
-  "topRow": 32,
+  "topRow": 33,
   "type": "INPUT_WIDGET_V2",
   "version": 2,
   "widgetId": "qf2gmlymvg",

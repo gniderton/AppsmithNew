@@ -3,66 +3,55 @@
   "animateLoading": true,
   "autoFocus": false,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 21,
+  "bottomRow": 13,
   "boxShadow": "none",
-  "defaultText": "{{ apiGetVendor.data.gst }}",
+  "defaultText": "",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
     },
     {
       "key": "borderRadius"
-    },
-    {
-      "key": "defaultText"
-    },
-    {
-      "key": "isDisabled"
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
-  "dynamicPropertyPathList": [
-    {
-      "key": "isDisabled"
-    }
-  ],
   "dynamicTriggerPathList": [],
   "iconAlign": "left",
   "inputType": "TEXT",
-  "isDisabled": "{{ !appsmith.store.profileEditing }}",
+  "isDisabled": false,
   "isLoading": false,
   "isRequired": false,
   "isVisible": true,
-  "key": "45o4y2ijlw",
-  "label": "GST No",
+  "key": "7lk2zo7hqg",
+  "label": "Collected by",
   "labelAlignment": "left",
   "labelPosition": "Left",
   "labelStyle": "",
   "labelTextSize": "0.875rem",
-  "labelWidth": "15",
-  "leftColumn": 1,
+  "labelWidth": "10",
+  "leftColumn": 0,
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 4,
   "minWidth": 450,
-  "mobileBottomRow": 7,
-  "mobileLeftColumn": 1,
-  "mobileRightColumn": 21,
-  "mobileTopRow": 0,
+  "mobileBottomRow": 15,
+  "mobileLeftColumn": 0,
+  "mobileRightColumn": 20,
+  "mobileTopRow": 8,
   "needsErrorInfo": false,
-  "originalBottomRow": 20,
-  "originalTopRow": 16,
-  "parentColumnSpace": 4.730206298828125,
-  "parentId": "yeuzarfpvy",
+  "originalBottomRow": 12,
+  "originalTopRow": 8,
+  "parentColumnSpace": 6.9375,
+  "parentId": "x6emjo2swy",
   "parentRowSpace": 10,
   "renderMode": "CANVAS",
   "resetOnSubmit": true,
   "responsiveBehavior": "fill",
-  "rightColumn": 63,
+  "rightColumn": 35,
   "shouldScrollContents": true,
   "showStepArrows": false,
-  "topRow": 17,
+  "topRow": 9,
   "type": "INPUT_WIDGET_V2",
   "version": 2,
-  "widgetId": "92mbidl20x",
-  "widgetName": "txtGST"
+  "widgetId": "79844ogs3h",
+  "widgetName": "inpCollectorName"
 }

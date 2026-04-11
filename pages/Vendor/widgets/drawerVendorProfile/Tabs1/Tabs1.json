@@ -5,12 +5,12 @@
   "borderColor": "#E0DEDE",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": 1,
-  "bottomRow": 74,
+  "bottomRow": 72,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "children": [
     {
       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-      "bottomRow": 650,
+      "bottomRow": 640,
       "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
       "canExtend": true,
       "detachFromLayout": true,
@@ -56,7 +56,7 @@
     },
     {
       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-      "bottomRow": 650,
+      "bottomRow": 630,
       "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
       "canExtend": true,
       "detachFromLayout": true,
@@ -102,7 +102,7 @@
     },
     {
       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-      "bottomRow": 650,
+      "bottomRow": 630,
       "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
       "canExtend": false,
       "containerStyle": "none",
@@ -144,6 +144,51 @@
       "version": 1,
       "widgetId": "6yb714idjr",
       "widgetName": "Canvas15"
+    },
+    {
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "bottomRow": 630,
+      "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+      "canExtend": false,
+      "containerStyle": "none",
+      "detachFromLayout": true,
+      "dynamicBindingPathList": [
+        {
+          "key": "borderRadius"
+        },
+        {
+          "key": "boxShadow"
+        }
+      ],
+      "dynamicHeight": "AUTO_HEIGHT",
+      "dynamicTriggerPathList": [],
+      "flexLayers": [],
+      "isLoading": false,
+      "isVisible": true,
+      "key": "u965qmcioh",
+      "leftColumn": 0,
+      "maxDynamicHeight": 9000,
+      "minDynamicHeight": 4,
+      "minHeight": 650,
+      "minWidth": 450,
+      "mobileBottomRow": 651,
+      "mobileLeftColumn": 0,
+      "mobileRightColumn": 437.0625,
+      "mobileTopRow": 1,
+      "needsErrorInfo": false,
+      "parentColumnSpace": 1,
+      "parentId": "bg1f54kcoy",
+      "parentRowSpace": 1,
+      "renderMode": "CANVAS",
+      "responsiveBehavior": "fill",
+      "rightColumn": 437.0625,
+      "tabId": "tabb2w557cux7",
+      "tabName": "Payments",
+      "topRow": 1,
+      "type": "CANVAS_WIDGET",
+      "version": 1,
+      "widgetId": "a29tfvwt4j",
+      "widgetName": "Canvas22"
     }
   ],
   "defaultTab": "Home",
@@ -174,7 +219,7 @@
   "mobileRightColumn": 15,
   "mobileTopRow": 5,
   "needsErrorInfo": false,
-  "originalBottomRow": 24,
+  "originalBottomRow": 72,
   "originalTopRow": 5,
   "parentColumnSpace": 6.9375,
   "parentId": "rdaasx1q0o",
@@ -207,6 +252,13 @@
       "label": "Pending Bills",
       "positioning": "vertical",
       "widgetId": "s0op1ckq6j"
+    },
+    "tabb2w557cux7": {
+      "id": "tabb2w557cux7",
+      "index": 3,
+      "isVisible": true,
+      "label": "Payments",
+      "widgetId": "a29tfvwt4j"
     }
   },
   "topRow": 5,

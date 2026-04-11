@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 41,
+  "bottomRow": 42,
   "bottomRowBeforeCollapse": 41,
   "boxShadow": "none",
   "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
@@ -61,7 +61,7 @@
   "responsiveBehavior": "hug",
   "rightColumn": 63,
   "text": "Add Address",
-  "topRow": 37,
+  "topRow": 38,
   "topRowBeforeCollapse": 37,
   "type": "BUTTON_WIDGET",
   "version": 1,
