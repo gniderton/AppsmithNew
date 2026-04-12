@@ -4,7 +4,7 @@
   "borderColor": "#E0DEDE",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": "1",
-  "bottomRow": 102,
+  "bottomRow": 118,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "cachedTableData": {},
   "canFreezeColumn": true,
@@ -35,6 +35,8 @@
     "date",
     "invoice_no",
     "customer",
+    "brand",
+    "category",
     "product",
     "sku",
     "qty",
@@ -42,11 +44,22 @@
     "tax",
     "total_amount",
     "status",
-    "brand",
-    "category"
+    "taxable"
   ],
-  "columnUpdatedAt": 1775528115098,
-  "columnWidthMap": {},
+  "columnUpdatedAt": 1775961064175,
+  "columnWidthMap": {
+    "brand": 111,
+    "customer": 198,
+    "date": 104,
+    "invoice_no": 111,
+    "product": 338,
+    "qty": 60,
+    "status": 97,
+    "tax": 96,
+    "total_amount": 101,
+    "unit_rate": 85
+  },
+  "compactMode": "SHORT",
   "customIsLoading": false,
   "customIsLoadingValue": "",
   "defaultPageSize": 0,
@@ -64,9 +77,6 @@
     },
     {
       "key": "boxShadow"
-    },
-    {
-      "key": "tableData"
     },
     {
       "key": "primaryColumns.date.computedValue"
@@ -103,14 +113,30 @@
     },
     {
       "key": "primaryColumns.category.computedValue"
+    },
+    {
+      "key": "tableData"
+    },
+    {
+      "key": "totalRecordsCount"
+    },
+    {
+      "key": "primaryColumns.taxable.computedValue"
     }
   ],
   "dynamicPropertyPathList": [
     {
       "key": "tableData"
+    },
+    {
+      "key": "onPageChange"
     }
   ],
-  "dynamicTriggerPathList": [],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onPageChange"
+    }
+  ],
   "enableClientSideSearch": true,
   "endOfData": false,
   "flexVerticalAlignment": "start",
@@ -132,7 +158,8 @@
   "mobileRightColumn": 34,
   "mobileTopRow": 6,
   "needsErrorInfo": false,
-  "originalBottomRow": 105,
+  "onPageChange": "{{ getSalesLines.run() }}",
+  "originalBottomRow": 118,
   "originalTopRow": 11,
   "parentColumnSpace": 6.9375,
   "parentId": "xfsmv0co0k",
@@ -143,7 +170,7 @@
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
       "columnType": "text",
-      "computedValue": "{{(() => { const tableData = Table5.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"brand\"])) : brand })()}}",
+      "computedValue": "{{(() => { const tableData = tblSalesLines.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"brand\"])) : brand })()}}",
       "currencyCode": "USD",
       "decimals": 0,
       "enableFilter": true,
@@ -174,7 +201,7 @@
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
       "columnType": "text",
-      "computedValue": "{{(() => { const tableData = Table5.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"category\"])) : category })()}}",
+      "computedValue": "{{(() => { const tableData = tblSalesLines.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"category\"])) : category })()}}",
       "currencyCode": "USD",
       "decimals": 0,
       "enableFilter": true,
@@ -205,7 +232,7 @@
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
       "columnType": "text",
-      "computedValue": "{{(() => { const tableData = Table5.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"customer\"])) : customer })()}}",
+      "computedValue": "{{(() => { const tableData = tblSalesLines.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"customer\"])) : customer })()}}",
       "currencyCode": "USD",
       "decimals": 0,
       "enableFilter": true,
@@ -236,7 +263,7 @@
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
       "columnType": "date",
-      "computedValue": "{{(() => { const tableData = Table5.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"date\"])) : date })()}}",
+      "computedValue": "{{(() => { const tableData = tblSalesLines.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"date\"])) : date })()}}",
       "currencyCode": "USD",
       "decimals": 0,
       "enableFilter": true,
@@ -255,6 +282,7 @@
       "label": "date",
       "notation": "standard",
       "originalId": "date",
+      "outputFormat": "DD/MM/YYYY",
       "sticky": "",
       "textSize": "0.875rem",
       "thousandSeparator": true,
@@ -267,7 +295,7 @@
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
       "columnType": "text",
-      "computedValue": "{{(() => { const tableData = Table5.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"invoice_no\"])) : invoice_no })()}}",
+      "computedValue": "{{(() => { const tableData = tblSalesLines.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"invoice_no\"])) : invoice_no })()}}",
       "currencyCode": "USD",
       "decimals": 0,
       "enableFilter": true,
@@ -298,7 +326,7 @@
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
       "columnType": "text",
-      "computedValue": "{{(() => { const tableData = Table5.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"product\"])) : product })()}}",
+      "computedValue": "{{(() => { const tableData = tblSalesLines.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"product\"])) : product })()}}",
       "currencyCode": "USD",
       "decimals": 0,
       "enableFilter": true,
@@ -329,7 +357,7 @@
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
       "columnType": "number",
-      "computedValue": "{{(() => { const tableData = Table5.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"qty\"])) : qty })()}}",
+      "computedValue": "{{(() => { const tableData = tblSalesLines.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"qty\"])) : qty })()}}",
       "currencyCode": "USD",
       "decimals": 0,
       "enableFilter": true,
@@ -360,7 +388,7 @@
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
       "columnType": "text",
-      "computedValue": "{{(() => { const tableData = Table5.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"sku\"])) : sku })()}}",
+      "computedValue": "{{(() => { const tableData = tblSalesLines.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"sku\"])) : sku })()}}",
       "currencyCode": "USD",
       "decimals": 0,
       "enableFilter": true,
@@ -375,7 +403,7 @@
       "isDiscardVisible": true,
       "isEditable": false,
       "isSaveVisible": true,
-      "isVisible": true,
+      "isVisible": false,
       "label": "sku",
       "notation": "standard",
       "originalId": "sku",
@@ -391,7 +419,7 @@
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
       "columnType": "text",
-      "computedValue": "{{(() => { const tableData = Table5.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"status\"])) : status })()}}",
+      "computedValue": "{{(() => { const tableData = tblSalesLines.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"status\"])) : status })()}}",
       "currencyCode": "USD",
       "decimals": 0,
       "enableFilter": true,
@@ -422,7 +450,7 @@
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
       "columnType": "number",
-      "computedValue": "{{(() => { const tableData = Table5.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"tax\"])) : tax })()}}",
+      "computedValue": "{{(() => { const tableData = tblSalesLines.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"tax\"])) : tax })()}}",
       "currencyCode": "USD",
       "decimals": 0,
       "enableFilter": true,
@@ -448,12 +476,43 @@
       "verticalAlignment": "CENTER",
       "width": 150
     },
+    "taxable": {
+      "alias": "taxable",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "columnType": "number",
+      "computedValue": "{{(() => { const tableData = tblSalesLines.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"taxable\"])) : taxable })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "horizontalAlignment": "LEFT",
+      "id": "taxable",
+      "index": 10,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": true,
+      "label": "taxable",
+      "notation": "standard",
+      "originalId": "taxable",
+      "sticky": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
     "total_amount": {
       "alias": "total_amount",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
       "columnType": "number",
-      "computedValue": "{{(() => { const tableData = Table5.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"total_amount\"])) : total_amount })()}}",
+      "computedValue": "{{(() => { const tableData = tblSalesLines.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"total_amount\"])) : total_amount })()}}",
       "currencyCode": "USD",
       "decimals": 0,
       "enableFilter": true,
@@ -484,7 +543,7 @@
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
       "columnType": "number",
-      "computedValue": "{{(() => { const tableData = Table5.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"unit_rate\"])) : unit_rate })()}}",
+      "computedValue": "{{(() => { const tableData = tblSalesLines.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"unit_rate\"])) : unit_rate })()}}",
       "currencyCode": "USD",
       "decimals": 0,
       "enableFilter": true,
@@ -515,13 +574,14 @@
   "responsiveBehavior": "fill",
   "rightColumn": 64,
   "searchKey": "",
-  "tableData": "{{ jsSales.getFilteredData() }}",
+  "serverSidePaginationEnabled": true,
+  "tableData": "{{ getSalesLines.data.lines }}",
   "textSize": "0.875rem",
-  "topRow": 8,
-  "totalRecordsCount": 0,
+  "topRow": 11,
+  "totalRecordsCount": "{{ getSalesLines.data.summary.total_lines }}",
   "type": "TABLE_WIDGET_V2",
   "version": 2,
   "verticalAlignment": "CENTER",
   "widgetId": "8sof3u9w65",
-  "widgetName": "Table5"
+  "widgetName": "tblSalesLines"
 }

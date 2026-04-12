@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "69a80abb79ac426a29eb8838_21a04f46-2f66-4d04-bd21-4edc1934432e",
+  "id": "Reports_DownloadPnl",
+  "unpublishedCollection": {
+    "name": "DownloadPnl",
+    "pageId": "Reports",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}

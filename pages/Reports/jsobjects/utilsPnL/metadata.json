@@ -1,8 +1,8 @@
 {
-  "gitSyncId": "69a80abb79ac426a29eb8838_4d238411-03b3-4f36-93a8-b0f9c61bf199",
-  "id": "Reports_jsSales",
+  "gitSyncId": "69a80abb79ac426a29eb8838_a59744b6-534d-4e74-a2ac-f1b8c8f08d85",
+  "id": "Reports_utilsPnL",
   "unpublishedCollection": {
-    "name": "jsSales",
+    "name": "utilsPnL",
     "pageId": "Reports",
     "pluginId": "js-plugin",
     "pluginType": "JS",
