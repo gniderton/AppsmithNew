@@ -64,7 +64,8 @@
   ],
   "columnUpdatedAt": 1775435531727,
   "columnWidthMap": {
-    "customer_name": 251
+    "customer_name": 251,
+    "dse_name": 234
   },
   "customIsLoading": false,
   "customIsLoadingValue": "",

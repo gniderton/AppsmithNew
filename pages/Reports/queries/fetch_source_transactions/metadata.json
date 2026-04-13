@@ -1,6 +1,6 @@
 {
-  "gitSyncId": "69a80abb79ac426a29eb8838_fbb747c2-0654-4057-894a-fe50fe5b391c",
-  "id": "Reports_AccountStatement",
+  "gitSyncId": "69a80abb79ac426a29eb8838_aed20f8a-78ce-480e-83f0-ce17239f8035",
+  "id": "Reports_fetch_source_transactions",
   "pluginId": "restapi-plugin",
   "pluginType": "API",
   "unpublishedAction": {
@@ -16,7 +16,7 @@
       "httpMethod": "GET",
       "httpVersion": "HTTP11",
       "paginationType": "NONE",
-      "path": "/api/accounting/unified-liquid-ledger",
+      "path": "/api/accounting/source-transactions",
       "pluginSpecifiedTemplates": [
         {
           "value": true
@@ -24,7 +24,15 @@
       ],
       "queryParameters": [
         {
-          "key": "account_filter",
+          "key": "start_date",
+          "value": "{{startDateAc.formattedDate}}"
+        },
+        {
+          "key": "end_date",
+          "value": "{{endDateAc.formattedDate}}"
+        },
+        {
+          "key": "selection",
           "value": "{{Select_Account.selectedOptionValue}}"
         }
       ],
@@ -43,11 +51,17 @@
       },
       {
         "key": "queryParameters[0].value"
+      },
+      {
+        "key": "queryParameters[1].value"
+      },
+      {
+        "key": "queryParameters[2].value"
       }
     ],
-    "name": "AccountStatement",
+    "name": "fetch_source_transactions",
     "pageId": "Reports",
-    "runBehaviour": "AUTOMATIC",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }

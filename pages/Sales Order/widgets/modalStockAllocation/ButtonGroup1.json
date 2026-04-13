@@ -55,7 +55,7 @@
       "isVisible": true,
       "label": "Add Transit Stock",
       "menuItems": {},
-      "onClick": "{{showModal(modalTransitEntry.name);}}",
+      "onClick": "{{Transit_Actions.openTransitEntry();}}",
       "placement": "CENTER",
       "widgetId": ""
     }

@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "69a80abb79ac426a29eb8838_915fb29a-853b-48d8-ae1a-6d1d67da2ce5",
+  "id": "Reports_FinancialEngine",
+  "unpublishedCollection": {
+    "name": "FinancialEngine",
+    "pageId": "Reports",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}

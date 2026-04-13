@@ -4,19 +4,13 @@
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "bottomRow": 9,
   "boxShadow": "none",
-  "defaultOptionValue": [
-    "GREEN",
-    "RED"
-  ],
+  "defaultOptionValue": "GREEN",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
     },
     {
       "key": "borderRadius"
-    },
-    {
-      "key": "sourceData"
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
@@ -31,38 +25,38 @@
   "isLoading": false,
   "isRequired": false,
   "isVisible": true,
-  "key": "ng94flyl6y",
+  "key": "5d1nq324n7",
   "labelAlignment": "left",
   "labelPosition": "Left",
-  "labelText": "Accounts",
+  "labelText": "Account",
   "labelTextSize": "0.875rem",
-  "labelWidth": "6",
+  "labelWidth": 5,
   "leftColumn": 0,
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 4,
   "minWidth": 450,
   "mobileBottomRow": 12,
-  "mobileLeftColumn": 0,
-  "mobileRightColumn": 20,
+  "mobileLeftColumn": 22,
+  "mobileRightColumn": 42,
   "mobileTopRow": 5,
   "needsErrorInfo": false,
   "optionLabel": "label",
   "optionValue": "value",
-  "originalBottomRow": 10,
+  "originalBottomRow": 12,
   "originalTopRow": 5,
-  "parentColumnSpace": 6.9375,
+  "parentColumnSpace": 19.228125,
   "parentId": "wfwdcu8fuh",
   "parentRowSpace": 10,
-  "placeholderText": "Select option(s)",
+  "placeholderText": "Select option",
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
   "rightColumn": 22,
   "serverSideFiltering": false,
   "shouldScrollContents": true,
-  "sourceData": "{{ledgerOptions.data}}",
+  "sourceData": "[\n  { \"label\": \"🛡️ Forensic: ALL BANKS (Unified Pool)\", \"value\": \"UNIFIED\" },\n  { \"label\": \"💵 Forensic: CASH IN HAND\", \"value\": \"CASH\" },\n  { \"label\": \"🏦 Forensic: AXIS BANK ONLY\", \"value\": \"AXIS\" },\n  { \"label\": \"🏦 Forensic: IDFC BANK ONLY\", \"value\": \"IDFC\" }\n]\n",
   "topRow": 5,
-  "type": "MULTI_SELECT_WIDGET_V2",
+  "type": "SELECT_WIDGET",
   "version": 1,
-  "widgetId": "rekalp0w7e",
-  "widgetName": "MultiSelectLedgerOptions"
+  "widgetId": "psc33zf2lt",
+  "widgetName": "Select_Account"
 }

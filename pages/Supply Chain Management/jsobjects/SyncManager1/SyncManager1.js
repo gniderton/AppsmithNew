@@ -43,7 +43,7 @@ initSyncDetails: async () => {
   settle: async () => {
     // Format the payload for the API
     const payload = {
-      sync_id: tblSyncLogs.selectedRow.id,
+      sync_id: tblSyncLogs.triggeredRow.id,
       manifest_verifications: appsmith.store.manifestData.map(r => ({
         invoice_id: r.invoice_id,
         status: r.colVerification
