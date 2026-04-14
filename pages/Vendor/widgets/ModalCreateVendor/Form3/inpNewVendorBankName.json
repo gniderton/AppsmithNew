@@ -44,7 +44,7 @@
   "mobileTopRow": 62,
   "needsErrorInfo": false,
   "optionLabel": "bank_name",
-  "optionValue": "id",
+  "optionValue": "bank_name",
   "originalBottomRow": 44,
   "originalTopRow": 40,
   "parentColumnSpace": 6.408203125,
