@@ -16,7 +16,7 @@
   "payment_mode": "{{JSONForm2.formData.Payment_Details.Payment_Mode}}",
   "bank_account_id": {{JSONForm2.formData.Payment_Details.Bank_Account || null}},
   
-  "bank_statement_entry_id": {{ JSONForm2.formData.Payment_Details.Payment_Mode === 'ONLINE' ? JSONForm2.formData.Payment_Details.Bank_Statement_Entry : null }},
+  "bank_statement_entry_id": {{ JSONForm2.formData.Payment_Details.Payment_Mode === 'ONLINE' ? JSONForm2.formData.Payment_Details.Reference_Number : null }},
   
   "reference_no": "{{ 
     JSONForm2.formData.Payment_Details.Payment_Mode === 'ONLINE' 
