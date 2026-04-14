@@ -43,7 +43,7 @@
   "mobileRightColumn": 64,
   "mobileTopRow": 0,
   "needsErrorInfo": false,
-  "optionLabel": "debit_amount",
+  "optionLabel": "credit_amount",
   "optionValue": "id",
   "parentColumnSpace": 15.290624999999999,
   "parentId": "l0wmvbu5xw",
