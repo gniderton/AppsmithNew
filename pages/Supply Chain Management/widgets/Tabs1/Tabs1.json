@@ -144,6 +144,51 @@
       "version": 1,
       "widgetId": "k8r3m6kcxb",
       "widgetName": "Canvas3"
+    },
+    {
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "bottomRow": 750,
+      "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+      "canExtend": false,
+      "containerStyle": "none",
+      "detachFromLayout": true,
+      "dynamicBindingPathList": [
+        {
+          "key": "borderRadius"
+        },
+        {
+          "key": "boxShadow"
+        }
+      ],
+      "dynamicHeight": "AUTO_HEIGHT",
+      "dynamicTriggerPathList": [],
+      "flexLayers": [],
+      "isLoading": false,
+      "isVisible": true,
+      "key": "ic0xpeeg58",
+      "leftColumn": 0,
+      "maxDynamicHeight": 9000,
+      "minDynamicHeight": 4,
+      "minHeight": 790,
+      "minWidth": 450,
+      "mobileBottomRow": 791,
+      "mobileLeftColumn": 0,
+      "mobileRightColumn": 1296,
+      "mobileTopRow": 1,
+      "needsErrorInfo": false,
+      "parentColumnSpace": 1,
+      "parentId": "5f8jefu395",
+      "parentRowSpace": 1,
+      "renderMode": "CANVAS",
+      "responsiveBehavior": "fill",
+      "rightColumn": 1296,
+      "tabId": "tab61q7mvdqag",
+      "tabName": "Invoice Delivery Status",
+      "topRow": 1,
+      "type": "CANVAS_WIDGET",
+      "version": 1,
+      "widgetId": "twxrxmy5sd",
+      "widgetName": "Canvas25"
     }
   ],
   "defaultTab": "Tab 1",
@@ -198,6 +243,13 @@
       "label": "Verfied",
       "positioning": "vertical",
       "widgetId": "4v0bvxjlbb"
+    },
+    "tab61q7mvdqag": {
+      "id": "tab61q7mvdqag",
+      "index": 3,
+      "isVisible": true,
+      "label": "Invoice Delivery Status",
+      "widgetId": "twxrxmy5sd"
     },
     "tab9pv0dlx2hk": {
       "id": "tab9pv0dlx2hk",
