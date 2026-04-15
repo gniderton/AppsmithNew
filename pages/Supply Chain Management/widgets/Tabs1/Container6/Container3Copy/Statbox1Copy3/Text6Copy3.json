@@ -42,7 +42,7 @@
   "rightColumn": 64,
   "shouldTruncate": false,
   "text": "{{tblSales.triggeredRow.invoice_number}}",
-  "textAlign": "LEFT",
+  "textAlign": "CENTER",
   "textColor": "#231F20",
   "topRow": 4,
   "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",

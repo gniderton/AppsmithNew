@@ -94,7 +94,7 @@
   "isLoading": false,
   "isVisible": true,
   "itemBackgroundColor": "#FFFFFF",
-  "itemSpacing": 8,
+  "itemSpacing": "2",
   "key": "26g2t68mma",
   "leftColumn": 0,
   "listData": "{{get_delivery_details.data.timeline}}",

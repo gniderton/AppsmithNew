@@ -1,9 +1,9 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 4,
+  "bottomRow": 8,
   "boxShadow": "none",
-  "buttonColor": "{{ currentItem.attempt_status === \"Failed\" ? \"#ef4444\" : \"#22c55e\" }}",
+  "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
   "buttonVariant": "TERTIARY",
   "dynamicBindingPathList": [
     {
@@ -26,27 +26,29 @@
     }
   ],
   "dynamicTriggerPathList": [],
-  "iconName": "{{ currentItem.attempt_status === \"Failed\" ? \"cross\" : \"tick-circle\" }}",
+  "iconName": "{{ tblSales.triggeredRow.delivery_status === \"Delivered\" ? \"tick-circle\" : \"cross\" }}",
   "isDisabled": false,
   "isLoading": false,
   "isVisible": true,
   "key": "8zn0sdt5gy",
-  "leftColumn": 1,
+  "leftColumn": 53,
   "minWidth": 50,
   "mobileBottomRow": 4,
   "mobileLeftColumn": 1,
   "mobileRightColumn": 5,
   "mobileTopRow": 0,
   "needsErrorInfo": false,
+  "originalBottomRow": 30,
+  "originalTopRow": 26,
   "parentColumnSpace": 6.539062500000001,
-  "parentId": "nyvl60y8cb",
+  "parentId": "iws75g36qp",
   "parentRowSpace": 10,
   "renderMode": "CANVAS",
   "responsiveBehavior": "hug",
-  "rightColumn": 5,
-  "topRow": 0,
+  "rightColumn": 64,
+  "topRow": 4,
   "type": "ICON_BUTTON_WIDGET",
   "version": 1,
-  "widgetId": "a21wdtblgr",
-  "widgetName": "IconButton8"
+  "widgetId": "85yezkqj58",
+  "widgetName": "IconButton8Copy"
 }

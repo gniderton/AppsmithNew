@@ -39,7 +39,7 @@
   "rightColumn": 62,
   "shouldTruncate": false,
   "text": "Delivered Trip No",
-  "textAlign": "LEFT",
+  "textAlign": "CENTER",
   "textColor": "#999999",
   "topRow": 0,
   "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
