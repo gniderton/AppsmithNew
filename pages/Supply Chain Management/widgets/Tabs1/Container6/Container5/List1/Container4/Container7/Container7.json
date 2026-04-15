@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
-  "backgroundColor": "#e0dede",
-  "borderColor": "#E0DEDE",
+  "backgroundColor": "#f4f4f5",
+  "borderColor": "#f4f4f5",
   "borderWidth": "1",
   "bottomRow": 14,
   "boxShadow": "NONE",
@@ -71,7 +71,7 @@
     "parent",
     "group"
   ],
-  "shouldScrollContents": true,
+  "shouldScrollContents": false,
   "tabId": "",
   "tags": [
     "Layout"

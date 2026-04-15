@@ -112,7 +112,7 @@
   "parentColumnSpace": 1.640625,
   "parentId": "7jgai3i0gq",
   "parentRowSpace": 10,
-  "primaryKeys": "{{List1.listData.map((currentItem, currentIndex) => currentItem[\"id\"] )}}",
+  "primaryKeys": "{{List1.listData.map((currentItem, currentIndex) => currentItem[\"attempt_status\"] )}}",
   "renderMode": "CANVAS",
   "requiresFlatWidgetChildren": true,
   "responsiveBehavior": "fill",
