@@ -20,6 +20,7 @@ export default {
             const brand = Global_Assets.getSummary(); 
             const margin = 12; 
             const pageWidth = doc.internal.pageSize.width;
+            const pageHeight = doc.internal.pageSize.height; // Added pageHeight reference
 
             // --- HELPER: AMOUNT TO WORDS ---
             const toWords = (num) => {
@@ -95,7 +96,7 @@ export default {
             // --- 3. ITEMS TABLE ---
             doc.autoTable({
                 startY: margin + 40 + 85 + 10,
-                margin: { left: margin, right: margin, top: margin + 140 },
+                margin: { left: margin, right: margin, top: margin + 140, bottom: 120 }, // Added bottom margin to prevent table overlapping slip
                 head: [["S.N", "ITEM NAME", "CODE\nEAN", "HSN", "BATCH\nEXPIRY", "MRP", "QTY", "PRICE", "GROSS", "SCH", "D%", "D.AMT", "TXBL", "GST%", "GST$", "NET$"]],
                 body: cnLines.map((row, index) => {
                     const expiryStr = row['Expiry'] ? moment(row['Expiry']).format("MM/YY") : "-";
@@ -120,7 +121,7 @@ export default {
                     lineColor: [0, 0, 0], 
                     lineWidth: 0.5, 
                     textColor: [0, 0, 0],
-                    valign: 'middle' // ⬅️ Centered Vertically
+                    valign: 'middle' 
                 },
                 headStyles: { fillColor: [255, 255, 255], textColor: [0, 0, 0], fontStyle: 'bold', lineWidth: 0.5, valign: 'middle' },
                 columnStyles: { 
@@ -133,9 +134,18 @@ export default {
                 }
             });
 
-            // --- 4. TAX SUMMARY ---
+            // --- 4. TAX SUMMARY (FIXED OVERLAP LOGIC) ---
+            let currentY = doc.lastAutoTable.finalY + 8;
+            
+            // Check if summary and footer fit on the page, else add new page
+            if (currentY + 150 > pageHeight) {
+                doc.addPage();
+                const totalPages = doc.internal.getNumberOfPages();
+                currentY = drawMainHeader(totalPages, totalPages) + 10;
+            }
+
             doc.autoTable({
-                startY: doc.lastAutoTable.finalY + 8,
+                startY: currentY,
                 margin: { left: margin },
                 head: [["TAX SUMMARY", "PCS", "GROSS", "SCH", "DISC", "TAXABLE", "TAX", "NET"]],
                 body: summaryData.map(row => [
@@ -149,7 +159,7 @@ export default {
                     lineColor: [0, 0, 0], 
                     lineWidth: 0.5, 
                     textColor: [0, 0, 0],
-                    valign: 'middle' // ⬅️ Centered Vertically
+                    valign: 'middle'
                 },
                 headStyles: { fillColor: [255, 255, 255], textColor: [0, 0, 0], fontStyle: 'bold' }
             });
@@ -162,7 +172,6 @@ export default {
             doc.text(toWords(Math.round(grandTotal)), margin + 140, wordsY);
 
             // Ack Slip at the very bottom
-            const pageHeight = doc.internal.pageSize.height;
             const slipY = pageHeight - 110;
             doc.setLineDash([3, 3], 0); doc.line(margin, slipY, pageWidth - margin, slipY); doc.setLineDash([], 0); 
             doc.setFontSize(9); doc.setFont("helvetica", "bold");
