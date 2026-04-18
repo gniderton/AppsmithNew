@@ -38,7 +38,7 @@
   "mobileRightColumn": 59,
   "mobileTopRow": 22,
   "needsErrorInfo": false,
-  "onClick": "{{showModal(ConfirmModal.name);}}",
+  "onClick": "{{showModal(ConfirmModal.name).then(() => {\n  getMe.run();\n});}}",
   "originalBottomRow": 18,
   "originalTopRow": 14,
   "parentColumnSpace": 19.228125,

@@ -1,6 +1,6 @@
 {
-  "gitSyncId": "69a80abb79ac426a29eb8838_599c88f9-3555-4717-b033-85ef084bb02e",
-  "id": "Debit Notes_PDFUtils._drawSimpleBox",
+  "gitSyncId": "69a80abb79ac426a29eb8838_6c73306a-79fb-4996-a0c1-abb1f3c7a05e",
+  "id": "Debit Notes_PDFUtils.toWords",
   "pluginId": "js-plugin",
   "pluginType": "JS",
   "unpublishedAction": {
@@ -8,22 +8,7 @@
       "encodeParamsToggle": true,
       "jsArguments": [
         {
-          "name": "doc"
-        },
-        {
-          "name": "x"
-        },
-        {
-          "name": "y"
-        },
-        {
-          "name": "width"
-        },
-        {
-          "name": "height"
-        },
-        {
-          "name": "rows"
+          "name": "num"
         }
       ],
       "paginationType": "NONE",
@@ -41,8 +26,8 @@
         "key": "body"
       }
     ],
-    "fullyQualifiedName": "PDFUtils._drawSimpleBox",
-    "name": "_drawSimpleBox",
+    "fullyQualifiedName": "PDFUtils.toWords",
+    "name": "toWords",
     "pageId": "Debit Notes",
     "runBehaviour": "MANUAL",
     "userSetOnLoad": false
