@@ -16,6 +16,7 @@ export default {
       const productBatches = allBatches.filter(b => String(b.product_id) === String(p.id));
       
       return {
+				"_row_id": p.id + "_" + Math.random().toString(36).substr(2, 9),
         "S.No": index + 1,
         "EAN Code": p.ean_code || "",
         "Item Name": p.product_name,

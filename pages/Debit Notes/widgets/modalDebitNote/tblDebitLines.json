@@ -4,7 +4,7 @@
   "borderColor": "#E0DEDE",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": "1",
-  "bottomRow": 67,
+  "bottomRow": 88,
   "bottomRowBeforeCollapse": 57,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "cachedTableData": {},
@@ -51,27 +51,32 @@
     "Batch_No",
     "Expiry",
     "_product_id",
-    "_batches"
+    "_batches",
+    "customColumn1",
+    "_row_id"
   ],
-  "columnUpdatedAt": 1775784122582,
+  "columnUpdatedAt": 1776496772061,
   "columnWidthMap": {
-    "Batch_No": 98,
+    "Batch_No": 145,
     "Disc__": 83,
-    "Disc___": 93,
+    "Disc___": 83,
     "EAN_Code": 106,
     "Expiry": 126,
-    "GST__": 97,
+    "GST__": 80,
     "GST__1": 91,
     "Gross__": 94,
-    "Item_Name": 283,
-    "MRP": 100,
+    "Item_Name": 232,
+    "MRP": 73,
     "Net__": 106,
     "Price": 80,
     "Qty": 65,
+    "Reason": 109,
     "S_No": 72,
     "Sch": 81,
-    "Taxable__": 111
+    "Taxable__": 99,
+    "customColumn1": 120
   },
+  "compactMode": "SHORT",
   "customIsLoading": false,
   "customIsLoadingValue": "",
   "defaultPageSize": 0,
@@ -154,10 +159,22 @@
       "key": "primaryColumns.Reason.selectOptions"
     },
     {
+      "key": "primaryColumns._batches.computedValue"
+    },
+    {
       "key": "primaryColumns.Batch_No.selectOptions"
     },
     {
-      "key": "primaryColumns._batches.computedValue"
+      "key": "primaryColumns.customColumn1.buttonColor"
+    },
+    {
+      "key": "primaryColumns.customColumn1.borderRadius"
+    },
+    {
+      "key": "primaryColumns.customColumn1.boxShadow"
+    },
+    {
+      "key": "primaryColumns._row_id.computedValue"
     }
   ],
   "dynamicPropertyPathList": [
@@ -166,6 +183,9 @@
     },
     {
       "key": "isVisible"
+    },
+    {
+      "key": "primaryColumns.customColumn1.onClick"
     }
   ],
   "dynamicTriggerPathList": [
@@ -189,6 +209,9 @@
     },
     {
       "key": "primaryColumns.Batch_No.onOptionChange"
+    },
+    {
+      "key": "primaryColumns.customColumn1.onClick"
     }
   ],
   "enableClientSideSearch": true,
@@ -212,12 +235,12 @@
   "mobileRightColumn": 23,
   "mobileTopRow": 47,
   "needsErrorInfo": false,
-  "originalBottomRow": 67,
+  "originalBottomRow": 88,
   "originalTopRow": 38,
   "parentColumnSpace": 6.9375,
   "parentId": "ye1b8rm96d",
   "parentRowSpace": 10,
-  "primaryColumnId": "_product_id",
+  "primaryColumnId": "_row_id",
   "primaryColumns": {
     "Batch_No": {
       "alias": "Batch No",
@@ -247,7 +270,7 @@
       "onOptionChange": "{{DebitNoteTableEdit.updateDebitRow();}}",
       "onSubmit": "{{DebitNoteTableEdit.updateDebitRow();}}",
       "originalId": "Batch No",
-      "selectOptions": "{{(() => { const tableData = tblDebitLines.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( currentRow._batches.map(b => ({ label: b.batch_code, value: b.batch_code })) )) :  currentRow._batches.map(b => ({ label: b.batch_code, value: b.batch_code }))  })()}}",
+      "selectOptions": "{{(() => { const tableData = tblDebitLines.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( \n  currentRow._batches.map(b => ({ \n    label: `${b.batch_code} (${b.quantity_remaining})`, \n    value: b.batch_code \n  })) \n)) :  \n  currentRow._batches.map(b => ({ \n    label: `${b.batch_code} (${b.quantity_remaining})`, \n    value: b.batch_code \n  })) \n })()}}",
       "sortBy": "label",
       "sticky": "",
       "textColor": "",
@@ -871,6 +894,79 @@
       "originalId": "_product_id",
       "sticky": "",
       "textColor": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
+    "_row_id": {
+      "alias": "_row_id",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "cellBackground": "",
+      "columnType": "text",
+      "computedValue": "{{(() => { const tableData = tblDebitLines.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"_row_id\"])) : _row_id })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "fontStyle": "",
+      "horizontalAlignment": "LEFT",
+      "id": "_row_id",
+      "index": 0,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": false,
+      "label": "_row_id",
+      "notation": "standard",
+      "originalId": "_row_id",
+      "sticky": "",
+      "textColor": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
+    "customColumn1": {
+      "alias": "Duplicate",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "borderRadius": "{{tblDebitLines.processedTableData.map((currentRow, currentIndex) => ( (appsmith.theme.borderRadius.appBorderRadius)))}}",
+      "boxShadow": "{{tblDebitLines.processedTableData.map((currentRow, currentIndex) => ( \"none\"))}}",
+      "buttonColor": "{{tblDebitLines.processedTableData.map((currentRow, currentIndex) => ( (appsmith.theme.colors.primaryColor)))}}",
+      "buttonStyle": "rgb(3, 179, 101)",
+      "buttonVariant": "TERTIARY",
+      "columnType": "iconButton",
+      "computedValue": "",
+      "currencyCode": "USD",
+      "customAlias": "",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "horizontalAlignment": "LEFT",
+      "id": "customColumn1",
+      "index": 10,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": true,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": true,
+      "label": "Duplicate",
+      "labelColor": "#FFFFFF",
+      "notation": "standard",
+      "onClick": "{{JSObject1.duplicateRow()}}",
+      "originalId": "customColumn1",
+      "sticky": "",
       "textSize": "0.875rem",
       "thousandSeparator": true,
       "validation": {},
