@@ -2,7 +2,7 @@
   "accentColor": "{{appsmith.theme.colors.primaryColor}}",
   "alignment": "left",
   "animateLoading": true,
-  "bottomRow": 26,
+  "bottomRow": 28,
   "boxShadow": "none",
   "defaultOptionValue": "ITEMS",
   "dynamicBindingPathList": [
@@ -38,7 +38,7 @@
   "mobileTopRow": 17,
   "needsErrorInfo": false,
   "options": "[ { \"label\": \"Item-wise Return\", \"value\": \"ITEMS\" }, { \"label\": \"Flat Adjustment\", \"value\": \"FLAT\" } ]",
-  "originalBottomRow": 28,
+  "originalBottomRow": 26,
   "originalTopRow": 22,
   "parentColumnSpace": 19.228125,
   "parentId": "9qgxcgjwpq",
