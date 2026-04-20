@@ -33,7 +33,7 @@
       "isVisible": true,
       "label": "Stock Report",
       "menuItems": {},
-      "onClick": "{{showModal(mdlStockReport.name);}}",
+      "onClick": "{{getBrands.run().then(() => {\n  getProducts.run();\n  showModal(mdlStockReport.name);\n});}}",
       "placement": "START",
       "widgetId": ""
     }
