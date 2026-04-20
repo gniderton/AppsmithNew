@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 78,
+  "bottomRow": 41,
   "disableLink": false,
   "dynamicBindingPathList": [
     {
@@ -31,8 +31,8 @@
   "mobileRightColumn": 16,
   "mobileTopRow": 4,
   "needsErrorInfo": false,
-  "originalBottomRow": 78,
-  "originalTopRow": 74,
+  "originalBottomRow": 41,
+  "originalTopRow": 37,
   "overflow": "NONE",
   "parentColumnSpace": 20.25,
   "parentId": "0",
@@ -41,13 +41,13 @@
   "responsiveBehavior": "fill",
   "rightColumn": 16,
   "shouldTruncate": false,
-  "text": "Sales Report",
+  "text": "Inventory",
   "textAlign": "LEFT",
   "textColor": "#231F20",
-  "topRow": 74,
+  "topRow": 37,
   "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
   "type": "TEXT_WIDGET",
   "version": 1,
-  "widgetId": "f8oqpa4rby",
-  "widgetName": "Text2CopyCopyCopy"
+  "widgetId": "nm9orar9n1",
+  "widgetName": "Text2CopyCopy1"
 }
