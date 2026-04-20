@@ -35,7 +35,7 @@
     "dynamicBindingPathList": [],
     "name": "getProducts",
     "pageId": "Reports",
-    "runBehaviour": "MANUAL",
+    "runBehaviour": "AUTOMATIC",
     "userSetOnLoad": false
   }
 }

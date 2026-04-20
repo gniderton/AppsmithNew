@@ -1,6 +1,6 @@
 {
-  "gitSyncId": "69a80abb79ac426a29eb8838_4d5ce335-4b1b-48bf-9d50-9076dfdd399b",
-  "id": "Reports_getBrands",
+  "gitSyncId": "69a80abb79ac426a29eb8838_9ef04465-89e5-4393-b42a-fbcf4c426bd9",
+  "id": "Reports_getVendors",
   "pluginId": "restapi-plugin",
   "pluginType": "API",
   "unpublishedAction": {
@@ -16,7 +16,7 @@
       "httpMethod": "GET",
       "httpVersion": "HTTP11",
       "paginationType": "NONE",
-      "path": "/api/master/brands",
+      "path": "/api/vendors",
       "pluginSpecifiedTemplates": [
         {
           "value": true
@@ -33,9 +33,9 @@
       "pluginId": "restapi-plugin"
     },
     "dynamicBindingPathList": [],
-    "name": "getBrands",
+    "name": "getVendors",
     "pageId": "Reports",
-    "runBehaviour": "AUTOMATIC",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }

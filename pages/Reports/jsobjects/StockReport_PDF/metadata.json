@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "69a80abb79ac426a29eb8838_f2ccc80d-3cad-40c5-99e4-df71c5bfd4e2",
+  "id": "Reports_StockReport_PDF",
+  "unpublishedCollection": {
+    "name": "StockReport_PDF",
+    "pageId": "Reports",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}
