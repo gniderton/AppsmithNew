@@ -38,7 +38,7 @@ export default {
 
             amount = _.sumBy(lines, 'amount');
         } else {
-            amount = Number(inpDNAmount.text || 0);
+            amount = Number(inpDNAmount.value || 0);
         }
 
         // 2. Validation
