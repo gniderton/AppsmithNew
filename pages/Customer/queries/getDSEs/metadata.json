@@ -22,12 +22,7 @@
           "value": true
         }
       ],
-      "queryParameters": [
-        {
-          "key": "role",
-          "value": "DSE"
-        }
-      ],
+      "queryParameters": [],
       "timeoutInMillisecond": 10000
     },
     "confirmBeforeExecute": false,
