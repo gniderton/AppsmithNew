@@ -58,10 +58,7 @@
     "longitude",
     "route_sequence",
     "address_line1",
-    "address_line2",
     "city",
-    "state",
-    "pincode",
     "location_lat",
     "location_lng",
     "pricing_ex",
@@ -69,9 +66,12 @@
     "last_verified_at",
     "verified_by",
     "is_verified",
-    "migration_id"
+    "migration_id",
+    "address_line2",
+    "state",
+    "pincode"
   ],
-  "columnUpdatedAt": 1775109573645,
+  "columnUpdatedAt": 1777004565466,
   "columnWidthMap": {
     "channel_name": 99,
     "customer_name": 352,
@@ -175,16 +175,7 @@
       "key": "primaryColumns.address_line1.computedValue"
     },
     {
-      "key": "primaryColumns.address_line2.computedValue"
-    },
-    {
       "key": "primaryColumns.city.computedValue"
-    },
-    {
-      "key": "primaryColumns.state.computedValue"
-    },
-    {
-      "key": "primaryColumns.pincode.computedValue"
     },
     {
       "key": "primaryColumns.location_lat.computedValue"
@@ -218,6 +209,15 @@
     },
     {
       "key": "primaryColumns.migration_id.computedValue"
+    },
+    {
+      "key": "primaryColumns.address_line2.computedValue"
+    },
+    {
+      "key": "primaryColumns.state.computedValue"
+    },
+    {
+      "key": "primaryColumns.pincode.computedValue"
     }
   ],
   "dynamicPropertyPathList": [
@@ -303,7 +303,7 @@
       "fontStyle": "",
       "horizontalAlignment": "LEFT",
       "id": "address_line2",
-      "index": 24,
+      "index": 29,
       "isCellEditable": false,
       "isCellVisible": true,
       "isDerived": false,
@@ -311,7 +311,7 @@
       "isDiscardVisible": true,
       "isEditable": false,
       "isSaveVisible": true,
-      "isVisible": false,
+      "isVisible": true,
       "label": "address_line2",
       "notation": "standard",
       "originalId": "address_line2",
@@ -1194,7 +1194,7 @@
       "fontStyle": "",
       "horizontalAlignment": "LEFT",
       "id": "pincode",
-      "index": 27,
+      "index": 32,
       "isCellEditable": false,
       "isCellVisible": true,
       "isDerived": false,
@@ -1202,7 +1202,7 @@
       "isDiscardVisible": true,
       "isEditable": false,
       "isSaveVisible": true,
-      "isVisible": false,
+      "isVisible": true,
       "label": "pincode",
       "notation": "standard",
       "originalId": "pincode",
@@ -1398,7 +1398,7 @@
       "fontStyle": "",
       "horizontalAlignment": "LEFT",
       "id": "state",
-      "index": 26,
+      "index": 31,
       "isCellEditable": false,
       "isCellVisible": true,
       "isDerived": false,
@@ -1406,7 +1406,7 @@
       "isDiscardVisible": true,
       "isEditable": false,
       "isSaveVisible": true,
-      "isVisible": false,
+      "isVisible": true,
       "label": "state",
       "notation": "standard",
       "originalId": "state",
