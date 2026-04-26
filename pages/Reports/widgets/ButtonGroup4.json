@@ -23,12 +23,16 @@
       "key": "groupButtons.groupButton3.buttonColor"
     }
   ],
+  "dynamicPropertyPathList": [],
   "dynamicTriggerPathList": [
     {
       "key": "groupButtons.groupButton1.onClick"
     },
     {
       "key": "groupButtons.groupButton2.onClick"
+    },
+    {
+      "key": "groupButtons.groupButton3.onClick"
     }
   ],
   "groupButtons": {
@@ -108,6 +112,7 @@
           "widgetId": ""
         }
       },
+      "onClick": "{{showModal(mdlDSEDshBrd.name);}}",
       "placement": "START",
       "widgetId": ""
     }

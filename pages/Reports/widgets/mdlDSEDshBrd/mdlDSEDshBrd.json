@@ -1,15 +1,15 @@
 {
   "animateLoading": true,
-  "backgroundColor": "#3f3f46",
+  "backgroundColor": "#18181b",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 844,
+  "bottomRow": 754,
   "boxShadow": "none",
   "canEscapeKeyClose": true,
   "canOutsideClickClose": true,
   "children": [
     {
       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-      "bottomRow": 830,
+      "bottomRow": 740,
       "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
       "canExtend": true,
       "detachFromLayout": true,
@@ -30,7 +30,7 @@
       "leftColumn": 0,
       "maxDynamicHeight": 9000,
       "minDynamicHeight": 4,
-      "minHeight": 830,
+      "minHeight": 740,
       "minWidth": 450,
       "mobileBottomRow": 240,
       "mobileLeftColumn": 0,
@@ -59,7 +59,7 @@
   ],
   "dynamicHeight": "AUTO_HEIGHT",
   "dynamicTriggerPathList": [],
-  "height": 830,
+  "height": 740,
   "isCanvas": true,
   "isLoading": false,
   "key": "3o620k4lix",
@@ -83,5 +83,5 @@
   "version": 2,
   "widgetId": "c0oz2zvgwd",
   "widgetName": "mdlDSEDshBrd",
-  "width": 1052.6
+  "width": 1242.6
 }
