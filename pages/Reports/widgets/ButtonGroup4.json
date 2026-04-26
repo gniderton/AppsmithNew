@@ -62,14 +62,13 @@
     },
     "groupButton3": {
       "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
-      "buttonType": "MENU",
+      "buttonType": "SIMPLE",
       "disabledWhenInvalid": false,
-      "iconName": "more",
       "id": "groupButton3",
       "index": 2,
       "isDisabled": false,
       "isVisible": true,
-      "label": "More",
+      "label": "DSE Dashboard",
       "menuItems": {
         "menuItem1": {
           "backgroundColor": "#FFFFFF",
@@ -109,7 +108,7 @@
           "widgetId": ""
         }
       },
-      "placement": "CENTER",
+      "placement": "START",
       "widgetId": ""
     }
   },

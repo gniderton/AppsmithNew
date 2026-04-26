@@ -64,7 +64,7 @@
     },
     "groupButton3": {
       "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
-      "buttonType": "MENU",
+      "buttonType": "SIMPLE",
       "disabledWhenInvalid": false,
       "iconName": "more",
       "id": "groupButton3",
