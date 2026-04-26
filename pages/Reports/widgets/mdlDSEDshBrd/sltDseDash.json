@@ -2,7 +2,7 @@
   "accentColor": "{{appsmith.theme.colors.primaryColor}}",
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 7,
+  "bottomRow": 4,
   "boxShadow": "none",
   "defaultOptionValue": "GREEN",
   "dynamicBindingPathList": [
@@ -16,7 +16,7 @@
       "key": "sourceData"
     }
   ],
-  "dynamicHeight": "FIXED",
+  "dynamicHeight": "AUTO_HEIGHT",
   "dynamicPropertyPathList": [
     {
       "key": "sourceData"
@@ -30,8 +30,9 @@
   "isVisible": true,
   "key": "vb80b56e8p",
   "labelAlignment": "left",
-  "labelPosition": "Top",
-  "labelText": "Label",
+  "labelPosition": "Left",
+  "labelText": "DSE",
+  "labelTextColor": "white",
   "labelTextSize": "0.875rem",
   "labelWidth": 5,
   "leftColumn": 0,
@@ -45,14 +46,17 @@
   "needsErrorInfo": false,
   "optionLabel": "full_name",
   "optionValue": "id",
+  "originalBottomRow": 7,
+  "originalTopRow": 0,
   "parentColumnSpace": 6.9375,
   "parentId": "t3r8wykhde",
   "parentRowSpace": 10,
   "placeholderText": "Select option",
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
-  "rightColumn": 18,
+  "rightColumn": 16,
   "serverSideFiltering": false,
+  "shouldScrollContents": true,
   "sourceData": "{{getEmployees.data}}",
   "topRow": 0,
   "type": "SELECT_WIDGET",
