@@ -1,22 +1,22 @@
 {
   "animateLoading": true,
-  "backgroundColor": "#f4f4f5",
-  "borderColor": "#f4f4f5",
+  "backgroundColor": "#FFFFFF",
+  "borderColor": "#E0DEDE",
   "borderWidth": "1",
-  "bottomRow": 14,
+  "bottomRow": 140,
   "boxShadow": "NONE",
   "children": [
     {
-      "bottomRow": 100,
+      "bottomRow": 1360,
       "canExtend": false,
       "containerStyle": "none",
       "detachFromLayout": true,
       "isLoading": false,
       "isVisible": true,
       "leftColumn": 0,
-      "minHeight": 27,
+      "minHeight": 616.875,
       "parentColumnSpace": 1,
-      "parentId": "9mrdwgyw62",
+      "parentId": "cqmtstpmvb",
       "parentRowSpace": 1,
       "props": {
         "canExtend": false,
@@ -25,19 +25,17 @@
         "detachFromLayout": true
       },
       "renderMode": "CANVAS",
-      "rightColumn": 180,
+      "rightColumn": 192.5,
       "topRow": 0,
       "type": "CANVAS_WIDGET",
       "version": 1,
-      "widgetId": "vfb9l17ykr",
-      "widgetName": "Canvas30"
+      "widgetId": "r0hdgv251v",
+      "widgetName": "Canvas26"
     }
   ],
   "containerStyle": "card",
   "displayName": "Container",
-  "dynamicBindingPathList": [],
-  "dynamicHeight": "FIXED",
-  "dynamicTriggerPathList": [],
+  "dynamicHeight": "AUTO_HEIGHT",
   "flexVerticalAlignment": "stretch",
   "hideCard": false,
   "iconSVG": "/static/media/icon.b4f5f9eb27fc2bb537b53187836aea6c.svg",
@@ -45,8 +43,8 @@
   "isDeprecated": false,
   "isLoading": false,
   "isVisible": true,
-  "key": "u2v8iqaz8n",
-  "leftColumn": 6,
+  "key": "vkx1t3pb52",
+  "leftColumn": 20,
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 10,
   "minWidth": 450,
@@ -58,10 +56,10 @@
     "selectionBGCSSVar": "--on-canvas-ui-widget-selection",
     "selectionColorCSSVar": "--on-canvas-ui-widget-focus"
   },
-  "originalBottomRow": 53,
-  "originalTopRow": 43,
-  "parentColumnSpace": 2.8125,
-  "parentId": "nyvl60y8cb",
+  "originalBottomRow": 140,
+  "originalTopRow": 4,
+  "parentColumnSpace": 3.0078125,
+  "parentId": "4v0bvxjlbb",
   "parentRowSpace": 10,
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
@@ -71,7 +69,7 @@
     "parent",
     "group"
   ],
-  "shouldScrollContents": false,
+  "shouldScrollContents": true,
   "tabId": "",
   "tags": [
     "Layout"
@@ -80,6 +78,6 @@
   "topRow": 4,
   "type": "CONTAINER_WIDGET",
   "version": 1,
-  "widgetId": "9mrdwgyw62",
-  "widgetName": "Container7"
+  "widgetId": "cqmtstpmvb",
+  "widgetName": "Container2"
 }
