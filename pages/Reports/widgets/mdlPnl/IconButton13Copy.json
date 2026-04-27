@@ -1,0 +1,53 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 12,
+  "boxShadow": "none",
+  "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "buttonVariant": "TERTIARY",
+  "dynamicBindingPathList": [
+    {
+      "key": "buttonColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "isDisabled"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "isDisabled"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "iconName": "eye-open",
+  "isDisabled": "{{ getPnL.isLoading }}",
+  "isLoading": false,
+  "isVisible": true,
+  "key": "8oxro65jp9",
+  "leftColumn": 58,
+  "minWidth": 50,
+  "mobileBottomRow": 8,
+  "mobileLeftColumn": 58,
+  "mobileRightColumn": 62,
+  "mobileTopRow": 4,
+  "needsErrorInfo": false,
+  "onClick": "{{showModal(mdlpnlDash.name);}}",
+  "parentColumnSpace": 10.78125,
+  "parentId": "uvtx9fg31p",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "hug",
+  "rightColumn": 62,
+  "topRow": 8,
+  "type": "ICON_BUTTON_WIDGET",
+  "version": 1,
+  "widgetId": "aelmzbhrtm",
+  "widgetName": "IconButton13Copy"
+}
