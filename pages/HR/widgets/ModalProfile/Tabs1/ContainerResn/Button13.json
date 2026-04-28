@@ -1,0 +1,55 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 18,
+  "boxShadow": "none",
+  "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "buttonVariant": "PRIMARY",
+  "disabledWhenInvalid": false,
+  "dynamicBindingPathList": [
+    {
+      "key": "buttonColor"
+    },
+    {
+      "key": "borderRadius"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "isDefaultClickDisabled": true,
+  "isDisabled": false,
+  "isLoading": false,
+  "isVisible": true,
+  "key": "d06y8km7t5",
+  "leftColumn": 51,
+  "minWidth": 120,
+  "mobileBottomRow": 15,
+  "mobileLeftColumn": 48,
+  "mobileRightColumn": 64,
+  "mobileTopRow": 11,
+  "needsErrorInfo": false,
+  "onClick": "{{\n  markResignedAPI.run()\n    .then(() => {\n      // 1. Show a success message\n      showAlert('Employee successfully marked as resigned.', 'success');\n      \n      // 2. Refresh your employee list/table so they disappear from the Active list\n      // getEmployeesAPI.run(); \n      \n      // 3. Optional: Close the modal if the button is inside a modal\n      // closeModal('ModalName'); \n    })\n    .catch((error) => {\n      // Show an error if something goes wrong\n      showAlert('Failed to update employee: ' + error.message, 'error');\n    });\n}}\n",
+  "parentColumnSpace": 1.3671875,
+  "parentId": "5b2ogiqxai",
+  "parentRowSpace": 10,
+  "placement": "CENTER",
+  "recaptchaType": "V3",
+  "renderMode": "CANVAS",
+  "resetFormOnClick": false,
+  "responsiveBehavior": "hug",
+  "rightColumn": 62,
+  "text": "Mark Resignation",
+  "topRow": 14,
+  "type": "BUTTON_WIDGET",
+  "version": 1,
+  "widgetId": "9gvlurhycx",
+  "widgetName": "Button13"
+}

@@ -1,0 +1,3 @@
+{
+  "resignation_date": {{DatePickerResignation.formattedDate}} // Optional. Defaults to current date if omitted.
+}

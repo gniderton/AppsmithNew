@@ -1,0 +1,7 @@
+{
+  "customer_ids": {{tblCustomers.selectedRows.map(row => row.id)}},
+  "updates": {
+    "dse_id": {{SelectNewDSE.selectedOptionValue}},
+    "route_id": {{SelectNewRoute.selectedOptionValue}}
+  }
+}

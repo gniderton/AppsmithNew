@@ -1,0 +1,56 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 24,
+  "boxShadow": "none",
+  "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "buttonStyle": "PRIMARY_BUTTON",
+  "buttonVariant": "PRIMARY",
+  "disabledWhenInvalid": false,
+  "dynamicBindingPathList": [
+    {
+      "key": "buttonColor"
+    },
+    {
+      "key": "borderRadius"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "isDefaultClickDisabled": true,
+  "isDisabled": false,
+  "isLoading": false,
+  "isVisible": true,
+  "key": "d06y8km7t5",
+  "leftColumn": 47,
+  "minWidth": 120,
+  "mobileBottomRow": 22,
+  "mobileLeftColumn": 47,
+  "mobileRightColumn": 63,
+  "mobileTopRow": 18,
+  "needsErrorInfo": false,
+  "onClick": "{{\n  (async function() {\n    // 1. Check if any customers are selected in the table\n    if (!tblCustomers.selectedRows || tblCustomers.selectedRows.length === 0) {\n      showAlert('Please select at least one customer from the table first.', 'warning');\n      return;\n    }\n\n    // 2. Check if at least one update field (DSE or Route) is selected\n    if (!SelectNewDSE.selectedOptionValue && !SelectNewRoute.selectedOptionValue) {\n      showAlert('Please select a new DSE or a new Route to update.', 'warning');\n      return;\n    }\n\n    // 3. Run the API\n    try {\n      await BulkEditCustomersAPI.run();\n      \n      // 4. Show success message showing how many were updated\n      showAlert('Successfully updated ' + tblCustomers.selectedRows.length + ' customers!', 'success');\n      \n      // 5. Refresh the customers table so the new DSE/Route shows up\n      await getCustomers.run();\n      \n      // 6. Clear table selection after a successful bulk edit\n      resetWidget('tblCustomers', true);\n      \n    } catch (error) {\n      showAlert('Failed to bulk edit: ' + error.message, 'error');\n    }\n  })()\n}}\n",
+  "originalBottomRow": 23,
+  "originalTopRow": 19,
+  "parentId": "eqjxmdxz0w",
+  "placement": "CENTER",
+  "recaptchaType": "V3",
+  "renderMode": "CANVAS",
+  "resetFormOnClick": false,
+  "responsiveBehavior": "hug",
+  "rightColumn": 63,
+  "text": "Confirm",
+  "topRow": 20,
+  "type": "BUTTON_WIDGET",
+  "version": 1,
+  "widgetId": "rizyhivxiw",
+  "widgetName": "Button2"
+}

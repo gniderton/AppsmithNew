@@ -189,6 +189,51 @@
       "version": 1,
       "widgetId": "oapicagtky",
       "widgetName": "Canvas11"
+    },
+    {
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "bottomRow": 610,
+      "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+      "canExtend": false,
+      "containerStyle": "none",
+      "detachFromLayout": true,
+      "dynamicBindingPathList": [
+        {
+          "key": "borderRadius"
+        },
+        {
+          "key": "boxShadow"
+        }
+      ],
+      "dynamicHeight": "AUTO_HEIGHT",
+      "dynamicTriggerPathList": [],
+      "flexLayers": [],
+      "isLoading": false,
+      "isVisible": true,
+      "key": "8y5utwxiyc",
+      "leftColumn": 0,
+      "maxDynamicHeight": 9000,
+      "minDynamicHeight": 4,
+      "minHeight": 650,
+      "minWidth": 450,
+      "mobileBottomRow": 651,
+      "mobileLeftColumn": 0,
+      "mobileRightColumn": 444,
+      "mobileTopRow": 1,
+      "needsErrorInfo": false,
+      "parentColumnSpace": 1,
+      "parentId": "hjz39h5xjd",
+      "parentRowSpace": 1,
+      "renderMode": "CANVAS",
+      "responsiveBehavior": "fill",
+      "rightColumn": 444,
+      "tabId": "tabaaj9zml3ru",
+      "tabName": "Settings",
+      "topRow": 1,
+      "type": "CANVAS_WIDGET",
+      "version": 1,
+      "widgetId": "3xr3l73nvt",
+      "widgetName": "Canvas15"
     }
   ],
   "defaultTab": "Tab 1",
@@ -252,6 +297,13 @@
       "isVisible": true,
       "label": "Pay Slip",
       "widgetId": "sflk1uc0ck"
+    },
+    "tabaaj9zml3ru": {
+      "id": "tabaaj9zml3ru",
+      "index": 4,
+      "isVisible": true,
+      "label": "Settings",
+      "widgetId": "3xr3l73nvt"
     },
     "tabyvh2wi47g2": {
       "id": "tabyvh2wi47g2",

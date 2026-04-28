@@ -76,6 +76,7 @@
     "channel_name": 99,
     "customer_name": 352,
     "customer_phone": 160,
+    "dse_name": 234,
     "email": 143,
     "gstin": 166,
     "route_name": 122
@@ -85,9 +86,7 @@
   "customIsLoadingValue": "",
   "defaultPageSize": 0,
   "defaultSelectedRowIndex": 0,
-  "defaultSelectedRowIndices": [
-    0
-  ],
+  "defaultSelectedRowIndices": "",
   "delimiter": ",",
   "dynamicBindingPathList": [
     {
@@ -250,7 +249,10 @@
   "mobileLeftColumn": 0,
   "mobileRightColumn": 33,
   "mobileTopRow": 5,
+  "multiRowSelection": true,
   "needsErrorInfo": false,
+  "originalBottomRow": 92,
+  "originalTopRow": 4,
   "parentColumnSpace": 17.53125,
   "parentId": "0",
   "parentRowSpace": 10,
@@ -1525,7 +1527,7 @@
   "responsiveBehavior": "fill",
   "rightColumn": 64,
   "searchKey": "",
-  "tableData": "{{getCustomers.data}}",
+  "tableData": "{{\n  getCustomers.data.filter(customer => {\n    // If no checkboxes are selected, show everyone\n    if (dse_selector.selectedValues.length === 0) {\n      return true;\n    }\n    // Otherwise, check if the customer's DSE is in the selected list\n    return dse_selector.selectedValues.includes(customer.dse_name);\n  })\n}}",
   "textSize": "0.875rem",
   "topRow": 4,
   "totalRecordsCount": 0,

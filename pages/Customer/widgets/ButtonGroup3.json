@@ -18,14 +18,21 @@
     },
     {
       "key": "groupButtons.groupButton2.buttonColor"
+    },
+    {
+      "key": "groupButtons.groupButtonmo48i496gp.buttonColor"
     }
   ],
+  "dynamicPropertyPathList": [],
   "dynamicTriggerPathList": [
     {
       "key": "groupButtons.groupButton1.onClick"
     },
     {
       "key": "groupButtons.groupButton2.onClick"
+    },
+    {
+      "key": "groupButtons.groupButtonmo48i496gp.onClick"
     }
   ],
   "groupButtons": {
@@ -57,13 +64,29 @@
       "onClick": "{{getPendingRequests.run().then(() => {\n  showModal(ModalVerifyCustomer.name);\n});}}",
       "placement": "CENTER",
       "widgetId": ""
+    },
+    "groupButtonmo48i496gp": {
+      "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+      "buttonType": "SIMPLE",
+      "id": "groupButtonmo48i496gp",
+      "index": 2,
+      "isDisabled": false,
+      "isSeparator": false,
+      "isVisible": true,
+      "itemType": "BUTTON",
+      "label": "Bulk Update Customers",
+      "menuItems": {},
+      "onClick": "{{showModal(mdlUpdateCsts.name);}}",
+      "placement": "CENTER",
+      "variant": "filled",
+      "widgetId": "vmm9rtrvka"
     }
   },
   "isCanvas": false,
   "isLoading": false,
   "isVisible": true,
   "key": "fmu9p9lbgn",
-  "leftColumn": 51,
+  "leftColumn": 49,
   "minWidth": 450,
   "mobileBottomRow": 4,
   "mobileLeftColumn": 33,
