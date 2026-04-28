@@ -654,7 +654,7 @@
       "label": "View",
       "labelColor": "#FFFFFF",
       "notation": "standard",
-      "onClick": "{{\n  storeValue('isEditMode', false)\n    .then(() => getInventoryBatches.run())\n.then(() => productLedger.run())\n    .then(() => showModal(ModalProduct.name))\n\n}}",
+      "onClick": "{{\n  storeValue('isEditMode', false)\n    .then(() => getInventoryBatches.run())\n.then(() => productLedger.run())\n.then(() => getProductProfile.run())\n    .then(() => showModal(ModalProduct.name))\n\n}}",
       "originalId": "customColumn1",
       "sticky": "",
       "textSize": "0.875rem",

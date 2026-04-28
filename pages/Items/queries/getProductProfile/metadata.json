@@ -40,6 +40,6 @@
     "name": "getProductProfile",
     "pageId": "Items",
     "runBehaviour": "AUTOMATIC",
-    "userSetOnLoad": false
+    "userSetOnLoad": true
   }
 }
