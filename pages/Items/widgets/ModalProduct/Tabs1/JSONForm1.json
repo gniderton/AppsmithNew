@@ -638,9 +638,6 @@
     },
     {
       "key": "isVisible"
-    },
-    {
-      "key": "schema.__root_schema__.children.Basic_Info.children.is_active.borderRadius"
     }
   ],
   "dynamicHeight": "FIXED",
@@ -742,9 +739,9 @@
               "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONForm1.sourceData, JSONForm1.formData, JSONForm1.fieldState)}}",
               "boxShadow": "none",
               "children": {},
-              "dataType": "string",
+              "dataType": "number",
               "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData[\"Basic Info\"].case_quantity))(JSONForm1.sourceData, JSONForm1.formData, JSONForm1.fieldState)}}",
-              "fieldType": "Text Input",
+              "fieldType": "Number Input",
               "iconAlign": "left",
               "identifier": "case_quantity",
               "isCustomField": false,
@@ -756,7 +753,7 @@
               "labelTextSize": "0.875rem",
               "originalIdentifier": "case_quantity",
               "position": 8,
-              "sourceData": ""
+              "sourceData": 1
             },
             "description": {
               "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(JSONForm1.sourceData, JSONForm1.formData, JSONForm1.fieldState)}}",
@@ -804,24 +801,22 @@
             "is_active": {
               "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(JSONForm1.sourceData, JSONForm1.formData, JSONForm1.fieldState)}}",
               "accessor": "is_active",
-              "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONForm1.sourceData, JSONForm1.formData, JSONForm1.fieldState)}}",
+              "alignWidget": "LEFT",
               "boxShadow": "none",
               "children": {},
-              "dataType": "string",
+              "dataType": "boolean",
               "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData[\"Basic Info\"].is_active))(JSONForm1.sourceData, JSONForm1.formData, JSONForm1.fieldState)}}",
-              "fieldType": "Text Input",
-              "iconAlign": "left",
+              "fieldType": "Switch",
               "identifier": "is_active",
               "isCustomField": false,
               "isDisabled": false,
               "isRequired": false,
-              "isSpellCheck": false,
               "isVisible": true,
               "label": "Is Active",
               "labelTextSize": "0.875rem",
               "originalIdentifier": "is_active",
               "position": 2,
-              "sourceData": ""
+              "sourceData": true
             },
             "min_stock_level": {
               "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(JSONForm1.sourceData, JSONForm1.formData, JSONForm1.fieldState)}}",
@@ -829,9 +824,9 @@
               "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONForm1.sourceData, JSONForm1.formData, JSONForm1.fieldState)}}",
               "boxShadow": "none",
               "children": {},
-              "dataType": "string",
+              "dataType": "number",
               "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData[\"Basic Info\"].min_stock_level))(JSONForm1.sourceData, JSONForm1.formData, JSONForm1.fieldState)}}",
-              "fieldType": "Text Input",
+              "fieldType": "Number Input",
               "iconAlign": "left",
               "identifier": "min_stock_level",
               "isCustomField": false,
@@ -843,7 +838,7 @@
               "labelTextSize": "0.875rem",
               "originalIdentifier": "min_stock_level",
               "position": 6,
-              "sourceData": ""
+              "sourceData": 0
             },
             "model_number": {
               "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(JSONForm1.sourceData, JSONForm1.formData, JSONForm1.fieldState)}}",
