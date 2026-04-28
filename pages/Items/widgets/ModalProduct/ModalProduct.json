@@ -1,14 +1,14 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 75,
+  "bottomRow": 124,
   "boxShadow": "none",
   "canEscapeKeyClose": true,
   "canOutsideClickClose": false,
   "children": [
     {
       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-      "bottomRow": 750,
+      "bottomRow": 1240,
       "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
       "canExtend": true,
       "detachFromLayout": true,
@@ -29,7 +29,7 @@
       "leftColumn": 0,
       "maxDynamicHeight": 9000,
       "minDynamicHeight": 4,
-      "minHeight": 750,
+      "minHeight": 1240,
       "minWidth": 450,
       "mobileBottomRow": 240,
       "mobileLeftColumn": 0,
@@ -67,14 +67,14 @@
       "key": "onClose"
     }
   ],
-  "height": 750,
+  "height": 1240,
   "isCanvas": true,
   "isLoading": false,
   "key": "swaol16q65",
   "leftColumn": 8,
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 24,
-  "minHeight": 750,
+  "minHeight": 1240,
   "mobileBottomRow": 43,
   "mobileLeftColumn": 8,
   "mobileRightColumn": 32,
@@ -92,5 +92,5 @@
   "version": 2,
   "widgetId": "tfl4qcgih5",
   "widgetName": "ModalProduct",
-  "width": 1242.6
+  "width": 1014.5999999999999
 }

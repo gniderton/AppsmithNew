@@ -6,6 +6,7 @@
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": "1",
   "bottomRow": 110,
+  "bottomRowBeforeCollapse": 110,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "childStylesheet": {
     "ARRAY": {
@@ -634,6 +635,12 @@
     },
     {
       "key": "schema.__root_schema__.children.Basic_Info.children.case_quantity.isDisabled"
+    },
+    {
+      "key": "isVisible"
+    },
+    {
+      "key": "schema.__root_schema__.children.Basic_Info.children.is_active.borderRadius"
     }
   ],
   "dynamicHeight": "FIXED",
@@ -673,6 +680,9 @@
     },
     {
       "key": "schema.__root_schema__.children.Stock_Valuation.isDisabled"
+    },
+    {
+      "key": "isVisible"
     }
   ],
   "dynamicTriggerPathList": [
@@ -684,7 +694,7 @@
   "fixedFooter": true,
   "flexVerticalAlignment": "start",
   "isLoading": false,
-  "isVisible": true,
+  "isVisible": "{{ !appsmith.store.isEditMode }}",
   "key": "n141d24grp",
   "leftColumn": 44,
   "maxDynamicHeight": 9000,
@@ -696,6 +706,8 @@
   "mobileTopRow": 6,
   "needsErrorInfo": false,
   "onSubmit": "{{ \n    apiUpdateProduct.run()\n    .then(() => {\n        // 1. Show a success message\n        showAlert(\"Product successfully updated!\", \"success\");\n        \n        // 2. Turn off Edit Mode (so it's locked next time)\n        storeValue('isEditMode', false);\n        \n        // 3. Refresh the main product list\n        Products.run();\n        \n        // 4. Refresh your brand groupings if needed\n        Brand_Utils.getGroupedBrands();\n        \n        // 5. Close the popup\n        closeModal(\"ModalProduct\");\n    })\n    .catch((error) => {\n        // If the API fails for any reason, show the error\n        showAlert(\"Failed to update product: \" + error.message, \"error\");\n    })\n}}",
+  "originalBottomRow": 110,
+  "originalTopRow": 4,
   "parentColumnSpace": 6.65625,
   "parentId": "5dlyv298y4",
   "parentRowSpace": 10,
@@ -730,13 +742,13 @@
               "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONForm1.sourceData, JSONForm1.formData, JSONForm1.fieldState)}}",
               "boxShadow": "none",
               "children": {},
-              "dataType": "number",
+              "dataType": "string",
               "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData[\"Basic Info\"].case_quantity))(JSONForm1.sourceData, JSONForm1.formData, JSONForm1.fieldState)}}",
-              "fieldType": "Number Input",
+              "fieldType": "Text Input",
               "iconAlign": "left",
               "identifier": "case_quantity",
               "isCustomField": false,
-              "isDisabled": "{{((sourceData, formData, fieldState) => ( !appsmith.store.isEditMode ))(JSONForm1.sourceData, JSONForm1.formData, JSONForm1.fieldState)}}",
+              "isDisabled": false,
               "isRequired": false,
               "isSpellCheck": false,
               "isVisible": true,
@@ -744,7 +756,7 @@
               "labelTextSize": "0.875rem",
               "originalIdentifier": "case_quantity",
               "position": 8,
-              "sourceData": 24
+              "sourceData": ""
             },
             "description": {
               "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(JSONForm1.sourceData, JSONForm1.formData, JSONForm1.fieldState)}}",
@@ -792,22 +804,24 @@
             "is_active": {
               "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(JSONForm1.sourceData, JSONForm1.formData, JSONForm1.fieldState)}}",
               "accessor": "is_active",
-              "alignWidget": "LEFT",
+              "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONForm1.sourceData, JSONForm1.formData, JSONForm1.fieldState)}}",
               "boxShadow": "none",
               "children": {},
-              "dataType": "boolean",
+              "dataType": "string",
               "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData[\"Basic Info\"].is_active))(JSONForm1.sourceData, JSONForm1.formData, JSONForm1.fieldState)}}",
-              "fieldType": "Switch",
+              "fieldType": "Text Input",
+              "iconAlign": "left",
               "identifier": "is_active",
               "isCustomField": false,
-              "isDisabled": "{{((sourceData, formData, fieldState) => ( !appsmith.store.isEditMode ))(JSONForm1.sourceData, JSONForm1.formData, JSONForm1.fieldState)}}",
+              "isDisabled": false,
               "isRequired": false,
+              "isSpellCheck": false,
               "isVisible": true,
               "label": "Is Active",
               "labelTextSize": "0.875rem",
               "originalIdentifier": "is_active",
               "position": 2,
-              "sourceData": true
+              "sourceData": ""
             },
             "min_stock_level": {
               "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(JSONForm1.sourceData, JSONForm1.formData, JSONForm1.fieldState)}}",
@@ -815,13 +829,13 @@
               "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(JSONForm1.sourceData, JSONForm1.formData, JSONForm1.fieldState)}}",
               "boxShadow": "none",
               "children": {},
-              "dataType": "number",
+              "dataType": "string",
               "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData[\"Basic Info\"].min_stock_level))(JSONForm1.sourceData, JSONForm1.formData, JSONForm1.fieldState)}}",
-              "fieldType": "Number Input",
+              "fieldType": "Text Input",
               "iconAlign": "left",
               "identifier": "min_stock_level",
               "isCustomField": false,
-              "isDisabled": "{{((sourceData, formData, fieldState) => ( !appsmith.store.isEditMode ))(JSONForm1.sourceData, JSONForm1.formData, JSONForm1.fieldState)}}",
+              "isDisabled": false,
               "isRequired": false,
               "isSpellCheck": false,
               "isVisible": true,
@@ -829,7 +843,7 @@
               "labelTextSize": "0.875rem",
               "originalIdentifier": "min_stock_level",
               "position": 6,
-              "sourceData": 0
+              "sourceData": ""
             },
             "model_number": {
               "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(JSONForm1.sourceData, JSONForm1.formData, JSONForm1.fieldState)}}",
@@ -1939,6 +1953,7 @@
   },
   "title": "",
   "topRow": 4,
+  "topRowBeforeCollapse": 4,
   "type": "JSON_FORM_WIDGET",
   "useSourceData": false,
   "version": 1,

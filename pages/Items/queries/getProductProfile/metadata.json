@@ -1,6 +1,6 @@
 {
   "gitSyncId": "69a80abb79ac426a29eb8838_cfb80b65-be05-4172-89e8-469259a344d4",
-  "id": "Items_Api1",
+  "id": "Items_getProductProfile",
   "pluginId": "restapi-plugin",
   "pluginType": "API",
   "unpublishedAction": {
@@ -37,9 +37,9 @@
         "key": "path"
       }
     ],
-    "name": "Api1",
+    "name": "getProductProfile",
     "pageId": "Items",
-    "runBehaviour": "MANUAL",
+    "runBehaviour": "AUTOMATIC",
     "userSetOnLoad": false
   }
 }
