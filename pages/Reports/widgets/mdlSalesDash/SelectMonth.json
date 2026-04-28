@@ -1,0 +1,59 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 7,
+  "boxShadow": "none",
+  "defaultOptionValue": "GREEN",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
+    }
+  ],
+  "dynamicHeight": "FIXED",
+  "dynamicPropertyPathList": [
+    {
+      "key": "sourceData"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "isDisabled": false,
+  "isFilterable": true,
+  "isLoading": false,
+  "isRequired": false,
+  "isVisible": true,
+  "key": "tmzez0l999",
+  "labelAlignment": "left",
+  "labelPosition": "Top",
+  "labelText": "Month",
+  "labelTextSize": "0.875rem",
+  "labelWidth": 5,
+  "leftColumn": 11,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 7,
+  "mobileLeftColumn": 0,
+  "mobileRightColumn": 19,
+  "mobileTopRow": 0,
+  "needsErrorInfo": false,
+  "optionLabel": "label",
+  "optionValue": "value",
+  "parentColumnSpace": 6.9375,
+  "parentId": "koqrpxmj1n",
+  "parentRowSpace": 10,
+  "placeholderText": "Select option",
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 22,
+  "serverSideFiltering": false,
+  "sourceData": "[\n  { \"label\": \"April\", \"value\": 4 },\n  { \"label\": \"May\", \"value\": 5 },\n  { \"label\": \"June\", \"value\": 6 },\n  { \"label\": \"July\", \"value\": 7 },\n  { \"label\": \"August\", \"value\": 8 },\n  { \"label\": \"September\", \"value\": 9 },\n  { \"label\": \"October\", \"value\": 10 },\n  { \"label\": \"November\", \"value\": 11 },\n  { \"label\": \"December\", \"value\": 12 },\n  { \"label\": \"January\", \"value\": 1 },\n  { \"label\": \"February\", \"value\": 2 },\n  { \"label\": \"March\", \"value\": 3 }\n]\n",
+  "topRow": 0,
+  "type": "SELECT_WIDGET",
+  "version": 1,
+  "widgetId": "pcr5nwya4j",
+  "widgetName": "SelectMonth"
+}

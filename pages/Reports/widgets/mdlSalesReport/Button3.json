@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 12,
+  "bottomRow": 8,
   "boxShadow": "none",
   "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
   "buttonVariant": "PRIMARY",
@@ -14,11 +14,6 @@
       "key": "borderRadius"
     }
   ],
-  "dynamicPropertyPathList": [
-    {
-      "key": "onClick"
-    }
-  ],
   "dynamicTriggerPathList": [
     {
       "key": "onClick"
@@ -28,16 +23,16 @@
   "isDisabled": false,
   "isLoading": false,
   "isVisible": true,
-  "key": "6s7j9ap987",
+  "key": "tc2lqqrg1v",
   "leftColumn": 57,
   "minWidth": 120,
-  "mobileBottomRow": 11,
-  "mobileLeftColumn": 43,
-  "mobileRightColumn": 59,
-  "mobileTopRow": 7,
+  "mobileBottomRow": 5,
+  "mobileLeftColumn": 40,
+  "mobileRightColumn": 56,
+  "mobileTopRow": 1,
   "needsErrorInfo": false,
-  "onClick": "{{navigateTo(\"https://distribution-erp.onrender.com/api/analytics/reports/sales-lines/export?start_date=\" + StartDateSalesLines.formattedDate + \"&end_date=\" + EndDateSalesLines.formattedDate, {}, \"NEW_WINDOW\")\n}}",
-  "parentColumnSpace": 19.228125,
+  "onClick": "{{showModal(mdlSalesDash.name);}}",
+  "parentColumnSpace": 15.603124999999999,
   "parentId": "xfsmv0co0k",
   "parentRowSpace": 10,
   "placement": "CENTER",
@@ -46,10 +41,10 @@
   "resetFormOnClick": false,
   "responsiveBehavior": "hug",
   "rightColumn": 63,
-  "text": "Download to Excel",
-  "topRow": 8,
+  "text": "Dashboard",
+  "topRow": 4,
   "type": "BUTTON_WIDGET",
   "version": 1,
-  "widgetId": "f8pcv6vow8",
-  "widgetName": "Button2"
+  "widgetId": "1153yp57mr",
+  "widgetName": "Button3"
 }
