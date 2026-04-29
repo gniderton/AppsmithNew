@@ -144,51 +144,6 @@
       "version": 1,
       "widgetId": "qf680w1o6j",
       "widgetName": "Canvas18"
-    },
-    {
-      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-      "bottomRow": 1100,
-      "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
-      "canExtend": false,
-      "containerStyle": "none",
-      "detachFromLayout": true,
-      "dynamicBindingPathList": [
-        {
-          "key": "borderRadius"
-        },
-        {
-          "key": "boxShadow"
-        }
-      ],
-      "dynamicHeight": "AUTO_HEIGHT",
-      "dynamicTriggerPathList": [],
-      "flexLayers": [],
-      "isLoading": false,
-      "isVisible": true,
-      "key": "ethn6w0itf",
-      "leftColumn": 0,
-      "maxDynamicHeight": 9000,
-      "minDynamicHeight": 4,
-      "minHeight": 670,
-      "minWidth": 450,
-      "mobileBottomRow": 671,
-      "mobileLeftColumn": 0,
-      "mobileRightColumn": 454,
-      "mobileTopRow": 1,
-      "needsErrorInfo": false,
-      "parentColumnSpace": 1,
-      "parentId": "psyqey9m84",
-      "parentRowSpace": 1,
-      "renderMode": "CANVAS",
-      "responsiveBehavior": "fill",
-      "rightColumn": 454,
-      "tabId": "tabi1z065yini",
-      "tabName": "Dashboard",
-      "topRow": 1,
-      "type": "CANVAS_WIDGET",
-      "version": 1,
-      "widgetId": "kqx9tvz7lu",
-      "widgetName": "Canvas19"
     }
   ],
   "defaultTab": "Tab 1",
@@ -245,13 +200,6 @@
       "label": "Product Profile",
       "positioning": "vertical",
       "widgetId": "5dlyv298y4"
-    },
-    "tabi1z065yini": {
-      "id": "tabi1z065yini",
-      "index": 3,
-      "isVisible": true,
-      "label": "Dashboard",
-      "widgetId": "kqx9tvz7lu"
     },
     "tabmta1gc3pa3": {
       "id": "tabmta1gc3pa3",
