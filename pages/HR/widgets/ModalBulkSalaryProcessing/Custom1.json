@@ -1,0 +1,70 @@
+{
+  "backgroundColor": "#FFFFFF",
+  "borderColor": "#E0DEDE",
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "borderWidth": "1",
+  "bottomRow": 26,
+  "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+  "defaultModel": "{{ \n  { \n    \"salaryBatch\": (appsmith.store.salaryBatch || []) \n  } \n}}\n",
+  "dynamicBindingPathList": [
+    {
+      "key": "theme"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "boxShadow"
+    },
+    {
+      "key": "defaultModel"
+    }
+  ],
+  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicTriggerPathList": [
+    {
+      "key": "onResetClick"
+    }
+  ],
+  "events": [
+    "onResetClick"
+  ],
+  "isCanvas": false,
+  "isLoading": false,
+  "isSearchWildcard": true,
+  "isVisible": true,
+  "key": "r381ri26jt",
+  "leftColumn": 0,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "mobileBottomRow": 49,
+  "mobileLeftColumn": 0,
+  "mobileRightColumn": 23,
+  "mobileTopRow": 19,
+  "needsErrorInfo": false,
+  "onResetClick": "{{showAlert('Successfully reset!!', '');}}",
+  "originalBottomRow": 26,
+  "originalTopRow": 0,
+  "parentColumnSpace": 19.228125,
+  "parentId": "n5lcj97ef9",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "rightColumn": 64,
+  "shouldScrollContents": true,
+  "srcDoc": {
+    "css": ":root {\n  --bg-dark: #0f172a;\n  --card-bg: rgba(30, 41, 59, 0.7);\n  --accent: #38bdf8;\n  --text-main: #f1f5f9;\n  --text-muted: #94a3b8;\n  --success: #10b981;\n  --warning: #f59e0b;\n  --info: #6366f1;\n}\n\nbody {\n  background: var(--bg-dark);\n  font-family: \"Inter\", sans-serif;\n  color: var(--text-main);\n  margin: 0;\n  padding: 15px;\n}\n\n.dashboard-container {\n  max-width: 1200px;\n  margin: 0 auto;\n}\n\n.header {\n  margin-bottom: 25px;\n}\n\n.header h1 {\n  font-size: 24px;\n  margin: 0;\n  font-weight: 700;\n  background: linear-gradient(90deg, #fff, var(--text-muted));\n  -webkit-background-clip: text;\n  -webkit-text-fill-color: transparent;\n}\n\n.header p {\n  color: var(--text-muted);\n  margin: 5px 0 0 0;\n  font-size: 14px;\n}\n\n.kpi-grid {\n  display: grid;\n  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));\n  gap: 20px;\n}\n\n.kpi-card {\n  background: var(--card-bg);\n  backdrop-filter: blur(12px);\n  border: 1px solid rgba(255, 255, 255, 0.1);\n  padding: 24px;\n  border-radius: 16px;\n  transition: transform 0.2s, border-color 0.2s;\n}\n\n.kpi-card:hover {\n  transform: translateY(-4px);\n  border-color: rgba(56, 189, 248, 0.4);\n}\n\n.kpi-card.highlight {\n  border-left: 4px solid var(--accent);\n}\n\n.icon {\n  font-size: 24px;\n  margin-bottom: 12px;\n}\n\n.label {\n  font-size: 13px;\n  text-transform: uppercase;\n  letter-spacing: 1px;\n  color: var(--text-muted);\n  margin-bottom: 8px;\n}\n\n.value {\n  font-size: 28px;\n  font-weight: 800;\n  margin-bottom: 4px;\n}\n\n.value.success {\n  color: var(--success);\n}\n\n.value.warning {\n  color: var(--warning);\n}\n\n.value.info {\n  color: var(--info);\n}\n\n.sub-label {\n  font-size: 12px;\n  color: rgba(148, 163, 184, 0.6);\n}",
+    "html": "<div class=\"dashboard-container\">\n    <div class=\"header\">\n        <h1>Payroll Batch Summary</h1>\n        <p id=\"employee-count\">Processing 0 Employees</p>\n    </div>\n\n    <div class=\"kpi-grid\">\n        <!-- Main KPI: Net Payout -->\n        <div class=\"kpi-card highlight\">\n            <div class=\"icon\">💰</div>\n            <div class=\"label\">Total Net Payout</div>\n            <div class=\"value\" id=\"total-net\">₹0.00</div>\n            <div class=\"sub-label\">Total Cash Outflow</div>\n        </div>\n\n        <!-- KPI: Deductions -->\n        <div class=\"kpi-card\">\n            <div class=\"icon\">📉</div>\n            <div class=\"label\">Total Deductions</div>\n            <div class=\"value warning\" id=\"total-deductions\">₹0.00</div>\n            <div class=\"sub-label\">Advances, Loans & Leaves</div>\n        </div>\n\n        <!-- KPI: Liabilities Recovery -->\n        <div class=\"kpi-card\">\n            <div class=\"icon\">🛡️</div>\n            <div class=\"label\">Liability Recovery</div>\n            <div class=\"value success\" id=\"total-liabilities\">₹0.00</div>\n            <div class=\"sub-label\">Damages & Cash Recovery</div>\n        </div>\n\n        <!-- KPI: Pro-rated Savings -->\n        <div class=\"kpi-card\">\n            <div class=\"icon\">⚖️</div>\n            <div class=\"label\">Pro-rated Adjustments</div>\n            <div class=\"value info\" id=\"total-adjustments\">₹0.00</div>\n            <div class=\"sub-label\">Joiner/Resigner Savings</div>\n        </div>\n    </div>\n</div>\n",
+    "js": "appsmith.onReady(() => {\n  const data = appsmith.model.salaryBatch || [];\n  let totalNet = 0;\n  let totalDeductions = 0;\n  let totalLiabilities = 0;\n  let totalAdjustments = 0;\n  data.forEach(emp => {\n    totalNet += parseFloat(emp.net_salary || 0);\n    totalDeductions += parseFloat(emp.total_deductions || 0);\n    totalLiabilities += parseFloat(emp.misc_liabilities || 0);\n\n    // Savings = Base Salary - Adjusted Base Salary\n    const savings = parseFloat(emp.base_salary || 0) - parseFloat(emp.adjusted_base_salary || 0);\n    totalAdjustments += Math.max(0, savings);\n  });\n  const formatCurrency = val => \"₹\" + val.toLocaleString('en-IN', {\n    minimumFractionDigits: 2,\n    maximumFractionDigits: 2\n  });\n  document.getElementById('total-net').innerText = formatCurrency(totalNet);\n  document.getElementById('total-deductions').innerText = formatCurrency(totalDeductions);\n  document.getElementById('total-liabilities').innerText = formatCurrency(totalLiabilities);\n  document.getElementById('total-adjustments').innerText = formatCurrency(totalAdjustments);\n  document.getElementById('employee-count').innerText = `Summarizing ${data.length} Employees in this Batch`;\n});"
+  },
+  "theme": "{{appsmith.theme}}",
+  "topRow": 0,
+  "type": "CUSTOM_WIDGET",
+  "uncompiledSrcDoc": {
+    "css": ":root {\n    --bg-dark: #0f172a;\n    --card-bg: rgba(30, 41, 59, 0.7);\n    --accent: #38bdf8;\n    --text-main: #f1f5f9;\n    --text-muted: #94a3b8;\n    --success: #10b981;\n    --warning: #f59e0b;\n    --info: #6366f1;\n}\n\nbody {\n    background: var(--bg-dark);\n    font-family: 'Inter', sans-serif;\n    color: var(--text-main);\n    margin: 0;\n    padding: 15px;\n}\n\n.dashboard-container {\n    max-width: 1200px;\n    margin: 0 auto;\n}\n\n.header {\n    margin-bottom: 25px;\n}\n\n.header h1 {\n    font-size: 24px;\n    margin: 0;\n    font-weight: 700;\n    background: linear-gradient(90deg, #fff, var(--text-muted));\n    -webkit-background-clip: text;\n    -webkit-text-fill-color: transparent;\n}\n\n.header p {\n    color: var(--text-muted);\n    margin: 5px 0 0 0;\n    font-size: 14px;\n}\n\n.kpi-grid {\n    display: grid;\n    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));\n    gap: 20px;\n}\n\n.kpi-card {\n    background: var(--card-bg);\n    backdrop-filter: blur(12px);\n    border: 1px solid rgba(255, 255, 255, 0.1);\n    padding: 24px;\n    border-radius: 16px;\n    transition: transform 0.2s, border-color 0.2s;\n}\n\n.kpi-card:hover {\n    transform: translateY(-4px);\n    border-color: rgba(56, 189, 248, 0.4);\n}\n\n.kpi-card.highlight {\n    border-left: 4px solid var(--accent);\n}\n\n.icon {\n    font-size: 24px;\n    margin-bottom: 12px;\n}\n\n.label {\n    font-size: 13px;\n    text-transform: uppercase;\n    letter-spacing: 1px;\n    color: var(--text-muted);\n    margin-bottom: 8px;\n}\n\n.value {\n    font-size: 28px;\n    font-weight: 800;\n    margin-bottom: 4px;\n}\n\n.value.success { color: var(--success); }\n.value.warning { color: var(--warning); }\n.value.info { color: var(--info); }\n\n.sub-label {\n    font-size: 12px;\n    color: rgba(148, 163, 184, 0.6);\n}\n",
+    "html": "<div class=\"dashboard-container\">\n    <div class=\"header\">\n        <h1>Payroll Batch Summary</h1>\n        <p id=\"employee-count\">Processing 0 Employees</p>\n    </div>\n\n    <div class=\"kpi-grid\">\n        <!-- Main KPI: Net Payout -->\n        <div class=\"kpi-card highlight\">\n            <div class=\"icon\">💰</div>\n            <div class=\"label\">Total Net Payout</div>\n            <div class=\"value\" id=\"total-net\">₹0.00</div>\n            <div class=\"sub-label\">Total Cash Outflow</div>\n        </div>\n\n        <!-- KPI: Deductions -->\n        <div class=\"kpi-card\">\n            <div class=\"icon\">📉</div>\n            <div class=\"label\">Total Deductions</div>\n            <div class=\"value warning\" id=\"total-deductions\">₹0.00</div>\n            <div class=\"sub-label\">Advances, Loans & Leaves</div>\n        </div>\n\n        <!-- KPI: Liabilities Recovery -->\n        <div class=\"kpi-card\">\n            <div class=\"icon\">🛡️</div>\n            <div class=\"label\">Liability Recovery</div>\n            <div class=\"value success\" id=\"total-liabilities\">₹0.00</div>\n            <div class=\"sub-label\">Damages & Cash Recovery</div>\n        </div>\n\n        <!-- KPI: Pro-rated Savings -->\n        <div class=\"kpi-card\">\n            <div class=\"icon\">⚖️</div>\n            <div class=\"label\">Pro-rated Adjustments</div>\n            <div class=\"value info\" id=\"total-adjustments\">₹0.00</div>\n            <div class=\"sub-label\">Joiner/Resigner Savings</div>\n        </div>\n    </div>\n</div>\n",
+    "js": "appsmith.onReady(() => {\n    const data = appsmith.model.salaryBatch || [];\n    \n    let totalNet = 0;\n    let totalDeductions = 0;\n    let totalLiabilities = 0;\n    let totalAdjustments = 0;\n\n    data.forEach(emp => {\n        totalNet += parseFloat(emp.net_salary || 0);\n        totalDeductions += parseFloat(emp.total_deductions || 0);\n        totalLiabilities += parseFloat(emp.misc_liabilities || 0);\n        \n        // Savings = Base Salary - Adjusted Base Salary\n        const savings = parseFloat(emp.base_salary || 0) - parseFloat(emp.adjusted_base_salary || 0);\n        totalAdjustments += Math.max(0, savings);\n    });\n\n    const formatCurrency = (val) => \"₹\" + val.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 });\n\n    document.getElementById('total-net').innerText = formatCurrency(totalNet);\n    document.getElementById('total-deductions').innerText = formatCurrency(totalDeductions);\n    document.getElementById('total-liabilities').innerText = formatCurrency(totalLiabilities);\n    document.getElementById('total-adjustments').innerText = formatCurrency(totalAdjustments);\n    document.getElementById('employee-count').innerText = `Summarizing ${data.length} Employees in this Batch`;\n});\n"
+  },
+  "version": 1,
+  "widgetId": "58dxnnf7li",
+  "widgetName": "Custom1"
+}
