@@ -1,6 +1,6 @@
 {
-  "gitSyncId": "69a80abb79ac426a29eb8838_53acf0f9-a223-49b5-915e-0f0d3e90de5f",
-  "id": "HR_getEmployeeList",
+  "gitSyncId": "69a80abb79ac426a29eb8838_127c954f-ac1f-4606-bc5f-2a1b58cbb199",
+  "id": "HR_getInvoices",
   "pluginId": "restapi-plugin",
   "pluginType": "API",
   "unpublishedAction": {
@@ -16,18 +16,13 @@
       "httpMethod": "GET",
       "httpVersion": "HTTP11",
       "paginationType": "NONE",
-      "path": "/api/employees",
+      "path": "/api/sales/invoices/lookup",
       "pluginSpecifiedTemplates": [
         {
           "value": true
         }
       ],
-      "queryParameters": [
-        {
-          "key": "employment_status",
-          "value": "{{utils_status_filter.selectedValues}}"
-        }
-      ],
+      "queryParameters": [],
       "timeoutInMillisecond": 10000
     },
     "confirmBeforeExecute": false,
@@ -39,13 +34,10 @@
     },
     "dynamicBindingPathList": [
       {
-        "key": "path"
-      },
-      {
         "key": "queryParameters[0].value"
       }
     ],
-    "name": "getEmployeeList",
+    "name": "getInvoices",
     "pageId": "HR",
     "runBehaviour": "AUTOMATIC",
     "userSetOnLoad": false

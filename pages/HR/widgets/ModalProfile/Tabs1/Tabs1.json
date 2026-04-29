@@ -234,6 +234,51 @@
       "version": 1,
       "widgetId": "3xr3l73nvt",
       "widgetName": "Canvas15"
+    },
+    {
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "bottomRow": 610,
+      "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+      "canExtend": false,
+      "containerStyle": "none",
+      "detachFromLayout": true,
+      "dynamicBindingPathList": [
+        {
+          "key": "borderRadius"
+        },
+        {
+          "key": "boxShadow"
+        }
+      ],
+      "dynamicHeight": "AUTO_HEIGHT",
+      "dynamicTriggerPathList": [],
+      "flexLayers": [],
+      "isLoading": false,
+      "isVisible": true,
+      "key": "xw0ejgn0ym",
+      "leftColumn": 0,
+      "maxDynamicHeight": 9000,
+      "minDynamicHeight": 4,
+      "minHeight": 650,
+      "minWidth": 450,
+      "mobileBottomRow": 651,
+      "mobileLeftColumn": 0,
+      "mobileRightColumn": 444,
+      "mobileTopRow": 1,
+      "needsErrorInfo": false,
+      "parentColumnSpace": 1,
+      "parentId": "hjz39h5xjd",
+      "parentRowSpace": 1,
+      "renderMode": "CANVAS",
+      "responsiveBehavior": "fill",
+      "rightColumn": 444,
+      "tabId": "taboxx0b9rcqd",
+      "tabName": "Liabilities",
+      "topRow": 1,
+      "type": "CANVAS_WIDGET",
+      "version": 1,
+      "widgetId": "vg1kgoasam",
+      "widgetName": "Canvas17"
     }
   ],
   "defaultTab": "Tab 1",
@@ -278,6 +323,7 @@
     "tab1": {
       "id": "tab1",
       "index": 0,
+      "isDuplicateLabel": false,
       "isVisible": true,
       "label": "Home",
       "positioning": "vertical",
@@ -286,6 +332,7 @@
     "tab2": {
       "id": "tab2",
       "index": 1,
+      "isDuplicateLabel": false,
       "isVisible": true,
       "label": "Salary History",
       "positioning": "vertical",
@@ -294,20 +341,31 @@
     "tab7us4qkra3d": {
       "id": "tab7us4qkra3d",
       "index": 2,
+      "isDuplicateLabel": false,
       "isVisible": true,
       "label": "Pay Slip",
       "widgetId": "sflk1uc0ck"
     },
     "tabaaj9zml3ru": {
       "id": "tabaaj9zml3ru",
-      "index": 4,
+      "index": 5,
+      "isDuplicateLabel": false,
       "isVisible": true,
       "label": "Settings",
       "widgetId": "3xr3l73nvt"
     },
+    "taboxx0b9rcqd": {
+      "id": "taboxx0b9rcqd",
+      "index": 4,
+      "isDuplicateLabel": false,
+      "isVisible": true,
+      "label": "Liabilities",
+      "widgetId": "vg1kgoasam"
+    },
     "tabyvh2wi47g2": {
       "id": "tabyvh2wi47g2",
       "index": 3,
+      "isDuplicateLabel": false,
       "isVisible": true,
       "label": "Leave History",
       "widgetId": "oapicagtky"

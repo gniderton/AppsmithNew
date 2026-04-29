@@ -1,0 +1,8 @@
+{
+  "employee_id": {{tblEmployees.triggeredRow.id}},
+  "amount": {{JSONForm1.formData.amount}},
+  "type": "{{JSONForm1.formData.type}}",
+  "description": "{{JSONForm1.formData.description}}",
+  "invoice_id": {{JSONForm1.formData.invoice_id}},
+  "user_id": {{getMe.data.id}}
+}
