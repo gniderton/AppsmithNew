@@ -1,0 +1,54 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 35,
+  "dynamicBindingPathList": [
+    {
+      "key": "truncateButtonColor"
+    },
+    {
+      "key": "fontFamily"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "text"
+    }
+  ],
+  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicTriggerPathList": [],
+  "fontFamily": "{{appsmith.theme.fontFamily.appFont}}",
+  "fontSize": "0.875rem",
+  "fontStyle": "",
+  "isLoading": false,
+  "isVisible": true,
+  "key": "gbpqicb2i9",
+  "leftColumn": 0,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 5,
+  "mobileLeftColumn": 1,
+  "mobileRightColumn": 41,
+  "mobileTopRow": 1,
+  "needsErrorInfo": false,
+  "originalBottomRow": 52,
+  "originalTopRow": 5,
+  "overflow": "NONE",
+  "parentId": "8zz9spm1vl",
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 63,
+  "shouldScrollContents": true,
+  "shouldTruncate": false,
+  "text": "Chq No:{{tblCheques.triggeredRow.cheque_number}} dated {{tblCheques.triggeredRow.cheque_date}} of the Customer {{tblCheques.triggeredRow.party_name}} will be reverted.\n\nReverts Status: Changes the cheque status from CLEARED back to PENDING.\n\nClears Metadata: Removes the clearance_date and bank_account_id from the cheque record.\n\nAccounting Reversal: Automatically deletes the journal entry that was created during the clearance process, ensuring your ledger remains accurate.\n\nBank Statement Restore: It identifies the linked bank statement entry and restores the consumed amount. If the statement entry was \"Exhausted,\" it will move back to \"Available\" (or \"Partially Consumed\" if other cheques are still linked to it).",
+  "textAlign": "LEFT",
+  "textColor": "#231F20",
+  "topRow": 5,
+  "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "type": "TEXT_WIDGET",
+  "version": 1,
+  "widgetId": "4hirdti1ik",
+  "widgetName": "Text5"
+}

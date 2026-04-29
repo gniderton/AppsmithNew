@@ -1,0 +1,56 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 40,
+  "boxShadow": "none",
+  "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "buttonStyle": "PRIMARY_BUTTON",
+  "buttonVariant": "PRIMARY",
+  "disabledWhenInvalid": false,
+  "dynamicBindingPathList": [
+    {
+      "key": "buttonColor"
+    },
+    {
+      "key": "borderRadius"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "isDefaultClickDisabled": true,
+  "isDisabled": false,
+  "isLoading": false,
+  "isVisible": true,
+  "key": "wyup1tbx5m",
+  "leftColumn": 46,
+  "minWidth": 120,
+  "mobileBottomRow": 22,
+  "mobileLeftColumn": 47,
+  "mobileRightColumn": 63,
+  "mobileTopRow": 18,
+  "needsErrorInfo": false,
+  "onClick": "{{\n  apiUnclearCheque.run()\n    .then(() => {\n      showAlert('Cheque clearance reversed successfully!', 'success');\n      \n      // 1. Close the modal\n      closeModal('mdlChequeRev');\n      \n      // 2. Refresh your main table (replace tblCheques with your actual table name)\n      getCheques.run(); \n      \n      // 3. Optional: Refresh bank balances if you have a widget for that\n getUnconsumedDebits.run();      getUnconsumedCredits.run();\n    })\n    .catch((err) => {\n      showAlert('Failed to reverse: ' + err.message, 'error');\n    })\n}}\n",
+  "originalBottomRow": 57,
+  "originalTopRow": 53,
+  "parentId": "8zz9spm1vl",
+  "placement": "CENTER",
+  "recaptchaType": "V3",
+  "renderMode": "CANVAS",
+  "resetFormOnClick": false,
+  "responsiveBehavior": "hug",
+  "rightColumn": 62,
+  "text": "Confirm",
+  "topRow": 36,
+  "type": "BUTTON_WIDGET",
+  "version": 1,
+  "widgetId": "3j76s5f1cr",
+  "widgetName": "Button5"
+}
