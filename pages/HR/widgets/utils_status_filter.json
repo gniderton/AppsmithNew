@@ -3,7 +3,7 @@
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "bottomRow": 4,
-  "defaultSelectedValues": "",
+  "defaultSelectedValues": "[\"Active\"]",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
