@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "69a80abb79ac426a29eb8838_3781781e-8307-4dca-b748-25bd4d0d8bc4",
+  "id": "Reports_Payslip_JS",
+  "unpublishedCollection": {
+    "name": "Payslip_JS",
+    "pageId": "Reports",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}

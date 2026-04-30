@@ -1,6 +1,6 @@
 {
-  "gitSyncId": "69a80abb79ac426a29eb8838_11342ed6-714c-4a98-a9e8-60d31a8e3fb0",
-  "id": "HR_getMe",
+  "gitSyncId": "69a80abb79ac426a29eb8838_ce78debd-cf9a-4bac-a29c-9654c3eabb7c",
+  "id": "Reports_getSalary",
   "pluginId": "restapi-plugin",
   "pluginType": "API",
   "unpublishedAction": {
@@ -16,18 +16,13 @@
       "httpMethod": "GET",
       "httpVersion": "HTTP11",
       "paginationType": "NONE",
-      "path": "/api/employees/profile",
+      "path": "/api/employees/salary-payment-headers",
       "pluginSpecifiedTemplates": [
         {
           "value": true
         }
       ],
-      "queryParameters": [
-        {
-          "key": "email",
-          "value": "{{ appsmith.user.email }}"
-        }
-      ],
+      "queryParameters": [],
       "timeoutInMillisecond": 10000
     },
     "confirmBeforeExecute": false,
@@ -37,17 +32,10 @@
       "name": "RenderCloud",
       "pluginId": "restapi-plugin"
     },
-    "dynamicBindingPathList": [
-      {
-        "key": "path"
-      },
-      {
-        "key": "queryParameters[0].value"
-      }
-    ],
-    "name": "getMe",
-    "pageId": "HR",
+    "dynamicBindingPathList": [],
+    "name": "getSalary",
+    "pageId": "Reports",
     "runBehaviour": "AUTOMATIC",
-    "userSetOnLoad": true
+    "userSetOnLoad": false
   }
 }
