@@ -1,6 +1,6 @@
 {
-  "gitSyncId": "69a80abb79ac426a29eb8838_af9e0dd0-2b43-415a-8706-4d29da1b673b",
-  "id": "HR_getSalaryHistory",
+  "gitSyncId": "69a80abb79ac426a29eb8838_1b27a3fc-4c60-45a6-88d4-e2e5eb20cfbb",
+  "id": "HR_get_employee_profile_api",
   "pluginId": "restapi-plugin",
   "pluginType": "API",
   "unpublishedAction": {
@@ -16,7 +16,7 @@
       "httpMethod": "GET",
       "httpVersion": "HTTP11",
       "paginationType": "NONE",
-      "path": "/api/employees/{{tblEmployees.triggeredRow.id}}/salary-history",
+      "path": "/api/employees/profile/{{tblEmployees.triggeredRow.id}}",
       "pluginSpecifiedTemplates": [
         {
           "value": true
@@ -37,9 +37,9 @@
         "key": "path"
       }
     ],
-    "name": "getSalaryHistory",
+    "name": "get_employee_profile_api",
     "pageId": "HR",
-    "runBehaviour": "MANUAL",
+    "runBehaviour": "AUTOMATIC",
     "userSetOnLoad": false
   }
 }

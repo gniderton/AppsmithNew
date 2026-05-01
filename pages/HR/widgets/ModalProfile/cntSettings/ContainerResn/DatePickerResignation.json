@@ -2,63 +2,55 @@
   "accentColor": "{{appsmith.theme.colors.primaryColor}}",
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 8,
+  "bottomRow": 12,
   "boxShadow": "none",
   "closeOnSelection": true,
-  "dateFormat": "DD/MM/YYYY",
+  "dateFormat": "YYYY-MM-DD HH:mm",
   "datePickerType": "DATE_PICKER",
-  "defaultDate": "{{ moment().format(\"YYYY-MM-DDTHH:mm:ss\") }}",
+  "defaultDate": "2026-04-28T02:44:15.769Z",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
     },
     {
       "key": "borderRadius"
-    },
-    {
-      "key": "defaultDate"
     }
   ],
   "dynamicHeight": "FIXED",
-  "dynamicPropertyPathList": [
-    {
-      "key": "defaultDate"
-    }
-  ],
   "dynamicTriggerPathList": [],
   "firstDayOfWeek": 0,
   "isDisabled": false,
   "isLoading": false,
   "isRequired": false,
   "isVisible": true,
-  "key": "942jcxqoe1",
-  "label": "To",
+  "key": "7szsd4sipl",
+  "label": "Resignation Date",
   "labelAlignment": "left",
   "labelPosition": "Top",
   "labelTextSize": "0.875rem",
   "labelWidth": 5,
-  "leftColumn": 52,
+  "leftColumn": 49,
   "maxDate": "2121-12-31T18:29:00.000Z",
   "maxDynamicHeight": 9000,
   "minDate": "1920-12-31T18:30:00.000Z",
   "minDynamicHeight": 4,
   "minWidth": 450,
-  "mobileBottomRow": 7,
-  "mobileLeftColumn": 0,
-  "mobileRightColumn": 20,
-  "mobileTopRow": 0,
+  "mobileBottomRow": 11,
+  "mobileLeftColumn": 44,
+  "mobileRightColumn": 64,
+  "mobileTopRow": 4,
   "needsErrorInfo": false,
-  "parentColumnSpace": 16,
-  "parentId": "oapicagtky",
+  "parentColumnSpace": 1.3671875,
+  "parentId": "vm82py2kka",
   "parentRowSpace": 10,
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
-  "rightColumn": 63,
+  "rightColumn": 62,
   "shortcuts": false,
   "timePrecision": "minute",
-  "topRow": 1,
+  "topRow": 5,
   "type": "DATE_PICKER_WIDGET2",
   "version": 2,
-  "widgetId": "7o4vymut4w",
-  "widgetName": "dateEnd"
+  "widgetId": "vuskco2et7",
+  "widgetName": "DatePickerResignation"
 }

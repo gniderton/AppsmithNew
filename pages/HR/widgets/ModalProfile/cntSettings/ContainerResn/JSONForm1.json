@@ -5,7 +5,7 @@
   "borderColor": "#E0DEDE",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": "1",
-  "bottomRow": 54,
+  "bottomRow": 53,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "childStylesheet": {
     "ARRAY": {
@@ -175,17 +175,7 @@
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
-  "dynamicPropertyPathList": [
-    {
-      "key": "sourceData"
-    },
-    {
-      "key": "schema.__root_schema__.children.invoice_id.onFilterUpdate"
-    },
-    {
-      "key": "onSubmit"
-    }
-  ],
+  "dynamicPropertyPathList": [],
   "dynamicTriggerPathList": [
     {
       "key": "schema.__root_schema__.children.invoice_id.onFilterUpdate"
@@ -200,7 +190,7 @@
   "isLoading": false,
   "isVisible": true,
   "key": "m710uwr1l0",
-  "leftColumn": 40,
+  "leftColumn": 0,
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 4,
   "minWidth": 450,
@@ -210,10 +200,10 @@
   "mobileTopRow": 0,
   "needsErrorInfo": false,
   "onSubmit": "{{\n  apiCreateLiability.run({\n    employee_id: JSONForm1.formData.employee_id,\n    amount: JSONForm1.formData.amount,\n    type: JSONForm1.formData.type,\n    description: JSONForm1.formData.description,\n    invoice_id: JSONForm1.formData.invoice_id || null,\n    user_id: appsmith.user.name // or appsmith.user.id\n  })\n  .then(() => {\n    showAlert('Liability recorded successfully', 'success');\n    \n    // Refresh your lists\n    apiGetEmployeeLiabilities.run(); \n    apiGetSalaryPreview.run(); \n    \n    // Reset form if in a modal\n    resetWidget(\"JSONForm1\");\n    closeModal(\"mdlAddLiability\");\n  })\n  .catch((err) => {\n    showAlert('Error: ' + err.message, 'error');\n  })\n}}\n",
-  "originalBottomRow": 54,
-  "originalTopRow": 1,
+  "originalBottomRow": 53,
+  "originalTopRow": 0,
   "parentColumnSpace": 16,
-  "parentId": "vg1kgoasam",
+  "parentId": "vm82py2kka",
   "parentRowSpace": 10,
   "renderMode": "CANVAS",
   "resetButtonLabel": "Reset",
@@ -224,7 +214,7 @@
     "buttonVariant": "SECONDARY"
   },
   "responsiveBehavior": "fill",
-  "rightColumn": 64,
+  "rightColumn": 24,
   "schema": {
     "__root_schema__": {
       "accessor": "__root_schema__",
@@ -402,10 +392,10 @@
     "buttonVariant": "PRIMARY"
   },
   "title": "",
-  "topRow": 1,
+  "topRow": 0,
   "type": "JSON_FORM_WIDGET",
   "useSourceData": false,
   "version": 1,
-  "widgetId": "9qdhgyql5r",
+  "widgetId": "c6i5mn4jiz",
   "widgetName": "JSONForm1"
 }

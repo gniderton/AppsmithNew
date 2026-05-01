@@ -117,8 +117,8 @@
   "mobileTopRow": 0,
   "needsErrorInfo": false,
   "orientation": "vertical",
-  "parentColumnSpace": 16,
-  "parentId": "3xr3l73nvt",
+  "parentColumnSpace": 4.375,
+  "parentId": "v9oj38e2pi",
   "parentRowSpace": 10,
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
@@ -126,6 +126,6 @@
   "topRow": 0,
   "type": "BUTTON_GROUP_WIDGET",
   "version": 1,
-  "widgetId": "2bu961c6g6",
+  "widgetId": "nqrrghbf14",
   "widgetName": "ButtonGroup2"
 }

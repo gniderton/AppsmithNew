@@ -11,6 +11,17 @@
     },
     {
       "key": "borderRadius"
+    },
+    {
+      "key": "iconName"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "iconName"
+    },
+    {
+      "key": "onClick"
     }
   ],
   "dynamicTriggerPathList": [
@@ -18,27 +29,28 @@
       "key": "onClick"
     }
   ],
-  "iconName": "cross",
-  "iconSize": 24,
+  "iconName": "{{ appsmith.store.currentView === 'SETTINGS' ? 'dashboard' : 'settings' }}",
   "isDisabled": false,
   "isLoading": false,
   "isVisible": true,
-  "key": "sa9z8hdcb6",
-  "leftColumn": 61,
+  "key": "3365xsmrq5",
+  "leftColumn": 59,
   "minWidth": 50,
   "mobileBottomRow": 4,
-  "mobileLeftColumn": 58,
-  "mobileRightColumn": 64,
+  "mobileLeftColumn": 57,
+  "mobileRightColumn": 61,
   "mobileTopRow": 0,
   "needsErrorInfo": false,
-  "onClick": "{{closeModal(ModalProfile.name);}}",
+  "onClick": "{{\n  storeValue('currentView', appsmith.store.currentView === 'SETTINGS' ? 'DASHBOARD' : 'SETTINGS')\n}}",
+  "parentColumnSpace": 15.603124999999999,
   "parentId": "foswiu4dan",
+  "parentRowSpace": 10,
   "renderMode": "CANVAS",
   "responsiveBehavior": "hug",
-  "rightColumn": 63,
+  "rightColumn": 61,
   "topRow": 0,
   "type": "ICON_BUTTON_WIDGET",
   "version": 1,
-  "widgetId": "vopapladed",
-  "widgetName": "IconButton2"
+  "widgetId": "nsevusnsvz",
+  "widgetName": "IconButton10"
 }

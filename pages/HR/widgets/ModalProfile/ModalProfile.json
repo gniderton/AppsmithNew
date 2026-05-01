@@ -1,14 +1,15 @@
 {
   "animateLoading": true,
+  "backgroundColor": "#18181b",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 755,
+  "bottomRow": 144,
   "boxShadow": "none",
   "canEscapeKeyClose": true,
   "canOutsideClickClose": true,
   "children": [
     {
       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-      "bottomRow": 740,
+      "bottomRow": 1440,
       "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
       "canExtend": true,
       "detachFromLayout": true,
@@ -29,7 +30,7 @@
       "leftColumn": 0,
       "maxDynamicHeight": 9000,
       "minDynamicHeight": 4,
-      "minHeight": 270,
+      "minHeight": 1440,
       "minWidth": 450,
       "mobileBottomRow": 240,
       "mobileLeftColumn": 0,
@@ -57,14 +58,15 @@
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
-  "height": 740,
+  "dynamicTriggerPathList": [],
+  "height": 1440,
   "isCanvas": true,
   "isLoading": false,
   "key": "t2e9c4e5l1",
   "leftColumn": 14,
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 24,
-  "minHeight": 740,
+  "minHeight": 1440,
   "mobileBottomRow": 39,
   "mobileLeftColumn": 14,
   "mobileRightColumn": 38,
@@ -81,5 +83,5 @@
   "version": 2,
   "widgetId": "nqort0bc2z",
   "widgetName": "ModalProfile",
-  "width": 1056
+  "width": 1242.6
 }
