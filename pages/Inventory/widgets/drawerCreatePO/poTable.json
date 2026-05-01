@@ -36,8 +36,8 @@
     "Item_Name",
     "MRP",
     "Price",
-    "Qty",
     "Stock",
+    "Qty",
     "Gross__",
     "Sch",
     "Disc__",
@@ -49,7 +49,7 @@
     "EAN_Code",
     "_product_id"
   ],
-  "columnUpdatedAt": 1777647022480,
+  "columnUpdatedAt": 1777647056016,
   "columnWidthMap": {
     "Disc__": 107,
     "Disc___": 121,
