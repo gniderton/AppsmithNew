@@ -33,12 +33,11 @@
   },
   "columnOrder": [
     "S_No",
-    "EAN_Code",
     "Item_Name",
     "MRP",
     "Price",
-    "Stock",
     "Qty",
+    "Stock",
     "Gross__",
     "Sch",
     "Disc__",
@@ -47,9 +46,10 @@
     "GST__",
     "GST__1",
     "Net__",
+    "EAN_Code",
     "_product_id"
   ],
-  "columnUpdatedAt": 1777646985045,
+  "columnUpdatedAt": 1777647022480,
   "columnWidthMap": {
     "Disc__": 107,
     "Disc___": 121,
