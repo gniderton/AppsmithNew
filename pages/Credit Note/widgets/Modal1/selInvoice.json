@@ -2,7 +2,7 @@
   "accentColor": "{{appsmith.theme.colors.primaryColor}}",
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 16,
+  "bottomRow": 17,
   "boxShadow": "none",
   "defaultOptionValue": "GREEN",
   "dynamicBindingPathList": [
@@ -65,7 +65,7 @@
   "serverSideFiltering": false,
   "shouldScrollContents": true,
   "sourceData": "{{getCustomersInvoice.data.map( (obj) =>{ return  {'label': obj.invoice_number, 'value': obj.id } })}}",
-  "topRow": 12,
+  "topRow": 13,
   "type": "SELECT_WIDGET",
   "version": 1,
   "widgetId": "qijhnqkg3b",
