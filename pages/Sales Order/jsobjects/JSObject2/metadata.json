@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "69a80abb79ac426a29eb8838_63f7d9a0-31b3-4cc9-a0c4-cdf33feac688",
+  "id": "Sales Order_JSObject2",
+  "unpublishedCollection": {
+    "name": "JSObject2",
+    "pageId": "Sales Order",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}
