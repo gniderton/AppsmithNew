@@ -44,7 +44,7 @@
   "mobileTopRow": 3,
   "needsErrorInfo": false,
   "options": "{{\n  (() => {\n    const uniqueDses = [...new Set(getSalesOrder.data.map(item => item.dse_name))];\n    const options = uniqueDses.map(name => ({ label: name, value: name }));\n    \n    // Add the \"All\" option at the beginning\n    return [{ label: \"All\", value: \"All\" }, ...options];\n  })()\n}}",
-  "originalBottomRow": 10,
+  "originalBottomRow": 13,
   "originalTopRow": 0,
   "parentColumnSpace": 19.9375,
   "parentId": "0",

@@ -3,7 +3,7 @@ export default {
 
     getProductBreakup: () => {
         const selectedProduct = tblAllocation.triggeredRow; 
-        const allOrders = getSalesOrder.data || [];
+        const allOrders = tblSalesOrders.selectedRows || [];
         
         if (!selectedProduct || !selectedProduct.item_id) {
             showAlert("Please select a product row first.", "warning");
