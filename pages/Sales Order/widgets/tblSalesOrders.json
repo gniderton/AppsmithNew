@@ -64,7 +64,7 @@
   ],
   "columnUpdatedAt": 1775435531727,
   "columnWidthMap": {
-    "customer_name": 251,
+    "customer_name": 412,
     "dse_name": 234
   },
   "customIsLoading": false,
@@ -214,8 +214,8 @@
   "mobileTopRow": 4,
   "multiRowSelection": true,
   "needsErrorInfo": false,
-  "originalBottomRow": 94,
-  "originalTopRow": 13,
+  "originalBottomRow": 97,
+  "originalTopRow": 16,
   "parentColumnSpace": 19.9375,
   "parentId": "0",
   "parentRowSpace": 10,
