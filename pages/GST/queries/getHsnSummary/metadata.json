@@ -54,7 +54,7 @@
     ],
     "name": "getHsnSummary",
     "pageId": "GST",
-    "runBehaviour": "MANUAL",
-    "userSetOnLoad": false
+    "runBehaviour": "AUTOMATIC",
+    "userSetOnLoad": true
   }
 }

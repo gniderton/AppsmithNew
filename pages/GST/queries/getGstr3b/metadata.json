@@ -29,7 +29,7 @@
         },
         {
           "key": "end_date",
-          "value": "{{moment(datePicker.selectedDate).endOf('month').format('YYYY-MM-DD')}}\n\n"
+          "value": "{{moment(datePicker.selectedDate).endOf('month').format('YYYY-MM-DD')}}"
         }
       ],
       "timeoutInMillisecond": 10000
