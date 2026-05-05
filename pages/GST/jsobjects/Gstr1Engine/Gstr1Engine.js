@@ -1,21 +1,26 @@
 export default {
-  downloadPortalJson: () => {
+  downloadPortalJson: async () => {
     const myGstin = "32AALCG2360H1ZT";
     const period = moment(datePicker.selectedDate).format('MMYYYY');
+    
+    // 1. Fetch latest data from both endpoints
+    await getGstr1.run();
+    await getHsnSummary.run();
+    
     const sales = getGstr1.data || [];
+    const hsnData = getHsnSummary.data || [];
 
-    // 1. Group B2B
+    // 2. Group B2B (Registered Sales)
     const b2bMap = {};
     sales.filter(r => r.party_gstin && r.type === 'Sales').forEach(r => {
         if (!b2bMap[r.party_gstin]) b2bMap[r.party_gstin] = { ctin: r.party_gstin, inv: [] };
         
-        // Find if this invoice already exists for this customer
         let inv = b2bMap[r.party_gstin].inv.find(i => i.inum === r.document_no);
         if (!inv) {
             inv = {
                 inum: r.document_no,
                 idt: moment(r.document_date).format('DD-MM-YYYY'),
-                val: Number(r.total_value), // Note: total_value here is per rate slice, grouping will happen at portal
+                val: Number(r.total_value), 
                 pos: "32", rchrg: "N", inv_typ: "R", itms: []
             };
             b2bMap[r.party_gstin].inv.push(inv);
@@ -32,7 +37,7 @@ export default {
         });
     });
 
-    // 2. Group B2CS (Summarized by Rate)
+    // 3. Group B2CS (Unregistered Sales)
     const b2csMap = {};
     sales.filter(r => !r.party_gstin && r.type === 'Sales').forEach(r => {
         const rate = Number(r.tax_rate);
@@ -43,7 +48,7 @@ export default {
         b2csMap[key].samt += Number(r.total_tax) / 2;
     });
 
-    // 3. CDNR (Returns - Broken down by Rate)
+    // 4. Group CDNR (Returns / Credit Notes)
     const cdnrMap = {};
     sales.filter(r => r.party_gstin && r.type === 'Credit Note').forEach(r => {
         if (!cdnrMap[r.party_gstin]) cdnrMap[r.party_gstin] = { ctin: r.party_gstin, nt: [] };
@@ -68,13 +73,35 @@ export default {
         });
     });
 
+    // 5. Format HSN Summary
+    const formattedHsn = hsnData.map((h, index) => ({
+        num: index + 1,
+        hsn_sc: h.hsn_sc,
+        desc: h.desc || "GOODS",
+        uqc: h.uqc || "OTH",
+        qty: Number(h.qty),
+        val: Number(h.val),
+        txval: Number(h.txval),
+        camt: Number(h.camt),
+        samt: Number(h.samt),
+        iamt: 0,
+        csamt: 0,
+        rt: Number(h.rt)
+    }));
+
+    // 6. Build Final Payload
     const payload = {
-        gstin: myGstin, fp: period, gt: 0, cur_gt: 0,
+        gstin: myGstin, 
+        fp: period, 
+        gt: 0, cur_gt: 0,
         b2b: Object.values(b2bMap),
         b2cs: Object.values(b2csMap),
-        cdnr: Object.values(cdnrMap)
+        cdnr: Object.values(cdnrMap),
+        hsn: { data: formattedHsn } 
     };
 
-    download(JSON.stringify(payload), `GSTR1_FINAL_${period}.json`, "application/json");
+    // 7. Download and Notify
+    download(JSON.stringify(payload), `GSTR1_PORTAL_READY_${period}.json`, "application/json");
+    showAlert("GSTR-1 JSON with HSN Summary is ready for upload!", "success");
   }
 }
