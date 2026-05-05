@@ -1,7 +1,9 @@
 {
-  "bounce_date": {{ dateBounce.value }},
-  "bounce_reason": {{ selBounceReason.selectedOptionValue}},
+  "bounce_date": {{ dateBounce.selectedDate }},
+  "bounce_reason": {{ selBounceReason.selectedOptionValue }},
   "bank_charges": {{ numBankCharges.value || 0 }},
   "customer_penalty": {{ numCustomerPenalty.value || 0 }},
-  "user_id": {{ getMe.data.id }}
+  "user_id": {{ getMe.data.id }},
+  "deposit_entry_id": {{ selDepositEntry.selectedOptionValue || null }},
+  "bounce_entry_id": {{ selBounceEntry.selectedOptionValue || null }}
 }

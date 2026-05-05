@@ -11,7 +11,7 @@
           "value": "application/json"
         }
       ],
-      "body": "{\n  \"bounce_date\": {{ dateBounce.value }},\n  \"bounce_reason\": {{ selBounceReason.selectedOptionValue}},\n  \"bank_charges\": {{ numBankCharges.value || 0 }},\n  \"customer_penalty\": {{ numCustomerPenalty.value || 0 }},\n  \"user_id\": {{ getMe.data.id }}\n}\n",
+      "body": "{\n  \"bounce_date\": {{ dateBounce.selectedDate }},\n  \"bounce_reason\": {{ selBounceReason.selectedOptionValue }},\n  \"bank_charges\": {{ numBankCharges.value || 0 }},\n  \"customer_penalty\": {{ numCustomerPenalty.value || 0 }},\n  \"user_id\": {{ getMe.data.id }},\n  \"deposit_entry_id\": {{ selDepositEntry.selectedOptionValue || null }},\n  \"bounce_entry_id\": {{ selBounceEntry.selectedOptionValue || null }}\n}\n",
       "bodyFormData": [],
       "encodeParamsToggle": true,
       "formData": {

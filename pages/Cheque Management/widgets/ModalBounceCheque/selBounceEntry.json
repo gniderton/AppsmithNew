@@ -1,11 +1,10 @@
 {
   "accentColor": "{{appsmith.theme.colors.primaryColor}}",
   "animateLoading": true,
-  "autoFocus": false,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 35,
+  "bottomRow": 26,
   "boxShadow": "none",
-  "defaultText": "",
+  "defaultOptionValue": "GREEN",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
@@ -14,47 +13,53 @@
       "key": "borderRadius"
     },
     {
-      "key": "label"
+      "key": "sourceData"
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicPropertyPathList": [
+    {
+      "key": "sourceData"
+    }
+  ],
   "dynamicTriggerPathList": [],
-  "iconAlign": "left",
-  "inputType": "TEXT",
   "isDisabled": false,
+  "isFilterable": true,
   "isLoading": false,
   "isRequired": false,
   "isVisible": true,
-  "key": "vgo0lfcypq",
-  "label": "{{tblCheques.triggeredRow.party_type}} Bounce Charges",
+  "key": "6kq1ryqd6s",
   "labelAlignment": "left",
   "labelPosition": "Left",
-  "labelStyle": "",
+  "labelText": "Bounce Entry",
   "labelTextSize": "0.875rem",
   "labelWidth": "14",
   "leftColumn": 7,
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 4,
   "minWidth": 450,
-  "mobileBottomRow": 35,
+  "mobileBottomRow": 21,
   "mobileLeftColumn": 0,
   "mobileRightColumn": 20,
-  "mobileTopRow": 28,
+  "mobileTopRow": 14,
   "needsErrorInfo": false,
-  "originalBottomRow": 35,
-  "originalTopRow": 30,
+  "optionLabel": "label",
+  "optionValue": "value",
+  "originalBottomRow": 17,
+  "originalTopRow": 12,
   "parentColumnSpace": 6.9375,
   "parentId": "55whh2vbxa",
   "parentRowSpace": 10,
+  "placeholderText": "Select option",
   "renderMode": "CANVAS",
-  "resetOnSubmit": true,
   "responsiveBehavior": "fill",
   "rightColumn": 55,
+  "serverSideFiltering": false,
   "shouldScrollContents": true,
-  "showStepArrows": false,
-  "topRow": 30,
-  "type": "INPUT_WIDGET_V2",
-  "version": 2,
-  "widgetId": "ysp4m5jv6r",
-  "widgetName": "numCustomerPenalty"
+  "sourceData": "{{ \n  getUnconsumedDebits.data.map(debit => ({ \n    label: `${debit.debit_amount} - ₹${debit.consumed_amount}`, \n    value: debit.id \n  })) \n}}",
+  "topRow": 22,
+  "type": "SELECT_WIDGET",
+  "version": 1,
+  "widgetId": "2hjdy7pun3",
+  "widgetName": "selBounceEntry"
 }

@@ -108,6 +108,10 @@
     {
       "id": "Credit Note",
       "isDefault": false
+    },
+    {
+      "id": "GST",
+      "isDefault": false
     }
   ],
   "unpublishedAppLayout": {

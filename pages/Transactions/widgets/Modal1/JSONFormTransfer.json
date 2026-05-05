@@ -279,7 +279,7 @@
   "mobileTopRow": 6,
   "needsErrorInfo": false,
   "onSubmit": "{{DenomUtils.handleTransfer();}}",
-  "originalBottomRow": 100,
+  "originalBottomRow": 108,
   "originalTopRow": 6,
   "parentColumnSpace": 6.9375,
   "parentId": "wi68ey436w",
