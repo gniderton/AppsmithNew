@@ -2,7 +2,7 @@
   "accentColor": "{{appsmith.theme.colors.primaryColor}}",
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 16,
+  "bottomRow": 12,
   "boxShadow": "none",
   "defaultOptionValue": "GREEN",
   "dynamicBindingPathList": [
@@ -62,7 +62,7 @@
   "onOptionChange": "{{PopulateProductsTableByVendors.populateForVendor(vendorDropdown.selectedOptionValue);}}",
   "optionLabel": "label",
   "optionValue": "value",
-  "originalBottomRow": 16,
+  "originalBottomRow": 17,
   "originalTopRow": 12,
   "parentColumnSpace": 14.75,
   "parentId": "yh62fj0hnq",
