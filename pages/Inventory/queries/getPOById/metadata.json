@@ -16,7 +16,7 @@
       "httpMethod": "GET",
       "httpVersion": "HTTP11",
       "paginationType": "NONE",
-      "path": "/api/purchase-orders/{{ Custom1.model.triggeredRow.id }}",
+      "path": "/api/purchase-orders/{{ poListTable.triggeredRow.id }}",
       "pluginSpecifiedTemplates": [
         {
           "value": true

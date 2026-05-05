@@ -51,7 +51,7 @@
   "isCanvas": false,
   "isLoading": false,
   "isSearchWildcard": true,
-  "isVisible": true,
+  "isVisible": false,
   "key": "p2q7wu6jso",
   "leftColumn": 0,
   "maxDynamicHeight": 9000,
