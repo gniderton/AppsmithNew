@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "69a80abb79ac426a29eb8838_e8c814bc-1e2c-4f7a-828c-bc83204aa410",
+  "id": "GST_Gstr1Engine",
+  "unpublishedCollection": {
+    "name": "Gstr1Engine",
+    "pageId": "GST",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}
