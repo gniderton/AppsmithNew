@@ -4,7 +4,7 @@
   "borderColor": "#E0DEDE",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": "1",
-  "bottomRow": 68,
+  "bottomRow": 77,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "cachedTableData": {},
   "canFreezeColumn": true,
@@ -46,9 +46,10 @@
     "GST__1",
     "Net__",
     "EAN_Code",
-    "_product_id"
+    "_product_id",
+    "Stock"
   ],
-  "columnUpdatedAt": 1777950541146,
+  "columnUpdatedAt": 1778151885480,
   "columnWidthMap": {
     "Disc__": 107,
     "Disc___": 121,
@@ -140,6 +141,9 @@
     },
     {
       "key": "primaryColumns.Disc__.isCellEditable"
+    },
+    {
+      "key": "primaryColumns.Stock.computedValue"
     }
   ],
   "dynamicPropertyPathList": [
@@ -188,8 +192,8 @@
   "mobileRightColumn": 13,
   "mobileTopRow": 20,
   "needsErrorInfo": false,
-  "originalBottomRow": 73,
-  "originalTopRow": 29,
+  "originalBottomRow": 77,
+  "originalTopRow": 33,
   "parentColumnSpace": 14.75,
   "parentId": "yh62fj0hnq",
   "parentRowSpace": 10,
@@ -640,6 +644,40 @@
       "verticalAlignment": "CENTER",
       "width": 150
     },
+    "Stock": {
+      "alias": "Stock",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "cellBackground": "",
+      "columnType": "number",
+      "computedValue": "{{(() => { const tableData = poTable.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"Stock\"])) : Stock })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "fontStyle": "",
+      "horizontalAlignment": "LEFT",
+      "id": "Stock",
+      "index": 12,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": true,
+      "label": "Stock",
+      "notation": "standard",
+      "originalId": "Stock",
+      "sticky": "",
+      "textColor": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
     "Taxable__": {
       "alias": "Taxable $",
       "allowCellWrapping": false,
@@ -716,7 +754,7 @@
   "showInlineEditingOptionDropdown": true,
   "tableData": "{{appsmith.store.poLines}}",
   "textSize": "0.875rem",
-  "topRow": 24,
+  "topRow": 33,
   "totalRecordsCount": 0,
   "type": "TABLE_WIDGET_V2",
   "version": 2,

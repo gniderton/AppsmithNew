@@ -3,7 +3,7 @@
   "borderColor": "#E0DEDE",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": "1",
-  "bottomRow": 93,
+  "bottomRow": 63,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "defaultModel": "{{ {\"sales\": getGstr1.data || [], \"purchases\": getGstr3b.data || []} }}\n",
   "dynamicBindingPathList": [

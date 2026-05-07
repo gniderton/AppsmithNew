@@ -1,0 +1,55 @@
+{
+  "allowedFileTypes": [],
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 25,
+  "boxShadow": "none",
+  "buttonColor": "",
+  "dynamicBindingPathList": [
+    {
+      "key": "borderRadius"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "onFilesSelected"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onFilesSelected"
+    }
+  ],
+  "dynamicTyping": true,
+  "fileDataType": "Array",
+  "files": [],
+  "isDefaultClickDisabled": true,
+  "isDisabled": false,
+  "isLoading": false,
+  "isRequired": false,
+  "isVisible": true,
+  "key": "rj15v3888c",
+  "label": "Upload Excel/CSV",
+  "leftColumn": 43,
+  "maxFileSize": 5,
+  "maxNumFiles": 1,
+  "minWidth": 120,
+  "mobileBottomRow": 25,
+  "mobileLeftColumn": 43,
+  "mobileRightColumn": 59,
+  "mobileTopRow": 21,
+  "needsErrorInfo": false,
+  "onFilesSelected": "{{ PO_Helper.handleCSVUpload(FilePicker1.files[0].data) }}",
+  "parentColumnSpace": 15.853124999999999,
+  "parentId": "yh62fj0hnq",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "hug",
+  "rightColumn": 59,
+  "selectedFiles": [],
+  "topRow": 21,
+  "type": "FILE_PICKER_WIDGET_V2",
+  "version": 1,
+  "widgetId": "vzx9khario",
+  "widgetName": "FilePicker1"
+}

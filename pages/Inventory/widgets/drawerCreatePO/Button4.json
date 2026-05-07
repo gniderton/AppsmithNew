@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 5,
+  "bottomRow": 9,
   "bottomRowBeforeCollapse": 9,
   "boxShadow": "none",
   "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
@@ -47,7 +47,7 @@
   "mobileTopRow": 10,
   "needsErrorInfo": false,
   "onClick": "{{POManager.savePO();\ngetPOs.run().then(() => {\n  getPOs.run();\n});}}",
-  "originalBottomRow": 9,
+  "originalBottomRow": 5,
   "originalTopRow": 5,
   "parentColumnSpace": 10.228124999999999,
   "parentId": "yh62fj0hnq",
