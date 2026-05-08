@@ -76,7 +76,7 @@
       "label": "Balance Sheet",
       "menuItems": {},
       "onClick": "{{forensicAPI.run().then(() => {\n  showModal(Modal1.name);\n});}}",
-      "placement": "CENTER",
+      "placement": "START",
       "variant": "filled",
       "widgetId": "lzam2djlsm"
     }
