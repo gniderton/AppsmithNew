@@ -18,14 +18,21 @@
     },
     {
       "key": "groupButtons.groupButton2.buttonColor"
+    },
+    {
+      "key": "groupButtons.groupButtonk4xtja7e35.buttonColor"
     }
   ],
+  "dynamicPropertyPathList": [],
   "dynamicTriggerPathList": [
     {
       "key": "groupButtons.groupButton1.onClick"
     },
     {
       "key": "groupButtons.groupButton2.onClick"
+    },
+    {
+      "key": "groupButtons.groupButtonk4xtja7e35.onClick"
     }
   ],
   "groupButtons": {
@@ -56,6 +63,22 @@
       "onClick": "{{showModal(mdlPnl.name);}}",
       "placement": "START",
       "widgetId": ""
+    },
+    "groupButtonk4xtja7e35": {
+      "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+      "buttonType": "SIMPLE",
+      "id": "groupButtonk4xtja7e35",
+      "index": 2,
+      "isDisabled": false,
+      "isSeparator": false,
+      "isVisible": true,
+      "itemType": "BUTTON",
+      "label": "Balance Sheet",
+      "menuItems": {},
+      "onClick": "{{forensicAPI.run().then(() => {\n  showModal(Modal1.name);\n});}}",
+      "placement": "CENTER",
+      "variant": "filled",
+      "widgetId": "lzam2djlsm"
     }
   },
   "isCanvas": false,
