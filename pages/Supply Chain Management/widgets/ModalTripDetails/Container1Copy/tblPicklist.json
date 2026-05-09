@@ -4,8 +4,7 @@
   "borderColor": "#E0DEDE",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": "1",
-  "bottomRow": 188,
-  "bottomRowBeforeCollapse": 78,
+  "bottomRow": 51,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "cachedTableData": {},
   "canFreezeColumn": true,
@@ -33,21 +32,28 @@
     }
   },
   "columnOrder": [
-    "id",
-    "invoice_number",
-    "customer_name",
-    "grand_total",
-    "current_status"
+    "product_id",
+    "product_code",
+    "batches",
+    "product_name",
+    "mrp",
+    "total_qty",
+    "customColumn1"
   ],
-  "columnUpdatedAt": 1774794143567,
+  "columnUpdatedAt": 1778291686645,
   "columnWidthMap": {
-    "customer_name": 265
+    "batches": 208,
+    "mrp": 106,
+    "product_code": 120,
+    "product_name": 225
   },
   "customIsLoading": false,
   "customIsLoadingValue": "",
   "defaultPageSize": 0,
-  "defaultSelectedRowIndex": "{{ getDeliveryList.data.map(i => i.invoice_id) }}",
-  "defaultSelectedRowIndices": "{{ getDeliveryList.data.map(i => i.invoice_id) }}",
+  "defaultSelectedRowIndex": 0,
+  "defaultSelectedRowIndices": [
+    0
+  ],
   "delimiter": ",",
   "dynamicBindingPathList": [
     {
@@ -60,42 +66,46 @@
       "key": "boxShadow"
     },
     {
-      "key": "isVisible"
-    },
-    {
       "key": "tableData"
     },
     {
-      "key": "primaryColumns.id.computedValue"
+      "key": "primaryColumns.product_id.computedValue"
     },
     {
-      "key": "primaryColumns.invoice_number.computedValue"
+      "key": "primaryColumns.product_name.computedValue"
     },
     {
-      "key": "primaryColumns.customer_name.computedValue"
+      "key": "primaryColumns.product_code.computedValue"
     },
     {
-      "key": "primaryColumns.grand_total.computedValue"
+      "key": "primaryColumns.mrp.computedValue"
     },
     {
-      "key": "primaryColumns.current_status.computedValue"
+      "key": "primaryColumns.total_qty.computedValue"
     },
     {
-      "key": "defaultSelectedRowIndex"
+      "key": "primaryColumns.batches.computedValue"
     },
     {
-      "key": "defaultSelectedRowIndices"
+      "key": "primaryColumns.customColumn1.buttonColor"
+    },
+    {
+      "key": "primaryColumns.customColumn1.borderRadius"
+    },
+    {
+      "key": "primaryColumns.customColumn1.boxShadow"
     }
   ],
   "dynamicPropertyPathList": [
     {
-      "key": "isVisible"
-    },
-    {
       "key": "tableData"
     }
   ],
-  "dynamicTriggerPathList": [],
+  "dynamicTriggerPathList": [
+    {
+      "key": "primaryColumns.customColumn1.onClick"
+    }
+  ],
   "enableClientSideSearch": true,
   "endOfData": false,
   "flexVerticalAlignment": "start",
@@ -103,7 +113,7 @@
   "inlineEditingSaveOption": "ROW_LEVEL",
   "isLoading": false,
   "isSortable": true,
-  "isVisible": "{{ appsmith.store.isTripEditActive }}",
+  "isVisible": true,
   "isVisibleDownload": true,
   "isVisibleFilters": false,
   "isVisiblePagination": true,
@@ -112,32 +122,28 @@
   "label": "Data",
   "leftColumn": 0,
   "minWidth": 450,
-  "mobileBottomRow": 53,
+  "mobileBottomRow": 28,
   "mobileLeftColumn": 0,
-  "mobileRightColumn": 34,
-  "mobileTopRow": 25,
-  "multiRowSelection": true,
+  "mobileRightColumn": 21,
+  "mobileTopRow": 0,
   "needsErrorInfo": false,
-  "originalBottomRow": 188,
-  "originalTopRow": 138,
-  "parentColumnSpace": 16.321875,
-  "parentId": "8lb8is7sf9",
+  "parentColumnSpace": 16,
+  "parentId": "sh2g8dppkk",
   "parentRowSpace": 10,
-  "primaryColumnId": "id",
   "primaryColumns": {
-    "current_status": {
-      "alias": "current_status",
+    "batches": {
+      "alias": "batches",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
       "columnType": "text",
-      "computedValue": "{{(() => { const tableData = tblEditInvoices.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"current_status\"])) : current_status })()}}",
+      "computedValue": "{{(() => { const tableData = tblPicklist.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"batches\"])) : batches })()}}",
       "currencyCode": "USD",
       "decimals": 0,
       "enableFilter": true,
       "enableSort": true,
       "horizontalAlignment": "LEFT",
-      "id": "current_status",
-      "index": 4,
+      "id": "batches",
+      "index": 5,
       "isCellEditable": false,
       "isCellVisible": true,
       "isDerived": false,
@@ -146,9 +152,9 @@
       "isEditable": false,
       "isSaveVisible": true,
       "isVisible": true,
-      "label": "current_status",
+      "label": "batches",
       "notation": "standard",
-      "originalId": "current_status",
+      "originalId": "batches",
       "sticky": "",
       "textSize": "0.875rem",
       "thousandSeparator": true,
@@ -156,30 +162,39 @@
       "verticalAlignment": "CENTER",
       "width": 150
     },
-    "customer_name": {
-      "alias": "customer_name",
+    "customColumn1": {
+      "alias": "View",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
-      "columnType": "text",
-      "computedValue": "{{(() => { const tableData = tblEditInvoices.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"customer_name\"])) : customer_name })()}}",
+      "borderRadius": "{{tblPicklist.processedTableData.map((currentRow, currentIndex) => ( (appsmith.theme.borderRadius.appBorderRadius)))}}",
+      "boxShadow": "{{tblPicklist.processedTableData.map((currentRow, currentIndex) => ( \"none\"))}}",
+      "buttonColor": "{{tblPicklist.processedTableData.map((currentRow, currentIndex) => ( (appsmith.theme.colors.primaryColor)))}}",
+      "buttonStyle": "rgb(3, 179, 101)",
+      "buttonVariant": "TERTIARY",
+      "columnType": "iconButton",
+      "computedValue": "",
       "currencyCode": "USD",
+      "customAlias": "",
       "decimals": 0,
       "enableFilter": true,
       "enableSort": true,
       "horizontalAlignment": "LEFT",
-      "id": "customer_name",
-      "index": 2,
+      "iconName": "eye-open",
+      "id": "customColumn1",
+      "index": 6,
       "isCellEditable": false,
       "isCellVisible": true,
-      "isDerived": false,
+      "isDerived": true,
       "isDisabled": false,
       "isDiscardVisible": true,
       "isEditable": false,
       "isSaveVisible": true,
       "isVisible": true,
-      "label": "customer_name",
+      "label": "View",
+      "labelColor": "#FFFFFF",
       "notation": "standard",
-      "originalId": "customer_name",
+      "onClick": "{{pickListBD.run()}}",
+      "originalId": "customColumn1",
       "sticky": "",
       "textSize": "0.875rem",
       "thousandSeparator": true,
@@ -187,18 +202,18 @@
       "verticalAlignment": "CENTER",
       "width": 150
     },
-    "grand_total": {
-      "alias": "grand_total",
+    "mrp": {
+      "alias": "mrp",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
       "columnType": "text",
-      "computedValue": "{{(() => { const tableData = tblEditInvoices.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"grand_total\"])) : grand_total })()}}",
+      "computedValue": "{{(() => { const tableData = tblPicklist.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"mrp\"])) : mrp })()}}",
       "currencyCode": "USD",
       "decimals": 0,
       "enableFilter": true,
       "enableSort": true,
       "horizontalAlignment": "LEFT",
-      "id": "grand_total",
+      "id": "mrp",
       "index": 3,
       "isCellEditable": false,
       "isCellVisible": true,
@@ -208,9 +223,9 @@
       "isEditable": false,
       "isSaveVisible": true,
       "isVisible": true,
-      "label": "grand_total",
+      "label": "mrp",
       "notation": "standard",
-      "originalId": "grand_total",
+      "originalId": "mrp",
       "sticky": "",
       "textSize": "0.875rem",
       "thousandSeparator": true,
@@ -218,18 +233,49 @@
       "verticalAlignment": "CENTER",
       "width": 150
     },
-    "id": {
-      "alias": "id",
+    "product_code": {
+      "alias": "product_code",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
       "columnType": "text",
-      "computedValue": "{{(() => { const tableData = tblEditInvoices.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"id\"])) : id })()}}",
+      "computedValue": "{{(() => { const tableData = tblPicklist.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"product_code\"])) : product_code })()}}",
       "currencyCode": "USD",
       "decimals": 0,
       "enableFilter": true,
       "enableSort": true,
       "horizontalAlignment": "LEFT",
-      "id": "id",
+      "id": "product_code",
+      "index": 2,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": false,
+      "label": "product_code",
+      "notation": "standard",
+      "originalId": "product_code",
+      "sticky": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
+    "product_id": {
+      "alias": "product_id",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "columnType": "text",
+      "computedValue": "{{(() => { const tableData = tblPicklist.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"product_id\"])) : product_id })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "horizontalAlignment": "LEFT",
+      "id": "product_id",
       "index": 0,
       "isCellEditable": false,
       "isCellVisible": true,
@@ -239,9 +285,9 @@
       "isEditable": false,
       "isSaveVisible": true,
       "isVisible": false,
-      "label": "id",
+      "label": "product_id",
       "notation": "standard",
-      "originalId": "id",
+      "originalId": "product_id",
       "sticky": "",
       "textSize": "0.875rem",
       "thousandSeparator": true,
@@ -249,18 +295,18 @@
       "verticalAlignment": "CENTER",
       "width": 150
     },
-    "invoice_number": {
-      "alias": "invoice_number",
+    "product_name": {
+      "alias": "product_name",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
       "columnType": "text",
-      "computedValue": "{{(() => { const tableData = tblEditInvoices.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"invoice_number\"])) : invoice_number })()}}",
+      "computedValue": "{{(() => { const tableData = tblPicklist.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"product_name\"])) : product_name })()}}",
       "currencyCode": "USD",
       "decimals": 0,
       "enableFilter": true,
       "enableSort": true,
       "horizontalAlignment": "LEFT",
-      "id": "invoice_number",
+      "id": "product_name",
       "index": 1,
       "isCellEditable": false,
       "isCellVisible": true,
@@ -270,9 +316,40 @@
       "isEditable": false,
       "isSaveVisible": true,
       "isVisible": true,
-      "label": "invoice_number",
+      "label": "product_name",
       "notation": "standard",
-      "originalId": "invoice_number",
+      "originalId": "product_name",
+      "sticky": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
+    "total_qty": {
+      "alias": "total_qty",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "columnType": "text",
+      "computedValue": "{{(() => { const tableData = tblPicklist.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"total_qty\"])) : total_qty })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "horizontalAlignment": "LEFT",
+      "id": "total_qty",
+      "index": 4,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": true,
+      "label": "total_qty",
+      "notation": "standard",
+      "originalId": "total_qty",
       "sticky": "",
       "textSize": "0.875rem",
       "thousandSeparator": true,
@@ -283,16 +360,15 @@
   },
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
-  "rightColumn": 63,
+  "rightColumn": 64,
   "searchKey": "",
-  "tableData": "{{ TripEditor.getCombinedInvoices() }}",
+  "tableData": "{{getPickList.data.items}}",
   "textSize": "0.875rem",
-  "topRow": 138,
-  "topRowBeforeCollapse": 28,
+  "topRow": 4,
   "totalRecordsCount": 0,
   "type": "TABLE_WIDGET_V2",
   "version": 2,
   "verticalAlignment": "CENTER",
-  "widgetId": "ck3hebvn41",
-  "widgetName": "tblEditInvoices"
+  "widgetId": "j7qkqpesdl",
+  "widgetName": "tblPicklist"
 }
