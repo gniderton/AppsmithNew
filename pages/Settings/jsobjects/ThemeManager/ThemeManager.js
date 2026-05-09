@@ -82,7 +82,7 @@ export default {
     },
   },
 
-  defaultTheme: "dark",
+  defaultTheme: "light",
 
   init() {
     const name = appsmith.store.activeTheme || this.defaultTheme;
