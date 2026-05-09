@@ -3,7 +3,7 @@
   "animateLoading": true,
   "autoFocus": false,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 16,
+  "bottomRow": 20,
   "boxShadow": "none",
   "defaultText": "{{ (Vendors.data?.data || Vendors.data || []).find(v => Number(v.id) === Number(appsmith.store.selectedVendorId))?.vendor_name || \"N/A\" }}",
   "dynamicBindingPathList": [
@@ -21,6 +21,9 @@
     },
     {
       "key": "borderRadius"
+    },
+    {
+      "key": "labelTextColor"
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
@@ -30,6 +33,9 @@
     },
     {
       "key": "isDisabled"
+    },
+    {
+      "key": "labelTextColor"
     }
   ],
   "dynamicTriggerPathList": [],
@@ -44,6 +50,7 @@
   "labelAlignment": "left",
   "labelPosition": "Left",
   "labelStyle": "",
+  "labelTextColor": "\t{{appsmith.store.theme.text}}",
   "labelTextSize": "0.875rem",
   "labelWidth": "6",
   "leftColumn": 0,

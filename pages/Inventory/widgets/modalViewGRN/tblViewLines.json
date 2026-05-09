@@ -47,9 +47,10 @@
     "Batch_No",
     "Expiry",
     "_product_id",
-    "Tax_Name"
+    "Tax_Name",
+    "Disc_Amt"
   ],
-  "columnUpdatedAt": 1772706195207,
+  "columnUpdatedAt": 1778321278898,
   "columnWidthMap": {
     "Batch_No": 96,
     "Disc__": 76,
@@ -133,6 +134,9 @@
     },
     {
       "key": "boxShadow"
+    },
+    {
+      "key": "primaryColumns.Disc_Amt.computedValue"
     }
   ],
   "dynamicPropertyPathList": [
@@ -193,6 +197,40 @@
       "notation": "standard",
       "originalId": "Batch No",
       "sticky": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
+    "Disc_Amt": {
+      "alias": "Disc Amt",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "cellBackground": "",
+      "columnType": "number",
+      "computedValue": "{{(() => { const tableData = tblViewLines.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"Disc Amt\"])) : Disc Amt })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "fontStyle": "",
+      "horizontalAlignment": "LEFT",
+      "id": "Disc_Amt",
+      "index": 9,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": true,
+      "label": "Disc Amt",
+      "notation": "standard",
+      "originalId": "Disc Amt",
+      "sticky": "",
+      "textColor": "",
       "textSize": "0.875rem",
       "thousandSeparator": true,
       "validation": {},

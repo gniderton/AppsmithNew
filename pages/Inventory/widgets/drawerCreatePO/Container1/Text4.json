@@ -8,9 +8,17 @@
     },
     {
       "key": "fontFamily"
+    },
+    {
+      "key": "textColor"
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicPropertyPathList": [
+    {
+      "key": "textColor"
+    }
+  ],
   "dynamicTriggerPathList": [],
   "fontFamily": "{{appsmith.theme.fontFamily.appFont}}",
   "fontSize": "1rem",
@@ -40,7 +48,7 @@
   "shouldTruncate": false,
   "text": "Total GST: {{ (_.sum((poTable.tableData || []).map(r => Number(r[\"GST $\"] ?? 0)))).toFixed(2) }}",
   "textAlign": "LEFT",
-  "textColor": "#231F20",
+  "textColor": "\t{{appsmith.store.theme.text}}",
   "topRow": 0,
   "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
   "type": "TEXT_WIDGET",

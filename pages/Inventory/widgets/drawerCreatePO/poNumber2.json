@@ -15,9 +15,17 @@
     },
     {
       "key": "borderRadius"
+    },
+    {
+      "key": "labelTextColor"
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicPropertyPathList": [
+    {
+      "key": "labelTextColor"
+    }
+  ],
   "dynamicTriggerPathList": [],
   "iconAlign": "left",
   "inputType": "TEXT",
@@ -30,6 +38,7 @@
   "labelAlignment": "left",
   "labelPosition": "Left",
   "labelStyle": "",
+  "labelTextColor": "{{appsmith.store.theme.text}}",
   "labelTextSize": "0.875rem",
   "labelWidth": "6",
   "leftColumn": 0,

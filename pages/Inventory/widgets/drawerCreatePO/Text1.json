@@ -1,6 +1,8 @@
 {
   "animateLoading": true,
+  "backgroundColor": "",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "borderWidth": "{{appsmith.store.theme.borderWidth}}",
   "bottomRow": 4,
   "dynamicBindingPathList": [
     {
@@ -8,9 +10,20 @@
     },
     {
       "key": "fontFamily"
+    },
+    {
+      "key": "textColor"
+    },
+    {
+      "key": "borderWidth"
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicPropertyPathList": [
+    {
+      "key": "textColor"
+    }
+  ],
   "dynamicTriggerPathList": [],
   "fontFamily": "{{appsmith.theme.fontFamily.appFont}}",
   "fontSize": "1.25rem",
@@ -34,10 +47,11 @@
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
   "rightColumn": 21,
+  "shouldScrollContents": true,
   "shouldTruncate": false,
   "text": "{{ appsmith.store.poMode === 'CREATE' ? 'New Purchase Order' : (appsmith.store.poMode.value === 'EDIT' ? 'Edit PO ' + (poNumber2.value || '') : 'View PO ' + (poNumber2.value || '')) }}",
   "textAlign": "LEFT",
-  "textColor": "#231F20",
+  "textColor": "{{appsmith.store.theme.text}}",
   "topRow": 0,
   "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
   "type": "TEXT_WIDGET",

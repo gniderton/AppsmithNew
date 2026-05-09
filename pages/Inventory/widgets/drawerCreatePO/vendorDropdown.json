@@ -1,9 +1,9 @@
 {
   "accentColor": "{{appsmith.theme.colors.primaryColor}}",
   "animateLoading": true,
-  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "borderRadius": "\t{{appsmith.store.theme.radiusSm}}",
   "bottomRow": 16,
-  "boxShadow": "none",
+  "boxShadow": "\t{{appsmith.store.theme.shadowSm}}",
   "defaultOptionValue": "GREEN",
   "dynamicBindingPathList": [
     {
@@ -16,7 +16,13 @@
       "key": "isDisabled"
     },
     {
+      "key": "labelTextColor"
+    },
+    {
       "key": "borderRadius"
+    },
+    {
+      "key": "boxShadow"
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
@@ -29,6 +35,15 @@
     },
     {
       "key": "isVisible"
+    },
+    {
+      "key": "labelTextColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "boxShadow"
     }
   ],
   "dynamicTriggerPathList": [
@@ -45,6 +60,7 @@
   "labelAlignment": "left",
   "labelPosition": "Left",
   "labelText": "Choose Vendor",
+  "labelTextColor": "{{appsmith.store.theme.text}}",
   "labelTextSize": "0.875rem",
   "labelWidth": "6",
   "leftColumn": 0,

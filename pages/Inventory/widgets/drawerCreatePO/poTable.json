@@ -2,12 +2,13 @@
   "accentColor": "{{appsmith.theme.colors.primaryColor}}",
   "animateLoading": true,
   "borderColor": "#E0DEDE",
-  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "borderWidth": "1",
-  "bottomRow": 69,
-  "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+  "borderRadius": "\t{{appsmith.store.theme.radius}}",
+  "borderWidth": "",
+  "bottomRow": 81,
+  "boxShadow": "\t{{appsmith.store.theme.shadow}}",
   "cachedTableData": {},
   "canFreezeColumn": true,
+  "cellBackground": "{{appsmith.store.theme.surface}}",
   "childStylesheet": {
     "button": {
       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
@@ -67,6 +68,7 @@
     "Stock": 75,
     "Taxable__": 108
   },
+  "compactMode": "SHORT",
   "customIsLoading": false,
   "customIsLoadingValue": "",
   "defaultPageSize": 0,
@@ -144,6 +146,120 @@
     },
     {
       "key": "boxShadow"
+    },
+    {
+      "key": "cellBackground"
+    },
+    {
+      "key": "primaryColumns.S_No.cellBackground"
+    },
+    {
+      "key": "primaryColumns.EAN_Code.cellBackground"
+    },
+    {
+      "key": "primaryColumns.Item_Name.cellBackground"
+    },
+    {
+      "key": "primaryColumns.MRP.cellBackground"
+    },
+    {
+      "key": "primaryColumns.Price.cellBackground"
+    },
+    {
+      "key": "primaryColumns.Qty.cellBackground"
+    },
+    {
+      "key": "primaryColumns.Sch.cellBackground"
+    },
+    {
+      "key": "primaryColumns.Disc__.cellBackground"
+    },
+    {
+      "key": "primaryColumns.GST__.cellBackground"
+    },
+    {
+      "key": "primaryColumns.Gross__.cellBackground"
+    },
+    {
+      "key": "primaryColumns.Disc___.cellBackground"
+    },
+    {
+      "key": "primaryColumns.Taxable__.cellBackground"
+    },
+    {
+      "key": "primaryColumns.GST__1.cellBackground"
+    },
+    {
+      "key": "primaryColumns.Net__.cellBackground"
+    },
+    {
+      "key": "primaryColumns._product_id.cellBackground"
+    },
+    {
+      "key": "primaryColumns.Stock.cellBackground"
+    },
+    {
+      "key": "headerRowColor"
+    },
+    {
+      "key": "headerTextColor"
+    },
+    {
+      "key": "oddRowColor"
+    },
+    {
+      "key": "evenRowColor"
+    },
+    {
+      "key": "textColor"
+    },
+    {
+      "key": "primaryColumns.S_No.textColor"
+    },
+    {
+      "key": "primaryColumns.EAN_Code.textColor"
+    },
+    {
+      "key": "primaryColumns.Item_Name.textColor"
+    },
+    {
+      "key": "primaryColumns.MRP.textColor"
+    },
+    {
+      "key": "primaryColumns.Price.textColor"
+    },
+    {
+      "key": "primaryColumns.Qty.textColor"
+    },
+    {
+      "key": "primaryColumns.Sch.textColor"
+    },
+    {
+      "key": "primaryColumns.Disc__.textColor"
+    },
+    {
+      "key": "primaryColumns.GST__.textColor"
+    },
+    {
+      "key": "primaryColumns.Gross__.textColor"
+    },
+    {
+      "key": "primaryColumns.Disc___.textColor"
+    },
+    {
+      "key": "primaryColumns.Taxable__.textColor"
+    },
+    {
+      "key": "primaryColumns.GST__1.textColor"
+    },
+    {
+      "key": "primaryColumns.Net__.textColor"
+    },
+    {
+      "key": "primaryColumns._product_id.textColor"
+    },
+    {
+      "key": "primaryColumns.Stock.textColor"
     }
   ],
   "dynamicPropertyPathList": [
@@ -158,6 +274,30 @@
     },
     {
       "key": "primaryColumns.Disc__.isCellEditable"
+    },
+    {
+      "key": "cellBackground"
+    },
+    {
+      "key": "headerRowColor"
+    },
+    {
+      "key": "oddRowColor"
+    },
+    {
+      "key": "headerTextColor"
+    },
+    {
+      "key": "evenRowColor"
+    },
+    {
+      "key": "textColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "boxShadow"
     }
   ],
   "dynamicTriggerPathList": [
@@ -173,7 +313,10 @@
   ],
   "enableClientSideSearch": true,
   "endOfData": false,
+  "evenRowColor": "{{appsmith.store.theme.surfaceAlt}}",
   "flexVerticalAlignment": "start",
+  "headerRowColor": "{{appsmith.store.theme.primary}}",
+  "headerTextColor": "{{appsmith.store.theme.background}}",
   "horizontalAlignment": "LEFT",
   "inlineEditingSaveOption": "CUSTOM",
   "isLoading": false,
@@ -181,7 +324,7 @@
   "isVisible": true,
   "isVisibleDownload": true,
   "isVisibleFilters": false,
-  "isVisiblePagination": true,
+  "isVisiblePagination": false,
   "isVisibleSearch": true,
   "key": "yum04tvszl",
   "label": "Data",
@@ -192,6 +335,7 @@
   "mobileRightColumn": 13,
   "mobileTopRow": 20,
   "needsErrorInfo": false,
+  "oddRowColor": "\t{{appsmith.store.theme.surface}}",
   "originalBottomRow": 77,
   "originalTopRow": 33,
   "parentColumnSpace": 14.75,
@@ -203,7 +347,7 @@
       "alias": "Disc %",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
-      "cellBackground": "",
+      "cellBackground": "{{appsmith.store.theme.surface}}",
       "columnType": "number",
       "computedValue": "{{(() => { const tableData = Table2.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"Disc %\"])) : Disc % })()}}",
       "currencyCode": "USD",
@@ -227,7 +371,7 @@
       "onSubmit": "{{savePOLine.onCellChange();}}",
       "originalId": "Disc %",
       "sticky": "",
-      "textColor": "",
+      "textColor": "\t{{appsmith.store.theme.text}}",
       "textSize": "0.875rem",
       "thousandSeparator": true,
       "validation": {},
@@ -238,7 +382,7 @@
       "alias": "Disc. $",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
-      "cellBackground": "",
+      "cellBackground": "{{appsmith.store.theme.surface}}",
       "columnType": "number",
       "computedValue": "{{(() => { const tableData = poTable.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"Disc. $\"])) : Disc. $ })()}}",
       "currencyCode": "USD",
@@ -261,7 +405,7 @@
       "notation": "standard",
       "originalId": "Disc. $",
       "sticky": "",
-      "textColor": "",
+      "textColor": "\t{{appsmith.store.theme.text}}",
       "textSize": "0.875rem",
       "thousandSeparator": true,
       "validation": {},
@@ -272,7 +416,7 @@
       "alias": "EAN Code",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
-      "cellBackground": "",
+      "cellBackground": "{{appsmith.store.theme.surface}}",
       "columnType": "text",
       "computedValue": "{{(() => { const tableData = Table2.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"EAN Code\"])) : EAN Code })()}}",
       "currencyCode": "USD",
@@ -295,7 +439,7 @@
       "notation": "standard",
       "originalId": "EAN Code",
       "sticky": "",
-      "textColor": "",
+      "textColor": "\t{{appsmith.store.theme.text}}",
       "textSize": "0.875rem",
       "thousandSeparator": true,
       "validation": {},
@@ -306,7 +450,7 @@
       "alias": "GST %",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
-      "cellBackground": "",
+      "cellBackground": "{{appsmith.store.theme.surface}}",
       "columnType": "number",
       "computedValue": "{{(() => { const tableData = Table2.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"GST %\"])) : GST % })()}}",
       "currencyCode": "USD",
@@ -329,7 +473,7 @@
       "notation": "standard",
       "originalId": "GST %",
       "sticky": "",
-      "textColor": "",
+      "textColor": "\t{{appsmith.store.theme.text}}",
       "textSize": "0.875rem",
       "thousandSeparator": true,
       "validation": {},
@@ -340,7 +484,7 @@
       "alias": "GST $",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
-      "cellBackground": "",
+      "cellBackground": "{{appsmith.store.theme.surface}}",
       "columnType": "number",
       "computedValue": "{{(() => { const tableData = Table2.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"GST $\"])) : GST $ })()}}",
       "currencyCode": "USD",
@@ -363,7 +507,7 @@
       "notation": "standard",
       "originalId": "GST $",
       "sticky": "",
-      "textColor": "",
+      "textColor": "\t{{appsmith.store.theme.text}}",
       "textSize": "0.875rem",
       "thousandSeparator": true,
       "validation": {},
@@ -374,7 +518,7 @@
       "alias": "Gross $",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
-      "cellBackground": "",
+      "cellBackground": "{{appsmith.store.theme.surface}}",
       "columnType": "number",
       "computedValue": "{{(() => { const tableData = Table2.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"Gross $\"])) : Gross $ })()}}",
       "currencyCode": "USD",
@@ -397,7 +541,7 @@
       "notation": "standard",
       "originalId": "Gross $",
       "sticky": "",
-      "textColor": "",
+      "textColor": "\t{{appsmith.store.theme.text}}",
       "textSize": "0.875rem",
       "thousandSeparator": true,
       "validation": {},
@@ -408,7 +552,7 @@
       "alias": "Item Name",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
-      "cellBackground": "",
+      "cellBackground": "{{appsmith.store.theme.surface}}",
       "columnType": "text",
       "computedValue": "{{(() => { const tableData = Table2.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"Item Name\"])) : Item Name })()}}",
       "currencyCode": "USD",
@@ -431,7 +575,7 @@
       "notation": "standard",
       "originalId": "Item Name",
       "sticky": "",
-      "textColor": "",
+      "textColor": "\t{{appsmith.store.theme.text}}",
       "textSize": "0.875rem",
       "thousandSeparator": true,
       "validation": {},
@@ -442,7 +586,7 @@
       "alias": "MRP",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
-      "cellBackground": "",
+      "cellBackground": "{{appsmith.store.theme.surface}}",
       "columnType": "number",
       "computedValue": "{{(() => { const tableData = poTable.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"MRP\"])) : MRP })()}}",
       "currencyCode": "USD",
@@ -465,7 +609,7 @@
       "notation": "standard",
       "originalId": "MRP",
       "sticky": "",
-      "textColor": "",
+      "textColor": "\t{{appsmith.store.theme.text}}",
       "textSize": "0.875rem",
       "thousandSeparator": true,
       "validation": {},
@@ -476,7 +620,7 @@
       "alias": "Net $",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
-      "cellBackground": "",
+      "cellBackground": "{{appsmith.store.theme.surface}}",
       "columnType": "number",
       "computedValue": "{{(() => { const tableData = Table2.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"Net $\"])) : Net $ })()}}",
       "currencyCode": "USD",
@@ -499,7 +643,7 @@
       "notation": "standard",
       "originalId": "Net $",
       "sticky": "",
-      "textColor": "",
+      "textColor": "\t{{appsmith.store.theme.text}}",
       "textSize": "0.875rem",
       "thousandSeparator": true,
       "validation": {},
@@ -510,7 +654,7 @@
       "alias": "Price",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
-      "cellBackground": "",
+      "cellBackground": "{{appsmith.store.theme.surface}}",
       "columnType": "number",
       "computedValue": "{{(() => { const tableData = poTable.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"Price\"])) : Price })()}}",
       "currencyCode": "USD",
@@ -533,7 +677,7 @@
       "notation": "standard",
       "originalId": "Price",
       "sticky": "",
-      "textColor": "",
+      "textColor": "\t{{appsmith.store.theme.text}}",
       "textSize": "0.875rem",
       "thousandSeparator": true,
       "validation": {},
@@ -544,7 +688,7 @@
       "alias": "Qty",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
-      "cellBackground": "",
+      "cellBackground": "{{appsmith.store.theme.surface}}",
       "columnType": "number",
       "computedValue": "{{(() => { const tableData = poTable.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"Qty\"])) : Qty })()}}",
       "currencyCode": "USD",
@@ -568,7 +712,7 @@
       "onSubmit": "{{savePOLine.onCellChange();}}",
       "originalId": "Qty",
       "sticky": "",
-      "textColor": "",
+      "textColor": "\t{{appsmith.store.theme.text}}",
       "textSize": "0.875rem",
       "thousandSeparator": true,
       "validation": {},
@@ -579,7 +723,7 @@
       "alias": "S.No",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
-      "cellBackground": "",
+      "cellBackground": "{{appsmith.store.theme.surface}}",
       "columnType": "number",
       "computedValue": "{{(() => { const tableData = poTable.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"S.No\"])) : S.No })()}}",
       "currencyCode": "USD",
@@ -602,7 +746,7 @@
       "notation": "standard",
       "originalId": "S.No",
       "sticky": "",
-      "textColor": "",
+      "textColor": "\t{{appsmith.store.theme.text}}",
       "textSize": "0.875rem",
       "thousandSeparator": true,
       "validation": {},
@@ -613,7 +757,7 @@
       "alias": "Sch",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
-      "cellBackground": "",
+      "cellBackground": "{{appsmith.store.theme.surface}}",
       "columnType": "number",
       "computedValue": "{{(() => { const tableData = poTable.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"Sch\"])) : Sch })()}}",
       "currencyCode": "USD",
@@ -637,7 +781,7 @@
       "onSubmit": "{{savePOLine.onCellChange();}}",
       "originalId": "Sch",
       "sticky": "",
-      "textColor": "",
+      "textColor": "\t{{appsmith.store.theme.text}}",
       "textSize": "0.875rem",
       "thousandSeparator": true,
       "validation": {},
@@ -648,7 +792,7 @@
       "alias": "Stock",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
-      "cellBackground": "",
+      "cellBackground": "{{appsmith.store.theme.surface}}",
       "columnType": "number",
       "computedValue": "{{(() => { const tableData = poTable.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"Stock\"])) : Stock })()}}",
       "currencyCode": "USD",
@@ -671,7 +815,7 @@
       "notation": "standard",
       "originalId": "Stock",
       "sticky": "",
-      "textColor": "",
+      "textColor": "\t{{appsmith.store.theme.text}}",
       "textSize": "0.875rem",
       "thousandSeparator": true,
       "validation": {},
@@ -682,7 +826,7 @@
       "alias": "Taxable $",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
-      "cellBackground": "",
+      "cellBackground": "{{appsmith.store.theme.surface}}",
       "columnType": "number",
       "computedValue": "{{(() => { const tableData = Table2.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"Taxable $\"])) : Taxable $ })()}}",
       "currencyCode": "USD",
@@ -705,7 +849,7 @@
       "notation": "standard",
       "originalId": "Taxable $",
       "sticky": "",
-      "textColor": "",
+      "textColor": "\t{{appsmith.store.theme.text}}",
       "textSize": "0.875rem",
       "thousandSeparator": true,
       "validation": {},
@@ -716,7 +860,7 @@
       "alias": "_product_id",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
-      "cellBackground": "",
+      "cellBackground": "{{appsmith.store.theme.surface}}",
       "columnType": "text",
       "computedValue": "{{(() => { const tableData = poTable.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"_product_id\"])) : _product_id })()}}",
       "currencyCode": "USD",
@@ -739,7 +883,7 @@
       "notation": "standard",
       "originalId": "_product_id",
       "sticky": "",
-      "textColor": "",
+      "textColor": "\t{{appsmith.store.theme.text}}",
       "textSize": "0.875rem",
       "thousandSeparator": true,
       "validation": {},
@@ -751,10 +895,12 @@
   "responsiveBehavior": "fill",
   "rightColumn": 63,
   "searchKey": "",
+  "serverSidePaginationEnabled": true,
   "showInlineEditingOptionDropdown": true,
   "tableData": "{{appsmith.store.poLines}}",
+  "textColor": "\t{{appsmith.store.theme.text}}",
   "textSize": "0.875rem",
-  "topRow": 25,
+  "topRow": 32,
   "totalRecordsCount": 0,
   "type": "TABLE_WIDGET_V2",
   "version": 2,

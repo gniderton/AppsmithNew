@@ -20,6 +20,9 @@
     },
     {
       "key": "borderRadius"
+    },
+    {
+      "key": "labelTextColor"
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
@@ -29,6 +32,9 @@
     },
     {
       "key": "isDisabled"
+    },
+    {
+      "key": "labelTextColor"
     }
   ],
   "dynamicTriggerPathList": [],
@@ -41,6 +47,7 @@
   "label": "Date",
   "labelAlignment": "left",
   "labelPosition": "Left",
+  "labelTextColor": "\t{{appsmith.store.theme.text}}",
   "labelTextSize": "0.875rem",
   "labelWidth": "6",
   "leftColumn": 0,
