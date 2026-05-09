@@ -1,11 +1,11 @@
 {
   "animateLoading": true,
-  "backgroundColor": "{{appsmith.theme.colors.primaryColor}}",
+  "backgroundColor": "#ffffff",
   "borderColor": "#E0DEDE",
-  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "borderWidth": "1",
-  "bottomRow": 138,
-  "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+  "borderRadius": "0.375rem",
+  "borderWidth": "",
+  "bottomRow": 135,
+  "boxShadow": "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
   "children": [
     {
       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
@@ -53,15 +53,6 @@
   "containerStyle": "card",
   "dynamicBindingPathList": [
     {
-      "key": "borderRadius"
-    },
-    {
-      "key": "boxShadow"
-    },
-    {
-      "key": "backgroundColor"
-    },
-    {
       "key": "isVisible"
     }
   ],
@@ -86,8 +77,8 @@
   "mobileRightColumn": 24,
   "mobileTopRow": 18,
   "needsErrorInfo": false,
-  "originalBottomRow": 138,
-  "originalTopRow": 85,
+  "originalBottomRow": 135,
+  "originalTopRow": 82,
   "parentColumnSpace": 16.3125,
   "parentId": "8lb8is7sf9",
   "parentRowSpace": 10,
@@ -95,7 +86,7 @@
   "responsiveBehavior": "fill",
   "rightColumn": 63,
   "shouldScrollContents": true,
-  "topRow": 85,
+  "topRow": 82,
   "type": "CONTAINER_WIDGET",
   "version": 1,
   "widgetId": "817910e8tu",

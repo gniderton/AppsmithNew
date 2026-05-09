@@ -238,6 +238,7 @@
   "responsiveBehavior": "fill",
   "rightColumn": 63,
   "searchKey": "",
+  "serverSidePaginationEnabled": true,
   "tableData": "{{pickListBD.data}}",
   "textSize": "0.875rem",
   "topRow": 4,
