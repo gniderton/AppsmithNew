@@ -65,19 +65,10 @@
   "delimiter": ",",
   "dynamicBindingPathList": [
     {
-      "key": "accentColor"
-    },
-    {
-      "key": "borderRadius"
-    },
-    {
-      "key": "boxShadow"
+      "key": "tableData"
     },
     {
       "key": "primaryColumns.id.computedValue"
-    },
-    {
-      "key": "tableData"
     },
     {
       "key": "primaryColumns.invoice_number.computedValue"
@@ -123,6 +114,15 @@
     },
     {
       "key": "primaryColumns.AR_Days.computedValue"
+    },
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "boxShadow"
     }
   ],
   "dynamicPropertyPathList": [

@@ -5,22 +5,22 @@
   "counterClosewise": false,
   "dynamicBindingPathList": [
     {
-      "key": "fillColor"
-    },
-    {
-      "key": "borderRadius"
-    },
-    {
       "key": "isVisible"
+    },
+    {
+      "key": "fillColor"
     }
   ],
   "dynamicPropertyPathList": [
     {
       "key": "isVisible"
+    },
+    {
+      "key": "fillColor"
     }
   ],
   "dynamicTriggerPathList": [],
-  "fillColor": "{{appsmith.theme.colors.primaryColor}}",
+  "fillColor": "{{appsmith.store.theme.primary}}",
   "isCanvas": false,
   "isIndeterminate": true,
   "isLoading": false,

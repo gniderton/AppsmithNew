@@ -77,15 +77,6 @@
   "delimiter": ",",
   "dynamicBindingPathList": [
     {
-      "key": "accentColor"
-    },
-    {
-      "key": "borderRadius"
-    },
-    {
-      "key": "boxShadow"
-    },
-    {
       "key": "tableData"
     },
     {
@@ -107,10 +98,19 @@
       "key": "primaryColumns.Qty.computedValue"
     },
     {
+      "key": "primaryColumns.Qty.isCellEditable"
+    },
+    {
       "key": "primaryColumns.Sch.computedValue"
     },
     {
+      "key": "primaryColumns.Sch.isCellEditable"
+    },
+    {
       "key": "primaryColumns.Disc__.computedValue"
+    },
+    {
+      "key": "primaryColumns.Disc__.isCellEditable"
     },
     {
       "key": "primaryColumns.GST__.computedValue"
@@ -134,16 +134,16 @@
       "key": "primaryColumns._product_id.computedValue"
     },
     {
-      "key": "primaryColumns.Qty.isCellEditable"
-    },
-    {
-      "key": "primaryColumns.Sch.isCellEditable"
-    },
-    {
-      "key": "primaryColumns.Disc__.isCellEditable"
-    },
-    {
       "key": "primaryColumns.Stock.computedValue"
+    },
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "boxShadow"
     }
   ],
   "dynamicPropertyPathList": [

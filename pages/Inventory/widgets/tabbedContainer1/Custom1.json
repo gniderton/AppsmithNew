@@ -4,21 +4,18 @@
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": "1",
   "bottomRow": 172,
-  "bottomRowBeforeCollapse": 168,
+  "bottomRowBeforeCollapse": 172,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "defaultModel": "{{\n{\n  \"tableData\": getPOs.data.data,\n  \"columns\": [\n    { \"label\": \"PO Date\", \"key\": \"po_date\" },\n    { \"label\": \"PO Number\", \"key\": \"po_number\" },\n    { \"label\": \"Vendor\", \"key\": \"vendor_name\" },\n    { \"label\": \"Net Amount\", \"key\": \"total_net\" },\n    { \"label\": \"Qty\", \"key\": \"total_qty\" },\n    { \"label\": \"Status\", \"key\": \"status\" }\n  ],\n  \"title\": \"Procurement Command Center\"\n}\n}}\n",
   "dynamicBindingPathList": [
     {
-      "key": "theme"
+      "key": "defaultModel"
     },
     {
       "key": "borderRadius"
     },
     {
       "key": "boxShadow"
-    },
-    {
-      "key": "defaultModel"
     }
   ],
   "dynamicHeight": "FIXED",
@@ -65,8 +62,8 @@
   "onCreateGRNClick": "{{JSObjectGrnfromPo.inwardPO_FromTable()}}",
   "onPDFClick": "{{ PDF_Generator.previewPO(Custom1.model.triggeredRow) }}",
   "onViewClick": "{{populateDrawerFromPO.viewPO()}}",
-  "originalBottomRow": 168,
-  "originalTopRow": 76,
+  "originalBottomRow": 172,
+  "originalTopRow": 80,
   "parentColumnSpace": 19.9375,
   "parentId": "x5m54r3xcv",
   "parentRowSpace": 10,
@@ -79,7 +76,7 @@
   },
   "theme": "{{appsmith.theme}}",
   "topRow": 80,
-  "topRowBeforeCollapse": 76,
+  "topRowBeforeCollapse": 80,
   "type": "CUSTOM_WIDGET",
   "uncompiledSrcDoc": {
     "css": ":root {\n  --bg: #0b0f19;\n  --accent: #38bdf8;\n  --border: rgba(255, 255, 255, 0.05);\n  --text: #e2e8f0;\n  --text-dim: #64748b;\n}\n\nbody { margin: 0; padding: 5px; background: transparent; font-family: 'Inter', sans-serif; color: var(--text); }\n\n.glass-container {\n  background: var(--bg);\n  border: 1px solid var(--border);\n  border-radius: 10px;\n  display: flex; flex-direction: column; height: 100%;\n}\n\n.table-header {\n  padding: 12px 16px; display: flex; justify-content: space-between; align-items: center;\n  border-bottom: 1px solid var(--border);\n}\n\nh2 { font-size: 1rem; margin: 0; color: var(--accent); font-weight: 600; }\n\n.search-input {\n  background: rgba(255,255,255,0.03); border: 1px solid var(--border);\n  border-radius: 6px; padding: 6px 12px; color: white; font-size: 0.8rem; width: 180px;\n}\n\n.export-btn {\n  background: transparent; border: 1px solid var(--accent); color: var(--accent);\n  padding: 6px 12px; border-radius: 6px; font-size: 0.75rem; cursor: pointer; transition: 0.2s;\n}\n.export-btn:hover { background: var(--accent); color: #000; }\n\n.table-wrapper { flex: 1; overflow: auto; }\ntable { width: 100%; border-collapse: collapse; }\n\nth {\n  background: #111827; padding: 10px 16px; text-align: left;\n  font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.05em;\n  color: var(--text-dim); position: sticky; top: 0; z-index: 5;\n}\n\ntd { padding: 8px 16px; font-size: 0.8rem; border-bottom: 1px solid var(--border); }\ntr:hover { background: rgba(255, 255, 255, 0.02); }\n\n/* Badges & Buttons */\n.badge { padding: 2px 8px; border-radius: 4px; font-size: 0.65rem; font-weight: 700; }\n.status-received { color: #10b981; background: rgba(16, 185, 129, 0.1); }\n.status-draft { color: #fbbf24; background: rgba(251, 191, 36, 0.1); }\n\n.action-group { display: flex; gap: 10px; }\n.btn-icon {\n  background: transparent; border: none; color: var(--text-dim);\n  cursor: pointer; font-size: 1rem; transition: 0.2s; padding: 0;\n}\n.btn-icon:hover { color: var(--accent); transform: scale(1.2); }\n\n.pagination-footer { padding: 8px 16px; display: flex; justify-content: center; align-items: center; gap: 15px; border-top: 1px solid var(--border); }\n.nav-btn { background: transparent; border: 1px solid var(--border); color: var(--text); padding: 4px 10px; border-radius: 4px; font-size: 0.75rem; cursor: pointer; }\n.nav-btn:disabled { opacity: 0.3; }\n",

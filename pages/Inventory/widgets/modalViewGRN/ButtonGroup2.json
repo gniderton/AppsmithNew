@@ -11,25 +11,25 @@
   },
   "dynamicBindingPathList": [
     {
-      "key": "borderRadius"
-    },
-    {
       "key": "groupButtons.groupButton1.buttonColor"
     },
     {
       "key": "groupButtons.groupButton2.buttonColor"
     },
     {
+      "key": "groupButtons.groupButtonmfidy92i7n.isDisabled"
+    },
+    {
       "key": "groupButtons.groupButtonmfidy92i7n.buttonColor"
     },
     {
-      "key": "groupButtons.groupButtonmfidy92i7n.isDisabled"
+      "key": "groupButtons.groupButton0rgl2tisyb.isDisabled"
     },
     {
       "key": "groupButtons.groupButton0rgl2tisyb.buttonColor"
     },
     {
-      "key": "groupButtons.groupButton0rgl2tisyb.isDisabled"
+      "key": "borderRadius"
     }
   ],
   "dynamicPropertyPathList": [

@@ -7,16 +7,13 @@
   "defaultOptionValue": "{{ ((options, serverSideFiltering) => (  appsmith.store.preSelectedVendor ))(vendorDropdownGRN.options, vendorDropdownGRN.serverSideFiltering) }}",
   "dynamicBindingPathList": [
     {
-      "key": "accentColor"
-    },
-    {
-      "key": "borderRadius"
-    },
-    {
       "key": "sourceData"
     },
     {
       "key": "defaultOptionValue"
+    },
+    {
+      "key": "borderRadius"
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",

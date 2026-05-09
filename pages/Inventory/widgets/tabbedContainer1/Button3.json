@@ -1,20 +1,33 @@
 {
   "animateLoading": true,
-  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "borderRadius": "{{appsmith.store.theme.radiusSm}}",
   "bottomRow": 4,
-  "boxShadow": "none",
-  "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "boxShadow": "{{appsmith.store.theme.shadowSm}}",
+  "buttonColor": "{{appsmith.store.theme.primary}}",
   "buttonVariant": "PRIMARY",
   "disabledWhenInvalid": false,
   "dynamicBindingPathList": [
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "buttonColor"
+    },
+    {
+      "key": "boxShadow"
+    }
+  ],
+  "dynamicPropertyPathList": [
     {
       "key": "buttonColor"
     },
     {
       "key": "borderRadius"
+    },
+    {
+      "key": "boxShadow"
     }
   ],
-  "dynamicPropertyPathList": [],
   "dynamicTriggerPathList": [
     {
       "key": "onClick"

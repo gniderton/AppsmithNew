@@ -8,12 +8,6 @@
   "defaultText": "{{ (Vendors.data?.data || Vendors.data || []).find(v => Number(v.id) === Number(appsmith.store.selectedVendorId))?.vendor_name || \"N/A\" }}",
   "dynamicBindingPathList": [
     {
-      "key": "accentColor"
-    },
-    {
-      "key": "borderRadius"
-    },
-    {
       "key": "defaultText"
     },
     {
@@ -21,6 +15,12 @@
     },
     {
       "key": "isDisabled"
+    },
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",

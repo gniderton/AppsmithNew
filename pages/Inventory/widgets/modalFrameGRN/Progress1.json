@@ -5,13 +5,10 @@
   "counterClosewise": false,
   "dynamicBindingPathList": [
     {
-      "key": "fillColor"
-    },
-    {
-      "key": "borderRadius"
-    },
-    {
       "key": "isVisible"
+    },
+    {
+      "key": "fillColor"
     }
   ],
   "dynamicPropertyPathList": [

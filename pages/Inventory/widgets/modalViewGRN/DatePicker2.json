@@ -10,13 +10,13 @@
   "defaultDate": "{{tblGrn.triggeredRow.vendor_invoice_date}}",
   "dynamicBindingPathList": [
     {
+      "key": "defaultDate"
+    },
+    {
       "key": "accentColor"
     },
     {
       "key": "borderRadius"
-    },
-    {
-      "key": "defaultDate"
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",

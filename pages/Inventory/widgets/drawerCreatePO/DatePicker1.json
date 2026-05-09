@@ -10,16 +10,16 @@
   "defaultDate": "{{ appsmith.store.poMode === 'CREATE' ? moment() : appsmith.store.selectedPODate }}",
   "dynamicBindingPathList": [
     {
-      "key": "accentColor"
-    },
-    {
-      "key": "borderRadius"
+      "key": "defaultDate"
     },
     {
       "key": "isDisabled"
     },
     {
-      "key": "defaultDate"
+      "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",

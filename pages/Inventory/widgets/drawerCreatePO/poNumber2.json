@@ -8,13 +8,13 @@
   "defaultText": "{{ appsmith.store.poMode === 'CREATE' ? (\"GD-CLT-PO-26-\" + (getNextPO.data.next_number || \"\")) : appsmith.store.selectedPONumber }}",
   "dynamicBindingPathList": [
     {
+      "key": "defaultText"
+    },
+    {
       "key": "accentColor"
     },
     {
       "key": "borderRadius"
-    },
-    {
-      "key": "defaultText"
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",

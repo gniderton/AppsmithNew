@@ -9,13 +9,13 @@
   "disabledWhenInvalid": "",
   "dynamicBindingPathList": [
     {
+      "key": "isVisible"
+    },
+    {
       "key": "buttonColor"
     },
     {
       "key": "borderRadius"
-    },
-    {
-      "key": "isVisible"
     }
   ],
   "dynamicPropertyPathList": [
