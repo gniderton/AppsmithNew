@@ -1,15 +1,15 @@
 {
   "animateLoading": true,
-  "backgroundColor": "#FFFFFF",
-  "borderColor": "#E0DEDE",
-  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "borderWidth": "1",
-  "bottomRow": 86,
-  "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+  "backgroundColor": "{{appsmith.store.theme.surface}}",
+  "borderColor": "",
+  "borderRadius": "{{appsmith.store.theme.radiusLg}}",
+  "borderWidth": "{{appsmith.store.theme.borderWidth}}",
+  "bottomRow": 173,
+  "boxShadow": "{{appsmith.store.theme.shadow}}",
   "children": [
     {
       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-      "bottomRow": 860,
+      "bottomRow": 1750,
       "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
       "canExtend": false,
       "containerStyle": "none",
@@ -38,7 +38,7 @@
       "mobileTopRow": 0,
       "needsErrorInfo": false,
       "parentColumnSpace": 1,
-      "parentId": "v4p4d284iw",
+      "parentId": "tmd77gsuah",
       "parentRowSpace": 1,
       "renderMode": "CANVAS",
       "responsiveBehavior": "fill",
@@ -46,8 +46,8 @@
       "topRow": 0,
       "type": "CANVAS_WIDGET",
       "version": 1,
-      "widgetId": "pb1977c86b",
-      "widgetName": "Canvas1"
+      "widgetId": "qo3ybm86zx",
+      "widgetName": "Canvas1Copy"
     }
   ],
   "containerStyle": "card",
@@ -57,9 +57,26 @@
     },
     {
       "key": "boxShadow"
+    },
+    {
+      "key": "backgroundColor"
+    },
+    {
+      "key": "borderWidth"
     }
   ],
   "dynamicHeight": "FIXED",
+  "dynamicPropertyPathList": [
+    {
+      "key": "backgroundColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "boxShadow"
+    }
+  ],
   "dynamicTriggerPathList": [],
   "flexVerticalAlignment": "stretch",
   "isCanvas": true,
@@ -82,9 +99,9 @@
   "responsiveBehavior": "fill",
   "rightColumn": 64,
   "shouldScrollContents": true,
-  "topRow": 0,
+  "topRow": 87,
   "type": "CONTAINER_WIDGET",
   "version": 1,
-  "widgetId": "v4p4d284iw",
-  "widgetName": "Container1"
+  "widgetId": "tmd77gsuah",
+  "widgetName": "ctrTheme"
 }

@@ -1,36 +1,35 @@
 export default {
-	// --- A. THE BATCH PROCESSOR (The Loop) ---
+	// --- A. THE BATCH PROCESSOR ---
 	downloadBulkInvoices: async () => {
 		const ids = appsmith.store.bulkInvoiceIds || [];
 		if (ids.length === 0) return;
 
 		showAlert(`Processing batch of ${ids.length} invoices...`, "info");
 
-		// Fetch bank once for the whole batch
-		await getBankDetails.run();
-		const bank = getBankDetails.data || {};
+		// FIX: Use the return value of .run() to avoid reactive dependency errors
+		const bank = await getBankDetails.run();
 
 		for (const id of ids) {
-			// FIX: Passing ID as parameter to avoid race conditions
-			// Update your query to use: WHERE sales_order_id = {{this.params.id}}
-			await getUnifiedInvoiceDetail.run({ id: id }); 
-			const detailedData = getUnifiedInvoiceDetail.data;
+			// Fetch specific invoice details for this ID
+			const detailedData = await getUnifiedInvoiceDetail.run({ id: id }); 
 			
 			if (detailedData && detailedData.invoice_id) {
-				await this.previewInvoice(detailedData);
-				// Delay (700ms) to ensure browser clears download queue
-				await new Promise(r => setTimeout(r, 700));
+				// Pass 'bank' as an argument to avoid redundant fetching
+				await this.previewInvoice(detailedData, bank);
+				
+				// Throttle to prevent browser download queue blockage
+				await new Promise(r => setTimeout(r, 800));
 			}
 		}
 
-		// Cleanup
+		// Cleanup memory
 		await storeValue('bulkInvoiceIds', []);
 		showAlert("Bulk Download Complete!", "success");
 	},
 
-	// --- B. AUTO-TRIGGER (WITH SAFETY DELAY) ---
+	// --- B. AUTO-TRIGGER ---
 	onPageLoad: async () => {
-		// Wait 500ms for the browser to catch up after navigation
+		// Wait for app state to settle
 		await new Promise(r => setTimeout(r, 500)); 
 
 		if (appsmith.store.bulkInvoiceIds && appsmith.store.bulkInvoiceIds.length > 0) {
@@ -38,12 +37,15 @@ export default {
 		}
 	},
 
-	// --- C. YOUR EXACT ORIGINAL PREVIEW LOGIC ---
-	previewInvoice: async (invoiceData) => {
+	// --- C. PREVIEW & DOWNLOAD LOGIC ---
+	previewInvoice: async (invoiceData, bankDetails = null) => {
 		try {
 			if (!invoiceData || !invoiceData.invoice_id) throw new Error("No Invoice data selected.");
 
-			// --- 1. LIBRARY SAFETY (Post-Downgrade Fix) ---
+			// Use passed bank details or fetch once if missing
+			const bank = bankDetails || await getBankDetails.run();
+
+			// --- LIBRARY SETUP ---
 			if (typeof jspdf === "undefined") throw new Error("jspdf library not loaded.");
 			const jsPDFConstructor = jspdf.jsPDF || jspdf;
 			const doc = new jsPDFConstructor('p', 'pt', 'a4'); 
@@ -56,14 +58,10 @@ export default {
 			const summaryData = this.getSummary(lines);
 			const grandTotal = Number(invoiceData.grand_total || 0);
 			const brand = Global_Assets.getSummary();
-
-			await getBankDetails.run();
-			const bank = getBankDetails.data || {};
-
 			const margin = 12; 
 			const pageWidth = doc.internal.pageSize.width;
 
-			// --- HELPER: AMOUNT TO WORDS ---
+			// --- AMOUNT TO WORDS HELPER ---
 			const toWords = (num) => {
 				const a = ['','One ','Two ','Three ','Four ', 'Five ','Six ','Seven ','Eight ','Nine ','Ten ','Eleven ','Twelve ','Thirteen ','Fourteen ','Fifteen ','Sixteen ','Seventeen ','Eighteen ','Nineteen '];
 				const b = ['', '', 'Twenty','Thirty','Forty','Fifty', 'Sixty','Seventy','Eighty','Ninety'];
@@ -78,12 +76,12 @@ export default {
 				return str;
 			};
 
-			// --- HELPER: DRAW RECURRING HEADER ---
+			// --- HEADER DRAWING ---
 			const drawMainHeader = (currentPage, totalPages) => {
 				const headerY = margin;
 				try {
 					const logo = Global_Assets.getLogo();
-					if (logo.startsWith("data:image/")) {
+					if (logo && logo.startsWith("data:image/")) {
 						doc.addImage(logo, 'PNG', margin, headerY, 90, 30);
 					}
 				} catch(e) {}
@@ -129,112 +127,44 @@ export default {
 					["DSE Phone", String(invoiceData.dse_phone || "-")],
 					["PAGE", `${currentPage} / ${totalPages}`]
 				], 65);
-
-				return boxesY + boxHeight; 
 			};
 
-			// --- 2. ITEMS TABLE ---
+			// --- ITEMS TABLE ---
 			doc.autoTable({
-				startY: margin + 40 + 95 + 10,
+				startY: margin + 145,
 				margin: { left: margin, right: margin, top: 157, bottom: 12 },
 				head: [["S.N", "ITEM NAME", "CODE\nEAN", "HSN", "BATCH\nEXPIRY", "MRP", "QTY", "PRICE", "GROSS", "SCH", "D%", "D.AMT", "TXBL", "GST%", "GST$", "NET$"]],
-				body: lines.map((row, index) => {
-					const expiryStr = row.expiry_date ? moment(row.expiry_date).format("MM/YY") : "-";
-					return [
-						index + 1, row.product_name, `${row.product_code || ""}\n${row.ean_code || ""}`, row.hsn_code || "-", 
-						`${row.batch_code || ""}\n${expiryStr}`, Number(row.mrp || 0).toFixed(2), row.shipped_qty, 
-						Number(row.rate || 0).toFixed(2), Number(row.gross_amount || 0).toFixed(2), Number(row.scheme_amount || 0).toFixed(2), 
-						(row.tax_percent || 0) + "%", Number(row.discount_amount || 0).toFixed(2), Number(row.taxable_amount || 0).toFixed(2), 
-						(row.tax_percent || 0) + "%", Number(row.tax_amount || 0).toFixed(2), Number(row.amount || 0).toFixed(2)
-					];
-				}),
+				body: lines.map((row, index) => [
+					index + 1, row.product_name, `${row.product_code || ""}\n${row.ean_code || ""}`, row.hsn_code || "-", 
+					`${row.batch_code || ""}\n${row.expiry_date ? moment(row.expiry_date).format("MM/YY") : "-"}`, Number(row.mrp || 0).toFixed(2), row.shipped_qty, 
+					Number(row.rate || 0).toFixed(2), Number(row.gross_amount || 0).toFixed(2), Number(row.scheme_amount || 0).toFixed(2), 
+					(row.tax_percent || 0) + "%", Number(row.discount_amount || 0).toFixed(2), Number(row.taxable_amount || 0).toFixed(2), 
+					(row.tax_percent || 0) + "%", Number(row.tax_amount || 0).toFixed(2), Number(row.amount || 0).toFixed(2)
+				]),
 				didDrawPage: (data) => {
 					drawMainHeader(data.pageNumber, doc.internal.getNumberOfPages());
 				},
 				theme: 'grid',
 				styles: { fontSize: 8, cellPadding: 2, lineColor: [0, 0, 0], lineWidth: 0.5, textColor: [0, 0, 0], overflow: 'linebreak', valign: 'middle' },
-				headStyles: { fillColor: [255, 255, 255], textColor: [0, 0, 0], fontStyle: 'bold', lineWidth: 0.5 },
-				columnStyles: { 
-					0: { cellWidth: 20 }, 1: { cellWidth: 'auto', minCellWidth: 100 }, 2: { cellWidth: 45 }, 3: { cellWidth: 35 }, 4: { cellWidth: 45 },
-					5: { halign: 'right' }, 6: { halign: 'right' }, 7: { halign: 'right' }, 8: { halign: 'right' }, 9: { halign: 'right' }, 10: { halign: 'right' },
-					11: { halign: 'right' }, 12: { halign: 'right' }, 13: { halign: 'center' }, 14: { halign: 'right' }, 15: { halign: 'right' }
-				}
+				headStyles: { fillColor: [255, 255, 255], textColor: [0, 0, 0], fontStyle: 'bold' },
+				columnStyles: { 0: { cellWidth: 20 }, 1: { cellWidth: 'auto', minCellWidth: 100 }, 2: { cellWidth: 45 }, 3: { cellWidth: 35 }, 4: { cellWidth: 45 } }
 			});
 
-			// --- DYNAMIC FOOTER CHECK ---
 			let currentY = doc.lastAutoTable.finalY + 20;
 			const pageHeight = doc.internal.pageSize.height;
 
-			let totalSchemeAmt = 0;
-			let schemeLines = (invoiceData.invoice_lines || [])
-			.filter(l => l.tier_applied)
-			.map(l => {
-				const amt = Number(l.scheme_amount || 0);
-				totalSchemeAmt += amt;
-				return [l.product_name, l.tier_applied, amt.toFixed(2)];
-			});
-
-			if (schemeLines.length === 0) {
-				schemeLines = (invoiceData.order_lines || [])
-					.filter(l => l.tier_applied)
-					.map(l => {
-					const amt = Number(l.scheme_amount || 0);
-					totalSchemeAmt += amt;
-					return [l.product_name, l.tier_applied, amt.toFixed(2)];
-				});
-			}
-
-			if (schemeLines.length > 0) {
-				schemeLines.push([{ content: 'Total Scheme Discount', colSpan: 2, styles: { halign: 'right', fontStyle: 'bold' } }, { content: totalSchemeAmt.toFixed(2), styles: { halign: 'right', fontStyle: 'bold' } }]);
-			}
-
-			const estimatedFooterHeight = (summaryData.length * 20) + (schemeLines.length * 20) + 210; 
-			if (currentY + estimatedFooterHeight > pageHeight) {
-				doc.addPage();
-				drawMainHeader(doc.internal.getNumberOfPages(), doc.internal.getNumberOfPages());
-				currentY = 157;
-			}
-
-			// --- 3. TAX SUMMARY ---
+			// --- TAX SUMMARY ---
 			doc.autoTable({
 				startY: currentY,
 				margin: { left: margin },
 				head: [["TAX SUMMARY", "PCS", "GROSS", "SCH", "DISC", "TAXABLE", "TAX", "NET"]],
-				body: summaryData.map(row => [
-					row.PARTICULARS, row.Pcs, row.Gross, row.Sch,
-					row.Disc, row.Taxable, row.Tax, row.Net
-				]),
+				body: summaryData.map(row => [row.PARTICULARS, row.Pcs, row.Gross, row.Sch, row.Disc, row.Taxable, row.Tax, row.Net]),
 				theme: 'grid',
 				styles: { fontSize: 8.5, cellPadding: 2, lineColor: [0, 0, 0], lineWidth: 0.5, textColor: [0, 0, 0] },
-				headStyles: { fillColor: [255, 255, 255], textColor: [0, 0, 0], fontStyle: 'bold' },
-				bodyStyles: (row) => (row.at(0).includes('Total') ? { fontStyle: 'bold', fillColor: [250, 250, 250] } : {})
+				headStyles: { fillColor: [255, 255, 255], textColor: [0, 0, 0], fontStyle: 'bold' }
 			});
 
-			// --- 4. SCHEMES APPLIED ---
-			if (schemeLines.length > 0) {
-				doc.autoTable({
-					startY: doc.lastAutoTable.finalY + 10,
-					margin: { left: margin },
-					head: [["PRODUCT NAME", "SCHEMES / TIER APPLIED", "SCHEME AMT"]],
-					body: schemeLines,
-					theme: 'grid',
-					styles: { fontSize: 8, cellPadding: 3, lineColor: [0, 0, 0], lineWidth: 0.5, textColor: [0, 0, 0] },
-					headStyles: { fillColor: [245, 245, 245], textColor: [0, 0, 0], fontStyle: 'bold' },
-					columnStyles: { 0: { cellWidth: 150 }, 1: { cellWidth: 'auto' }, 2: { cellWidth: 70, halign: 'right' } }
-				});
-			}
-
-			// --- 5. AMOUNT IN WORDS & ACKNOWLEDGEMENT ---
-			const wordsY = doc.lastAutoTable.finalY + 38;
-			doc.setFontSize(10.5); doc.setFont("helvetica", "bold");
-			doc.text(`Grand Total: ${Number(grandTotal).toFixed(2)}`, margin, wordsY - 14);
-			doc.text("Total Amount (in words):", margin, wordsY);
-			doc.setFont("helvetica", "normal");
-			doc.text(toWords(Math.round(grandTotal)), margin + 140, wordsY);
-
-			doc.setFontSize(8.5);
-			doc.text("This is a computer generated document and does not require a physical signature.", margin, pageHeight - 170);
-
+			// --- FOOTER SECTION (Receipt Slip) ---
 			const slipY = pageHeight - 160; 
 			doc.setDrawColor(0, 0, 0); doc.setLineDash([3, 3], 0);
 			doc.line(margin, slipY, pageWidth - margin, slipY); doc.setLineDash([], 0);
@@ -248,7 +178,6 @@ export default {
 			doc.setFontSize(9);
 			doc.text(`Invoice No: ${invoiceData.invoice_number}`, margin + 10, slipBoxY + 15);
 			doc.text(`Date: ${moment(invoiceData.invoice_date).format("DD/MM/YYYY")}`, margin + 10, slipBoxY + 30);
-			doc.text(`Customer: ${invoiceData.customer_name}`, margin + 10, slipBoxY + 45);
 			doc.text(`Total Amount: ${Number(grandTotal).toFixed(2)}`, margin + 10, slipBoxY + 60);
 
 			const bankInfoX = pageWidth / 2 + 5;
@@ -258,24 +187,18 @@ export default {
 			doc.text(`Acc No: ${bank.account_number || "-"}`, bankInfoX, slipBoxY + 38);
 			doc.text(`IFSC: ${bank.ifsc_code || "-"}`, bankInfoX, slipBoxY + 48);
 
-			doc.setFontSize(9);
-			doc.text(`Receiver's Signature: __________________`, margin + 10, slipBoxY + 90);
 			doc.text(`Authorized Signatory: __________________`, bankInfoX, slipBoxY + 90);
 
-			doc.setFontSize(8); doc.setFont("helvetica", "bold");
-			doc.text("Terms and Condition: ALL LEGAL DISPUTES ARE SUBJECT TO CALICUT JURIDICTION ONLY", margin, pageHeight - 15);
-
-			// --- 7. THE FIX: DIRECT DOWNLOAD ---
+			// --- DOWNLOAD ---
 			const fileName = (invoiceData.invoice_number || "INV") + ".pdf";
 			download(doc.output('dataurlstring'), fileName, "application/pdf");
-			showAlert("Invoice Downloaded Successfully", "success");
 
 		} catch (error) {
 			showAlert("Invoice PDF Error: " + error.message, "error");
 		}
 	},
 
-	// --- C. HELPERS (EXACT COPIES) ---
+	// --- HELPERS ---
 	getSummary: (lines) => {
 		if (!lines || lines.length === 0) return [];
 		const groups = {};
@@ -307,7 +230,7 @@ export default {
 		doc.setDrawColor(0, 0, 0); doc.setLineWidth(0.5); doc.rect(x, y, width, height);
 		let rowY = y + 11;
 		rows.forEach(r => {
-			doc.setFontSize(8.5); doc.setFont("helvetica", "bold"); doc.setTextColor(0, 0, 0);
+			doc.setFontSize(8.5); doc.setFont("helvetica", "bold");
 			const label = String(r[0]) + ":"; doc.text(label, x + 5, rowY);
 			doc.setFont("helvetica", "normal");
 			const val = String(r[1] || "-"); 

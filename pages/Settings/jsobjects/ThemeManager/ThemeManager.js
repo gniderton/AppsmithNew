@@ -60,6 +60,126 @@ export default {
       shadowLg:    "0 8px 32px 0 rgba(0,0,0,0.7)",
       borderWidth: "1",
     },
+		frost: {
+			primary:     "#0EA5E9",
+			background:  "#F8FAFC",
+			surface:     "#FFFFFF",
+			surfaceAlt:  "#F1F5F9",
+			text:        "#0F172A",
+			textMuted:   "#64748B",
+			border:      "#E2E8F0",
+			borderAlt:   "#CBD5E1",
+			danger:      "#F43F5E",
+			success:     "#10B981",
+			warning:     "#F59E0B",
+			radius:      "12px",
+			radiusSm:    "8px",
+			radiusLg:    "20px",
+			shadow:      "0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05)",
+			shadowSm:    "0 1px 2px 0 rgba(0, 0, 0, 0.05)",
+			shadowLg:    "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1)",
+			borderWidth: "1",
+		},
+		orchid: {
+			primary:     "#8B5CF6",
+			background:  "#FAF5FF",
+			surface:     "#FFFFFF",
+			surfaceAlt:  "#F3E8FF",
+			text:        "#2E1065",
+			textMuted:   "#7E22CE",
+			border:      "#E9D5FF",
+			borderAlt:   "#D8B4FE",
+			danger:      "#E11D48",
+			success:     "#059669",
+			warning:     "#D97706",
+			radius:      "16px",
+			radiusSm:    "8px",
+			radiusLg:    "24px",
+			shadow:      "0 10px 15px -3px rgba(139, 92, 246, 0.1)",
+			shadowSm:    "0 4px 6px -1px rgba(139, 92, 246, 0.05)",
+			shadowLg:    "0 25px 50px -12px rgba(139, 92, 246, 0.25)",
+			borderWidth: "1",
+		},
+		sage: {
+			primary:     "#059669",
+			background:  "#F9FAF7",
+			surface:     "#FFFFFF",
+			surfaceAlt:  "#F0F2EE",
+			text:        "#1A2E1A",
+			textMuted:   "#526352",
+			border:      "#E1E5DE",
+			borderAlt:   "#C9D1C5",
+			danger:      "#DC2626",
+			success:     "#16A34A",
+			warning:     "#CA8A04",
+			radius:      "4px",
+			radiusSm:    "2px",
+			radiusLg:    "8px",
+			shadow:      "0 1px 2px 0 rgba(0, 0, 0, 0.05)",
+			shadowSm:    "0 1px 1px 0 rgba(0, 0, 0, 0.05)",
+			shadowLg:    "0 10px 15px -3px rgba(0, 0, 0, 0.1)",
+			borderWidth: "1.5",
+		},
+		nebula: {
+			primary:     "#A78BFA", // Soft Violet
+			background:  "#0F172A", // Deep Navy
+			surface:     "#1E293B", // Slate Blue
+			surfaceAlt:  "#334155",
+			text:        "#F1F5F9",
+			textMuted:   "#94A3B8",
+			border:      "#334155",
+			borderAlt:   "#475569",
+			danger:      "#FB7185",
+			success:     "#34D399",
+			warning:     "#FBBF24",
+			radius:      "12px",
+			radiusSm:    "8px",
+			radiusLg:    "20px",
+			shadow:      "0 4px 20px 0 rgba(167, 139, 250, 0.15)", 
+			shadowSm:    "0 2px 8px 0 rgba(0, 0, 0, 0.4)",
+			shadowLg:    "0 12px 40px 0 rgba(167, 139, 250, 0.25)",
+			borderWidth: "1",
+		},
+		obsidian: {
+			primary:     "#FFFFFF", // Pure White accents
+			background:  "#000000", // True Black
+			surface:     "#111111", // Darkest Gray
+			surfaceAlt:  "#1C1C1C",
+			text:        "#EDEDED",
+			textMuted:   "#888888",
+			border:      "#262626",
+			borderAlt:   "#3F3F3F",
+			danger:      "#FF453A",
+			success:     "#32D74B",
+			warning:     "#FFD60A",
+			radius:      "8px",
+			radiusSm:    "4px",
+			radiusLg:    "16px",
+			shadow:      "0 0 0 1px rgba(255,255,255,0.05)", // Subtle ring instead of shadow
+			shadowSm:    "0 2px 4px rgba(0,0,0,0.5)",
+			shadowLg:    "0 20px 40px rgba(0,0,0,0.6)",
+			borderWidth: "1",
+		},
+		evergreen: {
+			primary:     "#00DC82", // Neon Mint
+			background:  "#060D0A", // Deep Forest Black
+			surface:     "#0D1A14", // Dark Moss
+			surfaceAlt:  "#172B21",
+			text:        "#ECF3F0",
+			textMuted:   "#82968E",
+			border:      "#1C3328",
+			borderAlt:   "#2D4D3D",
+			danger:      "#F87171",
+			success:     "#34D399",
+			warning:     "#FBBF24",
+			radius:      "10px",
+			radiusSm:    "6px",
+			radiusLg:    "18px",
+			shadow:      "0 10px 15px -3px rgba(0, 0, 0, 0.4)",
+			shadowSm:    "0 4px 6px -1px rgba(0, 0, 0, 0.3)",
+			shadowLg:    "0 25px 50px -12px rgba(0, 0, 0, 0.6)",
+			borderWidth: "1",
+		},
     brand: {
       primary:     "#E11D48",
       background:  "#FFF1F2",
@@ -80,9 +200,109 @@ export default {
       shadowLg:    "0 4px 24px 0 rgba(225,29,72,0.15)",
       borderWidth: "1",
     },
+		nothingWhite: {
+			primary:     "#EB001B", // Signature Nothing Red
+			background:  "#FFFFFF", 
+			surface:     "#F2F2F2", // Light gray "Tech" surface
+			surfaceAlt:  "#E5E5E5",
+			text:        "#000000", // High contrast black
+			textMuted:   "#707070",
+			border:      "#000000", // Thin black lines for that industrial look
+			borderAlt:   "#D1D1D1",
+			danger:      "#EB001B",
+			success:     "#00FF41", // "Matrix" Green
+			warning:     "#FFBF00",
+			radius:      "0px",     // Nothing uses very sharp corners or very round ones
+			radiusSm:    "0px",     // Try 0px for a more "Blueprint" feel
+			radiusLg:    "24px",    // Or use 24px for that "Phone hardware" look
+			shadow:      "4px 4px 0px 0px rgba(0,0,0,1)", // "Brutalist" hard shadow
+			shadowSm:    "2px 2px 0px 0px rgba(0,0,0,1)",
+			shadowLg:    "8px 8px 0px 0px rgba(0,0,0,1)",
+			borderWidth: "1.5",
+		},
+		nothingBlack: {
+			primary:     "#EB001B", 
+			background:  "#000000", // Pure OLED black
+			surface:     "#121212", // Slightly lighter for layering
+			surfaceAlt:  "#1F1F1F",
+			text:        "#FFFFFF",
+			textMuted:   "#A0A0A0",
+			border:      "#262626", 
+			borderAlt:   "#404040",
+			danger:      "#EB001B",
+			success:     "#00FF41",
+			warning:     "#FFBF00",
+			radius:      "16px",
+			radiusSm:    "8px",
+			radiusLg:    "32px",
+			shadow:      "0 0 10px 0 rgba(255,255,255,0.1)", // Subtle white glow (Glyph style)
+			shadowSm:    "0 0 5px 0 rgba(255,255,255,0.05)",
+			shadowLg:    "0 0 25px 0 rgba(255,255,255,0.15)",
+			borderWidth: "1",
+		},
+		paper: {
+			primary:     "#111111", // Stark Black
+			background:  "#FDFDFD", 
+			surface:     "#FFFFFF",
+			surfaceAlt:  "#F5F5F5",
+			text:        "#000000",
+			textMuted:   "#737373",
+			border:      "#E5E5E5",
+			borderAlt:   "#111111", // Use for active states
+			danger:      "#FF3B30",
+			success:     "#000000", // Minimalist success (just black/white)
+			warning:     "#FFCC00",
+			radius:      "0px",     // Hard edges for industrial look
+			radiusSm:    "0px",
+			radiusLg:    "0px",
+			shadow:      "0 0 0 1px rgba(0,0,0,0.05)", // Minimal ring
+			shadowSm:    "0 1px 2px rgba(0,0,0,0.1)",
+			shadowLg:    "0 12px 24px rgba(0,0,0,0.05)",
+			borderWidth: "1",
+		},
+		alabaster: {
+			primary:     "#434343", 
+			background:  "#F7F7F2", // Warm White
+			surface:     "#FFFFFF",
+			surfaceAlt:  "#EFEEE5",
+			text:        "#1C1C1A",
+			textMuted:   "#8C8C85",
+			border:      "#E2E2D9",
+			borderAlt:   "#C6C6B5",
+			danger:      "#B91C1C",
+			success:     "#166534",
+			warning:     "#92400E",
+			radius:      "20px",    // Very rounded like hardware corners
+			radiusSm:    "10px",
+			radiusLg:    "32px",
+			shadow:      "0 10px 30px -10px rgba(0,0,0,0.05)",
+			shadowSm:    "0 2px 10px rgba(0,0,0,0.02)",
+			shadowLg:    "0 30px 60px -12px rgba(0,0,0,0.08)",
+			borderWidth: "1",
+		},
+		ghost: {
+			primary:     "#6366F1", // Indigo accent
+			background:  "#F1F5F9", // Cool White/Slate-50
+			surface:     "#FFFFFFCC", // Set up for 80% transparency
+			surfaceAlt:  "#E2E8F0",
+			text:        "#0F172A",
+			textMuted:   "#64748B",
+			border:      "#FFFFFF", // White border on off-white background creates "Depth"
+			borderAlt:   "#CBD5E1",
+			danger:      "#EF4444",
+			success:     "#22C55E",
+			warning:     "#F59E0B",
+			radius:      "12px",
+			radiusSm:    "6px",
+			radiusLg:    "24px",
+			shadow:      "0 8px 32px 0 rgba(31, 38, 135, 0.07)",
+			shadowSm:    "0 4px 8px 0 rgba(0, 0, 0, 0.04)",
+			shadowLg:    "0 12px 48px 0 rgba(0, 0, 0, 0.1)",
+			borderWidth: "2", // Thicker white borders mimic glass thickness
+		},
   },
 
-  defaultTheme: "light",
+  defaultTheme: "ghost",
 
   init() {
     const name = appsmith.store.activeTheme || this.defaultTheme;
