@@ -1,0 +1,223 @@
+export default {
+	// --- 1. THE TRIGGER (Link your "Bulk Download" button to this) ---
+	async downloadSelectedInvoices() {
+		try {
+			// Get selected rows from your table
+			const selectedRows = tblUsageInvoices.selectedRows || [];
+			
+			if (selectedRows.length === 0) {
+				showAlert("Please select at least one invoice from the table.", "warning");
+				return;
+			}
+
+			// Extract IDs for the PDF generator (Using 'id' as requested)
+			const ids = selectedRows.map(r => r.id).filter(Boolean);
+			
+			if (ids.length === 0) {
+				showAlert("Error: Selected rows do not contain valid IDs.", "error");
+				return;
+			}
+
+			// Proceed to the bulk downloader
+			await this.downloadBulkInvoices(ids);
+
+		} catch (error) {
+			showAlert("Trigger Error: " + error.message, "error");
+		}
+	},
+
+	// --- 2. THE LOOP (Handles Batching & Bank Data) ---
+	async downloadBulkInvoices(ids) {
+		showAlert(`Starting batch download of ${ids.length} invoices...`, "info");
+		
+		// Run this once for the entire batch to save API calls
+		await getBankDetails.run();
+
+		for (const id of ids) {
+			// Fetch full details for this specific invoice
+			await getUnifiedInvoiceDetail.run({ id: id }); 
+			const detailedData = getUnifiedInvoiceDetail.data;
+
+			if (detailedData && detailedData.invoice_id) {
+				await this.previewInvoice(detailedData);
+				// Small delay to prevent browser download congestion
+				await new Promise(r => setTimeout(r, 800));
+			}
+		}
+		showAlert("All Selected Invoices Downloaded!", "success");
+	},
+
+	// --- 3. PDF GENERATION LOGIC ---
+	async previewInvoice(invoiceData) {
+		try {
+			if (!invoiceData || !invoiceData.invoice_id) throw new Error("Invalid invoice data received.");
+			if (typeof jspdf === "undefined") throw new Error("jspdf library not found.");
+			
+			const jsPDFConstructor = jspdf.jsPDF || jspdf;
+			const doc = new jsPDFConstructor('p', 'pt', 'a4'); 
+
+			const lines = invoiceData.invoice_lines || [];
+			const summaryData = this.getSummary(lines); 
+			const grandTotal = Number(invoiceData.grand_total || 0);
+			const brand = Global_Assets.getSummary();
+			const bank = getBankDetails.data || {};
+
+			const margin = 12; 
+			const pageWidth = doc.internal.pageSize.width;
+			const pageHeight = doc.internal.pageSize.height;
+
+			// Helper: Number to Words
+			const toWords = (num) => {
+				const a = ['','One ','Two ','Three ','Four ', 'Five ','Six ','Seven ','Eight ','Nine ','Ten ','Eleven ','Twelve ','Thirteen ','Fourteen ','Fifteen ','Sixteen ','Seventeen ','Eighteen ','Nineteen '];
+				const b = ['', '', 'Twenty','Thirty','Forty','Fifty', 'Sixty','Seventy','Eighty','Ninety'];
+				const n = ("000000000" + Math.floor(num)).substr(-9).match(/^(\d{2})(\d{2})(\d{2})(\d{1})(\d{2})$/);
+				if (!n) return ''; 
+				let str = '';
+				str += (Number(n[1]) != 0) ? (a[Number(n[1])] || b[n[1][0]] + ' ' + a[n[1][1]]) + 'Crore ' : '';
+				str += (Number(n[2]) != 0) ? (a[Number(n[2])] || b[n[2][0]] + ' ' + a[n[2][1]]) + 'Lakh ' : '';
+				str += (Number(n[3]) != 0) ? (a[Number(n[3])] || b[n[3][0]] + ' ' + a[n[3][1]]) + 'Thousand ' : '';
+				str += (Number(n[4]) != 0) ? (a[Number(n[4])] || b[n[4][0]] + ' ' + a[n[4][1]]) + 'Hundred ' : '';
+				str += (Number(n[5]) != 0) ? ((str != '') ? 'and ' : '') + (a[Number(n[5])] || b[n[5][0]] + ' ' + a[n[5][1]]) + 'Only ' : 'Only ';
+				return str;
+			};
+
+			const drawMainHeader = (currentPage, totalPages) => {
+				const headerY = margin;
+				try {
+					const logo = Global_Assets.getLogo();
+					if (logo && logo.startsWith("data:image/")) {
+						doc.addImage(logo, 'PNG', margin, headerY, 90, 30);
+					}
+				} catch(e) {}
+
+				doc.setTextColor(0, 0, 0); doc.setFont("helvetica", "bold"); doc.setFontSize(16);
+				doc.text("SALES INVOICE", pageWidth / 2, headerY + 15, { align: "center" });
+				doc.setFontSize(11); doc.text(String(invoiceData.invoice_number), pageWidth / 2, headerY + 30, { align: "center" });
+
+				const boxesY = headerY + 40;
+				const gap = 8;
+				const boxWidth = (pageWidth - (margin * 2) - (gap * 2)) / 3;
+				const boxHeight = 95; 
+
+				this._drawSimpleBox(doc, margin, boxesY, boxWidth, boxHeight, [
+					["From", String(brand.regt_name)], ["Address", String(brand.address)], ["Dist/PIN", `${brand.District} - ${brand.pin}`],
+					["GST", String(brand.gst)], ["FSSAI", String(brand.fssai_no)], ["Email", String(brand.email)], ["Contact No", String(brand.contact_no)]
+				]);
+
+				const cAddr = [invoiceData.customer_address, invoiceData.district, invoiceData.pin_code ? "PIN: " + invoiceData.pin_code : null].filter(Boolean).join(", ");
+				this._drawSimpleBox(doc, margin + boxWidth + gap, boxesY, boxWidth, boxHeight, [
+					["To", String(invoiceData.customer_name)], ["Address", cAddr || "-"], ["GSTIN", String(invoiceData.gstin || "-")],
+					["Phone", String(invoiceData.customer_phone || "-")], ["Email", String(invoiceData.customer_email || "-")]
+				], 60);
+
+				this._drawSimpleBox(doc, margin + (boxWidth * 2) + (gap * 2), boxesY, boxWidth, boxHeight, [
+					["INV No", String(invoiceData.invoice_number)], ["Date", moment(invoiceData.invoice_date).format("DD/MM/YYYY")],
+					["Order Date", moment(invoiceData.order_date).format("DD/MM/YYYY")], ["TOTAL AMT", Number(grandTotal).toFixed(2)],
+					["DSE", String(invoiceData.dse_name || "-")], ["Route", String(invoiceData.route || "-")],
+					["DSE Phone", String(invoiceData.dse_phone || "-")], ["PAGE", `${currentPage} / ${totalPages}`]
+				], 65);
+
+				return boxesY + boxHeight; 
+			};
+
+			doc.autoTable({
+				startY: margin + 40 + 95 + 10,
+				margin: { left: margin, right: margin, top: 157, bottom: 12 },
+				head: [["S.N", "ITEM NAME", "EAN CODE", "HSN", "BATCH\nEXPIRY", "MRP", "QTY", "PRICE", "GROSS", "SCH", "D%", "D.AMT", "TXBL", "GST%", "GST$", "NET$"]],
+				body: lines.map((row, index) => [
+					index + 1, row.product_name, row.ean_code || "-", row.hsn_code || "-", 
+					`${row.batch_code || ""}\n${row.expiry_date ? moment(row.expiry_date).format("MM/YY") : "-"}`, 
+					Number(row.mrp || 0).toFixed(2), row.shipped_qty, 
+					Number(row.rate || 0).toFixed(2), Number(row.gross_amount || 0).toFixed(2), Number(row.scheme_amount || 0).toFixed(2), 
+					(row.tax_percent || 0) + "%", Number(row.discount_amount || 0).toFixed(2), Number(row.taxable_amount || 0).toFixed(2), 
+					(row.tax_percent || 0) + "%", Number(row.tax_amount || 0).toFixed(2), Number(row.amount || 0).toFixed(2)
+				]),
+				didDrawPage: (data) => drawMainHeader(data.pageNumber, doc.internal.getNumberOfPages()),
+				theme: 'grid',
+				styles: { fontSize: 8, cellPadding: 2, lineColor: [0, 0, 0], lineWidth: 0.5, textColor: [0, 0, 0], overflow: 'linebreak', valign: 'middle' },
+				headStyles: { fillColor: [255, 255, 255], textColor: [0, 0, 0], fontStyle: 'bold' },
+				columnStyles: { 0: { cellWidth: 20 }, 1: { cellWidth: 'auto', minCellWidth: 100 }, 13: { halign: 'center' } }
+			});
+
+			let currentY = doc.lastAutoTable.finalY + 20;
+
+			// --- Tax Summary Table ---
+			doc.autoTable({
+				startY: currentY,
+				margin: { left: margin },
+				head: [["TAX SUMMARY", "PCS", "GROSS", "SCH", "DISC", "TAXABLE", "TAX", "NET"]],
+				body: summaryData.map(row => [row.PARTICULARS, row.Pcs, row.Gross, row.Sch, row.Disc, row.Taxable, row.Tax, row.Net]),
+				theme: 'grid',
+				styles: { fontSize: 8.5, cellPadding: 2, lineColor: [0, 0, 0], lineWidth: 0.5, textColor: [0, 0, 0] },
+				headStyles: { fillColor: [255, 255, 255], textColor: [0, 0, 0], fontStyle: 'bold' }
+			});
+
+			// --- Footer & Acknowledgement ---
+			const slipY = pageHeight - 160; 
+			doc.setLineDash([3, 3], 0);
+			doc.line(margin, slipY, pageWidth - margin, slipY); doc.setLineDash([], 0);
+			
+			doc.setFontSize(10); doc.setFont("helvetica", "bold");
+			doc.text("RECEIPT ACKNOWLEDGEMENT", pageWidth / 2, slipY + 20, { align: "center" });
+
+			const slipBoxY = slipY + 30;
+			doc.rect(margin, slipBoxY, pageWidth - (margin * 2), 100);
+			doc.setFontSize(9);
+			doc.text(`Invoice No: ${invoiceData.invoice_number}`, margin + 10, slipBoxY + 15);
+			doc.text(`Total Amount: ${Number(grandTotal).toFixed(2)}`, margin + 10, slipBoxY + 60);
+
+			const bankInfoX = pageWidth / 2 + 5;
+			doc.text("PAYMENT BANK DETAILS", bankInfoX, slipBoxY + 15);
+			doc.setFont("helvetica", "normal"); doc.setFontSize(8);
+			doc.text(`Bank: ${bank.bank_name || "-"}`, bankInfoX, slipBoxY + 28);
+			doc.text(`Acc No: ${bank.account_number || "-"}`, bankInfoX, slipBoxY + 38);
+			doc.text(`IFSC: ${bank.ifsc_code || "-"}`, bankInfoX, slipBoxY + 48);
+
+			const fileName = (invoiceData.invoice_number || "INV") + ".pdf";
+			download(doc.output('dataurlstring'), fileName, "application/pdf");
+
+		} catch (error) {
+			showAlert("PDF Error: " + error.message, "error");
+		}
+	},
+
+	getSummary(lines) {
+		if (!lines || lines.length === 0) return [];
+		const groups = {};
+		lines.forEach(row => {
+			const taxRate = Number(row.tax_percent || 0);
+			const taxName = taxRate > 0 ? `${taxRate}% GST` : 'No Tax';
+			if (!groups[taxName]) {
+				groups[taxName] = { PARTICULARS: taxName, Pcs: 0, Gross: 0, Sch: 0, Disc: 0, Taxable: 0, Tax: 0, Net: 0 };
+			}
+			const g = groups[taxName];
+			g.Pcs += Number(row.shipped_qty || 0); g.Gross += Number(row.gross_amount || 0); g.Sch += Number(row.scheme_amount || 0);
+			g.Disc += Number(row.discount_amount || 0); g.Taxable += Number(row.taxable_amount || 0); g.Tax += Number(row.tax_amount || 0); g.Net += Number(row.amount || 0);
+		});
+		const resultRows = Object.values(groups);
+		const totalRow = resultRows.reduce((acc, curr) => {
+			acc.Pcs += curr.Pcs; acc.Gross += curr.Gross; acc.Sch += curr.Sch; acc.Disc += curr.Disc; acc.Taxable += curr.Taxable; acc.Tax += curr.Tax; acc.Net += curr.Net;
+			return acc;
+		}, { PARTICULARS: 'Grand Total', Pcs: 0, Gross: 0, Sch: 0, Disc: 0, Taxable: 0, Tax: 0, Net: 0 });
+		resultRows.push(totalRow);
+		
+		return resultRows.map(row => ({
+			PARTICULARS: row.PARTICULARS, Pcs: row.Pcs, Gross: row.Gross.toFixed(2), Sch: row.Sch.toFixed(2),
+			Disc: row.Disc.toFixed(2), Taxable: row.Taxable.toFixed(2), Tax: row.Tax.toFixed(2), Net: Math.round(row.Net).toFixed(2)
+		}));
+	},
+
+	_drawSimpleBox(doc, x, y, width, height, rows, labelWidth = 58) {
+		doc.setDrawColor(0, 0, 0); doc.setLineWidth(0.5); doc.rect(x, y, width, height);
+		let rowY = y + 11;
+		rows.forEach(r => {
+			doc.setFontSize(8.5); doc.setFont("helvetica", "bold");
+			doc.text(String(r[0]) + ":", x + 5, rowY);
+			doc.setFont("helvetica", "normal");
+			const val = String(r[1] || "-"); 
+            const splitVal = doc.splitTextToSize(val, width - labelWidth - 5); 
+			doc.text(splitVal, x + labelWidth, rowY); 
+			rowY += (splitVal.length * 9.5) + 1.5; 
+		});
+	}
+}

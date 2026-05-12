@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "69a80abb79ac426a29eb8838_9f00da27-1650-4bd9-80b9-125817f301ab",
+  "id": "Schemes_DownloadInvoices",
+  "unpublishedCollection": {
+    "name": "DownloadInvoices",
+    "pageId": "Schemes",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}
