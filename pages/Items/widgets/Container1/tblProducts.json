@@ -2,12 +2,13 @@
   "accentColor": "{{appsmith.theme.colors.primaryColor}}",
   "animateLoading": true,
   "borderColor": "#E0DEDE",
-  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "borderWidth": "1",
+  "borderRadius": "\t{{appsmith.store.theme.radius}}",
+  "borderWidth": "\t{{appsmith.store.theme.borderWidth}}",
   "bottomRow": 107,
-  "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+  "boxShadow": "\t{{appsmith.store.theme.shadow}}",
   "cachedTableData": {},
   "canFreezeColumn": true,
+  "cellBackground": "{{appsmith.store.theme.surface}}",
   "childStylesheet": {
     "button": {
       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
@@ -282,6 +283,333 @@
     },
     {
       "key": "primaryColumns.customColumn2.boxShadow"
+    },
+    {
+      "key": "cellBackground"
+    },
+    {
+      "key": "primaryColumns.id.cellBackground"
+    },
+    {
+      "key": "primaryColumns.created_at.cellBackground"
+    },
+    {
+      "key": "primaryColumns.vendor_id.cellBackground"
+    },
+    {
+      "key": "primaryColumns.brand_id.cellBackground"
+    },
+    {
+      "key": "primaryColumns.category_id.cellBackground"
+    },
+    {
+      "key": "primaryColumns.product_code.cellBackground"
+    },
+    {
+      "key": "primaryColumns.product_name.cellBackground"
+    },
+    {
+      "key": "primaryColumns.ean_code.cellBackground"
+    },
+    {
+      "key": "primaryColumns.hsn_id.cellBackground"
+    },
+    {
+      "key": "primaryColumns.mrp.cellBackground"
+    },
+    {
+      "key": "primaryColumns.tax_id.cellBackground"
+    },
+    {
+      "key": "primaryColumns.purchase_rate.cellBackground"
+    },
+    {
+      "key": "primaryColumns.distributor_rate.cellBackground"
+    },
+    {
+      "key": "primaryColumns.wholesale_rate.cellBackground"
+    },
+    {
+      "key": "primaryColumns.dealer_rate.cellBackground"
+    },
+    {
+      "key": "primaryColumns.retail_rate.cellBackground"
+    },
+    {
+      "key": "primaryColumns.is_active.cellBackground"
+    },
+    {
+      "key": "primaryColumns.current_stock.cellBackground"
+    },
+    {
+      "key": "primaryColumns.damaged_stock.cellBackground"
+    },
+    {
+      "key": "primaryColumns.case_quantity.cellBackground"
+    },
+    {
+      "key": "primaryColumns.uom.cellBackground"
+    },
+    {
+      "key": "primaryColumns.model_number.cellBackground"
+    },
+    {
+      "key": "primaryColumns.min_stock_level.cellBackground"
+    },
+    {
+      "key": "primaryColumns.box_length_cm.cellBackground"
+    },
+    {
+      "key": "primaryColumns.box_width_cm.cellBackground"
+    },
+    {
+      "key": "primaryColumns.box_height_cm.cellBackground"
+    },
+    {
+      "key": "primaryColumns.weight_kg.cellBackground"
+    },
+    {
+      "key": "primaryColumns.description.cellBackground"
+    },
+    {
+      "key": "primaryColumns.stock_damage.cellBackground"
+    },
+    {
+      "key": "primaryColumns.stock_expiry.cellBackground"
+    },
+    {
+      "key": "primaryColumns.stock_value_cost.cellBackground"
+    },
+    {
+      "key": "primaryColumns.stock_value_gross.cellBackground"
+    },
+    {
+      "key": "primaryColumns.stock_value_total_bought.cellBackground"
+    },
+    {
+      "key": "primaryColumns.brand_name.cellBackground"
+    },
+    {
+      "key": "primaryColumns.category_name.cellBackground"
+    },
+    {
+      "key": "primaryColumns.tax_name.cellBackground"
+    },
+    {
+      "key": "primaryColumns.tax_percentage.cellBackground"
+    },
+    {
+      "key": "primaryColumns.hsn_code.cellBackground"
+    },
+    {
+      "key": "primaryColumns.total_units_bought.cellBackground"
+    },
+    {
+      "key": "primaryColumns.total_units_sold.cellBackground"
+    },
+    {
+      "key": "primaryColumns.sales_value_taxable.cellBackground"
+    },
+    {
+      "key": "primaryColumns.total_cogs_value.cellBackground"
+    },
+    {
+      "key": "primaryColumns.margin_amount.cellBackground"
+    },
+    {
+      "key": "primaryColumns.margin_percentage.cellBackground"
+    },
+    {
+      "key": "primaryColumns.total_units_returned.cellBackground"
+    },
+    {
+      "key": "primaryColumns.total_units_adjusted.cellBackground"
+    },
+    {
+      "key": "primaryColumns.in_transit_qty.cellBackground"
+    },
+    {
+      "key": "primaryColumns.last_sold_date.cellBackground"
+    },
+    {
+      "key": "primaryColumns.last_purchased_date.cellBackground"
+    },
+    {
+      "key": "primaryColumns.customColumn1.cellBackground"
+    },
+    {
+      "key": "primaryColumns.customColumn2.cellBackground"
+    },
+    {
+      "key": "headerRowColor"
+    },
+    {
+      "key": "headerTextColor"
+    },
+    {
+      "key": "oddRowColor"
+    },
+    {
+      "key": "evenRowColor"
+    },
+    {
+      "key": "textColor"
+    },
+    {
+      "key": "primaryColumns.id.textColor"
+    },
+    {
+      "key": "primaryColumns.created_at.textColor"
+    },
+    {
+      "key": "primaryColumns.vendor_id.textColor"
+    },
+    {
+      "key": "primaryColumns.brand_id.textColor"
+    },
+    {
+      "key": "primaryColumns.category_id.textColor"
+    },
+    {
+      "key": "primaryColumns.product_code.textColor"
+    },
+    {
+      "key": "primaryColumns.product_name.textColor"
+    },
+    {
+      "key": "primaryColumns.ean_code.textColor"
+    },
+    {
+      "key": "primaryColumns.hsn_id.textColor"
+    },
+    {
+      "key": "primaryColumns.mrp.textColor"
+    },
+    {
+      "key": "primaryColumns.tax_id.textColor"
+    },
+    {
+      "key": "primaryColumns.purchase_rate.textColor"
+    },
+    {
+      "key": "primaryColumns.distributor_rate.textColor"
+    },
+    {
+      "key": "primaryColumns.wholesale_rate.textColor"
+    },
+    {
+      "key": "primaryColumns.dealer_rate.textColor"
+    },
+    {
+      "key": "primaryColumns.retail_rate.textColor"
+    },
+    {
+      "key": "primaryColumns.is_active.textColor"
+    },
+    {
+      "key": "primaryColumns.current_stock.textColor"
+    },
+    {
+      "key": "primaryColumns.damaged_stock.textColor"
+    },
+    {
+      "key": "primaryColumns.case_quantity.textColor"
+    },
+    {
+      "key": "primaryColumns.uom.textColor"
+    },
+    {
+      "key": "primaryColumns.model_number.textColor"
+    },
+    {
+      "key": "primaryColumns.min_stock_level.textColor"
+    },
+    {
+      "key": "primaryColumns.box_length_cm.textColor"
+    },
+    {
+      "key": "primaryColumns.box_width_cm.textColor"
+    },
+    {
+      "key": "primaryColumns.box_height_cm.textColor"
+    },
+    {
+      "key": "primaryColumns.weight_kg.textColor"
+    },
+    {
+      "key": "primaryColumns.description.textColor"
+    },
+    {
+      "key": "primaryColumns.stock_damage.textColor"
+    },
+    {
+      "key": "primaryColumns.stock_expiry.textColor"
+    },
+    {
+      "key": "primaryColumns.stock_value_cost.textColor"
+    },
+    {
+      "key": "primaryColumns.stock_value_gross.textColor"
+    },
+    {
+      "key": "primaryColumns.stock_value_total_bought.textColor"
+    },
+    {
+      "key": "primaryColumns.brand_name.textColor"
+    },
+    {
+      "key": "primaryColumns.category_name.textColor"
+    },
+    {
+      "key": "primaryColumns.tax_name.textColor"
+    },
+    {
+      "key": "primaryColumns.tax_percentage.textColor"
+    },
+    {
+      "key": "primaryColumns.hsn_code.textColor"
+    },
+    {
+      "key": "primaryColumns.total_units_bought.textColor"
+    },
+    {
+      "key": "primaryColumns.total_units_sold.textColor"
+    },
+    {
+      "key": "primaryColumns.sales_value_taxable.textColor"
+    },
+    {
+      "key": "primaryColumns.total_cogs_value.textColor"
+    },
+    {
+      "key": "primaryColumns.margin_amount.textColor"
+    },
+    {
+      "key": "primaryColumns.margin_percentage.textColor"
+    },
+    {
+      "key": "primaryColumns.total_units_returned.textColor"
+    },
+    {
+      "key": "primaryColumns.total_units_adjusted.textColor"
+    },
+    {
+      "key": "primaryColumns.in_transit_qty.textColor"
+    },
+    {
+      "key": "primaryColumns.last_sold_date.textColor"
+    },
+    {
+      "key": "primaryColumns.last_purchased_date.textColor"
+    },
+    {
+      "key": "primaryColumns.customColumn1.textColor"
+    },
+    {
+      "key": "primaryColumns.customColumn2.textColor"
+    },
+    {
+      "key": "borderWidth"
     }
   ],
   "dynamicPropertyPathList": [
@@ -290,6 +618,30 @@
     },
     {
       "key": "primaryColumns.customColumn1.onClick"
+    },
+    {
+      "key": "cellBackground"
+    },
+    {
+      "key": "headerRowColor"
+    },
+    {
+      "key": "headerTextColor"
+    },
+    {
+      "key": "oddRowColor"
+    },
+    {
+      "key": "evenRowColor"
+    },
+    {
+      "key": "textColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "boxShadow"
     }
   ],
   "dynamicTriggerPathList": [
@@ -302,7 +654,10 @@
   ],
   "enableClientSideSearch": true,
   "endOfData": false,
+  "evenRowColor": "\t{{appsmith.store.theme.surfaceAlt}}",
   "flexVerticalAlignment": "start",
+  "headerRowColor": "\t{{appsmith.store.theme.primary}}",
+  "headerTextColor": "\t{{appsmith.store.theme.background}}",
   "horizontalAlignment": "LEFT",
   "inlineEditingSaveOption": "ROW_LEVEL",
   "isLoading": false,
@@ -321,16 +676,19 @@
   "mobileRightColumn": 34,
   "mobileTopRow": 16,
   "needsErrorInfo": false,
+  "oddRowColor": "\t{{appsmith.store.theme.surface}}",
   "originalBottomRow": 107,
   "originalTopRow": 28,
   "parentColumnSpace": 19.9375,
   "parentId": "laoun5fqzg",
   "parentRowSpace": 10,
+  "primaryColumnId": "id",
   "primaryColumns": {
     "box_height_cm": {
       "alias": "box_height_cm",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
+      "cellBackground": "{{appsmith.store.theme.surface}}",
       "columnType": "text",
       "computedValue": "{{(() => { const tableData = tblProducts.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"box_height_cm\"])) : box_height_cm })()}}",
       "currencyCode": "USD",
@@ -352,6 +710,7 @@
       "notation": "standard",
       "originalId": "box_height_cm",
       "sticky": "",
+      "textColor": "{{appsmith.store.theme.text}}",
       "textSize": "0.875rem",
       "thousandSeparator": true,
       "validation": {},
@@ -362,6 +721,7 @@
       "alias": "box_length_cm",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
+      "cellBackground": "{{appsmith.store.theme.surface}}",
       "columnType": "text",
       "computedValue": "{{(() => { const tableData = tblProducts.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"box_length_cm\"])) : box_length_cm })()}}",
       "currencyCode": "USD",
@@ -383,6 +743,7 @@
       "notation": "standard",
       "originalId": "box_length_cm",
       "sticky": "",
+      "textColor": "{{appsmith.store.theme.text}}",
       "textSize": "0.875rem",
       "thousandSeparator": true,
       "validation": {},
@@ -393,6 +754,7 @@
       "alias": "box_width_cm",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
+      "cellBackground": "{{appsmith.store.theme.surface}}",
       "columnType": "text",
       "computedValue": "{{(() => { const tableData = tblProducts.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"box_width_cm\"])) : box_width_cm })()}}",
       "currencyCode": "USD",
@@ -414,6 +776,7 @@
       "notation": "standard",
       "originalId": "box_width_cm",
       "sticky": "",
+      "textColor": "{{appsmith.store.theme.text}}",
       "textSize": "0.875rem",
       "thousandSeparator": true,
       "validation": {},
@@ -424,6 +787,7 @@
       "alias": "brand_id",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
+      "cellBackground": "{{appsmith.store.theme.surface}}",
       "columnType": "text",
       "computedValue": "{{(() => { const tableData = tblProducts.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"brand_id\"])) : brand_id })()}}",
       "currencyCode": "USD",
@@ -445,6 +809,7 @@
       "notation": "standard",
       "originalId": "brand_id",
       "sticky": "",
+      "textColor": "{{appsmith.store.theme.text}}",
       "textSize": "0.875rem",
       "thousandSeparator": true,
       "validation": {},
@@ -455,6 +820,7 @@
       "alias": "brand_name",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
+      "cellBackground": "{{appsmith.store.theme.surface}}",
       "columnType": "text",
       "computedValue": "{{(() => { const tableData = tblProducts.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"brand_name\"])) : brand_name })()}}",
       "currencyCode": "USD",
@@ -476,6 +842,7 @@
       "notation": "standard",
       "originalId": "brand_name",
       "sticky": "",
+      "textColor": "{{appsmith.store.theme.text}}",
       "textSize": "0.875rem",
       "thousandSeparator": true,
       "validation": {},
@@ -486,6 +853,7 @@
       "alias": "case_quantity",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
+      "cellBackground": "{{appsmith.store.theme.surface}}",
       "columnType": "number",
       "computedValue": "{{(() => { const tableData = tblProducts.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"case_quantity\"])) : case_quantity })()}}",
       "currencyCode": "USD",
@@ -507,6 +875,7 @@
       "notation": "standard",
       "originalId": "case_quantity",
       "sticky": "",
+      "textColor": "{{appsmith.store.theme.text}}",
       "textSize": "0.875rem",
       "thousandSeparator": true,
       "validation": {},
@@ -517,6 +886,7 @@
       "alias": "category_id",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
+      "cellBackground": "{{appsmith.store.theme.surface}}",
       "columnType": "text",
       "computedValue": "{{(() => { const tableData = tblProducts.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"category_id\"])) : category_id })()}}",
       "currencyCode": "USD",
@@ -538,6 +908,7 @@
       "notation": "standard",
       "originalId": "category_id",
       "sticky": "",
+      "textColor": "{{appsmith.store.theme.text}}",
       "textSize": "0.875rem",
       "thousandSeparator": true,
       "validation": {},
@@ -548,6 +919,7 @@
       "alias": "category_name",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
+      "cellBackground": "{{appsmith.store.theme.surface}}",
       "columnType": "text",
       "computedValue": "{{(() => { const tableData = tblProducts.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"category_name\"])) : category_name })()}}",
       "currencyCode": "USD",
@@ -569,6 +941,7 @@
       "notation": "standard",
       "originalId": "category_name",
       "sticky": "",
+      "textColor": "{{appsmith.store.theme.text}}",
       "textSize": "0.875rem",
       "thousandSeparator": true,
       "validation": {},
@@ -579,6 +952,7 @@
       "alias": "created_at",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
+      "cellBackground": "{{appsmith.store.theme.surface}}",
       "columnType": "date",
       "computedValue": "{{(() => { const tableData = tblProducts.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"created_at\"])) : created_at })()}}",
       "currencyCode": "USD",
@@ -600,6 +974,7 @@
       "notation": "standard",
       "originalId": "created_at",
       "sticky": "",
+      "textColor": "{{appsmith.store.theme.text}}",
       "textSize": "0.875rem",
       "thousandSeparator": true,
       "validation": {},
@@ -610,6 +985,7 @@
       "alias": "current_stock",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
+      "cellBackground": "{{appsmith.store.theme.surface}}",
       "columnType": "text",
       "computedValue": "{{(() => { const tableData = tblProducts.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"current_stock\"])) : current_stock })()}}",
       "currencyCode": "USD",
@@ -631,6 +1007,7 @@
       "notation": "standard",
       "originalId": "current_stock",
       "sticky": "",
+      "textColor": "{{appsmith.store.theme.text}}",
       "textSize": "0.875rem",
       "thousandSeparator": true,
       "validation": {},
@@ -646,6 +1023,7 @@
       "buttonColor": "{{tblProducts.processedTableData.map((currentRow, currentIndex) => ( (appsmith.theme.colors.primaryColor)))}}",
       "buttonStyle": "rgb(3, 179, 101)",
       "buttonVariant": "TERTIARY",
+      "cellBackground": "{{appsmith.store.theme.surface}}",
       "columnType": "iconButton",
       "computedValue": "",
       "currencyCode": "USD",
@@ -671,6 +1049,7 @@
       "onClick": "{{\n  storeValue('isEditMode', false)\n    .then(() => getInventoryBatches.run())\n.then(() => productLedger.run())\n    .then(() => showModal(ModalProduct.name))\n\n}}",
       "originalId": "customColumn1",
       "sticky": "",
+      "textColor": "{{appsmith.store.theme.text}}",
       "textSize": "0.875rem",
       "thousandSeparator": true,
       "validation": {},
@@ -686,6 +1065,7 @@
       "buttonColor": "{{tblProducts.processedTableData.map((currentRow, currentIndex) => ( (appsmith.theme.colors.primaryColor)))}}",
       "buttonStyle": "rgb(3, 179, 101)",
       "buttonVariant": "TERTIARY",
+      "cellBackground": "{{appsmith.store.theme.surface}}",
       "columnType": "iconButton",
       "computedValue": "",
       "currencyCode": "USD",
@@ -711,6 +1091,7 @@
       "onClick": "{{getProductProfile.run().then(() => {\n  showModal(mdlDashboard.name);\n});}}",
       "originalId": "customColumn2",
       "sticky": "",
+      "textColor": "{{appsmith.store.theme.text}}",
       "textSize": "0.875rem",
       "thousandSeparator": true,
       "validation": {},
@@ -721,6 +1102,7 @@
       "alias": "damaged_stock",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
+      "cellBackground": "{{appsmith.store.theme.surface}}",
       "columnType": "text",
       "computedValue": "{{(() => { const tableData = tblProducts.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"damaged_stock\"])) : damaged_stock })()}}",
       "currencyCode": "USD",
@@ -742,6 +1124,7 @@
       "notation": "standard",
       "originalId": "damaged_stock",
       "sticky": "",
+      "textColor": "{{appsmith.store.theme.text}}",
       "textSize": "0.875rem",
       "thousandSeparator": true,
       "validation": {},
@@ -752,6 +1135,7 @@
       "alias": "dealer_rate",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
+      "cellBackground": "{{appsmith.store.theme.surface}}",
       "columnType": "text",
       "computedValue": "{{(() => { const tableData = tblProducts.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"dealer_rate\"])) : dealer_rate })()}}",
       "currencyCode": "USD",
@@ -773,6 +1157,7 @@
       "notation": "standard",
       "originalId": "dealer_rate",
       "sticky": "",
+      "textColor": "{{appsmith.store.theme.text}}",
       "textSize": "0.875rem",
       "thousandSeparator": true,
       "validation": {},
@@ -783,6 +1168,7 @@
       "alias": "description",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
+      "cellBackground": "{{appsmith.store.theme.surface}}",
       "columnType": "text",
       "computedValue": "{{(() => { const tableData = tblProducts.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"description\"])) : description })()}}",
       "currencyCode": "USD",
@@ -804,6 +1190,7 @@
       "notation": "standard",
       "originalId": "description",
       "sticky": "",
+      "textColor": "{{appsmith.store.theme.text}}",
       "textSize": "0.875rem",
       "thousandSeparator": true,
       "validation": {},
@@ -814,6 +1201,7 @@
       "alias": "distributor_rate",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
+      "cellBackground": "{{appsmith.store.theme.surface}}",
       "columnType": "currency",
       "computedValue": "{{(() => { const tableData = tblProducts.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"distributor_rate\"])) : distributor_rate })()}}",
       "currencyCode": "INR",
@@ -835,6 +1223,7 @@
       "notation": "standard",
       "originalId": "distributor_rate",
       "sticky": "",
+      "textColor": "{{appsmith.store.theme.text}}",
       "textSize": "0.875rem",
       "thousandSeparator": true,
       "validation": {},
@@ -845,6 +1234,7 @@
       "alias": "ean_code",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
+      "cellBackground": "{{appsmith.store.theme.surface}}",
       "columnType": "text",
       "computedValue": "{{(() => { const tableData = tblProducts.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"ean_code\"])) : ean_code })()}}",
       "currencyCode": "USD",
@@ -866,6 +1256,7 @@
       "notation": "standard",
       "originalId": "ean_code",
       "sticky": "",
+      "textColor": "{{appsmith.store.theme.text}}",
       "textSize": "0.875rem",
       "thousandSeparator": true,
       "validation": {},
@@ -876,6 +1267,7 @@
       "alias": "hsn_code",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
+      "cellBackground": "{{appsmith.store.theme.surface}}",
       "columnType": "text",
       "computedValue": "{{(() => { const tableData = tblProducts.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"hsn_code\"])) : hsn_code })()}}",
       "currencyCode": "USD",
@@ -897,6 +1289,7 @@
       "notation": "standard",
       "originalId": "hsn_code",
       "sticky": "",
+      "textColor": "{{appsmith.store.theme.text}}",
       "textSize": "0.875rem",
       "thousandSeparator": true,
       "validation": {},
@@ -907,6 +1300,7 @@
       "alias": "hsn_id",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
+      "cellBackground": "{{appsmith.store.theme.surface}}",
       "columnType": "text",
       "computedValue": "{{(() => { const tableData = tblProducts.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"hsn_id\"])) : hsn_id })()}}",
       "currencyCode": "USD",
@@ -928,6 +1322,7 @@
       "notation": "standard",
       "originalId": "hsn_id",
       "sticky": "",
+      "textColor": "{{appsmith.store.theme.text}}",
       "textSize": "0.875rem",
       "thousandSeparator": true,
       "validation": {},
@@ -938,6 +1333,7 @@
       "alias": "id",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
+      "cellBackground": "{{appsmith.store.theme.surface}}",
       "columnType": "text",
       "computedValue": "{{(() => { const tableData = tblProducts.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"id\"])) : id })()}}",
       "currencyCode": "USD",
@@ -959,6 +1355,7 @@
       "notation": "standard",
       "originalId": "id",
       "sticky": "",
+      "textColor": "{{appsmith.store.theme.text}}",
       "textSize": "0.875rem",
       "thousandSeparator": true,
       "validation": {},
@@ -969,6 +1366,7 @@
       "alias": "in_transit_qty",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
+      "cellBackground": "{{appsmith.store.theme.surface}}",
       "columnType": "text",
       "computedValue": "{{(() => { const tableData = tblProducts.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"in_transit_qty\"])) : in_transit_qty })()}}",
       "currencyCode": "USD",
@@ -990,6 +1388,7 @@
       "notation": "standard",
       "originalId": "in_transit_qty",
       "sticky": "",
+      "textColor": "{{appsmith.store.theme.text}}",
       "textSize": "0.875rem",
       "thousandSeparator": true,
       "validation": {},
@@ -1000,6 +1399,7 @@
       "alias": "is_active",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
+      "cellBackground": "{{appsmith.store.theme.surface}}",
       "columnType": "checkbox",
       "computedValue": "{{(() => { const tableData = tblProducts.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"is_active\"])) : is_active })()}}",
       "currencyCode": "USD",
@@ -1021,6 +1421,7 @@
       "notation": "standard",
       "originalId": "is_active",
       "sticky": "",
+      "textColor": "{{appsmith.store.theme.text}}",
       "textSize": "0.875rem",
       "thousandSeparator": true,
       "validation": {},
@@ -1031,6 +1432,7 @@
       "alias": "last_purchased_date",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
+      "cellBackground": "{{appsmith.store.theme.surface}}",
       "columnType": "date",
       "computedValue": "{{(() => { const tableData = tblProducts.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"last_purchased_date\"])) : last_purchased_date })()}}",
       "currencyCode": "USD",
@@ -1052,6 +1454,7 @@
       "notation": "standard",
       "originalId": "last_purchased_date",
       "sticky": "",
+      "textColor": "{{appsmith.store.theme.text}}",
       "textSize": "0.875rem",
       "thousandSeparator": true,
       "validation": {},
@@ -1062,6 +1465,7 @@
       "alias": "last_sold_date",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
+      "cellBackground": "{{appsmith.store.theme.surface}}",
       "columnType": "date",
       "computedValue": "{{(() => { const tableData = tblProducts.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"last_sold_date\"])) : last_sold_date })()}}",
       "currencyCode": "USD",
@@ -1083,6 +1487,7 @@
       "notation": "standard",
       "originalId": "last_sold_date",
       "sticky": "",
+      "textColor": "{{appsmith.store.theme.text}}",
       "textSize": "0.875rem",
       "thousandSeparator": true,
       "validation": {},
@@ -1093,6 +1498,7 @@
       "alias": "margin_amount",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
+      "cellBackground": "{{appsmith.store.theme.surface}}",
       "columnType": "currency",
       "computedValue": "{{(() => { const tableData = tblProducts.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"margin_amount\"])) : margin_amount })()}}",
       "currencyCode": "INR",
@@ -1114,6 +1520,7 @@
       "notation": "standard",
       "originalId": "margin_amount",
       "sticky": "",
+      "textColor": "{{appsmith.store.theme.text}}",
       "textSize": "0.875rem",
       "thousandSeparator": true,
       "validation": {},
@@ -1124,6 +1531,7 @@
       "alias": "margin_percentage",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
+      "cellBackground": "{{appsmith.store.theme.surface}}",
       "columnType": "number",
       "computedValue": "{{(() => { const tableData = tblProducts.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"margin_percentage\"])) : margin_percentage })()}}",
       "currencyCode": "INR",
@@ -1145,6 +1553,7 @@
       "notation": "standard",
       "originalId": "margin_percentage",
       "sticky": "",
+      "textColor": "{{appsmith.store.theme.text}}",
       "textSize": "0.875rem",
       "thousandSeparator": true,
       "validation": {},
@@ -1155,6 +1564,7 @@
       "alias": "min_stock_level",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
+      "cellBackground": "{{appsmith.store.theme.surface}}",
       "columnType": "number",
       "computedValue": "{{(() => { const tableData = tblProducts.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"min_stock_level\"])) : min_stock_level })()}}",
       "currencyCode": "USD",
@@ -1176,6 +1586,7 @@
       "notation": "standard",
       "originalId": "min_stock_level",
       "sticky": "",
+      "textColor": "{{appsmith.store.theme.text}}",
       "textSize": "0.875rem",
       "thousandSeparator": true,
       "validation": {},
@@ -1186,6 +1597,7 @@
       "alias": "model_number",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
+      "cellBackground": "{{appsmith.store.theme.surface}}",
       "columnType": "text",
       "computedValue": "{{(() => { const tableData = tblProducts.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"model_number\"])) : model_number })()}}",
       "currencyCode": "USD",
@@ -1207,6 +1619,7 @@
       "notation": "standard",
       "originalId": "model_number",
       "sticky": "",
+      "textColor": "{{appsmith.store.theme.text}}",
       "textSize": "0.875rem",
       "thousandSeparator": true,
       "validation": {},
@@ -1217,6 +1630,7 @@
       "alias": "mrp",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
+      "cellBackground": "{{appsmith.store.theme.surface}}",
       "columnType": "currency",
       "computedValue": "{{(() => { const tableData = tblProducts.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"mrp\"])) : mrp })()}}",
       "currencyCode": "INR",
@@ -1238,6 +1652,7 @@
       "notation": "standard",
       "originalId": "mrp",
       "sticky": "",
+      "textColor": "{{appsmith.store.theme.text}}",
       "textSize": "0.875rem",
       "thousandSeparator": true,
       "validation": {},
@@ -1248,6 +1663,7 @@
       "alias": "product_code",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
+      "cellBackground": "{{appsmith.store.theme.surface}}",
       "columnType": "text",
       "computedValue": "{{(() => { const tableData = tblProducts.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"product_code\"])) : product_code })()}}",
       "currencyCode": "USD",
@@ -1269,6 +1685,7 @@
       "notation": "standard",
       "originalId": "product_code",
       "sticky": "",
+      "textColor": "{{appsmith.store.theme.text}}",
       "textSize": "0.875rem",
       "thousandSeparator": true,
       "validation": {},
@@ -1279,6 +1696,7 @@
       "alias": "product_name",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
+      "cellBackground": "{{appsmith.store.theme.surface}}",
       "columnType": "text",
       "computedValue": "{{(() => { const tableData = tblProducts.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"product_name\"])) : product_name })()}}",
       "currencyCode": "USD",
@@ -1300,6 +1718,7 @@
       "notation": "standard",
       "originalId": "product_name",
       "sticky": "",
+      "textColor": "{{appsmith.store.theme.text}}",
       "textSize": "0.875rem",
       "thousandSeparator": true,
       "validation": {},
@@ -1310,6 +1729,7 @@
       "alias": "purchase_rate",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
+      "cellBackground": "{{appsmith.store.theme.surface}}",
       "columnType": "text",
       "computedValue": "{{(() => { const tableData = tblProducts.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"purchase_rate\"])) : purchase_rate })()}}",
       "currencyCode": "USD",
@@ -1331,6 +1751,7 @@
       "notation": "standard",
       "originalId": "purchase_rate",
       "sticky": "",
+      "textColor": "{{appsmith.store.theme.text}}",
       "textSize": "0.875rem",
       "thousandSeparator": true,
       "validation": {},
@@ -1341,6 +1762,7 @@
       "alias": "retail_rate",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
+      "cellBackground": "{{appsmith.store.theme.surface}}",
       "columnType": "text",
       "computedValue": "{{(() => { const tableData = tblProducts.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"retail_rate\"])) : retail_rate })()}}",
       "currencyCode": "USD",
@@ -1362,6 +1784,7 @@
       "notation": "standard",
       "originalId": "retail_rate",
       "sticky": "",
+      "textColor": "{{appsmith.store.theme.text}}",
       "textSize": "0.875rem",
       "thousandSeparator": true,
       "validation": {},
@@ -1372,6 +1795,7 @@
       "alias": "sales_value_taxable",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
+      "cellBackground": "{{appsmith.store.theme.surface}}",
       "columnType": "text",
       "computedValue": "{{(() => { const tableData = tblProducts.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"sales_value_taxable\"])) : sales_value_taxable })()}}",
       "currencyCode": "USD",
@@ -1393,6 +1817,7 @@
       "notation": "standard",
       "originalId": "sales_value_taxable",
       "sticky": "",
+      "textColor": "{{appsmith.store.theme.text}}",
       "textSize": "0.875rem",
       "thousandSeparator": true,
       "validation": {},
@@ -1403,6 +1828,7 @@
       "alias": "stock_damage",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
+      "cellBackground": "{{appsmith.store.theme.surface}}",
       "columnType": "text",
       "computedValue": "{{(() => { const tableData = tblProducts.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"stock_damage\"])) : stock_damage })()}}",
       "currencyCode": "USD",
@@ -1424,6 +1850,7 @@
       "notation": "standard",
       "originalId": "stock_damage",
       "sticky": "",
+      "textColor": "{{appsmith.store.theme.text}}",
       "textSize": "0.875rem",
       "thousandSeparator": true,
       "validation": {},
@@ -1434,6 +1861,7 @@
       "alias": "stock_expiry",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
+      "cellBackground": "{{appsmith.store.theme.surface}}",
       "columnType": "text",
       "computedValue": "{{(() => { const tableData = tblProducts.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"stock_expiry\"])) : stock_expiry })()}}",
       "currencyCode": "USD",
@@ -1455,6 +1883,7 @@
       "notation": "standard",
       "originalId": "stock_expiry",
       "sticky": "",
+      "textColor": "{{appsmith.store.theme.text}}",
       "textSize": "0.875rem",
       "thousandSeparator": true,
       "validation": {},
@@ -1465,6 +1894,7 @@
       "alias": "stock_value_cost",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
+      "cellBackground": "{{appsmith.store.theme.surface}}",
       "columnType": "text",
       "computedValue": "{{(() => { const tableData = tblProducts.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"stock_value_cost\"])) : stock_value_cost })()}}",
       "currencyCode": "USD",
@@ -1486,6 +1916,7 @@
       "notation": "standard",
       "originalId": "stock_value_cost",
       "sticky": "",
+      "textColor": "{{appsmith.store.theme.text}}",
       "textSize": "0.875rem",
       "thousandSeparator": true,
       "validation": {},
@@ -1496,6 +1927,7 @@
       "alias": "stock_value_gross",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
+      "cellBackground": "{{appsmith.store.theme.surface}}",
       "columnType": "text",
       "computedValue": "{{(() => { const tableData = tblProducts.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"stock_value_gross\"])) : stock_value_gross })()}}",
       "currencyCode": "USD",
@@ -1517,6 +1949,7 @@
       "notation": "standard",
       "originalId": "stock_value_gross",
       "sticky": "",
+      "textColor": "{{appsmith.store.theme.text}}",
       "textSize": "0.875rem",
       "thousandSeparator": true,
       "validation": {},
@@ -1527,6 +1960,7 @@
       "alias": "stock_value_total_bought",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
+      "cellBackground": "{{appsmith.store.theme.surface}}",
       "columnType": "text",
       "computedValue": "{{(() => { const tableData = tblProducts.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"stock_value_total_bought\"])) : stock_value_total_bought })()}}",
       "currencyCode": "USD",
@@ -1548,6 +1982,7 @@
       "notation": "standard",
       "originalId": "stock_value_total_bought",
       "sticky": "",
+      "textColor": "{{appsmith.store.theme.text}}",
       "textSize": "0.875rem",
       "thousandSeparator": true,
       "validation": {},
@@ -1558,6 +1993,7 @@
       "alias": "tax_id",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
+      "cellBackground": "{{appsmith.store.theme.surface}}",
       "columnType": "text",
       "computedValue": "{{(() => { const tableData = tblProducts.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"tax_id\"])) : tax_id })()}}",
       "currencyCode": "USD",
@@ -1579,6 +2015,7 @@
       "notation": "standard",
       "originalId": "tax_id",
       "sticky": "",
+      "textColor": "{{appsmith.store.theme.text}}",
       "textSize": "0.875rem",
       "thousandSeparator": true,
       "validation": {},
@@ -1589,6 +2026,7 @@
       "alias": "tax_name",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
+      "cellBackground": "{{appsmith.store.theme.surface}}",
       "columnType": "text",
       "computedValue": "{{(() => { const tableData = tblProducts.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"tax_name\"])) : tax_name })()}}",
       "currencyCode": "USD",
@@ -1610,6 +2048,7 @@
       "notation": "standard",
       "originalId": "tax_name",
       "sticky": "",
+      "textColor": "{{appsmith.store.theme.text}}",
       "textSize": "0.875rem",
       "thousandSeparator": true,
       "validation": {},
@@ -1620,6 +2059,7 @@
       "alias": "tax_percentage",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
+      "cellBackground": "{{appsmith.store.theme.surface}}",
       "columnType": "text",
       "computedValue": "{{(() => { const tableData = tblProducts.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"tax_percentage\"])) : tax_percentage })()}}",
       "currencyCode": "USD",
@@ -1641,6 +2081,7 @@
       "notation": "standard",
       "originalId": "tax_percentage",
       "sticky": "",
+      "textColor": "{{appsmith.store.theme.text}}",
       "textSize": "0.875rem",
       "thousandSeparator": true,
       "validation": {},
@@ -1651,6 +2092,7 @@
       "alias": "total_cogs_value",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
+      "cellBackground": "{{appsmith.store.theme.surface}}",
       "columnType": "text",
       "computedValue": "{{(() => { const tableData = tblProducts.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"total_cogs_value\"])) : total_cogs_value })()}}",
       "currencyCode": "USD",
@@ -1672,6 +2114,7 @@
       "notation": "standard",
       "originalId": "total_cogs_value",
       "sticky": "",
+      "textColor": "{{appsmith.store.theme.text}}",
       "textSize": "0.875rem",
       "thousandSeparator": true,
       "validation": {},
@@ -1682,6 +2125,7 @@
       "alias": "total_units_adjusted",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
+      "cellBackground": "{{appsmith.store.theme.surface}}",
       "columnType": "text",
       "computedValue": "{{(() => { const tableData = tblProducts.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"total_units_adjusted\"])) : total_units_adjusted })()}}",
       "currencyCode": "USD",
@@ -1703,6 +2147,7 @@
       "notation": "standard",
       "originalId": "total_units_adjusted",
       "sticky": "",
+      "textColor": "{{appsmith.store.theme.text}}",
       "textSize": "0.875rem",
       "thousandSeparator": true,
       "validation": {},
@@ -1713,6 +2158,7 @@
       "alias": "total_units_bought",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
+      "cellBackground": "{{appsmith.store.theme.surface}}",
       "columnType": "text",
       "computedValue": "{{(() => { const tableData = tblProducts.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"total_units_bought\"])) : total_units_bought })()}}",
       "currencyCode": "USD",
@@ -1734,6 +2180,7 @@
       "notation": "standard",
       "originalId": "total_units_bought",
       "sticky": "",
+      "textColor": "{{appsmith.store.theme.text}}",
       "textSize": "0.875rem",
       "thousandSeparator": true,
       "validation": {},
@@ -1744,6 +2191,7 @@
       "alias": "total_units_returned",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
+      "cellBackground": "{{appsmith.store.theme.surface}}",
       "columnType": "text",
       "computedValue": "{{(() => { const tableData = tblProducts.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"total_units_returned\"])) : total_units_returned })()}}",
       "currencyCode": "USD",
@@ -1765,6 +2213,7 @@
       "notation": "standard",
       "originalId": "total_units_returned",
       "sticky": "",
+      "textColor": "{{appsmith.store.theme.text}}",
       "textSize": "0.875rem",
       "thousandSeparator": true,
       "validation": {},
@@ -1775,6 +2224,7 @@
       "alias": "total_units_sold",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
+      "cellBackground": "{{appsmith.store.theme.surface}}",
       "columnType": "text",
       "computedValue": "{{(() => { const tableData = tblProducts.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"total_units_sold\"])) : total_units_sold })()}}",
       "currencyCode": "USD",
@@ -1796,6 +2246,7 @@
       "notation": "standard",
       "originalId": "total_units_sold",
       "sticky": "",
+      "textColor": "{{appsmith.store.theme.text}}",
       "textSize": "0.875rem",
       "thousandSeparator": true,
       "validation": {},
@@ -1806,6 +2257,7 @@
       "alias": "uom",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
+      "cellBackground": "{{appsmith.store.theme.surface}}",
       "columnType": "text",
       "computedValue": "{{(() => { const tableData = tblProducts.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"uom\"])) : uom })()}}",
       "currencyCode": "USD",
@@ -1827,6 +2279,7 @@
       "notation": "standard",
       "originalId": "uom",
       "sticky": "",
+      "textColor": "{{appsmith.store.theme.text}}",
       "textSize": "0.875rem",
       "thousandSeparator": true,
       "validation": {},
@@ -1837,6 +2290,7 @@
       "alias": "vendor_id",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
+      "cellBackground": "{{appsmith.store.theme.surface}}",
       "columnType": "text",
       "computedValue": "{{(() => { const tableData = tblProducts.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"vendor_id\"])) : vendor_id })()}}",
       "currencyCode": "USD",
@@ -1858,6 +2312,7 @@
       "notation": "standard",
       "originalId": "vendor_id",
       "sticky": "",
+      "textColor": "{{appsmith.store.theme.text}}",
       "textSize": "0.875rem",
       "thousandSeparator": true,
       "validation": {},
@@ -1868,6 +2323,7 @@
       "alias": "weight_kg",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
+      "cellBackground": "{{appsmith.store.theme.surface}}",
       "columnType": "text",
       "computedValue": "{{(() => { const tableData = tblProducts.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"weight_kg\"])) : weight_kg })()}}",
       "currencyCode": "USD",
@@ -1889,6 +2345,7 @@
       "notation": "standard",
       "originalId": "weight_kg",
       "sticky": "",
+      "textColor": "{{appsmith.store.theme.text}}",
       "textSize": "0.875rem",
       "thousandSeparator": true,
       "validation": {},
@@ -1899,6 +2356,7 @@
       "alias": "wholesale_rate",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
+      "cellBackground": "{{appsmith.store.theme.surface}}",
       "columnType": "text",
       "computedValue": "{{(() => { const tableData = tblProducts.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"wholesale_rate\"])) : wholesale_rate })()}}",
       "currencyCode": "USD",
@@ -1920,6 +2378,7 @@
       "notation": "standard",
       "originalId": "wholesale_rate",
       "sticky": "",
+      "textColor": "{{appsmith.store.theme.text}}",
       "textSize": "0.875rem",
       "thousandSeparator": true,
       "validation": {},
@@ -1931,10 +2390,12 @@
   "responsiveBehavior": "fill",
   "rightColumn": 64,
   "searchKey": "",
+  "serverSidePaginationEnabled": true,
   "tableData": "{{\n  Brand_Utils.getGroupedBrands.data\n    .filter(brand => MultiSelectBrands.selectedOptionValues.includes(brand.id))\n    .flatMap(brand => brand.products)\n}}",
+  "textColor": "{{appsmith.store.theme.text}}",
   "textSize": "0.875rem",
   "topRow": 28,
-  "totalRecordsCount": 0,
+  "totalRecordsCount": "25",
   "type": "TABLE_WIDGET_V2",
   "version": 2,
   "verticalAlignment": "CENTER",

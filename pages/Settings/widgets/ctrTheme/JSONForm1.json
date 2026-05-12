@@ -406,7 +406,7 @@
   "isLoading": false,
   "isVisible": true,
   "key": "vdh5wcnoxy",
-  "leftColumn": 0,
+  "leftColumn": 38,
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 4,
   "minWidth": 450,
@@ -429,7 +429,7 @@
     "buttonVariant": "SECONDARY"
   },
   "responsiveBehavior": "fill",
-  "rightColumn": 25,
+  "rightColumn": 63,
   "schema": {
     "__root_schema__": {
       "accessor": "__root_schema__",

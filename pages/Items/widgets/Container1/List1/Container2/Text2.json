@@ -14,9 +14,17 @@
     },
     {
       "key": "text"
+    },
+    {
+      "key": "textColor"
     }
   ],
   "dynamicHeight": "FIXED",
+  "dynamicPropertyPathList": [
+    {
+      "key": "textColor"
+    }
+  ],
   "dynamicTriggerPathList": [],
   "fontFamily": "{{appsmith.theme.fontFamily.appFont}}",
   "fontSize": "1rem",
@@ -43,7 +51,7 @@
   "shouldTruncate": false,
   "text": "Stock Value :{{ Number(currentItem.val_stock_taxable).toLocaleString('en-IN', { style: 'currency', currency: 'INR' }) }}",
   "textAlign": "LEFT",
-  "textColor": "#231F20",
+  "textColor": "\t{{appsmith.store.theme.text}}",
   "topRow": 4,
   "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
   "type": "TEXT_WIDGET",

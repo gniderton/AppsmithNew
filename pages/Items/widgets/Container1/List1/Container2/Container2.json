@@ -1,11 +1,11 @@
 {
   "animateLoading": true,
-  "backgroundColor": "white",
+  "backgroundColor": "\t{{appsmith.store.theme.surface}}",
   "borderColor": "#E0DEDE",
-  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "borderWidth": "1",
+  "borderRadius": "{{appsmith.store.theme.radiusLg}}",
+  "borderWidth": "\t{{appsmith.store.theme.borderWidth}}",
   "bottomRow": 12,
-  "boxShadow": "none",
+  "boxShadow": "\t{{appsmith.store.theme.shadow}}",
   "children": [
     {
       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
@@ -55,10 +55,30 @@
   "dragDisabled": true,
   "dynamicBindingPathList": [
     {
+      "key": "backgroundColor"
+    },
+    {
       "key": "borderRadius"
+    },
+    {
+      "key": "boxShadow"
+    },
+    {
+      "key": "borderWidth"
     }
   ],
   "dynamicHeight": "FIXED",
+  "dynamicPropertyPathList": [
+    {
+      "key": "backgroundColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "boxShadow"
+    }
+  ],
   "dynamicTriggerPathList": [],
   "flexVerticalAlignment": "stretch",
   "isCanvas": true,

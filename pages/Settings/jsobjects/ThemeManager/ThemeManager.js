@@ -1,65 +1,65 @@
 export default {
-  themes: {
-    light: {
-      primary:     "#4F46E5",
-      background:  "#FFFFFF",
-      surface:     "#F3F4F6",
-      surfaceAlt:  "#E9EBF0",
-      text:        "#111827",
-      textMuted:   "#6B7280",
-      border:      "#E5E7EB",
-      borderAlt:   "#D1D5DB",
-      danger:      "#EF4444",
-      success:     "#10B981",
-      warning:     "#F59E0B",
-      radius:      "8px",
-      radiusSm:    "6px",
-      radiusLg:    "12px",
-      shadow:      "0 1px 8px 0 rgba(0,0,0,0.08)",
-      shadowSm:    "0 1px 3px 0 rgba(0,0,0,0.06)",
-      shadowLg:    "0 4px 24px 0 rgba(0,0,0,0.12)",
-      borderWidth: "1",
-    },
-    dark: {
-      primary:     "#818CF8",
-      background:  "#111827",
-      surface:     "#1F2937",
-      surfaceAlt:  "#374151",
-      text:        "#F9FAFB",
-      textMuted:   "#9CA3AF",
-      border:      "#374151",
-      borderAlt:   "#4B5563",
-      danger:      "#F87171",
-      success:     "#34D399",
-      warning:     "#FBBF24",
-      radius:      "8px",
-      radiusSm:    "6px",
-      radiusLg:    "12px",
-      shadow:      "0 4px 24px 0 rgba(0,0,0,0.4)",
-      shadowSm:    "0 2px 8px 0 rgba(0,0,0,0.3)",
-      shadowLg:    "0 8px 32px 0 rgba(0,0,0,0.5)",
-      borderWidth: "1",
-    },
-    midnight: {
-      primary:     "#7C6AF7",
-      background:  "#0A0A0F",
-      surface:     "#0F0F1A",
-      surfaceAlt:  "#15151F",
-      text:        "#E2E2F0",
-      textMuted:   "#6B6B8A",
-      border:      "#1E1E2E",
-      borderAlt:   "#2A2A3E",
-      danger:      "#F87171",
-      success:     "#34D399",
-      warning:     "#FBBF24",
-      radius:      "8px",
-      radiusSm:    "6px",
-      radiusLg:    "12px",
-      shadow:      "0 4px 24px 0 rgba(0,0,0,0.6)",
-      shadowSm:    "0 2px 8px 0 rgba(0,0,0,0.4)",
-      shadowLg:    "0 8px 32px 0 rgba(0,0,0,0.7)",
-      borderWidth: "1",
-    },
+	themes: {
+		light: {
+			primary:     "#4F46E5",
+			background:  "#FFFFFF",
+			surface:     "#F3F4F6",
+			surfaceAlt:  "#E9EBF0",
+			text:        "#111827",
+			textMuted:   "#6B7280",
+			border:      "#E5E7EB",
+			borderAlt:   "#D1D5DB",
+			danger:      "#EF4444",
+			success:     "#10B981",
+			warning:     "#F59E0B",
+			radius:      "8px",
+			radiusSm:    "6px",
+			radiusLg:    "12px",
+			shadow:      "0 1px 8px 0 rgba(0,0,0,0.08)",
+			shadowSm:    "0 1px 3px 0 rgba(0,0,0,0.06)",
+			shadowLg:    "0 4px 24px 0 rgba(0,0,0,0.12)",
+			borderWidth: "1",
+		},
+		dark: {
+			primary:     "#818CF8",
+			background:  "#111827",
+			surface:     "#1F2937",
+			surfaceAlt:  "#374151",
+			text:        "#F9FAFB",
+			textMuted:   "#9CA3AF",
+			border:      "#374151",
+			borderAlt:   "#4B5563",
+			danger:      "#F87171",
+			success:     "#34D399",
+			warning:     "#FBBF24",
+			radius:      "8px",
+			radiusSm:    "6px",
+			radiusLg:    "12px",
+			shadow:      "0 4px 24px 0 rgba(0,0,0,0.4)",
+			shadowSm:    "0 2px 8px 0 rgba(0,0,0,0.3)",
+			shadowLg:    "0 8px 32px 0 rgba(0,0,0,0.5)",
+			borderWidth: "1",
+		},
+		midnight: {
+			primary:     "#7C6AF7",
+			background:  "#0A0A0F",
+			surface:     "#0F0F1A",
+			surfaceAlt:  "#15151F",
+			text:        "#E2E2F0",
+			textMuted:   "#6B6B8A",
+			border:      "#1E1E2E",
+			borderAlt:   "#2A2A3E",
+			danger:      "#F87171",
+			success:     "#34D399",
+			warning:     "#FBBF24",
+			radius:      "8px",
+			radiusSm:    "6px",
+			radiusLg:    "12px",
+			shadow:      "0 4px 24px 0 rgba(0,0,0,0.6)",
+			shadowSm:    "0 2px 8px 0 rgba(0,0,0,0.4)",
+			shadowLg:    "0 8px 32px 0 rgba(0,0,0,0.7)",
+			borderWidth: "1",
+		},
 		frost: {
 			primary:     "#0EA5E9",
 			background:  "#F8FAFC",
@@ -121,9 +121,9 @@ export default {
 			borderWidth: "1.5",
 		},
 		nebula: {
-			primary:     "#A78BFA", // Soft Violet
-			background:  "#0F172A", // Deep Navy
-			surface:     "#1E293B", // Slate Blue
+			primary:     "#A78BFA", 
+			background:  "#0F172A", 
+			surface:     "#1E293B", 
 			surfaceAlt:  "#334155",
 			text:        "#F1F5F9",
 			textMuted:   "#94A3B8",
@@ -141,9 +141,9 @@ export default {
 			borderWidth: "1",
 		},
 		obsidian: {
-			primary:     "#FFFFFF", // Pure White accents
-			background:  "#000000", // True Black
-			surface:     "#111111", // Darkest Gray
+			primary:     "#FFFFFF", 
+			background:  "#000000", 
+			surface:     "#111111", 
 			surfaceAlt:  "#1C1C1C",
 			text:        "#EDEDED",
 			textMuted:   "#888888",
@@ -155,15 +155,15 @@ export default {
 			radius:      "8px",
 			radiusSm:    "4px",
 			radiusLg:    "16px",
-			shadow:      "0 0 0 1px rgba(255,255,255,0.05)", // Subtle ring instead of shadow
+			shadow:      "0 0 0 1px rgba(255,255,255,0.05)", 
 			shadowSm:    "0 2px 4px rgba(0,0,0,0.5)",
 			shadowLg:    "0 20px 40px rgba(0,0,0,0.6)",
 			borderWidth: "1",
 		},
 		evergreen: {
-			primary:     "#00DC82", // Neon Mint
-			background:  "#060D0A", // Deep Forest Black
-			surface:     "#0D1A14", // Dark Moss
+			primary:     "#00DC82", 
+			background:  "#060D0A", 
+			surface:     "#0D1A14", 
 			surfaceAlt:  "#172B21",
 			text:        "#ECF3F0",
 			textMuted:   "#82968E",
@@ -180,50 +180,50 @@ export default {
 			shadowLg:    "0 25px 50px -12px rgba(0, 0, 0, 0.6)",
 			borderWidth: "1",
 		},
-    brand: {
-      primary:     "#E11D48",
-      background:  "#FFF1F2",
-      surface:     "#FFE4E6",
-      surfaceAlt:  "#FECDD3",
-      text:        "#1F2937",
-      textMuted:   "#6B7280",
-      border:      "#FECDD3",
-      borderAlt:   "#FDA4AF",
-      danger:      "#BE123C",
-      success:     "#059669",
-      warning:     "#D97706",
-      radius:      "8px",
-      radiusSm:    "6px",
-      radiusLg:    "12px",
-      shadow:      "0 1px 8px 0 rgba(225,29,72,0.08)",
-      shadowSm:    "0 1px 3px 0 rgba(225,29,72,0.06)",
-      shadowLg:    "0 4px 24px 0 rgba(225,29,72,0.15)",
-      borderWidth: "1",
-    },
+		brand: {
+			primary:     "#E11D48",
+			background:  "#FFF1F2",
+			surface:     "#FFE4E6",
+			surfaceAlt:  "#FECDD3",
+			text:        "#1F2937",
+			textMuted:   "#6B7280",
+			border:      "#FECDD3",
+			borderAlt:   "#FDA4AF",
+			danger:      "#BE123C",
+			success:     "#059669",
+			warning:     "#D97706",
+			radius:      "8px",
+			radiusSm:    "6px",
+			radiusLg:    "12px",
+			shadow:      "0 1px 8px 0 rgba(225,29,72,0.08)",
+			shadowSm:    "0 1px 3px 0 rgba(225,29,72,0.06)",
+			shadowLg:    "0 4px 24px 0 rgba(225,29,72,0.15)",
+			borderWidth: "1",
+		},
 		nothingWhite: {
-			primary:     "#EB001B", // Signature Nothing Red
+			primary:     "#EB001B", 
 			background:  "#FFFFFF", 
-			surface:     "#F2F2F2", // Light gray "Tech" surface
+			surface:     "#F2F2F2", 
 			surfaceAlt:  "#E5E5E5",
-			text:        "#000000", // High contrast black
+			text:        "#000000", 
 			textMuted:   "#707070",
-			border:      "#000000", // Thin black lines for that industrial look
+			border:      "#000000", 
 			borderAlt:   "#D1D1D1",
 			danger:      "#EB001B",
-			success:     "#00FF41", // "Matrix" Green
+			success:     "#00FF41", 
 			warning:     "#FFBF00",
-			radius:      "0px",     // Nothing uses very sharp corners or very round ones
-			radiusSm:    "0px",     // Try 0px for a more "Blueprint" feel
-			radiusLg:    "24px",    // Or use 24px for that "Phone hardware" look
-			shadow:      "4px 4px 0px 0px rgba(0,0,0,1)", // "Brutalist" hard shadow
+			radius:      "0px",     
+			radiusSm:    "0px",     
+			radiusLg:    "24px",    
+			shadow:      "4px 4px 0px 0px rgba(0,0,0,1)", 
 			shadowSm:    "2px 2px 0px 0px rgba(0,0,0,1)",
 			shadowLg:    "8px 8px 0px 0px rgba(0,0,0,1)",
 			borderWidth: "1.5",
 		},
 		nothingBlack: {
 			primary:     "#EB001B", 
-			background:  "#000000", // Pure OLED black
-			surface:     "#121212", // Slightly lighter for layering
+			background:  "#000000", 
+			surface:     "#121212", 
 			surfaceAlt:  "#1F1F1F",
 			text:        "#FFFFFF",
 			textMuted:   "#A0A0A0",
@@ -235,34 +235,34 @@ export default {
 			radius:      "16px",
 			radiusSm:    "8px",
 			radiusLg:    "32px",
-			shadow:      "0 0 10px 0 rgba(255,255,255,0.1)", // Subtle white glow (Glyph style)
+			shadow:      "0 0 10px 0 rgba(255,255,255,0.1)", 
 			shadowSm:    "0 0 5px 0 rgba(255,255,255,0.05)",
 			shadowLg:    "0 0 25px 0 rgba(255,255,255,0.15)",
 			borderWidth: "1",
 		},
 		paper: {
-			primary:     "#111111", // Stark Black
+			primary:     "#111111", 
 			background:  "#FDFDFD", 
 			surface:     "#FFFFFF",
 			surfaceAlt:  "#F5F5F5",
 			text:        "#000000",
 			textMuted:   "#737373",
 			border:      "#E5E5E5",
-			borderAlt:   "#111111", // Use for active states
+			borderAlt:   "#111111", 
 			danger:      "#FF3B30",
-			success:     "#000000", // Minimalist success (just black/white)
+			success:     "#000000", 
 			warning:     "#FFCC00",
-			radius:      "0px",     // Hard edges for industrial look
+			radius:      "0px",     
 			radiusSm:    "0px",
 			radiusLg:    "0px",
-			shadow:      "0 0 0 1px rgba(0,0,0,0.05)", // Minimal ring
+			shadow:      "0 0 0 1px rgba(0,0,0,0.05)", 
 			shadowSm:    "0 1px 2px rgba(0,0,0,0.1)",
 			shadowLg:    "0 12px 24px rgba(0,0,0,0.05)",
 			borderWidth: "1",
 		},
 		alabaster: {
 			primary:     "#434343", 
-			background:  "#F7F7F2", // Warm White
+			background:  "#F7F7F2", 
 			surface:     "#FFFFFF",
 			surfaceAlt:  "#EFEEE5",
 			text:        "#1C1C1A",
@@ -272,7 +272,7 @@ export default {
 			danger:      "#B91C1C",
 			success:     "#166534",
 			warning:     "#92400E",
-			radius:      "20px",    // Very rounded like hardware corners
+			radius:      "20px",    
 			radiusSm:    "10px",
 			radiusLg:    "32px",
 			shadow:      "0 10px 30px -10px rgba(0,0,0,0.05)",
@@ -281,13 +281,13 @@ export default {
 			borderWidth: "1",
 		},
 		ghost: {
-			primary:     "#6366F1", // Indigo accent
-			background:  "#F1F5F9", // Cool White/Slate-50
-			surface:     "#FFFFFFCC", // Set up for 80% transparency
+			primary:     "#6366F1", 
+			background:  "#F1F5F9", 
+			surface:     "#FFFFFFCC", 
 			surfaceAlt:  "#E2E8F0",
 			text:        "#0F172A",
 			textMuted:   "#64748B",
-			border:      "#FFFFFF", // White border on off-white background creates "Depth"
+			border:      "#FFFFFF", 
 			borderAlt:   "#CBD5E1",
 			danger:      "#EF4444",
 			success:     "#22C55E",
@@ -298,20 +298,32 @@ export default {
 			shadow:      "0 8px 32px 0 rgba(31, 38, 135, 0.07)",
 			shadowSm:    "0 4px 8px 0 rgba(0, 0, 0, 0.04)",
 			shadowLg:    "0 12px 48px 0 rgba(0, 0, 0, 0.1)",
-			borderWidth: "2", // Thicker white borders mimic glass thickness
+			borderWidth: "2", 
 		},
-  },
+	},
 
-  defaultTheme: "ghost",
+	defaultTheme: "ghost",
 
-  init() {
-    const name = appsmith.store.activeTheme || this.defaultTheme;
-    storeValue("activeTheme", name);
-    storeValue("theme", this.themes[name]);
-  },
+	init() {
+		// Checks if a theme is saved in store, otherwise uses default
+		const name = appsmith.store.activeTheme || this.defaultTheme;
+		storeValue("activeTheme", name);
+		storeValue("theme", this.themes[name]);
+	},
 
-  setTheme(themeName) {
-    storeValue("activeTheme", themeName);
-    storeValue("theme", this.themes[themeName]);
-  },
+	setTheme(themeName) {
+		// Validates if theme exists, then updates store
+		if (this.themes[themeName]) {
+			storeValue("activeTheme", themeName);
+			storeValue("theme", this.themes[themeName]);
+		}
+	},
+
+	getThemeOptions() {
+		// Generates list for Select/Dropdown widget
+		return Object.keys(this.themes).map(name => ({
+			label: name.charAt(0).toUpperCase() + name.slice(1).replace(/([A-Z])/g, ' $1'),
+			value: name
+		}));
+	}
 }

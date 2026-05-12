@@ -1,8 +1,8 @@
 {
   "animateLoading": true,
-  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "borderRadius": "{{appsmith.store.theme.radiusSm}}",
   "bottomRow": 4,
-  "boxShadow": "none",
+  "boxShadow": "{{appsmith.store.theme.shadowSm}}",
   "buttonVariant": "PRIMARY",
   "childStylesheet": {
     "button": {
@@ -24,6 +24,15 @@
     },
     {
       "key": "groupButtons.groupButtonicq3rzdfp4.buttonColor"
+    },
+    {
+      "key": "boxShadow"
+    },
+    {
+      "key": "groupButtons.groupButtonicq3rzdfp4.menuItems.menuItemohwbaos7qb.backgroundColor"
+    },
+    {
+      "key": "groupButtons.groupButtonicq3rzdfp4.menuItems.menuItem9co943rrez.backgroundColor"
     }
   ],
   "dynamicPropertyPathList": [
@@ -32,6 +41,30 @@
     },
     {
       "key": "groupButtons.groupButtong1q4rfnylq.onClick"
+    },
+    {
+      "key": "groupButtons.groupButton1.buttonColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "boxShadow"
+    },
+    {
+      "key": "groupButtons.groupButton2.buttonColor"
+    },
+    {
+      "key": "groupButtons.groupButtong1q4rfnylq.buttonColor"
+    },
+    {
+      "key": "groupButtons.groupButtonicq3rzdfp4.buttonColor"
+    },
+    {
+      "key": "groupButtons.groupButtonicq3rzdfp4.menuItems.menuItemohwbaos7qb.backgroundColor"
+    },
+    {
+      "key": "groupButtons.groupButtonicq3rzdfp4.menuItems.menuItem9co943rrez.backgroundColor"
     }
   ],
   "dynamicTriggerPathList": [
@@ -62,7 +95,7 @@
   ],
   "groupButtons": {
     "groupButton1": {
-      "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+      "buttonColor": "{{appsmith.store.theme.primary}}",
       "buttonType": "SIMPLE",
       "disabledWhenInvalid": false,
       "iconName": "add",
@@ -77,7 +110,7 @@
       "widgetId": ""
     },
     "groupButton2": {
-      "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+      "buttonColor": "{{appsmith.store.theme.primary}}",
       "buttonType": "MENU",
       "disabledWhenInvalid": false,
       "iconName": "add-to-artifact",
@@ -113,7 +146,7 @@
       "widgetId": ""
     },
     "groupButtong1q4rfnylq": {
-      "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+      "buttonColor": "{{appsmith.store.theme.primary}}",
       "buttonType": "SIMPLE",
       "iconName": "edit",
       "id": "groupButtong1q4rfnylq",
@@ -130,7 +163,7 @@
       "widgetId": "v00e3fo6mp"
     },
     "groupButtonicq3rzdfp4": {
-      "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+      "buttonColor": "{{appsmith.store.theme.primary}}",
       "buttonType": "MENU",
       "id": "groupButtonicq3rzdfp4",
       "index": 3,
@@ -141,6 +174,7 @@
       "label": "Stock Adjustment",
       "menuItems": {
         "menuItem9co943rrez": {
+          "backgroundColor": "{{appsmith.store.theme.primary}}",
           "id": "menuItem9co943rrez",
           "index": 1,
           "isDisabled": false,
@@ -150,6 +184,7 @@
           "widgetId": "vondhiq7j7"
         },
         "menuItemohwbaos7qb": {
+          "backgroundColor": "{{appsmith.store.theme.primary}}",
           "id": "menuItemohwbaos7qb",
           "index": 0,
           "isDisabled": false,
