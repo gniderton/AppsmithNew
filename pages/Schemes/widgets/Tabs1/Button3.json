@@ -14,11 +14,7 @@
       "key": "borderRadius"
     }
   ],
-  "dynamicPropertyPathList": [
-    {
-      "key": "onClick"
-    }
-  ],
+  "dynamicPropertyPathList": [],
   "dynamicTriggerPathList": [
     {
       "key": "onClick"
@@ -36,7 +32,7 @@
   "mobileRightColumn": 37,
   "mobileTopRow": 0,
   "needsErrorInfo": false,
-  "onClick": "{{DownloadInvoices.downloadSelectedInvoices()}}",
+  "onClick": "{{DownloadInvoices.downloadSelectedTableInvoices();}}",
   "parentColumnSpace": 17.21875,
   "parentId": "yagnp5o5d6",
   "parentRowSpace": 10,
