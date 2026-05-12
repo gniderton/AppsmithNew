@@ -1,12 +1,16 @@
 {
-  "gitSyncId": "69a80abb79ac426a29eb8838_454245ce-5732-4181-911f-82943cf294c0",
-  "id": "Settings_ThemeManager.getThemeOptions",
+  "gitSyncId": "69a80abb79ac426a29eb8838_dec0baf8-1d0f-4290-8631-2192e909b293",
+  "id": "Settings_ThemeManager.setTheme",
   "pluginId": "js-plugin",
   "pluginType": "JS",
   "unpublishedAction": {
     "actionConfiguration": {
       "encodeParamsToggle": true,
-      "jsArguments": [],
+      "jsArguments": [
+        {
+          "name": "themeName"
+        }
+      ],
       "paginationType": "NONE",
       "timeoutInMillisecond": 10000
     },
@@ -22,8 +26,8 @@
         "key": "body"
       }
     ],
-    "fullyQualifiedName": "ThemeManager.getThemeOptions",
-    "name": "getThemeOptions",
+    "fullyQualifiedName": "ThemeManager.setTheme",
+    "name": "setTheme",
     "pageId": "Settings",
     "runBehaviour": "MANUAL",
     "userSetOnLoad": false
