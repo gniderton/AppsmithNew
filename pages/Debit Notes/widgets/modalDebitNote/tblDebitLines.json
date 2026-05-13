@@ -47,15 +47,15 @@
     "GST__",
     "GST__1",
     "Net__",
+    "_product_id",
+    "customColumn1",
+    "Stock",
+    "_row_id",
     "Reason",
     "Batch_No",
-    "Expiry",
-    "_product_id",
-    "_batches",
-    "customColumn1",
-    "_row_id"
+    "Expiry"
   ],
-  "columnUpdatedAt": 1776496772061,
+  "columnUpdatedAt": 1778646057273,
   "columnWidthMap": {
     "Batch_No": 145,
     "Disc__": 83,
@@ -65,7 +65,7 @@
     "GST__": 80,
     "GST__1": 91,
     "Gross__": 94,
-    "Item_Name": 232,
+    "Item_Name": 295,
     "MRP": 73,
     "Net__": 106,
     "Price": 80,
@@ -141,28 +141,10 @@
       "key": "primaryColumns.Net__.computedValue"
     },
     {
-      "key": "primaryColumns.Reason.computedValue"
-    },
-    {
-      "key": "primaryColumns.Batch_No.computedValue"
-    },
-    {
-      "key": "primaryColumns.Expiry.computedValue"
-    },
-    {
       "key": "primaryColumns._product_id.computedValue"
     },
     {
       "key": "isVisible"
-    },
-    {
-      "key": "primaryColumns.Reason.selectOptions"
-    },
-    {
-      "key": "primaryColumns._batches.computedValue"
-    },
-    {
-      "key": "primaryColumns.Batch_No.selectOptions"
     },
     {
       "key": "primaryColumns.customColumn1.buttonColor"
@@ -174,7 +156,19 @@
       "key": "primaryColumns.customColumn1.boxShadow"
     },
     {
+      "key": "primaryColumns.Stock.computedValue"
+    },
+    {
       "key": "primaryColumns._row_id.computedValue"
+    },
+    {
+      "key": "primaryColumns.Reason.computedValue"
+    },
+    {
+      "key": "primaryColumns.Batch_No.computedValue"
+    },
+    {
+      "key": "primaryColumns.Expiry.computedValue"
     }
   ],
   "dynamicPropertyPathList": [
@@ -190,15 +184,6 @@
   ],
   "dynamicTriggerPathList": [
     {
-      "key": "primaryColumns.Batch_No.onSubmit"
-    },
-    {
-      "key": "primaryColumns.Reason.onOptionChange"
-    },
-    {
-      "key": "primaryColumns.Expiry.onSubmit"
-    },
-    {
       "key": "primaryColumns.Qty.onSubmit"
     },
     {
@@ -206,9 +191,6 @@
     },
     {
       "key": "primaryColumns.Disc__.onSubmit"
-    },
-    {
-      "key": "primaryColumns.Batch_No.onOptionChange"
     },
     {
       "key": "primaryColumns.customColumn1.onClick"
@@ -256,22 +238,18 @@
       "fontStyle": "",
       "horizontalAlignment": "LEFT",
       "id": "Batch_No",
-      "index": 15,
-      "isCellEditable": true,
+      "index": 16,
+      "isCellEditable": false,
       "isCellVisible": true,
       "isDerived": false,
       "isDisabled": false,
       "isDiscardVisible": true,
-      "isEditable": true,
+      "isEditable": false,
       "isSaveVisible": true,
       "isVisible": true,
       "label": "Batch No",
       "notation": "standard",
-      "onOptionChange": "{{DebitNoteTableEdit.updateDebitRow();}}",
-      "onSubmit": "{{DebitNoteTableEdit.updateDebitRow();}}",
       "originalId": "Batch No",
-      "selectOptions": "{{(() => { const tableData = tblDebitLines.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( \n  currentRow._batches.map(b => ({ \n    label: `${b.batch_code} (${b.quantity_remaining})`, \n    value: b.batch_code \n  })) \n)) :  \n  currentRow._batches.map(b => ({ \n    label: `${b.batch_code} (${b.quantity_remaining})`, \n    value: b.batch_code \n  })) \n })()}}",
-      "sortBy": "label",
       "sticky": "",
       "textColor": "",
       "textSize": "0.875rem",
@@ -397,20 +375,18 @@
       "fontStyle": "",
       "horizontalAlignment": "LEFT",
       "id": "Expiry",
-      "index": 16,
-      "isCellEditable": true,
+      "index": 17,
+      "isCellEditable": false,
       "isCellVisible": true,
       "isDerived": false,
       "isDisabled": false,
       "isDiscardVisible": true,
-      "isEditable": true,
+      "isEditable": false,
       "isSaveVisible": true,
       "isVisible": true,
       "label": "Expiry",
       "notation": "standard",
-      "onSubmit": "{{DebitNoteTableEdit.updateDebitRow();}}",
       "originalId": "Expiry",
-      "outputFormat": "DD/MM/YYYY",
       "sticky": "",
       "textColor": "",
       "textSize": "0.875rem",
@@ -697,8 +673,8 @@
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
       "cellBackground": "",
-      "columnType": "select",
-      "computedValue": "{{(() => { const tableData = tblDebitLines.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"Reason\"])) : currentRow[\"Reason\"] })()}}",
+      "columnType": "text",
+      "computedValue": "{{(() => { const tableData = tblDebitLines.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"Reason\"])) : Reason })()}}",
       "currencyCode": "USD",
       "decimals": 0,
       "enableFilter": true,
@@ -706,21 +682,18 @@
       "fontStyle": "",
       "horizontalAlignment": "LEFT",
       "id": "Reason",
-      "index": 14,
-      "isCellEditable": true,
+      "index": 15,
+      "isCellEditable": false,
       "isCellVisible": true,
       "isDerived": false,
       "isDisabled": false,
       "isDiscardVisible": true,
-      "isEditable": true,
+      "isEditable": false,
       "isSaveVisible": true,
       "isVisible": true,
       "label": "Reason",
       "notation": "standard",
-      "onOptionChange": "{{DebitNoteTableEdit.updateDebitRow();}}",
       "originalId": "Reason",
-      "selectOptions": "{{(() => { const tableData = tblDebitLines.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( \n  ['Good', 'Damage', 'Expiry'].map(item => ({\n    label: item,\n    value: item\n  }))\n)) :  \n  ['Good', 'Damage', 'Expiry'].map(item => ({\n    label: item,\n    value: item\n  }))\n })()}}",
-      "sortBy": "label",
       "sticky": "",
       "textColor": "",
       "textSize": "0.875rem",
@@ -798,6 +771,40 @@
       "verticalAlignment": "CENTER",
       "width": 150
     },
+    "Stock": {
+      "alias": "Stock",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "cellBackground": "",
+      "columnType": "number",
+      "computedValue": "{{(() => { const tableData = tblDebitLines.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"Stock\"])) : Stock })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "fontStyle": "",
+      "horizontalAlignment": "LEFT",
+      "id": "Stock",
+      "index": 12,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": true,
+      "label": "Stock",
+      "notation": "standard",
+      "originalId": "Stock",
+      "sticky": "",
+      "textColor": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
     "Taxable__": {
       "alias": "Taxable $",
       "allowCellWrapping": false,
@@ -824,40 +831,6 @@
       "label": "Taxable $",
       "notation": "standard",
       "originalId": "Taxable $",
-      "sticky": "",
-      "textColor": "",
-      "textSize": "0.875rem",
-      "thousandSeparator": true,
-      "validation": {},
-      "verticalAlignment": "CENTER",
-      "width": 150
-    },
-    "_batches": {
-      "alias": "_batches",
-      "allowCellWrapping": false,
-      "allowSameOptionsInNewRow": true,
-      "cellBackground": "",
-      "columnType": "text",
-      "computedValue": "{{(() => { const tableData = tblDebitLines.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"_batches\"])) : _batches })()}}",
-      "currencyCode": "USD",
-      "decimals": 0,
-      "enableFilter": true,
-      "enableSort": true,
-      "fontStyle": "",
-      "horizontalAlignment": "LEFT",
-      "id": "_batches",
-      "index": 18,
-      "isCellEditable": false,
-      "isCellVisible": true,
-      "isDerived": false,
-      "isDisabled": false,
-      "isDiscardVisible": true,
-      "isEditable": false,
-      "isSaveVisible": true,
-      "isVisible": false,
-      "label": "_batches",
-      "notation": "standard",
-      "originalId": "_batches",
       "sticky": "",
       "textColor": "",
       "textSize": "0.875rem",
@@ -922,7 +895,7 @@
       "isDiscardVisible": true,
       "isEditable": false,
       "isSaveVisible": true,
-      "isVisible": false,
+      "isVisible": true,
       "label": "_row_id",
       "notation": "standard",
       "originalId": "_row_id",
