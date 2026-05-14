@@ -43,9 +43,10 @@
     "created_by",
     "rule_count",
     "computed_status",
-    "rules"
+    "rules",
+    "targeted_customer_ids"
   ],
-  "columnUpdatedAt": 1773727391453,
+  "columnUpdatedAt": 1778725454852,
   "columnWidthMap": {
     "description": 314,
     "end_date": 112,
@@ -119,6 +120,9 @@
     },
     {
       "key": "primaryColumns.is_active.buttonColor"
+    },
+    {
+      "key": "primaryColumns.targeted_customer_ids.computedValue"
     }
   ],
   "dynamicPropertyPathList": [
@@ -553,6 +557,40 @@
       "originalId": "start_date",
       "outputFormat": "DD/MM/YYYY",
       "sticky": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
+    "targeted_customer_ids": {
+      "alias": "targeted_customer_ids",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "cellBackground": "",
+      "columnType": "text",
+      "computedValue": "{{(() => { const tableData = tblSchemes.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"targeted_customer_ids\"])) : targeted_customer_ids })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "fontStyle": "",
+      "horizontalAlignment": "LEFT",
+      "id": "targeted_customer_ids",
+      "index": 8,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": true,
+      "label": "targeted_customer_ids",
+      "notation": "standard",
+      "originalId": "targeted_customer_ids",
+      "sticky": "",
+      "textColor": "",
       "textSize": "0.875rem",
       "thousandSeparator": true,
       "validation": {},

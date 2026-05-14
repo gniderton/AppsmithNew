@@ -46,7 +46,7 @@
   "mobileRightColumn": 63,
   "mobileTopRow": 0,
   "needsErrorInfo": false,
-  "onClick": "{{JS_Schemes.saveScheme();}}",
+  "onClick": "{{JS_Schemes_New.saveScheme();}}",
   "originalBottomRow": 4,
   "originalTopRow": 0,
   "parentColumnSpace": 12.9765625,

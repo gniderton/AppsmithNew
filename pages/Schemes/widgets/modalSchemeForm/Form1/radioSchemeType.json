@@ -55,6 +55,10 @@
     {
       "label": "PRICE_SLAB",
       "value": "PRICE_SLAB"
+    },
+    {
+      "label": "FLAT_MRP_DISCOUNT",
+      "value": "FLAT_MRP_DISCOUNT"
     }
   ],
   "originalBottomRow": 22,
@@ -63,7 +67,7 @@
   "parentId": "cnuqgjwhdp",
   "parentRowSpace": 10,
   "renderMode": "CANVAS",
-  "rightColumn": 36,
+  "rightColumn": 49,
   "topRow": 16,
   "type": "RADIO_GROUP_WIDGET",
   "version": 1,
