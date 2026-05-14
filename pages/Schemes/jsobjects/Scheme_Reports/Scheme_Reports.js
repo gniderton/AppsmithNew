@@ -1,5 +1,7 @@
 export default {
-	// Main function to build ALL reports
+	// ==========================================
+	// 1. MAIN GENERATOR
+	// ==========================================
 	generateReports: () => {
 		const lines = getBulkInvoiceLines.data || [];
 		if (lines.length === 0) {
@@ -7,23 +9,30 @@ export default {
 			return;
 		}
 
-		// 1. PRODUCT PERFORMANCE
-		storeValue('report_products', this.getProductSummary(lines));
-		
-		// 2. CUSTOMER PERFORMANCE (Who benefited most?)
-		storeValue('report_customers', this.getCustomerSummary(lines));
-		
-		// 3. DSE/SALESMAN PERFORMANCE (Who pushed the scheme most?)
-		storeValue('report_dse', this.getDSESummary(lines));
+		// Calculate all summaries
+		const prodData = this.getProductSummary(lines);
+		const custData = this.getCustomerSummary(lines);
+		const dseData = this.getDSESummary(lines);
+		const tierData = this.getTierSummary(lines);
+		const auditData = this.getInvoiceSummary(lines);
 
-		// 4. TIERS APPLIED (BOGO vs Combo vs Qty-based)
-		storeValue('report_tiers', this.getTierSummary(lines));
+		// Store in Appsmith memory
+		storeValue('report_products', prodData);
+		storeValue('report_customers', custData);
+		storeValue('report_dse', dseData);
+		storeValue('report_tiers', tierData);
+		storeValue('report_audit', auditData);
 		
-		// 5. INVOICE-WISE AUDIT (The detailed list)
-		storeValue('report_audit', this.getInvoiceSummary(lines));
+
 		
 		showAlert(`Generated 5 Scheme-Focused reports!`, "success");
 	},
+
+
+
+	// ==========================================
+	// 2. DATA PROCESSORS (Summaries)
+	// ==========================================
 
 	getProductSummary: (lines) => {
 		const groups = _.groupBy(lines, 'product_name');
@@ -43,7 +52,6 @@ export default {
 	},
 
 	getInvoiceSummary: (lines) => {
-		// Shows every product line item for every invoice
 		return lines.map(l => {
 			const schemeAmt = Number(l.scheme_amount || 0);
 			const rate = Number(l.rate || 0);

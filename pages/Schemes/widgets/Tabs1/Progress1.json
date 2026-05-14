@@ -1,6 +1,6 @@
 {
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 3,
+  "bottomRow": 7,
   "bottomRowBeforeCollapse": 7,
   "counterClosewise": false,
   "dynamicBindingPathList": [

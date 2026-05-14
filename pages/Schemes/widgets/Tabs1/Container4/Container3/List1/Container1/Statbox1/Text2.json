@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 12,
+  "bottomRow": 8,
   "dynamicBindingPathList": [
     {
       "key": "truncateButtonColor"
@@ -28,26 +28,26 @@
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 4,
   "minWidth": 450,
-  "mobileBottomRow": 12,
+  "mobileBottomRow": 8,
   "mobileLeftColumn": 1,
   "mobileRightColumn": 37,
-  "mobileTopRow": 8,
+  "mobileTopRow": 4,
   "needsErrorInfo": false,
-  "originalBottomRow": 13,
-  "originalTopRow": 9,
+  "originalBottomRow": 9,
+  "originalTopRow": 4,
   "overflow": "NONE",
-  "parentId": "j5q6879vtq",
+  "parentId": "0hfx4u0qzu",
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
-  "rightColumn": 27,
+  "rightColumn": 39,
   "shouldTruncate": false,
-  "text": "{{currentItem[\"Total Net Amt\"]}}",
+  "text": "Free Given: {{currentItem[\"Free Qty\"]}}",
   "textAlign": "LEFT",
-  "textColor": "#03B365",
-  "topRow": 8,
+  "textColor": "#231F20",
+  "topRow": 4,
   "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
   "type": "TEXT_WIDGET",
   "version": 1,
-  "widgetId": "wylpewm5io",
-  "widgetName": "Text3"
+  "widgetId": "wcc9bn6kgm",
+  "widgetName": "Text2"
 }
