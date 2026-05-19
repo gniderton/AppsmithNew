@@ -280,6 +280,51 @@
       "version": 1,
       "widgetId": "z5ljmey88d",
       "widgetName": "Canvas17"
+    },
+    {
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "bottomRow": 620,
+      "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+      "canExtend": false,
+      "containerStyle": "none",
+      "detachFromLayout": true,
+      "dynamicBindingPathList": [
+        {
+          "key": "borderRadius"
+        },
+        {
+          "key": "boxShadow"
+        }
+      ],
+      "dynamicHeight": "AUTO_HEIGHT",
+      "dynamicTriggerPathList": [],
+      "flexLayers": [],
+      "isLoading": false,
+      "isVisible": true,
+      "key": "uav3yyacea",
+      "leftColumn": 0,
+      "maxDynamicHeight": 9000,
+      "minDynamicHeight": 4,
+      "minHeight": 660,
+      "minWidth": 450,
+      "mobileBottomRow": 661,
+      "mobileLeftColumn": 0,
+      "mobileRightColumn": 192.5,
+      "mobileTopRow": 1,
+      "needsErrorInfo": false,
+      "parentColumnSpace": 1,
+      "parentId": "6znvks6ysu",
+      "parentRowSpace": 1,
+      "renderMode": "CANVAS",
+      "responsiveBehavior": "fill",
+      "rightColumn": 192.5,
+      "tabId": "tab8hg5dqh5b2",
+      "tabName": "PickList",
+      "topRow": 1,
+      "type": "CANVAS_WIDGET",
+      "version": 1,
+      "widgetId": "quuw3vdbvx",
+      "widgetName": "Canvas27"
     }
   ],
   "defaultTab": "Tab 1",
@@ -344,6 +389,13 @@
       "label": "Rejected",
       "positioning": "vertical",
       "widgetId": "74haka5rvl"
+    },
+    "tab8hg5dqh5b2": {
+      "id": "tab8hg5dqh5b2",
+      "index": 6,
+      "isVisible": true,
+      "label": "PickList",
+      "widgetId": "quuw3vdbvx"
     },
     "tabhmpppt660c": {
       "id": "tabhmpppt660c",
