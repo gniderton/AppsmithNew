@@ -53,7 +53,7 @@
   "responsiveBehavior": "fill",
   "rightColumn": 44,
   "serverSideFiltering": false,
-  "sourceData": "{{\n  apiGetBatches.data.map((item) => {\n    return {\n      label: `${item.batch_code} | Qty: ${item.quantity_remaining} | Exp: ${item.expiry_date || 'N/A'}`,\n      value: item.id\n    }\n  })\n}}",
+  "sourceData": "{{\n  apiGetBatches.data.map((item) => {\n    return {\n      label: `${item.batch_code} | Qty: ${item.quantity_remaining} | Exp: ${item.expiry_date || 'N/A'}`,\n      value: item.batch_code\n    }\n  })\n}}",
   "topRow": 13,
   "type": "SELECT_WIDGET",
   "version": 1,
