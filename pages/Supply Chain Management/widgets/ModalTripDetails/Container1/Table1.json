@@ -48,7 +48,7 @@
     "delivery_status",
     "sales_order_id"
   ],
-  "columnUpdatedAt": 1779173829122,
+  "columnUpdatedAt": 1779266736694,
   "columnWidthMap": {
     "address": 314,
     "customer_name": 276,
@@ -176,7 +176,7 @@
       "isDiscardVisible": true,
       "isEditable": false,
       "isSaveVisible": true,
-      "isVisible": false,
+      "isVisible": true,
       "label": "address",
       "notation": "standard",
       "originalId": "address",
