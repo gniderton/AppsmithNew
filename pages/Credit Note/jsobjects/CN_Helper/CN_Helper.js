@@ -3,9 +3,41 @@ export default {
   loadAllProducts: async () => {
     const allBatches = await getBatch.run();
     const products = getProducts.data.data || [];
+    
+    const customerId = selCustomer.selectedOptionValue;
+    const customers = getCustomers.data || [];
+    const customer = customers.find(c => String(c.id) === String(customerId)) || {};
+    
+    let exceptions = [];
+    try {
+      if (customer.pricing_ex) {
+        exceptions = typeof customer.pricing_ex === 'string'
+          ? JSON.parse(customer.pricing_ex)
+          : customer.pricing_ex;
+      }
+    } catch (e) {}
+
+    const resolveProductPrice = (item, brandId) => {
+      let rateCol = customer.default_price_col || 'dealer_rate';
+      if (Array.isArray(exceptions)) {
+        const brandEx = exceptions.find(ex => String(ex.brand_id) === String(brandId));
+        if (brandEx && brandEx.price_column) {
+          rateCol = brandEx.price_column;
+        }
+      }
+      let price = Number(item[rateCol] || 0);
+      if (!price) {
+        price = Number(item.dealer_rate || 0);
+      }
+      if (!price) {
+        price = Number(item.mrp || 0);
+      }
+      return price;
+    };
 
     const creditLines = products.map(p => {
       const productBatches = allBatches.filter(b => String(b.product_id) === String(p.id));
+      const price = resolveProductPrice(p, p.brand_id);
       
       return {
         _product_id: p.id,
@@ -14,7 +46,7 @@ export default {
         'inventory_status': 'Good', // [NEW] Default to Good
         'MRP': Number(p.mrp || 0),
         'Qty': 0,
-        'Price': Number(p.dealer_rate || 0), 
+        'Price': price, 
         'Sch': 0,
         'Disc %': 0,
         'GST %': Number(p.tax_percentage || 0),
@@ -84,7 +116,40 @@ export default {
       const selectedBatch = (row._batches || []).find(b => b.id == change["batch_id"]);
       if (selectedBatch) {
         row['MRP'] = Number(selectedBatch.mrp || 0);
-        row['Price'] = Number(selectedBatch.dealer_rate || 0);
+        
+        // Resolve customer specific pricing for the selected batch
+        const customerId = selCustomer.selectedOptionValue;
+        const customers = getCustomers.data || [];
+        const customer = customers.find(c => String(c.id) === String(customerId)) || {};
+        
+        let exceptions = [];
+        try {
+          if (customer.pricing_ex) {
+            exceptions = typeof customer.pricing_ex === 'string'
+              ? JSON.parse(customer.pricing_ex)
+              : customer.pricing_ex;
+          }
+        } catch (e) {}
+
+        const products = getProducts.data.data || [];
+        const product = products.find(p => String(p.id) === String(row._product_id)) || {};
+        
+        let rateCol = customer.default_price_col || 'dealer_rate';
+        if (Array.isArray(exceptions)) {
+          const brandEx = exceptions.find(ex => String(ex.brand_id) === String(product.brand_id));
+          if (brandEx && brandEx.price_column) {
+            rateCol = brandEx.price_column;
+          }
+        }
+
+        let price = Number(selectedBatch[rateCol] || 0);
+        if (!price) {
+          price = Number(selectedBatch.dealer_rate || 0);
+        }
+        if (!price) {
+          price = Number(selectedBatch.mrp || 0);
+        }
+        row['Price'] = price;
       }
     }
 

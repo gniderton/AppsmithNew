@@ -13,11 +13,7 @@
       "key": "borderRadius"
     }
   ],
-  "dynamicPropertyPathList": [
-    {
-      "key": "onClick"
-    }
-  ],
+  "dynamicPropertyPathList": [],
   "dynamicTriggerPathList": [
     {
       "key": "onClick"
@@ -35,7 +31,7 @@
   "mobileRightColumn": 26,
   "mobileTopRow": 4,
   "needsErrorInfo": false,
-  "onClick": "{{ CN_Helper.loadAllProducts() }}",
+  "onClick": "{{CN_Helper.loadAllProducts();}}",
   "parentColumnSpace": 19.228125,
   "parentId": "9qgxcgjwpq",
   "parentRowSpace": 10,
