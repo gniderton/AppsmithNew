@@ -27,6 +27,9 @@
     },
     {
       "key": "groupButtons.groupButton2ng724u73j.buttonColor"
+    },
+    {
+      "key": "groupButtons.groupButtonmrtgrqwumv.buttonColor"
     }
   ],
   "dynamicPropertyPathList": [
@@ -133,6 +136,21 @@
       "placement": "CENTER",
       "variant": "filled",
       "widgetId": "z0om5089bk"
+    },
+    "groupButtonmrtgrqwumv": {
+      "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+      "buttonType": "SIMPLE",
+      "id": "groupButtonmrtgrqwumv",
+      "index": 5,
+      "isDisabled": false,
+      "isSeparator": false,
+      "isVisible": true,
+      "itemType": "BUTTON",
+      "label": "Advances",
+      "menuItems": {},
+      "placement": "CENTER",
+      "variant": "filled",
+      "widgetId": "8c9yycrdlw"
     }
   },
   "isCanvas": false,

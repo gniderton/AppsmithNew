@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 44,
+  "bottomRow": 42,
   "boxShadow": "none",
   "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
   "buttonVariant": "PRIMARY",
@@ -49,7 +49,7 @@
   "responsiveBehavior": "hug",
   "rightColumn": 43,
   "text": "Apply Bulk",
-  "topRow": 40,
+  "topRow": 38,
   "type": "BUTTON_WIDGET",
   "version": 1,
   "widgetId": "t01if9slnx",
