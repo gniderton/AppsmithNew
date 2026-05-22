@@ -40,9 +40,10 @@
     "debit_amount",
     "credit_amount",
     "status",
-    "running_balance"
+    "running_balance",
+    "customColumn1"
   ],
-  "columnUpdatedAt": 1773913692394,
+  "columnUpdatedAt": 1779415367039,
   "columnWidthMap": {
     "date": 109
   },
@@ -93,14 +94,27 @@
     },
     {
       "key": "primaryColumns.running_balance.computedValue"
+    },
+    {
+      "key": "primaryColumns.customColumn1.buttonColor"
+    },
+    {
+      "key": "primaryColumns.customColumn1.boxShadow"
     }
   ],
   "dynamicPropertyPathList": [
     {
       "key": "tableData"
+    },
+    {
+      "key": "primaryColumns.customColumn1.onClick"
     }
   ],
-  "dynamicTriggerPathList": [],
+  "dynamicTriggerPathList": [
+    {
+      "key": "primaryColumns.customColumn1.onClick"
+    }
+  ],
   "enableClientSideSearch": true,
   "endOfData": false,
   "flexVerticalAlignment": "start",
@@ -127,6 +141,7 @@
   "parentColumnSpace": 6.9375,
   "parentId": "poxt1y6z4c",
   "parentRowSpace": 10,
+  "primaryColumnId": "id",
   "primaryColumns": {
     "credit_amount": {
       "alias": "credit_amount",
@@ -134,7 +149,7 @@
       "allowSameOptionsInNewRow": true,
       "cellBackground": "",
       "columnType": "text",
-      "computedValue": "{{(() => { const tableData = Table2.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"credit_amount\"])) : credit_amount })()}}",
+      "computedValue": "{{(() => { const tableData = tblLoanTransactionLed.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"credit_amount\"])) : credit_amount })()}}",
       "currencyCode": "USD",
       "decimals": 0,
       "enableFilter": true,
@@ -162,13 +177,53 @@
       "verticalAlignment": "CENTER",
       "width": 150
     },
+    "customColumn1": {
+      "alias": "Delete",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "borderRadius": "0px",
+      "boxShadow": "{{tblLoanTransactionLed.processedTableData.map((currentRow, currentIndex) => ( \"none\"))}}",
+      "buttonColor": "{{tblLoanTransactionLed.processedTableData.map((currentRow, currentIndex) => ( (appsmith.theme.colors.primaryColor)))}}",
+      "buttonStyle": "rgb(3, 179, 101)",
+      "buttonVariant": "TERTIARY",
+      "columnType": "iconButton",
+      "computedValue": "",
+      "currencyCode": "USD",
+      "customAlias": "",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "horizontalAlignment": "LEFT",
+      "iconName": "trash",
+      "id": "customColumn1",
+      "index": 9,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": true,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": true,
+      "label": "Delete",
+      "labelColor": "#FFFFFF",
+      "notation": "standard",
+      "onClick": "{{\n  DeleteLoanTransaction.run(\n    () => {\n      showAlert('Transaction deleted and ledger updated!', 'success');\n      GetLoanLedger.run();\n    },\n    (error) => {\n      showAlert('Failed to delete transaction: ' + (DeleteLoanTransaction.data?.error || error), 'error');\n    },\n    { transactionId: currentRow.id } // Update currentRow.id with your row/item ID source\n  )\n}}",
+      "originalId": "customColumn1",
+      "sticky": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
     "date": {
       "alias": "date",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
       "cellBackground": "",
       "columnType": "date",
-      "computedValue": "{{(() => { const tableData = Table2.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"date\"])) : date })()}}",
+      "computedValue": "{{(() => { const tableData = tblLoanTransactionLed.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"date\"])) : date })()}}",
       "currencyCode": "USD",
       "decimals": 0,
       "enableFilter": true,
@@ -203,7 +258,7 @@
       "allowSameOptionsInNewRow": true,
       "cellBackground": "",
       "columnType": "text",
-      "computedValue": "{{(() => { const tableData = Table2.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"debit_amount\"])) : debit_amount })()}}",
+      "computedValue": "{{(() => { const tableData = tblLoanTransactionLed.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"debit_amount\"])) : debit_amount })()}}",
       "currencyCode": "USD",
       "decimals": 0,
       "enableFilter": true,
@@ -237,7 +292,7 @@
       "allowSameOptionsInNewRow": true,
       "cellBackground": "",
       "columnType": "text",
-      "computedValue": "{{(() => { const tableData = Table2.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"description\"])) : description })()}}",
+      "computedValue": "{{(() => { const tableData = tblLoanTransactionLed.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"description\"])) : description })()}}",
       "currencyCode": "USD",
       "decimals": 0,
       "enableFilter": true,
@@ -271,7 +326,7 @@
       "allowSameOptionsInNewRow": true,
       "cellBackground": "",
       "columnType": "text",
-      "computedValue": "{{(() => { const tableData = Table2.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"id\"])) : id })()}}",
+      "computedValue": "{{(() => { const tableData = tblLoanTransactionLed.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"id\"])) : id })()}}",
       "currencyCode": "USD",
       "decimals": 0,
       "enableFilter": true,
@@ -305,7 +360,7 @@
       "allowSameOptionsInNewRow": true,
       "cellBackground": "",
       "columnType": "text",
-      "computedValue": "{{(() => { const tableData = Table2.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"reference_number\"])) : reference_number })()}}",
+      "computedValue": "{{(() => { const tableData = tblLoanTransactionLed.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"reference_number\"])) : reference_number })()}}",
       "currencyCode": "USD",
       "decimals": 0,
       "enableFilter": true,
@@ -339,7 +394,7 @@
       "allowSameOptionsInNewRow": true,
       "cellBackground": "",
       "columnType": "number",
-      "computedValue": "{{(() => { const tableData = Table2.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"running_balance\"])) : running_balance })()}}",
+      "computedValue": "{{(() => { const tableData = tblLoanTransactionLed.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"running_balance\"])) : running_balance })()}}",
       "currencyCode": "USD",
       "decimals": 0,
       "enableFilter": true,
@@ -373,7 +428,7 @@
       "allowSameOptionsInNewRow": true,
       "cellBackground": "",
       "columnType": "text",
-      "computedValue": "{{(() => { const tableData = Table2.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"status\"])) : status })()}}",
+      "computedValue": "{{(() => { const tableData = tblLoanTransactionLed.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"status\"])) : status })()}}",
       "currencyCode": "USD",
       "decimals": 0,
       "enableFilter": true,
@@ -407,7 +462,7 @@
       "allowSameOptionsInNewRow": true,
       "cellBackground": "",
       "columnType": "text",
-      "computedValue": "{{(() => { const tableData = Table2.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"type\"])) : type })()}}",
+      "computedValue": "{{(() => { const tableData = tblLoanTransactionLed.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"type\"])) : type })()}}",
       "currencyCode": "USD",
       "decimals": 0,
       "enableFilter": true,
@@ -448,5 +503,5 @@
   "version": 2,
   "verticalAlignment": "CENTER",
   "widgetId": "vm480oxoel",
-  "widgetName": "Table2"
+  "widgetName": "tblLoanTransactionLed"
 }

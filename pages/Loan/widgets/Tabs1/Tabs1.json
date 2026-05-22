@@ -93,7 +93,7 @@
       "rightColumn": 403.21875,
       "shouldScrollContents": false,
       "tabId": "tab2",
-      "tabName": "Transactions",
+      "tabName": "Loans",
       "topRow": 0,
       "type": "CANVAS_WIDGET",
       "version": 1,
@@ -152,7 +152,7 @@
       "id": "tab2",
       "index": 1,
       "isVisible": true,
-      "label": "Transactions",
+      "label": "Loans",
       "positioning": "vertical",
       "widgetId": "nenolul888"
     }

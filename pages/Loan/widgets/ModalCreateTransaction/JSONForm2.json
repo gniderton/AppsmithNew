@@ -300,7 +300,7 @@
   "mobileTopRow": 6,
   "needsErrorInfo": false,
   "onSubmit": "{{\n  CreateLoanTransaction.run()\n    .then(() => {\n      // 1. Show success message\n      showAlert('Loan Transaction created successfully!', 'success');\n      \n      // 2. Refresh the transaction table\n      getLoanTransactions.run();\n      \n      // 3. Clear the form\n      resetWidget('JSONForm2', true);\n      \n      // 4. Close the modal\n      closeModal('ModalCreateTransaction');\n    })\n    .catch(() => {\n      // Show error message\n      showAlert('Failed to create transaction: ' + CreateLoanTransaction.data.error, 'error');\n    });\n}}\n",
-  "originalBottomRow": 131,
+  "originalBottomRow": 123,
   "originalTopRow": 6,
   "parentColumnSpace": 6.9375,
   "parentId": "yw2vxrx74w",
