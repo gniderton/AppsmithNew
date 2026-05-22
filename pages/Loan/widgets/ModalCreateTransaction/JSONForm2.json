@@ -259,6 +259,9 @@
     },
     {
       "key": "schema.__root_schema__.children.Payment_Details.children.Reference_Number.isVisible"
+    },
+    {
+      "key": "schema.__root_schema__.children.Loan_Details.children.Disbursement_Date.defaultValue"
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
@@ -277,6 +280,12 @@
     },
     {
       "key": "schema.__root_schema__.children.Payment_Details.children.Reference_Number.isVisible"
+    },
+    {
+      "key": "schema.__root_schema__.children.Loan_Details.children.Disbursement_Date.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.Loan_Details.children.Start_Date.defaultValue"
     }
   ],
   "dynamicTriggerPathList": [
@@ -340,7 +349,7 @@
               "convertToISO": false,
               "dataType": "string",
               "dateFormat": "DD-MM-YYYY",
-              "defaultValue": "2026-03-19T00:00:00.000+05:30",
+              "defaultValue": "{{((sourceData, formData, fieldState) => ( moment() ))(JSONForm2.sourceData, JSONForm2.formData, JSONForm2.fieldState)}}",
               "fieldType": "Datepicker",
               "identifier": "Disbursement_Date",
               "isCustomField": false,
@@ -479,7 +488,7 @@
               "convertToISO": false,
               "dataType": "string",
               "dateFormat": "DD-MM-YYYY",
-              "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.Loan_Details.Start_Date))(JSONForm2.sourceData, JSONForm2.formData, JSONForm2.fieldState)}}",
+              "defaultValue": "{{((sourceData, formData, fieldState) => ( moment() ))(JSONForm2.sourceData, JSONForm2.formData, JSONForm2.fieldState)}}",
               "fieldType": "Datepicker",
               "identifier": "Start_Date",
               "isCustomField": false,
@@ -629,12 +638,12 @@
               "identifier": "Reference_Number",
               "isCustomField": false,
               "isDisabled": false,
-              "isFilterable": false,
+              "isFilterable": true,
               "isRequired": false,
               "isVisible": "{{((sourceData, formData, fieldState) => (JSONForm2.formData.Payment_Details.Payment_Mode === 'ONLINE'))(JSONForm2.sourceData, JSONForm2.formData, JSONForm2.fieldState)}}",
               "label": "Reference Number",
               "labelTextSize": "0.875rem",
-              "options": "{{\n  JSONForm2.formData.Loan_Details.Loan_Type === 'TAKEN' \n    ? GetUnconsumedCredits.data.map(c => ({ label: `${c.bank_ref_id} (₹${c.credit_amount})`, value: c.id }))\n    : GetUnconsumedDebits.data.map(d => ({ label: `${d.bank_ref_id} (₹${d.debit_amount})`, value: d.id }))\n}}\n",
+              "options": "{{\n  JSONForm2.formData.Loan_Details.Loan_Type === 'TAKEN' \n    ? GetUnconsumedCredits.data.map(c => ({ label: `₹(${c.credit_amount} ) ${c.particulars}`, value: c.id }))\n    : GetUnconsumedDebits.data.map(d => ({ label: `₹(${d.debit_amount}) ${d.particulars}`, value: d.id }))\n}}\n",
               "originalIdentifier": "Reference_Number",
               "position": 2,
               "serverSideFiltering": false,
