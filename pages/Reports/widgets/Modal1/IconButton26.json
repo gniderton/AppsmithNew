@@ -1,0 +1,53 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 4,
+  "boxShadow": "none",
+  "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "buttonVariant": "TERTIARY",
+  "dynamicBindingPathList": [
+    {
+      "key": "buttonColor"
+    },
+    {
+      "key": "borderRadius"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "buttonVariant"
+    },
+    {
+      "key": "onClick"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "iconName": "document",
+  "isDisabled": false,
+  "isLoading": false,
+  "isVisible": true,
+  "key": "fyd2tk579p",
+  "leftColumn": 50,
+  "minWidth": 50,
+  "mobileBottomRow": 4,
+  "mobileLeftColumn": 50,
+  "mobileRightColumn": 54,
+  "mobileTopRow": 0,
+  "needsErrorInfo": false,
+  "onClick": "{{\n  forensicAPI.run().then(() => {\n    // Replace \"JSObject1\" with the actual name of your JS Object\n    JSObject1.exportForensicReport(forensicAPI.data);\n  }).catch((err) => {\n    showAlert(\"Failed to fetch fresh forensic data: \" + err.message, \"error\");\n  });\n}}",
+  "parentColumnSpace": 19.228125,
+  "parentId": "twx0ndqcnj",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "hug",
+  "rightColumn": 54,
+  "topRow": 0,
+  "type": "ICON_BUTTON_WIDGET",
+  "version": 1,
+  "widgetId": "awo7z1oym6",
+  "widgetName": "IconButton26"
+}
