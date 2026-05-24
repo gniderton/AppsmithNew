@@ -93,9 +93,6 @@
       "key": "primaryColumns.id.computedValue"
     },
     {
-      "key": "tableData"
-    },
-    {
       "key": "primaryColumns.invoice_number.computedValue"
     },
     {
@@ -181,6 +178,9 @@
     },
     {
       "key": "primaryColumns.total_tax_amount.computedValue"
+    },
+    {
+      "key": "tableData"
     }
   ],
   "dynamicPropertyPathList": [
