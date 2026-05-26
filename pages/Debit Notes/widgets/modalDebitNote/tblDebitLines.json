@@ -4,7 +4,7 @@
   "borderColor": "#E0DEDE",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": "1",
-  "bottomRow": 92,
+  "bottomRow": 93,
   "bottomRowBeforeCollapse": 57,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "cachedTableData": {},
@@ -49,13 +49,13 @@
     "Net__",
     "_product_id",
     "customColumn1",
-    "Stock",
     "_row_id",
     "Reason",
     "Batch_No",
-    "Expiry"
+    "Expiry",
+    "_batches"
   ],
-  "columnUpdatedAt": 1778646057273,
+  "columnUpdatedAt": 1779763306619,
   "columnWidthMap": {
     "Batch_No": 145,
     "Disc__": 83,
@@ -81,9 +81,7 @@
   "customIsLoadingValue": "",
   "defaultPageSize": 0,
   "defaultSelectedRowIndex": 0,
-  "defaultSelectedRowIndices": [
-    0
-  ],
+  "defaultSelectedRowIndices": "",
   "delimiter": ",",
   "dynamicBindingPathList": [
     {
@@ -156,9 +154,6 @@
       "key": "primaryColumns.customColumn1.boxShadow"
     },
     {
-      "key": "primaryColumns.Stock.computedValue"
-    },
-    {
       "key": "primaryColumns._row_id.computedValue"
     },
     {
@@ -169,6 +164,12 @@
     },
     {
       "key": "primaryColumns.Expiry.computedValue"
+    },
+    {
+      "key": "primaryColumns.Batch_No.selectOptions"
+    },
+    {
+      "key": "primaryColumns._batches.computedValue"
     }
   ],
   "dynamicPropertyPathList": [
@@ -216,9 +217,10 @@
   "mobileLeftColumn": 0,
   "mobileRightColumn": 23,
   "mobileTopRow": 47,
+  "multiRowSelection": true,
   "needsErrorInfo": false,
-  "originalBottomRow": 92,
-  "originalTopRow": 42,
+  "originalBottomRow": 93,
+  "originalTopRow": 43,
   "parentColumnSpace": 6.9375,
   "parentId": "ye1b8rm96d",
   "parentRowSpace": 10,
@@ -239,17 +241,18 @@
       "horizontalAlignment": "LEFT",
       "id": "Batch_No",
       "index": 16,
-      "isCellEditable": false,
+      "isCellEditable": true,
       "isCellVisible": true,
       "isDerived": false,
       "isDisabled": false,
       "isDiscardVisible": true,
-      "isEditable": false,
+      "isEditable": true,
       "isSaveVisible": true,
       "isVisible": true,
       "label": "Batch No",
       "notation": "standard",
       "originalId": "Batch No",
+      "selectOptions": "{{(() => { const tableData = tblDebitLines.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (getBatches.data.map(b=>({label: b.batch_code, value: b.id})))) : getBatches.data.map(b=>({label: b.batch_code, value: b.id})) })()}}",
       "sticky": "",
       "textColor": "",
       "textSize": "0.875rem",
@@ -771,40 +774,6 @@
       "verticalAlignment": "CENTER",
       "width": 150
     },
-    "Stock": {
-      "alias": "Stock",
-      "allowCellWrapping": false,
-      "allowSameOptionsInNewRow": true,
-      "cellBackground": "",
-      "columnType": "number",
-      "computedValue": "{{(() => { const tableData = tblDebitLines.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"Stock\"])) : Stock })()}}",
-      "currencyCode": "USD",
-      "decimals": 0,
-      "enableFilter": true,
-      "enableSort": true,
-      "fontStyle": "",
-      "horizontalAlignment": "LEFT",
-      "id": "Stock",
-      "index": 12,
-      "isCellEditable": false,
-      "isCellVisible": true,
-      "isDerived": false,
-      "isDisabled": false,
-      "isDiscardVisible": true,
-      "isEditable": false,
-      "isSaveVisible": true,
-      "isVisible": true,
-      "label": "Stock",
-      "notation": "standard",
-      "originalId": "Stock",
-      "sticky": "",
-      "textColor": "",
-      "textSize": "0.875rem",
-      "thousandSeparator": true,
-      "validation": {},
-      "verticalAlignment": "CENTER",
-      "width": 150
-    },
     "Taxable__": {
       "alias": "Taxable $",
       "allowCellWrapping": false,
@@ -831,6 +800,40 @@
       "label": "Taxable $",
       "notation": "standard",
       "originalId": "Taxable $",
+      "sticky": "",
+      "textColor": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
+    "_batches": {
+      "alias": "_batches",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "cellBackground": "",
+      "columnType": "text",
+      "computedValue": "{{(() => { const tableData = tblDebitLines.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"_batches\"])) : _batches })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "fontStyle": "",
+      "horizontalAlignment": "LEFT",
+      "id": "_batches",
+      "index": 19,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": true,
+      "label": "_batches",
+      "notation": "standard",
+      "originalId": "_batches",
       "sticky": "",
       "textColor": "",
       "textSize": "0.875rem",
@@ -954,7 +957,7 @@
   "showInlineEditingOptionDropdown": true,
   "tableData": "{{appsmith.store.GlobalDebitLinesData}}",
   "textSize": "0.875rem",
-  "topRow": 42,
+  "topRow": 43,
   "topRowBeforeCollapse": 29,
   "totalRecordsCount": 0,
   "type": "TABLE_WIDGET_V2",

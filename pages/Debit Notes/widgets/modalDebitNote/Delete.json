@@ -1,0 +1,55 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 43,
+  "boxShadow": "none",
+  "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "buttonVariant": "PRIMARY",
+  "disabledWhenInvalid": false,
+  "dynamicBindingPathList": [
+    {
+      "key": "buttonColor"
+    },
+    {
+      "key": "borderRadius"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "isDefaultClickDisabled": true,
+  "isDisabled": false,
+  "isLoading": false,
+  "isVisible": true,
+  "key": "7futgwzu8q",
+  "leftColumn": 54,
+  "minWidth": 120,
+  "mobileBottomRow": 43,
+  "mobileLeftColumn": 47,
+  "mobileRightColumn": 63,
+  "mobileTopRow": 39,
+  "needsErrorInfo": false,
+  "onClick": "{{JS_Delete_Lines.deleteSelectedLines()}}",
+  "parentColumnSpace": 15.571874999999999,
+  "parentId": "ye1b8rm96d",
+  "parentRowSpace": 10,
+  "placement": "CENTER",
+  "recaptchaType": "V3",
+  "renderMode": "CANVAS",
+  "resetFormOnClick": false,
+  "responsiveBehavior": "hug",
+  "rightColumn": 63,
+  "text": "Delete Selected",
+  "topRow": 39,
+  "type": "BUTTON_WIDGET",
+  "version": 1,
+  "widgetId": "5h5jspbcf7",
+  "widgetName": "Delete"
+}

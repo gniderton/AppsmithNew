@@ -39,7 +39,7 @@
     ],
     "name": "getBatches",
     "pageId": "Debit Notes",
-    "runBehaviour": "MANUAL",
+    "runBehaviour": "AUTOMATIC",
     "userSetOnLoad": false
   }
 }
