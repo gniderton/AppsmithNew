@@ -3,7 +3,7 @@
   "animateLoading": true,
   "autoFocus": false,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 11,
+  "bottomRow": 10,
   "boxShadow": "none",
   "defaultText": "₹{{ (_.sumBy(appsmith.store.varDemandAnalysis, item => Math.min(item.demand, item.total_avail) * (item.rate || 0))).toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) }}",
   "dynamicBindingPathList": [

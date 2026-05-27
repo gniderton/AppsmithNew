@@ -3,7 +3,7 @@
   "animateLoading": true,
   "autoFocus": false,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 15,
+  "bottomRow": 14,
   "boxShadow": "none",
   "defaultText": "₹{{ (_.sumBy(tblSalesOrders.selectedRows, x => Number(x.total_amount) || 0)).toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) }}",
   "dynamicBindingPathList": [
@@ -52,7 +52,7 @@
   "rightColumn": 24,
   "shouldScrollContents": true,
   "showStepArrows": false,
-  "topRow": 11,
+  "topRow": 10,
   "type": "INPUT_WIDGET_V2",
   "version": 2,
   "widgetId": "fohg8nr6i0",

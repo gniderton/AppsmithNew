@@ -31,7 +31,7 @@
   "mobileRightColumn": 64,
   "mobileTopRow": 5,
   "needsErrorInfo": false,
-  "onClick": "{{Transit_Actions.openTransitEntry();\nshowModal(modalStockAllocation.name);}}",
+  "onClick": "{{TransitTableEdit.syncTransitEntry();}}",
   "parentColumnSpace": 15.875,
   "parentId": "rc07gp8c9u",
   "parentRowSpace": 10,
