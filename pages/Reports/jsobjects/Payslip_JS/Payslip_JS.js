@@ -1,7 +1,7 @@
 export default {
     /**
-     * POLISHED PREMIUM Payslip PDF Generator
-     * Fixes: Slimmer margins, Dynamic calculation of dashboard totals.
+     * REDESIGNED PREMIUM PAYSLIP PDF GENERATOR
+     * Fixes: Minimal margins (15pt), replaces Rupee symbol with 'Rs.' to fix font rendering issues.
      */
     async generatePayslip(payslipData) {
         try {
@@ -16,14 +16,13 @@ export default {
 
             const header = payslipData.header;
             const breakdown = payslipData.breakdown;
-            const brand = Global_Assets.getSummary();
             
-            // --- SLIMMER MARGINS ---
-            const margin = 25; 
-            const pageWidth = doc.internal.pageSize.width;
-            const pageHeight = doc.internal.pageSize.height;
+            // --- GEOMETRY & MINIMAL MARGINS ---
+            const margin = 15; 
+            const pageWidth = doc.internal.pageSize.width; // 595
+            const pageHeight = doc.internal.pageSize.height; // 842
 
-            // --- CALCULATE TOTALS DYNAMICALLY (Fixes the 0.00 issue) ---
+            // --- CALCULATE TOTALS ---
             const totalEarnings = Number(breakdown.base_salary.adjusted || header.base_salary) + 
                                  (breakdown.additions.bonuses || []).reduce((sum, b) => sum + Number(b.amount), 0) +
                                  Number(breakdown.additions.leave_encashment || 0);
@@ -31,132 +30,206 @@ export default {
             const totalDeductions = Number(breakdown.deductions.leave.amount) +
                                    (breakdown.deductions.advances || []).reduce((sum, a) => sum + Number(a.amount), 0) +
                                    (breakdown.deductions.liabilities || []).reduce((sum, l) => sum + Number(l.amount), 0) +
-                                   (breakdown.deductions.loans || []).reduce((sum, ln) => sum + Number(loan.amount), 0);
+                                   (breakdown.deductions.loans || []).reduce((sum, ln) => sum + Number(ln.amount), 0);
 
-            // --- BACKGROUND ACCENT & WATERMARK ---
-            doc.setFillColor(30, 41, 59); doc.rect(0, 0, pageWidth, 4, 'F');
-            doc.setFontSize(60); doc.setTextColor(250, 251, 253); doc.setFont("helvetica", "bold");
-            doc.text("CONFIDENTIAL", pageWidth / 2, pageHeight / 2, { align: "center", angle: 45 });
+            // --- DECORATIVE HEADER BAR ---
+            doc.setFillColor(15, 23, 42); 
+            doc.rect(0, 0, pageWidth, 5, 'F');
 
-            // --- HEADER ---
+            // --- LOGO & DOCUMENT TITLE ---
             try {
                 const logo = Global_Assets.getLogo();
-                if (logo) doc.addImage(logo, 'PNG', margin, 20, 100, 35);
+                if (logo) doc.addImage(logo, 'PNG', margin, 15, 100, 32);
             } catch (e) {}
 
-            doc.setTextColor(15, 23, 42); doc.setFont("helvetica", "bold"); doc.setFontSize(20);
-            doc.text("PAYSLIP", pageWidth - margin, 40, { align: "right" });
-            doc.setFontSize(9); doc.setTextColor(100, 116, 139); doc.setFont("helvetica", "normal");
+            doc.setTextColor(15, 23, 42); 
+            doc.setFont("helvetica", "bold"); 
+            doc.setFontSize(20);
+            doc.text("PAYSLIP", pageWidth - margin, 32, { align: "right" });
+            
+            doc.setFontSize(8.5); 
+            doc.setTextColor(100, 116, 139); 
+            doc.setFont("helvetica", "bold");
             const monthStr = this._getMonthName(header.month).toUpperCase();
-            doc.text(`${monthStr} ${header.year}`, pageWidth - margin, 52, { align: "right" });
+            doc.text(`${monthStr} ${header.year}`, pageWidth - margin, 44, { align: "right" });
 
-            // --- INFO TILES (Compact) ---
-            const tileY = 75;
-            const tileWidth = (pageWidth - (margin * 2) - 16) / 3;
-            const tileHeight = 105;
+            // --- PROFILE CARD CONTAINER (Unified 3-column layout) ---
+            const profileY = 60;
+            const profileH = 80;
+            doc.setFillColor(248, 250, 252);
+            doc.setDrawColor(241, 245, 249);
+            doc.roundedRect(margin, profileY, pageWidth - (margin * 2), profileH, 4, 4, 'FD');
+            
+            // Left Accent Border
+            doc.setFillColor(71, 85, 105);
+            doc.rect(margin, profileY, 2.5, profileH, 'F');
 
-            this._drawPremiumTile(doc, margin, tileY, tileWidth, tileHeight, "EMPLOYEE", [
-                ["Name", header.full_name], ["Emp ID", header.employee_code],
-                ["Joined", moment(header.joining_date).format("DD MMM YYYY")], ["Month", `${monthStr} ${header.year}`]
-            ], [51, 65, 85]);
+            // Col 1: Employee info
+            doc.setFontSize(7.5); doc.setTextColor(100, 116, 139); doc.setFont("helvetica", "bold");
+            doc.text("EMPLOYEE DETAILS", margin + 12, profileY + 14);
+            
+            doc.setFont("helvetica", "normal"); doc.setTextColor(15, 23, 42); doc.setFontSize(8);
+            doc.text(`Name: ${header.full_name}`, margin + 12, profileY + 28);
+            doc.text(`Emp ID: ${header.employee_code}`, margin + 12, profileY + 40);
+            doc.text(`Joined: ${moment(header.joining_date).format("DD MMM YYYY")}`, margin + 12, profileY + 52);
+            doc.text(`Status: Active`, margin + 12, profileY + 64);
 
-            this._drawPremiumTile(doc, margin + tileWidth + 8, tileY, tileWidth, tileHeight, "PAYMENT", [
-                ["Ref ID", `#${header.journal_entry_id || header.id}`], ["Pay Date", moment(header.payment_date).format("DD-MM-YYYY")],
-                ["Method", header.payment_mode], ["Account", (header.source_account || "").split('(')[0]]
-            ], [51, 65, 85]);
+            // Col 2: Payment info
+            doc.setFontSize(7.5); doc.setTextColor(100, 116, 139); doc.setFont("helvetica", "bold");
+            doc.text("PAYMENT DETAILS", margin + 195, profileY + 14);
+            
+            doc.setFont("helvetica", "normal"); doc.setTextColor(15, 23, 42); doc.setFontSize(8);
+            doc.text(`Payment Mode: ${header.payment_mode}`, margin + 195, profileY + 28);
+            doc.text(`Account: ${(header.source_account || "").split('(')[0].trim()}`, margin + 195, profileY + 40);
+            doc.text(`Txn Ref ID: #${header.journal_entry_id || header.id}`, margin + 195, profileY + 52);
+            doc.text(`Pay Date: ${moment(header.payment_date).format("DD MMM YYYY")}`, margin + 195, profileY + 64);
 
-            this._drawPremiumTile(doc, margin + (tileWidth * 2) + 16, tileY, tileWidth, tileHeight, "STATUS", [
-                ["Absent", header.absent_days + " Days"], ["Half Days", header.half_days + " Days"],
-                ["Admin", header.processed_by], ["Verified", "System Generated"]
-            ], [51, 65, 85]);
+            // Col 3: Attendance info
+            doc.setFontSize(7.5); doc.setTextColor(100, 116, 139); doc.setFont("helvetica", "bold");
+            doc.text("ATTENDANCE SUMMARY", margin + 378, profileY + 14);
+            
+            doc.setFont("helvetica", "normal"); doc.setTextColor(15, 23, 42); doc.setFontSize(8);
+            doc.text(`Absent Days: ${header.absent_days || 0} Days`, margin + 378, profileY + 28);
+            doc.text(`Half Days: ${header.half_days || 0} Days`, margin + 378, profileY + 40);
+            doc.text(`Processed By: ${header.processed_by || 'SYSTEM'}`, margin + 378, profileY + 52);
+            doc.text(`Audit Status: Verified`, margin + 378, profileY + 64);
 
-            // --- DASHBOARD SUMMARY (Dynamic Totals) ---
-            let currentY = tileY + tileHeight + 25;
-            this._drawStat(doc, margin + 5, currentY, "GROSS ADDITIONS", `+ ${totalEarnings.toFixed(2)}`, [21, 128, 61]);
-            this._drawStat(doc, margin + tileWidth + 13, currentY, "TOTAL DEDUCTIONS", `- ${totalDeductions.toFixed(2)}`, [185, 28, 28]);
-            this._drawStat(doc, margin + (tileWidth * 2) + 21, currentY, "PAYOUT RATIO", `100%`, [30, 41, 59]);
+            // --- FINANCIAL SUMMARY TILES (Gross, Deductions, Net) ---
+            const statY = profileY + profileH + 15;
+            const tileW = (pageWidth - (margin * 2) - 16) / 3;
+            const tileH = 40;
 
-            // --- TABLES ---
-            currentY += 45;
+            // Gross Additions Card
+            doc.setFillColor(240, 253, 244); doc.setDrawColor(220, 252, 231);
+            doc.roundedRect(margin, statY, tileW, tileH, 3, 3, 'FD');
+            doc.setFontSize(7); doc.setFont("helvetica", "bold"); doc.setTextColor(22, 101, 52);
+            doc.text("GROSS ADDITIONS", margin + 10, statY + 13);
+            doc.setFontSize(12); doc.text(`+ Rs. ${totalEarnings.toFixed(2)}`, margin + 10, statY + 28);
+
+            // Deductions Card
+            doc.setFillColor(254, 242, 242); doc.setDrawColor(254, 226, 226);
+            doc.roundedRect(margin + tileW + 8, statY, tileW, tileH, 3, 3, 'FD');
+            doc.setFontSize(7); doc.setFont("helvetica", "bold"); doc.setTextColor(153, 27, 27);
+            doc.text("TOTAL DEDUCTIONS", margin + tileW + 18, statY + 13);
+            doc.setFontSize(12); doc.text(`- Rs. ${totalDeductions.toFixed(2)}`, margin + tileW + 18, statY + 28);
+
+            // Net Take Home Card
+            doc.setFillColor(240, 249, 255); doc.setDrawColor(224, 242, 254);
+            doc.roundedRect(margin + (tileW * 2) + 16, statY, tileW, tileH, 3, 3, 'FD');
+            doc.setFontSize(7); doc.setFont("helvetica", "bold"); doc.setTextColor(7, 89, 133);
+            doc.text("NET TAKE-HOME", margin + (tileW * 2) + 26, statY + 13);
+            doc.setFontSize(12); doc.text(`Rs. ${Number(header.net_salary).toFixed(2)}`, margin + (tileW * 2) + 26, statY + 28);
+
+            // --- SIDE-BY-SIDE ITEMIZED TABLES ---
+            const tableStartY = statY + tileH + 15;
+            const colWidth = (pageWidth - (margin * 2) - 16) / 2; // 274pt
+
+            // Left side body (Earnings)
             const earningsRows = [
                 ["Basic Salary (Contract)", Number(breakdown.base_salary.original).toFixed(2)],
-                ... (breakdown.additions.bonuses || []).map(b => [`Bonus: ${b.remarks || b.bonus_type}`, Number(b.amount).toFixed(2)]),
+                ... (breakdown.additions.bonuses || []).map(b => {
+                    const desc = b.remarks ? `Bonus: ${b.remarks}` : `Bonus (${b.bonus_type || 'Manual'})`;
+                    const dateStr = b.created_at ? `\n[${moment(b.created_at).format("DD MMM")}]` : '';
+                    return [desc + dateStr, Number(b.amount).toFixed(2)];
+                }),
                 ["Leave Encashment", Number(breakdown.additions.leave_encashment).toFixed(2)]
             ].filter(r => Number(r[1]) > 0);
 
-            doc.autoTable({
-                startY: currentY, margin: { left: margin, right: margin },
-                head: [["EARNINGS DESCRIPTION", "AMOUNT (INR)"]], body: earningsRows,
-                theme: 'striped', styles: { fontSize: 8.5, cellPadding: 5, textColor: [51, 65, 85] },
-                headStyles: { fillColor: [51, 65, 85], fontStyle: 'bold' },
-                columnStyles: { 1: { halign: 'right', fontStyle: 'bold' } }
-            });
-
+            // Right side body (Deductions)
             const deductionRows = [
-                ["Leave Deduction", Number(breakdown.deductions.leave.amount).toFixed(2)],
-                ... (breakdown.deductions.advances || []).map(a => ["Advance Recovery", Number(a.amount).toFixed(2)]),
-                ... (breakdown.deductions.liabilities || []).map(l => [`Liability: ${l.description} (${l.invoice_number || l.type})`, Number(l.amount).toFixed(2)]),
-                ... (breakdown.deductions.loans || []).map(loan => ["Loan EMI", Number(loan.amount).toFixed(2)])
+                [`Leave Deductions\n(${breakdown.deductions.leave.absent_days || 0} Abs / ${breakdown.deductions.leave.half_days || 0} Half)`, Number(breakdown.deductions.leave.amount).toFixed(2)],
+                ... (breakdown.deductions.advances || []).map(a => {
+                    const desc = a.remarks ? `Advance: ${a.remarks}` : "Advance Recovery";
+                    const dateStr = a.date ? `\n[${moment(a.date).format("DD MMM YYYY")}]` : '';
+                    return [desc + dateStr, Number(a.amount).toFixed(2)];
+                }),
+                ... (breakdown.deductions.liabilities || []).map(l => {
+                    const desc = `Liability: ${l.description || 'Misc'}`;
+                    const refStr = l.invoice_number ? `\n[Inv: ${l.invoice_number}]` : '';
+                    return [desc + refStr, Number(l.amount).toFixed(2)];
+                }),
+                ... (breakdown.deductions.loans || []).map(loan => {
+                    const desc = loan.remarks ? `Loan Recovery: ${loan.remarks}` : "Loan EMI";
+                    const dateStr = loan.date ? `\n[${moment(loan.date).format("DD MMM")}]` : '';
+                    return [desc + dateStr, Number(loan.amount).toFixed(2)];
+                })
             ].filter(r => Number(r[1]) > 0);
 
+            // Render Earnings Table
             doc.autoTable({
-                startY: doc.lastAutoTable.finalY + 12, margin: { left: margin, right: margin },
-                head: [["DEDUCTIONS & RECOVERIES", "AMOUNT (INR)"]], body: deductionRows,
-                theme: 'striped', styles: { fontSize: 8.5, cellPadding: 5, textColor: [153, 27, 27] },
-                headStyles: { fillColor: [153, 27, 27], fontStyle: 'bold' },
-                columnStyles: { 1: { halign: 'right', fontStyle: 'bold' } }
+                startY: tableStartY,
+                margin: { left: margin, right: pageWidth - margin - colWidth },
+                head: [["EARNINGS DESCRIPTION", "AMOUNT (Rs.)"]],
+                body: earningsRows,
+                theme: 'striped',
+                styles: { fontSize: 8, cellPadding: 5, textColor: [15, 23, 42], overflow: 'linebreak' },
+                headStyles: { fillColor: [51, 65, 85], fontStyle: 'bold', fontSize: 8 },
+                columnStyles: { 1: { halign: 'right', fontStyle: 'bold', cellWidth: 65 } }
             });
+            const earningsFinalY = doc.lastAutoTable.finalY;
 
-            // --- TOTAL PAYOUT BAR ---
-            currentY = doc.lastAutoTable.finalY + 25;
-            doc.setFillColor(248, 250, 252); doc.setDrawColor(226, 232, 240);
-            doc.roundedRect(margin, currentY, pageWidth - (margin * 2), 50, 4, 4, 'FD');
-            doc.setFontSize(10); doc.setTextColor(71, 85, 105); doc.setFont("helvetica", "bold");
-            doc.text("NET TAKE-HOME PAY", margin + 15, currentY + 25);
-            doc.setFontSize(16); doc.setTextColor(21, 128, 61);
-            doc.text(`INR ${Number(header.net_salary).toLocaleString('en-IN', { minimumFractionDigits: 2 })}`, pageWidth - margin - 15, currentY + 28, { align: "right" });
-            doc.setFontSize(7.5); doc.setTextColor(148, 163, 184); doc.setFont("helvetica", "normal");
-            doc.text(`Amount in words: ${this._toWords(header.net_salary)}`, margin + 15, currentY + 40);
+            // Render Deductions Table
+            doc.autoTable({
+                startY: tableStartY,
+                margin: { left: margin + colWidth + 16, right: margin },
+                head: [["DEDUCTIONS & RECOVERIES", "AMOUNT (Rs.)"]],
+                body: deductionRows,
+                theme: 'striped',
+                styles: { fontSize: 8, cellPadding: 5, textColor: [15, 23, 42], overflow: 'linebreak' },
+                headStyles: { fillColor: [190, 18, 60], fontStyle: 'bold', fontSize: 8 },
+                columnStyles: { 1: { halign: 'right', fontStyle: 'bold', cellWidth: 65 } }
+            });
+            const deductionsFinalY = doc.lastAutoTable.finalY;
 
-            // --- SIGNATURES ---
-            const footerY = pageHeight - 70;
-            doc.setDrawColor(203, 213, 225); doc.line(margin, footerY, margin + 120, footerY); doc.line(pageWidth - margin - 120, footerY, pageWidth - margin, footerY);
-            doc.setFontSize(8); doc.setTextColor(71, 85, 105);
-            doc.text("Employee Signature", margin + 60, footerY + 12, { align: "center" });
-            doc.text("Authorized Signatory", pageWidth - margin - 60, footerY + 12, { align: "center" });
-            doc.setFontSize(6.5); doc.text("Electronic document - No physical signature required.", pageWidth / 2, pageHeight - 15, { align: "center" });
+            // Get the maximum ending Y coordinate of the two tables
+            const tablesFinalY = Math.max(earningsFinalY, deductionsFinalY);
+
+            // --- NET SALARY BANNER BLOCK ---
+            const bannerY = tablesFinalY + 20;
+            const bannerH = 44;
+            doc.setFillColor(4, 120, 87); // Emerald Green
+            doc.roundedRect(margin, bannerY, pageWidth - (margin * 2), bannerH, 3, 3, 'F');
+
+            doc.setFontSize(8.5); doc.setTextColor(209, 250, 229); doc.setFont("helvetica", "bold");
+            doc.text("NET TAKE-HOME PAYOUT", margin + 12, bannerY + 18);
+            doc.setFontSize(6); doc.text(`Rupees in words: ${this._toWords(header.net_salary)}`, margin + 12, bannerY + 32);
+
+            doc.setFontSize(15); doc.setTextColor(255, 255, 255);
+            doc.text(`Rs. ${Number(header.net_salary).toLocaleString('en-IN', { minimumFractionDigits: 2 })}`, pageWidth - margin - 12, bannerY + 26, { align: "right" });
+
+            // --- REMARKS SECTION (If remarks exist) ---
+            if (header.remarks) {
+                const remarksY = bannerY + bannerH + 15;
+                doc.setDrawColor(226, 232, 240); doc.setFillColor(255, 255, 255);
+                doc.roundedRect(margin, remarksY, pageWidth - (margin * 2), 32, 3, 3, 'FD');
+                doc.setFontSize(7.5); doc.setFont("helvetica", "bold"); doc.setTextColor(100, 116, 139);
+                doc.text("REMARKS & NOTES", margin + 8, remarksY + 11);
+                doc.setFont("helvetica", "normal"); doc.setTextColor(51, 65, 85); doc.setFontSize(7);
+                doc.text(header.remarks, margin + 8, remarksY + 22);
+            }
+
+            // --- SIGNATURES & FOOTER ---
+            const footerY = pageHeight - 65;
+            doc.setDrawColor(203, 213, 225); 
+            doc.line(margin, footerY, margin + 110, footerY); 
+            doc.line(pageWidth - margin - 110, footerY, pageWidth - margin, footerY);
+            
+            doc.setFontSize(7.5); doc.setTextColor(71, 85, 105); doc.setFont("helvetica", "bold");
+            doc.text("Employee Signature", margin + 55, footerY + 12, { align: "center" });
+            doc.text("Authorized Signatory", pageWidth - margin - 55, footerY + 12, { align: "center" });
+            
+            doc.setFontSize(6); doc.setTextColor(148, 163, 184); doc.setFont("helvetica", "normal");
+            doc.text("Electronic document generated by GNIDERTON ERP System. No physical signature is required.", pageWidth / 2, pageHeight - 15, { align: "center" });
 
             download(doc.output('dataurlstring'), `Payslip_${header.employee_code}.pdf`, "application/pdf");
-            showAlert("Premium Payslip Downloaded", "success");
+            showAlert("Premium Redesigned Payslip Downloaded", "success");
 
         } catch (error) {
-            showAlert("Design Error: " + error.message, "error");
+            showAlert("Redesign Error: " + error.message, "error");
         }
     },
 
-    _drawPremiumTile(doc, x, y, w, h, title, rows, color) {
-        doc.setDrawColor(226, 232, 240); doc.setFillColor(255, 255, 255); doc.roundedRect(x, y, w, h, 3, 3, 'FD');
-        doc.setFillColor(...color); doc.rect(x, y, 2.5, h, 'F'); 
-        doc.setFontSize(7.5); doc.setFont("helvetica", "bold"); doc.setTextColor(...color);
-        doc.text(title, x + 8, y + 12);
-        let ry = y + 28;
-        rows.forEach(r => {
-            doc.setFontSize(7); doc.setFont("helvetica", "bold"); doc.setTextColor(100, 116, 139);
-            doc.text(r[0] + ":", x + 8, ry);
-            doc.setFont("helvetica", "normal"); doc.setTextColor(30, 41, 59);
-            const val = doc.splitTextToSize(String(r[1] || "-"), w - 55);
-            doc.text(val, x + 50, ry); ry += (val.length * 8) + 3;
-        });
-    },
-
-    _drawStat(doc, x, y, label, val, color) {
-        doc.setFontSize(7); doc.setFont("helvetica", "bold"); doc.setTextColor(148, 163, 184);
-        doc.text(label, x, y);
-        doc.setFontSize(13); doc.setTextColor(...color);
-        doc.text(val, x, y + 16);
-    },
-
-    _getMonthName: (m) => ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"][m - 1],
+    _getMonthName: (m) => ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"][m - 1],
 
     _toWords(num) {
         const a = ['','One ','Two ','Three ','Four ', 'Five ','Six ','Seven ','Eight ','Nine ','Ten ','Eleven ','Twelve ','Thirteen ','Fourteen ','Fifteen ','Sixteen ','Seventeen ','Eighteen ','Nineteen '];
