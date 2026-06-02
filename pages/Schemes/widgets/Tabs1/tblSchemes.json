@@ -48,9 +48,11 @@
   ],
   "columnUpdatedAt": 1778725454852,
   "columnWidthMap": {
+    "customColumn1": 89,
     "description": 314,
     "end_date": 112,
-    "scheme_name": 332
+    "scheme_name": 332,
+    "targeted_customer_ids": 143
   },
   "customIsLoading": false,
   "customIsLoadingValue": "",
