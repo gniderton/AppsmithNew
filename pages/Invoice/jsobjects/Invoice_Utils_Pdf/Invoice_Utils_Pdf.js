@@ -115,7 +115,7 @@ export default {
 						Number(row.rate || 0).toFixed(2), 
 						Number(row.gross_amount || 0).toFixed(2), 
 						Number(row.scheme_amount || 0).toFixed(2), 
-						(row.tax_percent || 0) + "%", 
+						(row.discount_percent || 0) + "%", 
 						Number(row.discount_amount || 0).toFixed(2), 
 						Number(row.taxable_amount || 0).toFixed(2), 
 						(row.tax_percent || 0) + "%", 
