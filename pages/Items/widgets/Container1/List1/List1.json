@@ -108,7 +108,7 @@
   "mobileRightColumn": 19,
   "mobileTopRow": 8,
   "needsErrorInfo": false,
-  "onItemClick": "{{Brand_History.run()}}",
+  "onItemClick": "{{Brand_History.run().then(() => {\n  showModal(mdlBrand.name);\n});}}",
   "pageSize": 2,
   "parentColumnSpace": 19.9375,
   "parentId": "laoun5fqzg",
