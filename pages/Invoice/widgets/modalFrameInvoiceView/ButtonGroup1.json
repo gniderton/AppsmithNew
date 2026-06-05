@@ -21,10 +21,10 @@
       "key": "groupButtons.groupButton2.buttonColor"
     },
     {
-      "key": "groupButtons.groupButton1.isDisabled"
+      "key": "groupButtons.groupButton2.isDisabled"
     },
     {
-      "key": "groupButtons.groupButton2.isDisabled"
+      "key": "groupButtons.groupButton1.isDisabled"
     }
   ],
   "dynamicPropertyPathList": [

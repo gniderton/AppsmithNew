@@ -83,7 +83,11 @@
     }
   ],
   "dynamicPropertyPathList": [],
-  "dynamicTriggerPathList": [],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onItemClick"
+    }
+  ],
   "enhancements": true,
   "flexVerticalAlignment": "start",
   "gridType": "vertical",
@@ -104,6 +108,7 @@
   "mobileRightColumn": 19,
   "mobileTopRow": 8,
   "needsErrorInfo": false,
+  "onItemClick": "{{Brand_History.run()}}",
   "pageSize": 2,
   "parentColumnSpace": 19.9375,
   "parentId": "laoun5fqzg",
