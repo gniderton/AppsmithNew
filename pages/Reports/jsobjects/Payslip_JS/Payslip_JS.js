@@ -1,237 +1,63 @@
 export default {
-    /**
-     * REDESIGNED PREMIUM PAYSLIP PDF GENERATOR
-     * Fixes: Minimal margins (15pt), replaces Rupee symbol with 'Rs.' to fix font rendering issues.
-     */
-    async generatePayslip(payslipData) {
-        try {
-            if (!payslipData || !payslipData.header) throw new Error("No Payslip data provided.");
+  /* ── Entry point ── */
+  async generatePayslip(salaryData) {
+    try {
+      if (!salaryData || !salaryData.header) throw new Error("No Salary/Payslip data loaded.");
 
-            const jsPDFConstructor = jspdf.jsPDF || jspdf;
-            const doc = new jsPDFConstructor('p', 'pt', 'a4');
-            
-            if (typeof doc.autoTable !== "function" && jspdf.plugin && jspdf.plugin.autotable) {
-                jsPDFConstructor.API.autoTable = jspdf.plugin.autotable;
-            }
+      /* 1. Guard: library */
+      if (typeof jspdf === "undefined") throw new Error("jsPDF library not loaded. Add it in App Settings → External Libraries.");
+      const jsPDFConstructor = jspdf.jsPDF || jspdf;
+      const doc = new jsPDFConstructor("p", "pt", "a4");
 
-            const header = payslipData.header;
-            const breakdown = payslipData.breakdown;
-            
-            // --- GEOMETRY & MINIMAL MARGINS ---
-            const margin = 15; 
-            const pageWidth = doc.internal.pageSize.width; // 595
-            const pageHeight = doc.internal.pageSize.height; // 842
+      // Ensure AutoTable attachment
+      if (typeof doc.autoTable !== "function" && jspdf.plugin && jspdf.plugin.autotable) {
+        jsPDFConstructor.API.autoTable = jspdf.plugin.autotable;
+      }
 
-            // --- CALCULATE TOTALS ---
-            const totalEarnings = Number(breakdown.base_salary.adjusted || header.base_salary) + 
-                                 (breakdown.additions.bonuses || []).reduce((sum, b) => sum + Number(b.amount), 0) +
-                                 Number(breakdown.additions.leave_encashment || 0);
+      const h = salaryData.header;
+      const breakdown = salaryData.breakdown || {};
+      const company = Global_Assets.getSummary();
+      const logo = Global_Assets.getLogo();
 
-            const totalDeductions = Number(breakdown.deductions.leave.amount) +
-                                   (breakdown.deductions.advances || []).reduce((sum, a) => sum + Number(a.amount), 0) +
-                                   (breakdown.deductions.liabilities || []).reduce((sum, l) => sum + Number(l.amount), 0) +
-                                   (breakdown.deductions.loans || []).reduce((sum, ln) => sum + Number(ln.amount), 0);
+      /* ── Layout constants (Very Tight Margins) ── */
+      const PW   = doc.internal.pageSize.width;   // 595
+      const PH   = doc.internal.pageSize.height;  // 842
+      const ML   = 16;   // Margins at 16pt for maximum space
+      const MR   = 16;   
+      const CW   = PW - ML - MR;  // Content Width: 563
 
-            // --- DECORATIVE HEADER BAR ---
-            doc.setFillColor(15, 23, 42); 
-            doc.rect(0, 0, pageWidth, 5, 'F');
+      /* ── Premium Modern SaaS Palette ── */
+      const C = {
+        primaryIndigo:[79, 70, 229],   // Premium Indigo Accent
+        accentCoral: [249, 115, 22],   // Warm Orange/Coral
+        textDark:    [15, 23, 42],     // Slate 900
+        textSlate:   [71, 85, 105],    // Slate 600
+        textLight:   [148, 163, 184],  // Slate 400
+        webBg:       [248, 250, 252],  // Slate 50 (Very light gray)
+        netSalaryBg: [238, 242, 255],  // Indigo-50 (Vibrant soft purple)
+        cardBorder:  [226, 232, 240],  // Slate 200
+        emerald:     [16, 185, 129],   // Success Green
+        rose:        [244, 63, 94],    // Danger Red
+        bannerPeach: [255, 247, 237],  // Swiggy-like warm bg
+      };
 
-            // --- LOGO & DOCUMENT TITLE ---
-            try {
-                const logo = Global_Assets.getLogo();
-                if (logo) doc.addImage(logo, 'PNG', margin, 15, 100, 32);
-            } catch (e) {}
+      /* ── Helpers ── */
+      const setFont = (style, size, color) => {
+        doc.setFont("helvetica", style);
+        doc.setFontSize(size);
+        if (color) doc.setTextColor(...color);
+      };
+      const setFill  = (rgb) => doc.setFillColor(...rgb);
+      const setDraw  = (rgb) => doc.setDrawColor(...rgb);
+      const fmt  = v => "Rs." + Number(v).toLocaleString("en-IN", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+      const fmtN = v => Number(v).toLocaleString("en-IN");
+      
+      const getMonthName = (mNum) => {
+        const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+        return months[mNum - 1] || "Month";
+      };
 
-            doc.setTextColor(15, 23, 42); 
-            doc.setFont("helvetica", "bold"); 
-            doc.setFontSize(20);
-            doc.text("PAYSLIP", pageWidth - margin, 32, { align: "right" });
-            
-            doc.setFontSize(8.5); 
-            doc.setTextColor(100, 116, 139); 
-            doc.setFont("helvetica", "bold");
-            const monthStr = this._getMonthName(header.month).toUpperCase();
-            doc.text(`${monthStr} ${header.year}`, pageWidth - margin, 44, { align: "right" });
-
-            // --- PROFILE CARD CONTAINER (Unified 3-column layout) ---
-            const profileY = 60;
-            const profileH = 80;
-            doc.setFillColor(248, 250, 252);
-            doc.setDrawColor(241, 245, 249);
-            doc.roundedRect(margin, profileY, pageWidth - (margin * 2), profileH, 4, 4, 'FD');
-            
-            // Left Accent Border
-            doc.setFillColor(71, 85, 105);
-            doc.rect(margin, profileY, 2.5, profileH, 'F');
-
-            // Col 1: Employee info
-            doc.setFontSize(7.5); doc.setTextColor(100, 116, 139); doc.setFont("helvetica", "bold");
-            doc.text("EMPLOYEE DETAILS", margin + 12, profileY + 14);
-            
-            doc.setFont("helvetica", "normal"); doc.setTextColor(15, 23, 42); doc.setFontSize(8);
-            doc.text(`Name: ${header.full_name}`, margin + 12, profileY + 28);
-            doc.text(`Emp ID: ${header.employee_code}`, margin + 12, profileY + 40);
-            doc.text(`Joined: ${moment(header.joining_date).format("DD MMM YYYY")}`, margin + 12, profileY + 52);
-            doc.text(`Status: Active`, margin + 12, profileY + 64);
-
-            // Col 2: Payment info
-            doc.setFontSize(7.5); doc.setTextColor(100, 116, 139); doc.setFont("helvetica", "bold");
-            doc.text("PAYMENT DETAILS", margin + 195, profileY + 14);
-            
-            doc.setFont("helvetica", "normal"); doc.setTextColor(15, 23, 42); doc.setFontSize(8);
-            doc.text(`Payment Mode: ${header.payment_mode}`, margin + 195, profileY + 28);
-            doc.text(`Account: ${(header.source_account || "").split('(')[0].trim()}`, margin + 195, profileY + 40);
-            doc.text(`Txn Ref ID: #${header.journal_entry_id || header.id}`, margin + 195, profileY + 52);
-            doc.text(`Pay Date: ${moment(header.payment_date).format("DD MMM YYYY")}`, margin + 195, profileY + 64);
-
-            // Col 3: Attendance info
-            doc.setFontSize(7.5); doc.setTextColor(100, 116, 139); doc.setFont("helvetica", "bold");
-            doc.text("ATTENDANCE SUMMARY", margin + 378, profileY + 14);
-            
-            doc.setFont("helvetica", "normal"); doc.setTextColor(15, 23, 42); doc.setFontSize(8);
-            doc.text(`Absent Days: ${header.absent_days || 0} Days`, margin + 378, profileY + 28);
-            doc.text(`Half Days: ${header.half_days || 0} Days`, margin + 378, profileY + 40);
-            doc.text(`Processed By: ${header.processed_by || 'SYSTEM'}`, margin + 378, profileY + 52);
-            doc.text(`Audit Status: Verified`, margin + 378, profileY + 64);
-
-            // --- FINANCIAL SUMMARY TILES (Gross, Deductions, Net) ---
-            const statY = profileY + profileH + 15;
-            const tileW = (pageWidth - (margin * 2) - 16) / 3;
-            const tileH = 40;
-
-            // Gross Additions Card
-            doc.setFillColor(240, 253, 244); doc.setDrawColor(220, 252, 231);
-            doc.roundedRect(margin, statY, tileW, tileH, 3, 3, 'FD');
-            doc.setFontSize(7); doc.setFont("helvetica", "bold"); doc.setTextColor(22, 101, 52);
-            doc.text("GROSS ADDITIONS", margin + 10, statY + 13);
-            doc.setFontSize(12); doc.text(`+ Rs. ${totalEarnings.toFixed(2)}`, margin + 10, statY + 28);
-
-            // Deductions Card
-            doc.setFillColor(254, 242, 242); doc.setDrawColor(254, 226, 226);
-            doc.roundedRect(margin + tileW + 8, statY, tileW, tileH, 3, 3, 'FD');
-            doc.setFontSize(7); doc.setFont("helvetica", "bold"); doc.setTextColor(153, 27, 27);
-            doc.text("TOTAL DEDUCTIONS", margin + tileW + 18, statY + 13);
-            doc.setFontSize(12); doc.text(`- Rs. ${totalDeductions.toFixed(2)}`, margin + tileW + 18, statY + 28);
-
-            // Net Take Home Card
-            doc.setFillColor(240, 249, 255); doc.setDrawColor(224, 242, 254);
-            doc.roundedRect(margin + (tileW * 2) + 16, statY, tileW, tileH, 3, 3, 'FD');
-            doc.setFontSize(7); doc.setFont("helvetica", "bold"); doc.setTextColor(7, 89, 133);
-            doc.text("NET TAKE-HOME", margin + (tileW * 2) + 26, statY + 13);
-            doc.setFontSize(12); doc.text(`Rs. ${Number(header.net_salary).toFixed(2)}`, margin + (tileW * 2) + 26, statY + 28);
-
-            // --- SIDE-BY-SIDE ITEMIZED TABLES ---
-            const tableStartY = statY + tileH + 15;
-            const colWidth = (pageWidth - (margin * 2) - 16) / 2; // 274pt
-
-            // Left side body (Earnings)
-            const earningsRows = [
-                ["Basic Salary (Contract)", Number(breakdown.base_salary.original).toFixed(2)],
-                ... (breakdown.additions.bonuses || []).map(b => {
-                    const desc = b.remarks ? `Bonus: ${b.remarks}` : `Bonus (${b.bonus_type || 'Manual'})`;
-                    const dateStr = b.created_at ? `\n[${moment(b.created_at).format("DD MMM")}]` : '';
-                    return [desc + dateStr, Number(b.amount).toFixed(2)];
-                }),
-                ["Leave Encashment", Number(breakdown.additions.leave_encashment).toFixed(2)]
-            ].filter(r => Number(r[1]) > 0);
-
-            // Right side body (Deductions)
-            const deductionRows = [
-                [`Leave Deductions\n(${breakdown.deductions.leave.absent_days || 0} Abs / ${breakdown.deductions.leave.half_days || 0} Half)`, Number(breakdown.deductions.leave.amount).toFixed(2)],
-                ... (breakdown.deductions.advances || []).map(a => {
-                    const desc = a.remarks ? `Advance: ${a.remarks}` : "Advance Recovery";
-                    const dateStr = a.date ? `\n[${moment(a.date).format("DD MMM YYYY")}]` : '';
-                    return [desc + dateStr, Number(a.amount).toFixed(2)];
-                }),
-                ... (breakdown.deductions.liabilities || []).map(l => {
-                    const desc = `Liability: ${l.description || 'Misc'}`;
-                    const refStr = l.invoice_number ? `\n[Inv: ${l.invoice_number}]` : '';
-                    return [desc + refStr, Number(l.amount).toFixed(2)];
-                }),
-                ... (breakdown.deductions.loans || []).map(loan => {
-                    const desc = loan.remarks ? `Loan Recovery: ${loan.remarks}` : "Loan EMI";
-                    const dateStr = loan.date ? `\n[${moment(loan.date).format("DD MMM")}]` : '';
-                    return [desc + dateStr, Number(loan.amount).toFixed(2)];
-                })
-            ].filter(r => Number(r[1]) > 0);
-
-            // Render Earnings Table
-            doc.autoTable({
-                startY: tableStartY,
-                margin: { left: margin, right: pageWidth - margin - colWidth },
-                head: [["EARNINGS DESCRIPTION", "AMOUNT (Rs.)"]],
-                body: earningsRows,
-                theme: 'striped',
-                styles: { fontSize: 8, cellPadding: 5, textColor: [15, 23, 42], overflow: 'linebreak' },
-                headStyles: { fillColor: [51, 65, 85], fontStyle: 'bold', fontSize: 8 },
-                columnStyles: { 1: { halign: 'right', fontStyle: 'bold', cellWidth: 65 } }
-            });
-            const earningsFinalY = doc.lastAutoTable.finalY;
-
-            // Render Deductions Table
-            doc.autoTable({
-                startY: tableStartY,
-                margin: { left: margin + colWidth + 16, right: margin },
-                head: [["DEDUCTIONS & RECOVERIES", "AMOUNT (Rs.)"]],
-                body: deductionRows,
-                theme: 'striped',
-                styles: { fontSize: 8, cellPadding: 5, textColor: [15, 23, 42], overflow: 'linebreak' },
-                headStyles: { fillColor: [190, 18, 60], fontStyle: 'bold', fontSize: 8 },
-                columnStyles: { 1: { halign: 'right', fontStyle: 'bold', cellWidth: 65 } }
-            });
-            const deductionsFinalY = doc.lastAutoTable.finalY;
-
-            // Get the maximum ending Y coordinate of the two tables
-            const tablesFinalY = Math.max(earningsFinalY, deductionsFinalY);
-
-            // --- NET SALARY BANNER BLOCK ---
-            const bannerY = tablesFinalY + 20;
-            const bannerH = 44;
-            doc.setFillColor(4, 120, 87); // Emerald Green
-            doc.roundedRect(margin, bannerY, pageWidth - (margin * 2), bannerH, 3, 3, 'F');
-
-            doc.setFontSize(8.5); doc.setTextColor(209, 250, 229); doc.setFont("helvetica", "bold");
-            doc.text("NET TAKE-HOME PAYOUT", margin + 12, bannerY + 18);
-            doc.setFontSize(6); doc.text(`Rupees in words: ${this._toWords(header.net_salary)}`, margin + 12, bannerY + 32);
-
-            doc.setFontSize(15); doc.setTextColor(255, 255, 255);
-            doc.text(`Rs. ${Number(header.net_salary).toLocaleString('en-IN', { minimumFractionDigits: 2 })}`, pageWidth - margin - 12, bannerY + 26, { align: "right" });
-
-            // --- REMARKS SECTION (If remarks exist) ---
-            if (header.remarks) {
-                const remarksY = bannerY + bannerH + 15;
-                doc.setDrawColor(226, 232, 240); doc.setFillColor(255, 255, 255);
-                doc.roundedRect(margin, remarksY, pageWidth - (margin * 2), 32, 3, 3, 'FD');
-                doc.setFontSize(7.5); doc.setFont("helvetica", "bold"); doc.setTextColor(100, 116, 139);
-                doc.text("REMARKS & NOTES", margin + 8, remarksY + 11);
-                doc.setFont("helvetica", "normal"); doc.setTextColor(51, 65, 85); doc.setFontSize(7);
-                doc.text(header.remarks, margin + 8, remarksY + 22);
-            }
-
-            // --- SIGNATURES & FOOTER ---
-            const footerY = pageHeight - 65;
-            doc.setDrawColor(203, 213, 225); 
-            doc.line(margin, footerY, margin + 110, footerY); 
-            doc.line(pageWidth - margin - 110, footerY, pageWidth - margin, footerY);
-            
-            doc.setFontSize(7.5); doc.setTextColor(71, 85, 105); doc.setFont("helvetica", "bold");
-            doc.text("Employee Signature", margin + 55, footerY + 12, { align: "center" });
-            doc.text("Authorized Signatory", pageWidth - margin - 55, footerY + 12, { align: "center" });
-            
-            doc.setFontSize(6); doc.setTextColor(148, 163, 184); doc.setFont("helvetica", "normal");
-            doc.text("Electronic document generated by GNIDERTON ERP System. No physical signature is required.", pageWidth / 2, pageHeight - 15, { align: "center" });
-
-            download(doc.output('dataurlstring'), `Payslip_${header.employee_code}.pdf`, "application/pdf");
-            showAlert("Premium Redesigned Payslip Downloaded", "success");
-
-        } catch (error) {
-            showAlert("Redesign Error: " + error.message, "error");
-        }
-    },
-
-    _getMonthName: (m) => ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"][m - 1],
-
-    _toWords(num) {
+      const toWords = (num) => {
         const a = ['','One ','Two ','Three ','Four ', 'Five ','Six ','Seven ','Eight ','Nine ','Ten ','Eleven ','Twelve ','Thirteen ','Fourteen ','Fifteen ','Sixteen ','Seventeen ','Eighteen ','Nineteen '];
         const b = ['', '', 'Twenty','Thirty','Forty','Fifty', 'Sixty','Seventy','Eighty','Ninety'];
         const n = ("000000000" + Math.floor(num)).substr(-9).match(/^(\d{2})(\d{2})(\d{2})(\d{1})(\d{2})$/);
@@ -243,5 +69,284 @@ export default {
         str += (Number(n[4]) != 0) ? (a[Number(n[4])] || b[n[4][0]] + ' ' + a[n[4][1]]) + 'Hundred ' : '';
         str += (Number(n[5]) != 0) ? ((str != '') ? 'and ' : '') + (a[Number(n[5])] || b[n[5][0]] + ' ' + a[n[5][1]]) + 'Only ' : 'Only ';
         return str;
+      };
+
+      /* ================================================================
+         1. SaaS APP NAVBAR & COMPANY WATERMARK
+         ================================================================ */
+      let Y = 20;
+
+      // Decorative top gradient strip
+      setFill(C.primaryIndigo);
+      doc.rect(0, 0, PW, 6, "F");
+
+      // Logo Left aligned
+      try {
+        if (logo && logo.startsWith("data:image/")) {
+          doc.addImage(logo, "PNG", ML, Y, 85, 26);
+        }
+      } catch(e) {}
+
+      // Company info Right aligned
+      setFont("bold", 12, C.textDark);
+      doc.text(company.regt_name, PW - MR, Y + 10, { align: "right" });
+      setFont("normal", 8, C.textSlate);
+      doc.text(`${company.address} | GSTIN: ${company.gst}`, PW - MR, Y + 22, { align: "right" });
+
+      Y += 40;
+      setDraw(C.cardBorder);
+      doc.setLineWidth(0.75);
+      doc.line(ML, Y, PW - MR, Y);
+
+      /* ================================================================
+         2. PAYSLIP WEB HEADER (Premium Tag)
+         ================================================================ */
+      Y += 12;
+      const salaryPeriod = `${getMonthName(h.month).toUpperCase()} ${h.year}`;
+      
+      // Rounded Card Background
+      setFill(C.bannerPeach);
+      setDraw([251, 146, 60]); // Light coral border
+      doc.setLineWidth(0.5);
+      doc.roundedRect(ML, Y, CW, 30, 4, 4, "FD");
+      
+      setFont("bold", 10.5, C.accentCoral);
+      doc.text(`SALARY CREDIT ADVICE — ${salaryPeriod}`, ML + 12, Y + 19);
+      
+      setFont("bold", 9, C.textSlate);
+      doc.text(`REFERENCE ID: PAY-${h.id}`, PW - MR - 12, Y + 19, { align: "right" });
+
+      /* ================================================================
+         3. CUSTOMER GRID CARD (Employee Metadata Table Style)
+         ================================================================ */
+      Y += 42;
+      
+      // Clean modern bordered table style card
+      setFill(C.webBg);
+      setDraw(C.cardBorder);
+      doc.roundedRect(ML, Y, CW, 65, 4, 4, "FD");
+
+      // Left Meta Columns
+      setFont("bold", 7.5, C.textSlate);
+      doc.text("EMPLOYEE DETAILS", ML + 15, Y + 16);
+      setFont("normal", 8.5, C.textSlate);
+      doc.text("Name:", ML + 15, Y + 30);
+      doc.text("Emp Code:", ML + 15, Y + 44);
+      doc.text("Joining Date:", ML + 15, Y + 56);
+
+      setFont("bold", 9, C.textDark);
+      doc.text(String(h.full_name), ML + 80, Y + 30);
+      setFont("normal", 9, C.textDark);
+      doc.text(String(h.employee_code), ML + 80, Y + 44);
+      doc.text(h.joining_date ? h.joining_date.slice(0, 10) : "-", ML + 80, Y + 56);
+
+      // Middle Vertical Split Line
+      setDraw(C.cardBorder);
+      doc.line(ML + 270, Y + 10, ML + 270, Y + 55);
+
+      // Right Meta Columns
+      setFont("bold", 7.5, C.textSlate);
+      doc.text("TRANSACTION DETAILS", ML + 285, Y + 16);
+      setFont("normal", 8.5, C.textSlate);
+      doc.text("Credit Date:", ML + 285, Y + 30);
+      doc.text("Mode / Source:", ML + 285, Y + 44);
+      doc.text("Journal Entry:", ML + 285, Y + 56);
+
+      setFont("normal", 9, C.textDark);
+      doc.text(h.payment_date ? h.payment_date.slice(0, 10) : "-", ML + 375, Y + 30);
+      doc.text(`${h.payment_mode} (${h.source_account})`, ML + 375, Y + 44);
+      doc.text(String(h.journal_entry_id || "-"), ML + 375, Y + 56);
+
+      Y += 80;
+
+      /* ================================================================
+         4. FINANCIAL COMPILATION TABLE
+         ================================================================ */
+      doc.autoTable({
+        startY: Y,
+        margin: { left: ML, right: MR },
+        head: [["EARNINGS & ADDITIONS", "AMOUNT (Rs.)", "DEDUCTIONS & RECOVERIES", "AMOUNT (Rs.)"]],
+        body: [
+          [
+            "Basic Salary (Adjusted)",
+            fmtN(Number(h.adjusted_base_salary).toFixed(2)),
+            "Absentee / Leave Deductions",
+            fmtN(Number(h.leave_deduction).toFixed(2))
+          ],
+          [
+            "Incentive / Bonus Additions",
+            fmtN(Number(h.bonus_addition).toFixed(2)),
+            "Salary Advances Recovered",
+            fmtN(Number(h.advance_deduction).toFixed(2))
+          ],
+          [
+            "Leave Encashments",
+            fmtN(Number(h.leave_encashment).toFixed(2)),
+            "Personal Loan Deductions",
+            fmtN(Number(h.loan_deduction).toFixed(2))
+          ],
+          [
+            "—",
+            "—",
+            "Miscellaneous / Other Deductions",
+            fmtN(Number(h.other_deductions).toFixed(2))
+          ]
+        ],
+        theme: "grid",
+        styles: { fontSize: 8.5, cellPadding: 4.5, lineColor: C.cardBorder, lineWidth: 0.5, textColor: C.textDark, valign: "middle" },
+        headStyles: { fillColor: C.primaryIndigo, textColor: [255,255,255], fontStyle: "bold", fontSize: 8 },
+        columnStyles: {
+          0: { cellWidth: 180 },
+          1: { halign: "right", cellWidth: 100 },
+          2: { cellWidth: 180 },
+          3: { halign: "right", cellWidth: 100 }
+        },
+        alternateRowStyles: { fillColor: [255,255,255] },
+        foot: [[
+          { content: "TOTAL ADDITIONS", styles: { fontStyle: "bold", fillColor: C.webBg } },
+          { content: fmtN(Number(h.total_additions || 0).toFixed(2)), styles: { halign: "right", fontStyle: "bold", textColor: C.emerald, fillColor: C.webBg } },
+          { content: "TOTAL DEDUCTIONS", styles: { fontStyle: "bold", fillColor: C.webBg } },
+          { content: fmtN(Number(h.total_deductions || 0).toFixed(2)), styles: { halign: "right", fontStyle: "bold", textColor: C.rose, fillColor: C.webBg } }
+        ]],
+        footStyles: { lineColor: C.cardBorder, lineWidth: 0.5 },
+      });
+
+      Y = doc.lastAutoTable.finalY + 16;
+
+      /* ================================================================
+         5. NESTED BREAKDOWNS (Detail Grid)
+         ================================================================ */
+      const halfWidth = (CW - 16) / 2;
+
+      // Bonus data (TYPE, REMARKS, AMOUNT)
+      const bonusRows = (breakdown.additions?.bonuses || []).map(b => [
+        b.bonus_type,
+        b.remarks || "Salary Incentive",
+        fmtN(Number(b.amount).toFixed(2))
+      ]);
+      if (bonusRows.length === 0) bonusRows.push(["—", "No adjustments", "0.00"]);
+
+      // Advance data
+      const advanceRows = (breakdown.deductions?.advances || []).map(a => [
+        a.date ? a.date.slice(5, 10) : "-",
+        a.remarks || "Advance Recovery",
+        fmtN(Number(a.amount).toFixed(2))
+      ]);
+      if (advanceRows.length === 0) advanceRows.push(["—", "No recoveries", "0.00"]);
+
+      // Titles
+      setFont("bold", 9, C.primaryIndigo);
+      doc.text("Bonus Earnings Breakdown", ML, Y);
+      doc.text("Advance Recovery Ledger", ML + halfWidth + 16, Y);
+      
+      Y += 6;
+
+      // Draw Left Breakdown Table (Vibrant Emerald Theme Header)
+      doc.autoTable({
+        startY: Y,
+        margin: { left: ML },
+        tableWidth: halfWidth,
+        head: [["TYPE", "REMARKS", "AMOUNT"]],
+        body: bonusRows,
+        theme: "grid",
+        styles: { fontSize: 7.5, cellPadding: 4, lineColor: C.cardBorder, lineWidth: 0.5, textColor: C.textDark },
+        headStyles: { fillColor: C.emerald, textColor: [255,255,255], fontStyle: "bold" },
+        columnStyles: { 
+          0: { cellWidth: 70 },
+          1: { cellWidth: 'auto' },
+          2: { halign: "right", cellWidth: 55 } 
+        }
+      });
+      const bonusFinalY = doc.lastAutoTable.finalY;
+
+      // Draw Right Breakdown Table (Vibrant Orange Theme Header)
+      doc.autoTable({
+        startY: Y,
+        margin: { left: ML + halfWidth + 16 },
+        tableWidth: halfWidth,
+        head: [["DATE", "REMARKS", "AMOUNT"]],
+        body: advanceRows,
+        theme: "grid",
+        styles: { fontSize: 7.5, cellPadding: 4, lineColor: C.cardBorder, lineWidth: 0.5, textColor: C.textDark },
+        headStyles: { fillColor: C.accentCoral, textColor: [255,255,255], fontStyle: "bold" },
+        columnStyles: { 
+          0: { cellWidth: 45 },
+          1: { cellWidth: 'auto' },
+          2: { halign: "right", cellWidth: 55 } 
+        }
+      });
+      const advanceFinalY = doc.lastAutoTable.finalY;
+
+      Y = Math.max(bonusFinalY, advanceFinalY) + 20;
+
+      /* ================================================================
+         6. PREMIUM SAAS STYLE NET PAYABLE BLOCK
+         ================================================================ */
+      // Card Panel
+      setFill(C.netSalaryBg);
+      setDraw(C.primaryIndigo);
+      doc.setLineWidth(1.5);
+      doc.roundedRect(ML, Y, CW, 45, 4, 4, "FD");
+
+      // Left Accent bar in Warm Coral
+      setFill(C.accentCoral);
+      doc.rect(ML, Y, 4, 45, "F");
+
+      // Net Text
+      setFont("bold", 7.5, C.primaryIndigo);
+      doc.text("NET SALARY DISBURSED OUTFLOW", ML + 18, Y + 18);
+      setFont("bold", 8, C.textDark);
+      doc.text(`ABSENT DAYS: ${breakdown.deductions?.leave?.absent_days || 0}  |  HALF DAYS: ${breakdown.deductions?.leave?.half_days || 0}`, ML + 18, Y + 32);
+
+      // Amount Highlight
+      setFont("bold", 15, C.primaryIndigo);
+      doc.text(fmt(h.net_salary), PW - MR - 15, Y + 28, { align: "right" });
+
+      Y += 60;
+
+      // Text amount representation
+      setFont("bold", 8.5, C.textDark);
+      doc.text("Amount Disbursed (in words):", ML, Y);
+      setFont("normal", 8.5, C.textSlate);
+      doc.text(toWords(Math.round(h.net_salary)), ML + 125, Y);
+
+      Y += 30;
+
+      /* ================================================================
+         7. SIGNATURE BLOCKS & INTERNAL AUDIT COMPLIANCE
+         ================================================================ */
+      setFont("normal", 8, C.textLight);
+      doc.text("This document is generated by the Gniderton Accounts System and does not require physical signatures.", ML, Y);
+
+      Y += 40;
+
+      setDraw(C.textLight);
+      doc.setLineWidth(0.5);
+      
+      // Signature lines
+      doc.line(ML + 10, Y, ML + 150, Y);
+      setFont("bold", 8, C.textDark);
+      doc.text("Employee Acknowledgment", ML + 25, Y + 12);
+
+      doc.line(PW - MR - 150, Y, PW - MR - 10, Y);
+      doc.text("Authorized Payroll Signatory", PW - MR - 145, Y + 12);
+
+      // Page footer border line
+      setDraw(C.cardBorder);
+      doc.line(ML, PH - 24, PW - MR, PH - 24);
+
+      setFont("normal", 7.5, C.textLight);
+      doc.text(`${company.regt_name} • Internal Payroll Credit Advice Slip`, ML, PH - 12);
+      doc.text(`Confidential • Page 1 of 1`, PW - MR, PH - 12, { align: "right" });
+
+      /* ── Download action ── */
+      const fileName = `PAYSLIP_${h.employee_code}_${getMonthName(h.month)}_${h.year}.pdf`;
+      download(doc.output("dataurlstring"), fileName, "application/pdf");
+      showAlert(`✅ Payslip PDF generated successfully!`, "success");
+
+    } catch (err) {
+      showAlert("Payslip Compilation Failed: " + err.message, "error");
+      console.error(err);
     }
+  }
 }
