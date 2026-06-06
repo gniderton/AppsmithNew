@@ -1,0 +1,4 @@
+{
+  "ids": {{ tblProducts.selectedRows.map(row => row.id) }},
+  "is_active": {{ this.params.is_active }}
+}

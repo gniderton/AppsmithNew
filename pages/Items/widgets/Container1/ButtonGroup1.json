@@ -33,6 +33,15 @@
     },
     {
       "key": "groupButtons.groupButtonicq3rzdfp4.menuItems.menuItem9co943rrez.backgroundColor"
+    },
+    {
+      "key": "groupButtons.groupButton2.onClick"
+    },
+    {
+      "key": "groupButtons.groupButtonicq3rzdfp4.onClick"
+    },
+    {
+      "key": "groupButtons.groupButtonfrm2koazg1.buttonColor"
     }
   ],
   "dynamicPropertyPathList": [
@@ -91,6 +100,9 @@
     },
     {
       "key": "groupButtons.groupButtonicq3rzdfp4.menuItems.menuItem9co943rrez.onClick"
+    },
+    {
+      "key": "groupButtons.groupButtonfrm2koazg1.onClick"
     }
   ],
   "groupButtons": {
@@ -144,6 +156,22 @@
       "onClick": "{{showModal(modalBulkEdit.name);}}",
       "placement": "CENTER",
       "widgetId": ""
+    },
+    "groupButtonfrm2koazg1": {
+      "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+      "buttonType": "SIMPLE",
+      "id": "groupButtonfrm2koazg1",
+      "index": 4,
+      "isDisabled": false,
+      "isSeparator": false,
+      "isVisible": true,
+      "itemType": "BUTTON",
+      "label": "Update Product Status",
+      "menuItems": {},
+      "onClick": "{{showModal(mdlProductStatus.name);}}",
+      "placement": "CENTER",
+      "variant": "filled",
+      "widgetId": "gvwa3ctzis"
     },
     "groupButtong1q4rfnylq": {
       "buttonColor": "{{appsmith.store.theme.primary}}",

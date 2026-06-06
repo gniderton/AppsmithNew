@@ -1,0 +1,64 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 4,
+  "boxShadow": "none",
+  "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "buttonVariant": "PRIMARY",
+  "disabledWhenInvalid": false,
+  "dynamicBindingPathList": [
+    {
+      "key": "buttonColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "text"
+    },
+    {
+      "key": "isVisible"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "isVisible"
+    },
+    {
+      "key": "onClick"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "isDefaultClickDisabled": true,
+  "isDisabled": false,
+  "isLoading": false,
+  "isVisible": "{{ chkStatus.selectedValues.includes(\"active\") || chkStatus.selectedValues.includes(\"inactive\") }}",
+  "key": "cpr5hn4uyj",
+  "leftColumn": 50,
+  "minWidth": 120,
+  "mobileBottomRow": 4,
+  "mobileLeftColumn": 42,
+  "mobileRightColumn": 58,
+  "mobileTopRow": 0,
+  "needsErrorInfo": false,
+  "onClick": "{{\n  BulkUpdateStatus.run({ is_active: !chkStatus.selectedValues.includes(\"active\") })\n    .then(() => Products.run()) // Replace 'GetProducts' with the query name that loads your tblProducts list\n    .then(() => showAlert(\"Product status updated successfully!\", \"success\"))\n    .catch((err) => showAlert(\"Failed to update: \" + err.message, \"error\"))\n}}",
+  "parentColumnSpace": 16.446875,
+  "parentId": "oaj7t2emt5",
+  "parentRowSpace": 10,
+  "placement": "CENTER",
+  "recaptchaType": "V3",
+  "renderMode": "CANVAS",
+  "resetFormOnClick": false,
+  "responsiveBehavior": "hug",
+  "rightColumn": 58,
+  "text": "{{ chkStatus.selectedValues.includes(\"active\") ? \"Deactivate Selected\" : \"Reactivate Selected\" }}",
+  "topRow": 0,
+  "type": "BUTTON_WIDGET",
+  "version": 1,
+  "widgetId": "tn98lqcwbl",
+  "widgetName": "Button5"
+}
