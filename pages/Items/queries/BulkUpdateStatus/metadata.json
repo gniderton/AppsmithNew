@@ -11,7 +11,7 @@
           "value": "application/json"
         }
       ],
-      "body": "{\n  \"ids\": {{ tblProducts.selectedRows.map(row => row.id) }},\n  \"is_active\": {{ this.params.is_active }}\n}",
+      "body": "{\n  \"ids\": {{ Productstbl.selectedRows.map(row => row.id) }},\n  \"is_active\": {{ this.params.is_active }}\n}",
       "bodyFormData": [],
       "encodeParamsToggle": true,
       "formData": {
