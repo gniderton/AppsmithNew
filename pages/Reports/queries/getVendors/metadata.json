@@ -35,7 +35,7 @@
     "dynamicBindingPathList": [],
     "name": "getVendors",
     "pageId": "Reports",
-    "runBehaviour": "MANUAL",
+    "runBehaviour": "AUTOMATIC",
     "userSetOnLoad": false
   }
 }

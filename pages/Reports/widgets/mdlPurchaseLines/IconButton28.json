@@ -1,0 +1,50 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 8,
+  "boxShadow": "none",
+  "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "buttonVariant": "TERTIARY",
+  "dynamicBindingPathList": [
+    {
+      "key": "buttonColor"
+    },
+    {
+      "key": "borderRadius"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "iconName": "circle-arrow-down",
+  "isDisabled": false,
+  "isLoading": false,
+  "isVisible": true,
+  "key": "3wvtrohe56",
+  "leftColumn": 62,
+  "minWidth": 50,
+  "mobileBottomRow": 8,
+  "mobileLeftColumn": 60,
+  "mobileRightColumn": 64,
+  "mobileTopRow": 4,
+  "needsErrorInfo": false,
+  "onClick": "{{\n  (() => {\n    const data = getPurchaseLines.data;\n    if (!data || data.length === 0) {\n      showAlert(\"No data available to download\", \"warning\");\n      return;\n    }\n    \n    // 1. Get the column headers\n    const headers = Object.keys(data[0]);\n    \n    // 2. Map the rows to comma-separated values\n    const csvRows = data.map(row => \n      headers.map(header => {\n        const value = row[header] === null || row[header] === undefined ? \"\" : row[header];\n        // Escape quotes and wrap in double quotes to handle commas inside text fields\n        return `\"${String(value).replace(/\"/g, '\"\"')}\"`;\n      }).join(\",\")\n    );\n    \n    // 3. Combine headers and rows\n    const csvContent = [headers.join(\",\"), ...csvRows].join(\"\\r\\n\");\n    \n    // 4. Trigger download as CSV file\n    download(csvContent, \"Purchase_Invoice_Lines.csv\", \"text/csv\");\n  })()\n}}",
+  "parentColumnSpace": 13.884374999999999,
+  "parentId": "mrqpirf2s1",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "hug",
+  "rightColumn": 64,
+  "topRow": 4,
+  "type": "ICON_BUTTON_WIDGET",
+  "version": 1,
+  "widgetId": "7pvwd9wf30",
+  "widgetName": "IconButton28"
+}
