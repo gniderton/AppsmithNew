@@ -1,0 +1,50 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 4,
+  "boxShadow": "none",
+  "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "buttonVariant": "TERTIARY",
+  "dynamicBindingPathList": [
+    {
+      "key": "buttonColor"
+    },
+    {
+      "key": "borderRadius"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "iconName": "import",
+  "isDisabled": false,
+  "isLoading": false,
+  "isVisible": true,
+  "key": "pnyx660dfi",
+  "leftColumn": 61,
+  "minWidth": 50,
+  "mobileBottomRow": 4,
+  "mobileLeftColumn": 59,
+  "mobileRightColumn": 63,
+  "mobileTopRow": 0,
+  "needsErrorInfo": false,
+  "onClick": "{{\n  GetAllSalesLinesForDownload.run()\n    .then((data) => {\n      if (!data || data.length === 0) {\n        showAlert(\"No data found for the selected filters\", \"warning\");\n        return;\n      }\n      \n      // 1. Get the column headers\n      const headers = Object.keys(data[0]);\n      \n      // 2. Map rows to comma-separated values\n      const csvRows = data.map(row => \n        headers.map(header => {\n          const value = row[header] === null || row[header] === undefined ? \"\" : row[header];\n          return `\"${String(value).replace(/\"/g, '\"\"')}\"`;\n        }).join(\",\")\n      );\n      \n      // 3. Combine headers and rows\n      const csvContent = [headers.join(\",\"), ...csvRows].join(\"\\r\\n\");\n      \n      // 4. Download\n      download(csvContent, \"Sales_Invoice_Lines_Full.csv\", \"text/csv\");\n    })\n    .catch((err) => showAlert(\"Download failed: \" + err.message, \"error\"))\n}}",
+  "parentColumnSpace": 15.478124999999999,
+  "parentId": "6zc00pxw73",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "hug",
+  "rightColumn": 63,
+  "topRow": 0,
+  "type": "ICON_BUTTON_WIDGET",
+  "version": 1,
+  "widgetId": "xdwt476lra",
+  "widgetName": "IconButton29"
+}
