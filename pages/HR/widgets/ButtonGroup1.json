@@ -58,6 +58,9 @@
     },
     {
       "key": "groupButtons.groupButton2ng724u73j.onClick"
+    },
+    {
+      "key": "groupButtons.groupButtonmrtgrqwumv.onClick"
     }
   ],
   "groupButtons": {
@@ -148,6 +151,7 @@
       "itemType": "BUTTON",
       "label": "Advances",
       "menuItems": {},
+      "onClick": "{{showModal(mdlAdvances.name);}}",
       "placement": "CENTER",
       "variant": "filled",
       "widgetId": "8c9yycrdlw"
