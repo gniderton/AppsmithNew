@@ -11,6 +11,9 @@
     },
     {
       "key": "borderRadius"
+    },
+    {
+      "key": "sourceData"
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
@@ -28,7 +31,7 @@
   "key": "tadleigell",
   "labelAlignment": "left",
   "labelPosition": "Top",
-  "labelText": "Label",
+  "labelText": "Choose Customer",
   "labelTextSize": "0.875rem",
   "labelWidth": 5,
   "leftColumn": 0,
@@ -40,9 +43,9 @@
   "mobileRightColumn": 20,
   "mobileTopRow": 0,
   "needsErrorInfo": false,
-  "optionLabel": "name",
-  "optionValue": "code",
-  "originalBottomRow": 7,
+  "optionLabel": "label",
+  "optionValue": "value",
+  "originalBottomRow": 8,
   "originalTopRow": 1,
   "parentColumnSpace": 6.9375,
   "parentId": "6zc00pxw73",
@@ -53,7 +56,7 @@
   "rightColumn": 9,
   "serverSideFiltering": false,
   "shouldScrollContents": true,
-  "sourceData": "[\n  {\n    \"name\": \"Blue\",\n    \"code\": \"BLUE\"\n  },\n  {\n    \"name\": \"Green\",\n    \"code\": \"GREEN\"\n  },\n  {\n    \"name\": \"Red\",\n    \"code\": \"RED\"\n  }\n]",
+  "sourceData": "{{getCustomers.data.map( (obj) =>{ return  {'label': obj.customer_name, 'value': obj.id } })}}",
   "topRow": 1,
   "type": "SELECT_WIDGET",
   "version": 1,

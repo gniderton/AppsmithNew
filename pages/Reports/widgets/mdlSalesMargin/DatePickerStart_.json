@@ -7,16 +7,24 @@
   "closeOnSelection": true,
   "dateFormat": "YYYY-MM-DD HH:mm",
   "datePickerType": "DATE_PICKER",
-  "defaultDate": "2026-06-13T02:20:56.775Z",
+  "defaultDate": "{{ moment().startOf('month').format(\"YYYY-MM-DD\") }}",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
     },
     {
       "key": "borderRadius"
+    },
+    {
+      "key": "defaultDate"
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicPropertyPathList": [
+    {
+      "key": "defaultDate"
+    }
+  ],
   "dynamicTriggerPathList": [],
   "firstDayOfWeek": 0,
   "isDisabled": false,
@@ -40,7 +48,7 @@
   "mobileRightColumn": 31.000000000000004,
   "mobileTopRow": 0,
   "needsErrorInfo": false,
-  "originalBottomRow": 7,
+  "originalBottomRow": 8,
   "originalTopRow": 1,
   "parentColumnSpace": 15.478124999999999,
   "parentId": "6zc00pxw73",

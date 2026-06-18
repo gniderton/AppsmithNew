@@ -15,11 +15,17 @@
     },
     {
       "key": "groupButtons.groupButton1.buttonColor"
+    },
+    {
+      "key": "groupButtons.groupButtonl3tj7ew6lk.buttonColor"
     }
   ],
   "dynamicTriggerPathList": [
     {
       "key": "groupButtons.groupButton1.onClick"
+    },
+    {
+      "key": "groupButtons.groupButtonl3tj7ew6lk.onClick"
     }
   ],
   "groupButtons": {
@@ -36,6 +42,22 @@
       "onClick": "{{getCashFlow.run().then(() => {\n  showModal(Modal3.name);\n});}}",
       "placement": "START",
       "widgetId": ""
+    },
+    "groupButtonl3tj7ew6lk": {
+      "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+      "buttonType": "SIMPLE",
+      "id": "groupButtonl3tj7ew6lk",
+      "index": 1,
+      "isDisabled": false,
+      "isSeparator": false,
+      "isVisible": true,
+      "itemType": "BUTTON",
+      "label": "Sales Margin",
+      "menuItems": {},
+      "onClick": "{{GetSalesLinesPaginated.run().then(() => {\n  showModal(mdlSalesMargin.name);\n});}}",
+      "placement": "START",
+      "variant": "filled",
+      "widgetId": "514ax6d96k"
     }
   },
   "isCanvas": false,

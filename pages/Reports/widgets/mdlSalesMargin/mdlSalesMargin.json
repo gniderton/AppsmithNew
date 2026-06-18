@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 811,
+  "bottomRow": 79,
   "boxShadow": "none",
   "canEscapeKeyClose": true,
   "canOutsideClickClose": true,
@@ -80,6 +80,6 @@
   "type": "MODAL_WIDGET",
   "version": 2,
   "widgetId": "za3tlvx6l6",
-  "widgetName": "Modal4",
+  "widgetName": "mdlSalesMargin",
   "width": 1242.6
 }

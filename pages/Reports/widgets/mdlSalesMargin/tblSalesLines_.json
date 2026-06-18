@@ -227,7 +227,7 @@
   "needsErrorInfo": false,
   "onPageChange": "{{GetSalesLinesPaginated.run()}}",
   "originalBottomRow": 77,
-  "originalTopRow": 11,
+  "originalTopRow": 8,
   "parentColumnSpace": 6.9375,
   "parentId": "6zc00pxw73",
   "parentRowSpace": 10,
